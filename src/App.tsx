@@ -261,13 +261,19 @@ export default function App() {
     ),
     [view, setView] = useState<"plan" | "decisions" | "audit" | "history" | "wishlist">("decisions"),
     [open, setOpen] = useState(false),
-    [rosterStatuses, setRosterStatuses] = useState<Record<number, RosterStatus>>(() => JSON.parse(localStorage.getItem("onlyflasks-roster-status-v2") || "{}")),
+    [rosterStatuses, setRosterStatuses] = useState<Record<number, RosterStatus>>({}),
     [specs, setSpecs] = useState<Record<number, string>>(() =>
       JSON.parse(localStorage.getItem("onlyflasks-board-specs-v1") || "{}"),
     ),
     [customWishlists, setCustomWishlists] = useState<Record<number, Item[]>>(() => JSON.parse(localStorage.getItem("onlyflasks-custom-wishlists-v3") || "{}")),
     [wishlistCharacter, setWishlistCharacter] = useState<number | null>(null),
     [wishlistApiUrl, setWishlistApiUrl] = useState(""),
+    [officerUnlocked, setOfficerUnlocked] = useState(false),
+    [officerPrompt, setOfficerPrompt] = useState(false),
+    [officerPassphrase, setOfficerPassphrase] = useState(""),
+    [officerError, setOfficerError] = useState(""),
+    [officerBusy, setOfficerBusy] = useState(false),
+    [rosterSaveState, setRosterSaveState] = useState<"idle" | "saving" | "saved" | "error">("idle"),
     [syncState, setSyncState] = useState<"idle" | "loading" | "saving" | "saved" | "error">("idle");
   useEffect(() => {
     fetch("./loot-data.json", { cache: "no-store" })
@@ -285,16 +291,50 @@ export default function App() {
       if (!payload.ok) throw new Error(payload.error || "Could not load shared wishlists");
       const lists: Record<number, Item[]> = {}, sharedSpecs: Record<number, string> = {};
       for (const entry of payload.wishlists || []) { lists[+entry.characterId] = entry.wishlist || []; sharedSpecs[+entry.characterId] = entry.lootSpec; }
+      setRosterStatuses(payload.rosterStatuses || {});
       setCustomWishlists(lists);
       setSpecs(current => ({...current,...sharedSpecs}));
       localStorage.setItem("onlyflasks-custom-wishlists-v3", JSON.stringify(lists));
       localStorage.setItem("onlyflasks-board-specs-v1", JSON.stringify({...specs,...sharedSpecs}));
+      const officerToken = localStorage.getItem("onlyflasks-officer-session") || "";
+      if (officerToken) {
+        const verifyResponse = await fetch(url, { method:"POST", headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify({action:"officerVerify",token:officerToken}) });
+        const verification = await verifyResponse.json();
+        if (verification.ok && verification.authorized) setOfficerUnlocked(true);
+        else localStorage.removeItem("onlyflasks-officer-session");
+      }
       setSyncState("idle");
     }).catch(error => { console.error(error); setSyncState("error"); });
   }, []);
   useEffect(() => {
     (window as any).$WowheadPower?.refreshLinks();
   }, [data, bossIndex, difficulty, view, customWishlists]);
+  const officerLogin = async () => {
+    if (!wishlistApiUrl || !officerPassphrase) return;
+    setOfficerBusy(true); setOfficerError("");
+    try {
+      const response = await fetch(wishlistApiUrl, { method:"POST", headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify({action:"officerLogin",passphrase:officerPassphrase}) });
+      const payload = await response.json();
+      if (!payload.ok || !payload.token) throw new Error(payload.error || "Officer access failed");
+      localStorage.setItem("onlyflasks-officer-session", payload.token);
+      setOfficerPassphrase(""); setOfficerPrompt(false); setOfficerUnlocked(true);
+    } catch (error) { setOfficerError(error instanceof Error ? error.message : "Officer access failed"); }
+    finally { setOfficerBusy(false); }
+  };
+  const saveRosterStatus = async (c: Raider, status: RosterStatus) => {
+    const previous = rosterStatuses[c.id] || c.rosterStatus || "Main", next = {...rosterStatuses,[c.id]:status};
+    setRosterStatuses(next); setRosterSaveState("saving");
+    try {
+      const token = localStorage.getItem("onlyflasks-officer-session") || "";
+      const response = await fetch(wishlistApiUrl, { method:"POST", headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify({action:"setRosterStatus",token,characterId:c.id,characterName:c.name,status}) });
+      const payload = await response.json();
+      if (!payload.ok) throw new Error(payload.error || "Could not save roster status");
+      setRosterSaveState("saved"); window.setTimeout(() => setRosterSaveState("idle"), 1800);
+    } catch (error) {
+      setRosterStatuses(current => ({...current,[c.id]:previous})); setRosterSaveState("error");
+      if (String(error).toLowerCase().includes("expired")) { localStorage.removeItem("onlyflasks-officer-session"); setOfficerUnlocked(false); }
+    }
+  };
   const wishlistFor = (c: Raider) => customWishlists[c.id] || data?.bis.lists[specs[c.id] || c.defaultSpec]?.items || [];
   const model = useMemo(() => {
     if (!data) return [];
@@ -420,7 +460,7 @@ export default function App() {
         {view === "plan" && (
           <section className="plan-page">
             <div className="plan-head"><div><p className="rune">Pre-raid briefing</p><h2>Contested loot & tier breakpoints</h2><p>Only decisions involving multiple raiders.</p></div><div className="difficulty-picker">{(["normal", "heroic", "mythic"] as Difficulty[]).map(value => <button className={difficulty === value ? "selected" : ""} key={value} onClick={() => { setDifficulty(value); localStorage.setItem("onlyflasks-difficulty", value); }}>{value}</button>)}</div></div>
-            <details className="roster-control"><summary><span><b>Roster priority</b><small>Main roles → Trial roles → Fill roles · combat role inferred automatically</small></span><ChevronDown/></summary><div className="roster-priority-grid">{data.characters.map(c => { const value = rosterStatuses[c.id] || c.rosterStatus || "Main"; return <label key={c.id} style={{"--class":colors[c.class]} as React.CSSProperties}><i/><span><b>{c.name}</b><small>{inferredRole(c)} · {c.class}</small></span><select value={value} onChange={e => { const next={...rosterStatuses,[c.id]:e.target.value as RosterStatus};setRosterStatuses(next);localStorage.setItem("onlyflasks-roster-status-v2",JSON.stringify(next)); }}>{(["Main","Trial","Fill"] as RosterStatus[]).map(p=><option key={p}>{p}</option>)}</select></label>})}</div></details>
+            {officerUnlocked ? <details className="roster-control"><summary><span><b>Roster priority</b><small>Main roles → Trial roles → Fill roles · combat role inferred automatically {rosterSaveState === "saving" ? "· Saving…" : rosterSaveState === "saved" ? "· Saved" : rosterSaveState === "error" ? "· Save failed" : ""}</small></span><ChevronDown/></summary><div className="roster-priority-grid">{data.characters.map(c => { const value = rosterStatuses[c.id] || c.rosterStatus || "Main"; return <label key={c.id} style={{"--class":colors[c.class]} as React.CSSProperties}><i/><span><b>{c.name}</b><small>{inferredRole(c)} · {c.class}</small></span><select value={value} disabled={rosterSaveState === "saving"} onChange={e => saveRosterStatus(c,e.target.value as RosterStatus)}>{(["Main","Trial","Fill"] as RosterStatus[]).map(p=><option key={p}>{p}</option>)}</select></label>})}</div></details> : <div className="officer-gate">{officerPrompt ? <form onSubmit={e=>{e.preventDefault();officerLogin();}}><input type="password" autoFocus value={officerPassphrase} onChange={e=>setOfficerPassphrase(e.target.value)} placeholder="Officer passphrase" autoComplete="current-password"/><button disabled={officerBusy || !officerPassphrase}>{officerBusy ? "Checking…" : "Unlock"}</button><button type="button" className="cancel" onClick={()=>{setOfficerPrompt(false);setOfficerError("");}}>Cancel</button>{officerError && <small>{officerError}</small>}</form> : <button onClick={()=>setOfficerPrompt(true)}><Shield/> Officer access</button>}</div>}
             <section className="tier-board"><div className="plan-section-title"><div><p className="rune">Set completion</p><h3>Missing tier slots</h3></div><span>Exact Icy Veins tier/catalyst targets · hover a slot</span></div><div className="tier-grid">{tierStatus.map(({c,missing}) => <div className={`tier-person ${missing.length ? "" : "tier-complete"}`} key={c.id} style={{"--class":colors[c.class]} as React.CSSProperties}><i/><div className="tier-copy"><div className="tier-name"><strong>{c.name}</strong><b>{missing.length ? `${missing.length} MISSING` : "COMPLETE"}</b></div>{missing.length > 0 && <div className="tier-slots">{missing.map(({slot:slotName,target}) => <a key={slotName} href={`https://www.wowhead.com/item=${target.itemId}`} data-wowhead={`item=${target.itemId}`} title={target.name} target="_blank">{slotName[0]+slotName.slice(1).toLowerCase()}</a>)}</div>}</div></div>)}</div></section>
             <div className="plan-section-title contested-title"><div><p className="rune">Needs discussion</p><h3>Contested weapons & trinkets</h3></div><span>{tonight.length} decisions</span></div>
             <div className="plan-list">{tonight.length ? tonight.map(({ boss, item, people, expected }) => <article className="plan-row contested" key={`${boss.name}-${item.itemId}`}>

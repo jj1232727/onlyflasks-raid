@@ -8,6 +8,9 @@
 6. Set **Execute as** to `Me` and **Who has access** to `Anyone`.
 7. Authorize the script and copy the deployment URL ending in `/exec`.
 8. Paste that URL into `public/app-config.json` as `wishlistApiUrl`.
-9. Run `npm run build`, publish to GitHub Pages, and submit one test wishlist.
+9. In `configureOfficerPassphrase`, replace the placeholder with a strong shared officer passphrase.
+10. Select `configureOfficerPassphrase` in the function menu and click **Run** once.
+11. Remove the plain-text passphrase from the editor, save, and deploy a **new version** of the web app.
+12. Run `npm run build`, publish to GitHub Pages, and submit one test wishlist.
 
-The endpoint is intentionally trust-based. Anyone with the site can replace the wishlist associated with a roster character ID. The Sheet keeps Google edit history for recovery.
+Wishlist submissions remain trust-based. Roster Main/Trial/Fill changes require a short-lived officer session validated by Apps Script. The Sheet keeps Google edit history for recovery.
