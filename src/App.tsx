@@ -39,6 +39,7 @@ import {
   CATALYST_CURRENCIES,
   MIDNIGHT_S2_CATALYST,
   MIDNIGHT_S2_CRESTS,
+  hasCurrencyData,
   currentCatalystBalance,
   parseSimcSnapshot,
 } from "./simc-snapshot.js";
@@ -683,7 +684,9 @@ function TierResourceSnapshot({ info, visuals, icons = {}, compact = false }: { 
       <div className={`snapshot-age ${preReset ? "pre-reset" : ageClass(info.snapshotAt)}`}>
         {preReset ? <CircleAlert /> : <RefreshCw />}
         <span>
-          {preReset
+          {info.crestsMissing
+            ? `SimC captured ${relativeAge(info.snapshotAt)}, but it carried no currency data — crests and charges are unknown. Re-export /simc after being logged in a minute.`
+            : preReset
             ? `SimC captured ${relativeAge(info.snapshotAt)} — before this week's reset. Crests, vault and catalyst below are last week's.`
             : `SimC captured ${relativeAge(info.snapshotAt)}`}
         </span>
@@ -697,7 +700,7 @@ function TierResourceSnapshot({ info, visuals, icons = {}, compact = false }: { 
         <div className="crest-icons">
           {(Object.keys(crestVisuals) as (keyof typeof crestVisuals)[]).map((key) => { const crest = crestVisuals[key]; return (
             <a href={`https://www.wowhead.com/currency=${crest.id}`} data-wowhead={`currency=${crest.id}`} target="_blank" rel="noreferrer" className={key} key={key}>
-              <img src={wowIcon(crest.icon)} /><span><strong>{info.crests?.[key] || 0}</strong><small>{crest.label}</small></span>
+              <img src={wowIcon(crest.icon)} /><span><strong>{info.crestsMissing ? "?" : info.crests?.[key] || 0}</strong><small>{crest.label}</small></span>
             </a>
           ); })}
         </div>
@@ -1516,11 +1519,14 @@ export default function App() {
           vaultTier: snapshotVault.filter((item) => tierIdSet.has(+item.itemId)),
           vaultCatalyst: snapshotVault.filter((item) => !tierIdSet.has(+item.itemId) && TIER_SLOT_SET.has(slot(item.slot))),
           vaultOther: snapshotVault.filter((item) => !tierIdSet.has(+item.itemId) && !TIER_SLOT_SET.has(slot(item.slot))),
-          crests: snapshot ? {
+          // null when the export carried no currency data at all — that is an
+          // incomplete capture, not a character holding zero crests.
+          crests: snapshot && hasCurrencyData(snapshot) ? {
             champion: Number(snapshot.upgradeCurrencies?.[MIDNIGHT_S2_CRESTS.champion] || 0),
             hero: Number(snapshot.upgradeCurrencies?.[MIDNIGHT_S2_CRESTS.hero] || 0),
             myth: Number(snapshot.upgradeCurrencies?.[MIDNIGHT_S2_CRESTS.myth] || 0),
           } : null,
+          crestsMissing: Boolean(snapshot && !hasCurrencyData(snapshot)),
           snapshotAt: snapshot?.capturedAt || null,
         };
       })
@@ -2109,7 +2115,7 @@ export default function App() {
             </div>
             <div className="tier-grid">
               {tierStatus.map(
-                ({ c, slots, equippedCount, storedCount, readyCount, waitingCount, trackMix, setBonus, reachable, reachableBonus, hiddenUpgrade, freePieces, catalysable, catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, bagTier, bagBases, crests, snapshotAt }) => (
+                ({ c, slots, equippedCount, storedCount, readyCount, waitingCount, trackMix, setBonus, reachable, reachableBonus, hiddenUpgrade, freePieces, catalysable, catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, bagTier, bagBases, crests, crestsMissing, snapshotAt }) => (
                 <div
                   className={`tier-person ${equippedCount === 5 ? "tier-complete" : ""} ${hiddenUpgrade ? "tier-actionable" : ""}`}
                   key={c.id}
@@ -2164,7 +2170,7 @@ export default function App() {
                     ))}
                   </div>
                   <TierSimUpgrades data={data} c={c} difficulty={difficulty} spec={specs[c.id] || c.defaultSpec} />
-                  <TierResourceSnapshot info={{ catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, bagTier, bagBases, crests, snapshotAt }} visuals={visualItems} icons={data.itemIcons || {}} />
+                  <TierResourceSnapshot info={{ catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, bagTier, bagBases, crests, crestsMissing, snapshotAt }} visuals={visualItems} icons={data.itemIcons || {}} />
                 </div>
               ))}
             </div>

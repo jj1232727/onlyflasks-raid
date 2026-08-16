@@ -22,6 +22,9 @@ export declare function parseSimcSnapshot(text: string, capturedAt?: string): Si
 export declare const MIDNIGHT_S2_CRESTS: { champion: number; hero: number; myth: number };
 export declare const CATALYST_CURRENCIES: Record<string, { name: string; icon: string }>;
 export declare const MIDNIGHT_S2_CATALYST: number;
+export declare function hasCurrencyData(
+  snapshot: { upgradeCurrencies?: Record<string, number> } | null | undefined,
+): boolean;
 export declare function currentCatalystBalance(
   snapshot: { catalystCurrencies?: Record<string, number> } | null | undefined,
   currencies?: Record<string, number>,

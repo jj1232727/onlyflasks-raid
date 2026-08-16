@@ -58,11 +58,22 @@ export function parseSimcSnapshot(text, capturedAt = new Date().toISOString()) {
   };
 }
 
+// Verified against Blizzard/Wowhead: 3444 Champion Mistcrest, 3445 Hero
+// Mistcrest, 3446 Myth Mistcrest (Midnight Season 2).
 export const MIDNIGHT_S2_CRESTS = {
   champion: 3444,
   hero: 3445,
   myth: 3446,
 };
+
+// SimC writes upgrade currencies and crest-granting items into one line, so the
+// parsed map mixes small currency ids with six-digit item ids. An export that
+// carried no currency ids at all did not capture currency data — which is a
+// different thing from the character holding none, and must not read as "0".
+export const hasCurrencyData = (snapshot) =>
+  Object.keys(snapshot?.upgradeCurrencies || {}).some(
+    (id) => Number(id) > 0 && Number(id) < 100000,
+  );
 
 // Catalyst charges are a new currency every season, so a /simc export still
 // carries last season's leftovers. Keep the known ids named so the board links

@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { currentCatalystBalance, parseSimcSnapshot } from "../src/simc-snapshot.js";
+import { currentCatalystBalance, hasCurrencyData, parseSimcSnapshot } from "../src/simc-snapshot.js";
 
 test("extracts bag, vault, catalyst, and crest snapshot data", () => {
   const text = `hunter="Example"
@@ -35,4 +35,15 @@ test("reads Venomblight Manaflux, never last season's leftover charges", () => {
   assert.deepEqual(currentCatalystBalance(null, undefined), { id: 3465, quantity: 0 });
   // A future season's currency still takes over without a code change.
   assert.deepEqual(currentCatalystBalance(null, { 3465: 2, 3599: 1 }), { id: 3599, quantity: 1 });
+});
+
+test("an export with no currency ids is missing data, not holding zero", () => {
+  // Galsnipes' real shape: only crest-granting items came through.
+  assert.equal(hasCurrencyData({ upgradeCurrencies: { 231756: 1, 231769: 1, 232875: 21 } }), false);
+  // Tamagotchi's: currencies present alongside items.
+  assert.equal(hasCurrencyData({ upgradeCurrencies: { 1792: 11046, 3444: 90, 232875: 9 } }), true);
+  // Genuinely holding zero still counts as captured data.
+  assert.equal(hasCurrencyData({ upgradeCurrencies: { 3444: 0 } }), true);
+  assert.equal(hasCurrencyData({ upgradeCurrencies: {} }), false);
+  assert.equal(hasCurrencyData(null), false);
 });
