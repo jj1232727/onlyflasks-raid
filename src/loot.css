@@ -1231,3 +1231,13 @@ footer .data-freshness{width:100%}
    resource block absorb the slack instead. */
 .tier-board .tier-person>.tier-resource-snapshot{flex:1 1 auto;align-content:start}
 .tier-board .tier-person>.tier-resource-snapshot.no-data{align-content:center}
+
+/* --- Paste-time check on the /simc box --- */
+.simc-check{display:flex;align-items:flex-start;gap:9px;margin-top:9px;padding:9px 11px;border:1px solid #383034;border-radius:9px;background:#141115;font-size:11px;line-height:1.55}
+.simc-check svg{width:15px;flex:none;margin-top:1px}
+.simc-check strong{display:block;font-size:11px}
+.simc-check code{padding:1px 5px;border-radius:4px;background:#1c181d;color:#e2c58c;font-size:10px}
+.simc-check.good{border-color:#2b5c41;background:#101d16;color:#8fd6ab}
+.simc-check.warn{border-color:#6b5226;background:#1e1810;color:#e2c58c}
+.simc-check.bad{border-color:#713636;background:#1e1214;color:#e98580}
+.simc-check b{color:inherit}

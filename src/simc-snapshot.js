@@ -98,6 +98,34 @@ export const hasCurrencyData = (snapshot) =>
     (id) => Number(id) > 0 && Number(id) < 100000,
   );
 
+// What a pasted export actually contains, checked before it is submitted.
+// The header carries both versions:
+//   # SimC Addon 12.0.1-02
+//   # WoW 12.1.0.69299, TOC 120100
+// An addon built against an older minor than the client does not know that
+// patch's currency ids and silently exports none of them, which is how a sim
+// can look fine while every crest count comes through empty.
+export function inspectSimcExport(text) {
+  const source = String(text || "");
+  // The client line carries a build number too ("12.1.0.69299"); keep the
+  // three-part version so what is shown to the raider matches the launcher.
+  const addon = source.match(/^#\s*SimC Addon\s+(\d+\.\d+\.\d+)/m)?.[1] || "",
+    client = source.match(/^#\s*WoW\s+(\d+\.\d+\.\d+)/m)?.[1] || "",
+    minor = (version) => version.split(".").slice(0, 2).join(".");
+  const snapshot = parseSimcSnapshot(source);
+  return {
+    character: snapshot.character,
+    spec: snapshot.spec,
+    addon,
+    client,
+    // Only compare major.minor; the addon's own build suffix moves separately.
+    addonStale: Boolean(addon && client && minor(addon) !== minor(client)),
+    hasCurrencies: hasCurrencyData(snapshot),
+    bags: snapshot.bags.length,
+    vault: snapshot.vault.length,
+  };
+}
+
 // Catalyst charges are a new currency every season, so a /simc export still
 // carries last season's leftovers. Keep the known ids named so the board links
 // and labels the one this tier actually spends.

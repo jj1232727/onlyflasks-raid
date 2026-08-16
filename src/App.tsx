@@ -40,6 +40,7 @@ import {
   MIDNIGHT_S2_CATALYST,
   MIDNIGHT_S2_CRESTS,
   hasCurrencyData,
+  inspectSimcExport,
   currentCatalystBalance,
   parseSimcSnapshot,
 } from "./simc-snapshot.js";
@@ -2496,6 +2497,10 @@ export default function App() {
                 setSyncState("error");
               }
             };
+            // Plain const, not a hook: this block runs inside a JSX IIFE.
+            const pasted = simcText.trim(),
+              simcCheck = pasted.length >= 100 ? inspectSimcExport(pasted) : null,
+              wrongCharacter = Boolean(simcCheck?.character && norm(simcCheck.character) !== norm(c.name));
             const submitSim = async () => {
               if (!wishlistApiUrl || !simcText.trim()) return;
               const parsedSnapshot = parseSimcSnapshot(simcText.trim()),
@@ -2805,14 +2810,31 @@ export default function App() {
                     placeholder={'hunter="Character"\nlevel=90\n…'}
                     aria-label="SimulationCraft export"
                   />
+                  {simcCheck && (
+                    <div className={`simc-check ${wrongCharacter ? "bad" : simcCheck.hasCurrencies ? "good" : "warn"}`}>
+                      {wrongCharacter ? (
+                        <><CircleAlert /><span><strong>This export belongs to {simcCheck.character}, not {c.name}.</strong> Paste {c.name}&rsquo;s own <code>/simc</code>.</span></>
+                      ) : simcCheck.hasCurrencies ? (
+                        <><ClipboardCheck /><span><strong>{simcCheck.character} &middot; {simcCheck.bags} bag {simcCheck.bags === 1 ? "item" : "items"}, {simcCheck.vault} vault.</strong> Crests and catalyst charges came through.</span></>
+                      ) : (
+                        <><CircleAlert /><span>
+                          <strong>No currencies in this export &mdash; crests and catalyst charges will be blank.</strong>{" "}
+                          {simcCheck.addonStale
+                            ? <>Your SimulationCraft addon is <b>{simcCheck.addon}</b> but the game is <b>{simcCheck.client}</b>. Update the addon and run <code>/simc</code> again.</>
+                            : <>Update the SimulationCraft addon and run <code>/simc</code> again.</>}{" "}
+                          Gear, bags and vault are still fine, so you can submit anyway.
+                        </span></>
+                      )}
+                    </div>
+                  )}
                   <div className="simc-actions">
                     <span>{simMessage || "Nothing is submitted until you press Run and upload."}</span>
                     <div className="simc-action-buttons">
                     <button className="refresh-sims" disabled={!wishlistApiUrl || simState === "submitting" || simState === "running" || simState === "refreshing"} onClick={retrySimRefresh}>
                       <RefreshCw /> Refresh existing sims
                     </button>
-                    <button disabled={!wishlistApiUrl || simcText.trim().length < 100 || simState === "submitting" || simState === "running" || simState === "refreshing"} onClick={submitSim}>
-                      {simState === "submitting" ? "Submitting simulations…" : simState === "running" ? "Updating simulations…" : simState === "error" ? "Retry simulation update" : simState === "uploaded" ? "Update simulations again" : "Update my simulations"}
+                    <button disabled={!wishlistApiUrl || simcText.trim().length < 100 || wrongCharacter || simState === "submitting" || simState === "running" || simState === "refreshing"} onClick={submitSim}>
+                      {simState === "submitting" ? "Submitting simulations…" : simState === "running" ? "Updating simulations…" : simState === "error" ? "Retry simulation update" : simState === "uploaded" ? "Update simulations again" : simcCheck && !simcCheck.hasCurrencies && !wrongCharacter ? "Submit without crest data" : "Update my simulations"}
                     </button>
                     </div>
                   </div>

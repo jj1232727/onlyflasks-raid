@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { MIDNIGHT_S2_CRESTS, currentCatalystBalance, hasCurrencyData, parseSimcSnapshot } from "../src/simc-snapshot.js";
+import { MIDNIGHT_S2_CRESTS, currentCatalystBalance, hasCurrencyData, inspectSimcExport, parseSimcSnapshot } from "../src/simc-snapshot.js";
 
 test("extracts bag, vault, catalyst, and crest snapshot data", () => {
   const text = `hunter="Example"
@@ -76,4 +76,45 @@ test("catalyst_currencies stays untagged, and Galsnipes holds no Venomblight", (
 `);
   assert.deepEqual(snap.catalystCurrencies, { 3269: 8, 3378: 8, 2813: 8, 3116: 8 });
   assert.deepEqual(currentCatalystBalance(snap), { id: 3465, quantity: 0 });
+});
+
+test("paste check spots the out-of-date addon that drops currencies", () => {
+  // Galsnipes' real header and currency line.
+  const stale = inspectSimcExport(`# Galsnipes - Marksmanship - 2026-08-16 17:43 - US/Tanaris
+# SimC Addon 12.0.1-02
+# WoW 12.1.0.69299, TOC 120100
+hunter="Galsnipes"
+spec=marksmanship
+# upgrade_currencies=i:231756:1/i:232875:21/i:231769:1
+`);
+  assert.equal(stale.character, "Galsnipes");
+  assert.equal(stale.addon, "12.0.1");
+  assert.equal(stale.client, "12.1.0");
+  assert.equal(stale.addonStale, true);
+  assert.equal(stale.hasCurrencies, false);
+});
+
+test("a current addon passes the paste check", () => {
+  const good = inspectSimcExport(`# SimC Addon 12.1.0-01
+# WoW 12.1.0.69299, TOC 120100
+hunter="Tamagotchi"
+# upgrade_currencies=c:3444:90/i:232875:9
+`);
+  assert.equal(good.addonStale, false, "same major.minor is current");
+  assert.equal(good.hasCurrencies, true);
+});
+
+test("the build suffix alone does not make an addon look stale", () => {
+  const good = inspectSimcExport(`# SimC Addon 12.1.0-07
+# WoW 12.1.0.69299, TOC 120100
+hunter="X"
+# upgrade_currencies=c:3444:5
+`);
+  assert.equal(good.addonStale, false);
+});
+
+test("a missing header cannot claim the addon is stale", () => {
+  const bare = inspectSimcExport(`hunter="X"\n# upgrade_currencies=c:3444:5\n`);
+  assert.equal(bare.addonStale, false, "no versions to compare");
+  assert.equal(bare.hasCurrencies, true);
 });
