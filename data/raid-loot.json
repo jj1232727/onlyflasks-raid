@@ -1,0 +1,1309 @@
+{
+  "raid": "The Venomous Abyss",
+  "difficulty": "Mythic",
+  "exportedAt": "2026-08-15T21:27:24Z",
+  "bosses": [
+    {
+      "encounterId": 2888,
+      "name": "Nek'zali the Soulcoiler",
+      "items": [
+        {
+          "itemId": 280305,
+          "name": "Soulcoil Remnant",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ3:|Hitem:280305::::::::90:262::6:1:3524:1:28:373:::::|h[Soulcoil Remnant]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7558868.jpg"
+        },
+        {
+          "itemId": 279115,
+          "name": "Soulcoiler's Ritual Candle",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ3:|Hitem:279115::::::::90:262::6:1:3524:1:28:7362:::::|h[Soulcoiler's Ritual Candle]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/8030633.jpg"
+        },
+        {
+          "itemId": 268203,
+          "name": "Hexing Spiritrender",
+          "slot": "One-Hand",
+          "armorType": "Dagger",
+          "itemLink": "|cnIQ4:|Hitem:268203::::::::90:262::6:1:3524:1:28:7362:::::|h[Hexing Spiritrender]|h|r",
+          "track": "Myth",
+          "trackRank": "1/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7515621.jpg"
+        },
+        {
+          "itemId": 268208,
+          "name": "Strongblood's Ceremonial Cleaver",
+          "slot": "One-Hand",
+          "armorType": "Axe",
+          "itemLink": "|cnIQ4:|Hitem:268208::::::::90:262::6:1:3524:1:28:7362:::::|h[Strongblood's Ceremonial Cleaver]|h|r",
+          "track": "Myth",
+          "trackRank": "1/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7736101.jpg"
+        },
+        {
+          "itemId": 270930,
+          "name": "Tomb-Creeper's Claw",
+          "slot": "One-Hand",
+          "armorType": "Fist Weapon",
+          "itemLink": "|cnIQ4:|Hitem:270930::::::::90:262::6:1:3524:1:28:7362:::::|h[Tomb-Creeper's Claw]|h|r",
+          "track": "Myth",
+          "trackRank": "1/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7530467.jpg"
+        },
+        {
+          "itemId": 268230,
+          "name": "Crown of the Eternal Fang",
+          "slot": "Head",
+          "armorType": "Mail",
+          "itemLink": "|cnIQ4:|Hitem:268230::::::::90:262::6:1:3524:1:28:7362:::::|h[Crown of the Eternal Fang]|h|r",
+          "track": "Myth",
+          "trackRank": "1/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7705647.jpg"
+        },
+        {
+          "itemId": 268229,
+          "name": "Skullguard of the Risen Sacrifice",
+          "slot": "Head",
+          "armorType": "Plate",
+          "itemLink": "|cnIQ4:|Hitem:268229::::::::90:262::6:1:3524:1:28:7362:::::|h[Skullguard of the Risen Sacrifice]|h|r",
+          "track": "Myth",
+          "trackRank": "1/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7739389.jpg"
+        },
+        {
+          "itemId": 281227,
+          "name": "Soulcoiler's Rush'kah",
+          "slot": "Head",
+          "armorType": "",
+          "itemLink": "|cnIQ3:|Hitem:281227::::::::90:262::6:1:3524:1:28:7362:::::|h[Soulcoiler's Rush'kah]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7558105.jpg"
+        },
+        {
+          "itemId": 268248,
+          "name": "Amani Summoning Shawl",
+          "slot": "Back",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:268248::::::::90:262::6:1:3524:1:28:7362:::::|h[Amani Summoning Shawl]|h|r",
+          "track": "Myth",
+          "trackRank": "1/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7487939.jpg"
+        },
+        {
+          "itemId": 268235,
+          "name": "Vestment of the Awakening",
+          "slot": "Chest",
+          "armorType": "Leather",
+          "itemLink": "|cnIQ4:|Hitem:268235::::::::90:262::6:1:3524:1:28:7362:::::|h[Vestment of the Awakening]|h|r",
+          "track": "Myth",
+          "trackRank": "1/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7579166.jpg"
+        },
+        {
+          "itemId": 268240,
+          "name": "Restless Spirit Shackles",
+          "slot": "Wrist",
+          "armorType": "Leather",
+          "itemLink": "|cnIQ4:|Hitem:268240::::::::90:262::6:1:3524:1:28:7362:::::|h[Restless Spirit Shackles]|h|r",
+          "track": "Myth",
+          "trackRank": "1/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/8095063.jpg"
+        },
+        {
+          "itemId": 268216,
+          "name": "Cursed Reliquary Cincture",
+          "slot": "Waist",
+          "armorType": "Mail",
+          "itemLink": "|cnIQ4:|Hitem:268216::::::::90:262::6:1:3524:1:28:7362:::::|h[Cursed Reliquary Cincture]|h|r",
+          "track": "Myth",
+          "trackRank": "1/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7789852.jpg"
+        },
+        {
+          "itemId": 268236,
+          "name": "Initiate's Sacrificial Tights",
+          "slot": "Legs",
+          "armorType": "Cloth",
+          "itemLink": "|cnIQ4:|Hitem:268236::::::::90:262::6:1:3524:1:28:7362:::::|h[Initiate's Sacrificial Tights]|h|r",
+          "track": "Myth",
+          "trackRank": "1/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7667310.jpg"
+        },
+        {
+          "itemId": 268245,
+          "name": "Entombed Cultist's Sabatons",
+          "slot": "Feet",
+          "armorType": "Plate",
+          "itemLink": "|cnIQ4:|Hitem:268245::::::::90:262::6:1:3524:1:28:7362:::::|h[Entombed Cultist's Sabatons]|h|r",
+          "track": "Myth",
+          "trackRank": "1/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7515792.jpg"
+        },
+        {
+          "itemId": 268218,
+          "name": "Nek'zali's Spiritwalkers",
+          "slot": "Feet",
+          "armorType": "Cloth",
+          "itemLink": "|cnIQ4:|Hitem:268218::::::::90:262::6:1:3524:1:28:7362:::::|h[Nek'zali's Spiritwalkers]|h|r",
+          "track": "Myth",
+          "trackRank": "1/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7667305.jpg"
+        },
+        {
+          "itemId": 270162,
+          "name": "Soulcoiler Ritual Vessel",
+          "slot": "Trinket",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270162::::::::90:262::6:1:3524:1:28:7362:::::|h[Soulcoiler Ritual Vessel]|h|r",
+          "track": "Myth",
+          "trackRank": "1/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7956752.jpg"
+        }
+      ]
+    },
+    {
+      "encounterId": 2874,
+      "name": "Entombed Sentinels",
+      "items": [
+        {
+          "itemId": 264716,
+          "name": "Hexed Tomb Brazier",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ3:|Hitem:264716::::::::90:262::6:1:3524:1:28:7362:::::|h[Hexed Tomb Brazier]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7517842.jpg"
+        },
+        {
+          "itemId": 270912,
+          "name": "Venomcast Idol",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270912::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomcast Idol]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237234.jpg"
+        },
+        {
+          "itemId": 270911,
+          "name": "Venomcured Idol",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270911::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomcured Idol]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237242.jpg"
+        },
+        {
+          "itemId": 270913,
+          "name": "Venomforged Idol",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270913::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomforged Idol]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/133262.jpg"
+        },
+        {
+          "itemId": 270910,
+          "name": "Venomwoven Idol",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270910::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomwoven Idol]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237179.jpg"
+        },
+        {
+          "itemId": 268198,
+          "name": "Caustic Keeper-Crusher",
+          "slot": "Two-Hand",
+          "armorType": "Mace",
+          "itemLink": "|cnIQ4:|Hitem:268198::::::::90:262::6:1:3524:1:28:7362:::::|h[Caustic Keeper-Crusher]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7576051.jpg"
+        },
+        {
+          "itemId": 268204,
+          "name": "Ancient Construct's Venomshiv",
+          "slot": "One-Hand",
+          "armorType": "Dagger",
+          "itemLink": "|cnIQ4:|Hitem:268204::::::::90:262::6:1:3524:1:28:7362:::::|h[Ancient Construct's Venomshiv]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7701065.jpg"
+        },
+        {
+          "itemId": 268197,
+          "name": "Spine of the Hissing Abyss",
+          "slot": "Held In Off-hand",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:268197::::::::90:262::6:1:3524:1:28:7362:::::|h[Spine of the Hissing Abyss]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7500005.jpg"
+        },
+        {
+          "itemId": 268219,
+          "name": "Shadow Hunter's Warmask",
+          "slot": "Head",
+          "armorType": "Leather",
+          "itemLink": "|cnIQ4:|Hitem:268219::::::::90:262::6:1:3524:1:28:7362:::::|h[Shadow Hunter's Warmask]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7678400.jpg"
+        },
+        {
+          "itemId": 268250,
+          "name": "Sentinel's Vitriolic Chain",
+          "slot": "Neck",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:268250::::::::90:262::6:1:3524:1:28:7362:::::|h[Sentinel's Vitriolic Chain]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7866585.jpg"
+        },
+        {
+          "itemId": 268228,
+          "name": "Venom-Singed Cuffs",
+          "slot": "Wrist",
+          "armorType": "Cloth",
+          "itemLink": "|cnIQ4:|Hitem:268228::::::::90:262::6:1:3524:1:28:7362:::::|h[Venom-Singed Cuffs]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7807652.jpg"
+        },
+        {
+          "itemId": 268224,
+          "name": "Venom Warden's Greaves",
+          "slot": "Legs",
+          "armorType": "Plate",
+          "itemLink": "|cnIQ4:|Hitem:268224::::::::90:262::6:1:3524:1:28:7362:::::|h[Venom Warden's Greaves]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7515798.jpg"
+        },
+        {
+          "itemId": 270165,
+          "name": "Keeper's Seething Core",
+          "slot": "Trinket",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270165::::::::90:262::6:1:3524:1:28:7362:::::|h[Keeper's Seething Core]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7956747.jpg"
+        }
+      ]
+    },
+    {
+      "encounterId": 2894,
+      "name": "The Lost Explorers",
+      "items": [
+        {
+          "itemId": 279118,
+          "name": "Lost Explorers' Mailbox",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ3:|Hitem:279118::::::::90:262::6:1:3524:1:28:7362:::::|h[Lost Explorers' Mailbox]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/8033314.jpg"
+        },
+        {
+          "itemId": 270924,
+          "name": "Venomcast Remnant",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270924::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomcast Remnant]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237234.jpg"
+        },
+        {
+          "itemId": 270923,
+          "name": "Venomcured Remnant",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270923::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomcured Remnant]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237242.jpg"
+        },
+        {
+          "itemId": 270925,
+          "name": "Venomforged Remnant",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270925::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomforged Remnant]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/133262.jpg"
+        },
+        {
+          "itemId": 270922,
+          "name": "Venomwoven Remnant",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270922::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomwoven Remnant]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237179.jpg"
+        },
+        {
+          "itemId": 268210,
+          "name": "Malevolent Spiritcudgel",
+          "slot": "One-Hand",
+          "armorType": "Mace",
+          "itemLink": "|cnIQ4:|Hitem:268210::::::::90:262::6:1:3524:1:28:7362:::::|h[Malevolent Spiritcudgel]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7502390.jpg"
+        },
+        {
+          "itemId": 268200,
+          "name": "Gebbo's Backup Blaster",
+          "slot": "Ranged",
+          "armorType": "Gun",
+          "itemLink": "|cnIQ4:|Hitem:268200::::::::90:262::6:1:3524:1:28:7362:::::|h[Gebbo's Backup Blaster]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7476193.jpg"
+        },
+        {
+          "itemId": 268196,
+          "name": "Venom-Slashed Scuteward",
+          "slot": "Off Hand",
+          "armorType": "Shield",
+          "itemLink": "|cnIQ4:|Hitem:268196::::::::90:262::6:1:3524:1:28:7362:::::|h[Venom-Slashed Scuteward]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7553253.jpg"
+        },
+        {
+          "itemId": 268242,
+          "name": "Errant Scrollsage's Hood",
+          "slot": "Head",
+          "armorType": "Cloth",
+          "itemLink": "|cnIQ4:|Hitem:268242::::::::90:262::6:1:3524:1:28:7362:::::|h[Errant Scrollsage's Hood]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7667309.jpg"
+        },
+        {
+          "itemId": 268239,
+          "name": "Shellbound Bracers",
+          "slot": "Wrist",
+          "armorType": "Plate",
+          "itemLink": "|cnIQ4:|Hitem:268239::::::::90:262::6:1:3524:1:28:7362:::::|h[Shellbound Bracers]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7739385.jpg"
+        },
+        {
+          "itemId": 268227,
+          "name": "Unpossessed Skullsash",
+          "slot": "Waist",
+          "armorType": "Leather",
+          "itemLink": "|cnIQ4:|Hitem:268227::::::::90:262::6:1:3524:1:28:7362:::::|h[Unpossessed Skullsash]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7678393.jpg"
+        },
+        {
+          "itemId": 268258,
+          "name": "Boots of the Reckless Wayfarer",
+          "slot": "Feet",
+          "armorType": "Mail",
+          "itemLink": "|cnIQ4:|Hitem:268258::::::::90:262::6:1:3524:1:28:7362:::::|h[Boots of the Reckless Wayfarer]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7789853.jpg"
+        },
+        {
+          "itemId": 270160,
+          "name": "First Mate's Shellward",
+          "slot": "Trinket",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270160::::::::90:262::6:1:3524:1:28:7362:::::|h[First Mate's Shellward]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/6361206.jpg"
+        },
+        {
+          "itemId": 270164,
+          "name": "Gebbo's Bottomless Bag",
+          "slot": "Trinket",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270164::::::::90:262::6:1:3524:1:28:7362:::::|h[Gebbo's Bottomless Bag]|h|r",
+          "track": "Myth",
+          "trackRank": "2/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/4549224.jpg"
+        }
+      ]
+    },
+    {
+      "encounterId": 2882,
+      "name": "Vashnik the Malignant",
+      "items": [
+        {
+          "itemId": 270928,
+          "name": "Venomcast Icon",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270928::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomcast Icon]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237234.jpg"
+        },
+        {
+          "itemId": 270927,
+          "name": "Venomcured Icon",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270927::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomcured Icon]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237242.jpg"
+        },
+        {
+          "itemId": 270929,
+          "name": "Venomforged Icon",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270929::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomforged Icon]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/133262.jpg"
+        },
+        {
+          "itemId": 272361,
+          "name": "Venomous Pyre",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ3:|Hitem:272361::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomous Pyre]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7759687.jpg"
+        },
+        {
+          "itemId": 270926,
+          "name": "Venomwoven Icon",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270926::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomwoven Icon]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237179.jpg"
+        },
+        {
+          "itemId": 268214,
+          "name": "Malignant Toothed Edge",
+          "slot": "Two-Hand",
+          "armorType": "Sword",
+          "itemLink": "|cnIQ4:|Hitem:268214::::::::90:262::6:1:3524:1:28:7362:::::|h[Malignant Toothed Edge]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7506565.jpg"
+        },
+        {
+          "itemId": 268205,
+          "name": "Venomancer's Winged Channeler",
+          "slot": "Two-Hand",
+          "armorType": "Staff",
+          "itemLink": "|cnIQ4:|Hitem:268205::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomancer's Winged Channeler]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7502501.jpg"
+        },
+        {
+          "itemId": 268246,
+          "name": "Frothing Venom Spaulders",
+          "slot": "Shoulder",
+          "armorType": "Leather",
+          "itemLink": "|cnIQ4:|Hitem:268246::::::::90:262::6:1:3524:1:28:7362:::::|h[Frothing Venom Spaulders]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7679657.jpg"
+        },
+        {
+          "itemId": 268254,
+          "name": "Serpentine Mixing Belt",
+          "slot": "Waist",
+          "armorType": "Mail",
+          "itemLink": "|cnIQ4:|Hitem:268254::::::::90:262::6:1:3524:1:28:7362:::::|h[Serpentine Mixing Belt]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7705642.jpg"
+        },
+        {
+          "itemId": 268260,
+          "name": "Scaled Fiend's Warboots",
+          "slot": "Feet",
+          "armorType": "Plate",
+          "itemLink": "|cnIQ4:|Hitem:268260::::::::90:262::6:1:3524:1:28:7362:::::|h[Scaled Fiend's Warboots]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7730298.jpg"
+        },
+        {
+          "itemId": 268249,
+          "name": "Vile Alchemist's Band",
+          "slot": "Finger",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:268249::::::::90:262::6:1:3524:1:28:7362:::::|h[Vile Alchemist's Band]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7866597.jpg"
+        },
+        {
+          "itemId": 270161,
+          "name": "Fang of Umbral Malignance",
+          "slot": "Trinket",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270161::::::::90:262::6:1:3524:1:28:7362:::::|h[Fang of Umbral Malignance]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7956745.jpg"
+        },
+        {
+          "itemId": 270166,
+          "name": "Vashnik's Sanguine Rancor",
+          "slot": "Trinket",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270166::::::::90:262::6:1:3524:1:28:7362:::::|h[Vashnik's Sanguine Rancor]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/6011948.jpg"
+        }
+      ]
+    },
+    {
+      "encounterId": 2871,
+      "name": "Sszorak",
+      "items": [
+        {
+          "itemId": 270920,
+          "name": "Venomcast Relic",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270920::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomcast Relic]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237234.jpg"
+        },
+        {
+          "itemId": 270919,
+          "name": "Venomcured Relic",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270919::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomcured Relic]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237242.jpg"
+        },
+        {
+          "itemId": 270921,
+          "name": "Venomforged Relic",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270921::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomforged Relic]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/133262.jpg"
+        },
+        {
+          "itemId": 270918,
+          "name": "Venomwoven Relic",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270918::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomwoven Relic]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237179.jpg"
+        },
+        {
+          "itemId": 244343,
+          "name": "Vessel of the Howling Ossuary",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ3:|Hitem:244343::::::::90:262::6:1:3524:1:28:7362:::::|h[Vessel of the Howling Ossuary]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7417197.jpg"
+        },
+        {
+          "itemId": 268206,
+          "name": "Slithering Savage's Gavel",
+          "slot": "One-Hand",
+          "armorType": "Mace",
+          "itemLink": "|cnIQ4:|Hitem:268206::::::::90:262::6:1:3524:1:28:7362:::::|h[Slithering Savage's Gavel]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7502390.jpg"
+        },
+        {
+          "itemId": 268201,
+          "name": "Venomous Boneglaive",
+          "slot": "One-Hand",
+          "armorType": "Warglaives",
+          "itemLink": "|cnIQ4:|Hitem:268201::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomous Boneglaive]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7499262.jpg"
+        },
+        {
+          "itemId": 268234,
+          "name": "Ruthless Slaughtergrips",
+          "slot": "Hands",
+          "armorType": "Leather",
+          "itemLink": "|cnIQ4:|Hitem:268234::::::::90:262::6:1:3524:1:28:7362:::::|h[Ruthless Slaughtergrips]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7679654.jpg"
+        },
+        {
+          "itemId": 268257,
+          "name": "Caustic Chain-Wrapped Sash",
+          "slot": "Waist",
+          "armorType": "Cloth",
+          "itemLink": "|cnIQ4:|Hitem:268257::::::::90:262::6:1:3524:1:28:7362:::::|h[Caustic Chain-Wrapped Sash]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7520891.jpg"
+        },
+        {
+          "itemId": 268233,
+          "name": "Ferocious Scaleboots",
+          "slot": "Feet",
+          "armorType": "Mail",
+          "itemLink": "|cnIQ4:|Hitem:268233::::::::90:262::6:1:3524:1:28:7362:::::|h[Ferocious Scaleboots]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7557369.jpg"
+        },
+        {
+          "itemId": 268252,
+          "name": "Apex Brute's Claw Ring",
+          "slot": "Finger",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:268252::::::::90:262::6:1:3524:1:28:7362:::::|h[Apex Brute's Claw Ring]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7866608.jpg"
+        },
+        {
+          "itemId": 270174,
+          "name": "Idol of the Howling Nexus",
+          "slot": "Trinket",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270174::::::::90:262::6:1:3524:1:28:7362:::::|h[Idol of the Howling Nexus]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237237.jpg"
+        },
+        {
+          "itemId": 270163,
+          "name": "Sszorak's Ferocity",
+          "slot": "Trinket",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270163::::::::90:262::6:1:3524:1:28:7362:::::|h[Sszorak's Ferocity]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7956757.jpg"
+        }
+      ]
+    },
+    {
+      "encounterId": 2887,
+      "name": "The Twin Fangs",
+      "items": [
+        {
+          "itemId": 279122,
+          "name": "Venom-Fanged Font",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ3:|Hitem:279122::::::::90:262::6:1:3524:1:28:7362:::::|h[Venom-Fanged Font]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7967325.jpg"
+        },
+        {
+          "itemId": 270916,
+          "name": "Venomcast Effigy",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270916::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomcast Effigy]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237234.jpg"
+        },
+        {
+          "itemId": 270915,
+          "name": "Venomcured Effigy",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270915::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomcured Effigy]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237242.jpg"
+        },
+        {
+          "itemId": 270917,
+          "name": "Venomforged Effigy",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270917::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomforged Effigy]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/133262.jpg"
+        },
+        {
+          "itemId": 270914,
+          "name": "Venomwoven Effigy",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270914::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomwoven Effigy]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/237179.jpg"
+        },
+        {
+          "itemId": 268264,
+          "name": "Ravenous Feaster's Fang",
+          "slot": "One-Hand",
+          "armorType": "Dagger",
+          "itemLink": "|cnIQ4:|Hitem:268264::::::::90:262::6:1:3524:1:28:7362:::::|h[Ravenous Feaster's Fang]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7515621.jpg"
+        },
+        {
+          "itemId": 268251,
+          "name": "Amulet of the Twin Fangs",
+          "slot": "Neck",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:268251::::::::90:262::6:1:3524:1:28:7362:::::|h[Amulet of the Twin Fangs]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7866583.jpg"
+        },
+        {
+          "itemId": 268241,
+          "name": "Ornaments of the Eternal Coil",
+          "slot": "Shoulder",
+          "armorType": "Cloth",
+          "itemLink": "|cnIQ4:|Hitem:268241::::::::90:262::6:1:3524:1:28:7362:::::|h[Ornaments of the Eternal Coil]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7807660.jpg"
+        },
+        {
+          "itemId": 268223,
+          "name": "Ophidian Fangmail",
+          "slot": "Chest",
+          "armorType": "Mail",
+          "itemLink": "|cnIQ4:|Hitem:268223::::::::90:262::6:1:3524:1:28:7362:::::|h[Ophidian Fangmail]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7554477.jpg"
+        },
+        {
+          "itemId": 268220,
+          "name": "Scaleplate Strangulators",
+          "slot": "Hands",
+          "armorType": "Plate",
+          "itemLink": "|cnIQ4:|Hitem:268220::::::::90:262::6:1:3524:1:28:7362:::::|h[Scaleplate Strangulators]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7730302.jpg"
+        },
+        {
+          "itemId": 268261,
+          "name": "Bespittled Slitherslippers",
+          "slot": "Feet",
+          "armorType": "Leather",
+          "itemLink": "|cnIQ4:|Hitem:268261::::::::90:262::6:1:3524:1:28:7362:::::|h[Bespittled Slitherslippers]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7487936.jpg"
+        },
+        {
+          "itemId": 270171,
+          "name": "Preternatural Antivenom",
+          "slot": "Trinket",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270171::::::::90:262::6:1:3524:1:28:7362:::::|h[Preternatural Antivenom]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/6011929.jpg"
+        },
+        {
+          "itemId": 270170,
+          "name": "Vexhul's Everflowing Gland",
+          "slot": "Trinket",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270170::::::::90:262::6:1:3524:1:28:7362:::::|h[Vexhul's Everflowing Gland]|h|r",
+          "track": "Myth",
+          "trackRank": "3/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/6012071.jpg"
+        }
+      ]
+    },
+    {
+      "encounterId": 2883,
+      "name": "The Coiled Altar",
+      "items": [
+        {
+          "itemId": 279131,
+          "name": "Pillar of the Coiled Isle",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ3:|Hitem:279131::::::::90:262::6:1:3524:1:28:7362:::::|h[Pillar of the Coiled Isle]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7967329.jpg"
+        },
+        {
+          "itemId": 268213,
+          "name": "Maze-roa, Warlord's Fury",
+          "slot": "Two-Hand",
+          "armorType": "Axe",
+          "itemLink": "|cnIQ4:|Hitem:268213::::::::90:262::6:1:3524:1:28:7362:::::|h[Maze-roa, Warlord's Fury]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7455434.jpg"
+        },
+        {
+          "itemId": 268209,
+          "name": "Aman'muso, Warlord's Vengeance",
+          "slot": "Main Hand",
+          "armorType": "Axe",
+          "itemLink": "|cnIQ4:|Hitem:268209::::::::90:262::6:1:3524:1:28:7362:::::|h[Aman'muso, Warlord's Vengeance]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7736101.jpg"
+        },
+        {
+          "itemId": 268211,
+          "name": "Baleful Hexblade",
+          "slot": "One-Hand",
+          "armorType": "Sword",
+          "itemLink": "|cnIQ4:|Hitem:268211::::::::90:262::6:1:3524:1:28:7362:::::|h[Baleful Hexblade]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7723761.jpg"
+        },
+        {
+          "itemId": 275938,
+          "name": "Hex Lord's Gaze",
+          "slot": "Head",
+          "armorType": "",
+          "itemLink": "|cnIQ3:|Hitem:275938::::::::90:262::6:1:3524:1:28:7362:::::|h[Hex Lord's Gaze]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7652220.jpg"
+        },
+        {
+          "itemId": 275937,
+          "name": "Hex Lord's Visage",
+          "slot": "Head",
+          "armorType": "",
+          "itemLink": "|cnIQ3:|Hitem:275937::::::::90:262::6:1:3524:1:28:7362:::::|h[Hex Lord's Visage]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7652220.jpg"
+        },
+        {
+          "itemId": 268231,
+          "name": "Soulslither Spaulders",
+          "slot": "Shoulder",
+          "armorType": "Mail",
+          "itemLink": "|cnIQ4:|Hitem:268231::::::::90:262::6:1:3524:1:28:7362:::::|h[Soulslither Spaulders]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7705650.jpg"
+        },
+        {
+          "itemId": 268253,
+          "name": "Silken Voodoo Drape",
+          "slot": "Back",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:268253::::::::90:262::6:1:3524:1:28:7362:::::|h[Silken Voodoo Drape]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7678397.jpg"
+        },
+        {
+          "itemId": 268222,
+          "name": "Reckless Spirit Breastplate",
+          "slot": "Chest",
+          "armorType": "Plate",
+          "itemLink": "|cnIQ4:|Hitem:268222::::::::90:262::6:1:3524:1:28:7362:::::|h[Reckless Spirit Breastplate]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7515795.jpg"
+        },
+        {
+          "itemId": 268243,
+          "name": "Grasps of the Eternal Shadow",
+          "slot": "Hands",
+          "armorType": "Cloth",
+          "itemLink": "|cnIQ4:|Hitem:268243::::::::90:262::6:1:3524:1:28:7362:::::|h[Grasps of the Eternal Shadow]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7520895.jpg"
+        },
+        {
+          "itemId": 268259,
+          "name": "Girdle of Toxic Regret",
+          "slot": "Waist",
+          "armorType": "Plate",
+          "itemLink": "|cnIQ4:|Hitem:268259::::::::90:262::6:1:3524:1:28:7362:::::|h[Girdle of Toxic Regret]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7730297.jpg"
+        },
+        {
+          "itemId": 268256,
+          "name": "Sash of the Forlorn Vessel",
+          "slot": "Waist",
+          "armorType": "Leather",
+          "itemLink": "|cnIQ4:|Hitem:268256::::::::90:262::6:1:3524:1:28:7362:::::|h[Sash of the Forlorn Vessel]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7579159.jpg"
+        },
+        {
+          "itemId": 268225,
+          "name": "Coiled Hex Legguards",
+          "slot": "Legs",
+          "armorType": "Leather",
+          "itemLink": "|cnIQ4:|Hitem:268225::::::::90:262::6:1:3524:1:28:7362:::::|h[Coiled Hex Legguards]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7487943.jpg"
+        },
+        {
+          "itemId": 268237,
+          "name": "Cuisses of the Uncoiled Union",
+          "slot": "Legs",
+          "armorType": "Mail",
+          "itemLink": "|cnIQ4:|Hitem:268237::::::::90:262::6:1:3524:1:28:7362:::::|h[Cuisses of the Uncoiled Union]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7789850.jpg"
+        },
+        {
+          "itemId": 268255,
+          "name": "Cackling Soultreads",
+          "slot": "Feet",
+          "armorType": "Cloth",
+          "itemLink": "|cnIQ4:|Hitem:268255::::::::90:262::6:1:3524:1:28:7362:::::|h[Cackling Soultreads]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7807651.jpg"
+        },
+        {
+          "itemId": 270169,
+          "name": "Hex Lord's Dooming Idol",
+          "slot": "Trinket",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270169::::::::90:262::6:1:3524:1:28:7362:::::|h[Hex Lord's Dooming Idol]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/1001629.jpg"
+        },
+        {
+          "itemId": 270173,
+          "name": "Zul'jin's Guillotine Technique",
+          "slot": "Trinket",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270173::::::::90:262::6:1:3524:1:28:7362:::::|h[Zul'jin's Guillotine Technique]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7956755.jpg"
+        }
+      ]
+    },
+    {
+      "encounterId": 2895,
+      "name": "Ula'tek",
+      "items": [
+        {
+          "itemId": 279500,
+          "name": "\"Rage of the Shackled\" Mural",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ3:|Hitem:279500::::::::90:262::6:1:3524:1:28:7362:::::|h[\"Rage of the Shackled\" Mural]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/8123902.jpg"
+        },
+        {
+          "itemId": 275658,
+          "name": "Primeval Skyfriend",
+          "slot": "",
+          "armorType": "Mount",
+          "itemLink": "|cnIQ4:|Hitem:275658::::::::90:262::6:1:3524:1:28:872:::::|h[Primeval Skyfriend]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7703890.jpg"
+        },
+        {
+          "itemId": 270909,
+          "name": "Slumbering Coil Curio",
+          "slot": "",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270909::::::::90:262::6:1:3524:1:28:7362:::::|h[Slumbering Coil Curio]|h|r",
+          "track": null,
+          "trackRank": "0/0",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/538441.jpg"
+        },
+        {
+          "itemId": 268215,
+          "name": "Abyssal Broodfiend's Bardiche",
+          "slot": "Two-Hand",
+          "armorType": "Polearm",
+          "itemLink": "|cnIQ4:|Hitem:268215::::::::90:262::6:1:3524:1:28:7362:::::|h[Abyssal Broodfiend's Bardiche]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7480487.jpg"
+        },
+        {
+          "itemId": 271093,
+          "name": "Zatha'tek, Breath of Corruption",
+          "slot": "Main Hand",
+          "armorType": "Dagger",
+          "itemLink": "|cnIQ4:|Hitem:271093::::::::90:262::6:1:3524:1:28:7362:::::|h[Zatha'tek, Breath of Corruption]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7578560.jpg"
+        },
+        {
+          "itemId": 271092,
+          "name": "Jan'thrazet, the Soul Fang",
+          "slot": "One-Hand",
+          "armorType": "Dagger",
+          "itemLink": "|cnIQ4:|Hitem:271092::::::::90:262::6:1:3524:1:28:7362:::::|h[Jan'thrazet, the Soul Fang]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7850590.jpg"
+        },
+        {
+          "itemId": 268202,
+          "name": "Jaw of the Shackled Goddess",
+          "slot": "One-Hand",
+          "armorType": "Sword",
+          "itemLink": "|cnIQ4:|Hitem:268202::::::::90:262::6:1:3524:1:28:7362:::::|h[Jaw of the Shackled Goddess]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7723761.jpg"
+        },
+        {
+          "itemId": 268207,
+          "name": "Caustic Repose Greatbow",
+          "slot": "Ranged",
+          "armorType": "Bow",
+          "itemLink": "|cnIQ4:|Hitem:268207::::::::90:262::6:1:3524:1:28:7362:::::|h[Caustic Repose Greatbow]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7488509.jpg"
+        },
+        {
+          "itemId": 271875,
+          "name": "Gaze of the Coiled Watcher",
+          "slot": "Head",
+          "armorType": "Leather",
+          "itemLink": "|cnIQ4:|Hitem:271875::::::::90:262::6:1:3524:1:28:7362:::::|h[Gaze of the Coiled Watcher]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7579164.jpg"
+        },
+        {
+          "itemId": 271874,
+          "name": "Venomkeeper's Horrific Cowl",
+          "slot": "Head",
+          "armorType": "Cloth",
+          "itemLink": "|cnIQ4:|Hitem:271874::::::::90:262::6:1:3524:1:28:7362:::::|h[Venomkeeper's Horrific Cowl]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7520904.jpg"
+        },
+        {
+          "itemId": 268265,
+          "name": "Aqirbane Reliquary",
+          "slot": "Neck",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:268265::::::::90:262::6:1:3524:1:28:7362:::::|h[Aqirbane Reliquary]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7866590.jpg"
+        },
+        {
+          "itemId": 271876,
+          "name": "Awoken Dreadfang Cuirass",
+          "slot": "Chest",
+          "armorType": "Mail",
+          "itemLink": "|cnIQ4:|Hitem:271876::::::::90:262::6:1:3524:1:28:7362:::::|h[Awoken Dreadfang Cuirass]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7789856.jpg"
+        },
+        {
+          "itemId": 271878,
+          "name": "Chausses of Unbound Rancor",
+          "slot": "Legs",
+          "armorType": "Plate",
+          "itemLink": "|cnIQ4:|Hitem:271878::::::::90:262::6:1:3524:1:28:7362:::::|h[Chausses of Unbound Rancor]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7739390.jpg"
+        },
+        {
+          "itemId": 270168,
+          "name": "Font of Venomous Rage",
+          "slot": "Trinket",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270168::::::::90:262::6:1:3524:1:28:7362:::::|h[Font of Venomous Rage]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/4638540.jpg"
+        },
+        {
+          "itemId": 270175,
+          "name": "Voracious Heart of Ula'tek",
+          "slot": "Trinket",
+          "armorType": "",
+          "itemLink": "|cnIQ4:|Hitem:270175::::::::90:262::6:1:3524:1:28:7362:::::|h[Voracious Heart of Ula'tek]|h|r",
+          "track": "Myth",
+          "trackRank": "9/6",
+          "maxItemLevel": 0,
+          "icon": "https://render.worldofwarcraft.com/us/icons/56/7956750.jpg"
+        }
+      ]
+    }
+  ]
+}
