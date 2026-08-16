@@ -20,6 +20,7 @@ type Item = {
   track?: string;
   trackRank?: string;
   itemLevel?: number;
+  bonusList?: number[];
   tierToken?: boolean;
   isWeapon?: boolean;
   sourceItemId?: number;
@@ -46,6 +47,22 @@ type Raider = {
   rosterStatus?: RosterStatus;
 };
 type RosterStatus = "Main" | "Trial" | "Fill";
+type SimcSnapshot = {
+  name: string;
+  className: string;
+  spec: string;
+  region: string;
+  realm: string;
+  level: number | null;
+  gearSlots: number;
+  hasTalents: boolean;
+};
+type SimJob = SimcSnapshot & {
+  id: string;
+  createdAt: string;
+  input: string;
+  status: "ready";
+};
 type Boss = { name: string; items: Item[] };
 type Data = {
   raid: { raid: string; bosses: Boss[] };
@@ -105,6 +122,62 @@ const norm = (s?: string) =>
   String(s || "")
     .toLowerCase()
     .replace(/[^a-z0-9]/g, "");
+const simcClassNames: Record<string, string> = {
+  death_knight: "Death Knight",
+  demon_hunter: "Demon Hunter",
+  druid: "Druid",
+  evoker: "Evoker",
+  hunter: "Hunter",
+  mage: "Mage",
+  monk: "Monk",
+  paladin: "Paladin",
+  priest: "Priest",
+  rogue: "Rogue",
+  shaman: "Shaman",
+  warlock: "Warlock",
+  warrior: "Warrior",
+};
+const simcGearSlots = new Set([
+  "head",
+  "neck",
+  "shoulder",
+  "back",
+  "chest",
+  "wrist",
+  "hands",
+  "waist",
+  "legs",
+  "feet",
+  "finger1",
+  "finger2",
+  "trinket1",
+  "trinket2",
+  "main_hand",
+  "off_hand",
+]);
+function parseSimc(input: string): SimcSnapshot | null {
+  const lines = input.split(/\r?\n/u).map((line) => line.trim()),
+    actor = lines
+      .map((line) => line.match(/^([a-z_]+)="([^"]+)"/iu))
+      .find((match) => match && simcClassNames[match[1].toLowerCase()]);
+  if (!actor) return null;
+  const value = (key: string) =>
+      lines.find((line) => line.startsWith(`${key}=`))?.slice(key.length + 1) ||
+      "",
+    gearSlots = lines.filter((line) =>
+      simcGearSlots.has(line.split("=", 1)[0].toLowerCase()),
+    ).length;
+  return {
+    name: actor[2],
+    className: simcClassNames[actor[1].toLowerCase()],
+    spec: value("spec").replaceAll("_", " "),
+    region: value("region").toUpperCase(),
+    realm: value("server").replaceAll("_", " "),
+    level: Number(value("level")) || null,
+    gearSlots,
+    hasTalents: Boolean(value("talents") || value("class_talents")),
+  };
+}
 const inferredRole = (c: Raider) =>
   c.role === "Tank" ? "Tank" : c.role === "Heal" ? "Healer" : "DPS";
 const roleGlyph = (c: Raider) =>
@@ -520,7 +593,13 @@ export default function App() {
         "mythic",
     ),
     [view, setView] = useState<
-      "overview" | "plan" | "decisions" | "audit" | "history" | "wishlist"
+      | "overview"
+      | "plan"
+      | "decisions"
+      | "audit"
+      | "history"
+      | "wishlist"
+      | "sim"
     >("overview"),
     [open, setOpen] = useState(false),
     [rosterStatuses, setRosterStatuses] = useState<
@@ -536,6 +615,15 @@ export default function App() {
         ),
     ),
     [wishlistCharacter, setWishlistCharacter] = useState<number | null>(null),
+    [simcText, setSimcText] = useState(""),
+    [simJob, setSimJob] = useState<SimJob | null>(() => {
+      try {
+        return JSON.parse(localStorage.getItem("onlyflasks-sim-job-v1") || "null");
+      } catch {
+        return null;
+      }
+    }),
+    [simError, setSimError] = useState(""),
     [wishlistApiUrl, setWishlistApiUrl] = useState(""),
     [officerUnlocked, setOfficerUnlocked] = useState(false),
     [officerPrompt, setOfficerPrompt] = useState(false),
@@ -672,6 +760,42 @@ export default function App() {
     customWishlists[c.id] ||
     data?.bis.lists[specs[c.id] || c.defaultSpec]?.items ||
     [];
+  const createSimJob = () => {
+    const snapshot = parseSimc(simcText);
+    if (!snapshot) {
+      setSimError("This does not look like a complete /simc character export.");
+      return;
+    }
+    const rosterMatch = data?.characters.find(
+      (character) => norm(character.name) === norm(snapshot.name),
+    );
+    if (!rosterMatch) {
+      setSimError(`${snapshot.name} is not on the current raid roster.`);
+      return;
+    }
+    if (rosterMatch.class !== snapshot.className) {
+      setSimError(
+        `Class mismatch: roster says ${rosterMatch.class}, export says ${snapshot.className}.`,
+      );
+      return;
+    }
+    if (snapshot.gearSlots < 14) {
+      setSimError(
+        `Only ${snapshot.gearSlots}/16 equipped slots were detected. Paste the complete export.`,
+      );
+      return;
+    }
+    const job: SimJob = {
+      ...snapshot,
+      id: `sim-${rosterMatch.id}-${Date.now()}`,
+      createdAt: new Date().toISOString(),
+      input: simcText.trim(),
+      status: "ready",
+    };
+    localStorage.setItem("onlyflasks-sim-job-v1", JSON.stringify(job));
+    setSimJob(job);
+    setSimError("");
+  };
   const model = useMemo(() => {
     if (!data) return [];
     const boss = data.raid.bosses[bossIndex],
@@ -1080,6 +1204,12 @@ export default function App() {
               onClick={() => setView("wishlist")}
             >
               <Sparkles /> My wishlist
+            </button>
+            <button
+              className={view === "sim" ? "active" : ""}
+              onClick={() => setView("sim")}
+            >
+              <RefreshCw /> My sim
             </button>
           </div>
         </div>
@@ -1999,7 +2129,8 @@ export default function App() {
                       rawChoices = uniqueCandidates.filter(
                         (i) => slot(i.slot) === targetSlot && !i.catalyst,
                       ),
-                      raidSource = target.sourceItemId
+                      sourceTargetId = Number(target.sourceItemId || 0),
+                      raidSource = sourceTargetId
                         ? data.raid.bosses
                             .flatMap((b) =>
                               b.items.map((i) => ({
@@ -2008,11 +2139,11 @@ export default function App() {
                                 sourceType: "Raid",
                               })),
                             )
-                            .find((i) => +i.itemId === +target.sourceItemId)
+                            .find((i) => +i.itemId === sourceTargetId)
                         : null,
-                      seasonSource = target.sourceItemId
+                      seasonSource = sourceTargetId
                         ? data.seasonLoot?.items.find(
-                            (i) => +i.itemId === +target.sourceItemId,
+                            (i) => +i.itemId === sourceTargetId,
                           )
                         : null,
                       sourceItem = raidSource || seasonSource,
@@ -2159,6 +2290,111 @@ export default function App() {
               </section>
             );
           })()}
+        {view === "sim" && (
+          <section className="sim-page">
+            <div className="sim-hero">
+              <div>
+                <p className="rune">Personal simulation snapshot</p>
+                <h2>Paste once. We standardize the run.</h2>
+                <p>
+                  In game, type <b>/simc</b>, copy the complete export, and paste
+                  it below. Your snapshot remains in this browser during the
+                  prototype.
+                </p>
+              </div>
+              <div className="sim-stage">
+                <span className="active">1 · Snapshot</span>
+                <span>2 · Sim worker</span>
+                <span>3 · Loot plan</span>
+              </div>
+            </div>
+            <div className="sim-layout">
+              <div className="sim-input-card">
+                <div className="sim-card-title">
+                  <div>
+                    <small>SIMULATIONCRAFT EXPORT</small>
+                    <strong>Character snapshot</strong>
+                  </div>
+                  <span>{simcText.length.toLocaleString()} characters</span>
+                </div>
+                <textarea
+                  value={simcText}
+                  onChange={(event) => setSimcText(event.target.value)}
+                  placeholder={'mage="Nóva"\nlevel=90\nrace=...\nregion=us\nserver=hyjal\nspec=arcane\n...'}
+                  spellCheck={false}
+                />
+                {simError && <p className="sim-error">{simError}</p>}
+                <button
+                  className="sim-create"
+                  disabled={!simcText.trim()}
+                  onClick={createSimJob}
+                >
+                  Validate and create sim job
+                </button>
+              </div>
+              <aside className="sim-settings-card">
+                <div className="sim-card-title">
+                  <div>
+                    <small>LOCKED GUILD PRESET</small>
+                    <strong>Venomous Abyss · Season 2</strong>
+                  </div>
+                </div>
+                <div className="sim-setting">
+                  <span>Tool</span>
+                  <b>Droptimizer</b>
+                </div>
+                <div className="sim-setting">
+                  <span>Raid</span>
+                  <b>The Venomous Abyss · 1320</b>
+                </div>
+                <div className="sim-setting">
+                  <span>Variants</span>
+                  <b>Normal · Heroic · Mythic</b>
+                </div>
+                <div className="sim-setting">
+                  <span>Fight</span>
+                  <b>Patchwerk · 1 target · 5 min</b>
+                </div>
+                <div className="sim-setting">
+                  <span>Engine</span>
+                  <b>Nightly SimC · default APL</b>
+                </div>
+                <p>
+                  Raiders cannot change these settings, so every result remains
+                  directly comparable.
+                </p>
+              </aside>
+            </div>
+            {simJob && (
+              <div className="sim-job-card">
+                <i style={{ "--class": colors[simJob.className] } as React.CSSProperties} />
+                <div>
+                  <small>VALIDATED SNAPSHOT</small>
+                  <strong style={{ color: colors[simJob.className] }}>
+                    {simJob.name} · {simJob.spec || "Unknown spec"} {simJob.className}
+                  </strong>
+                  <span>
+                    {simJob.region || "?"} · {simJob.realm || "Unknown realm"} · {simJob.gearSlots}/16 gear slots · {simJob.hasTalents ? "talents included" : "talents missing"}
+                  </span>
+                </div>
+                <div className="sim-job-status">
+                  <b>READY FOR WORKER</b>
+                  <span>{new Date(simJob.createdAt).toLocaleString()}</span>
+                </div>
+              </div>
+            )}
+            <div className="sim-prototype-note">
+              <CircleAlert />
+              <div>
+                <strong>Prototype boundary</strong>
+                <span>
+                  Intake and validation are active. A simulation worker must be
+                  connected before this job can produce DPS results.
+                </span>
+              </div>
+            </div>
+          </section>
+        )}
         {view === "decisions" && (
           <>
             <section className="raid-context">
