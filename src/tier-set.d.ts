@@ -21,6 +21,7 @@ export declare function tierSetStatus<T = any>(input: {
     worn?: T;
     base?: T;
     source?: T;
+    sourceInBags: boolean;
     sourceTrack: string;
     sourceTrackOrder: number;
     track: string;

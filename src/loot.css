@@ -1220,3 +1220,8 @@ footer .data-freshness{width:100%}
 .tier-slot-visual.missing strong{color:#ffb3b3}
 .tier-legend .k-missing{color:#ff8a8a}
 .tier-legend .k-missing i{border-color:#ff4d4d;background:#ff4d4d33;box-shadow:0 0 6px -1px #ff4d4d80}
+
+/* --- An item in bags is not on the character; say so on the chip. --- */
+.from-bags{display:block;margin-top:2px;padding:1px 4px;border:1px solid currentColor;border-radius:3px;font-size:6px;font-style:normal;font-weight:950;letter-spacing:.06em;opacity:.9}
+.tier-slot-visual.in-bags{border-style:dashed}
+.tier-slot-visual{min-height:100px}

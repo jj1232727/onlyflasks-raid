@@ -52,6 +52,7 @@ export function tierSetStatus({ equipment = [], bags = [], tierIds = {}, charges
   const slots = TIER_SLOTS.map((slotName) => {
     const tierId = Number(tierIds[slotName] || 0),
       inSlot = equipment.filter((i) => slot(i.slot) === slotName),
+      bagsInSlot = bags.filter((i) => slot(i.slot) === slotName),
       equippedPiece = tierId ? inSlot.find((i) => +i.itemId === tierId) : undefined,
       storedPiece = tierId ? bags.find((i) => +i.itemId === tierId) : undefined,
       // What they actually have on in this slot, tier or not. This is the thing
@@ -61,7 +62,7 @@ export function tierSetStatus({ equipment = [], bags = [], tierIds = {}, charges
       // gear cannot, so it reads as missing rather than convertible.
       base = equippedPiece
         ? undefined
-        : [...inSlot, ...bags.filter((i) => slot(i.slot) === slotName)].find(
+        : [...inSlot, ...bagsInSlot].find(
             (i) => trackOrder(i) > 0 && !allTierIds.has(+i.itemId),
           );
     // The best track they hold for this slot, tier or not. Early in a tier
@@ -70,12 +71,17 @@ export function tierSetStatus({ equipment = [], bags = [], tierIds = {}, charges
     const source = [equippedPiece, storedPiece, worn, base]
       .filter(Boolean)
       .sort((a, b) => trackOrder(b) - trackOrder(a))[0];
+    // A base sitting in bags is not on the character. The chip shows its icon
+    // and its track, which reads as "they are wearing Champion gear" unless we
+    // say plainly that the item is in their bags.
+    const sourceInBags = Boolean(source && source !== equippedPiece && (storedPiece === source || bagsInSlot.includes(source)));
     return {
       slot: slotName,
       tierId,
       worn,
       base,
       source,
+      sourceInBags,
       sourceTrack: trackName(source),
       sourceTrackOrder: trackOrder(source),
       track: trackName(worn),

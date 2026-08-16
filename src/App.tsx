@@ -836,9 +836,21 @@ function CommandPalette({ commands, onClose }: { commands: Command[]; onClose: (
 // upgrades the droptimizer actually found. Expired sims are dropped by simFor,
 // so an empty list here means "nothing current", not "nothing good".
 function TierSimUpgrades({ data, c, difficulty, spec }: { data: Data; c: Raider; difficulty: Difficulty; spec: string }) {
+  // Tier page, so only tier counts: this character's actual set pieces and the
+  // class tokens that become them. A big weapon upgrade is real, but it belongs
+  // on the loot pages — here it just buries the tier answer.
+  const tierIds = new Set(
+    Object.values(
+      tierIdsForClass(data.auditActivity?.periodInfo?.current_season?.tier_items_by_slot, classIds[c.class]),
+    ).map(Number),
+  );
+  const isTier = (item: Item) =>
+    tierIds.has(+item.itemId) || (Boolean(item.tierToken) && tokenFitsClass(item, c));
   const upgrades = data.raid.bosses
     .flatMap((boss) =>
-      boss.items.map((item) => ({ item, boss, gain: simFor(data, c, item, boss, difficulty, spec) })),
+      boss.items
+        .filter(isTier)
+        .map((item) => ({ item, boss, gain: simFor(data, c, item, boss, difficulty, spec) })),
     )
     .filter((row) => Number(row.gain) > 0)
     .sort((a, b) => Number(b.gain) - Number(a.gain))
@@ -846,7 +858,7 @@ function TierSimUpgrades({ data, c, difficulty, spec }: { data: Data; c: Raider;
   if (!upgrades.length) return null;
   return (
     <div className="tier-sim-upgrades">
-      <b>TOP SIM UPGRADES</b>
+      <b>TOP TIER SIM UPGRADES</b>
       {upgrades.map(({ item, boss, gain }) => (
         <div key={`${boss.name}-${item.itemId}`} title={`${item.name}\n${boss.name}\n+${Number(gain).toFixed(2)}% ${difficulty}`}>
           <WowItem item={item} size={26} />
@@ -2089,11 +2101,11 @@ export default function App() {
                     </span>
                   </div>
                   <div className="tier-slots">
-                    {slots.map(({ slot: slotName, state, evidence, source, sourceTrack }) => (
+                    {slots.map(({ slot: slotName, state, evidence, source, sourceTrack, sourceInBags }) => (
                       <div
-                        className={`tier-slot-visual ${state}`}
+                        className={`tier-slot-visual ${state} ${sourceInBags ? "in-bags" : ""}`}
                         key={slotName}
-                        title={`${slotName[0] + slotName.slice(1).toLowerCase()}\n${evidence?.name || "Empty"}${sourceTrack ? ` · ${sourceTrack} track` : ""}\n${TIER_SLOT_HELP[state]}`}
+                        title={`${slotName[0] + slotName.slice(1).toLowerCase()}\n${evidence?.name || "Empty"}${sourceTrack ? ` · ${sourceTrack} track` : ""}${sourceInBags ? " — in bags, NOT equipped" : ""}\n${TIER_SLOT_HELP[state]}`}
                       >
                         <b
                           className={`slot-track t${/^[CHM]$/.test(trackLetter(source)) ? trackLetter(source) : "X"}`}
@@ -2116,6 +2128,7 @@ export default function App() {
                               {state === "tier" ? "TIER" : state === "stored" ? "IN BAGS" : "CATALYZE"}
                             </small>
                           )}
+                          {sourceInBags && state !== "stored" && <i className="from-bags">FROM BAGS</i>}
                         </span>
                       </div>
                     ))}

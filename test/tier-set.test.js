@@ -354,3 +354,50 @@ test("the app's row shape feeds tierDifficultyValue correctly", () => {
     "all-zero output means the row shape lost a field again",
   );
 });
+
+// --- Bags are not the character: an item in bags must not read as worn ---
+
+test("a catalyst base in bags is flagged as such, an equipped one is not", () => {
+  // Orchuntarded's real shape: last-tier gear worn, three Champion bases in bags.
+  const status = tierSetStatus({
+    equipment: [{ itemId: 249988, slot: "HEAD", bonusList: [12806], name: "last tier helm" }],
+    bags: [base("HEAD", 193765, CHAMP)],
+    tierIds,
+    charges: 0,
+  });
+  const head = status.slots.find((s) => s.slot === "HEAD");
+  assert.equal(head.state, "waiting", "convertible, no charge");
+  assert.equal(head.sourceTrack, "Champion", "the badge letter comes from the bag item");
+  assert.equal(head.sourceInBags, true, "and it must be marked as in bags");
+  assert.equal(status.pieces, 0, "bags are never counted as equipped tier");
+});
+
+test("an equipped base is not flagged as in bags", () => {
+  const status = tierSetStatus({ equipment: [base("HANDS", 900, CHAMP)], tierIds, charges: 1 });
+  const hands = status.slots.find((s) => s.slot === "HANDS");
+  assert.equal(hands.state, "ready");
+  assert.equal(hands.sourceInBags, false);
+});
+
+test("equipped tier outranks a bag item and is never flagged as bagged", () => {
+  const status = tierSetStatus({
+    equipment: [piece("HEAD", 100, HERO)],
+    bags: [base("HEAD", 900, MYTH)],
+    tierIds,
+  });
+  const head = status.slots.find((s) => s.slot === "HEAD");
+  assert.equal(head.state, "tier");
+  assert.equal(head.sourceInBags, false, "they are wearing the tier piece");
+  assert.equal(head.sourceTrack, "Hero");
+});
+
+test("last season's gear contributes no track, so the slot stays empty-handed", () => {
+  const status = tierSetStatus({
+    equipment: [{ itemId: 249987, slot: "LEGS", bonusList: [12806], name: "last tier legs" }],
+    tierIds,
+  });
+  const legs = status.slots.find((s) => s.slot === "LEGS");
+  assert.equal(legs.state, "missing");
+  assert.equal(legs.sourceTrackOrder, 0, "12806 is outside the current-season bands");
+  assert.equal(legs.sourceInBags, false);
+});
