@@ -1177,9 +1177,9 @@ export default function App() {
                                   >
                                     <a
                                       className={`overview-target ${state} ${suboptimal ? "suboptimal" : exact && target.catalyst ? "optimal" : catalystReady ? "catalyst-ready" : ""}`}
-                                      href={`https://www.wowhead.com/item=${target.itemId}`}
+                                      href={target.crafted ? undefined : `https://www.wowhead.com/item=${target.itemId}`}
                                       data-wowhead={target.crafted ? undefined : `item=${target.itemId}`}
-                                      target="_blank"
+                                      target={target.crafted ? undefined : "_blank"}
                                       title={`BIS TARGET\n${target.name}\n${target.crafted ? "Crafted stats are selected with missives\n" : ""}${detail}\nSource: ${source.raidBoss.name}`}
                                     >
                                       <img
