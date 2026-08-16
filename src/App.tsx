@@ -93,6 +93,8 @@ type Data = {
     characters?: any[];
   };
   raiderio?: { fetchedAt?: string; characters?: any[] };
+  // itemId -> icon, for bag/vault items that appear nowhere else.
+  itemIcons?: Record<string, string>;
   specs: string[];
   refreshedAt?: string;
 };
@@ -656,7 +658,7 @@ function WowItem({ item, size = 44 }: { item: Item; size?: number }) {
     </a>
   );
 }
-function TierResourceSnapshot({ info, visuals, compact = false }: { info: any; visuals: Map<number, Item>; compact?: boolean }) {
+function TierResourceSnapshot({ info, visuals, icons = {}, compact = false }: { info: any; visuals: Map<number, Item>; icons?: Record<string, string>; compact?: boolean }) {
   if (!info?.snapshotAt) return (
     <div className={`tier-resource-snapshot no-data ${compact ? "compact" : ""}`}>
       <div className="resource-empty"><CircleAlert /><span><strong>SIMC NEEDED</strong><small>Tier resources not captured</small></span></div>
@@ -704,7 +706,7 @@ function TierResourceSnapshot({ info, visuals, compact = false }: { info: any; v
         <b>VAULT</b>
         {choices.length === 0 && <span className="vault-empty">No reward choices unlocked this week.</span>}
         {choices.map(({ item, kind }, index) => {
-          const visual = { ...item, ...(visuals.get(+item.itemId) || {}), bonusList: item.bonusList, itemLevel: item.itemLevel },
+          const visual = { ...item, ...(visuals.get(+item.itemId) || {}), icon: visuals.get(+item.itemId)?.icon || item.icon || icons[String(item.itemId)], bonusList: item.bonusList, itemLevel: item.itemLevel },
             track = currentSeasonTrackName(item), rank = currentSeasonTrackRank(item),
             badge = kind === "tier" ? "TIER" : kind === "catalyst" ? "↻" : "",
             detail = [visual.itemLevel ? `${visual.itemLevel} ilvl` : "", track ? `${track} ${rank}/6` : "", badge].filter(Boolean).join(" · ");
@@ -718,7 +720,7 @@ function TierResourceSnapshot({ info, visuals, compact = false }: { info: any; v
         <div className="vault-choice-icons bags-row">
           <b>BAGS</b>
           {bagged.map(({ item, kind }, index) => {
-            const visual = { ...item, ...(visuals.get(+item.itemId) || {}), bonusList: item.bonusList, itemLevel: item.itemLevel },
+            const visual = { ...item, ...(visuals.get(+item.itemId) || {}), icon: visuals.get(+item.itemId)?.icon || item.icon || icons[String(item.itemId)], bonusList: item.bonusList, itemLevel: item.itemLevel },
               track = currentSeasonTrackName(item), rank = currentSeasonTrackRank(item),
               detail = [
                 slot(item.slot)[0] + slot(item.slot).slice(1).toLowerCase(),
@@ -2162,7 +2164,7 @@ export default function App() {
                     ))}
                   </div>
                   <TierSimUpgrades data={data} c={c} difficulty={difficulty} spec={specs[c.id] || c.defaultSpec} />
-                  <TierResourceSnapshot info={{ catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, bagTier, bagBases, crests, snapshotAt }} visuals={visualItems} />
+                  <TierResourceSnapshot info={{ catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, bagTier, bagBases, crests, snapshotAt }} visuals={visualItems} icons={data.itemIcons || {}} />
                 </div>
               ))}
             </div>
@@ -3528,7 +3530,7 @@ export default function App() {
                           <ClipboardCheck /> Gear checks passed
                         </div>
                       )}
-                      <TierResourceSnapshot info={tierInfo} visuals={visualItems} compact />
+                      <TierResourceSnapshot info={tierInfo} visuals={visualItems} icons={data.itemIcons || {}} compact />
                       <div className="vault-placeholder live">
                         <strong>Weekly activity</strong>
                         <span className={raidProgress >= 6 ? "done" : "behind"}>
