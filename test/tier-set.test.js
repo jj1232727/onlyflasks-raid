@@ -5,6 +5,7 @@ import { bonusForPieces, tierDifficultyValue, tierIdsForClass, tierRosterSummary
 // Midnight S2 upgrade-track bonus ids.
 const CHAMP = 12835, HERO = 12843, MYTH = 12851, LAST_SEASON = 11111;
 const tierIds = { HEAD: 100, SHOULDER: 101, CHEST: 102, HANDS: 103, LEGS: 104 };
+const TIER_SLOTS_TEST = ["HEAD", "SHOULDER", "CHEST", "HANDS", "LEGS"];
 const piece = (slot, id, bonus) => ({ itemId: id, slot, bonusList: [bonus], name: `${slot} tier` });
 const base = (slot, id, bonus = CHAMP) => ({ itemId: id, slot, bonusList: [bonus], name: `${slot} base` });
 
@@ -355,10 +356,10 @@ test("the app's row shape feeds tierDifficultyValue correctly", () => {
   );
 });
 
-// --- Bags are not the character: an item in bags must not read as worn ---
+// --- Bags are a separate holding, not part of what the character has on ---
 
-test("a catalyst base in bags is flagged as such, an equipped one is not", () => {
-  // Orchuntarded's real shape: last-tier gear worn, three Champion bases in bags.
+test("a bag item never appears in a slot's equipped state", () => {
+  // Orchuntarded's real shape: last-tier gear worn, Champion bases in bags.
   const status = tierSetStatus({
     equipment: [{ itemId: 249988, slot: "HEAD", bonusList: [12806], name: "last tier helm" }],
     bags: [base("HEAD", 193765, CHAMP)],
@@ -366,38 +367,48 @@ test("a catalyst base in bags is flagged as such, an equipped one is not", () =>
     charges: 0,
   });
   const head = status.slots.find((s) => s.slot === "HEAD");
-  assert.equal(head.state, "waiting", "convertible, no charge");
-  assert.equal(head.sourceTrack, "Champion", "the badge letter comes from the bag item");
-  assert.equal(head.sourceInBags, true, "and it must be marked as in bags");
-  assert.equal(status.pieces, 0, "bags are never counted as equipped tier");
+  assert.equal(head.state, "missing", "nothing usable is EQUIPPED in that slot");
+  assert.equal(head.worn.itemId, 249988, "the chip shows what is on them");
+  assert.equal(head.sourceTrackOrder, 0, "last season's gear has no current track");
+  assert.equal(status.pieces, 0);
+  assert.equal(status.bagBases.length, 1, "the Champion base is reported as a bag holding");
+  assert.equal(status.bagTier.length, 0);
 });
 
-test("an equipped base is not flagged as in bags", () => {
+test("a worn base still drives the slot state", () => {
   const status = tierSetStatus({ equipment: [base("HANDS", 900, CHAMP)], tierIds, charges: 1 });
   const hands = status.slots.find((s) => s.slot === "HANDS");
   assert.equal(hands.state, "ready");
-  assert.equal(hands.sourceInBags, false);
+  assert.equal(hands.sourceTrack, "Champion");
+  assert.equal(status.bagBases.length, 0);
 });
 
-test("equipped tier outranks a bag item and is never flagged as bagged", () => {
-  const status = tierSetStatus({
-    equipment: [piece("HEAD", 100, HERO)],
-    bags: [base("HEAD", 900, MYTH)],
-    tierIds,
-  });
-  const head = status.slots.find((s) => s.slot === "HEAD");
-  assert.equal(head.state, "tier");
-  assert.equal(head.sourceInBags, false, "they are wearing the tier piece");
-  assert.equal(head.sourceTrack, "Hero");
+test("tier sitting in bags is a holding, not an equipped slot", () => {
+  const status = tierSetStatus({ equipment: [], bags: [piece("HEAD", 100, HERO)], tierIds });
+  assert.equal(status.slots.find((s) => s.slot === "HEAD").state, "missing");
+  assert.equal(status.bagTier.length, 1);
+  assert.equal(status.freePieces, 1, "still counts toward what they could reach");
+  assert.equal(status.pieces, 0, "but not toward the live set bonus");
 });
 
-test("last season's gear contributes no track, so the slot stays empty-handed", () => {
+test("a slot holding both a bag piece and a base is only counted once", () => {
   const status = tierSetStatus({
-    equipment: [{ itemId: 249987, slot: "LEGS", bonusList: [12806], name: "last tier legs" }],
+    equipment: [base("HEAD", 900, CHAMP)],
+    bags: [piece("HEAD", 100, CHAMP)],
     tierIds,
+    charges: 3,
   });
-  const legs = status.slots.find((s) => s.slot === "LEGS");
-  assert.equal(legs.state, "missing");
-  assert.equal(legs.sourceTrackOrder, 0, "12806 is outside the current-season bands");
-  assert.equal(legs.sourceInBags, false);
+  assert.equal(status.freePieces, 1);
+  assert.equal(status.convertibleSlots, 0, "the free bag piece already claims that slot");
+  assert.equal(status.reachable, 1, "not 2 — reachable must never double count a slot");
+});
+
+test("reachable never exceeds five even with a full bag", () => {
+  const status = tierSetStatus({
+    equipment: TIER_SLOTS_TEST.map((s, n) => base(s, 900 + n, CHAMP)),
+    bags: TIER_SLOTS_TEST.map((s, n) => piece(s, 100 + n, CHAMP)),
+    tierIds,
+    charges: 5,
+  });
+  assert.equal(status.reachable, 5);
 });

@@ -49,57 +49,49 @@ export function tierIdsForClass(tierItemsBySlot, classId) {
 
 export function tierSetStatus({ equipment = [], bags = [], tierIds = {}, charges = 0 }) {
   const allTierIds = new Set(Object.values(tierIds).map(Number));
+
+  // A slot describes the character, not their inventory: what is ON them right
+  // now. Bags and the vault are separate holdings and get their own rows — the
+  // chip row was previously showing a bag item's icon in a slot the raider had
+  // something else equipped in, which read as "they are wearing this".
   const slots = TIER_SLOTS.map((slotName) => {
     const tierId = Number(tierIds[slotName] || 0),
       inSlot = equipment.filter((i) => slot(i.slot) === slotName),
-      bagsInSlot = bags.filter((i) => slot(i.slot) === slotName),
       equippedPiece = tierId ? inSlot.find((i) => +i.itemId === tierId) : undefined,
-      storedPiece = tierId ? bags.find((i) => +i.itemId === tierId) : undefined,
-      // What they actually have on in this slot, tier or not. This is the thing
-      // a raid leader looks at: "they have a Champion hand they could catalyse".
       worn = equippedPiece || inSlot[0],
-      // Any current-season non-tier piece here can feed the Catalyst. Off-season
-      // gear cannot, so it reads as missing rather than convertible.
-      base = equippedPiece
-        ? undefined
-        : [...inSlot, ...bagsInSlot].find(
-            (i) => trackOrder(i) > 0 && !allTierIds.has(+i.itemId),
-          );
-    // The best track they hold for this slot, tier or not. Early in a tier
-    // nobody has set pieces yet, so the track that decides "do we go back to
-    // Heroic" is the track of the base they would catalyse.
-    const source = [equippedPiece, storedPiece, worn, base]
-      .filter(Boolean)
-      .sort((a, b) => trackOrder(b) - trackOrder(a))[0];
-    // A base sitting in bags is not on the character. The chip shows its icon
-    // and its track, which reads as "they are wearing Champion gear" unless we
-    // say plainly that the item is in their bags.
-    const sourceInBags = Boolean(source && source !== equippedPiece && (storedPiece === source || bagsInSlot.includes(source)));
+      // A worn non-tier piece of this season can feed the Catalyst. Off-season
+      // gear cannot, so it reads as nothing usable.
+      wornBase = equippedPiece ? undefined : inSlot.find((i) => trackOrder(i) > 0 && !allTierIds.has(+i.itemId));
     return {
       slot: slotName,
       tierId,
       worn,
-      base,
-      source,
-      sourceInBags,
-      sourceTrack: trackName(source),
-      sourceTrackOrder: trackOrder(source),
+      base: wornBase,
+      source: worn,
+      sourceTrack: trackName(worn),
+      sourceTrackOrder: trackOrder(worn),
       track: trackName(worn),
       trackOrder: trackOrder(worn),
-      state: equippedPiece
-        ? "tier"
-        : storedPiece
-          ? "stored"
-          : base
-            ? (charges > 0 ? "ready" : "waiting")
-            : "missing",
-      evidence: equippedPiece || worn || storedPiece,
+      state: equippedPiece ? "tier" : wornBase ? (charges > 0 ? "ready" : "waiting") : "missing",
+      evidence: worn,
     };
   });
 
+  // Everything held elsewhere that could still become a tier piece.
+  const inTierSlot = (i) => TIER_SLOTS.includes(slot(i.slot));
+  const bagTier = bags.filter((i) => allTierIds.has(+i.itemId)),
+    bagBases = bags.filter((i) => inTierSlot(i) && trackOrder(i) > 0 && !allTierIds.has(+i.itemId));
+
+  const bySlot = (items) => new Set(items.map((i) => slot(i.slot)));
+  const tierSlots = new Set(slots.filter((x) => x.state === "tier").map((x) => x.slot)),
+    bagTierSlots = bySlot(bagTier),
+    baseSlots = new Set([
+      ...slots.filter((x) => x.state === "ready" || x.state === "waiting").map((x) => x.slot),
+      ...bySlot(bagBases),
+    ]);
+
   const count = (state) => slots.filter((x) => x.state === state).length,
     pieces = count("tier"),
-    stored = count("stored"),
     ready = count("ready"),
     waiting = count("waiting"),
     missing = count("missing");
@@ -110,16 +102,23 @@ export function tierSetStatus({ equipment = [], bags = [], tierIds = {}, charges
     if (entry.state === "tier" && entry.track) trackMix[entry.track] = (trackMix[entry.track] || 0) + 1;
   }
 
-  // Equipping from bags is free; catalysing is capped by charges in hand.
-  const catalysable = Math.min(ready, Math.max(0, charges || 0)),
-    reachable = Math.min(TIER_SLOTS.length, pieces + stored + catalysable),
+  // Count each slot once, best path first: already worn > free from bags >
+  // convert with a charge. Otherwise a slot holding both a bag piece and a
+  // base would be counted twice and reachable could exceed five.
+  const freeSlots = [...bagTierSlots].filter((s) => !tierSlots.has(s)).length,
+    convertibleSlots = [...baseSlots].filter((s) => !tierSlots.has(s) && !bagTierSlots.has(s)).length,
+    catalysable = Math.min(convertibleSlots, Math.max(0, charges || 0)),
+    reachable = Math.min(TIER_SLOTS.length, pieces + freeSlots + catalysable),
     setBonus = bonusForPieces(pieces),
     reachableBonus = bonusForPieces(reachable);
 
   return {
-    slots, pieces, stored, ready, waiting, missing,
+    slots, pieces, ready, waiting, missing,
+    bagTier, bagBases,
+    stored: freeSlots,
     trackMix, setBonus, reachable, reachableBonus,
-    freePieces: stored,
+    freePieces: freeSlots,
+    convertibleSlots,
     catalysable,
     // A better set bonus available right now, with no new drops needed.
     hiddenUpgrade: reachableBonus > setBonus,
@@ -131,7 +130,7 @@ export function tierSetStatus({ equipment = [], bags = [], tierIds = {}, charges
     verdict:
       pieces >= 4 ? "done"
         : reachable >= 4 ? "self"
-          : waiting > 0 && pieces + stored + ready + waiting >= 4 ? "charge"
+          : pieces + freeSlots + convertibleSlots >= 4 ? "charge"
             : "drop",
   };
 }

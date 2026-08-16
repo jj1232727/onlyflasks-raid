@@ -669,6 +669,11 @@ function TierResourceSnapshot({ info, visuals, compact = false }: { info: any; v
       ...(info.vaultTier || []).map((item: Item) => ({ item, kind: "tier" as const })),
       ...(info.vaultCatalyst || []).map((item: Item) => ({ item, kind: "catalyst" as const })),
       ...(info.vaultOther || []).map((item: Item) => ({ item, kind: "other" as const })),
+    ],
+    // Bags are a holding, not something the character is wearing. Own row.
+    bagged = [
+      ...(info.bagTier || []).map((item: Item) => ({ item, kind: "tier" as const })),
+      ...(info.bagBases || []).map((item: Item) => ({ item, kind: "base" as const })),
     ];
   const preReset = isBeforeReset(info.snapshotAt);
   return (
@@ -709,6 +714,30 @@ function TierResourceSnapshot({ info, visuals, compact = false }: { info: any; v
           </div>;
         })}
       </div>
+      {bagged.length > 0 && (
+        <div className="vault-choice-icons bags-row">
+          <b>BAGS</b>
+          {bagged.map(({ item, kind }, index) => {
+            const visual = { ...item, ...(visuals.get(+item.itemId) || {}), bonusList: item.bonusList, itemLevel: item.itemLevel },
+              track = currentSeasonTrackName(item), rank = currentSeasonTrackRank(item),
+              detail = [
+                slot(item.slot)[0] + slot(item.slot).slice(1).toLowerCase(),
+                track ? `${track} ${rank}/6` : "",
+                kind === "tier" ? "EQUIP IT" : "↻ BASE",
+              ].filter(Boolean).join(" · ");
+            return (
+              <div
+                className={kind === "tier" ? "exact" : "catalyst"}
+                key={`bag-${item.itemId}-${index}`}
+                title={`${visual.name}\n${detail}\n${kind === "tier" ? "Tier piece in their bags — they only need to equip it" : "Catalyst base in their bags"}`}
+              >
+                <WowItem item={visual} size={compact ? 32 : 38} />
+                <span><strong>{visual.name}</strong><small>{detail}</small></span>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
@@ -2065,11 +2094,11 @@ export default function App() {
             </div>
             <div className="tier-legend">
               <span className="k-tier"><i />Tier equipped</span>
-              <span className="k-ready"><i />Can catalyze now (charge in hand)</span>
-              <span className="k-waiting"><i />Convertible, needs a charge</span>
-              <span className="k-missing"><i />Needs a drop</span>
+              <span className="k-ready"><i />Worn base, charge in hand</span>
+              <span className="k-waiting"><i />Worn base, no charge</span>
+              <span className="k-missing"><i />Nothing usable equipped</span>
               <span className="legend-split">
-                Corner letter = best track held in that slot:
+                Letter = track of the item they have on:
                 <b className="tC">C</b> Champion / Normal
                 <b className="tH">H</b> Hero / Heroic
                 <b className="tM">M</b> Myth / Mythic
@@ -2078,7 +2107,7 @@ export default function App() {
             </div>
             <div className="tier-grid">
               {tierStatus.map(
-                ({ c, slots, equippedCount, storedCount, readyCount, waitingCount, trackMix, setBonus, reachable, reachableBonus, hiddenUpgrade, freePieces, catalysable, catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, crests, snapshotAt }) => (
+                ({ c, slots, equippedCount, storedCount, readyCount, waitingCount, trackMix, setBonus, reachable, reachableBonus, hiddenUpgrade, freePieces, catalysable, catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, bagTier, bagBases, crests, snapshotAt }) => (
                 <div
                   className={`tier-person ${equippedCount === 5 ? "tier-complete" : ""} ${hiddenUpgrade ? "tier-actionable" : ""}`}
                   key={c.id}
@@ -2101,11 +2130,11 @@ export default function App() {
                     </span>
                   </div>
                   <div className="tier-slots">
-                    {slots.map(({ slot: slotName, state, evidence, source, sourceTrack, sourceInBags }) => (
+                    {slots.map(({ slot: slotName, state, evidence, source, sourceTrack }) => (
                       <div
-                        className={`tier-slot-visual ${state} ${sourceInBags ? "in-bags" : ""}`}
+                        className={`tier-slot-visual ${state}`}
                         key={slotName}
-                        title={`${slotName[0] + slotName.slice(1).toLowerCase()}\n${evidence?.name || "Empty"}${sourceTrack ? ` · ${sourceTrack} track` : ""}${sourceInBags ? " — in bags, NOT equipped" : ""}\n${TIER_SLOT_HELP[state]}`}
+                        title={`${slotName[0] + slotName.slice(1).toLowerCase()}\n${evidence?.name || "Empty"}${sourceTrack ? ` · ${sourceTrack} track` : ""}\n${TIER_SLOT_HELP[state]}`}
                       >
                         <b
                           className={`slot-track t${/^[CHM]$/.test(trackLetter(source)) ? trackLetter(source) : "X"}`}
@@ -2128,13 +2157,12 @@ export default function App() {
                               {state === "tier" ? "TIER" : state === "stored" ? "IN BAGS" : "CATALYZE"}
                             </small>
                           )}
-                          {sourceInBags && state !== "stored" && <i className="from-bags">FROM BAGS</i>}
                         </span>
                       </div>
                     ))}
                   </div>
                   <TierSimUpgrades data={data} c={c} difficulty={difficulty} spec={specs[c.id] || c.defaultSpec} />
-                  <TierResourceSnapshot info={{ catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, crests, snapshotAt }} visuals={visualItems} />
+                  <TierResourceSnapshot info={{ catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, bagTier, bagBases, crests, snapshotAt }} visuals={visualItems} />
                 </div>
               ))}
             </div>

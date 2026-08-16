@@ -31,6 +31,9 @@ export declare function tierSetStatus<T = any>(input: {
   }[];
   pieces: number;
   stored: number;
+  bagTier: T[];
+  bagBases: T[];
+  convertibleSlots: number;
   ready: number;
   waiting: number;
   missing: number;
