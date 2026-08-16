@@ -27,6 +27,7 @@
     "raid:board": "node scripts/build-raid-board.js",
     "raid:import": "node scripts/import-raid-loot.js",
     "raid:icons": "node scripts/enrich-raid-icons.js",
+    "raid:effects": "node scripts/enrich-raid-effects.js",
     "gear:icons": "node scripts/enrich-gear-icons.js",
     "test": "node --test"
   },

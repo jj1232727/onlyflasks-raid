@@ -33,6 +33,8 @@ type Item = {
   source?: string;
   sourceType?: string;
   encounter?: string;
+  specialEffect?: boolean;
+  effectText?: string;
 };
 type Raider = {
   id: number;
@@ -452,11 +454,15 @@ function vaultTip(
 }
 function WowItem({ item, size = 44 }: { item: Item; size?: number }) {
   const bonus = item.bonusList?.length ? item.bonusList.join(":") : "",
-    wowhead = `item=${item.itemId}${bonus ? `&bonus=${bonus}` : ""}`;
+    options = [
+      bonus ? `bonus=${bonus}` : "",
+      item.itemLevel ? `ilvl=${item.itemLevel}` : "",
+    ].filter(Boolean),
+    wowhead = `item=${item.itemId}${options.length ? `&${options.join("&")}` : ""}`;
   return (
     <a
       className="item-art"
-      href={`https://www.wowhead.com/item=${item.itemId}${bonus ? `?bonus=${bonus}` : ""}`}
+      href={`https://www.wowhead.com/item=${item.itemId}${options.length ? `?${options.join("&")}` : ""}`}
       data-wowhead={wowhead}
       target="_blank"
     >
@@ -696,9 +702,7 @@ export default function App() {
               cur,
               target,
               sim: simFor(data, c, item, boss, difficulty),
-              ilvl: cur
-                ? Math.max(0, expected - (cur.itemLevel || 0))
-                : expected,
+              ilvl: cur ? expected - (cur.itemLevel || 0) : expected,
             },
           ];
         });
@@ -750,9 +754,7 @@ export default function App() {
                   c,
                   cur,
                   sim: simFor(data, c, item, boss, difficulty),
-                  ilvl: cur
-                    ? Math.max(0, expected - (cur.itemLevel || 0))
-                    : expected,
+                  ilvl: cur ? expected - (cur.itemLevel || 0) : expected,
                 },
               ];
             })
@@ -772,7 +774,8 @@ export default function App() {
             });
           const highImpact =
             slot(item.slot) === "TRINKET" ||
-            ["MAIN_HAND", "OFF_HAND"].includes(slot(item.slot));
+            ["MAIN_HAND", "OFF_HAND"].includes(slot(item.slot)) ||
+            item.specialEffect;
           return highImpact && people.length > 1
             ? [{ boss, bossIndex, item, people, expected }]
             : [];
@@ -783,7 +786,6 @@ export default function App() {
   }, [data, specs, difficulty, rosterStatuses, customWishlists]);
   if (!data) return <div className="loading">Loading the raid board…</div>;
   const boss = data.raid.bosses[bossIndex],
-    claims = model.reduce((n, x) => n + x.people.length, 0),
     activityById = new Map(
       (data.auditActivity?.characters || []).map((x: any) => [+x.id, x.data]),
     ),
@@ -1079,12 +1081,6 @@ export default function App() {
             >
               <Sparkles /> My wishlist
             </button>
-          </div>
-          <div className="summary">
-            <strong>{model.filter((x) => x.people.length).length}</strong>
-            <span>priority drops</span>
-            <strong>{claims}</strong>
-            <span>claims</span>
           </div>
         </div>
       </header>
@@ -1637,18 +1633,32 @@ export default function App() {
                     className="plan-row contested"
                     key={`${boss.name}-${item.itemId}`}
                   >
-                    <WowItem item={item} size={48} />
+                    <WowItem
+                      item={{ ...item, itemLevel: expected }}
+                      size={48}
+                    />
                     <div className="plan-drop">
                       <strong>{item.name}</strong>
                       <div className="plan-meta">
                         <span
-                          className={
+                          className={`type ${
                             slot(item.slot) === "TRINKET"
-                              ? "type trinket"
-                              : "type weapon"
-                          }
+                              ? "trinket"
+                              : ["MAIN_HAND", "OFF_HAND"].includes(
+                                    slot(item.slot),
+                                  )
+                                ? "weapon"
+                                : "effect"
+                          }`}
+                          title={item.effectText}
                         >
-                          {slot(item.slot) === "TRINKET" ? "TRINKET" : "WEAPON"}
+                          {slot(item.slot) === "TRINKET"
+                            ? "TRINKET"
+                            : ["MAIN_HAND", "OFF_HAND"].includes(
+                                  slot(item.slot),
+                                )
+                              ? "WEAPON"
+                              : "SPECIAL EFFECT"}
                         </span>
                         <span className="drop-boss">
                           <small>DROPS FROM</small>
@@ -1660,43 +1670,90 @@ export default function App() {
                         </span>
                       </div>
                     </div>
-                    <div className="contenders">
-                      {people.slice(0, 4).map((p, rank) => {
-                        const status =
-                            rosterStatuses[p.c.id] ||
-                            p.c.rosterStatus ||
-                            "Main",
-                          role = inferredRole(p.c),
-                          label =
-                            status === "Main" ? role : `${status} ${role}`;
-                        return (
-                          <div
-                            className="contender"
-                            key={p.c.id}
-                            style={
-                              {
-                                "--class": colors[p.c.class],
-                              } as React.CSSProperties
-                            }
-                          >
-                            <b>{rank + 1}</b>
-                            <span>
-                              <strong>{p.c.name}</strong>
-                              <small>
-                                {p.sim !== null
-                                  ? `+${p.sim.toFixed(2)}% sim`
-                                  : `+${p.ilvl} ilvl`}
-                              </small>
-                            </span>
-                            <em
-                              className={`role-priority ${status.toLowerCase()} ${role.toLowerCase()}`}
+                    <div className="contender-groups">
+                      {(["Main", "Trial", "Fill"] as RosterStatus[]).map(
+                        (groupStatus) => {
+                          const group = people.filter(
+                            (p) =>
+                              (rosterStatuses[p.c.id] ||
+                                p.c.rosterStatus ||
+                                "Main") === groupStatus,
+                          );
+                          if (!group.length) return null;
+                          return (
+                            <section
+                              className={`contender-group ${groupStatus.toLowerCase()}`}
+                              key={groupStatus}
                             >
-                              {label}
-                            </em>
-                          </div>
-                        );
-                      })}
-                      {people.length > 4 && <em>+{people.length - 4}</em>}
+                              <div className="contender-group-head">
+                                <strong>{groupStatus}</strong>
+                                <span>{group.length}</span>
+                              </div>
+                              <div className="contenders">
+                                {group.map((p) => {
+                                  const role = inferredRole(p.c);
+                                  return (
+                                    <div
+                                      className={`contender ${groupStatus.toLowerCase()}`}
+                                      key={p.c.id}
+                                      style={
+                                        {
+                                          "--class": colors[p.c.class],
+                                        } as React.CSSProperties
+                                      }
+                                    >
+                                      <span>
+                                        <strong className="contender-name">
+                                          {p.c.name}
+                                        </strong>
+                                        <small className="gain-metrics">
+                                          {p.sim !== null ? (
+                                            <em
+                                              className={
+                                                p.sim < 0
+                                                  ? "negative"
+                                                  : "positive"
+                                              }
+                                            >
+                                              {p.sim > 0 ? "+" : ""}
+                                              {p.sim.toFixed(2)}% sim
+                                            </em>
+                                          ) : (
+                                            <em className="unavailable">
+                                              No sim
+                                            </em>
+                                          )}
+                                          <i
+                                            className={
+                                              p.ilvl < 0
+                                                ? "negative"
+                                                : p.ilvl > 0
+                                                  ? "positive"
+                                                  : "neutral"
+                                            }
+                                          >
+                                            {p.ilvl > 0 ? "+" : ""}
+                                            {p.ilvl} ilvl
+                                          </i>
+                                        </small>
+                                      </span>
+                                      <em
+                                        className={`role-priority role-only ${role.toLowerCase()}`}
+                                        title={role}
+                                        aria-label={role}
+                                      >
+                                        <i
+                                          className={`wow-role-icon ${role.toLowerCase()}`}
+                                        />
+                                      </em>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </section>
+                          );
+                        },
+                      )}
                     </div>
                     <strong className="contest-count">
                       {people.length}
