@@ -18,4 +18,10 @@ const empty=[
   ["seasonLoot.items",seasonLoot.items?.length||0],
 ].filter(([,count])=>!count).map(([name])=>name);
 if(empty.length)throw new Error(`Refusing to write public/loot-data.json: ${empty.join(", ")} came back empty. A source file is missing — check that its data/ input exists and is not gitignored.`);
+// Icons are a separate enrichment pass over gear.json. Skipping it does not
+// break the build, it just renders every equipped item as a question mark, so
+// the failure is invisible until someone looks at the site.
+const wornItems=characters.flatMap(c=>c.equipment),wornWithIcon=wornItems.filter(i=>i.icon).length;
+if(wornItems.length&&!wornWithIcon)throw new Error(`Refusing to write public/loot-data.json: none of ${wornItems.length} equipped items have an icon. Run "npm run gear:icons" after check-gear.js.`);
+if(wornWithIcon<wornItems.length)console.warn(`Warning: ${wornItems.length-wornWithIcon} of ${wornItems.length} equipped items have no icon.`);
 await mkdir("public",{recursive:true});await writeFile("public/loot-data.json",JSON.stringify(built));console.log(`Built React app data. ${characters.length} characters, ${raid.bosses.length} bosses, ${Object.keys(bis.lists).length} specs.`);
