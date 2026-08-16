@@ -1,10 +1,15 @@
 const SHEET_NAME = 'Wishlists';
 const ROSTER_SHEET_NAME = 'RosterPriority';
+const SIMC_SHEET_NAME = 'SimcSnapshots';
 const SPREADSHEET_ID = '1y7cgwp_m_aPDznRz7kwS-G1IPlvZWz3vXwilLmBNCKU';
 const HEADERS = ['characterId', 'characterName', 'characterClass', 'lootSpec', 'wishlistJson', 'updatedAt', 'version'];
 const ROSTER_HEADERS = ['characterId', 'characterName', 'status', 'updatedAt'];
+const SIMC_HEADERS = ['characterId', 'characterName', 'lootSpec', 'snapshotJson', 'capturedAt', 'updatedAt', 'version'];
 const OFFICER_HASH_PROPERTY = 'OFFICER_PASSPHRASE_HASH';
 const OFFICER_SESSION_SECONDS = 21600;
+const WOWAUDIT_API_KEY_PROPERTY = 'WOWAUDIT_API_KEY';
+const RAIDBOTS_SUBMIT_URL = 'https://www.raidbots.com/sim';
+const RAIDBOTS_REPORT_URL = 'https://www.raidbots.com/reports/';
 
 function doGet() {
   try {
@@ -15,7 +20,7 @@ function doGet() {
       lootSpec: String(row[3] || ''), wishlist: JSON.parse(String(row[4] || '[]')),
       updatedAt: String(row[5] || ''), version: Number(row[6] || 1),
     }));
-    return json_({ ok: true, wishlists, rosterStatuses: getRosterStatuses_() });
+    return json_({ ok: true, wishlists, rosterStatuses: getRosterStatuses_(), simcSnapshots: getSimcSnapshots_() });
   } catch (error) { return json_({ ok: false, error: String(error.message || error) }); }
 }
 
@@ -25,8 +30,82 @@ function doPost(event) {
     if (body.action === 'officerLogin') return officerLogin_(body);
     if (body.action === 'officerVerify') return json_({ ok: true, authorized: officerAuthorized_(body.token) });
     if (body.action === 'setRosterStatus') return setRosterStatus_(body);
+    if (body.action === 'submitDroptimizer') return submitDroptimizer_(body);
+    if (body.action === 'checkDroptimizer') return checkDroptimizer_(body);
+    if (body.action === 'getWowauditSims') return getWowauditSims_();
+    if (body.action === 'saveSimcSnapshot') return saveSimcSnapshot_(body);
     return saveWishlist_(body);
   } catch (error) { return json_({ ok: false, error: String(error.message || error) }); }
+}
+
+function getWowauditSims_() {
+  const apiKey = PropertiesService.getScriptProperties().getProperty(WOWAUDIT_API_KEY_PROPERTY);
+  if (!apiKey) throw new Error('WoWAudit API access has not been configured in Apps Script.');
+  const response = UrlFetchApp.fetch('https://wowaudit.com/v1/wishlists', {
+    method: 'get', muteHttpExceptions: true, headers: { Authorization: 'Bearer ' + apiKey, Accept: 'application/json' },
+  });
+  const status = response.getResponseCode(), result = parseJson_(response.getContentText());
+  if (status < 200 || status >= 300) throw new Error('WoWAudit refresh failed (' + status + ').');
+  return json_({ ok: true, sims: result });
+}
+
+function submitDroptimizer_(body) {
+  const payload = body.payload;
+  if (!payload || payload.type !== 'droptimizer') throw new Error('A Droptimizer payload is required.');
+  if (!payload.text || String(payload.text).length < 100) throw new Error('Paste the complete /simc export.');
+  if (!Number.isFinite(Number(body.characterId))) throw new Error('A valid characterId is required.');
+  const submitId = Utilities.getUuid();
+  const response = UrlFetchApp.fetch(RAIDBOTS_SUBMIT_URL, {
+    method: 'post', contentType: 'application/json', muteHttpExceptions: true,
+    headers: { 'X-Raidbots-Submit-Id': submitId }, payload: JSON.stringify(payload),
+  });
+  const status = response.getResponseCode(), result = parseJson_(response.getContentText());
+  if (status < 200 || status >= 300 || !result.simId) {
+    throw new Error('Raidbots submission failed (' + status + '): ' + String(result.error || result.message || response.getContentText()).slice(0, 240));
+  }
+  return json_({ ok: true, jobId: String(result.jobId || ''), simId: String(result.simId), reportUrl: 'https://www.raidbots.com/simbot/report/' + result.simId });
+}
+
+function checkDroptimizer_(body) {
+  const simId = String(body.simId || '');
+  if (!/^[A-Za-z0-9_-]{8,80}$/.test(simId)) throw new Error('A valid Raidbots simId is required.');
+  if (!body.reportReady) {
+    const reportResponse = UrlFetchApp.fetch(RAIDBOTS_REPORT_URL + encodeURIComponent(simId) + '/data.json', { muteHttpExceptions: true });
+    if (reportResponse.getResponseCode() === 404) return json_({ ok: true, state: 'running', simId: simId });
+    if (reportResponse.getResponseCode() !== 200) throw new Error('Raidbots status check failed (' + reportResponse.getResponseCode() + ').');
+    const report = parseJson_(reportResponse.getContentText());
+    if (report.error || report.errors || report.meta && report.meta.error) {
+      return json_({ ok: true, state: 'failed', simId: simId, error: String(report.error || report.meta && report.meta.error || 'Simulation failed') });
+    }
+  }
+  if (!body.upload) return json_({ ok: true, state: 'complete', simId: simId });
+  const apiKey = PropertiesService.getScriptProperties().getProperty(WOWAUDIT_API_KEY_PROPERTY);
+  if (!apiKey) throw new Error('WoWAudit API access has not been configured in Apps Script.');
+  const uploadPayload = {
+    report_id: simId,
+    character_id: Number(body.characterId),
+    character_name: String(body.characterName || '').slice(0, 80),
+    configuration_name: String(body.configurationName || 'Single Target').slice(0, 80),
+    replace_manual_edits: Boolean(body.replaceManualEdits),
+  };
+  const uploadResponse = UrlFetchApp.fetch('https://wowaudit.com/v1/wishlists', {
+    method: 'post', contentType: 'application/json', muteHttpExceptions: true,
+    headers: { Authorization: 'Bearer ' + apiKey }, payload: JSON.stringify(uploadPayload),
+  });
+  const uploadStatus = uploadResponse.getResponseCode(), uploadResult = parseJson_(uploadResponse.getContentText());
+  if (uploadStatus < 200 || uploadStatus >= 300) {
+    throw new Error('WoWAudit upload failed (' + uploadStatus + '): ' + String(uploadResult.error || uploadResult.message || uploadResponse.getContentText()).slice(0, 240));
+  }
+  if (uploadResult.created === false) {
+    const details = Array.isArray(uploadResult.base) ? uploadResult.base.join('; ') : (uploadResult.error || uploadResult.message || 'WoWAudit rejected the report.');
+    throw new Error(String(details).slice(0, 240));
+  }
+  return json_({ ok: true, state: 'uploaded', simId: simId, reportUrl: 'https://www.raidbots.com/simbot/report/' + simId });
+}
+
+function parseJson_(text) {
+  try { return JSON.parse(String(text || '{}')); }
+  catch (error) { return { message: String(text || 'Invalid JSON response') }; }
 }
 
 function officerLogin_(body) {
@@ -84,6 +163,52 @@ function saveWishlist_(body) {
   return json_({ ok: true, characterId: id, updatedAt });
 }
 
+function saveSimcSnapshot_(body) {
+  const id = Number(body.characterId), snapshot = body.snapshot;
+  if (!Number.isFinite(id)) throw new Error('A valid characterId is required.');
+  if (!body.characterName || !body.lootSpec || !snapshot || typeof snapshot !== 'object') throw new Error('Character identity, lootSpec, and snapshot are required.');
+  const compact = {
+    character: String(snapshot.character || '').slice(0, 80),
+    spec: String(snapshot.spec || '').slice(0, 80),
+    lootSpec: String(snapshot.lootSpec || '').slice(0, 80),
+    capturedAt: String(snapshot.capturedAt || new Date().toISOString()).slice(0, 40),
+    bags: Array.isArray(snapshot.bags) ? snapshot.bags.slice(0, 50) : [],
+    vault: Array.isArray(snapshot.vault) ? snapshot.vault.slice(0, 20) : [],
+    catalystCurrencies: snapshot.catalystCurrencies || {},
+    upgradeCurrencies: snapshot.upgradeCurrencies || {},
+  };
+  const lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+  try {
+    const sheet = getSimcSheet_(), values = sheet.getDataRange().getValues();
+    let row = values.findIndex((value, index) => index > 0 && Number(value[0]) === id) + 1;
+    if (row) {
+      try {
+        const previous = JSON.parse(String(values[row - 1][3] || '{}'));
+        compact.previousCatalystCurrencies = previous.catalystCurrencies || {};
+        compact.previousCapturedAt = String(previous.capturedAt || '');
+      } catch (error) { /* a damaged previous snapshot should not block a new one */ }
+    }
+    if (!row) row = sheet.getLastRow() + 1;
+    const encoded = JSON.stringify(compact);
+    if (encoded.length > 45000) throw new Error('The SimC snapshot is too large to store.');
+    const updatedAt = new Date().toISOString();
+    sheet.getRange(row, 1, 1, SIMC_HEADERS.length).setValues([[
+      id, String(body.characterName).slice(0, 80), String(body.lootSpec).slice(0, 80),
+      encoded, compact.capturedAt, updatedAt, 1,
+    ]]);
+    return json_({ ok: true, characterId: id, snapshot: compact, updatedAt });
+  } finally { lock.releaseLock(); }
+}
+
+function getSimcSnapshots_() {
+  return getSimcSheet_().getDataRange().getValues().slice(1).reduce((result, row) => {
+    if (row[0] === '') return result;
+    try { result[String(Number(row[0]))] = JSON.parse(String(row[3] || '{}')); } catch (error) { /* skip damaged rows */ }
+    return result;
+  }, {});
+}
+
 function getRosterStatuses_() {
   return getRosterSheet_().getDataRange().getValues().slice(1).reduce((result, row) => {
     if (row[0] !== '' && ['Main', 'Trial', 'Fill'].includes(String(row[2]))) result[String(Number(row[0]))] = String(row[2]);
@@ -93,6 +218,7 @@ function getRosterStatuses_() {
 
 function getSheet_() { return getOrCreateSheet_(SHEET_NAME, HEADERS); }
 function getRosterSheet_() { return getOrCreateSheet_(ROSTER_SHEET_NAME, ROSTER_HEADERS); }
+function getSimcSheet_() { return getOrCreateSheet_(SIMC_SHEET_NAME, SIMC_HEADERS); }
 function getOrCreateSheet_(name, headers) {
   const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
   let sheet = spreadsheet.getSheetByName(name);
@@ -114,6 +240,13 @@ function configureOfficerPassphrase() {
   const PASSPHRASE = 'REPLACE WITH A STRONG OFFICER PASSPHRASE';
   if (PASSPHRASE.indexOf('REPLACE WITH') === 0) throw new Error('Replace PASSPHRASE before running this function.');
   PropertiesService.getScriptProperties().setProperty(OFFICER_HASH_PROPERTY, hash_(PASSPHRASE));
+}
+
+// Run once, then remove the temporary key from the editor and deploy a new version.
+function configureWowauditApiKey() {
+  const API_KEY = 'REPLACE WITH YOUR WOWAUDIT API KEY';
+  if (API_KEY.indexOf('REPLACE WITH') === 0) throw new Error('Replace API_KEY before running this function.');
+  PropertiesService.getScriptProperties().setProperty(WOWAUDIT_API_KEY_PROPERTY, API_KEY.trim());
 }
 
 function json_(value) {

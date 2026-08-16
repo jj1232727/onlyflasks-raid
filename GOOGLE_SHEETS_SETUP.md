@@ -13,4 +13,14 @@
 11. Remove the plain-text passphrase from the editor, save, and deploy a **new version** of the web app.
 12. Run `npm run build`, publish to GitHub Pages, and submit one test wishlist.
 
+## Raidbots pilot
+
+1. In `configureWowauditApiKey`, temporarily replace the placeholder with the WoWAudit API key.
+2. Select `configureWowauditApiKey` in Apps Script and click **Run** once.
+3. Remove the plain-text key from the editor and save.
+4. Deploy a **new web-app version**. Editing the script alone does not update the `/exec` deployment.
+5. Open **My wishlist**, select the matching character and loot specialization, paste the complete `/simc` export, and choose **Run and upload**.
+
+The browser sends the export to Apps Script. Apps Script submits the anonymous Raidbots job, checks the public report, and uploads the completed report ID to WoWAudit. The API key never enters GitHub or browser storage.
+
 Wishlist submissions remain trust-based. Roster Main/Trial/Fill changes require a short-lived officer session validated by Apps Script. The Sheet keeps Google edit history for recovery.

@@ -7849,216 +7849,2530 @@
               "difficulty": "mythic",
               "wishlist": {
                 "updated_at": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "2026-08-16T18:41:08.000+00:00",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "report_uploaded_at": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "2026-08-16T18:40:04.000Z",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "report_id": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "r8L5nXmmgLrkryKmP3KaKs",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 5.7937,
+                    "encounter_absolute": 7491,
+                    "items": [
+                      {
+                        "name": "Amani Summoning Shawl",
+                        "id": 268248,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1338,
+                            "percentage": 1.0353
+                          }
+                        },
+                        "alternative": {
+                          "item": 268253,
+                          "percentage": 1.153,
+                          "absolute": 1491.0687,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.0353,
+                            "absolute": 1338.8787,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Crown of the Eternal Fang",
+                        "id": 268230,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 3046,
+                            "percentage": 2.3557
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.3557,
+                            "absolute": 3046.5453,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Cursed Reliquary Cincture",
+                        "id": 268216,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 3107,
+                            "percentage": 2.4027
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.4027,
+                            "absolute": 3107.2729,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 5.1128,
+                    "encounter_absolute": 6611,
+                    "items": [
+                      {
+                        "name": "Keeper's Seething Core",
+                        "id": 270165,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 3141,
+                            "percentage": 2.4289
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 5.6565,
+                          "absolute": 7315.2656,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.4289,
+                            "absolute": 3141.171,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Sentinel's Vitriolic Chain",
+                        "id": 268250,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1529,
+                            "percentage": 1.1828
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 3.9945,
+                          "absolute": 5165.8689,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1828,
+                            "absolute": 1529.6576,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcast Idol",
+                        "id": 270912,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1941,
+                            "percentage": 1.5011
+                          }
+                        },
+                        "alternative": {
+                          "item": 268238,
+                          "percentage": 1.7307,
+                          "absolute": 2238.2797,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.5011,
+                            "absolute": 1941.3678,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 8.9442,
+                    "encounter_absolute": 11566,
+                    "items": [
+                      {
+                        "name": "Vashnik's Sanguine Rancor",
+                        "id": 270166,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 3198,
+                            "percentage": 2.473
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 5.6565,
+                          "absolute": 7315.2656,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.473,
+                            "absolute": 3198.2442,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vile Alchemist's Band",
+                        "id": 268249,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1760,
+                            "percentage": 1.3614
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 1.9308,
+                          "absolute": 2497.0392,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.3614,
+                            "absolute": 1760.5926,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Serpentine Mixing Belt",
+                        "id": 268254,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 2931,
+                            "percentage": 2.2664
+                          }
+                        },
+                        "alternative": {
+                          "item": 268216,
+                          "percentage": 2.4027,
+                          "absolute": 3107.2729,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.2664,
+                            "absolute": 2931.0908,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcast Icon",
+                        "id": 270928,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 3677,
+                            "percentage": 2.8434
+                          }
+                        },
+                        "alternative": {
+                          "item": 271876,
+                          "percentage": 5.3748,
+                          "absolute": 6950.9799,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.8434,
+                            "absolute": 3677.3078,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 15.8615,
+                    "encounter_absolute": 20511,
+                    "items": [
+                      {
+                        "name": "Venomcast Remnant",
+                        "id": 270924,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 2263,
+                            "percentage": 1.75
+                          }
+                        },
+                        "alternative": {
+                          "item": 268231,
+                          "percentage": 2.6424,
+                          "absolute": 3417.3234,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.75,
+                            "absolute": 2263.1979,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Gebbo's Bottomless Bag",
+                        "id": 270164,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 3123,
+                            "percentage": 2.4151
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 5.6565,
+                          "absolute": 7315.2656,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.4151,
+                            "absolute": 3123.4141,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Gebbo's Backup Blaster",
+                        "id": 268200,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 12813,
+                            "percentage": 9.9082
+                          }
+                        },
+                        "alternative": {
+                          "item": 268207,
+                          "percentage": 15.6739,
+                          "absolute": 20270.4674,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 9.9082,
+                            "absolute": 12813.8839,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Boots of the Reckless Wayfarer",
+                        "id": 268258,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 2312,
+                            "percentage": 1.7882
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.7882,
+                            "absolute": 2312.6077,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 4.9099,
+                    "encounter_absolute": 6348,
+                    "items": [
+                      {
+                        "name": "Ferocious Scaleboots",
+                        "id": 268233,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1852,
+                            "percentage": 1.4327
+                          }
+                        },
+                        "alternative": {
+                          "item": 268258,
+                          "percentage": 1.7882,
+                          "absolute": 2312.6077,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4327,
+                            "absolute": 1852.7989,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcast Relic",
+                        "id": 270920,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1999,
+                            "percentage": 1.5464
+                          }
+                        },
+                        "alternative": {
+                          "item": 268237,
+                          "percentage": 2.6935,
+                          "absolute": 3483.4163,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.5464,
+                            "absolute": 1999.8388,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Apex Brute's Claw Ring",
+                        "id": 268252,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 2497,
+                            "percentage": 1.9308
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.9308,
+                            "absolute": 2497.0392,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 5.6752,
+                    "encounter_absolute": 7338,
+                    "items": [
+                      {
+                        "name": "Amulet of the Twin Fangs",
+                        "id": 268251,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1492,
+                            "percentage": 1.154
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 3.9945,
+                          "absolute": 5165.8689,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.154,
+                            "absolute": 1492.4816,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcast Effigy",
+                        "id": 270916,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 2211,
+                            "percentage": 1.7099
+                          }
+                        },
+                        "alternative": {
+                          "item": 268230,
+                          "percentage": 2.3557,
+                          "absolute": 3046.5453,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.7099,
+                            "absolute": 2211.3539,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Ophidian Fangmail",
+                        "id": 268223,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 3635,
+                            "percentage": 2.8113
+                          }
+                        },
+                        "alternative": {
+                          "item": 271876,
+                          "percentage": 5.3748,
+                          "absolute": 6950.9799,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.8113,
+                            "absolute": 3635.7181,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 12.1454,
+                    "encounter_absolute": 15706,
+                    "items": [
+                      {
+                        "name": "Zul'jin's Guillotine Technique",
+                        "id": 270173,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 7315,
+                            "percentage": 5.6565
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 5.6565,
+                            "absolute": 7315.2656,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Cuisses of the Uncoiled Union",
+                        "id": 268237,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 3483,
+                            "percentage": 2.6935
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.6935,
+                            "absolute": 3483.4163,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Soulslither Spaulders",
+                        "id": 268231,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 3417,
+                            "percentage": 2.6424
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.6424,
+                            "absolute": 3417.3234,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Silken Voodoo Drape",
+                        "id": 268253,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1491,
+                            "percentage": 1.153
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.153,
+                            "absolute": 1491.0687,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 36.0487,
+                    "encounter_absolute": 46616,
+                    "items": [
+                      {
+                        "name": "Voracious Heart of Ula'tek",
+                        "id": 270175,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 4044,
+                            "percentage": 3.127
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 5.6565,
+                          "absolute": 7315.2656,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.127,
+                            "absolute": 4044.0287,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Font of Venomous Rage",
+                        "id": 270168,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 3237,
+                            "percentage": 2.5037
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 5.6565,
+                          "absolute": 7315.2656,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.5037,
+                            "absolute": 3237.9371,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 6950,
+                            "percentage": 5.3748
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 5.3748,
+                            "absolute": 6950.9799,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Awoken Dreadfang Cuirass",
+                        "id": 271876,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 6950,
+                            "percentage": 5.3748
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 5.3748,
+                            "absolute": 6950.9799,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Caustic Repose Greatbow",
+                        "id": 268207,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 20270,
+                            "percentage": 15.6739
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 15.6739,
+                            "absolute": 20270.4674,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 5165,
+                            "percentage": 3.9945
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.9945,
+                            "absolute": 5165.8689,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 94.4914,
+                "total_absolute": 122187
               }
             },
             {
               "difficulty": "heroic",
               "wishlist": {
                 "updated_at": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "2026-08-16T18:40:57.000+00:00",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "report_uploaded_at": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "2026-08-16T18:40:04.000Z",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "report_id": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "r8L5nXmmgLrkryKmP3KaKs",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.7887,
+                    "encounter_absolute": 4897,
+                    "items": [
+                      {
+                        "name": "Amani Summoning Shawl",
+                        "id": 268248,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 701,
+                            "percentage": 0.5427
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5427,
+                            "absolute": 701.6317,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Crown of the Eternal Fang",
+                        "id": 268230,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1942,
+                            "percentage": 1.5022
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.5022,
+                            "absolute": 1942.0183,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Cursed Reliquary Cincture",
+                        "id": 268216,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 2254,
+                            "percentage": 1.7438
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.7438,
+                            "absolute": 2254.306,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.2717,
+                    "encounter_absolute": 4229,
+                    "items": [
+                      {
+                        "name": "Keeper's Seething Core",
+                        "id": 270165,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 2070,
+                            "percentage": 1.6014
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 2.8768,
+                          "absolute": 3718.9918,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.6014,
+                            "absolute": 2070.2037,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcast Idol",
+                        "id": 270912,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1163,
+                            "percentage": 0.8998
+                          }
+                        },
+                        "alternative": {
+                          "item": 268238,
+                          "percentage": 1.0941,
+                          "absolute": 1414.3455,
+                          "item_level": 331
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8998,
+                            "absolute": 1163.2511,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Sentinel's Vitriolic Chain",
+                        "id": 268250,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 996,
+                            "percentage": 0.7705
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 2.9416,
+                          "absolute": 3802.7829,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7705,
+                            "absolute": 996.0927,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 5.9771,
+                    "encounter_absolute": 7725,
+                    "items": [
+                      {
+                        "name": "Vashnik's Sanguine Rancor",
+                        "id": 270166,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1833,
+                            "percentage": 1.418
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 2.8768,
+                          "absolute": 3718.9918,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.418,
+                            "absolute": 1833.1294,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vile Alchemist's Band",
+                        "id": 268249,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1204,
+                            "percentage": 0.9317
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 1.4491,
+                          "absolute": 1873.3348,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.9317,
+                            "absolute": 1204.4375,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcast Icon",
+                        "id": 270928,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 2551,
+                            "percentage": 1.9736
+                          }
+                        },
+                        "alternative": {
+                          "item": 271876,
+                          "percentage": 3.5455,
+                          "absolute": 4583.4803,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.9736,
+                            "absolute": 2551.3234,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Serpentine Mixing Belt",
+                        "id": 268254,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 2137,
+                            "percentage": 1.6538
+                          }
+                        },
+                        "alternative": {
+                          "item": 268216,
+                          "percentage": 1.7438,
+                          "absolute": 2254.306,
+                          "item_level": 305
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.6538,
+                            "absolute": 2137.9777,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 9.867799999999999,
+                    "encounter_absolute": 12755,
+                    "items": [
+                      {
+                        "name": "Gebbo's Backup Blaster",
+                        "id": 268200,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 7661,
+                            "percentage": 5.9266
+                          }
+                        },
+                        "alternative": {
+                          "item": 268207,
+                          "percentage": 7.9768,
+                          "absolute": 10311.9242,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 5.9266,
+                            "absolute": 7661.5657,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Gebbo's Bottomless Bag",
+                        "id": 270164,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 2154,
+                            "percentage": 1.6663
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 2.8768,
+                          "absolute": 3718.9918,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.6663,
+                            "absolute": 2154.0982,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcast Remnant",
+                        "id": 270924,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1505,
+                            "percentage": 1.1645
+                          }
+                        },
+                        "alternative": {
+                          "item": 268231,
+                          "percentage": 1.4298,
+                          "absolute": 1848.4129,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1645,
+                            "absolute": 1505.3618,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Boots of the Reckless Wayfarer",
+                        "id": 268258,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1435,
+                            "percentage": 1.1104
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1104,
+                            "absolute": 1435.521,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.0324,
+                    "encounter_absolute": 3918,
+                    "items": [
+                      {
+                        "name": "Apex Brute's Claw Ring",
+                        "id": 268252,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1873,
+                            "percentage": 1.4491
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4491,
+                            "absolute": 1873.3348,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Ferocious Scaleboots",
+                        "id": 268233,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1068,
+                            "percentage": 0.8268
+                          }
+                        },
+                        "alternative": {
+                          "item": 268258,
+                          "percentage": 1.1104,
+                          "absolute": 1435.521,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8268,
+                            "absolute": 1068.8224,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcast Relic",
+                        "id": 270920,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 977,
+                            "percentage": 0.7565
+                          }
+                        },
+                        "alternative": {
+                          "item": 268237,
+                          "percentage": 1.1016,
+                          "absolute": 1424.0235,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7565,
+                            "absolute": 977.923,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.5373,
+                    "encounter_absolute": 4572,
+                    "items": [
+                      {
+                        "name": "Amulet of the Twin Fangs",
+                        "id": 268251,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 935,
+                            "percentage": 0.7234
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 2.9416,
+                          "absolute": 3802.7829,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7234,
+                            "absolute": 935.2041,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Ophidian Fangmail",
+                        "id": 268223,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 2562,
+                            "percentage": 1.9819
+                          }
+                        },
+                        "alternative": {
+                          "item": 271876,
+                          "percentage": 3.5455,
+                          "absolute": 4583.4803,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.9819,
+                            "absolute": 2562.1311,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcast Effigy",
+                        "id": 270916,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1075,
+                            "percentage": 0.832
+                          }
+                        },
+                        "alternative": {
+                          "item": 268230,
+                          "percentage": 1.5022,
+                          "absolute": 1942.0183,
+                          "item_level": 305
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.832,
+                            "absolute": 1075.5183,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 5.704199999999999,
+                    "encounter_absolute": 7372,
+                    "items": [
+                      {
+                        "name": "Zul'jin's Guillotine Technique",
+                        "id": 270173,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 3718,
+                            "percentage": 2.8768
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.8768,
+                            "absolute": 3718.9918,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Soulslither Spaulders",
+                        "id": 268231,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1848,
+                            "percentage": 1.4298
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4298,
+                            "absolute": 1848.4129,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Silken Voodoo Drape",
+                        "id": 268253,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 382,
+                            "percentage": 0.296
+                          }
+                        },
+                        "alternative": {
+                          "item": 268248,
+                          "percentage": 0.5427,
+                          "absolute": 701.6317,
+                          "item_level": 305
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.296,
+                            "absolute": 382.6271,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Cuisses of the Uncoiled Union",
+                        "id": 268237,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1424,
+                            "percentage": 1.1016
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1016,
+                            "absolute": 1424.0235,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 20.2189,
+                    "encounter_absolute": 26135,
+                    "items": [
+                      {
+                        "name": "Voracious Heart of Ula'tek",
+                        "id": 270175,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1729,
+                            "percentage": 1.3377
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 2.8768,
+                          "absolute": 3718.9918,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.3377,
+                            "absolute": 1729.2965,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 4583,
+                            "percentage": 3.5455
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.5455,
+                            "absolute": 4583.4803,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 3802,
+                            "percentage": 2.9416
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.9416,
+                            "absolute": 3802.7829,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Awoken Dreadfang Cuirass",
+                        "id": 271876,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 4583,
+                            "percentage": 3.5455
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.5455,
+                            "absolute": 4583.4803,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Caustic Repose Greatbow",
+                        "id": 268207,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 10311,
+                            "percentage": 7.9768
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 7.9768,
+                            "absolute": 10311.9242,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Font of Venomous Rage",
+                        "id": 270168,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1127,
+                            "percentage": 0.8718
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 2.8768,
+                          "absolute": 3718.9918,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8718,
+                            "absolute": 1127.0489,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 55.3981,
+                "total_absolute": 71603
               }
             },
             {
               "difficulty": "normal",
               "wishlist": {
                 "updated_at": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "2026-08-16T18:40:45.000+00:00",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "report_uploaded_at": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "2026-08-16T18:40:04.000Z",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "report_id": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "r8L5nXmmgLrkryKmP3KaKs",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.6097,
+                    "encounter_absolute": 2082,
+                    "items": [
+                      {
+                        "name": "Crown of the Eternal Fang",
+                        "id": 268230,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 732,
+                            "percentage": 0.5658
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5658,
+                            "absolute": 732.0326,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Cursed Reliquary Cincture",
+                        "id": 268216,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1350,
+                            "percentage": 1.0439
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.0439,
+                            "absolute": 1350.7222,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.21,
+                    "encounter_absolute": 1565,
+                    "items": [
+                      {
+                        "name": "Keeper's Seething Core",
+                        "id": 270165,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1005,
+                            "percentage": 0.7769
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 1.5219,
+                          "absolute": 1969.2185,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7769,
+                            "absolute": 1005.1757,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Sentinel's Vitriolic Chain",
+                        "id": 268250,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 365,
+                            "percentage": 0.2822
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 2.1209,
+                          "absolute": 2744.2903,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2822,
+                            "absolute": 365.1247,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcast Idol",
+                        "id": 270912,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 195,
+                            "percentage": 0.1509
+                          }
+                        },
+                        "alternative": {
+                          "item": 268238,
+                          "percentage": 0.337,
+                          "absolute": 436.0019,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1509,
+                            "absolute": 195.256,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.5136,
+                    "encounter_absolute": 3250,
+                    "items": [
+                      {
+                        "name": "Vile Alchemist's Band",
+                        "id": 268249,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 457,
+                            "percentage": 0.3539
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 0.8616,
+                          "absolute": 1114.8062,
+                          "item_level": 298
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.3539,
+                            "absolute": 457.8787,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vashnik's Sanguine Rancor",
+                        "id": 270166,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 274,
+                            "percentage": 0.2121
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 1.5219,
+                          "absolute": 1969.2185,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2121,
+                            "absolute": 274.4753,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcast Icon",
+                        "id": 270928,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1390,
+                            "percentage": 1.075
+                          }
+                        },
+                        "alternative": {
+                          "item": 271876,
+                          "percentage": 2.4868,
+                          "absolute": 3217.6726,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.075,
+                            "absolute": 1390.9011,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Serpentine Mixing Belt",
+                        "id": 268254,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1129,
+                            "percentage": 0.8726
+                          }
+                        },
+                        "alternative": {
+                          "item": 268216,
+                          "percentage": 1.0439,
+                          "absolute": 1350.7222,
+                          "item_level": 292
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8726,
+                            "absolute": 1129.0089,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.9013,
+                    "encounter_absolute": 5047,
+                    "items": [
+                      {
+                        "name": "Gebbo's Bottomless Bag",
+                        "id": 270164,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 952,
+                            "percentage": 0.7359
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 1.5219,
+                          "absolute": 1969.2185,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7359,
+                            "absolute": 952.1976,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Gebbo's Backup Blaster",
+                        "id": 268200,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 2972,
+                            "percentage": 2.297
+                          }
+                        },
+                        "alternative": {
+                          "item": 268207,
+                          "percentage": 4.1178,
+                          "absolute": 5328.0468,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.297,
+                            "absolute": 2972.1685,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcast Remnant",
+                        "id": 270924,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 579,
+                            "percentage": 0.4478
+                          }
+                        },
+                        "alternative": {
+                          "item": 268231,
+                          "percentage": 0.7732,
+                          "absolute": 1000.5126,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.4478,
+                            "absolute": 579.3609,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Boots of the Reckless Wayfarer",
+                        "id": 268258,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 544,
+                            "percentage": 0.4206
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.4206,
+                            "absolute": 544.1666,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.9616,
+                    "encounter_absolute": 1243,
+                    "items": [
+                      {
+                        "name": "Apex Brute's Claw Ring",
+                        "id": 268252,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1114,
+                            "percentage": 0.8616
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8616,
+                            "absolute": 1114.8062,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Ferocious Scaleboots",
+                        "id": 268233,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 129,
+                            "percentage": 0.1
+                          }
+                        },
+                        "alternative": {
+                          "item": 268258,
+                          "percentage": 0.4206,
+                          "absolute": 544.1666,
+                          "item_level": 298
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1,
+                            "absolute": 129.4272,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.2596,
+                    "encounter_absolute": 1628,
+                    "items": [
+                      {
+                        "name": "Ophidian Fangmail",
+                        "id": 268223,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1377,
+                            "percentage": 1.0649
+                          }
+                        },
+                        "alternative": {
+                          "item": 271876,
+                          "percentage": 2.4868,
+                          "absolute": 3217.6726,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.0649,
+                            "absolute": 1377.8269,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Amulet of the Twin Fangs",
+                        "id": 268251,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 251,
+                            "percentage": 0.1947
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 2.1209,
+                          "absolute": 2744.2903,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1947,
+                            "absolute": 251.9673,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.4694,
+                    "encounter_absolute": 3194,
+                    "items": [
+                      {
+                        "name": "Zul'jin's Guillotine Technique",
+                        "id": 270173,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1969,
+                            "percentage": 1.5219
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.5219,
+                            "absolute": 1969.2185,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Soulslither Spaulders",
+                        "id": 268231,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1000,
+                            "percentage": 0.7732
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7732,
+                            "absolute": 1000.5126,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Cuisses of the Uncoiled Union",
+                        "id": 268237,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 225,
+                            "percentage": 0.1743
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1743,
+                            "absolute": 225.5787,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 11.4609,
+                    "encounter_absolute": 14827,
+                    "items": [
+                      {
+                        "name": "Voracious Heart of Ula'tek",
+                        "id": 270175,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 321,
+                            "percentage": 0.2486
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 1.5219,
+                          "absolute": 1969.2185,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2486,
+                            "absolute": 321.6868,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 3217,
+                            "percentage": 2.4868
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.4868,
+                            "absolute": 3217.6726,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Awoken Dreadfang Cuirass",
+                        "id": 271876,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 3217,
+                            "percentage": 2.4868
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.4868,
+                            "absolute": 3217.6726,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 2744,
+                            "percentage": 2.1209
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.1209,
+                            "absolute": 2744.2903,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Caustic Repose Greatbow",
+                        "id": 268207,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 5328,
+                            "percentage": 4.1178
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 4.1178,
+                            "absolute": 5328.0468,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 25.3861,
+                "total_absolute": 32836
               }
             }
           ]
@@ -8071,90 +10385,300 @@
               "difficulty": "mythic",
               "wishlist": {
                 "updated_at": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "2026-08-16T18:41:08.000+00:00",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "report_uploaded_at": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "2026-08-16T18:40:04.000Z",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "report_id": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "r8L5nXmmgLrkryKmP3KaKs",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.9928,
+                    "encounter_absolute": 5163,
+                    "items": [
+                      {
+                        "name": "Alluring Bubbleband",
+                        "id": 268266,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1705,
+                            "percentage": 1.3185
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 1.9308,
+                          "absolute": 2497.0392,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.3185,
+                            "absolute": 1705.1431,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Rising Tide Wristguards",
+                        "id": 268217,
+                        "slot": "wrist",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1220,
+                            "percentage": 0.9436
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.9436,
+                            "absolute": 1220.3178,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Grips of Swirling Fury",
+                        "id": 268238,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 2238,
+                            "percentage": 1.7307
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:41:08.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.7307,
+                            "absolute": 2238.2797,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 3.9928,
+                "total_absolute": 5163
               }
             },
             {
               "difficulty": "heroic",
               "wishlist": {
                 "updated_at": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "2026-08-16T18:40:57.000+00:00",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "report_uploaded_at": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "2026-08-16T18:40:04.000Z",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "report_id": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "r8L5nXmmgLrkryKmP3KaKs",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.4671,
+                    "encounter_absolute": 3187,
+                    "items": [
+                      {
+                        "name": "Alluring Bubbleband",
+                        "id": 268266,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1160,
+                            "percentage": 0.8981
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 1.4491,
+                          "absolute": 1873.3348,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8981,
+                            "absolute": 1160.9748,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Rising Tide Wristguards",
+                        "id": 268217,
+                        "slot": "wrist",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 613,
+                            "percentage": 0.4749
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.4749,
+                            "absolute": 613.8878,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Grips of Swirling Fury",
+                        "id": 268238,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 1414,
+                            "percentage": 1.0941
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.0941,
+                            "absolute": 1414.3455,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 2.4671,
+                "total_absolute": 3187
               }
             },
             {
               "difficulty": "normal",
               "wishlist": {
                 "updated_at": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "2026-08-16T18:40:45.000+00:00",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "report_uploaded_at": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "2026-08-16T18:40:04.000Z",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "report_id": {
-                  "Beast Mastery": null,
+                  "Beast Mastery": "r8L5nXmmgLrkryKmP3KaKs",
                   "Marksmanship": null,
                   "Survival": null
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.6435,
+                    "encounter_absolute": 832,
+                    "items": [
+                      {
+                        "name": "Alluring Bubbleband",
+                        "id": 268266,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 396,
+                            "percentage": 0.3065
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 0.8616,
+                          "absolute": 1114.8062,
+                          "item_level": 298
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.3065,
+                            "absolute": 396.6294,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Grips of Swirling Fury",
+                        "id": 268238,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Beast Mastery": {
+                            "score": 436,
+                            "percentage": 0.337
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Beast Mastery",
+                            "timestamp": "2026-08-16T18:40:45.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.337,
+                            "absolute": 436.0019,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 0.6435,
+                "total_absolute": 832
               }
             }
           ]

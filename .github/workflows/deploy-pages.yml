@@ -4,6 +4,13 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # A commit pushed by the refresh job uses the default GITHUB_TOKEN, and GitHub
+  # deliberately does not raise `push` events for those — otherwise workflows
+  # could trigger themselves forever. Without this trigger the data would be
+  # committed every two hours and never deployed.
+  workflow_run:
+    workflows: ["Refresh raid data"]
+    types: [completed]
 
 permissions:
   contents: read
@@ -16,6 +23,8 @@ concurrency:
 
 jobs:
   deploy:
+    # Never publish the output of a refresh that failed part-way.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -30,6 +39,11 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      # Bundle the committed public/loot-data.json as-is. Do NOT run build:data
+      # here: data/roster.json and data/gear.json are gitignored, so a CI
+      # checkout has no sources to build from and the script silently falls back
+      # to empty arrays — publishing a board with zero raiders. Regenerating
+      # that file is the refresh workflow's job, where the API keys live.
       - name: Build site
         run: npx vite build
       - name: Configure Pages

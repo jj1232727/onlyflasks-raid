@@ -1,16 +1,47 @@
-import { Fragment, useEffect, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import {
+  CalendarClock,
   ChevronDown,
   CircleAlert,
   ClipboardCheck,
+  Gavel,
   HeartPulse,
   History,
+  LayoutDashboard,
   RefreshCw,
+  Search,
   Shield,
+  Skull,
   Sparkles,
+  Star,
   Swords,
   TrendingUp,
 } from "lucide-react";
+import { isBeforeReset, lastWeeklyReset, simStatus } from "./raid-week.js";
+import {
+  tierIdsForClass,
+  tierRosterSummary,
+  tierSetStatus,
+  trackLetter,
+  trackName as currentSeasonTrackName,
+  trackOrder as currentSeasonTrackOrder,
+  trackRank as currentSeasonTrackRank,
+} from "./tier-set.js";
+import {
+  assignReplacements,
+  equipped,
+  equippedGroup,
+  keptForOwnTargets,
+  norm,
+  slot,
+} from "./gear-slots.js";
+import {
+  CATALYST_CURRENCIES,
+  MIDNIGHT_S2_CATALYST,
+  MIDNIGHT_S2_CRESTS,
+  currentCatalystBalance,
+  parseSimcSnapshot,
+} from "./simc-snapshot.js";
 type Item = {
   itemId: number;
   name: string;
@@ -35,6 +66,7 @@ type Item = {
   encounter?: string;
   specialEffect?: boolean;
   effectText?: string;
+  bonusList?: number[];
 };
 type Raider = {
   id: number;
@@ -101,10 +133,190 @@ const colors: Record<string, string> = {
   },
   tracks = { normal: "Champion", heroic: "Hero", mythic: "Myth" };
 type Difficulty = keyof typeof levels;
-const norm = (s?: string) =>
-  String(s || "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]/g, "");
+type SimState = "idle" | "submitting" | "running" | "refreshing" | "uploaded" | "stale" | "error";
+type SimReport = { difficulty: Difficulty; url: string; state: "queued" | "running" | "uploaded" | "error"; error?: string };
+const specIds: Record<string, number> = {
+  "Arms Warrior": 71, "Fury Warrior": 72, "Protection Warrior": 73,
+  "Holy Paladin": 65, "Protection Paladin": 66, "Retribution Paladin": 70,
+  "Beast Mastery Hunter": 253, "Marksmanship Hunter": 254, "Survival Hunter": 255,
+  "Assassination Rogue": 259, "Outlaw Rogue": 260, "Subtlety Rogue": 261,
+  "Discipline Priest": 256, "Holy Priest": 257, "Shadow Priest": 258,
+  "Blood Death Knight": 250, "Frost Death Knight": 251, "Unholy Death Knight": 252,
+  "Elemental Shaman": 262, "Enhancement Shaman": 263, "Restoration Shaman": 264,
+  "Arcane Mage": 62, "Fire Mage": 63, "Frost Mage": 64,
+  "Affliction Warlock": 265, "Demonology Warlock": 266, "Destruction Warlock": 267,
+  "Brewmaster Monk": 268, "Windwalker Monk": 269, "Mistweaver Monk": 270,
+  "Balance Druid": 102, "Feral Druid": 103, "Guardian Druid": 104, "Restoration Druid": 105,
+  "Havoc Demon Hunter": 577, "Vengeance Demon Hunter": 581, "Devourer Demon Hunter": 1480,
+  "Devastation Evoker": 1467, "Preservation Evoker": 1468, "Augmentation Evoker": 1473,
+};
+const specIcons: Record<string, string> = {
+  "Arcane Mage": "spell_holy_magicalsentry", "Arms Warrior": "ability_warrior_savageblow", "Assassination Rogue": "ability_rogue_deadliness",
+  "Balance Druid": "spell_nature_starfall", "Beast Mastery Hunter": "ability_hunter_bestialdiscipline",
+  "Blood Death Knight": "spell_deathknight_bloodpresence", "Destruction Warlock": "spell_shadow_rainoffire",
+  "Frost Death Knight": "spell_deathknight_frostpresence", "Fury Warrior": "ability_warrior_innerrage",
+  "Holy Paladin": "spell_holy_holybolt", "Holy Priest": "spell_holy_guardianspirit",
+  "Mistweaver Monk": "spell_monk_mistweaver_spec", "Preservation Evoker": "classicon_evoker_preservation",
+  "Devourer Demon Hunter": "classicon_demonhunter",
+  "Protection Warrior": "ability_warrior_defensivestance", "Restoration Druid": "spell_nature_healingtouch",
+  "Restoration Shaman": "spell_nature_magicimmunity", "Retribution Paladin": "spell_holy_auraoflight",
+  "Survival Hunter": "ability_hunter_camouflage",
+  "Unholy Death Knight": "spell_deathknight_unholypresence",
+  "Havoc Demon Hunter": "ability_demonhunter_specdps",
+  "Vengeance Demon Hunter": "ability_demonhunter_spectank",
+  "Feral Druid": "ability_druid_catform",
+  "Guardian Druid": "ability_racial_bearform",
+  "Augmentation Evoker": "classicon_evoker_augmentation",
+  "Devastation Evoker": "classicon_evoker_devastation",
+  "Marksmanship Hunter": "ability_hunter_focusedaim",
+  "Fire Mage": "spell_fire_firebolt02",
+  "Frost Mage": "spell_frost_frostbolt02",
+  "Brewmaster Monk": "spell_monk_brewmaster_spec",
+  "Windwalker Monk": "spell_monk_windwalker_spec",
+  "Protection Paladin": "ability_paladin_shieldofthetemplar",
+  "Discipline Priest": "spell_holy_powerwordshield",
+  "Shadow Priest": "spell_shadow_shadowwordpain",
+  "Outlaw Rogue": "ability_rogue_waylay",
+  "Subtlety Rogue": "ability_stealth",
+  "Elemental Shaman": "spell_nature_lightning",
+  "Enhancement Shaman": "spell_shaman_improvedstormstrike",
+  "Affliction Warlock": "spell_shadow_deathcoil",
+  "Demonology Warlock": "spell_shadow_metamorphosis",
+};
+const specIconUrl = (spec: string) =>
+  `https://wow.zamimg.com/images/wow/icons/medium/${specIcons[spec] || "inv_misc_questionmark"}.jpg`;
+const simcValue = (text: string, key: string) =>
+  text.match(new RegExp(`^${key}=(?:"([^"]+)"|([^\\s#]+))`, "m"))?.slice(1).find(Boolean) || "";
+const factionForSimc = (text: string) =>
+  ["human", "dwarf", "night_elf", "gnome", "draenei", "worgen", "pandaren_alliance", "void_elf", "lightforged_draenei", "dark_iron_dwarf", "kul_tiran", "mechagnome", "earthen_alliance"].includes(simcValue(text, "race")) ? "alliance" : "horde";
+const raidbotDifficulty = {
+  normal: { value: "raid-normal", upgradeLevel: 12838, label: "Normal", track: "Champion 6/6" },
+  heroic: { value: "raid-heroic", upgradeLevel: 12846, label: "Heroic", track: "Hero 6/6" },
+  mythic: { value: "raid-mythic", upgradeLevel: 12854, label: "Mythic", track: "Myth 6/6" },
+} as const;
+const simSpecName = (c: Raider, selectedSpec: string) =>
+  selectedSpec.replace(new RegExp(`\\s+${c.class}$`, "i"), "");
+const simFreshness = (sims: any, characterId: number, specName: string) => {
+  const character = (sims?.characters || []).find((entry: any) => +entry.id === +characterId),
+    instance = character?.instances?.find((entry: any) => +entry.id === 80),
+    result = {} as Record<Difficulty, string>;
+  for (const difficulty of ["normal", "heroic", "mythic"] as Difficulty[]) {
+    const wishlist = instance?.difficulties?.find((entry: any) => entry.difficulty === difficulty)?.wishlist;
+    result[difficulty] = [wishlist?.report_id?.[specName], wishlist?.updated_at?.[specName], wishlist?.report_uploaded_at?.[specName]]
+      .map((value) => String(value || ""))
+      .join("|");
+  }
+  return result;
+};
+const allSimDifficultiesChanged = (
+  before: Record<Difficulty, string>,
+  after: Record<Difficulty, string>,
+) => (["normal", "heroic", "mythic"] as Difficulty[]).every(
+  (difficulty) => Boolean(after[difficulty].replace(/\|/g, "")) && after[difficulty] !== before[difficulty],
+);
+function droptimizerPayload(text: string, c: Raider, selectedSpec: string, difficulty: Difficulty = "normal") {
+  const specId = specIds[selectedSpec];
+  if (!specId) throw new Error(`Raidbots spec mapping is missing for ${selectedSpec}.`);
+  const actor = simcValue(text, c.class === "Death Knight" ? "deathknight" : c.class.toLowerCase().replace(/\s+/g, "_"));
+  if (!actor) throw new Error(`This /simc export is not for a ${c.class}.`);
+  const raidbot = raidbotDifficulty[difficulty];
+  return {
+    type: "droptimizer", text, baseActorName: actor,
+    reportName: `OnlyFlasks · Season 2 Raids · ${raidbot.label} · ${raidbot.track}`,
+    armory: { region: simcValue(text, "region") || "us", realm: simcValue(text, "server"), name: "" },
+    email: "", sendEmail: false, spec: selectedSpec.replace(` ${c.class}`, ""), talents: null,
+    droptimizer: { instance: -102, difficulty: raidbot.value, upgradeLevel: raidbot.upgradeLevel, upgradeEquipped: true, gem: null,
+      classId: classIds[c.class], specId, lootSpecId: specId, faction: factionForSimc(text), craftedStats: "49/32",
+      offSpecItems: false, includeConversions: true, excludedItems: [] },
+    simcVersion: "latest", iterations: "smart", smartHighPrecision: true, smartAggressive: false,
+    fightStyle: "Patchwerk", fightLength: 360, enemyCount: 1, enemyType: "FluffyPillow",
+    potion: "", food: "", flask: "", augmentation: "", bloodlust: true, arcaneIntellect: true,
+    fortitude: true, battleShout: true, mysticTouch: true, chaosBrand: true, bleeding: true,
+    skyfury: true, markOfTheWild: true, powerInfusion: false, huntersMark: true, vantusRune: false,
+    reportDetails: false, apl: "", ptr: false, frontendHost: "www.raidbots.com", locale: "en_US",
+  };
+}
+const wishlistSignature = (items: Item[]) => items.map((item) => [
+  slot(item.slot),
+  +item.itemId,
+  +(item.sourceItemId || 0),
+  Boolean(item.catalyst),
+  Boolean(item.crafted),
+].join(":"));
+const wishlistIsCustomized = (items: Item[], baseline: Item[]) => {
+  const selected = wishlistSignature(items), fallback = wishlistSignature(baseline);
+  return selected.length !== fallback.length || selected.some((value, index) => value !== fallback[index]);
+};
+// Only these five slots turn into a tier set piece in the Catalyst.
+const TIER_SLOTS = ["HEAD", "SHOULDER", "CHEST", "HANDS", "LEGS"],
+  TIER_SLOT_SET = new Set(TIER_SLOTS);
+const TIER_VERDICT_ORDER: Record<string, number> = { drop: 0, charge: 1, self: 2, done: 3 };
+const TIER_SLOT_HELP: Record<string, string> = {
+  tier: "Tier equipped — slot satisfied",
+  stored: "Tier piece is in their bags — they just need to put it on",
+  ready: "Not tier, but convertible — they hold a catalyst charge",
+  waiting: "Convertible base, but no catalyst charge in hand",
+  missing: "Nothing here the Catalyst can use — needs a drop",
+};
+const VIEWS = ["overview", "bosses", "tier", "plan", "audit", "decisions", "history", "wishlist"] as const;
+type View = (typeof VIEWS)[number];
+// The tab lives in the URL so a view can be linked, bookmarked, reloaded into,
+// and walked with the browser's back button.
+const viewFromHash = (): View => {
+  const raw = window.location.hash.replace(/^#\/?/, "");
+  return (VIEWS as readonly string[]).includes(raw) ? (raw as View) : "overview";
+};
+type NavCounts = { tonight: number; actions: number; history: number; tierNeedsBoss: number };
+// Grouped so the bar reads as three jobs — plan the night, make the call, look
+// things up — instead of seven equal-weight buttons. Each destination gets its
+// own icon; badges say whether a number is a task or just a total.
+const NAV_TABS: {
+  id: View;
+  label: string;
+  icon: React.ReactNode;
+  group: "plan" | "decide" | "records";
+  count?: (counts: NavCounts) => number;
+  alert?: boolean;
+}[] = [
+  { id: "overview", label: "Weekly overview", icon: <LayoutDashboard />, group: "plan" },
+  { id: "bosses", label: "Boss targets", icon: <Skull />, group: "plan" },
+  { id: "tier", label: "Tier sets", icon: <Shield />, group: "plan", count: (c) => c.tierNeedsBoss, alert: true },
+  { id: "plan", label: "Tonight's plan", icon: <CalendarClock />, group: "plan", count: (c) => c.tonight },
+  { id: "decisions", label: "Loot decisions", icon: <Gavel />, group: "decide" },
+  { id: "audit", label: "Raid audit", icon: <ClipboardCheck />, group: "decide", count: (c) => c.actions, alert: true },
+  { id: "history", label: "Loot history", icon: <History />, group: "records", count: (c) => c.history },
+  { id: "wishlist", label: "My wishlist", icon: <Star />, group: "records" },
+];
+const HOUR = 3600000, STALE_HOURS = 12, OLD_HOURS = 36;
+const ageInHours = (iso?: string) => {
+  const parsed = iso ? Date.parse(iso) : NaN;
+  return Number.isFinite(parsed) ? (Date.now() - parsed) / HOUR : null;
+};
+const relativeAge = (iso?: string) => {
+  const hours = ageInHours(iso);
+  if (hours === null) return "never";
+  if (hours < 1) return `${Math.max(1, Math.round(hours * 60))}m ago`;
+  if (hours < 48) return `${Math.round(hours)}h ago`;
+  return `${Math.round(hours / 24)}d ago`;
+};
+const ageClass = (iso?: string) => {
+  const hours = ageInHours(iso);
+  if (hours === null) return "missing";
+  return hours >= OLD_HOURS ? "old" : hours >= STALE_HOURS ? "stale" : "fresh";
+};
+const crestVisuals = {
+  champion: { id: 3444, label: "Champion", icon: "inv_121_crest_champion" },
+  hero: { id: 3445, label: "Hero", icon: "inv_121_crest_hero" },
+  myth: { id: 3446, label: "Myth", icon: "inv_121_crest_myth" },
+} as const;
+const wowIcon = (icon: string) => `https://wow.zamimg.com/images/wow/icons/large/${icon}.jpg`;
+const currentSeasonCraftOrder = (item?: Item) => {
+  const bonuses = item?.bonusList || [];
+  if (bonuses.includes(13836)) return 3;
+  if (bonuses.includes(13835)) return 2;
+  if (bonuses.includes(13751)) return 1;
+  return 0;
+};
 const inferredRole = (c: Raider) =>
   c.role === "Tank" ? "Tank" : c.role === "Heal" ? "Healer" : "DPS";
 const roleGlyph = (c: Raider) =>
@@ -224,40 +436,7 @@ const itemEligibleForSpec = (item: Item, c: Raider, spec: string) => {
     return type.includes("shield") || /heldinoffhand/.test(type);
   return true;
 };
-const slot = (s?: string) => {
-  const x = norm(s);
-  if (/helm|head/.test(x)) return "HEAD";
-  if (x.includes("neck")) return "NECK";
-  if (x.includes("shoulder")) return "SHOULDER";
-  if (/cloak|back/.test(x)) return "BACK";
-  if (/chest|robe/.test(x)) return "CHEST";
-  if (/wrist|bracer/.test(x)) return "WRIST";
-  if (x === "hands" || x.includes("glove")) return "HANDS";
-  if (/waist|belt/.test(x)) return "WAIST";
-  if (x.includes("leg")) return "LEGS";
-  if (/feet|boot/.test(x)) return "FEET";
-  if (/ring|finger/.test(x)) return "FINGER";
-  if (x.includes("trinket")) return "TRINKET";
-  if (x.includes("offhand")) return "OFF_HAND";
-  if (
-    /weapon|mainhand|onehand|twohand|sword|axe|mace|staff|dagger|polearm|bow|gun|crossbow|warglaive/.test(
-      x,
-    )
-  )
-    return "MAIN_HAND";
-  return "";
-};
-const equipped = (c: Raider, item: Item) =>
-  c.equipment
-    .filter((i) => {
-      const w = slot(item.slot);
-      return w === "FINGER"
-        ? i.slot.startsWith("FINGER")
-        : w === "TRINKET"
-          ? i.slot.startsWith("TRINKET")
-          : i.slot === w;
-    })
-    .sort((a, b) => (b.itemLevel || 0) - (a.itemLevel || 0))[0];
+
 const catalystStatsMatch = (equippedItem?: Item, desiredBase?: Item) => {
   const profile = (item?: Item) => {
     const stats = (item?.secondaryStats || []).filter((stat) => stat.value > 0),
@@ -464,7 +643,7 @@ function WowItem({ item, size = 44 }: { item: Item; size?: number }) {
       className="item-art"
       href={`https://www.wowhead.com/item=${item.itemId}${options.length ? `?${options.join("&")}` : ""}`}
       data-wowhead={wowhead}
-      target="_blank"
+      target="_blank" rel="noreferrer"
     >
       <img
         src={
@@ -477,12 +656,248 @@ function WowItem({ item, size = 44 }: { item: Item; size?: number }) {
     </a>
   );
 }
+function TierResourceSnapshot({ info, visuals, compact = false }: { info: any; visuals: Map<number, Item>; compact?: boolean }) {
+  if (!info?.snapshotAt) return (
+    <div className={`tier-resource-snapshot no-data ${compact ? "compact" : ""}`}>
+      <div className="resource-empty"><CircleAlert /><span><strong>SIMC NEEDED</strong><small>Tier resources not captured</small></span></div>
+    </div>
+  );
+  const catalystId = info.catalystId || MIDNIGHT_S2_CATALYST,
+    catalyst = (CATALYST_CURRENCIES as Record<string, { name: string; icon: string }>)[String(catalystId)],
+    catalystName = catalyst?.name || `Catalyst currency ${catalystId}`,
+    choices = [
+      ...(info.vaultTier || []).map((item: Item) => ({ item, kind: "tier" as const })),
+      ...(info.vaultCatalyst || []).map((item: Item) => ({ item, kind: "catalyst" as const })),
+      ...(info.vaultOther || []).map((item: Item) => ({ item, kind: "other" as const })),
+    ];
+  const preReset = isBeforeReset(info.snapshotAt);
+  return (
+    <div className={`tier-resource-snapshot ${compact ? "compact" : ""}`} title={`SimC captured ${new Date(info.snapshotAt).toLocaleString()}`}>
+      <div className={`snapshot-age ${preReset ? "pre-reset" : ageClass(info.snapshotAt)}`}>
+        {preReset ? <CircleAlert /> : <RefreshCw />}
+        <span>
+          {preReset
+            ? `SimC captured ${relativeAge(info.snapshotAt)} — before this week's reset. Crests, vault and catalyst below are last week's.`
+            : `SimC captured ${relativeAge(info.snapshotAt)}`}
+        </span>
+      </div>
+      <div className="resource-currencies">
+        <a className={`catalyst-currency ${info.catalystCharges > 0 ? "available" : "empty"}`} href={`https://www.wowhead.com/currency=${catalystId}`} data-wowhead={`currency=${catalystId}`} target="_blank" rel="noreferrer" title={`${catalystName} · ${info.catalystCharges} charge${info.catalystCharges === 1 ? "" : "s"}`}>
+          <img src={wowIcon(catalyst?.icon || CATALYST_CURRENCIES[MIDNIGHT_S2_CATALYST].icon)} />
+          <span><strong>{info.catalystCharges}</strong><small>{catalyst ? catalystName.split(" ")[0].toUpperCase() : "CATALYST"}</small></span>
+          {info.catalystDelta !== null && info.catalystDelta !== 0 && <em>{info.catalystDelta > 0 ? "+" : ""}{info.catalystDelta}</em>}
+        </a>
+        <div className="crest-icons">
+          {(Object.keys(crestVisuals) as (keyof typeof crestVisuals)[]).map((key) => { const crest = crestVisuals[key]; return (
+            <a href={`https://www.wowhead.com/currency=${crest.id}`} data-wowhead={`currency=${crest.id}`} target="_blank" rel="noreferrer" className={key} key={key}>
+              <img src={wowIcon(crest.icon)} /><span><strong>{info.crests?.[key] || 0}</strong><small>{crest.label}</small></span>
+            </a>
+          ); })}
+        </div>
+      </div>
+      <div className="vault-choice-icons">
+        <b>VAULT</b>
+        {choices.length === 0 && <span className="vault-empty">No reward choices unlocked this week.</span>}
+        {choices.map(({ item, kind }, index) => {
+          const visual = { ...item, ...(visuals.get(+item.itemId) || {}), bonusList: item.bonusList, itemLevel: item.itemLevel },
+            track = currentSeasonTrackName(item), rank = currentSeasonTrackRank(item),
+            badge = kind === "tier" ? "TIER" : kind === "catalyst" ? "↻" : "",
+            detail = [visual.itemLevel ? `${visual.itemLevel} ilvl` : "", track ? `${track} ${rank}/6` : "", badge].filter(Boolean).join(" · ");
+          return <div className={kind === "tier" ? "exact" : kind} key={`${item.itemId}-${index}`} title={`${visual.name}\n${detail}\n${kind === "tier" ? "Exact tier option" : kind === "catalyst" ? "Can be catalyzed into tier" : "Vault reward choice"}`}>
+            <WowItem item={visual} size={compact ? 32 : 38} />
+            <span><strong>{visual.name}</strong><small>{detail || "—"}</small></span>
+          </div>;
+        })}
+      </div>
+    </div>
+  );
+}
+// Every source below is a snapshot taken by a local npm script, so the board can
+// look confidently wrong hours after the game state moved on. Show the age.
+// The board never tells anyone to run a command — refreshing is the scheduled
+// workflow's job. This only reports how old the numbers are.
+function DataFreshness({ data, compact = false }: { data: Data; compact?: boolean }) {
+  const sources = [
+    { label: "Roster & gear", at: data.refreshedAt },
+    { label: "WoWAudit activity", at: data.auditActivity?.fetchedAt },
+    { label: "Raider.IO", at: data.raiderio?.fetchedAt },
+  ];
+  const stale = sources.filter((s) => ["stale", "old", "missing"].includes(ageClass(s.at))),
+    sims = simStatus(data.sims),
+    resetAt = lastWeeklyReset();
+  return (
+    <div className={`data-freshness ${stale.length ? "has-stale" : ""} ${compact ? "compact" : ""}`}>
+      <div className="freshness-sources">
+        <RefreshCw />
+        {sources.map((source) => (
+          <span
+            className={`freshness-source ${ageClass(source.at)}`}
+            key={source.label}
+            title={`${source.label}\nCaptured ${source.at ? new Date(source.at).toLocaleString() : "never"}`}
+          >
+            <b>{source.label}</b>
+            <em>{relativeAge(source.at)}</em>
+          </span>
+        ))}
+        <span
+          className={`freshness-source ${sims.expired > 0 ? "old" : sims.current > 0 ? "fresh" : "missing"}`}
+          title={`Droptimizer sims\nValid for this raid week only (since ${resetAt.toLocaleString()}).\n${sims.current} current · ${sims.expired} expired at reset · ${sims.never} never simmed`}
+        >
+          <b>Sims</b>
+          <em>{sims.current}/{sims.current + sims.expired + sims.never}</em>
+        </span>
+      </div>
+      {(sims.expired > 0 || sims.current === 0) && (
+        <p className="freshness-warning">
+          <CircleAlert />
+          {sims.expired > 0
+            ? `${sims.expired} raider${sims.expired === 1 ? "'s sim" : "s' sims"} expired at Tuesday's reset and no longer count toward loot ranking.`
+            : "No current droptimizer sims — loot ranking is falling back to item level."}{" "}
+          Sims must be re-run each week after reset.
+        </p>
+      )}
+      {stale.length > 0 && (
+        <p className="freshness-warning">
+          <CircleAlert />
+          {stale.length === sources.length
+            ? `Gear and activity are from ${relativeAge(sources[0].at)} — this board is a snapshot, not a live feed.`
+            : `${stale.map((s) => s.label).join(" and ")} ${stale.length === 1 ? "is" : "are"} behind (${stale.map((s) => relativeAge(s.at)).join(", ")}).`}
+        </p>
+      )}
+    </div>
+  );
+}
+type Command = { id: string; label: string; hint: string; kind: string; run: () => void };
+// Seven destinations plus 25 raiders plus 8 bosses is too much to put in a bar,
+// and burying any of it in dropdowns trades discoverability for tidiness. A
+// palette is how real products square that: everything stays one keystroke away.
+function CommandPalette({ commands, onClose }: { commands: Command[]; onClose: () => void }) {
+  const [query, setQuery] = useState(""),
+    [active, setActive] = useState(0),
+    inputRef = useRef<HTMLInputElement>(null),
+    listRef = useRef<HTMLDivElement>(null);
+  const needle = norm(query),
+    matches = (needle ? commands.filter((c) => norm(`${c.label} ${c.kind}`).includes(needle)) : commands).slice(0, 40);
+  useEffect(() => { inputRef.current?.focus(); }, []);
+  useEffect(() => { setActive(0); }, [query]);
+  useEffect(() => {
+    listRef.current?.querySelector('[data-active="true"]')?.scrollIntoView({ block: "nearest" });
+  }, [active, matches.length]);
+  const choose = (command?: Command) => { if (command) { command.run(); onClose(); } };
+  return (
+    <div className="palette-backdrop" onClick={onClose} role="presentation">
+      <div
+        className="palette"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Jump to"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <input
+          ref={inputRef}
+          value={query}
+          placeholder="Jump to a view, raider, or boss…"
+          aria-label="Jump to"
+          onChange={(event) => setQuery(event.target.value)}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") onClose();
+            else if (event.key === "ArrowDown") { event.preventDefault(); setActive((n) => Math.min(n + 1, matches.length - 1)); }
+            else if (event.key === "ArrowUp") { event.preventDefault(); setActive((n) => Math.max(n - 1, 0)); }
+            else if (event.key === "Enter") { event.preventDefault(); choose(matches[active]); }
+          }}
+        />
+        <div className="palette-results" ref={listRef}>
+          {matches.length === 0 && <p className="palette-empty">Nothing matches “{query}”.</p>}
+          {matches.map((command, index) => (
+            <button
+              type="button"
+              key={command.id}
+              data-active={index === active}
+              className={index === active ? "active" : ""}
+              onMouseEnter={() => setActive(index)}
+              onClick={() => choose(command)}
+            >
+              <span className="palette-kind">{command.kind}</span>
+              <strong>{command.label}</strong>
+              <em>{command.hint}</em>
+            </button>
+          ))}
+        </div>
+        <footer className="palette-foot">
+          <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+          <span><kbd>↵</kbd> open</span>
+          <span><kbd>esc</kbd> close</span>
+        </footer>
+      </div>
+    </div>
+  );
+}
+// The tier card already demands a /simc paste, so spend that data: show the
+// upgrades the droptimizer actually found. Expired sims are dropped by simFor,
+// so an empty list here means "nothing current", not "nothing good".
+function TierSimUpgrades({ data, c, difficulty, spec }: { data: Data; c: Raider; difficulty: Difficulty; spec: string }) {
+  const upgrades = data.raid.bosses
+    .flatMap((boss) =>
+      boss.items.map((item) => ({ item, boss, gain: simFor(data, c, item, boss, difficulty, spec) })),
+    )
+    .filter((row) => Number(row.gain) > 0)
+    .sort((a, b) => Number(b.gain) - Number(a.gain))
+    .slice(0, 3);
+  if (!upgrades.length) return null;
+  return (
+    <div className="tier-sim-upgrades">
+      <b>TOP SIM UPGRADES</b>
+      {upgrades.map(({ item, boss, gain }) => (
+        <div key={`${boss.name}-${item.itemId}`} title={`${item.name}\n${boss.name}\n+${Number(gain).toFixed(2)}% ${difficulty}`}>
+          <WowItem item={item} size={26} />
+          <span>
+            <strong>{item.name}</strong>
+            <small>{boss.name}</small>
+          </span>
+          <em>+{Number(gain).toFixed(1)}%</em>
+        </div>
+      ))}
+    </div>
+  );
+}
+function RaiderIdentity({
+  c,
+  spec,
+  status = "Main",
+  detail,
+  compact = false,
+}: {
+  c: Raider;
+  spec: string;
+  status?: RosterStatus;
+  detail?: string;
+  compact?: boolean;
+}) {
+  const role = inferredRole(c);
+  return (
+    <div
+      className={`raider-identity ${status.toLowerCase()} ${compact ? "compact" : ""}`}
+      style={{ "--class": colors[c.class] } as React.CSSProperties}
+      title={`${status} · ${role} · ${spec}`}
+    >
+      <span className="raider-portrait">
+        <img src={specIconUrl(spec)} alt="" />
+        <i className={`wow-role-icon ${role.toLowerCase()}`} aria-label={role} />
+      </span>
+      <span className="raider-copy">
+        <strong>{c.name}</strong>
+        {detail && <small>{detail}</small>}
+      </span>
+    </div>
+  );
+}
 function simFor(
   data: Data,
   c: Raider,
   item: Item,
   boss: Boss,
   selectedDifficulty: Difficulty,
+  selectedSpec = c.defaultSpec,
 ) {
   const root = data.sims?.characters || [],
     entry = root.find((x: any) => +x.id === +c.id),
@@ -498,6 +913,25 @@ function simFor(
         +(x.item_id ?? x.itemId ?? x.id) === +item.itemId ||
         norm(x.name ?? x.item_name) === norm(item.name),
     );
+  const specName = selectedSpec.replace(new RegExp(`\\s+${c.class}$`, "i"), ""),
+    reportIds = difficulty?.wishlist?.report_id,
+    specReportId = reportIds?.[specName];
+  // A droptimizer only describes the week it ran in. Gear, vault and crests all
+  // move at Tuesday's reset, so last week's percentages rank people wrongly —
+  // drop them rather than let a stale number decide who gets loot.
+  if (isBeforeReset(difficulty?.wishlist?.updated_at?.[specName])) return null;
+  const
+    specScore = hit?.score_by_spec?.[specName]?.percentage,
+    wishScore = hit?.wishes?.find(
+      (wish: any) => norm(wish.specialization) === norm(specName),
+    )?.percentage;
+  for (const value of [specScore, wishScore]) {
+    const n = Number(value);
+    if (Number.isFinite(n)) return n;
+  }
+  // Generic percentages belong to the spec that generated the report. Do not
+  // leak them into a newly selected spec that has not been simulated yet.
+  if (reportIds && !specReportId) return null;
   for (const k of [
     "upgrade_percentage",
     "item_percentage",
@@ -511,17 +945,30 @@ function simFor(
   }
   return null;
 }
+function targetSatisfactionReason(data: Data, c: Raider, entry: any, selectedDifficulty: Difficulty, selectedSpec: string) {
+  const required = selectedDifficulty === "mythic" ? 3 : selectedDifficulty === "heroic" ? 2 : 1;
+  if (entry.target?.crafted && entry.exact && !entry.suboptimal && currentSeasonCraftOrder(entry.current) >= required) return "bis";
+  const
+    currentOrder = currentSeasonTrackOrder(entry.current);
+  if (entry.exact && !entry.suboptimal && currentOrder >= required) return "bis";
+  if (!entry.exact && currentOrder > required) return "higher";
+  if (!entry.inRaid) return null;
+  const simulatedGain = simFor(data, c, entry.source.item, entry.source.raidBoss, selectedDifficulty, selectedSpec);
+  return simulatedGain !== null && simulatedGain <= 0 ? "sim" : null;
+}
+const targetSatisfiedAtDifficulty = (data: Data, c: Raider, entry: any, selectedDifficulty: Difficulty, selectedSpec: string) =>
+  Boolean(targetSatisfactionReason(data, c, entry, selectedDifficulty, selectedSpec));
 export default function App() {
+  const simResumeAttempted = useRef(false);
   const [data, setData] = useState<Data | null>(null),
+    [liveSims, setLiveSims] = useState<any>(null),
     [bossIndex, setBoss] = useState(0),
     [difficulty, setDifficulty] = useState<Difficulty>(
       () =>
         (localStorage.getItem("onlyflasks-difficulty") as Difficulty) ||
         "mythic",
     ),
-    [view, setView] = useState<
-      "overview" | "plan" | "decisions" | "audit" | "history" | "wishlist"
-    >("overview"),
+    [view, setView] = useState<View>(viewFromHash),
     [open, setOpen] = useState(false),
     [rosterStatuses, setRosterStatuses] = useState<
       Record<number, RosterStatus>
@@ -535,6 +982,7 @@ export default function App() {
           localStorage.getItem("onlyflasks-custom-wishlists-v3") || "{}",
         ),
     ),
+    [simcSnapshots, setSimcSnapshots] = useState<Record<number, any>>({}),
     [wishlistCharacter, setWishlistCharacter] = useState<number | null>(null),
     [wishlistApiUrl, setWishlistApiUrl] = useState(""),
     [officerUnlocked, setOfficerUnlocked] = useState(false),
@@ -547,12 +995,59 @@ export default function App() {
     >("idle"),
     [syncState, setSyncState] = useState<
       "idle" | "loading" | "saving" | "saved" | "error"
-    >("idle");
+    >("idle"),
+    [loadError, setLoadError] = useState(""),
+    [reloadToken, setReloadToken] = useState(0),
+    [paletteOpen, setPaletteOpen] = useState(false),
+    [simcText, setSimcText] = useState(""),
+    [simState, setSimState] = useState<SimState>("idle"),
+    [simMessage, setSimMessage] = useState(""),
+    [simReports, setSimReports] = useState<SimReport[]>([]);
   useEffect(() => {
+    let cancelled = false;
+    setLoadError("");
     fetch("./loot-data.json", { cache: "no-store" })
-      .then((r) => r.json())
-      .then(setData);
+      .then((r) => {
+        if (!r.ok) throw new Error(`loot-data.json returned HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => { if (!cancelled) setData(payload); })
+      .catch((error) => {
+        console.error(error);
+        // Without this the app sat on the loading message forever.
+        if (!cancelled) setLoadError(error instanceof Error ? error.message : "Could not load the board data.");
+      });
+    return () => { cancelled = true; };
+  }, [reloadToken]);
+  useEffect(() => {
+    const onHashChange = () => setView(viewFromHash());
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        setPaletteOpen((wasOpen) => !wasOpen);
+        return;
+      }
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      const target = event.target as HTMLElement | null;
+      // Never steal a digit from someone filling in the SimC box or a picker.
+      if (target && (target.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName))) return;
+      if (event.key === "/") { event.preventDefault(); setPaletteOpen(true); return; }
+      const index = Number(event.key) - 1;
+      if (Number.isInteger(index) && index >= 0 && index < NAV_TABS.length) setView(NAV_TABS[index].id);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+  useEffect(() => {
+    if (viewFromHash() !== view) window.location.hash = `#/${view}`;
+  }, [view]);
+  useEffect(() => {
+    if (liveSims) setData((current) => current ? { ...current, sims: liveSims } : current);
+  }, [liveSims]);
   useEffect(() => {
     fetch("./app-config.json", { cache: "no-store" })
       .then((r) => r.json())
@@ -572,6 +1067,11 @@ export default function App() {
           sharedSpecs[+entry.characterId] = entry.lootSpec;
         }
         setRosterStatuses(payload.rosterStatuses || {});
+        setSimcSnapshots(payload.simcSnapshots || {});
+        fetch(url, {
+          method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify({ action: "getWowauditSims" }),
+        }).then((result) => result.json()).then((result) => { if (result.ok && result.sims) setLiveSims(result.sims); }).catch(console.error);
         setCustomWishlists(lists);
         setSpecs((current) => ({ ...current, ...sharedSpecs }));
         localStorage.setItem(
@@ -608,6 +1108,77 @@ export default function App() {
   useEffect(() => {
     (window as any).$WowheadPower?.refreshLinks();
   }, [data, bossIndex, difficulty, view, customWishlists]);
+  const refreshLiveSims = async ({
+    before,
+    character,
+    selectedSpec,
+    attempts = 1,
+    announce = true,
+  }: {
+    before?: Record<Difficulty, string>;
+    character?: Raider;
+    selectedSpec?: string;
+    attempts?: number;
+    announce?: boolean;
+  } = {}) => {
+    if (!wishlistApiUrl) return false;
+    if (announce) {
+      setSimState("refreshing");
+      setSimMessage(before ? "Waiting for all three new WoWAudit reports…" : "Refreshing simulations from WoWAudit…");
+    }
+    try {
+      for (let attempt = 0; attempt < attempts; attempt++) {
+        const response = await fetch(wishlistApiUrl, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify({ action: "getWowauditSims" }),
+          cache: "no-store",
+        });
+        const result = await response.json();
+        if (!response.ok || !result.ok || !result.sims)
+          throw new Error(result.error || `WoWAudit refresh failed (${response.status}).`);
+        const fresh = !before || !character || !selectedSpec || allSimDifficultiesChanged(
+          before,
+          simFreshness(result.sims, character.id, simSpecName(character, selectedSpec)),
+        );
+        if (fresh) {
+          setLiveSims(result.sims);
+          if (announce) {
+            setSimState("uploaded");
+            setSimMessage("Normal, Heroic, and Mythic simulations are synchronized.");
+          }
+          localStorage.removeItem("onlyflasks-pending-sim-refresh-v1");
+          return true;
+        }
+        if (attempt < attempts - 1)
+          await new Promise((resolve) => window.setTimeout(resolve, 5000));
+      }
+      if (announce) {
+        setSimState("stale");
+        setSimMessage("Raidbots finished, but WoWAudit still has the previous reports. Retry refresh—do not rerun the sims.");
+      }
+      return false;
+    } catch (error) {
+      if (announce) {
+        setSimState("stale");
+        setSimMessage(error instanceof Error ? `${error.message} Retry refresh—your completed sims are safe.` : "Refresh failed. Retry without rerunning sims.");
+      }
+      return false;
+    }
+  };
+  useEffect(() => {
+    if (!wishlistApiUrl || !data || simResumeAttempted.current) return;
+    let pending: any = null;
+    try { pending = JSON.parse(localStorage.getItem("onlyflasks-pending-sim-refresh-v1") || "null"); } catch { /* ignore damaged local state */ }
+    if (!pending?.before || !pending?.characterId || !pending?.selectedSpec) return;
+    const character = data.characters.find((entry) => +entry.id === +pending.characterId);
+    if (!character) return;
+    simResumeAttempted.current = true;
+    setWishlistCharacter(character.id);
+    if (Array.isArray(pending.reportUrls))
+      setSimReports(pending.reportUrls.map((report: any) => ({ ...report, state: "uploaded" })));
+    void refreshLiveSims({ before: pending.before, character, selectedSpec: pending.selectedSpec, attempts: 13 });
+  }, [wishlistApiUrl, data]);
   const officerLogin = async () => {
     if (!wishlistApiUrl || !officerPassphrase) return;
     setOfficerBusy(true);
@@ -694,14 +1265,18 @@ export default function App() {
                   slot(t.slot) === slot(item.slot)),
             );
           if (!target) return [];
-          const cur = equipped(c, item);
+          const cur = equipped(c, item, keptForOwnTargets(c, list));
           if (targetSatisfiedAtTrack(data, c, target, targetTrack)) return [];
           return [
             {
               c,
               cur,
+              // Everything worn in the slot group. Rings and trinkets fill two
+              // slots and we cannot know which one they would actually swap, so
+              // the card shows both rather than claiming one is kept.
+              worn: equippedGroup(c, item),
               target,
-              sim: simFor(data, c, item, boss, difficulty),
+              sim: simFor(data, c, item, boss, difficulty, chosen),
               ilvl: cur ? expected - (cur.itemLevel || 0) : expected,
             },
           ];
@@ -746,14 +1321,14 @@ export default function App() {
                     slot(t.slot) === slot(item.slot)),
               );
               if (!target) return [];
-              const cur = equipped(c, item);
+              const cur = equipped(c, item, keptForOwnTargets(c, list));
               if (targetSatisfiedAtTrack(data, c, target, targetTrack))
                 return [];
               return [
                 {
                   c,
                   cur,
-                  sim: simFor(data, c, item, boss, difficulty),
+                  sim: simFor(data, c, item, boss, difficulty, chosen),
                   ilvl: cur ? expected - (cur.itemLevel || 0) : expected,
                 },
               ];
@@ -784,8 +1359,35 @@ export default function App() {
       .sort((a, b) => b.people.length - a.people.length)
       .slice(0, 12);
   }, [data, specs, difficulty, rosterStatuses, customWishlists]);
-  if (!data) return <div className="loading">Loading the raid board…</div>;
-  const boss = data.raid.bosses[bossIndex],
+  if (loadError)
+    return (
+      <div className="board-status error" role="alert">
+        <CircleAlert />
+        <strong>Could not load the raid board</strong>
+        <p>{loadError}</p>
+        <p className="muted">
+          The board reads a pre-built <code>loot-data.json</code>. If this keeps failing, run{" "}
+          <code>npm run build:data</code> to regenerate it.
+        </p>
+        <button onClick={() => setReloadToken((n) => n + 1)}>
+          <RefreshCw /> Try again
+        </button>
+      </div>
+    );
+  if (!data)
+    return (
+      <div className="board-status" role="status" aria-live="polite">
+        <RefreshCw className="spin" />
+        <strong>Loading the raid board…</strong>
+        <p className="muted">Pulling roster, gear, sims, and loot tables.</p>
+      </div>
+    );
+  const visualItems = new Map<number, Item>([
+      ...(data.seasonLoot?.items || []),
+      ...data.raid.bosses.flatMap((entry) => entry.items),
+      ...Object.values(data.bis.lists).flatMap((entry) => entry.items),
+    ].map((item) => [+item.itemId, item])),
+    boss = data.raid.bosses[bossIndex],
     activityById = new Map(
       (data.auditActivity?.characters || []).map((x: any) => [+x.id, x.data]),
     ),
@@ -801,43 +1403,108 @@ export default function App() {
           a.c.name.localeCompare(b.c.name),
       ),
     actionCount = audits.filter((x) => x.issues.length).length,
+    paletteCommands: Command[] = [
+      ...NAV_TABS.map((tab, index) => ({
+        id: `view-${tab.id}`,
+        label: tab.label,
+        hint: `View · press ${index + 1}`,
+        kind: "Go to",
+        run: () => setView(tab.id),
+      })),
+      ...data.raid.bosses.map((raidBoss, index) => ({
+        id: `boss-${index}`,
+        label: raidBoss.name,
+        hint: `Boss ${index + 1} of ${data.raid.bosses.length}`,
+        kind: "Boss",
+        run: () => { setBoss(index); setView("bosses"); },
+      })),
+      ...data.characters.map((c) => ({
+        id: `raider-${c.id}`,
+        label: c.name,
+        hint: `${c.class} · ${specs[c.id] || c.defaultSpec || c.role}`,
+        kind: "Raider",
+        run: () => { setWishlistCharacter(c.id); setView("wishlist"); },
+      })),
+      ...(["normal", "heroic", "mythic"] as Difficulty[]).map((value) => ({
+        id: `difficulty-${value}`,
+        label: `Switch to ${value}`,
+        hint: "Changes every difficulty-aware view",
+        kind: "Difficulty",
+        run: () => { setDifficulty(value); localStorage.setItem("onlyflasks-difficulty", value); },
+      })),
+    ],
     tierStatus = data.characters
       .map((c) => {
-        const list = wishlistFor(c),
-          tierSlots = ["HEAD", "SHOULDER", "CHEST", "HANDS", "LEGS"],
-          slots = tierSlots.flatMap((slotName) => {
-            const target = list.find((t) => slot(t.slot) === slotName);
-            if (!target) return [];
-            const exact = c.equipment.some(
-                (item) => +item.itemId === +target.itemId,
-              ),
-              base = Boolean(
-                target.catalyst &&
-                  target.sourceItemId &&
-                  c.equipment.some(
-                    (item) =>
-                      +item.itemId === Number(target.sourceItemId),
-                  ),
-              );
-            return [
-              {
-                slot: slotName,
-                target,
-                state: exact ? "equipped" : base ? "ready" : "missing",
-              },
-            ];
+        const snapshot = simcSnapshots[c.id],
+          snapshotBags: Item[] = snapshot?.bags || [],
+          snapshotVault: Item[] = snapshot?.vault || [],
+          catalystBalance = currentCatalystBalance(snapshot),
+          catalystCharges = catalystBalance?.quantity ?? null,
+          // The class's real tier ids, not whatever the wishlist happens to name.
+          tierIds = tierIdsForClass(
+            data.auditActivity?.periodInfo?.current_season?.tier_items_by_slot,
+            classIds[c.class],
+          ),
+          tierIdSet = new Set(Object.values(tierIds).map(Number)),
+          set = tierSetStatus<Item>({
+            equipment: c.equipment,
+            bags: snapshotBags,
+            tierIds,
+            charges: catalystCharges,
           }),
-          equippedCount = slots.filter((x) => x.state === "equipped").length,
-          readyCount = slots.filter((x) => x.state === "ready").length,
-          missingCount = slots.filter((x) => x.state === "missing").length;
-        return { c, slots, equippedCount, readyCount, missingCount };
+          { slots, trackMix, setBonus, reachable, reachableBonus, hiddenUpgrade, freePieces, catalysable } = set,
+          equippedCount = set.pieces,
+          storedCount = set.stored,
+          readyCount = set.ready,
+          waitingCount = set.waiting,
+          missingCount = set.missing;
+        return {
+          // Spread the status verbatim so the row and the module agree on one
+          // shape. Hand-listing fields silently dropped `pieces`, and every
+          // backfarm number read zero because `undefined < 4` is false.
+          ...set,
+          c, equippedCount, storedCount, readyCount, waitingCount, missingCount,
+          charges: catalystCharges || 0,
+          catalystCharges,
+          catalystId: catalystBalance?.id || null,
+          catalystDelta: catalystBalance && snapshot?.previousCatalystCurrencies && Number.isFinite(Number(snapshot.previousCatalystCurrencies[String(catalystBalance.id)]))
+            ? catalystBalance.quantity - Number(snapshot.previousCatalystCurrencies[String(catalystBalance.id)])
+            : null,
+          vaultTier: snapshotVault.filter((item) => tierIdSet.has(+item.itemId)),
+          vaultCatalyst: snapshotVault.filter((item) => !tierIdSet.has(+item.itemId) && TIER_SLOT_SET.has(slot(item.slot))),
+          vaultOther: snapshotVault.filter((item) => !tierIdSet.has(+item.itemId) && !TIER_SLOT_SET.has(slot(item.slot))),
+          crests: snapshot ? {
+            champion: Number(snapshot.upgradeCurrencies?.[MIDNIGHT_S2_CRESTS.champion] || 0),
+            hero: Number(snapshot.upgradeCurrencies?.[MIDNIGHT_S2_CRESTS.hero] || 0),
+            myth: Number(snapshot.upgradeCurrencies?.[MIDNIGHT_S2_CRESTS.myth] || 0),
+          } : null,
+          snapshotAt: snapshot?.capturedAt || null,
+        };
       })
+      // Everyone short of 4PC first, closest to finishing at the top — 3 pieces
+      // is the cheapest to close out. Finished players sink to the bottom.
       .sort(
         (a, b) =>
-          b.equippedCount - a.equippedCount ||
-          b.readyCount - a.readyCount ||
+          Number(a.pieces >= 4) - Number(b.pieces >= 4) ||
+          b.pieces - a.pieces ||
           a.c.name.localeCompare(b.c.name),
       ),
+    rosterTier = tierRosterSummary(tierStatus),
+    // The only question this page answers: who is not at 4PC yet.
+    tierCounts = {
+      four: tierStatus.filter((row) => row.pieces >= 4).length,
+      three: tierStatus.filter((row) => row.pieces === 3).length,
+      two: tierStatus.filter((row) => row.pieces === 2).length,
+      under: tierStatus.filter((row) => row.pieces < 2).length,
+      self: tierStatus.filter((row) => row.pieces < 4 && row.reachable >= 4).length,
+    },
+    navCounts: NavCounts = {
+      tonight: tonight.length,
+      actions: actionCount,
+      history: data.lootHistory?.history_items?.length || 0,
+      tierNeedsBoss: tierCounts.two + tierCounts.under,
+    },
+    tierById = new Map(tierStatus.map((row) => [row.c.id, row])),
     tierSummary = {
       fourPiece: tierStatus.filter((row) => row.equippedCount >= 4).length,
       twoPiece: tierStatus.filter(
@@ -869,7 +1536,10 @@ export default function App() {
     ),
     weeklyOverview = data.characters
       .map((c) => {
-        const targets = wishlistFor(c).flatMap((target) => {
+        const list = wishlistFor(c),
+          // One-to-one, so two ring rows never point at the same ring.
+          replacements = assignReplacements(c, list);
+        const targets = list.flatMap((target, targetIndex) => {
           let source = raidSources.find(
             (x) =>
               +x.item.itemId === +target.itemId ||
@@ -910,20 +1580,28 @@ export default function App() {
               exact && target.catalyst
                 ? catalystStatsMatch(exact, desiredBase)
                 : null,
-            trackName = norm(current?.track);
+            seasonTrackOrder = currentSeasonTrackOrder(current);
           const state = !current
             ? "missing"
-            : trackName.includes("myth")
+            : seasonTrackOrder === 3
               ? "myth"
-              : trackName.includes("hero")
+              : seasonTrackOrder === 2
                 ? "hero"
-                : "champion";
+                : seasonTrackOrder === 1
+                  ? "champion"
+                  : target.crafted && exact
+                    ? currentSeasonCraftOrder(current) > 0 ? "crafted" : "crafted-old"
+                    : "missing";
+          // Was: equippedInSlot[occurrence] — pairing ring target #2 with the
+          // 2nd-best equipped ring. That named a ring the player is keeping
+          // because it satisfies target #1. Ask the shared rule instead.
+          const slotCurrent = replacements.get(targetIndex);
           return [
             {
               target,
               source,
               inRaid,
-              current: current || equipped(c, target),
+              current: current || slotCurrent,
               state,
               catalystReady: Boolean(!exact && base && target.catalyst),
               catalystStatMatch,
@@ -939,8 +1617,12 @@ export default function App() {
           ).length,
           mythCount = targets.filter((x) => x.state === "myth").length,
           heroCount = targets.filter((x) => x.state === "hero").length,
-          championCount = targets.filter((x) => x.state === "champion").length;
-        return { c, targets, exactCount, mythCount, heroCount, championCount };
+          championCount = targets.filter((x) => x.state === "champion").length,
+          readiness = (["normal", "heroic", "mythic"] as Difficulty[]).reduce((result, selectedDifficulty) => {
+            result[selectedDifficulty] = targets.filter((entry) => targetSatisfiedAtDifficulty(data, c, entry, selectedDifficulty, specs[c.id] || c.defaultSpec)).length;
+            return result;
+          }, {} as Record<Difficulty, number>);
+        return { c, targets, exactCount, readiness, mythCount, heroCount, championCount };
       })
       .sort(
         (a, b) =>
@@ -948,12 +1630,24 @@ export default function App() {
             priorityValue(b.c, rosterStatuses) ||
           a.c.name.localeCompare(b.c.name),
       ),
-    bossAnalytics = data.raid.bosses
+    overviewInsights = (["normal", "heroic", "mythic"] as Difficulty[]).map((selectedDifficulty) => {
+      const evaluated = weeklyOverview.flatMap((row) => row.targets.map((entry) => ({
+          reason: targetSatisfactionReason(data, row.c, entry, selectedDifficulty, specs[row.c.id] || row.c.defaultSpec),
+        }))),
+        total = evaluated.length,
+        bis = evaluated.filter((x) => x.reason === "bis").length,
+        higher = evaluated.filter((x) => x.reason === "higher").length,
+        sim = evaluated.filter((x) => x.reason === "sim").length,
+        satisfied = bis + higher + sim,
+        complete = weeklyOverview.filter((row) => row.targets.length > 0 && row.readiness[selectedDifficulty] === row.targets.length).length;
+      return { difficulty: selectedDifficulty, total, satisfied, complete, bis, higher, sim };
+    }),
+    bossAnalyticsFor = (selectedDifficulty: Difficulty) => data.raid.bosses
       .map((raidBoss, bossOrder) => {
         const targetTrackOrder =
-            difficulty === "mythic" ? 3 : difficulty === "heroic" ? 2 : 1,
-          expected = levels[difficulty][bossOrder];
-        const claims = weeklyOverview.flatMap((row) =>
+            selectedDifficulty === "mythic" ? 3 : selectedDifficulty === "heroic" ? 2 : 1,
+          expected = levels[selectedDifficulty][bossOrder];
+        const wishlistClaims: any[] = weeklyOverview.flatMap((row) =>
             row.targets
               .filter(
                 (x) =>
@@ -962,20 +1656,14 @@ export default function App() {
                   !x.catalystReady,
               )
               .flatMap((x) => {
-                const currentTrack = norm(x.current?.track),
-                  currentTrackOrder = currentTrack.includes("myth")
-                    ? 3
-                    : currentTrack.includes("hero")
-                      ? 2
-                      : currentTrack.includes("champion")
-                        ? 1
-                        : 0,
+                const currentTrackOrder = currentSeasonTrackOrder(x.current),
                   sim = simFor(
                     data,
                     row.c,
                     x.source.item,
                     raidBoss,
-                    difficulty,
+                    selectedDifficulty,
+                    specs[row.c.id] || row.c.defaultSpec,
                   ),
                   ilvlGain = expected - (x.current?.itemLevel || 0),
                   equalOrHigher = currentTrackOrder >= targetTrackOrder;
@@ -993,23 +1681,28 @@ export default function App() {
                 ];
               }),
           ),
+          simulatedNonBis: any[] = weeklyOverview.flatMap((row) => raidBoss.items.flatMap((item) => {
+            const selectedSpec = specs[row.c.id] || row.c.defaultSpec;
+            if (!itemEligibleForSpec(item, row.c, selectedSpec) || wishlistClaims.some((claim) => claim.c.id === row.c.id && +claim.target.itemId === +item.itemId)) return [];
+            const sim = simFor(data, row.c, item, raidBoss, selectedDifficulty, selectedSpec);
+            if (sim === null || sim <= 0) return [];
+            const current = equipped(row.c, item);
+            return [{ target: item, source: { item, raidBoss, bossOrder }, inRaid: true, current, state: "sim-upgrade", catalystReady: false, catalystStatMatch: null, suboptimal: false, exact: false, c: row.c, sim, ilvlGain: expected - (current?.itemLevel || 0), trackUpgrade: currentSeasonTrackOrder(current) < targetTrackOrder, simUpgradeOnly: true }];
+          })),
+          claims: any[] = [...wishlistClaims, ...simulatedNonBis],
           raiders = [...new Map(claims.map((x) => [x.c.id, x.c])).values()],
-          missing = claims.filter((x) => !x.exact || x.suboptimal),
-          trackUpgrades = claims.filter((x) => x.trackUpgrade),
+          missing = wishlistClaims.filter((x) => !x.exact || x.suboptimal),
+          trackUpgrades = wishlistClaims.filter((x) => x.trackUpgrade),
           simulated = claims.filter((x) => x.sim !== null && x.sim > 0),
-          totalSim = simulated.reduce((sum, x) => sum + (x.sim || 0), 0),
+          bestSimByPlayer = [...new Map(simulated.sort((a, b) => (b.sim || 0) - (a.sim || 0)).map((x) => [x.c.id, x.sim || 0])).values()],
+          totalSim = bestSimByPlayer.reduce((sum, value) => sum + value, 0),
           maxSim = simulated.reduce((max, x) => Math.max(max, x.sim || 0), 0),
           impact = claims.filter((x) =>
             ["TRINKET", "MAIN_HAND", "OFF_HAND"].includes(slot(x.target.slot)),
           ),
           tier = claims.filter((x) => x.source.item.tierToken),
           tierPlayers = new Set(tier.map((x) => x.c.id)).size,
-          score =
-            missing.length * 2 +
-            trackUpgrades.length * 1.5 +
-            impact.length * 2 +
-            tier.length * 3 +
-            totalSim * 2;
+          score = (simulated.length ? 1000 : 0) + totalSim * 100 + tierPlayers * 12 + new Set(impact.map((x) => x.c.id)).size * 8 + raiders.length * 3 + missing.length;
         return {
           raidBoss,
           bossOrder,
@@ -1031,9 +1724,24 @@ export default function App() {
           b.score - a.score ||
           b.raiders.length - a.raiders.length ||
           a.bossOrder - b.bossOrder,
-      );
+      ),
+    bossAnalyticsByDifficulty = {
+      normal: bossAnalyticsFor("normal"),
+      heroic: bossAnalyticsFor("heroic"),
+      mythic: bossAnalyticsFor("mythic"),
+    },
+    bossPlanning = data.raid.bosses.map((raidBoss, bossOrder) => {
+      const values = (["normal", "heroic", "mythic"] as Difficulty[]).reduce((result, selectedDifficulty) => {
+        result[selectedDifficulty] = bossAnalyticsByDifficulty[selectedDifficulty].find((row) => row.raidBoss.name === raidBoss.name)!;
+        return result;
+      }, {} as Record<Difficulty, ReturnType<typeof bossAnalyticsFor>[number]>);
+      return { raidBoss, bossOrder, values, score: values.normal.score + values.heroic.score + values.mythic.score };
+    }).sort((a, b) => b.score - a.score || a.bossOrder - b.bossOrder);
   return (
     <>
+      {paletteOpen && (
+        <CommandPalette commands={paletteCommands} onClose={() => setPaletteOpen(false)} />
+      )}
       <header>
         <div className="shell mast">
           <div>
@@ -1041,47 +1749,39 @@ export default function App() {
             <h1>The Venomous Abyss</h1>
             <p className="muted">Sim-first decisions with gear context</p>
           </div>
-          <div className="app-tabs">
-            <button
-              className={view === "overview" ? "active" : ""}
-              onClick={() => setView("overview")}
-            >
-              <TrendingUp /> Weekly overview
-            </button>
-            <button
-              className={view === "plan" ? "active" : ""}
-              onClick={() => setView("plan")}
-            >
-              <Sparkles /> Tonight's plan <b>{tonight.length}</b>
-            </button>
-            <button
-              className={view === "audit" ? "active" : ""}
-              onClick={() => setView("audit")}
-            >
-              <ClipboardCheck />
-              Raid audit <b>{actionCount}</b>
-            </button>
-            <button
-              className={view === "decisions" ? "active" : ""}
-              onClick={() => setView("decisions")}
-            >
-              <Swords />
-              Loot decisions
-            </button>
-            <button
-              className={view === "history" ? "active" : ""}
-              onClick={() => setView("history")}
-            >
-              <History />
-              Loot history <b>{data.lootHistory?.history_items?.length || 0}</b>
-            </button>
-            <button
-              className={view === "wishlist" ? "active" : ""}
-              onClick={() => setView("wishlist")}
-            >
-              <Sparkles /> My wishlist
-            </button>
-          </div>
+          <button type="button" className="palette-trigger" onClick={() => setPaletteOpen(true)}>
+            <Search />
+            <span>Jump to…</span>
+            <kbd>{navigator.platform.toLowerCase().includes("mac") ? "⌘" : "Ctrl"}K</kbd>
+          </button>
+          <nav className="app-tabs" aria-label="Board sections">
+            {NAV_TABS.map((tab, index) => (
+              <Fragment key={tab.id}>
+                {index > 0 && NAV_TABS[index - 1].group !== tab.group && (
+                  <span className="tab-divider" aria-hidden="true" />
+                )}
+                <button
+                  type="button"
+                  className={view === tab.id ? "active" : ""}
+                  aria-current={view === tab.id ? "page" : undefined}
+                  title={`${tab.label} — press ${index + 1}`}
+                  onClick={() => setView(tab.id)}
+                >
+                  {tab.icon}
+                  <span>{tab.label}</span>
+                  {(() => {
+                    const count = tab.count?.(navCounts);
+                    if (count === undefined) return null;
+                    return (
+                      <b className={tab.alert && count > 0 ? "alert" : "neutral"}>
+                        {count}
+                      </b>
+                    );
+                  })()}
+                </button>
+              </Fragment>
+            ))}
+          </nav>
         </div>
       </header>
       <main className="shell">
@@ -1097,6 +1797,13 @@ export default function App() {
                 </p>
               </div>
             </div>
+            <div className="coverage-insights difficulty-summary">{overviewInsights.map((summary) => {
+              const percent = summary.total ? Math.round(summary.satisfied / summary.total * 100) : 0;
+              return <div className={`coverage-score ${summary.difficulty}`} key={summary.difficulty}>
+                <span className="coverage-ring" style={{ "--coverage": `${percent}%` } as React.CSSProperties}><b>{percent}%</b></span>
+                <span><strong>{raidbotDifficulty[summary.difficulty].label} ready</strong><small>{summary.satisfied} of {summary.total} targets already satisfied</small><em>{summary.bis} BiS · {summary.higher} higher track · {summary.sim} sim-safe</em><em>{summary.complete} players need nothing at this difficulty</em></span>
+              </div>;
+            })}</div>
             <div className="overview-legend">
               <span className="myth">
                 <b>M</b> Myth track
@@ -1107,11 +1814,14 @@ export default function App() {
               <span className="champion">
                 <b>C</b> Champion track
               </span>
+              <span className="crafted">
+                <b>⚒</b> Crafted BiS
+              </span>
               <span className="missing">
                 <b>!</b> Missing BiS
               </span>
               <small>
-                <b className="exact-mark">✓</b> Optimal BiS stats{" "}
+                <b className="exact-mark">✓</b> Myth-level BiS complete{" "}
                 <b className="suboptimal-mark">≈</b> Suboptimal catalyst stats{" "}
                 <b className="catalyst-mark">↻</b> Ready to catalyze · large icon
                 = target · small icon = current
@@ -1141,17 +1851,16 @@ export default function App() {
                         } as React.CSSProperties
                       }
                     >
-                      <i />
                       <span>
-                        <b>{row.c.name}</b>
-                        <small>
-                          {row.exactCount}/{row.targets.length} BiS ·{" "}
-                          <em className="myth-text">{row.mythCount}M</em>{" "}
-                          <em className="hero-text">{row.heroCount}H</em>{" "}
-                          <em className="champion-text">
-                            {row.championCount}C
-                          </em>
-                        </small>
+                        <RaiderIdentity
+                          c={row.c}
+                          spec={specs[row.c.id] || row.c.defaultSpec}
+                          status={rosterStatuses[row.c.id] || row.c.rosterStatus || "Main"}
+                          compact
+                        />
+                        <div className="overview-coverage">
+                          {(["normal", "heroic", "mythic"] as Difficulty[]).map((selectedDifficulty) => <strong className={selectedDifficulty} key={selectedDifficulty}><b>{row.readiness[selectedDifficulty]}</b>/{row.targets.length}<small> {selectedDifficulty[0].toUpperCase()}</small></strong>)}
+                        </div>
                       </span>
                     </div>
                     {overviewSlots.map((slotName) => {
@@ -1177,9 +1886,17 @@ export default function App() {
                                 },
                                 index,
                               ) => {
-                                const track = current?.track
-                                    ? `${current.track} ${current.trackRank || ""}`.trim()
-                                    : "No item detected in this slot",
+                                const seasonTrack = currentSeasonTrackName(current),
+                                  craftOrder = target.crafted && exact ? currentSeasonCraftOrder(current) : 0,
+                                  craftedIlvl = target.crafted && exact ? Number(current?.itemLevel || 0) : 0,
+                                  craftedReady = craftOrder === 3 ? "Mythic craft" : craftOrder === 2 ? "Heroic craft" : craftOrder === 1 ? "Normal craft" : "previous-season craft",
+                                  track = craftedIlvl
+                                    ? `Crafted · ${craftedIlvl} ilvl · ${craftedReady}`
+                                    : seasonTrack
+                                    ? `${seasonTrack} ${current?.trackRank || ""}`.trim()
+                                    : current
+                                      ? `${current.track || "Untracked"} · previous season / no current-season upgrade marker`
+                                      : "No item detected in this slot",
                                   actualStats = (current?.secondaryStats || [])
                                     .map(
                                       (stat) =>
@@ -1187,7 +1904,9 @@ export default function App() {
                                     )
                                     .join(" · "),
                                   detail =
-                                    state === "missing"
+                                    state === "crafted" || state === "crafted-old"
+                                      ? `Crafted BiS owned · ${craftedReady}`
+                                      : state === "missing"
                                       ? `Missing · currently ${current?.name || "empty"} · ${track}`
                                       : catalystReady
                                         ? `Catalyst base equipped · ${track}`
@@ -1203,7 +1922,7 @@ export default function App() {
                                       className={`overview-target ${state} ${suboptimal ? "suboptimal" : exact && target.catalyst ? "optimal" : catalystReady ? "catalyst-ready" : ""}`}
                                       href={`https://www.wowhead.com/item=${target.itemId}`}
                                       data-wowhead={`item=${target.itemId}`}
-                                      target="_blank"
+                                      target="_blank" rel="noreferrer"
                                       title={`BIS TARGET\n${target.name}\n${target.crafted ? "Crafted stats are selected with missives\n" : ""}${detail}\nSource: ${source.raidBoss.name}`}
                                     >
                                       <img
@@ -1212,13 +1931,17 @@ export default function App() {
                                       <em>
                                         {state === "missing"
                                           ? "!"
+                                          : state === "crafted-old"
+                                            ? "OLD"
+                                          : state === "crafted"
+                                            ? current?.itemLevel || "⚒"
                                           : state === "myth"
                                             ? "M"
                                             : state === "hero"
                                               ? "H"
                                               : "C"}
                                       </em>
-                                      {(exact || catalystReady) && (
+                                      {((exact && !suboptimal && (state === "myth" || (state === "crafted" && craftOrder === 3))) || catalystReady) && (
                                         <i>
                                           {catalystReady
                                             ? "↻"
@@ -1233,7 +1956,7 @@ export default function App() {
                                         className="current-mini"
                                         href={`https://www.wowhead.com/item=${current.itemId}${current.bonusList?.length ? `?bonus=${current.bonusList.join(":")}` : ""}`}
                                         data-wowhead={`item=${current.itemId}${current.bonusList?.length ? `&bonus=${current.bonusList.join(":")}` : ""}`}
-                                        target="_blank"
+                                        target="_blank" rel="noreferrer"
                                         title={`CURRENTLY EQUIPPED\n${current.name}\n${current.itemLevel || "?"} ilvl · ${track}${actualStats ? `\n${actualStats}` : ""}`}
                                       >
                                         <img src={current.icon} />
@@ -1253,171 +1976,156 @@ export default function App() {
                 ))}
               </div>
             </div>
-            <div className="boss-value-head embedded">
+          </section>
+        )}
+        {view === "bosses" && (
+          <section className="boss-target-page">
+            <div className="boss-target-head">
+              <div><p className="rune">Weekly route planning</p><h2>Boss targets</h2><p>Ranked for the selected difficulty using current-season gear, wishlist gaps, and verified sims.</p></div>
+              <div className="difficulty-picker">{(["normal", "heroic", "mythic"] as Difficulty[]).map((value) => <button className={difficulty === value ? "selected" : ""} key={value} onClick={() => { setDifficulty(value); localStorage.setItem("onlyflasks-difficulty", value); }}>{value}</button>)}</div>
+            </div>
+            <div className="boss-target-table">
+              <div className="boss-target-columns"><span>#</span><span>Boss</span><span>Players</span><span>BiS gaps</span><span>Sim upgrades</span><span>Weapons / trinkets</span><span>Tier</span><span>Best sim</span></div>
+              {bossAnalyticsByDifficulty[difficulty].map((row, index) => <details className="boss-target-entry" key={row.raidBoss.name}>
+                <summary className={row.claims.length ? "has-value" : "no-value"}>
+                  <b className="boss-target-rank">{index + 1}</b><span className="boss-target-name"><strong>{row.raidBoss.name}</strong><small>{row.claims.length ? "Open for loot targets" : `No ${difficulty} value`}</small></span>
+                  <b>{row.raiders.length}</b><b>{row.missing.length}</b><b className={row.simulated.length ? "sim" : "muted"}>{row.simulated.length || "—"}</b><b className={row.impact.length ? "impact" : ""}>{row.impact.length}</b><b className={row.tierPlayers ? "tier" : ""}>{row.tierPlayers}</b><b className={row.maxSim > 0 ? "sim" : "muted"}>{row.maxSim > 0 ? `+${row.maxSim.toFixed(2)}%` : "—"}</b><ChevronDown />
+                </summary>
+                {row.claims.length > 0 && <div className="boss-target-expanded">
+                  <div className="boss-target-reason"><strong>Why this boss matters</strong><span>{row.raiders.length} players · {row.missing.length} unsatisfied BiS targets{row.simulated.length ? ` · ${row.simulated.length} verified item upgrades` : ""}{row.impact.length ? ` · ${row.impact.length} high-impact drops` : ""}{row.tierPlayers ? ` · tier for ${row.tierPlayers}` : ""}</span></div>
+                  <div className="boss-target-claims">{[...row.claims.reduce((groups: Map<number, { c: Raider; claims: any[] }>, claim: any) => { const group = groups.get(claim.c.id) || { c: claim.c, claims: [] as any[] }; group.claims.push(claim); groups.set(claim.c.id, group); return groups; }, new Map<number, { c: Raider; claims: any[] }>()).values()].sort((a, b) => Math.max(...b.claims.map((x) => x.sim || -1)) - Math.max(...a.claims.map((x) => x.sim || -1)) || priorityValue(a.c, rosterStatuses) - priorityValue(b.c, rosterStatuses)).map((group) => {
+                    const bestSim = Math.max(...group.claims.map((x) => x.sim || -1)), bestIlvl = Math.max(...group.claims.map((x) => Math.max(0, x.ilvlGain)));
+                    return <article className="boss-target-player" key={group.c.id} style={{ "--class": colors[group.c.class] } as React.CSSProperties}>
+                      <div className="boss-player-summary"><RaiderIdentity c={group.c} spec={specs[group.c.id] || group.c.defaultSpec} status={rosterStatuses[group.c.id] || group.c.rosterStatus || "Main"} compact /><span>{group.claims.length} {group.claims.length === 1 ? "item" : "items"}</span><div className="gain-badges"><b className={bestIlvl > 0 ? "ilvl" : "muted"}>{bestIlvl > 0 ? `up to +${bestIlvl} ilvl` : "0 ilvl"}</b><b className={bestSim > 0 ? "sim" : "muted"}>{bestSim > 0 ? `up to +${bestSim.toFixed(2)}%` : "— sim"}</b></div></div>
+                      <div className="boss-player-items">{group.claims.sort((a, b) => (b.sim || -1) - (a.sim || -1) || b.ilvlGain - a.ilvlGain).map((claim, claimIndex) => { const ilvlGain = Math.max(0, claim.ilvlGain); return <div className="boss-player-item" key={`${claim.target.itemId}-${claimIndex}`}><WowItem item={claim.target} size={30} /><span><b>{claim.target.name}</b><small>{claim.simUpgradeOnly ? "SIM UPGRADE" : "BiS TARGET"}</small></span><div className="gain-badges"><b className={ilvlGain > 0 ? "ilvl" : "muted"}>{ilvlGain > 0 ? `+${ilvlGain} ilvl` : "0 ilvl"}</b><b className={claim.sim !== null && claim.sim > 0 ? "sim" : "muted"}>{claim.sim !== null ? `${claim.sim > 0 ? "+" : ""}${claim.sim.toFixed(2)}%` : "— sim"}</b></div></div>; })}</div>
+                    </article>;
+                  })}</div>
+                </div>}
+              </details>)}
+            </div>
+          </section>
+        )}
+        {view === "tier" && (
+          <section className="tier-page">
+            <div className="plan-head">
               <div>
-                <p className="rune">Time allocation</p>
-                <h2>Boss value by difficulty</h2>
-                <p>
-                  Equal or higher-track slots are excluded unless a verified sim
-                  still shows an upgrade.
-                </p>
-              </div>
-              <div className="difficulty-picker">
-                {(["normal", "heroic", "mythic"] as Difficulty[]).map(
-                  (value) => (
-                    <button
-                      className={difficulty === value ? "selected" : ""}
-                      key={value}
-                      onClick={() => {
-                        setDifficulty(value);
-                        localStorage.setItem("onlyflasks-difficulty", value);
-                      }}
-                    >
-                      {value}
-                    </button>
-                  ),
-                )}
+                <p className="rune">Set completion</p>
+                <h2>Tier sets</h2>
+                <p>Who has 4PC, who can get there alone, and who needs a kill.</p>
               </div>
             </div>
-            <div className="value-method">
-              <b>Ranking considers</b>
+          <section className="tier-board">
+            <div className="plan-section-title">
+              <div>
+                <p className="rune">Set completion</p>
+                <h3>Tier set status</h3>
+              </div>
               <span>
-                Missing BiS, eligible track upgrades, verified sim gains,
-                weapons/trinkets, and tier-set completion.
+                Equipped tier, stored bases, Vault options, and captured catalyst resources
               </span>
             </div>
-            <div className="boss-value-table">
-              <div className="boss-value-columns">
-                <span>#</span>
-                <span>Boss</span>
-                <span>Players with an upgrade</span>
-                <span>Missing BiS</span>
-                <span>Track upgrades</span>
-                <span>Sim-backed gains</span>
-                <span>Weapons / trinkets</span>
-                <span>Tier-set upgrades</span>
+            <div className="tier-verdicts">
+              <div className="tier-verdict done">
+                <strong>{tierCounts.four}</strong>
+                <span>AT 4PC</span>
+                <em>Done — stop prioritising tier for them</em>
               </div>
-              {bossAnalytics.map((row, index) => (
-                <details className="boss-value-entry" key={row.raidBoss.name}>
-                  <summary className="boss-value-row">
-                    <strong className="value-rank">{index + 1}</strong>
-                    <div className="value-boss">
-                      <b>
-                        {row.raidBoss.name}
-                        <ChevronDown />
-                      </b>
-                      <small>
-                        {row.claims.length
-                          ? "Open to see players and items"
-                          : "No upgrades at this difficulty"}
-                      </small>
-                    </div>
-                    <strong>
-                      {row.raiders.length}
-                      <small> players</small>
-                    </strong>
-                    <strong>{row.missing.length}</strong>
-                    <strong>{row.trackUpgrades.length}</strong>
-                    <strong className={row.maxSim > 0 ? "sim-value" : ""}>
-                      {row.maxSim > 0 ? `+${row.maxSim.toFixed(2)}% max` : "—"}
-                      <small>
-                        {row.simulated.length
-                          ? `${row.simulated.length} verified`
-                          : " no sim gains"}
-                      </small>
-                    </strong>
-                    <strong className={row.impact.length ? "impact" : ""}>
-                      {row.impact.length}
-                    </strong>
-                    <strong className={row.tierPlayers ? "tier" : ""}>
-                      {row.tierPlayers}
-                      <small>
-                        {row.tierPlayers === 1 ? " player" : " players"}
-                      </small>
-                    </strong>
-                  </summary>
-                  {row.claims.length > 0 && (
-                    <div className="boss-beneficiaries">
-                      {[...row.claims]
-                        .sort(
-                          (a, b) =>
-                            (b.sim || 0) - (a.sim || 0) ||
-                            b.ilvlGain - a.ilvlGain ||
-                            priorityValue(a.c, rosterStatuses) -
-                              priorityValue(b.c, rosterStatuses),
-                        )
-                        .map((claim, claimIndex) => {
-                          const currentTrack =
-                              claim.current?.track || "No track",
-                            reasons = [
-                              !claim.exact
-                                ? "Missing BiS"
-                                : claim.suboptimal
-                                  ? "Suboptimal catalyst stats"
-                                  : "",
-                              claim.trackUpgrade
-                                ? `${currentTrack} → ${tracks[difficulty]}`
-                                : "",
-                              ["TRINKET", "MAIN_HAND", "OFF_HAND"].includes(
-                                slot(claim.target.slot),
-                              )
-                                ? "High-impact slot"
-                                : "",
-                              claim.source.item.tierToken
-                                ? "Tier-set upgrade"
-                                : "",
-                            ].filter(Boolean),
-                            ilvlGain = Math.max(0, claim.ilvlGain);
-                          return (
-                            <div
-                              className="boss-beneficiary"
-                              key={`${claim.c.id}-${claim.target.itemId}-${claimIndex}`}
-                              style={
-                                {
-                                  "--class": colors[claim.c.class],
-                                } as React.CSSProperties
-                              }
-                            >
-                              <i />
-                              <span>
-                                <b>{claim.c.name}</b>
-                                <small>{inferredRole(claim.c)}</small>
-                              </span>
-                              <WowItem item={claim.target} size={30} />
-                              <div>
-                                <strong>{claim.target.name}</strong>
-                                <small>{reasons.join(" · ")}</small>
-                              </div>
-                              <div className="gain-badges">
-                                <b className="ilvl">
-                                  {ilvlGain > 0
-                                    ? `+${ilvlGain} ilvl`
-                                    : "No ilvl gain"}
-                                </b>
-                                <b
-                                  className={
-                                    claim.sim !== null && claim.sim > 0
-                                      ? "sim"
-                                      : "muted"
-                                  }
-                                >
-                                  {claim.sim !== null && claim.sim > 0
-                                    ? `+${claim.sim.toFixed(2)}% sim`
-                                    : "No verified sim"}
-                                </b>
-                              </div>
-                            </div>
-                          );
-                        })}
-                    </div>
-                  )}
-                </details>
+              <div className="tier-verdict three">
+                <strong>{tierCounts.three}</strong>
+                <span>AT 3PC</span>
+                <em>One piece from 4 — cheapest to close out</em>
+              </div>
+              <div className="tier-verdict two">
+                <strong>{tierCounts.two}</strong>
+                <span>AT 2PC</span>
+                <em>Two pieces short of the 4-set</em>
+              </div>
+              <div className="tier-verdict under">
+                <strong>{tierCounts.under}</strong>
+                <span>UNDER 2PC</span>
+                <em>0 or 1 piece — furthest out</em>
+              </div>
+              <div className="tier-verdict self">
+                <strong>{tierCounts.self}</strong>
+                <span>CAN SELF-SOLVE</span>
+                <em>Reach 4PC from bags or charges, no loot needed</em>
+              </div>
+            </div>
+            <div className="tier-legend">
+              <span className="k-tier"><i />Tier equipped</span>
+              <span className="k-ready"><i />Can catalyze now (charge in hand)</span>
+              <span className="k-waiting"><i />Convertible, needs a charge</span>
+              <span className="k-missing"><i />Needs a drop</span>
+              <span className="legend-split">
+                Corner letter = best track held in that slot:
+                <b className="tC">C</b> Champion / Normal
+                <b className="tH">H</b> Hero / Heroic
+                <b className="tM">M</b> Myth / Mythic
+                <b className="tX">—</b> nothing usable
+              </span>
+            </div>
+            <div className="tier-grid">
+              {tierStatus.map(
+                ({ c, slots, equippedCount, storedCount, readyCount, waitingCount, trackMix, setBonus, reachable, reachableBonus, hiddenUpgrade, freePieces, catalysable, catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, crests, snapshotAt }) => (
+                <div
+                  className={`tier-person ${equippedCount === 5 ? "tier-complete" : ""} ${hiddenUpgrade ? "tier-actionable" : ""}`}
+                  key={c.id}
+                  style={
+                    { "--class": colors[c.class] } as React.CSSProperties
+                  }
+                >
+                  <div className="tier-card-head">
+                    <RaiderIdentity c={c} spec={specs[c.id] || c.defaultSpec} status={rosterStatuses[c.id] || c.rosterStatus || "Main"} />
+                    <span
+                      className={`tier-charges ${catalystCharges ? "has" : "none"}`}
+                      title={`${catalystCharges ?? 0} Venomblight Manaflux held${catalystCharges === null ? " (no /simc captured)" : ""}`}
+                    >
+                      <strong>{catalystCharges ?? "?"}</strong>
+                      <small>CATA</small>
+                    </span>
+                    <span className={`tier-bonus b${setBonus}`} title={`${equippedCount} tier pieces equipped\nSet bonuses count pieces, not tracks.`}>
+                      <strong>{setBonus ? `${setBonus}PC` : "0PC"}</strong>
+                      <small>{equippedCount}/5</small>
+                    </span>
+                  </div>
+                  <div className="tier-slots">
+                    {slots.map(({ slot: slotName, state, evidence, source, sourceTrack }) => (
+                      <div
+                        className={`tier-slot-visual ${state}`}
+                        key={slotName}
+                        title={`${slotName[0] + slotName.slice(1).toLowerCase()}\n${evidence?.name || "Empty"}${sourceTrack ? ` · ${sourceTrack} track` : ""}\n${TIER_SLOT_HELP[state]}`}
+                      >
+                        <b
+                          className={`slot-track t${/^[CHM]$/.test(trackLetter(source)) ? trackLetter(source) : "X"}`}
+                          title={sourceTrack ? `${sourceTrack} track` : "Nothing usable in this slot"}
+                        >
+                          {trackLetter(source)}
+                        </b>
+                        {evidence?.itemId ? (
+                          <WowItem item={{ ...evidence, ...(visualItems.get(+evidence.itemId) || {}), itemId: +evidence.itemId, bonusList: evidence.bonusList, itemLevel: evidence.itemLevel } as Item} size={32} />
+                        ) : (
+                          <span className="tier-slot-blank" aria-hidden="true" />
+                        )}
+                        <span>
+                          <strong>{slotName[0] + slotName.slice(1).toLowerCase()}</strong>
+                          {/* Only label what the colour cannot say on its own. Red
+                              already means "needs a drop"; blue and amber both mean
+                              convertible, so those keep a word. */}
+                          {state !== "missing" && (
+                            <small>
+                              {state === "tier" ? "TIER" : state === "stored" ? "IN BAGS" : "CATALYZE"}
+                            </small>
+                          )}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <TierSimUpgrades data={data} c={c} difficulty={difficulty} spec={specs[c.id] || c.defaultSpec} />
+                  <TierResourceSnapshot info={{ catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, crests, snapshotAt }} visuals={visualItems} />
+                </div>
               ))}
             </div>
-            <p className="value-footnote">
-              A low score means little loot value at the selected difficulty;
-              progression requirements can still make the boss mandatory.
-            </p>
+          </section>
           </section>
         )}
         {view === "plan" && (
@@ -1475,13 +2183,7 @@ export default function App() {
                           { "--class": colors[c.class] } as React.CSSProperties
                         }
                       >
-                        <i />
-                        <span>
-                          <b>{c.name}</b>
-                          <small>
-                            {inferredRole(c)} · {c.class}
-                          </small>
-                        </span>
+                        <RaiderIdentity c={c} spec={specs[c.id] || c.defaultSpec} status={value} compact />
                         <select
                           value={value}
                           disabled={rosterSaveState === "saving"}
@@ -1539,86 +2241,7 @@ export default function App() {
                 )}
               </div>
             )}
-            <section className="tier-board">
-              <div className="plan-section-title">
-                <div>
-                  <p className="rune">Set completion</p>
-                  <h3>Tier set status</h3>
-                </div>
-                <span>
-                  Equipped tier vs catalyst-ready bases · catalyst charges unknown
-                </span>
-              </div>
-              <div className="tier-readiness">
-                <div className="tier-readiness-main">
-                  <span>
-                    <small>RAID SET READINESS</small>
-                    <strong>
-                      {tierSummary.fourPiece}/{tierStatus.length} at 4-piece
-                    </strong>
-                  </span>
-                  <div className="tier-progress">
-                    <i
-                      style={{
-                        width: `${tierStatus.length ? (tierSummary.fourPiece / tierStatus.length) * 100 : 0}%`,
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="tier-readiness-stat four">
-                  <strong>{tierSummary.fourPiece}</strong>
-                  <span>4PC active</span>
-                </div>
-                <div className="tier-readiness-stat two">
-                  <strong>{tierSummary.twoPiece}</strong>
-                  <span>2PC only</span>
-                </div>
-                <div className="tier-readiness-stat building">
-                  <strong>{tierSummary.building}</strong>
-                  <span>0–1 pieces</span>
-                </div>
-                <div className="tier-readiness-stat complete">
-                  <strong>{tierSummary.complete}</strong>
-                  <span>5/5 complete</span>
-                </div>
-              </div>
-              <div className="tier-grid">
-                {tierStatus.map(
-                  ({ c, slots, equippedCount, readyCount, missingCount }) => (
-                  <div
-                    className={`tier-person ${equippedCount === slots.length ? "tier-complete" : ""}`}
-                    key={c.id}
-                    style={
-                      { "--class": colors[c.class] } as React.CSSProperties
-                    }
-                  >
-                    <i />
-                    <div className="tier-copy">
-                      <div className="tier-name">
-                        <strong>{c.name}</strong>
-                        <b>{equippedCount}/{slots.length} TIER</b>
-                      </div>
-                      {(readyCount > 0 || missingCount > 0) && (
-                        <div className="tier-slots">
-                          {slots.filter((x) => x.state !== "equipped").map(({ slot: slotName, target, state }) => (
-                            <a
-                              key={slotName}
-                              className={state}
-                              href={`https://www.wowhead.com/item=${target.itemId}`}
-                              data-wowhead={`item=${target.itemId}`}
-                              title={target.name}
-                              target="_blank"
-                            >
-                              {state === "ready" ? "↻ " : "! "}{slotName[0] + slotName.slice(1).toLowerCase()}{state === "ready" ? " ready" : ""}
-                            </a>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+
             <div className="plan-section-title contested-title">
               <div>
                 <p className="rune">Needs discussion</p>
@@ -1691,7 +2314,6 @@ export default function App() {
                               </div>
                               <div className="contenders">
                                 {group.map((p) => {
-                                  const role = inferredRole(p.c);
                                   return (
                                     <div
                                       className={`contender ${groupStatus.toLowerCase()}`}
@@ -1703,9 +2325,12 @@ export default function App() {
                                       }
                                     >
                                       <span>
-                                        <strong className="contender-name">
-                                          {p.c.name}
-                                        </strong>
+                                        <RaiderIdentity
+                                          c={p.c}
+                                          spec={specs[p.c.id] || p.c.defaultSpec}
+                                          status={groupStatus}
+                                          compact
+                                        />
                                         <small className="gain-metrics">
                                           {p.sim !== null ? (
                                             <em
@@ -1737,15 +2362,6 @@ export default function App() {
                                           </i>
                                         </small>
                                       </span>
-                                      <em
-                                        className={`role-priority role-only ${role.toLowerCase()}`}
-                                        title={role}
-                                        aria-label={role}
-                                      >
-                                        <i
-                                          className={`wow-role-icon ${role.toLowerCase()}`}
-                                        />
-                                      </em>
                                     </div>
                                   );
                                 })}
@@ -1782,9 +2398,11 @@ export default function App() {
             const classSpecs = data.specs.filter((s) => s.endsWith(c.class));
             const baseline = data.bis.lists[selectedSpec]?.items || [];
             const current = customWishlists[c.id] || baseline;
+            const customized = wishlistIsCustomized(current, baseline);
             const save = (items: Item[]) => {
               const next = { ...customWishlists, [c.id]: items };
               setCustomWishlists(next);
+              setSyncState("idle");
               localStorage.setItem(
                 "onlyflasks-custom-wishlists-v3",
                 JSON.stringify(next),
@@ -1809,12 +2427,131 @@ export default function App() {
                 const payload = await response.json();
                 if (!payload.ok)
                   throw new Error(payload.error || "Submission failed");
+                const sharedResponse = await fetch(wishlistApiUrl, { cache: "no-store" });
+                const shared = await sharedResponse.json();
+                if (!shared.ok) throw new Error(shared.error || "Saved, but could not verify the shared wishlist");
+                const verifiedLists: Record<number, Item[]> = {}, verifiedSpecs: Record<number, string> = {};
+                for (const entry of shared.wishlists || []) {
+                  verifiedLists[+entry.characterId] = entry.wishlist || [];
+                  verifiedSpecs[+entry.characterId] = entry.lootSpec;
+                }
+                setSimcSnapshots(shared.simcSnapshots || {});
+                setCustomWishlists(verifiedLists);
+                setSpecs((existing) => ({ ...existing, ...verifiedSpecs }));
+                localStorage.setItem("onlyflasks-custom-wishlists-v3", JSON.stringify(verifiedLists));
+                localStorage.setItem("onlyflasks-board-specs-v1", JSON.stringify({ ...specs, ...verifiedSpecs }));
                 setSyncState("saved");
                 setTimeout(() => setSyncState("idle"), 2500);
               } catch (error) {
                 console.error(error);
                 setSyncState("error");
               }
+            };
+            const submitSim = async () => {
+              if (!wishlistApiUrl || !simcText.trim()) return;
+              const parsedSnapshot = parseSimcSnapshot(simcText.trim()),
+                tierSlots = new Set(["HEAD", "SHOULDER", "CHEST", "HANDS", "LEGS"]),
+                tierIds = new Set(baseline.flatMap((item) => [Number(item.itemId), Number(item.sourceItemId || 0)]).filter(Boolean)),
+                tierEvidence = (item: Item) => tierSlots.has(slot(item.slot)) && (currentSeasonTrackOrder(item) > 0 || tierIds.has(+item.itemId)),
+                snapshot = {
+                  ...parsedSnapshot,
+                  bags: parsedSnapshot.bags.filter(tierEvidence),
+                  vault: parsedSnapshot.vault.filter(tierEvidence),
+                };
+              if (norm(parsedSnapshot.character) !== norm(c.name)) {
+                setSimState("error");
+                setSimMessage(`This /simc export belongs to ${parsedSnapshot.character || "another character"}, not ${c.name}.`);
+                return;
+              }
+              const before = simFreshness(data.sims, c.id, simSpecName(c, selectedSpec));
+              setSimState("submitting");
+              setSimMessage("Submitting all three raid difficulties…");
+              setSimReports([]);
+              try {
+                const snapshotResponse = await fetch(wishlistApiUrl, {
+                  method: "POST",
+                  headers: { "Content-Type": "text/plain;charset=utf-8" },
+                  body: JSON.stringify({ action: "saveSimcSnapshot", characterId: c.id, characterName: c.name, lootSpec: selectedSpec, snapshot }),
+                });
+                const snapshotResult = await snapshotResponse.json();
+                if (!snapshotResult.ok || !snapshotResult.snapshot) {
+                  const deploymentMissing = /character identity|wishlist must contain/i.test(String(snapshotResult.error || ""));
+                  throw new Error(deploymentMissing
+                    ? "The Google Apps Script deployment is outdated and does not support SimC audit snapshots yet."
+                    : snapshotResult.error || "Could not save the SimC audit snapshot");
+                }
+                setSimcSnapshots((existing) => ({ ...existing, [c.id]: snapshotResult.snapshot }));
+                const difficulties: Difficulty[] = ["normal", "heroic", "mythic"];
+                const jobs: { difficulty: Difficulty; simId: string; reportUrl: string }[] = [];
+                for (let index = 0; index < difficulties.length; index++) {
+                  const simDifficulty = difficulties[index], label = raidbotDifficulty[simDifficulty].label;
+                  setSimMessage(`${label} · submitting ${index + 1} of 3…`);
+                  const response = await fetch(wishlistApiUrl, {
+                    method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    body: JSON.stringify({ action: "submitDroptimizer", characterId: c.id, payload: droptimizerPayload(simcText.trim(), c, selectedSpec, simDifficulty) }),
+                  });
+                  const result = await response.json();
+                  if (!result.ok || !result.simId) throw new Error(`${label}: ${result.error || "Raidbots submission failed"}`);
+                  jobs.push({ difficulty: simDifficulty, simId: result.simId, reportUrl: result.reportUrl || `https://www.raidbots.com/simbot/report/${result.simId}` });
+                  setSimReports(jobs.map((job) => ({ difficulty: job.difficulty, url: job.reportUrl, state: "queued" })));
+                }
+                setSimState("running");
+                setSimReports(jobs.map((job) => ({ difficulty: job.difficulty, url: job.reportUrl, state: "running" })));
+                for (let index = 0; index < jobs.length; index++) {
+                  const job = jobs[index], label = raidbotDifficulty[job.difficulty].label;
+                  setSimReports((reports) => reports.map((report) => report.difficulty === job.difficulty ? { ...report, state: "running" } : report));
+                  setSimMessage(`${label} · waiting for report ${index + 1} of 3…`);
+                  let uploaded = false;
+                  for (let attempt = 0; attempt < 180; attempt++) {
+                    await new Promise((resolve) => window.setTimeout(resolve, 10000));
+                    const reportResponse = await fetch(`https://www.raidbots.com/reports/${encodeURIComponent(job.simId)}/data.json`, { cache: "no-store" });
+                    if (reportResponse.status === 403 || reportResponse.status === 404) continue;
+                    if (reportResponse.ok) {
+                      const report = await reportResponse.json();
+                      if (report.error || report.errors || report.meta?.error) throw new Error(`${label}: ${String(report.error || report.meta?.error || "Raidbots simulation failed")}`);
+                    } else throw new Error(`${label}: Raidbots status check failed (${reportResponse.status}).`);
+                    setSimMessage(`${label} · report complete, uploading to WoWAudit…`);
+                    for (let uploadAttempt = 0; uploadAttempt < 3; uploadAttempt++) {
+                      const statusResponse = await fetch(wishlistApiUrl, {
+                        method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
+                        body: JSON.stringify({ action: "checkDroptimizer", simId: job.simId, reportReady: true, upload: true,
+                          characterId: c.id, characterName: c.name, configurationName: "Single Target", replaceManualEdits: false }),
+                      });
+                      const status = await statusResponse.json();
+                      if (status.ok && status.state === "uploaded") { uploaded = true; break; }
+                      if (uploadAttempt === 2) throw new Error(`${label}: ${status.error || "WoWAudit upload failed"}`);
+                      await new Promise((resolve) => window.setTimeout(resolve, (uploadAttempt + 1) * 3000));
+                    }
+                    if (uploaded) break;
+                  }
+                  if (!uploaded) throw new Error(`${label} is still running. Use its report link to check it later.`);
+                  setSimReports((reports) => reports.map((report) => report.difficulty === job.difficulty ? { ...report, state: "uploaded" } : report));
+                }
+                localStorage.setItem("onlyflasks-pending-sim-refresh-v1", JSON.stringify({
+                  characterId: c.id,
+                  selectedSpec,
+                  before,
+                  reportUrls: jobs.map((job) => ({ difficulty: job.difficulty, url: job.reportUrl })),
+                }));
+                await refreshLiveSims({ before, character: c, selectedSpec, attempts: 13 });
+              } catch (error) {
+                setSimState("error");
+                setSimMessage(error instanceof Error ? error.message : "Simulation failed");
+              }
+            };
+            const retrySimRefresh = async () => {
+              let pending: any = null;
+              try { pending = JSON.parse(localStorage.getItem("onlyflasks-pending-sim-refresh-v1") || "null"); } catch { /* ignore damaged local state */ }
+              const matches = pending && +pending.characterId === +c.id && pending.selectedSpec === selectedSpec;
+              if (matches && Array.isArray(pending.reportUrls)) {
+                setSimReports(pending.reportUrls.map((report: any) => ({ ...report, state: "uploaded" })));
+              }
+              await refreshLiveSims({
+                before: matches ? pending.before : undefined,
+                character: c,
+                selectedSpec,
+                attempts: matches ? 13 : 1,
+              });
             };
             const allCandidates = [
               ...(data.seasonLoot?.items || []).map((i) => ({
@@ -1863,14 +2600,19 @@ export default function App() {
                     </p>
                   </div>
                   <span
-                    className={
-                      customWishlists[c.id] ? "custom-list" : "fallback-list"
-                    }
+                    className={customized ? "custom-list" : "fallback-list"}
                   >
-                    {customWishlists[c.id]
+                    {customized
                       ? "CUSTOM ACTIVE"
-                      : "ICY VEINS DEFAULT"}
+                      : customWishlists[c.id]
+                        ? "ICY VEINS SAVED"
+                        : "ICY VEINS DEFAULT"}
                   </span>
+                </div>
+                <div className="wishlist-steps" aria-label="Wishlist steps">
+                  <span className="active"><b>1</b><em>Choose your character and loot spec</em></span>
+                  <span><b>2</b><em>Change only the items you want</em></span>
+                  <span><b>3</b><em>Save your wishlist</em></span>
                 </div>
                 <div className="wishlist-controls">
                   <label>
@@ -1884,7 +2626,14 @@ export default function App() {
                       <i />
                       <select
                         value={c.id}
-                        onChange={(e) => setWishlistCharacter(+e.target.value)}
+                        onChange={(e) => {
+                          setWishlistCharacter(+e.target.value);
+                          setSimcText("");
+                          setSimState("idle");
+                          setSimMessage("");
+                          setSimReports([]);
+                          setSyncState("idle");
+                        }}
                       >
                         {[...data.characters]
                           .sort((a, b) =>
@@ -1935,6 +2684,11 @@ export default function App() {
                           "onlyflasks-custom-wishlists-v3",
                           JSON.stringify(nextLists),
                         );
+                        setSimcText("");
+                        setSimState("idle");
+                        setSimMessage("This loot spec needs its own simulations. Save the wishlist, then paste a fresh /simc export.");
+                        setSimReports([]);
+                        setSyncState("idle");
                       }}
                     >
                       {classSpecs.map((s) => (
@@ -1942,12 +2696,9 @@ export default function App() {
                       ))}
                     </select>
                   </label>
-                  <button onClick={() => save([...baseline])}>
-                    Customize Icy Veins list
-                  </button>
                   <button
                     className="reset-list"
-                    disabled={!customWishlists[c.id]}
+                    disabled={!customized}
                     onClick={() => {
                       const next = { ...customWishlists };
                       delete next[c.id];
@@ -1958,7 +2709,7 @@ export default function App() {
                       );
                     }}
                   >
-                    Reset to Icy Veins
+                    Restore Icy Veins
                   </button>
                   <button
                     className={`submit-list ${syncState}`}
@@ -1974,20 +2725,50 @@ export default function App() {
                       : syncState === "saving"
                         ? "Submitting…"
                         : syncState === "saved"
-                          ? "Submitted ✓"
+                            ? "Wishlist saved ✓"
                           : syncState === "error"
-                            ? "Retry submission"
-                            : "Submit wishlist"}
+                            ? "Retry save"
+                            : customized
+                              ? "Save my wishlist"
+                              : "Save loot spec"}
                   </button>
                 </div>
                 <div className="wishlist-notice">
-                  <strong>Loot-spec locked</strong>
+                  <strong>Your list is already filled in</strong>
                   <span>
-                    Only {c.class} items valid for {selectedSpec} are available.
-                    Catalyst choices preserve their raid source; crafted choices
-                    never enter boss-drop priority.
+                    Icy Veins is the starting point. Change only what you want, then press <b>Save my wishlist</b>. Choices are limited to valid {selectedSpec} loot.
                   </span>
                 </div>
+                <details className="simc-disclosure">
+                  <summary><span><b>Optional</b> Update my Raidbots simulations</span><ChevronDown /></summary>
+                <section className={`simc-panel ${simState}`}>
+                  <div className="simc-panel-head">
+                    <div>
+                      <p className="rune">Raidbots pilot</p>
+                      <h3>Update my loot simulation</h3>
+                      <p>Paste one complete <code>/simc</code> export. We run and upload separate Normal, Heroic, and Mythic raid Droptimizers.</p>
+                    </div>
+                    {simReports.length > 0 && <div className="sim-report-links">{simReports.map((report) => <a className={report.state} href={report.url} target="_blank" rel="noreferrer" key={report.difficulty}><b>{report.difficulty[0].toUpperCase()}</b><span className="sim-report-copy"><strong>{raidbotDifficulty[report.difficulty].label}</strong><small>{report.state === "uploaded" ? "Added to WoWAudit" : report.state === "running" ? "Running on Raidbots" : "Submitted"}</small></span><em>View ↗</em></a>)}</div>}
+                  </div>
+                  <textarea
+                    value={simcText}
+                    onChange={(e) => setSimcText(e.target.value)}
+                    placeholder={'hunter="Character"\nlevel=90\n…'}
+                    aria-label="SimulationCraft export"
+                  />
+                  <div className="simc-actions">
+                    <span>{simMessage || "Nothing is submitted until you press Run and upload."}</span>
+                    <div className="simc-action-buttons">
+                    <button className="refresh-sims" disabled={!wishlistApiUrl || simState === "submitting" || simState === "running" || simState === "refreshing"} onClick={retrySimRefresh}>
+                      <RefreshCw /> Refresh existing sims
+                    </button>
+                    <button disabled={!wishlistApiUrl || simcText.trim().length < 100 || simState === "submitting" || simState === "running" || simState === "refreshing"} onClick={submitSim}>
+                      {simState === "submitting" ? "Submitting simulations…" : simState === "running" ? "Updating simulations…" : simState === "error" ? "Retry simulation update" : simState === "uploaded" ? "Update simulations again" : "Update my simulations"}
+                    </button>
+                    </div>
+                  </div>
+                </section>
+                </details>
                 <div className="wishlist-grid">
                   {rows.map(({ item: target, originalIndex }, index) => {
                     const targetSlot = slot(target.slot),
@@ -2008,11 +2789,11 @@ export default function App() {
                                 sourceType: "Raid",
                               })),
                             )
-                            .find((i) => +i.itemId === +target.sourceItemId)
+                            .find((i) => +i.itemId === Number(target.sourceItemId))
                         : null,
                       seasonSource = target.sourceItemId
                         ? data.seasonLoot?.items.find(
-                            (i) => +i.itemId === +target.sourceItemId,
+                            (i) => +i.itemId === Number(target.sourceItemId),
                           )
                         : null,
                       sourceItem = raidSource || seasonSource,
@@ -2109,7 +2890,6 @@ export default function App() {
                               : "CHOOSE TARGET ITEM"}
                           </small>
                           <select
-                            disabled={!customWishlists[c.id]}
                             value={
                               target.catalyst
                                 ? target.sourceItemId
@@ -2144,7 +2924,6 @@ export default function App() {
                         {canCatalyze && (
                           <button
                             className={`catalyst-toggle ${target.catalyst ? "active" : ""}`}
-                            disabled={!customWishlists[c.id]}
                             onClick={toggleCatalyst}
                           >
                             {target.catalyst
@@ -2265,7 +3044,7 @@ export default function App() {
                           className="wow-name"
                           href={`https://www.wowhead.com/item=${item.itemId}`}
                           data-wowhead={`item=${item.itemId}`}
-                          target="_blank"
+                          target="_blank" rel="noreferrer"
                         >
                           {item.name}
                         </a>
@@ -2286,12 +3065,11 @@ export default function App() {
                           <span>Priority</span>
                           <span>Raider</span>
                           <span>Currently equipped</span>
-                          <span>Upgrade evidence</span>
-                          <span>Source</span>
+                          <span>Upgrade</span>
                         </div>
-                        {people.map(({ c, cur, target, sim, ilvl }, rank) => (
+                        {people.map(({ c, worn, target, sim, ilvl }, rank) => (
                           <div
-                            className="candidate"
+                            className={`candidate ${(rosterStatuses[c.id] || c.rosterStatus || "Main").toLowerCase()}`}
                             style={
                               {
                                 "--class": colors[c.class],
@@ -2301,50 +3079,39 @@ export default function App() {
                           >
                             <div className="rank">{rank + 1}</div>
                             <div className="player">
-                              <strong>
-                                {c.name}{" "}
-                                {(() => {
-                                  const status =
-                                      rosterStatuses[c.id] ||
-                                      c.rosterStatus ||
-                                      "Main",
-                                    role = inferredRole(c),
-                                    label =
-                                      status === "Main"
-                                        ? role
-                                        : `${status} ${role}`;
-                                  return (
-                                    <em
-                                      className={`role-priority ${status.toLowerCase()} ${role.toLowerCase()}`}
-                                    >
-                                      {label}
-                                    </em>
-                                  );
-                                })()}
-                              </strong>
-                              <span>{specs[c.id] || c.defaultSpec}</span>
+                              <RaiderIdentity
+                                c={c}
+                                spec={specs[c.id] || c.defaultSpec}
+                                status={rosterStatuses[c.id] || c.rosterStatus || "Main"}
+                              />
                             </div>
                             <div className="current-card">
-                              {cur && <WowItem item={cur} size={36} />}
                               <div className="current-copy">
-                                <small>CURRENTLY EQUIPPED</small>
-                                <a
-                                  href={
-                                    cur
-                                      ? `https://www.wowhead.com/item=${cur.itemId}`
-                                      : "#"
-                                  }
-                                  data-wowhead={
-                                    cur ? `item=${cur.itemId}` : undefined
-                                  }
-                                >
-                                  {cur?.name || "Nothing detected"}
-                                </a>
-                                <span className="gear-meta">
-                                  {cur
-                                    ? `${cur.itemLevel} · ${cur.track || "track unverified"} ${cur.trackRank || ""}`
-                                    : "No equipped slot match"}
-                                </span>
+                                <small>
+                                  {(worn || []).length > 1
+                                    ? "EQUIPPED — REPLACES ONE OF THESE"
+                                    : "CURRENTLY EQUIPPED"}
+                                </small>
+                                {(worn || []).length === 0 && (
+                                  <span className="gear-meta">No equipped slot match</span>
+                                )}
+                                {(worn || []).map((piece: Item) => (
+                                  <span className="worn-item" key={piece.slot}>
+                                    <WowItem item={piece} size={30} />
+                                    <a
+                                      href={`https://www.wowhead.com/item=${piece.itemId}`}
+                                      data-wowhead={`item=${piece.itemId}`}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                    >
+                                      {piece.name}
+                                    </a>
+                                    <em>
+                                      {piece.itemLevel}
+                                      {piece.track ? ` · ${piece.track} ${piece.trackRank || ""}` : ""}
+                                    </em>
+                                  </span>
+                                ))}
                               </div>
                               {(item.tierToken || target.catalyst) && (
                                 <div
@@ -2360,7 +3127,7 @@ export default function App() {
                                   <a
                                     href={`https://www.wowhead.com/item=${target.itemId}`}
                                     data-wowhead={`item=${target.itemId}`}
-                                    target="_blank"
+                                    target="_blank" rel="noreferrer"
                                   >
                                     <small>
                                       {target.catalyst
@@ -2371,6 +3138,16 @@ export default function App() {
                                   </a>
                                 </div>
                               )}
+                            </div>
+                            <div className="decision-metrics">
+                              <div className={`decision-metric sim ${sim === null ? "missing" : sim > 0 ? "positive" : sim < 0 ? "negative" : "neutral"}`}>
+                                <small>SIM</small>
+                                <strong>{sim === null ? "—" : `${sim > 0 ? "+" : ""}${sim.toFixed(2)}%`}</strong>
+                              </div>
+                              <div className={`decision-metric ilvl ${ilvl > 0 ? "positive" : ilvl < 0 ? "negative" : "neutral"}`}>
+                                <small>ILVL</small>
+                                <strong>{`${ilvl > 0 ? "+" : ""}${ilvl}`}</strong>
+                              </div>
                             </div>
                             <div
                               className={`evidence ${sim !== null ? "has-sim" : "estimated"}`}
@@ -2432,10 +3209,7 @@ export default function App() {
                       { "--class": colors[c.class] } as React.CSSProperties
                     }
                   >
-                    <span>
-                      <b>{c.name}</b>
-                      <small>{c.class}</small>
-                    </span>
+                    <RaiderIdentity c={c} spec={specs[c.id] || c.defaultSpec} status={rosterStatuses[c.id] || c.rosterStatus || "Main"} compact />
                     <select
                       value={specs[c.id] || c.defaultSpec}
                       onChange={(e) => {
@@ -2526,7 +3300,10 @@ export default function App() {
                             </div>
                           )}
                         </div>
-                        <div className="history-player">
+                        <div
+                          className="history-player"
+                          style={{ "--class": c ? colors[c.class] : "#cfc4bd" } as React.CSSProperties}
+                        >
                           <strong>
                             {c?.name || `Character ${h.character_id}`}
                           </strong>
@@ -2590,15 +3367,12 @@ export default function App() {
               <div>
                 <strong>Weekly activity connected from WoWAudit.</strong>
                 <span>
-                  M0 count and unlocked Dungeon/Delve vault item levels ·
-                  refreshed{" "}
-                  {data.auditActivity?.fetchedAt
-                    ? new Date(data.auditActivity.fetchedAt).toLocaleString()
-                    : "unknown"}
-                  .
+                  M0 count and unlocked Dungeon/Delve vault item levels. Everything on
+                  this page is as of the capture below — it does not update on its own.
                 </span>
               </div>
             </div>
+            <DataFreshness data={data} />
             <div className="audit-table">
               <div className="audit-table-head">
                 <span>Raider</span>
@@ -2609,6 +3383,7 @@ export default function App() {
               {audits.map(({ c, issues, average }) => {
                 const weekly: any = activityById.get(+c.id) || {},
                   rio: any = raiderById.get(+c.id),
+                  tierInfo: any = tierById.get(+c.id),
                   vault = weekly.vault_options || {},
                   raidVault = Object.values(vault.raids || {}).filter(
                     Boolean,
@@ -2643,13 +3418,7 @@ export default function App() {
                           { "--class": colors[c.class] } as React.CSSProperties
                         }
                       >
-                        <i />
-                        <div>
-                          <strong>{c.name}</strong>
-                          <span>
-                            {c.class} · {specs[c.id] || c.defaultSpec}
-                          </span>
-                        </div>
+                        <RaiderIdentity c={c} spec={specs[c.id] || c.defaultSpec} status={rosterStatuses[c.id] || c.rosterStatus || "Main"} compact />
                       </div>
                       <span
                         className={`readiness ${issues.length ? "bad" : "ok"}`}
@@ -2718,6 +3487,7 @@ export default function App() {
                           <ClipboardCheck /> Gear checks passed
                         </div>
                       )}
+                      <TierResourceSnapshot info={tierInfo} visuals={visualItems} compact />
                       <div className="vault-placeholder live">
                         <strong>Weekly activity</strong>
                         <span className={raidProgress >= 6 ? "done" : "behind"}>
@@ -2816,8 +3586,7 @@ export default function App() {
           </section>
         )}
         <footer>
-          <RefreshCw /> Data is generated from the latest local WoWAudit,
-          Blizzard, and Icy Veins refresh.
+          <DataFreshness data={data} compact />
         </footer>
       </main>
     </>

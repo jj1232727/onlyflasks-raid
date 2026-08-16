@@ -18,6 +18,7 @@
     "icy:icons": "node scripts/enrich-bis-icons.js",
     "season:loot": "node scripts/import-season-loot.js",
     "wowaudit:sims": "node scripts/check-wowaudit-sims.js",
+    "wowaudit:upload-sim": "node scripts/upload-wowaudit-sim.js",
     "wowaudit:history": "node scripts/check-loot-history.js",
     "wowaudit:character": "node scripts/check-character-detail.js",
     "audit:activity": "node scripts/check-audit-activity.js",

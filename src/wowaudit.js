@@ -19,14 +19,17 @@ export class WowauditClient {
     this.fetch = fetchImpl;
   }
 
-  async request(path) {
+  async request(path, { method = "GET", body } = {}) {
     let response;
     try {
       response = await this.fetch(`${this.baseUrl}${path}`, {
+        method,
         headers: {
           accept: "application/json",
           authorization: `Bearer ${this.apiKey}`,
+          ...(body ? { "content-type": "application/json" } : {}),
         },
+        ...(body ? { body: JSON.stringify(body) } : {}),
       });
     } catch (cause) {
       throw new WowauditError(`Could not connect to WoWAudit: ${cause.message}`, { cause });
@@ -65,6 +68,30 @@ export class WowauditClient {
 
   getWishlist(id) {
     return this.request(`/v1/wishlists/${encodeURIComponent(id)}`);
+  }
+
+  uploadWishlistReport({
+    reportId,
+    configurationName,
+    characterId,
+    characterName,
+    replaceManualEdits = false,
+  }) {
+    if (!reportId?.trim()) throw new WowauditError("Raidbots report ID is required.");
+    if (!configurationName?.trim())
+      throw new WowauditError("WoWAudit configuration name is required.");
+    return this.request("/v1/wishlists", {
+      method: "POST",
+      body: {
+        report_id: reportId.trim(),
+        ...(characterId ? { character_id: Number(characterId) } : {}),
+        ...(characterName?.trim()
+          ? { character_name: characterName.trim() }
+          : {}),
+        configuration_name: configurationName.trim(),
+        replace_manual_edits: Boolean(replaceManualEdits),
+      },
+    });
   }
 
   getPeriod() {

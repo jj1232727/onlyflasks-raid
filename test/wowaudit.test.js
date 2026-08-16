@@ -6,6 +6,7 @@ import {
   summarizeTeam,
   WowauditClient,
 } from "../src/wowaudit.js";
+import { raidbotsReportId } from "../src/raidbots.js";
 
 test("client authenticates with a Bearer token and calls v1 routes", async () => {
   const calls = [];
@@ -19,6 +20,68 @@ test("client authenticates with a Bearer token and calls v1 routes", async () =>
 
   assert.equal(calls[0].url, "https://wowaudit.com/v1/characters");
   assert.equal(calls[0].options.headers.authorization, "Bearer secret");
+});
+
+test("uploads a Raidbots report through the documented wishlist endpoint", async () => {
+  const calls = [];
+  const fetchImpl = async (url, options) => {
+    calls.push({ url, options });
+    return new Response(JSON.stringify({ created: true }), { status: 200 });
+  };
+  const client = new WowauditClient({ apiKey: "secret", fetchImpl });
+
+  const result = await client.uploadWishlistReport({
+    reportId: "84ywk9eay1akcwS1dfY31j",
+    characterId: 123,
+    configurationName: "Single Target",
+    replaceManualEdits: true,
+  });
+
+  assert.deepEqual(result, { created: true });
+  assert.equal(calls[0].url, "https://wowaudit.com/v1/wishlists");
+  assert.equal(calls[0].options.method, "POST");
+  assert.deepEqual(JSON.parse(calls[0].options.body), {
+    report_id: "84ywk9eay1akcwS1dfY31j",
+    character_id: 123,
+    configuration_name: "Single Target",
+    replace_manual_edits: true,
+  });
+});
+
+test("extracts only valid Raidbots report IDs", () => {
+  assert.equal(
+    raidbotsReportId(
+      "https://www.raidbots.com/simbot/report/84ywk9eay1akcwS1dfY31j/data.json",
+    ),
+    "84ywk9eay1akcwS1dfY31j",
+  );
+  assert.equal(raidbotsReportId("84ywk9eay1akcwS1dfY31j"), "84ywk9eay1akcwS1dfY31j");
+  assert.throws(
+    () => raidbotsReportId("https://example.com/simbot/report/84ywk9eay1akcwS1dfY31j"),
+    /raidbots\.com/u,
+  );
+});
+
+test("lets WoWAudit infer the character from a Raidbots report", async () => {
+  let submitted;
+  const client = new WowauditClient({
+    apiKey: "secret",
+    fetchImpl: async (_url, options) => {
+      submitted = JSON.parse(options.body);
+      return new Response(JSON.stringify({ created: true }), { status: 200 });
+    },
+  });
+
+  await client.uploadWishlistReport({
+    reportId: "84ywk9eay1akcwS1dfY31j",
+    configurationName: "Single Target",
+  });
+
+  assert.deepEqual(submitted, {
+    report_id: "84ywk9eay1akcwS1dfY31j",
+    configuration_name: "Single Target",
+    replace_manual_edits: false,
+  });
 });
 
 test("extracts and normalizes a wrapped character list", () => {
