@@ -836,6 +836,16 @@ export default function App() {
           b.readyCount - a.readyCount ||
           a.c.name.localeCompare(b.c.name),
       ),
+    tierSummary = {
+      fourPiece: tierStatus.filter((row) => row.equippedCount >= 4).length,
+      twoPiece: tierStatus.filter(
+        (row) => row.equippedCount >= 2 && row.equippedCount < 4,
+      ).length,
+      building: tierStatus.filter((row) => row.equippedCount < 2).length,
+      complete: tierStatus.filter(
+        (row) => row.slots.length > 0 && row.equippedCount === row.slots.length,
+      ).length,
+    },
     overviewSlots = [
       "HEAD",
       "NECK",
@@ -1542,6 +1552,39 @@ export default function App() {
                 <span>
                   Equipped tier vs catalyst-ready bases · catalyst charges unknown
                 </span>
+              </div>
+              <div className="tier-readiness">
+                <div className="tier-readiness-main">
+                  <span>
+                    <small>RAID SET READINESS</small>
+                    <strong>
+                      {tierSummary.fourPiece}/{tierStatus.length} at 4-piece
+                    </strong>
+                  </span>
+                  <div className="tier-progress">
+                    <i
+                      style={{
+                        width: `${tierStatus.length ? (tierSummary.fourPiece / tierStatus.length) * 100 : 0}%`,
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="tier-readiness-stat four">
+                  <strong>{tierSummary.fourPiece}</strong>
+                  <span>4PC active</span>
+                </div>
+                <div className="tier-readiness-stat two">
+                  <strong>{tierSummary.twoPiece}</strong>
+                  <span>2PC only</span>
+                </div>
+                <div className="tier-readiness-stat building">
+                  <strong>{tierSummary.building}</strong>
+                  <span>0–1 pieces</span>
+                </div>
+                <div className="tier-readiness-stat complete">
+                  <strong>{tierSummary.complete}</strong>
+                  <span>5/5 complete</span>
+                </div>
               </div>
               <div className="tier-grid">
                 {tierStatus.map(
