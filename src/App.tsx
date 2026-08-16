@@ -416,17 +416,18 @@ export default function App() {
       const targets = wishlistFor(c).flatMap(target => {
         let source = raidSources.find(x => +x.item.itemId === +target.itemId || +x.item.itemId === Number(target.sourceItemId));
         if (!source && isExplicitTierTarget(data,c,target)) source = raidSources.find(x => x.item.tierToken && tokenFitsClass(x.item,c) && slot(x.item.slot) === slot(target.slot));
-        if (!source) return [];
+        const inRaid=Boolean(source);
+        if (!source) source={item:target,raidBoss:{name:target.drop||target.source||target.sourceType||"Outside raid",items:[]},bossOrder:-1};
         const exact = c.equipment.find(item => +item.itemId === +target.itemId), base = c.equipment.find(item => +item.itemId === Number(target.sourceItemId)), current = exact || (target.catalyst ? base : undefined), trackName = norm(current?.track);
         const state = !current ? "missing" : trackName.includes("myth") ? "myth" : trackName.includes("hero") ? "hero" : "champion";
-        return [{target,source,current:current||equipped(c,target),state,catalystReady:Boolean(!exact&&base&&target.catalyst),exact:Boolean(exact)}];
+        return [{target,source,inRaid,current:current||equipped(c,target),state,catalystReady:Boolean(!exact&&base&&target.catalyst),exact:Boolean(exact)}];
       });
       const exactCount=targets.filter(x=>x.exact).length, mythCount=targets.filter(x=>x.state==="myth").length, heroCount=targets.filter(x=>x.state==="hero").length, championCount=targets.filter(x=>x.state==="champion").length;
       return {c,targets,exactCount,mythCount,heroCount,championCount};
     }).sort((a,b)=>priorityValue(a.c,rosterStatuses)-priorityValue(b.c,rosterStatuses)||a.c.name.localeCompare(b.c.name)),
     bossAnalytics = data.raid.bosses.map((raidBoss,bossOrder) => {
       const targetTrackOrder = difficulty==="mythic"?3:difficulty==="heroic"?2:1, expected=levels[difficulty][bossOrder];
-      const claims = weeklyOverview.flatMap(row => row.targets.filter(x => x.source.raidBoss.name === raidBoss.name && !x.catalystReady).flatMap(x => {
+      const claims = weeklyOverview.flatMap(row => row.targets.filter(x => x.inRaid && x.source.raidBoss.name === raidBoss.name && !x.catalystReady).flatMap(x => {
         const currentTrack=norm(x.current?.track), currentTrackOrder=currentTrack.includes("myth")?3:currentTrack.includes("hero")?2:currentTrack.includes("champion")?1:0, sim=simFor(data,row.c,x.source.item,raidBoss,difficulty), ilvlGain=expected-(x.current?.itemLevel||0), equalOrHigher=currentTrackOrder>=targetTrackOrder;
         if (x.exact&&equalOrHigher) return [];
         if (!x.exact&&equalOrHigher&&!(sim!==null&&sim>0)) return [];
@@ -490,7 +491,7 @@ export default function App() {
       <main className="shell">
         {view === "overview" && (
           <section className="weekly-page">
-            <div className="weekly-head"><div><p className="rune">Tuesday planning board</p><h2>Raid BiS coverage</h2><p>Every raid-relevant wishlist target and its current track, together on one board.</p></div></div>
+            <div className="weekly-head"><div><p className="rune">Tuesday planning board</p><h2>Overall BiS coverage</h2><p>Every overall wishlist target—including raid, Mythic+, crafted, and catalyst gear—on one board.</p></div></div>
             <div className="overview-legend"><span className="myth">Myth track</span><span className="hero">Hero track</span><span className="champion">Champion track</span><span className="missing">Missing</span><small><b>C</b> Catalyst base equipped · large icon = BiS · small icon = currently equipped</small></div>
             <div className="overview-scroll"><div className="overview-grid">
               <div className="overview-corner"><b>Raider</b><small>BiS · track coverage</small></div>{overviewSlots.map(slotName=><div className="overview-slot" key={slotName}>{slotName.replace("MAIN_HAND","WEAPON").replace("OFF_HAND","OFFHAND").replace("SHOULDER","SHOULDERS")}</div>)}
