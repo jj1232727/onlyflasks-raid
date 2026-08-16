@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { currentCatalystBalance, hasCurrencyData, parseSimcSnapshot } from "../src/simc-snapshot.js";
+import { MIDNIGHT_S2_CRESTS, currentCatalystBalance, hasCurrencyData, parseSimcSnapshot } from "../src/simc-snapshot.js";
 
 test("extracts bag, vault, catalyst, and crest snapshot data", () => {
   const text = `hunter="Example"
@@ -46,4 +46,34 @@ test("an export with no currency ids is missing data, not holding zero", () => {
   assert.equal(hasCurrencyData({ upgradeCurrencies: { 3444: 0 } }), true);
   assert.equal(hasCurrencyData({ upgradeCurrencies: {} }), false);
   assert.equal(hasCurrencyData(null), false);
+});
+
+test("upgrade_currencies splits currencies from crafting reagents by tag", () => {
+  // Galsnipes' real line: only i: entries, all of them reagents.
+  const galsnipes = parseSimcSnapshot(`hunter="Galsnipes"
+# upgrade_currencies=i:231756:1/i:232875:21/i:231769:1
+# catalyst_currencies=3269:8/3378:8/2813:8/3116:8
+`);
+  assert.deepEqual(galsnipes.upgradeCurrencies, {}, "no currencies were exported");
+  assert.deepEqual(galsnipes.upgradeItems, { 231756: 1, 232875: 21, 231769: 1 });
+  assert.equal(hasCurrencyData(galsnipes), false);
+  // Sparks are reagents and must never be counted as crests.
+  assert.equal(galsnipes.upgradeCurrencies[MIDNIGHT_S2_CRESTS.champion], undefined);
+
+  // A current addon exports both kinds on the same line.
+  const current = parseSimcSnapshot(`hunter="Tamagotchi"
+# upgrade_currencies=c:1792:11046/c:3444:90/c:3445:12/i:232875:9
+`);
+  assert.deepEqual(current.upgradeCurrencies, { 1792: 11046, 3444: 90, 3445: 12 });
+  assert.deepEqual(current.upgradeItems, { 232875: 9 });
+  assert.equal(current.upgradeCurrencies[MIDNIGHT_S2_CRESTS.champion], 90);
+  assert.equal(hasCurrencyData(current), true);
+});
+
+test("catalyst_currencies stays untagged, and Galsnipes holds no Venomblight", () => {
+  const snap = parseSimcSnapshot(`hunter="Galsnipes"
+# catalyst_currencies=3269:8/3378:8/2813:8/3116:8
+`);
+  assert.deepEqual(snap.catalystCurrencies, { 3269: 8, 3378: 8, 2813: 8, 3116: 8 });
+  assert.deepEqual(currentCatalystBalance(snap), { id: 3465, quantity: 0 });
 });

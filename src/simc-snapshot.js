@@ -44,8 +44,28 @@ const parsePairs = (text, key, typed = false) => {
   }, {});
 };
 
+// upgrade_currencies mixes two kinds of entry, tagged by a one-letter prefix:
+//   c:3444:90   a currency  (Champion Mistcrest)
+//   i:232875:21 an item     (Spark of Radiance, a crafting reagent)
+// Splitting on the tag keeps reagents out of the crest counts. Anything that is
+// not an item is treated as a currency, so an unfamiliar future tag still lands
+// on the side that gets looked up by id rather than being silently dropped.
+const parseTaggedPairs = (text, key) => {
+  const raw = text.match(new RegExp(`^#\\s*${key}=([^\\r\\n]*)`, "m"))?.[1]?.trim() || "";
+  const currencies = {}, items = {};
+  for (const entry of raw.split("/")) {
+    const parts = entry.split(":");
+    if (parts.length < 3) continue;
+    const id = Number(parts[1]), quantity = Number(parts[2]);
+    if (!Number.isFinite(id) || !Number.isFinite(quantity)) continue;
+    (parts[0].trim().toLowerCase() === "i" ? items : currencies)[String(id)] = quantity;
+  }
+  return { currencies, items };
+};
+
 export function parseSimcSnapshot(text, capturedAt = new Date().toISOString()) {
   const character = text.match(/^\w+="([^"]+)"/m)?.[1] || "";
+  const upgrades = parseTaggedPairs(text, "upgrade_currencies");
   return {
     character,
     spec: text.match(/^spec=([^\s#]+)/m)?.[1] || "",
@@ -54,7 +74,8 @@ export function parseSimcSnapshot(text, capturedAt = new Date().toISOString()) {
     bags: parseItems(text, "### Gear from Bags", "### Weekly Reward Choices"),
     vault: parseItems(text, "### Weekly Reward Choices", "### End of Weekly Reward Choices"),
     catalystCurrencies: parsePairs(text, "catalyst_currencies"),
-    upgradeCurrencies: parsePairs(text, "upgrade_currencies", true),
+    upgradeCurrencies: upgrades.currencies,
+    upgradeItems: upgrades.items,
   };
 }
 
@@ -72,6 +93,8 @@ export const MIDNIGHT_S2_CRESTS = {
 // different thing from the character holding none, and must not read as "0".
 export const hasCurrencyData = (snapshot) =>
   Object.keys(snapshot?.upgradeCurrencies || {}).some(
+    // Snapshots stored before currencies and items were split still carry
+    // reagents in this map; those are six-digit item ids.
     (id) => Number(id) > 0 && Number(id) < 100000,
   );
 

@@ -14,6 +14,7 @@ export type SimcSnapshot = {
   vault: SimcItem[];
   catalystCurrencies: Record<string, number>;
   upgradeCurrencies: Record<string, number>;
+  upgradeItems: Record<string, number>;
   previousCatalystCurrencies?: Record<string, number>;
   previousCapturedAt?: string;
 };

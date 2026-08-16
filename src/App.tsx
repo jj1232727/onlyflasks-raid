@@ -685,7 +685,7 @@ function TierResourceSnapshot({ info, visuals, icons = {}, compact = false }: { 
         {preReset ? <CircleAlert /> : <RefreshCw />}
         <span>
           {info.crestsMissing
-            ? `SimC captured ${relativeAge(info.snapshotAt)}, but it carried no currency data — crests and charges are unknown. Re-export /simc after being logged in a minute.`
+            ? `SimC captured ${relativeAge(info.snapshotAt)}, but it exported no currencies — crest counts are unknown. Usually an out-of-date SimulationCraft addon: update it and re-export.`
             : preReset
             ? `SimC captured ${relativeAge(info.snapshotAt)} — before this week's reset. Crests, vault and catalyst below are last week's.`
             : `SimC captured ${relativeAge(info.snapshotAt)}`}
