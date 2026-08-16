@@ -1,0 +1,49 @@
+{
+  "name": "onlyflasks-wishlist",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build:data": "node scripts/build-app-data.js",
+    "build": "npm run build:data && vite build",
+    "roster": "node scripts/check-roster.js",
+    "roster:json": "node scripts/check-roster.js --json",
+    "roster:save": "node scripts/check-roster.js --out data/roster.json",
+    "gear:save": "node scripts/check-gear.js --out data/gear.json",
+    "gear:tracks": "node scripts/resolve-tracks.js",
+    "gear:report": "node scripts/build-gear-report.js",
+    "wishlist:report": "node scripts/build-wishlist-report.js",
+    "icy:import": "node scripts/import-icy-veins.js && node scripts/enrich-bis-icons.js",
+    "icy:icons": "node scripts/enrich-bis-icons.js",
+    "season:loot": "node scripts/import-season-loot.js",
+    "wowaudit:sims": "node scripts/check-wowaudit-sims.js",
+    "wowaudit:history": "node scripts/check-loot-history.js",
+    "wowaudit:character": "node scripts/check-character-detail.js",
+    "audit:activity": "node scripts/check-audit-activity.js",
+    "audit:raiderio": "node scripts/check-raiderio.js",
+    "audit:refresh": "node scripts/check-roster.js --out data/roster.json && node scripts/check-gear.js --out data/gear.json && node scripts/check-audit-activity.js && node scripts/check-raiderio.js && node scripts/build-app-data.js",
+    "board:refresh": "node scripts/check-wowaudit-sims.js && node scripts/build-raid-board.js",
+    "raid:board": "node scripts/build-raid-board.js",
+    "raid:import": "node scripts/import-raid-loot.js",
+    "raid:icons": "node scripts/enrich-raid-icons.js",
+    "gear:icons": "node scripts/enrich-gear-icons.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "lucide-react": "^0.468.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.7"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "prettier": "^3.9.6"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
