@@ -802,25 +802,38 @@ export default function App() {
     tierStatus = data.characters
       .map((c) => {
         const list = wishlistFor(c),
-          owned = new Set(c.equipment.map((i) => +i.itemId)),
           tierSlots = ["HEAD", "SHOULDER", "CHEST", "HANDS", "LEGS"],
-          missing = tierSlots
-            .map((slotName) => ({
-              slot: slotName,
-              target: list.find((t) => slot(t.slot) === slotName),
-            }))
-            .filter((x): x is { slot: string; target: Item } =>
-              Boolean(
-                x.target &&
-                !owned.has(+x.target.itemId) &&
-                !owned.has(Number(x.target.sourceItemId)),
+          slots = tierSlots.flatMap((slotName) => {
+            const target = list.find((t) => slot(t.slot) === slotName);
+            if (!target) return [];
+            const exact = c.equipment.some(
+                (item) => +item.itemId === +target.itemId,
               ),
-            );
-        return { c, missing };
+              base = Boolean(
+                target.catalyst &&
+                  target.sourceItemId &&
+                  c.equipment.some(
+                    (item) =>
+                      +item.itemId === Number(target.sourceItemId),
+                  ),
+              );
+            return [
+              {
+                slot: slotName,
+                target,
+                state: exact ? "equipped" : base ? "ready" : "missing",
+              },
+            ];
+          }),
+          equippedCount = slots.filter((x) => x.state === "equipped").length,
+          readyCount = slots.filter((x) => x.state === "ready").length,
+          missingCount = slots.filter((x) => x.state === "missing").length;
+        return { c, slots, equippedCount, readyCount, missingCount };
       })
       .sort(
         (a, b) =>
-          a.missing.length - b.missing.length ||
+          b.equippedCount - a.equippedCount ||
+          b.readyCount - a.readyCount ||
           a.c.name.localeCompare(b.c.name),
       ),
     overviewSlots = [
@@ -1524,16 +1537,17 @@ export default function App() {
               <div className="plan-section-title">
                 <div>
                   <p className="rune">Set completion</p>
-                  <h3>Missing tier slots</h3>
+                  <h3>Tier set status</h3>
                 </div>
                 <span>
-                  Exact Icy Veins tier/catalyst targets · hover a slot
+                  Equipped tier vs catalyst-ready bases · catalyst charges unknown
                 </span>
               </div>
               <div className="tier-grid">
-                {tierStatus.map(({ c, missing }) => (
+                {tierStatus.map(
+                  ({ c, slots, equippedCount, readyCount, missingCount }) => (
                   <div
-                    className={`tier-person ${missing.length ? "" : "tier-complete"}`}
+                    className={`tier-person ${equippedCount === slots.length ? "tier-complete" : ""}`}
                     key={c.id}
                     style={
                       { "--class": colors[c.class] } as React.CSSProperties
@@ -1543,23 +1557,20 @@ export default function App() {
                     <div className="tier-copy">
                       <div className="tier-name">
                         <strong>{c.name}</strong>
-                        <b>
-                          {missing.length
-                            ? `${missing.length} MISSING`
-                            : "COMPLETE"}
-                        </b>
+                        <b>{equippedCount}/{slots.length} TIER</b>
                       </div>
-                      {missing.length > 0 && (
+                      {(readyCount > 0 || missingCount > 0) && (
                         <div className="tier-slots">
-                          {missing.map(({ slot: slotName, target }) => (
+                          {slots.filter((x) => x.state !== "equipped").map(({ slot: slotName, target, state }) => (
                             <a
                               key={slotName}
+                              className={state}
                               href={`https://www.wowhead.com/item=${target.itemId}`}
                               data-wowhead={`item=${target.itemId}`}
                               title={target.name}
                               target="_blank"
                             >
-                              {slotName[0] + slotName.slice(1).toLowerCase()}
+                              {state === "ready" ? "↻ " : "! "}{slotName[0] + slotName.slice(1).toLowerCase()}{state === "ready" ? " ready" : ""}
                             </a>
                           ))}
                         </div>
