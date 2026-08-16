@@ -1224,3 +1224,10 @@ footer .data-freshness{width:100%}
 /* --- Bags: a holding of its own, alongside the vault row. --- */
 .tier-slot-visual{min-height:92px}
 .bags-row>b{color:#e2c58c}
+
+/* Tier cards stretch to the tallest card in their grid row, so on raiders with
+   no /simc capture the leftover height fell as dead air under the SIMC NEEDED
+   strip — present or absent purely by which row they landed in. Let the
+   resource block absorb the slack instead. */
+.tier-board .tier-person>.tier-resource-snapshot{flex:1 1 auto;align-content:start}
+.tier-board .tier-person>.tier-resource-snapshot.no-data{align-content:center}
