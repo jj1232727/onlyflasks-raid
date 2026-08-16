@@ -35,7 +35,8 @@ for (const [spec, slug] of specs) {
     if (item && slot) {
       const original = item[1].match(/original-item=(\d+)/);
       const dropName = drop ? decode(drop[1]) : "";
-      items.push({ itemId: Number(item[2]), name: decode(item[3]), slot: decode(slot[1]), drop: dropName, crafted: /craft/i.test(dropName), ...(original ? { sourceItemId: Number(original[1]), catalyst: true } : {}) });
+      const sourceItemId = original ? Number(original[1]) : null;
+      items.push({ itemId: Number(item[2]), name: decode(item[3]), slot: decode(slot[1]), drop: dropName, crafted: /craft/i.test(dropName), ...(sourceItemId && sourceItemId !== Number(item[2]) ? { sourceItemId, catalyst: true } : {}) });
     }
   }
   const modified = html.match(/"dateModified":"([^"]+)"/);

@@ -29,6 +29,7 @@ type Item = {
   drop?: string;
   crafted?: boolean;
   classIds?: number[];
+  secondaryStats?: { type: string; value: number }[];
   source?: string;
   sourceType?: string;
   encounter?: string;
@@ -255,6 +256,31 @@ const equipped = (c: Raider, item: Item) =>
           : i.slot === w;
     })
     .sort((a, b) => (b.itemLevel || 0) - (a.itemLevel || 0))[0];
+const catalystStatsMatch = (equippedItem?: Item, desiredBase?: Item) => {
+  const profile = (item?: Item) => {
+    const stats = (item?.secondaryStats || []).filter((stat) => stat.value > 0),
+      total = stats.reduce((sum, stat) => sum + stat.value, 0);
+    return total
+      ? new Map(
+          stats.map((stat) => [
+            stat.type.replace(/_RATING$/u, ""),
+            stat.value / total,
+          ]),
+        )
+      : null;
+  };
+  const actual = profile(equippedItem),
+    desired = profile(desiredBase);
+  if (!actual || !desired) return null;
+  if (
+    actual.size !== desired.size ||
+    [...desired.keys()].some((key) => !actual.has(key))
+  )
+    return false;
+  return [...desired].every(
+    ([key, ratio]) => Math.abs((actual.get(key) || 0) - ratio) <= 0.06,
+  );
+};
 const enchantSlots = new Set([
   "HEAD",
   "SHOULDER",
@@ -830,6 +856,13 @@ export default function App() {
               (item) => +item.itemId === Number(target.sourceItemId),
             ),
             current = exact || (target.catalyst ? base : undefined),
+            desiredBase = data.seasonLoot?.items.find(
+              (item) => +item.itemId === Number(target.sourceItemId),
+            ),
+            catalystStatMatch =
+              exact && target.catalyst
+                ? catalystStatsMatch(exact, desiredBase)
+                : null,
             trackName = norm(current?.track);
           const state = !current
             ? "missing"
@@ -846,11 +879,17 @@ export default function App() {
               current: current || equipped(c, target),
               state,
               catalystReady: Boolean(!exact && base && target.catalyst),
+              catalystStatMatch,
+              suboptimal: Boolean(
+                exact && target.catalyst && catalystStatMatch === false,
+              ),
               exact: Boolean(exact),
             },
           ];
         });
-        const exactCount = targets.filter((x) => x.exact).length,
+        const exactCount = targets.filter(
+            (x) => x.exact && !x.suboptimal,
+          ).length,
           mythCount = targets.filter((x) => x.state === "myth").length,
           heroCount = targets.filter((x) => x.state === "hero").length,
           championCount = targets.filter((x) => x.state === "champion").length;
@@ -1031,9 +1070,10 @@ export default function App() {
                 <b>!</b> Missing BiS
               </span>
               <small>
-                <b className="catalyst-mark">↻</b> Catalyst base equipped{" "}
-                <b className="exact-mark">✓</b> Exact BiS equipped · large icon
-                = BiS target · small icon = current item
+                <b className="exact-mark">✓</b> Optimal BiS stats{" "}
+                <b className="suboptimal-mark">≈</b> Suboptimal catalyst stats{" "}
+                <b className="catalyst-mark">↻</b> Ready to catalyze · large icon
+                = target · small icon = current
               </small>
             </div>
             <div className="overview-scroll">
@@ -1091,6 +1131,7 @@ export default function App() {
                                   current,
                                   state,
                                   catalystReady,
+                                  suboptimal,
                                   exact,
                                 },
                                 index,
@@ -1103,6 +1144,8 @@ export default function App() {
                                       ? `Missing · currently ${current?.name || "empty"} · ${track}`
                                       : catalystReady
                                         ? `Catalyst base equipped · ${track}`
+                                        : suboptimal
+                                          ? `Tier equipped with suboptimal retained stats · ${track}`
                                         : `Exact BiS equipped · ${track}`;
                                 return (
                                   <div
@@ -1110,7 +1153,7 @@ export default function App() {
                                     key={`${target.itemId}-${index}`}
                                   >
                                     <a
-                                      className={`overview-target ${state}`}
+                                      className={`overview-target ${state} ${suboptimal ? "suboptimal" : exact && target.catalyst ? "optimal" : catalystReady ? "catalyst-ready" : ""}`}
                                       href={`https://www.wowhead.com/item=${target.itemId}`}
                                       data-wowhead={`item=${target.itemId}`}
                                       target="_blank"
@@ -1122,15 +1165,21 @@ export default function App() {
                                       <em>
                                         {state === "missing"
                                           ? "!"
-                                          : catalystReady
-                                            ? "↻"
-                                            : state === "myth"
-                                              ? "M"
-                                              : state === "hero"
-                                                ? "H"
-                                                : "C"}
+                                          : state === "myth"
+                                            ? "M"
+                                            : state === "hero"
+                                              ? "H"
+                                              : "C"}
                                       </em>
-                                      {exact && <i>✓</i>}
+                                      {(exact || catalystReady) && (
+                                        <i>
+                                          {catalystReady
+                                            ? "↻"
+                                            : suboptimal
+                                              ? "≈"
+                                              : "✓"}
+                                        </i>
+                                      )}
                                     </a>
                                     {!exact && current && (
                                       <a
