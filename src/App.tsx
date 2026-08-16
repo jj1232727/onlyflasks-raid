@@ -259,7 +259,7 @@ export default function App() {
         (localStorage.getItem("onlyflasks-difficulty") as Difficulty) ||
         "mythic",
     ),
-    [view, setView] = useState<"overview" | "bossvalue" | "plan" | "decisions" | "audit" | "history" | "wishlist">("overview"),
+    [view, setView] = useState<"overview" | "plan" | "decisions" | "audit" | "history" | "wishlist">("overview"),
     [open, setOpen] = useState(false),
     [rosterStatuses, setRosterStatuses] = useState<Record<number, RosterStatus>>({}),
     [specs, setSpecs] = useState<Record<number, string>>(() =>
@@ -425,13 +425,19 @@ export default function App() {
       return {c,targets,exactCount,mythCount,heroCount,championCount};
     }).sort((a,b)=>priorityValue(a.c,rosterStatuses)-priorityValue(b.c,rosterStatuses)||a.c.name.localeCompare(b.c.name)),
     bossAnalytics = data.raid.bosses.map((raidBoss,bossOrder) => {
-      const claims = weeklyOverview.flatMap(row => row.targets.filter(x => x.source.raidBoss.name === raidBoss.name && !x.catalystReady && x.state !== "myth").map(x => ({...x,c:row.c}))),
+      const targetTrackOrder = difficulty==="mythic"?3:difficulty==="heroic"?2:1, expected=levels[difficulty][bossOrder];
+      const claims = weeklyOverview.flatMap(row => row.targets.filter(x => x.source.raidBoss.name === raidBoss.name && !x.catalystReady).flatMap(x => {
+        const currentTrack=norm(x.current?.track), currentTrackOrder=currentTrack.includes("myth")?3:currentTrack.includes("hero")?2:currentTrack.includes("champion")?1:0, sim=simFor(data,row.c,x.source.item,raidBoss,difficulty), ilvlGain=expected-(x.current?.itemLevel||0), equalOrHigher=currentTrackOrder>=targetTrackOrder;
+        if (x.exact&&equalOrHigher) return [];
+        if (!x.exact&&equalOrHigher&&!(sim!==null&&sim>0)) return [];
+        return [{...x,c:row.c,sim,ilvlGain,trackUpgrade:currentTrackOrder<targetTrackOrder}];
+      })),
         raiders = [...new Map(claims.map(x=>[x.c.id,x.c])).values()],
-        missing = claims.filter(x=>x.state==="missing"), trackUpgrades=claims.filter(x=>x.exact&&x.state!=="missing"),
+        missing = claims.filter(x=>!x.exact), trackUpgrades=claims.filter(x=>x.trackUpgrade), simulated=claims.filter(x=>x.sim!==null&&x.sim>0), totalSim=simulated.reduce((sum,x)=>sum+(x.sim||0),0),
         impact = claims.filter(x=>["TRINKET","MAIN_HAND","OFF_HAND"].includes(slot(x.target.slot))), tier=claims.filter(x=>x.source.item.tierToken),
-        score = missing.length*2 + trackUpgrades.reduce((sum,x)=>sum+(x.state==="champion"?1.5:1),0) + impact.length*2 + tier.length,
+        score = missing.length*2 + trackUpgrades.length*1.5 + impact.length*2 + tier.length + totalSim*2,
         signal = score>=20?"Core target":score>=10?"High value":score>=4?"Useful":score>0?"Low return":"Skip candidate";
-      return {raidBoss,bossOrder,claims,raiders,missing,trackUpgrades,impact,tier,score,signal};
+      return {raidBoss,bossOrder,claims,raiders,missing,trackUpgrades,simulated,totalSim,impact,tier,score,signal};
     }).sort((a,b)=>b.score-a.score||b.raiders.length-a.raiders.length||a.bossOrder-b.bossOrder);
   return (
     <>
@@ -445,9 +451,6 @@ export default function App() {
           <div className="app-tabs">
             <button className={view === "overview" ? "active" : ""} onClick={() => setView("overview")}>
               <TrendingUp /> Weekly overview
-            </button>
-            <button className={view === "bossvalue" ? "active" : ""} onClick={() => setView("bossvalue")}>
-              <TrendingUp /> Boss value
             </button>
             <button className={view === "plan" ? "active" : ""} onClick={() => setView("plan")}>
               <Sparkles /> Tonight's plan <b>{tonight.length}</b>
@@ -486,17 +489,6 @@ export default function App() {
         </div>
       </header>
       <main className="shell">
-        {view === "bossvalue" && (
-          <section className="boss-value-page">
-            <div className="boss-value-head"><div><p className="rune">Time allocation</p><h2>Where the raid gets the most value</h2><p>Automatically ranked from current gear and submitted wishlists. No manual targeting.</p></div><div className="value-updated"><small>GEAR SNAPSHOT</small><b>{data.refreshedAt ? new Date(data.refreshedAt).toLocaleDateString() : "Unknown"}</b></div></div>
-            <div className="value-method"><b>Value index</b><span>Missing BiS +2 · weapon/trinket +2 · tier +1 · Hero upgrade +1 · Champion upgrade +1.5</span></div>
-            <div className="boss-value-table">
-              <div className="boss-value-columns"><span>#</span><span>Boss</span><span>Recommendation</span><span>Raiders helped</span><span>Missing BiS</span><span>Track upgrades</span><span>Weapons / trinkets</span><span>Tier</span><span>Index</span></div>
-              {bossAnalytics.map((row,index)=><article className={`boss-value-row ${row.signal.toLowerCase().replace(" ","-")}`} key={row.raidBoss.name}><strong className="value-rank">{index+1}</strong><div className="value-boss"><b>{row.raidBoss.name}</b><small>{row.claims.length ? row.raiders.slice(0,5).map(c=>c.name).join(" · ") : "No current wishlist claims"}{row.raiders.length>5?` · +${row.raiders.length-5}`:""}</small></div><em className="value-signal">{row.signal}</em><strong>{row.raiders.length}<small> players</small></strong><strong>{row.missing.length}</strong><strong>{row.trackUpgrades.length}</strong><strong className={row.impact.length?"impact":""}>{row.impact.length}</strong><strong className={row.tier.length?"tier":""}>{row.tier.length}</strong><strong className="value-score">{row.score.toFixed(1)}</strong></article>)}
-            </div>
-            <p className="value-footnote">A low score means the current roster has little wishlist value there—not that progression, achievements, or mandatory clears should be ignored.</p>
-          </section>
-        )}
         {view === "overview" && (
           <section className="weekly-page">
             <div className="weekly-head"><div><p className="rune">Tuesday planning board</p><h2>Raid BiS coverage</h2><p>Every raid-relevant wishlist target and its current track, together on one board.</p></div></div>
@@ -505,6 +497,13 @@ export default function App() {
               <div className="overview-corner"><b>Raider</b><small>BiS · track coverage</small></div>{overviewSlots.map(slotName=><div className="overview-slot" key={slotName}>{slotName.replace("MAIN_HAND","WEAPON").replace("OFF_HAND","OFFHAND").replace("SHOULDER","SHOULDERS")}</div>)}
               {weeklyOverview.map(row => <Fragment key={row.c.id}><div className="overview-player" style={{"--class":colors[row.c.class]} as React.CSSProperties}><i/><span><b>{row.c.name}</b><small>{row.exactCount}/{row.targets.length} BiS · <em className="myth-text">{row.mythCount}M</em> <em className="hero-text">{row.heroCount}H</em> <em className="champion-text">{row.championCount}C</em></small></span></div>{overviewSlots.map(slotName=>{const cells=row.targets.filter(x=>slot(x.target.slot)===slotName);return <div className={`overview-cell ${cells.length ? "" : "na"}`} key={`${row.c.id}-${slotName}`}>{cells.length ? cells.map(({target,source,current,state,catalystReady,exact},index)=>{const track=current?.track ? `${current.track} ${current.trackRank||""}`.trim() : "No matching BiS or catalyst base equipped", detail=state==="missing"?`Missing · current slot ${track}`:catalystReady?`Catalyst base owned · ${track}`:`Exact BiS equipped · ${track}`;return <a key={`${target.itemId}-${index}`} className={state} href={`https://www.wowhead.com/item=${target.itemId}`} data-wowhead={`item=${target.itemId}`} target="_blank" title={`${target.name}\n${detail}\nDrops: ${source.raidBoss.name}`}><img src={target.icon||source.item.icon}/><em>{state==="missing"?"!":catalystReady?"C":state==="myth"?"M":state==="hero"?"H":"C"}</em>{exact&&<i>✓</i>}</a>}):<span>—</span>}</div>})}</Fragment>)}
             </div></div>
+            <div className="boss-value-head embedded"><div><p className="rune">Time allocation</p><h2>Boss value by difficulty</h2><p>Equal or higher-track slots are excluded unless a verified sim still shows an upgrade.</p></div><div className="difficulty-picker">{(["normal","heroic","mythic"] as Difficulty[]).map(value=><button className={difficulty===value?"selected":""} key={value} onClick={()=>{setDifficulty(value);localStorage.setItem("onlyflasks-difficulty",value);}}>{value}</button>)}</div></div>
+            <div className="value-method"><b>Value index</b><span>Missing BiS +2 · track upgrade +1.5 · weapon/trinket +2 · tier +1 · verified sim gain ×2</span></div>
+            <div className="boss-value-table">
+              <div className="boss-value-columns"><span>#</span><span>Boss</span><span>Recommendation</span><span>Raiders helped</span><span>Missing BiS</span><span>Track upgrades</span><span>Verified sim</span><span>Weapons / trinkets</span><span>Tier</span><span>Index</span></div>
+              {bossAnalytics.map((row,index)=><article className={`boss-value-row ${row.signal.toLowerCase().replace(" ","-")}`} key={row.raidBoss.name}><strong className="value-rank">{index+1}</strong><div className="value-boss"><b>{row.raidBoss.name}</b><small>{row.claims.length?row.raiders.slice(0,5).map(c=>c.name).join(" · "):"No upgrades at this difficulty"}{row.raiders.length>5?` · +${row.raiders.length-5}`:""}</small></div><em className="value-signal">{row.signal}</em><strong>{row.raiders.length}<small> players</small></strong><strong>{row.missing.length}</strong><strong>{row.trackUpgrades.length}</strong><strong className={row.totalSim>0?"sim-value":""}>{row.totalSim>0?`+${row.totalSim.toFixed(1)}%`:"—"}<small>{row.simulated.length?` ${row.simulated.length} sims`:""}</small></strong><strong className={row.impact.length?"impact":""}>{row.impact.length}</strong><strong className={row.tier.length?"tier":""}>{row.tier.length}</strong><strong className="value-score">{row.score.toFixed(1)}</strong></article>)}
+            </div>
+            <p className="value-footnote">A low score means little loot value at the selected difficulty; progression requirements can still make the boss mandatory.</p>
           </section>
         )}
         {view === "plan" && (
