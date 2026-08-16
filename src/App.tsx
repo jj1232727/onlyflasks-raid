@@ -281,6 +281,35 @@ const catalystStatsMatch = (equippedItem?: Item, desiredBase?: Item) => {
     ([key, ratio]) => Math.abs((actual.get(key) || 0) - ratio) <= 0.06,
   );
 };
+const trackValue = (track?: string) => {
+  const value = norm(track);
+  return value.includes("myth")
+    ? 3
+    : value.includes("hero")
+      ? 2
+      : value.includes("champion")
+        ? 1
+        : 0;
+};
+const targetSatisfiedAtTrack = (
+  data: Data,
+  c: Raider,
+  target: Item,
+  targetTrack: string,
+) => {
+  const required = trackValue(targetTrack),
+    exact = c.equipment.find((item) => +item.itemId === +target.itemId),
+    base = target.sourceItemId
+      ? c.equipment.find((item) => +item.itemId === Number(target.sourceItemId))
+      : undefined;
+  if (base && trackValue(base.track) >= required) return true;
+  if (!exact || trackValue(exact.track) < required) return false;
+  if (!target.catalyst) return true;
+  const desiredBase = data.seasonLoot?.items.find(
+    (item) => +item.itemId === Number(target.sourceItemId),
+  );
+  return catalystStatsMatch(exact, desiredBase) === true;
+};
 const enchantSlots = new Set([
   "HEAD",
   "SHOULDER",
@@ -422,12 +451,15 @@ function vaultTip(
     : `LOCKED\nComplete ${threshold} ${label} to unlock this reward choice.`;
 }
 function WowItem({ item, size = 44 }: { item: Item; size?: number }) {
+  const bonus = item.bonusList?.length ? item.bonusList.join(":") : "",
+    wowhead = `item=${item.itemId}${bonus ? `&bonus=${bonus}` : ""}`;
   return (
     <a
       className="item-art"
-      href={`https://www.wowhead.com/item=${item.itemId}`}
-      data-wowhead={`item=${item.itemId}`}
+      href={`https://www.wowhead.com/item=${item.itemId}${bonus ? `?bonus=${bonus}` : ""}`}
+      data-wowhead={item.crafted && !bonus ? undefined : wowhead}
       target="_blank"
+      title={item.crafted && !bonus ? "Crafted target · secondary stats are selected with missives" : undefined}
     >
       <img
         src={
@@ -657,13 +689,8 @@ export default function App() {
                   slot(t.slot) === slot(item.slot)),
             );
           if (!target) return [];
-          const cur = equipped(c, item),
-            sameTrack =
-              norm(cur?.track) === norm(targetTrack) &&
-              (+cur.itemId === +item.itemId ||
-                +cur.itemId === +target.itemId ||
-                +cur.itemId === Number(target.sourceItemId));
-          if (sameTrack) return [];
+          const cur = equipped(c, item);
+          if (targetSatisfiedAtTrack(data, c, target, targetTrack)) return [];
           return [
             {
               c,
@@ -716,13 +743,9 @@ export default function App() {
                     slot(t.slot) === slot(item.slot)),
               );
               if (!target) return [];
-              const cur = equipped(c, item),
-                sameTrack =
-                  norm(cur?.track) === norm(targetTrack) &&
-                  (+cur.itemId === +item.itemId ||
-                    +cur.itemId === +target.itemId ||
-                    +cur.itemId === Number(target.sourceItemId));
-              if (sameTrack) return [];
+              const cur = equipped(c, item);
+              if (targetSatisfiedAtTrack(data, c, target, targetTrack))
+                return [];
               return [
                 {
                   c,
@@ -932,7 +955,7 @@ export default function App() {
                   ),
                   ilvlGain = expected - (x.current?.itemLevel || 0),
                   equalOrHigher = currentTrackOrder >= targetTrackOrder;
-                if (x.exact && equalOrHigher) return [];
+                if (x.exact && equalOrHigher && !x.suboptimal) return [];
                 if (!x.exact && equalOrHigher && !(sim !== null && sim > 0))
                   return [];
                 return [
@@ -947,7 +970,7 @@ export default function App() {
               }),
           ),
           raiders = [...new Map(claims.map((x) => [x.c.id, x.c])).values()],
-          missing = claims.filter((x) => !x.exact),
+          missing = claims.filter((x) => !x.exact || x.suboptimal),
           trackUpgrades = claims.filter((x) => x.trackUpgrade),
           simulated = claims.filter((x) => x.sim !== null && x.sim > 0),
           totalSim = simulated.reduce((sum, x) => sum + (x.sim || 0), 0),
@@ -1155,9 +1178,9 @@ export default function App() {
                                     <a
                                       className={`overview-target ${state} ${suboptimal ? "suboptimal" : exact && target.catalyst ? "optimal" : catalystReady ? "catalyst-ready" : ""}`}
                                       href={`https://www.wowhead.com/item=${target.itemId}`}
-                                      data-wowhead={`item=${target.itemId}`}
+                                      data-wowhead={target.crafted ? undefined : `item=${target.itemId}`}
                                       target="_blank"
-                                      title={`BIS TARGET\n${target.name}\n${detail}\nDrops: ${source.raidBoss.name}`}
+                                      title={`BIS TARGET\n${target.name}\n${target.crafted ? "Crafted stats are selected with missives\n" : ""}${detail}\nSource: ${source.raidBoss.name}`}
                                     >
                                       <img
                                         src={target.icon || source.item.icon}
@@ -1184,8 +1207,8 @@ export default function App() {
                                     {!exact && current && (
                                       <a
                                         className="current-mini"
-                                        href={`https://www.wowhead.com/item=${current.itemId}`}
-                                        data-wowhead={`item=${current.itemId}`}
+                                        href={`https://www.wowhead.com/item=${current.itemId}${current.bonusList?.length ? `?bonus=${current.bonusList.join(":")}` : ""}`}
+                                        data-wowhead={`item=${current.itemId}${current.bonusList?.length ? `&bonus=${current.bonusList.join(":")}` : ""}`}
                                         target="_blank"
                                         title={`CURRENTLY EQUIPPED\n${current.name}\n${current.itemLevel || "?"} ilvl · ${track}`}
                                       >
@@ -1303,7 +1326,11 @@ export default function App() {
                           const currentTrack =
                               claim.current?.track || "No track",
                             reasons = [
-                              !claim.exact ? "Missing BiS" : "",
+                              !claim.exact
+                                ? "Missing BiS"
+                                : claim.suboptimal
+                                  ? "Suboptimal catalyst stats"
+                                  : "",
                               claim.trackUpgrade
                                 ? `${currentTrack} → ${tracks[difficulty]}`
                                 : "",
@@ -2069,14 +2096,16 @@ export default function App() {
                               isExplicitTierTarget(data, c, t) &&
                               slot(t.slot) === slot(item.slot)),
                         ),
-                        cur = equipped(c, item),
-                        sameTrack =
-                          norm(cur?.track) === norm(tracks[difficulty]) &&
-                          Boolean(target) &&
-                          (+cur.itemId === +item.itemId ||
-                            +cur.itemId === +target!.itemId ||
-                            +cur.itemId === Number(target!.sourceItemId));
-                      return !sameTrack;
+                        satisfied = Boolean(
+                          target &&
+                            targetSatisfiedAtTrack(
+                              data,
+                              c,
+                              target,
+                              tracks[difficulty],
+                            ),
+                        );
+                      return Boolean(target) && !satisfied;
                     }).length,
                   0,
                 );
@@ -2355,6 +2384,7 @@ export default function App() {
                             itemId: h.item_id,
                             name: h.name,
                             slot: h.slot,
+                            bonusList: h.bonus_list || h.bonus_ids || [],
                             icon: `https://wow.zamimg.com/images/wow/icons/large/${h.icon}.jpg`,
                           }}
                           size={42}
@@ -2371,8 +2401,8 @@ export default function App() {
                               {h.old_items.map((old: any) => (
                                 <a
                                   key={old.item_id}
-                                  href={`https://www.wowhead.com/item=${old.item_id}`}
-                                  data-wowhead={`item=${old.item_id}`}
+                                  href={`https://www.wowhead.com/item=${old.item_id}${(old.bonus_list || old.bonus_ids || []).length ? `?bonus=${(old.bonus_list || old.bonus_ids).join(":")}` : ""}`}
+                                  data-wowhead={`item=${old.item_id}${(old.bonus_list || old.bonus_ids || []).length ? `&bonus=${(old.bonus_list || old.bonus_ids).join(":")}` : ""}`}
                                 >
                                   #{old.item_id}
                                 </a>
