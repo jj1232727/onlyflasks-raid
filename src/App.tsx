@@ -1203,6 +1203,17 @@ export default function App() {
                                               : "✓"}
                                         </i>
                                       )}
+                                      {target.crafted && (
+                                        <span className="crafted-overview-tip">
+                                          <small>CRAFTED BiS</small>
+                                          <strong>{target.name}</strong>
+                                          <span>
+                                            Secondary stats are selected with
+                                            missives. Hover the small current-item
+                                            icon for equipped stats.
+                                          </span>
+                                        </span>
+                                      )}
                                     </a>
                                     {!exact && current && (
                                       <a
