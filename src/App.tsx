@@ -457,9 +457,8 @@ function WowItem({ item, size = 44 }: { item: Item; size?: number }) {
     <a
       className="item-art"
       href={`https://www.wowhead.com/item=${item.itemId}${bonus ? `?bonus=${bonus}` : ""}`}
-      data-wowhead={item.crafted && !bonus ? undefined : wowhead}
+      data-wowhead={wowhead}
       target="_blank"
-      title={item.crafted && !bonus ? "Crafted target · secondary stats are selected with missives" : undefined}
     >
       <img
         src={
@@ -1162,6 +1161,12 @@ export default function App() {
                                 const track = current?.track
                                     ? `${current.track} ${current.trackRank || ""}`.trim()
                                     : "No item detected in this slot",
+                                  actualStats = (current?.secondaryStats || [])
+                                    .map(
+                                      (stat) =>
+                                        `+${stat.value} ${stat.type.replace(/_RATING$/u, "").replace("CRIT", "Critical Strike").replaceAll("_", " ").toLowerCase()}`,
+                                    )
+                                    .join(" · "),
                                   detail =
                                     state === "missing"
                                       ? `Missing · currently ${current?.name || "empty"} · ${track}`
@@ -1177,9 +1182,9 @@ export default function App() {
                                   >
                                     <a
                                       className={`overview-target ${state} ${suboptimal ? "suboptimal" : exact && target.catalyst ? "optimal" : catalystReady ? "catalyst-ready" : ""}`}
-                                      href={target.crafted ? undefined : `https://www.wowhead.com/item=${target.itemId}`}
-                                      data-wowhead={target.crafted ? undefined : `item=${target.itemId}`}
-                                      target={target.crafted ? undefined : "_blank"}
+                                      href={`https://www.wowhead.com/item=${target.itemId}`}
+                                      data-wowhead={`item=${target.itemId}`}
+                                      target="_blank"
                                       title={`BIS TARGET\n${target.name}\n${target.crafted ? "Crafted stats are selected with missives\n" : ""}${detail}\nSource: ${source.raidBoss.name}`}
                                     >
                                       <img
@@ -1203,17 +1208,6 @@ export default function App() {
                                               : "✓"}
                                         </i>
                                       )}
-                                      {target.crafted && (
-                                        <span className="crafted-overview-tip">
-                                          <small>CRAFTED BiS</small>
-                                          <strong>{target.name}</strong>
-                                          <span>
-                                            Secondary stats are selected with
-                                            missives. Hover the small current-item
-                                            icon for equipped stats.
-                                          </span>
-                                        </span>
-                                      )}
                                     </a>
                                     {!exact && current && (
                                       <a
@@ -1221,7 +1215,7 @@ export default function App() {
                                         href={`https://www.wowhead.com/item=${current.itemId}${current.bonusList?.length ? `?bonus=${current.bonusList.join(":")}` : ""}`}
                                         data-wowhead={`item=${current.itemId}${current.bonusList?.length ? `&bonus=${current.bonusList.join(":")}` : ""}`}
                                         target="_blank"
-                                        title={`CURRENTLY EQUIPPED\n${current.name}\n${current.itemLevel || "?"} ilvl · ${track}`}
+                                        title={`CURRENTLY EQUIPPED\n${current.name}\n${current.itemLevel || "?"} ilvl · ${track}${actualStats ? `\n${actualStats}` : ""}`}
                                       >
                                         <img src={current.icon} />
                                       </a>
