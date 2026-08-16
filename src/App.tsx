@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 import {
   ChevronDown,
   CircleAlert,
@@ -259,7 +259,7 @@ export default function App() {
         (localStorage.getItem("onlyflasks-difficulty") as Difficulty) ||
         "mythic",
     ),
-    [view, setView] = useState<"plan" | "decisions" | "audit" | "history" | "wishlist">("decisions"),
+    [view, setView] = useState<"overview" | "plan" | "decisions" | "audit" | "history" | "wishlist">("overview"),
     [open, setOpen] = useState(false),
     [rosterStatuses, setRosterStatuses] = useState<Record<number, RosterStatus>>({}),
     [specs, setSpecs] = useState<Record<number, string>>(() =>
@@ -409,7 +409,21 @@ export default function App() {
     raiderById = new Map((data.raiderio?.characters || []).map((x: any) => [+x.id, x])),
     audits = data.characters.map(auditRaider).sort((a, b) => b.critical - a.critical || b.issues.length - a.issues.length || a.c.name.localeCompare(b.c.name)),
     actionCount = audits.filter((x) => x.issues.length).length,
-    tierStatus = data.characters.map(c => { const list=wishlistFor(c), owned=new Set(c.equipment.map(i=>+i.itemId)), tierSlots=["HEAD","SHOULDER","CHEST","HANDS","LEGS"], missing=tierSlots.map(slotName=>({slot:slotName,target:list.find(t=>slot(t.slot)===slotName)})).filter((x): x is {slot:string,target:Item}=>Boolean(x.target&&!owned.has(+x.target.itemId)&&!owned.has(Number(x.target.sourceItemId)))); return {c,missing}; }).sort((a,b)=>a.missing.length-b.missing.length||a.c.name.localeCompare(b.c.name));
+    tierStatus = data.characters.map(c => { const list=wishlistFor(c), owned=new Set(c.equipment.map(i=>+i.itemId)), tierSlots=["HEAD","SHOULDER","CHEST","HANDS","LEGS"], missing=tierSlots.map(slotName=>({slot:slotName,target:list.find(t=>slot(t.slot)===slotName)})).filter((x): x is {slot:string,target:Item}=>Boolean(x.target&&!owned.has(+x.target.itemId)&&!owned.has(Number(x.target.sourceItemId)))); return {c,missing}; }).sort((a,b)=>a.missing.length-b.missing.length||a.c.name.localeCompare(b.c.name)),
+    overviewSlots = ["HEAD","NECK","SHOULDER","BACK","CHEST","WRIST","HANDS","WAIST","LEGS","FEET","FINGER","TRINKET","MAIN_HAND","OFF_HAND"],
+    raidSources = data.raid.bosses.flatMap((raidBoss,bossOrder)=>raidBoss.items.map(item=>({item,raidBoss,bossOrder}))),
+    weeklyOverview = data.characters.map(c => {
+      const targets = wishlistFor(c).flatMap(target => {
+        let source = raidSources.find(x => +x.item.itemId === +target.itemId || +x.item.itemId === Number(target.sourceItemId));
+        if (!source && isExplicitTierTarget(data,c,target)) source = raidSources.find(x => x.item.tierToken && tokenFitsClass(x.item,c) && slot(x.item.slot) === slot(target.slot));
+        if (!source) return [];
+        const exact = c.equipment.find(item => +item.itemId === +target.itemId), base = c.equipment.find(item => +item.itemId === Number(target.sourceItemId)), current = equipped(c,target), exactTrack = norm(exact?.track) === norm(tracks[difficulty]);
+        const state = exact ? (exactTrack ? "complete" : "lower") : base && target.catalyst ? "ready" : "missing";
+        return [{target,source,current:exact||base||current,state}];
+      });
+      const exactCount=targets.filter(x=>x.state==="complete"||x.state==="lower").length, trackCount=targets.filter(x=>x.state==="complete").length;
+      return {c,targets,exactCount,trackCount};
+    }).sort((a,b)=>priorityValue(a.c,rosterStatuses)-priorityValue(b.c,rosterStatuses)||a.c.name.localeCompare(b.c.name));
   return (
     <>
       <header>
@@ -420,6 +434,9 @@ export default function App() {
             <p className="muted">Sim-first decisions with gear context</p>
           </div>
           <div className="app-tabs">
+            <button className={view === "overview" ? "active" : ""} onClick={() => setView("overview")}>
+              <TrendingUp /> Weekly overview
+            </button>
             <button className={view === "plan" ? "active" : ""} onClick={() => setView("plan")}>
               <Sparkles /> Tonight's plan <b>{tonight.length}</b>
             </button>
@@ -457,6 +474,16 @@ export default function App() {
         </div>
       </header>
       <main className="shell">
+        {view === "overview" && (
+          <section className="weekly-page">
+            <div className="weekly-head"><div><p className="rune">Tuesday planning board</p><h2>Raid BiS coverage</h2><p>Every raid-relevant wishlist target across the full roster.</p></div><div className="difficulty-picker">{(["normal", "heroic", "mythic"] as Difficulty[]).map(value => <button className={difficulty === value ? "selected" : ""} key={value} onClick={() => { setDifficulty(value); localStorage.setItem("onlyflasks-difficulty", value); }}>{value}</button>)}</div></div>
+            <div className="overview-legend"><span className="complete">Exact BiS · {tracks[difficulty]}</span><span className="lower">BiS · other track</span><span className="ready">Ready to catalyze</span><span className="missing">Still needed</span></div>
+            <div className="overview-scroll"><div className="overview-grid">
+              <div className="overview-corner"><b>Raider</b><small>BiS · {tracks[difficulty]}</small></div>{overviewSlots.map(slotName=><div className="overview-slot" key={slotName}>{slotName.replace("MAIN_HAND","WEAPON").replace("OFF_HAND","OFFHAND").replace("SHOULDER","SHOULDERS")}</div>)}
+              {weeklyOverview.map(row => <Fragment key={row.c.id}><div className="overview-player" style={{"--class":colors[row.c.class]} as React.CSSProperties}><i/><span><b>{row.c.name}</b><small>{row.exactCount}/{row.targets.length} BiS · {row.trackCount} {tracks[difficulty]}</small></span></div>{overviewSlots.map(slotName=>{const cells=row.targets.filter(x=>slot(x.target.slot)===slotName);return <div className={`overview-cell ${cells.length ? "" : "na"}`} key={`${row.c.id}-${slotName}`}>{cells.length ? cells.map(({target,source,current,state},index)=>{const track=current?.track ? `${current.track} ${current.trackRank||""}`.trim() : "No matching item equipped", detail=state==="complete"?`Exact BiS on ${tracks[difficulty]}`:state==="lower"?`BiS equipped · ${track}`:state==="ready"?`Owns catalyst base · ${track}`:`Needs from ${source.raidBoss.name} · current ${track}`;return <a key={`${target.itemId}-${index}`} className={state} href={`https://www.wowhead.com/item=${target.itemId}`} data-wowhead={`item=${target.itemId}`} target="_blank" title={`${target.name}\n${detail}\nDrops: ${source.raidBoss.name}`}><img src={target.icon||source.item.icon}/><em>{state==="complete"?"✓":state==="lower"?(current?.track||"BIS").slice(0,4):state==="ready"?"C":"!"}</em></a>}):<span>—</span>}</div>})}</Fragment>)}
+            </div></div>
+          </section>
+        )}
         {view === "plan" && (
           <section className="plan-page">
             <div className="plan-head"><div><p className="rune">Pre-raid briefing</p><h2>Contested loot & tier breakpoints</h2><p>Only decisions involving multiple raiders.</p></div><div className="difficulty-picker">{(["normal", "heroic", "mythic"] as Difficulty[]).map(value => <button className={difficulty === value ? "selected" : ""} key={value} onClick={() => { setDifficulty(value); localStorage.setItem("onlyflasks-difficulty", value); }}>{value}</button>)}</div></div>
