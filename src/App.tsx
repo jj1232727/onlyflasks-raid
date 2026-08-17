@@ -2948,10 +2948,11 @@ export default function App() {
                   {inferredRole(c) === "Healer" && (
                     <div className="qe-steps">
                       <div className="qe-step-head">
-                        <b>STEP 2 · QE LIVE</b>
+                        <b>QE LIVE · YOUR LOOT RANKING</b>
                         <span>
-                          QE scores healers in your browser — it has no server to submit to, so this hop
-                          cannot be automated. It takes the same <code>/simc</code> you pasted above.
+                          QE takes the same <code>/simc</code> as above. Run Upgrade Finder once per raid
+                          difficulty and paste each report link back — they add up. QE does its scoring
+                          inside your browser, so there is no sim for us to submit on your behalf.
                         </span>
                       </div>
                       <div className="qe-step-actions">
