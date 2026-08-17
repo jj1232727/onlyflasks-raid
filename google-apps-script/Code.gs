@@ -214,8 +214,6 @@ function saveSimcSnapshot_(body) {
   } finally { lock.releaseLock(); }
 }
 
-// QE Live reports are fetched and parsed in the browser (their API is CORS
-// open), so this only has to store the summary the board reads back.
 // Only the three known difficulties, and only id-shaped values - these end up
 // in an href on the board.
 function sanitiseReportIds_(value) {
@@ -228,6 +226,8 @@ function sanitiseReportIds_(value) {
   return clean;
 }
 
+// QE Live reports are fetched and parsed in the browser (their API is CORS
+// open), so this only has to store the summary the board reads back.
 function saveQeReport_(body) {
   const id = Number(body.characterId), report = body.report;
   if (!Number.isFinite(id)) throw new Error('A valid characterId is required.');
