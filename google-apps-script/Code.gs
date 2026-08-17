@@ -52,8 +52,9 @@ function doPost(event) {
     if (body.action === 'queueQeRun') return queueQeRun_(body);
     if (body.action === 'getQePending') return json_({ ok: true, pending: getQePending_() });
     if (body.action === 'setQeQueueState') return setQeQueueState_(body);
-    // Diagnostic: fire a dispatch and report exactly why it did or did not land.
-    if (body.action === 'checkQeDispatch') return json_({ ok: true, dispatch: triggerQeSync_() });
+    // Diagnostic. Deliberately does NOT dispatch: doPost is public, so an action
+    // that starts a workflow run is a button anyone can hold down.
+    if (body.action === 'checkQeDispatch') return json_({ ok: true, dispatch: checkQeDispatchConfig_() });
     return saveWishlist_(body);
   } catch (error) { return json_({ ok: false, error: String(error.message || error) }); }
 }
@@ -319,14 +320,29 @@ function queueQeRun_(body) {
   } finally { lock.releaseLock(); }
 }
 
-// Kick the workflow now. A failure here is not fatal - the schedule still
-// catches the job - so never let it break the paste.
-//
-// It used to answer a bare false for every kind of failure: properties unset,
-// repo misspelled, token short a permission, GitHub down. All identical, and all
-// only visible as "it did not run". Say which, and quote what GitHub said. The
-// token is never part of that - only its presence, and GitHub's own message.
-function triggerQeSync_() {
+// Answers "is the dispatch wired up" without dispatching. A GET on the repo
+// proves the token is valid and can see it, which covers every setup mistake
+// seen so far. It cannot prove Contents:write - only a real dispatch does that,
+// and the next paste is a free test of it.
+function checkQeDispatchConfig_() {
+  var ready = qeDispatchSettings_();
+  if (ready.reason) return { ok: false, reason: ready.reason };
+  try {
+    var response = UrlFetchApp.fetch('https://api.github.com/repos/' + ready.repo, {
+      method: 'get', muteHttpExceptions: true,
+      headers: { Authorization: 'Bearer ' + ready.token, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
+    });
+    var code = response.getResponseCode();
+    if (code === 200) return { ok: true, reason: 'Token and repo are good. Contents:write is only proven by a real paste.' };
+    if (code === 401) return { ok: false, reason: 'GitHub answered 401: the token is invalid or revoked.' };
+    if (code === 404) return { ok: false, reason: 'GitHub answered 404: the token cannot see ' + ready.repo + '.' };
+    return { ok: false, reason: 'GitHub answered ' + code + ': ' + String(response.getContentText() || '').slice(0, 200) };
+  } catch (error) { return { ok: false, reason: 'Request failed: ' + String(error.message || error).slice(0, 200) }; }
+}
+
+// Shared by the dispatch and its diagnostic, so a setup mistake reads the same
+// either way.
+function qeDispatchSettings_() {
   // These two constants are property NAMES, not the secrets themselves. Pasting
   // a token over the name is an easy mistake - the two steps sit next to each
   // other in the setup - and it has happened. Catch it before the name is used
@@ -338,13 +354,26 @@ function triggerQeSync_() {
   var props = PropertiesService.getScriptProperties();
   var token = String(props.getProperty(GITHUB_TOKEN_PROPERTY) || '').trim();
   var repo = String(props.getProperty(GITHUB_REPO_PROPERTY) || '').trim();
-  if (!token) return { ok: false, reason: 'No ' + GITHUB_TOKEN_PROPERTY + ' in Script Properties.' };
-  if (!repo) return { ok: false, reason: 'No ' + GITHUB_REPO_PROPERTY + ' in Script Properties.' };
-  if (!/^[\w.-]+\/[\w.-]+$/.test(repo)) return { ok: false, reason: GITHUB_REPO_PROPERTY + ' should be "owner/name", got "' + repo + '".' };
+  if (!token) return { reason: 'No ' + GITHUB_TOKEN_PROPERTY + ' in Script Properties.' };
+  if (!repo) return { reason: 'No ' + GITHUB_REPO_PROPERTY + ' in Script Properties.' };
+  if (!/^[\w.-]+\/[\w.-]+$/.test(repo)) return { reason: GITHUB_REPO_PROPERTY + ' should be "owner/name", got "' + repo + '".' };
+  return { token: token, repo: repo };
+}
+
+// Kick the workflow now. A failure here is not fatal - the schedule still
+// catches the job - so never let it break the paste.
+//
+// It used to answer a bare false for every kind of failure: properties unset,
+// repo misspelled, token short a permission, GitHub down. All identical, and all
+// only visible as "it did not run". Say which, and quote what GitHub said - the
+// token is never part of that, only its presence and GitHub's own message.
+function triggerQeSync_() {
+  var ready = qeDispatchSettings_();
+  if (ready.reason) return { ok: false, reason: ready.reason };
   try {
-    var response = UrlFetchApp.fetch('https://api.github.com/repos/' + repo + '/dispatches', {
+    var response = UrlFetchApp.fetch('https://api.github.com/repos/' + ready.repo + '/dispatches', {
       method: 'post', contentType: 'application/json', muteHttpExceptions: true,
-      headers: { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
+      headers: { Authorization: 'Bearer ' + ready.token, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
       payload: JSON.stringify({ event_type: 'qe-sync' }),
     });
     var code = response.getResponseCode();

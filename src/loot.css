@@ -1338,6 +1338,10 @@ footer .data-freshness{width:100%}
 .qe-difficulty-state .have small{color:#6fae8b}
 .qe-difficulty-state .missing b{color:#8d8289}
 .qe-difficulty-state .missing small{color:#6b6169}
+/* Scored, but by an older run than the timestamp claims. */
+.qe-difficulty-state .carried{border-color:#6a5333;background:#1a1410}
+.qe-difficulty-state .carried b{color:#d9a566}
+.qe-difficulty-state .carried small{color:#a07d4f}
 .qe-steps.running{border-color:#4a3a6b}
 .qe-steps.done{border-color:#2c5f45;background:linear-gradient(180deg,#101d16,#110e15)}
 .qe-steps.done .qe-step-head b{color:#8fe0b0}

@@ -2990,11 +2990,18 @@ export default function App() {
                             // Each difficulty is its own QE report, so each tile
                             // can link to the run behind its own number.
                             reportId = scored ? qeStored.reportIds?.[d] : "",
-                            className = working ? "working" : scored ? "have" : "missing",
-                            label = <><b>{raidbotDifficulty[d].label}</b><small>{working ? (qeJob.state === "running" ? "running…" : "queued…") : scored ? `${Object.keys(qeStored.difficulties[d]).length} items` : "not scored"}</small></>;
+                            // When one difficulty fails, saveQeReport_ merges the
+                            // previous run's scores forward under a fresh
+                            // capturedAt — so the tile reads as current when it is
+                            // not. Scores with no id of their own are exactly that
+                            // case. Only judge it once the report carries ids at
+                            // all, or every report predating them looks stale.
+                            carried = scored && !reportId && Object.keys(qeStored.reportIds || {}).length > 0,
+                            className = working ? "working" : carried ? "carried" : scored ? "have" : "missing",
+                            label = <><b>{raidbotDifficulty[d].label}</b><small>{working ? (qeJob.state === "running" ? "running…" : "queued…") : carried ? "earlier run" : scored ? `${Object.keys(qeStored.difficulties[d]).length} items` : "not scored"}</small></>;
                           return reportId
                             ? <a className={className} key={d} href={`https://questionablyepic.com/live/upgradereport/${reportId}`} target="_blank" rel="noreferrer" title="Open this difficulty's QE report">{label}</a>
-                            : <span className={className} key={d}>{label}</span>;
+                            : <span className={className} key={d} title={carried ? "This difficulty failed in the last run — these scores are carried over from an earlier one. Re-paste to refresh them." : undefined}>{label}</span>;
                         })}
                       </div>
                     </div>
