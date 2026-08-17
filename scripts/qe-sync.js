@@ -12,7 +12,12 @@ import { QE_DIFFICULTIES, runQeUpgradeFinder } from "../src/qe-live.js";
 import { qeReportSummary, qeReportUrl } from "../src/qe-report.js";
 
 const { values } = parseArgs({
-  options: { dry: { type: "boolean", default: false }, headed: { type: "boolean", default: false } },
+  options: {
+    dry: { type: "boolean", default: false },
+    headed: { type: "boolean", default: false },
+    // CI asks this first so an empty queue never downloads a browser.
+    count: { type: "boolean", default: false },
+  },
 });
 
 const config = JSON.parse(await readFile("public/app-config.json", "utf8"));
@@ -38,6 +43,7 @@ const post = async (payload) => {
 };
 
 const { pending } = await post({ action: "getQePending" });
+if (values.count) { console.log(pending.length); process.exit(0); }
 if (!pending.length) { console.log("Nothing queued."); process.exit(0); }
 console.log(`${pending.length} healer${pending.length === 1 ? "" : "s"} queued.`);
 

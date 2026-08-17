@@ -22,7 +22,20 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+
+      # Most runs have nothing to do. Ask first, so an empty queue does not
+      # download a browser or touch questionablyepic.com at all.
+      - name: Anything queued?
+        id: queue
+        run: |
+          COUNT=$(node scripts/qe-sync.js --count)
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "$COUNT healer(s) queued."
+
       - name: Install a browser for playwright
+        if: steps.queue.outputs.count != '0'
         run: npx playwright install --with-deps chromium
+
       - name: Drive QE Live for queued healers
+        if: steps.queue.outputs.count != '0'
         run: npm run qe:sync
