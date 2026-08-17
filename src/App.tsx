@@ -1135,6 +1135,35 @@ export default function App() {
   useEffect(() => {
     setData((current) => (current ? { ...current, qeReports } : current));
   }, [qeReports]);
+  // A queued QE run lands in well under a minute, but nothing pushes that back
+  // to the page, so the panel used to sit there telling the healer to reload —
+  // which reads as a hang however fast the run actually was. Poll while a job is
+  // in flight and let the difficulty tiles fill themselves in.
+  //
+  // Depend on the boolean, not on qeQueue: polling replaces that object every
+  // tick, so an effect keyed on it would tear down and restart its own timer.
+  const qeWaiting = Object.values(qeQueue).some(
+    (job: any) => job?.state === "pending" || job?.state === "running",
+  );
+  useEffect(() => {
+    if (!wishlistApiUrl || !qeWaiting) return;
+    let stopped = false;
+    const startedAt = Date.now(),
+      timer = setInterval(async () => {
+        // Give up after six minutes rather than polling a wedged job forever;
+        // the panel still shows whatever state the queue last reported.
+        if (stopped || Date.now() - startedAt > 360000) { clearInterval(timer); return; }
+        try {
+          const payload = await (await fetch(wishlistApiUrl, { cache: "no-store" })).json();
+          if (stopped || !payload.ok) return;
+          setQeQueue(payload.qeQueue || {});
+          setQeReports(payload.qeReports || {});
+        } catch {
+          // A dropped poll is not worth surfacing — the next tick retries.
+        }
+      }, 5000);
+    return () => { stopped = true; clearInterval(timer); };
+  }, [wishlistApiUrl, qeWaiting]);
   useEffect(() => {
     fetch("./app-config.json", { cache: "no-store" })
       .then((r) => r.json())
@@ -2612,7 +2641,7 @@ export default function App() {
                   setQeQueue((current) => ({ ...current, [String(c.id)]: { state: "pending", requestedAt: queueResult.requestedAt, characterName: c.name, lootSpec: selectedSpec, error: "" } }));
                   setSimState("uploaded");
                   setSimMessage(queueResult.dispatched
-                    ? "Gear captured. QE is running now for all three difficulties — reload in about a minute."
+                    ? "Gear captured. QE is running now for all three difficulties — the panel below updates itself, no reload needed."
                     : "Gear captured and QE queued. It runs on the next sync, usually within 15 minutes.");
                   return;
                 }
@@ -2942,7 +2971,7 @@ export default function App() {
                           {qeJob?.state === "error"
                             ? `The QE run failed: ${qeJob.error || "unknown error"}. Re-paste your /simc to try again.`
                             : qeJob
-                              ? `Running QE for Normal, Heroic and Mythic — started ${relativeAge(qeJob.requestedAt)}. Usually about a minute; this panel updates when you reload.`
+                              ? `Running QE for Normal, Heroic and Mythic — started ${relativeAge(qeJob.requestedAt)}. Usually under a minute; the tiles below fill in on their own, so leave this open.`
                               : qeHave.length === 3
                                 ? `All three difficulties scored from your ${qeStored.spec} export, ${relativeAge(qeStored.capturedAt)}.`
                                 : "Paste your /simc above and press the button. QE is run for you; there is nothing else to do."}
