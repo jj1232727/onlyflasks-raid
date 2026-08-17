@@ -1311,3 +1311,10 @@ footer .data-freshness{width:100%}
 .simc-disclosure>summary:hover{background:#17131a}
 .simc-disclosure>summary:focus-visible{outline:2px solid #d6a44d;outline-offset:-2px}
 .simc-disclosure>summary svg{flex:none;width:18px}
+
+/* --- BiS coverage: is this difficulty still worth running --- */
+.coverage-verdict{display:inline-block;margin:3px 0 5px;padding:2px 7px;border-radius:4px;font-size:8px;font-style:normal;font-weight:950;letter-spacing:.06em;text-transform:uppercase}
+.coverage-verdict.worth{background:#4b2f16;color:#f0b271}
+.coverage-verdict.thin{background:#4a4218;color:#e7d179}
+.coverage-verdict.done{background:#1b4531;color:#8fe0b0}
+.coverage-score.done .coverage-ring b{color:#8fe0b0}

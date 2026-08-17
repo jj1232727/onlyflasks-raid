@@ -298,6 +298,15 @@ const ROSTER_BUCKET_HINT: Record<RosterStatus, string> = {
   Trial: "after mains",
   Fill: "last",
 };
+// BiS coverage answers "are we done with this difficulty", not "can we clear
+// it". A slot already holding something at that track or better is covered, so
+// there is nothing to gain by running it for that raider.
+const coverageVerdict = (percent: number) =>
+  percent >= 90
+    ? { id: "done", label: "done — skip it" }
+    : percent >= 60
+      ? { id: "thin", label: "thin returns" }
+      : { id: "worth", label: "still worth running" };
 const HOUR = 3600000, STALE_HOURS = 12, OLD_HOURS = 36;
 const ageInHours = (iso?: string) => {
   const parsed = iso ? Date.parse(iso) : NaN;
@@ -1848,10 +1857,17 @@ export default function App() {
               </div>
             </div>
             <div className="coverage-insights difficulty-summary">{overviewInsights.map((summary) => {
-              const percent = summary.total ? Math.round(summary.satisfied / summary.total * 100) : 0;
-              return <div className={`coverage-score ${summary.difficulty}`} key={summary.difficulty}>
+              const percent = summary.total ? Math.round(summary.satisfied / summary.total * 100) : 0,
+                verdict = coverageVerdict(percent),
+                outstanding = summary.total - summary.satisfied;
+              return <div className={`coverage-score ${summary.difficulty} ${verdict.id}`} key={summary.difficulty}>
                 <span className="coverage-ring" style={{ "--coverage": `${percent}%` } as React.CSSProperties}><b>{percent}%</b></span>
-                <span><strong>{raidbotDifficulty[summary.difficulty].label} ready</strong><small>{summary.satisfied} of {summary.total} targets already satisfied</small><em>{summary.bis} BiS · {summary.higher} higher track · {summary.sim} sim-safe</em><em>{summary.complete} players need nothing at this difficulty</em></span>
+                <span>
+                  <strong>{raidbotDifficulty[summary.difficulty].label} covered</strong>
+                  <i className={`coverage-verdict ${verdict.id}`}>{verdict.label}</i>
+                  <small>{summary.satisfied} of {summary.total} targets already at {tracks[summary.difficulty]} or better</small>
+                  <em>{outstanding} still want a {raidbotDifficulty[summary.difficulty].label} drop</em>
+                </span>
               </div>;
             })}</div>
             <div className="overview-legend">
