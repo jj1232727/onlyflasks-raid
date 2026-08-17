@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-17T12:32:27.883Z",
+  "fetchedAt": "2026-08-17T14:21:28.985Z",
   "periodInfo": {
     "current_period": 1076,
     "current_season": {
@@ -426,89 +426,126 @@
               {
                 "id": 16824,
                 "instanceId": 80,
+                "swappablePhases": null,
                 "name": "Nek'zali the Soulcoiler",
                 "defaultOrder": 0,
                 "wclId": 3470,
                 "maxItemLevel": 318,
                 "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_priestess.jpg",
                 "zoomUrl": "https://data.wowaudit.com/img/nek-zali-the-soulcoiler.jpg",
+                "encounterAreaImages": [
+                  "Room"
+                ],
                 "tierSlotDrop": null
               },
               {
                 "id": 16825,
                 "instanceId": 80,
+                "swappablePhases": null,
                 "name": "Entombed Sentinels",
                 "defaultOrder": 1,
                 "wclId": 3445,
                 "maxItemLevel": 321,
                 "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_golems.jpg",
                 "zoomUrl": "https://data.wowaudit.com/img/entombed-sentinels.jpg",
+                "encounterAreaImages": [
+                  "Platform"
+                ],
                 "tierSlotDrop": "hands"
               },
               {
                 "id": 16826,
                 "instanceId": 80,
+                "swappablePhases": null,
                 "name": "Vashnik the Malignant",
                 "defaultOrder": 2,
                 "wclId": 3455,
                 "maxItemLevel": 321,
                 "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_alchemist.jpg",
                 "zoomUrl": "https://data.wowaudit.com/img/vashnik-the-malignant.jpg",
+                "encounterAreaImages": [
+                  "Room"
+                ],
                 "tierSlotDrop": "chest"
               },
               {
                 "id": 16827,
                 "instanceId": 80,
+                "swappablePhases": [
+                  1,
+                  2,
+                  3
+                ],
                 "name": "The Lost Explorers",
                 "defaultOrder": 3,
                 "wclId": 3497,
                 "maxItemLevel": 324,
                 "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_tortollans.jpg",
                 "zoomUrl": "https://data.wowaudit.com/img/the-lost-explorers.jpg",
+                "encounterAreaImages": [
+                  "Platform"
+                ],
                 "tierSlotDrop": "shoulder"
               },
               {
                 "id": 16828,
                 "instanceId": 80,
+                "swappablePhases": null,
                 "name": "Sszorak",
                 "defaultOrder": 4,
                 "wclId": 3420,
                 "maxItemLevel": 324,
                 "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_brute.jpg",
                 "zoomUrl": "https://data.wowaudit.com/img/sszorak.jpg",
+                "encounterAreaImages": [
+                  "Platform"
+                ],
                 "tierSlotDrop": "legs"
               },
               {
                 "id": 16829,
                 "instanceId": 80,
+                "swappablePhases": null,
                 "name": "The Twin Fangs",
                 "defaultOrder": 5,
                 "wclId": 3421,
                 "maxItemLevel": 324,
                 "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_twins.jpg",
                 "zoomUrl": "https://data.wowaudit.com/img/the-twin-fangs.jpg",
+                "encounterAreaImages": [
+                  "Platform"
+                ],
                 "tierSlotDrop": "head"
               },
               {
                 "id": 16830,
                 "instanceId": 80,
+                "swappablePhases": null,
                 "name": "The Coiled Altar",
                 "defaultOrder": 6,
                 "wclId": 3429,
                 "maxItemLevel": 327,
                 "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_zuljinmalacrass.jpg",
                 "zoomUrl": "https://data.wowaudit.com/img/the-coiled-altar.jpg",
+                "encounterAreaImages": [
+                  "Platform"
+                ],
                 "tierSlotDrop": null
               },
               {
                 "id": 16831,
                 "instanceId": 80,
+                "swappablePhases": null,
                 "name": "Ula'tek",
                 "defaultOrder": 7,
                 "wclId": 3492,
                 "maxItemLevel": 327,
                 "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_ulatek.jpg",
                 "zoomUrl": "https://data.wowaudit.com/img/ula-tek.jpg",
+                "encounterAreaImages": [
+                  "Platform",
+                  "Broken"
+                ],
                 "tierSlotDrop": null
               }
             ],
@@ -532,12 +569,14 @@
               {
                 "id": 16832,
                 "instanceId": 81,
+                "swappablePhases": null,
                 "name": "Nymrissa Wavecaller",
                 "defaultOrder": 0,
                 "wclId": 3379,
                 "maxItemLevel": 344,
                 "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/achievement_boss_elitenagamale.jpg",
                 "zoomUrl": "https://data.wowaudit.com/img/nymrissa-wavecaller.jpg",
+                "encounterAreaImages": null,
                 "tierSlotDrop": null
               }
             ],
