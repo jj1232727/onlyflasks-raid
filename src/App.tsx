@@ -2638,7 +2638,10 @@ export default function App() {
                   });
                   const queueResult = await queued.json();
                   if (!queueResult.ok) throw new Error(queueResult.error || "Could not queue the QE run.");
-                  setQeQueue((current) => ({ ...current, [String(c.id)]: { state: "pending", requestedAt: queueResult.requestedAt, characterName: c.name, lootSpec: selectedSpec, error: "" } }));
+                  // Keep whether the dispatch landed: "pending" means a run is
+                  // seconds away when it did, and up to 15 minutes when it did
+                  // not, and the panel should not promise the wrong one.
+                  setQeQueue((current) => ({ ...current, [String(c.id)]: { state: "pending", requestedAt: queueResult.requestedAt, characterName: c.name, lootSpec: selectedSpec, error: "", dispatched: queueResult.dispatched } }));
                   setSimState("uploaded");
                   setSimMessage(queueResult.dispatched
                     ? "Gear captured. QE is running now for all three difficulties — the panel below updates itself, no reload needed."
@@ -2977,7 +2980,7 @@ export default function App() {
                             : qeJob?.state === "running"
                               ? `Running · started ${relativeAge(qeJob.requestedAt)}`
                               : qeJob
-                                ? `Queued ${relativeAge(qeJob.requestedAt)} · waiting for the next sync`
+                                ? `Queued ${relativeAge(qeJob.requestedAt)}${qeJob.dispatched === false ? " · waiting for the next sync" : qeJob.dispatched ? " · starting now" : ""}`
                                 : qeHave.length === 3
                                   ? `Scored from your ${qeStored.spec} export, ${relativeAge(qeStored.capturedAt)}.`
                                   : "Paste your /simc above. QE is run for you."}
