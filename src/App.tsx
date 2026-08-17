@@ -1,6 +1,5 @@
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import {
-  CalendarClock,
   ChevronDown,
   CircleAlert,
   ClipboardCheck,
@@ -262,7 +261,7 @@ const TIER_SLOT_HELP: Record<string, string> = {
   waiting: "Convertible base, but no catalyst charge in hand",
   missing: "Nothing here the Catalyst can use — needs a drop",
 };
-const VIEWS = ["overview", "bosses", "tier", "plan", "audit", "decisions", "history", "wishlist"] as const;
+const VIEWS = ["overview", "bosses", "tier", "contested", "audit", "decisions", "history", "wishlist"] as const;
 type View = (typeof VIEWS)[number];
 // The tab lives in the URL so a view can be linked, bookmarked, reloaded into,
 // and walked with the browser's back button.
@@ -282,10 +281,10 @@ const NAV_TABS: {
   count?: (counts: NavCounts) => number;
   alert?: boolean;
 }[] = [
-  { id: "overview", label: "Weekly overview", icon: <LayoutDashboard />, group: "plan" },
+  { id: "overview", label: "BiS coverage", icon: <LayoutDashboard />, group: "plan" },
   { id: "bosses", label: "Boss targets", icon: <Skull />, group: "plan" },
   { id: "tier", label: "Tier sets", icon: <Shield />, group: "plan", count: (c) => c.tierNeedsBoss, alert: true },
-  { id: "plan", label: "Tonight's plan", icon: <CalendarClock />, group: "plan", count: (c) => c.tonight },
+  { id: "contested", label: "Contested loot", icon: <Swords />, group: "plan", count: (c) => c.tonight },
   { id: "decisions", label: "Loot decisions", icon: <Gavel />, group: "decide" },
   { id: "audit", label: "Raid audit", icon: <ClipboardCheck />, group: "decide", count: (c) => c.actions, alert: true },
   { id: "history", label: "Loot history", icon: <History />, group: "records", count: (c) => c.history },
@@ -1786,9 +1785,9 @@ export default function App() {
       <header>
         <div className="shell mast">
           <div>
-            <p className="rune">OnlyFlasks · Loot Council</p>
+            <p className="rune">OnlyFlasks · Raid readiness</p>
             <h1>The Venomous Abyss</h1>
-            <p className="muted">Sim-first decisions with gear context</p>
+            <p className="muted">Gear auditing, tier tracking and sim-backed loot calls</p>
           </div>
           <button type="button" className="palette-trigger" onClick={() => setPaletteOpen(true)}>
             <Search />
@@ -2168,12 +2167,12 @@ export default function App() {
           </section>
           </section>
         )}
-        {view === "plan" && (
+        {view === "contested" && (
           <section className="plan-page">
             <div className="plan-head">
               <div>
                 <p className="rune">Pre-raid briefing</p>
-                <h2>Contested loot & tier breakpoints</h2>
+                <h2>Contested loot</h2>
                 <p>Only decisions involving multiple raiders.</p>
               </div>
               <div className="difficulty-picker">
