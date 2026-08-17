@@ -2,15 +2,20 @@
 //
 // QE has no server-side sim: its page computes the report locally and uploads
 // the finished object, so turning a /simc into QE scores means doing what a
-// healer would do by hand. About 25 seconds per difficulty.
+// healer would do by hand. About 8 seconds per difficulty, and the three run
+// together, so a character costs about 9 seconds.
 //
-// Three details cost real effort to find and must not be "simplified" away:
+// Four details cost real effort to find and must not be "simplified" away:
 //   * The spec MUST be selected before importing. QE opens on Holy Paladin and
 //     silently discards a mismatched export, leaving the dialog open.
 //   * MUI Select opens on mousedown, not click.
 //   * The import textarea is React-controlled, so only a real paste
 //     (keyboard.insertText) updates it. Setting .value does not, native setter
 //     included.
+//   * A run replaces the finder with its report, and the difficulty buttons go
+//     with it. Re-opening the finder keeps the spec but drops the imported
+//     character, and Go! then produces nothing — so one difficulty means one
+//     page and one import. Measured; do not try to loop difficulties on a page.
 import { chromium } from "playwright-core";
 
 export const QE_DIFFICULTIES = ["normal", "heroic", "mythic"];
@@ -30,6 +35,10 @@ const FINDER_URL = "https://questionablyepic.com/live/upgradefinder";
 //                                be after crests nobody has spent yet.
 //   Upgrade Vault to Max   OFF — bonus rolls and the vault are not a council
 //                                call at all.
+//
+// Read off the dialog on 2026-08-17, QE's own defaults are Auto Catalyze off,
+// Upgrade ALL to Max off, Upgrade Vault to Max ON — so the vault switch was
+// being left on and is the one this actually changes today.
 //
 // The two OFF switches only add report sections; qeRaidScores reads "drop" rows
 // only, so failing to set them is untidy rather than wrong.
@@ -135,7 +144,8 @@ async function runOne(browser, { simc, spec, difficulty }) {
       if (DIALOG_SETTINGS.find((x) => x.label.source === source).required)
         throw new Error(`QE Live: could not set "${source}" to ${want} (${state}).`);
       // Not fatal: these two only add report sections the board never reads.
-      console.warn(`  note: QE Live "${source}" could not be set to ${want} (${state}).`);
+      // Name the difficulty — the three runs log over each other.
+      console.warn(`  note: ${difficulty} — QE Live "${source}" could not be set to ${want} (${state}).`);
     }
     await page.evaluate(() => {
       const dialog = document.querySelector('[role="dialog"]');
@@ -184,20 +194,33 @@ export async function runQeUpgradeFinder({ simc, spec, difficulties = QE_DIFFICU
   } catch {
     browser = await chromium.launch({ headless: !headed });
   }
-  const reports = [], failures = [];
+  // The difficulties run at once, on a page each. Measured against this same
+  // export: 23.6s sequential, 9.0s together, with each page taking 8.3s rather
+  // than 7.8s — so they barely contend. They are wholly independent anyway,
+  // since each one imports the gear itself, and a page owns its own upload
+  // listener, so a failure stays with its own difficulty.
+  //
+  // A CI runner has fewer cores than the machine that was measured on and will
+  // not see the full 2.6x, but three pages waiting on QE's page load and its
+  // one second of compute is not what saturates a runner.
+  let outcomes;
   try {
-    for (const difficulty of difficulties) {
+    outcomes = await Promise.all(difficulties.map(async (difficulty) => {
       try {
-        const result = await runOne(browser, { simc, spec, difficulty });
-        reports.push(result);
-        onProgress?.(result);
+        const report = await runOne(browser, { simc, spec, difficulty });
+        onProgress?.(report);
+        return { report };
       } catch (error) {
-        failures.push({ difficulty, error: error.message });
-        onProgress?.({ difficulty, error: error.message });
+        const failure = { difficulty, error: error.message };
+        onProgress?.(failure);
+        return { failure };
       }
-    }
+    }));
   } finally {
     await browser.close();
   }
+  // Promise.all preserves order, so both lists stay in difficulty order.
+  const reports = outcomes.flatMap((x) => (x.report ? [x.report] : [])),
+    failures = outcomes.flatMap((x) => (x.failure ? [x.failure] : []));
   return { ok: failures.length === 0, reports, failures };
 }

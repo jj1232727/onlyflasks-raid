@@ -44,11 +44,20 @@ jobs:
           path: ~/.cache/ms-playwright
           key: playwright-${{ hashFiles('package-lock.json') }}
 
+      # On a cache hit this used to spend ~22s in apt for system libraries the
+      # runner image usually already has - longer than the whole QE run now
+      # takes. Try the cached browser first and only pay for apt if it will not
+      # actually start, so a thinner runner image still self-heals.
       - name: Install a browser for playwright
         if: steps.queue.outputs.count != '0'
         run: |
           if [ "${{ steps.browser-cache.outputs.cache-hit }}" = "true" ]; then
-            npx playwright install-deps chromium
+            if node -e "import('playwright-core').then(async ({ chromium }) => { const b = await chromium.launch(); await b.close(); })"; then
+              echo "Cached browser launches as-is; skipping apt."
+            else
+              echo "Cached browser will not start; installing system deps."
+              npx playwright install-deps chromium
+            fi
           else
             npx playwright install --with-deps chromium
           fi
