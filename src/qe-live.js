@@ -72,26 +72,33 @@ async function runOne(browser, { simc, spec, difficulty }) {
     }
     throw new Error(`QE Live: no "${pattern}" button — their page layout may have changed.`);
   };
-  // Wait for the page to actually be ready, but never longer than the blind
-  // sleep this replaces. QE's own compute takes about a second; nearly all the
-  // wall clock used to be us guessing how long their React took to settle. If a
-  // condition never comes true we are no slower than before, and the step that
-  // follows fails with its own message rather than a timeout here.
+  // Wait for the thing we actually need, and wait generously. These exit the
+  // moment the condition holds, so a long ceiling costs nothing when the page is
+  // quick — it only decides how bad a slow runner is allowed to get before we
+  // call it. Capping these at the old blind sleeps was a mistake: three pages
+  // loading at once on a 2-vCPU runner blew past 6s, settle gave up quietly, and
+  // the next line died on a null with no clue why.
   const settle = (fn, arg, ms) => page.waitForFunction(fn, arg, { timeout: ms, polling: 100 }).catch(() => {});
   try {
     await page.goto(FINDER_URL, { waitUntil: "domcontentloaded", timeout: 60000 });
     await settle(() => [...document.querySelectorAll("img")]
-      .some((img) => /paladin|priest|druid|shaman|monk|evoker/i.test(img.alt || "")), null, 6000);
+      .some((img) => /paladin|priest|druid|shaman|monk|evoker/i.test(img.alt || "")), null, 30000);
 
-    await page.evaluate(() => {
+    // Say which step failed. A bare TypeError out of page.evaluate tells whoever
+    // reads the log nothing at all.
+    const opened = await page.evaluate(() => {
       const avatar = [...document.querySelectorAll("img")]
         .find((img) => /paladin|priest|druid|shaman|monk|evoker/i.test(img.alt || ""));
+      if (!avatar) return "no spec avatar";
       let control = avatar;
       while (control && !/MuiFormControl-root/.test(control.className || "")) control = control.parentElement;
-      control.querySelector(".MuiSelect-select")
-        .dispatchEvent(new MouseEvent("mousedown", { bubbles: true, cancelable: true }));
+      const select = control && control.querySelector(".MuiSelect-select");
+      if (!select) return "no spec dropdown";
+      select.dispatchEvent(new MouseEvent("mousedown", { bubbles: true, cancelable: true }));
+      return true;
     });
-    await settle(() => document.querySelectorAll("li[data-value]").length > 0, null, 1000);
+    if (opened !== true) throw new Error(`QE Live: ${opened} — the page never finished loading.`);
+    await settle(() => document.querySelectorAll("li[data-value]").length > 0, null, 10000);
     const picked = await page.evaluate((name) => {
       const option = [...document.querySelectorAll("li")].find((li) => li.getAttribute("data-value") === name);
       if (!option) return false;
@@ -110,10 +117,11 @@ async function runOne(browser, { simc, spec, difficulty }) {
     await page.waitForSelector(box, { timeout: 30000 });
     await page.locator(box).first().click();
     await page.keyboard.insertText(simc);
-    await settle(() => (document.querySelector('[role="dialog"] textarea')?.value || "").length > 100, null, 700);
+    await settle(() => (document.querySelector('[role="dialog"] textarea')?.value || "").length > 100, null, 5000);
     const wanted = DIALOG_SETTINGS.map(({ label, want }) => ({ source: label.source, want }));
     await page.evaluate((settings) => {
       const dialog = document.querySelector('[role="dialog"]');
+      if (!dialog) return;
       for (const { source, want } of settings) {
         const rx = new RegExp(source, "i"),
           box = [...dialog.querySelectorAll('input[type="checkbox"]')]
@@ -129,7 +137,7 @@ async function runOne(browser, { simc, spec, difficulty }) {
       const dialog = document.querySelector('[role="dialog"]');
       return settings.map(({ source, want }) => {
         const rx = new RegExp(source, "i"),
-          box = [...dialog.querySelectorAll('input[type="checkbox"]')]
+          box = dialog && [...dialog.querySelectorAll('input[type="checkbox"]')]
             .find((cb) => rx.test(cb.closest("label")?.innerText || ""));
         return { source, want, state: box ? box.checked : "missing" };
       });
@@ -147,10 +155,14 @@ async function runOne(browser, { simc, spec, difficulty }) {
       // Name the difficulty — the three runs log over each other.
       console.warn(`  note: ${difficulty} — QE Live "${source}" could not be set to ${want} (${state}).`);
     }
-    await page.evaluate(() => {
+    const submitted = await page.evaluate(() => {
       const dialog = document.querySelector('[role="dialog"]');
-      [...dialog.querySelectorAll("button")].find((b) => /submit/i.test(b.innerText))?.click();
+      const button = dialog && [...dialog.querySelectorAll("button")].find((b) => /submit/i.test(b.innerText));
+      if (!button) return false;
+      button.click();
+      return true;
     });
+    if (!submitted) throw new Error("QE Live: the import dialog had no Submit button.");
     // A good import closes the dialog; a rejected one leaves it sitting there.
     // That is the signal itself, so watch for it rather than sleeping through
     // the worst case and then asking. Accepting takes well under a second.
