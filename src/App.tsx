@@ -2885,58 +2885,6 @@ export default function App() {
                     Icy Veins is the starting point. Change only what you want, then press <b>Save my wishlist</b>. Choices are limited to valid {selectedSpec} loot.
                   </span>
                 </div>
-                {inferredRole(c) === "Healer" && (
-                <details className={`simc-disclosure qe-disclosure ${qeHave.length === 3 ? "done" : "needed"}`}>
-                  <summary>
-                    <span className="simc-summary-copy">
-                      <b>{qeHave.length === 3 ? "ALL THREE SAVED" : qeHave.length ? `${qeHave.length} OF 3 SAVED` : "HEALERS ONLY"}</b>
-                      <strong>QE Live upgrade report</strong>
-                      <em>
-                        {qeHave.length
-                          ? `Have ${qeHave.join(", ")} · captured ${relativeAge(qeStored.capturedAt)}. Run the others and paste each link.`
-                          : "Healers sim in QE Live, which WoWAudit does not hold. Paste the report link so your numbers rank alongside everyone else's."}
-                      </em>
-                    </span>
-                    <ChevronDown />
-                  </summary>
-                  <section className="simc-panel qe-panel">
-                    <div className="simc-panel-head">
-                      <div>
-                        <p className="rune">Questionably Epic</p>
-                        <h3>Add a QE Live report</h3>
-                        <p>
-                          Run <b>Upgrade Finder</b> with <b>Raid</b> content on{" "}
-                          <a href="https://questionablyepic.com/live/upgradefinder" target="_blank" rel="noreferrer">questionablyepic.com</a>,
-                          once per raid difficulty, and paste each report link here. Difficulties merge, so a later Heroic run keeps this week's Normal.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="qe-difficulty-state">
-                      {(["normal", "heroic", "mythic"] as Difficulty[]).map((d) => (
-                        <span className={qeHave.includes(d) ? "have" : "missing"} key={d}>
-                          <b>{raidbotDifficulty[d].label}</b>
-                          <small>{qeHave.includes(d) ? `${Object.keys(qeStored.difficulties[d]).length} items` : "not saved"}</small>
-                        </span>
-                      ))}
-                    </div>
-                    <input
-                      className="qe-input"
-                      value={qeText}
-                      onChange={(e) => setQeText(e.target.value)}
-                      placeholder="https://questionablyepic.com/live/upgradereport/… or the report id"
-                      aria-label="QE Live report link"
-                    />
-                    <div className="simc-actions">
-                      <span>{qeMessage || "Nothing is saved until you press Add report."}</span>
-                      <div className="simc-action-buttons">
-                        <button disabled={!wishlistApiUrl || !qeText.trim() || qeState === "loading"} onClick={submitQe}>
-                          {qeState === "loading" ? "Reading report…" : qeState === "error" ? "Retry" : "Add report"}
-                        </button>
-                      </div>
-                    </div>
-                  </section>
-                </details>
-                )}
                 <details className={`simc-disclosure ${simcOutstanding.length ? "needed" : "done"}`}>
                   <summary>
                     <span className="simc-summary-copy">
@@ -2997,6 +2945,60 @@ export default function App() {
                     </button>
                     </div>
                   </div>
+                  {inferredRole(c) === "Healer" && (
+                    <div className="qe-steps">
+                      <div className="qe-step-head">
+                        <b>STEP 2 · QE LIVE</b>
+                        <span>
+                          QE scores healers in your browser — it has no server to submit to, so this hop
+                          cannot be automated. It takes the same <code>/simc</code> you pasted above.
+                        </span>
+                      </div>
+                      <div className="qe-step-actions">
+                        <button
+                          type="button"
+                          className="qe-copy"
+                          disabled={!simcText.trim()}
+                          onClick={async () => {
+                            try {
+                              await navigator.clipboard.writeText(simcText.trim());
+                              setQeMessage("Copied. Paste it into QE Live, run Upgrade Finder for one raid difficulty, then paste the report link below.");
+                            } catch {
+                              setQeMessage("Could not copy — select the export above and copy it manually.");
+                            }
+                          }}
+                        >
+                          Copy my /simc
+                        </button>
+                        <a className="qe-open" href="https://questionablyepic.com/live/upgradefinder" target="_blank" rel="noreferrer">
+                          Open QE Upgrade Finder ↗
+                        </a>
+                      </div>
+                      <div className="qe-difficulty-state">
+                        {(["normal", "heroic", "mythic"] as Difficulty[]).map((d) => (
+                          <span className={qeHave.includes(d) ? "have" : "missing"} key={d}>
+                            <b>{raidbotDifficulty[d].label}</b>
+                            <small>{qeHave.includes(d) ? `${Object.keys(qeStored.difficulties[d]).length} items` : "not saved"}</small>
+                          </span>
+                        ))}
+                      </div>
+                      <input
+                        className="qe-input"
+                        value={qeText}
+                        onChange={(e) => setQeText(e.target.value)}
+                        placeholder="Paste the QE report link here…"
+                        aria-label="QE Live report link"
+                      />
+                      <div className="simc-actions">
+                        <span>{qeMessage || "Run one difficulty at a time — each report link adds to the others."}</span>
+                        <div className="simc-action-buttons">
+                          <button disabled={!wishlistApiUrl || !qeText.trim() || qeState === "loading"} onClick={submitQe}>
+                            {qeState === "loading" ? "Reading report…" : qeState === "error" ? "Retry" : "Add report"}
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </section>
                 </details>
                 <div className="wishlist-grid">
