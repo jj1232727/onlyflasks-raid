@@ -106,7 +106,14 @@ async function runOne(browser, { simc, spec, difficulty }) {
 export async function runQeUpgradeFinder({ simc, spec, difficulties = QE_DIFFICULTIES, headed = false, onProgress }) {
   if (!simc || simc.length < 100) throw new Error("A complete /simc export is required.");
   if (!spec) throw new Error("A healer spec is required.");
-  const browser = await chromium.launch({ channel: "chrome", headless: !headed });
+  // Locally we use the installed Chrome; CI runners have no "chrome" channel
+  // and rely on the browser playwright downloads instead.
+  let browser;
+  try {
+    browser = await chromium.launch({ channel: "chrome", headless: !headed });
+  } catch {
+    browser = await chromium.launch({ headless: !headed });
+  }
   const reports = [], failures = [];
   try {
     for (const difficulty of difficulties) {

@@ -2924,7 +2924,7 @@ export default function App() {
                             : qeJob?.state === "error"
                               ? `The QE run failed: ${qeJob.error || "unknown error"}. Re-paste your /simc to try again.`
                               : qeJob
-                                ? "Queued. QE is being run for Normal, Heroic and Mythic — scores appear here when it finishes."
+                                ? "Queued. QE runs for Normal, Heroic and Mythic on the next sync — usually within 15 minutes. Nothing else to do."
                                 : "Paste your /simc above and press the button. QE is run for you; there is nothing else to do."}
                         </span>
                       </div>
