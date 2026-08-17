@@ -2,11 +2,13 @@ const SHEET_NAME = 'Wishlists';
 const ROSTER_SHEET_NAME = 'RosterPriority';
 const SIMC_SHEET_NAME = 'SimcSnapshots';
 const QE_SHEET_NAME = 'QeReports';
+const QE_QUEUE_SHEET_NAME = 'QeQueue';
 const SPREADSHEET_ID = '1y7cgwp_m_aPDznRz7kwS-G1IPlvZWz3vXwilLmBNCKU';
 const HEADERS = ['characterId', 'characterName', 'characterClass', 'lootSpec', 'wishlistJson', 'updatedAt', 'version'];
 const ROSTER_HEADERS = ['characterId', 'characterName', 'status', 'updatedAt'];
 const SIMC_HEADERS = ['characterId', 'characterName', 'lootSpec', 'snapshotJson', 'capturedAt', 'updatedAt', 'version'];
 const QE_HEADERS = ['characterId', 'characterName', 'lootSpec', 'reportId', 'reportJson', 'capturedAt', 'updatedAt'];
+const QE_QUEUE_HEADERS = ['characterId', 'characterName', 'lootSpec', 'simc', 'requestedAt', 'state', 'error'];
 const OFFICER_HASH_PROPERTY = 'OFFICER_PASSPHRASE_HASH';
 const OFFICER_SESSION_SECONDS = 21600;
 const WOWAUDIT_API_KEY_PROPERTY = 'WOWAUDIT_API_KEY';
@@ -22,7 +24,7 @@ function doGet() {
       lootSpec: String(row[3] || ''), wishlist: JSON.parse(String(row[4] || '[]')),
       updatedAt: String(row[5] || ''), version: Number(row[6] || 1),
     }));
-    return json_({ ok: true, wishlists, rosterStatuses: getRosterStatuses_(), simcSnapshots: getSimcSnapshots_(), qeReports: getQeReports_() });
+    return json_({ ok: true, wishlists, rosterStatuses: getRosterStatuses_(), simcSnapshots: getSimcSnapshots_(), qeReports: getQeReports_(), qeQueue: getQeQueue_() });
   } catch (error) { return json_({ ok: false, error: String(error.message || error) }); }
 }
 
@@ -37,6 +39,9 @@ function doPost(event) {
     if (body.action === 'getWowauditSims') return getWowauditSims_();
     if (body.action === 'saveSimcSnapshot') return saveSimcSnapshot_(body);
     if (body.action === 'saveQeReport') return saveQeReport_(body);
+    if (body.action === 'queueQeRun') return queueQeRun_(body);
+    if (body.action === 'getQePending') return json_({ ok: true, pending: getQePending_() });
+    if (body.action === 'setQeQueueState') return setQeQueueState_(body);
     return saveWishlist_(body);
   } catch (error) { return json_({ ok: false, error: String(error.message || error) }); }
 }
@@ -246,6 +251,7 @@ function saveQeReport_(body) {
       id, String(body.characterName).slice(0, 80), String(body.lootSpec || '').slice(0, 80),
       compact.id, encoded, compact.capturedAt, updatedAt,
     ]]);
+    try { setQeQueueState_({ characterId: id, state: 'done' }); } catch (error) { /* not every save came from the queue */ }
     return json_({ ok: true, characterId: id, report: compact, updatedAt });
   } finally { lock.releaseLock(); }
 }
@@ -259,6 +265,67 @@ function expiredAtReset_(iso) {
   reset.setUTCDate(reset.getUTCDate() - ((reset.getUTCDay() - 2 + 7) % 7));
   if (reset > now) reset.setUTCDate(reset.getUTCDate() - 7);
   return parsed < reset.getTime();
+}
+
+// The board cannot run a browser, so a healer's /simc is parked here and a
+// worker (scripts/qe-sync.js, or the scheduled action) drains it.
+function queueQeRun_(body) {
+  var id = Number(body.characterId);
+  if (!Number.isFinite(id)) throw new Error('A valid characterId is required.');
+  if (!body.characterName || !body.lootSpec) throw new Error('Character identity and lootSpec are required.');
+  var simc = String(body.simc || '');
+  if (simc.length < 100) throw new Error('A complete /simc export is required.');
+  if (simc.length > 45000) throw new Error('That /simc export is too large to queue.');
+  var lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+  try {
+    var sheet = getQeQueueSheet_(), values = sheet.getDataRange().getValues();
+    var row = values.findIndex(function (value, index) { return index > 0 && Number(value[0]) === id; }) + 1;
+    if (!row) row = sheet.getLastRow() + 1;
+    var requestedAt = new Date().toISOString();
+    sheet.getRange(row, 1, 1, QE_QUEUE_HEADERS.length).setValues([[
+      id, String(body.characterName).slice(0, 80), String(body.lootSpec).slice(0, 80),
+      simc, requestedAt, 'pending', '',
+    ]]);
+    return json_({ ok: true, characterId: id, requestedAt: requestedAt, state: 'pending' });
+  } finally { lock.releaseLock(); }
+}
+
+function setQeQueueState_(body) {
+  var id = Number(body.characterId);
+  if (!Number.isFinite(id)) throw new Error('A valid characterId is required.');
+  var state = String(body.state || '');
+  if (['pending', 'running', 'done', 'error'].indexOf(state) < 0) throw new Error('Unknown queue state.');
+  var sheet = getQeQueueSheet_(), values = sheet.getDataRange().getValues();
+  var row = values.findIndex(function (value, index) { return index > 0 && Number(value[0]) === id; }) + 1;
+  if (!row) throw new Error('That character is not queued.');
+  sheet.getRange(row, 6, 1, 2).setValues([[state, String(body.error || '').slice(0, 300)]]);
+  return json_({ ok: true, characterId: id, state: state });
+}
+
+// The queue is public like everything else here, but the /simc body is only
+// useful to a worker, so keep it out of the payload the board loads.
+function getQeQueue_() {
+  return getQeQueueSheet_().getDataRange().getValues().slice(1).reduce(function (result, row) {
+    if (row[0] === '') return result;
+    result[String(Number(row[0]))] = {
+      characterName: String(row[1] || ''), lootSpec: String(row[2] || ''),
+      requestedAt: String(row[4] || ''), state: String(row[5] || ''), error: String(row[6] || ''),
+    };
+    return result;
+  }, {});
+}
+
+// Worker-only: includes the /simc bodies still waiting to run.
+function getQePending_() {
+  return getQeQueueSheet_().getDataRange().getValues().slice(1).reduce(function (result, row) {
+    if (row[0] === '' || String(row[5]) === 'done') return result;
+    result.push({
+      characterId: Number(row[0]), characterName: String(row[1] || ''), lootSpec: String(row[2] || ''),
+      simc: String(row[3] || ''), requestedAt: String(row[4] || ''), state: String(row[5] || ''),
+    });
+    return result;
+  }, []);
 }
 
 function getQeReports_() {
@@ -288,6 +355,7 @@ function getSheet_() { return getOrCreateSheet_(SHEET_NAME, HEADERS); }
 function getRosterSheet_() { return getOrCreateSheet_(ROSTER_SHEET_NAME, ROSTER_HEADERS); }
 function getSimcSheet_() { return getOrCreateSheet_(SIMC_SHEET_NAME, SIMC_HEADERS); }
 function getQeSheet_() { return getOrCreateSheet_(QE_SHEET_NAME, QE_HEADERS); }
+function getQeQueueSheet_() { return getOrCreateSheet_(QE_QUEUE_SHEET_NAME, QE_QUEUE_HEADERS); }
 function getOrCreateSheet_(name, headers) {
   const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
   let sheet = spreadsheet.getSheetByName(name);
