@@ -327,6 +327,14 @@ function queueQeRun_(body) {
 // only visible as "it did not run". Say which, and quote what GitHub said. The
 // token is never part of that - only its presence, and GitHub's own message.
 function triggerQeSync_() {
+  // These two constants are property NAMES, not the secrets themselves. Pasting
+  // a token over the name is an easy mistake - the two steps sit next to each
+  // other in the setup - and it has happened. Catch it before the name is used
+  // in a message, because this reason travels out through a public endpoint:
+  // echoing a misplaced token there publishes it to anyone with the URL, and the
+  // URL is in a public repo.
+  if (!/^[A-Z][A-Z0-9_]{2,40}$/.test(String(GITHUB_TOKEN_PROPERTY)) || !/^[A-Z][A-Z0-9_]{2,40}$/.test(String(GITHUB_REPO_PROPERTY)))
+    return { ok: false, reason: 'A GITHUB_*_PROPERTY constant holds a value instead of a property name. Leave those constants alone; the token and repo go in Script Properties, under those names.' };
   var props = PropertiesService.getScriptProperties();
   var token = String(props.getProperty(GITHUB_TOKEN_PROPERTY) || '').trim();
   var repo = String(props.getProperty(GITHUB_REPO_PROPERTY) || '').trim();
