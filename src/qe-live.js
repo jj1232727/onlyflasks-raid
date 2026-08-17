@@ -70,6 +70,21 @@ async function runOne(browser, { simc, spec, difficulty }) {
     await page.locator(box).first().click();
     await page.keyboard.insertText(simc);
     await page.waitForTimeout(700);
+    // "Auto Catalyze" is OFF by default, so QE scores a catalyst piece as zero
+    // — it never considers the converted item. The guild does catalyse, so a
+    // report without this understates every tier target that comes from a base.
+    // "Upgrade ALL to Max Level" stays off on purpose: loot council ranks gear
+    // as it drops, not as it would be after crests.
+    const catalyzed = await page.evaluate(() => {
+      const dialog = document.querySelector('[role="dialog"]');
+      const box = [...dialog.querySelectorAll('input[type="checkbox"]')]
+        .find((cb) => /auto catalyze/i.test(cb.closest("label")?.innerText || ""));
+      if (!box) return "missing";
+      if (!box.checked) box.click();
+      return box.checked;
+    });
+    if (catalyzed !== true) throw new Error(`QE Live: could not enable Auto Catalyze (${catalyzed}).`);
+    await page.waitForTimeout(400);
     await page.evaluate(() => {
       const dialog = document.querySelector('[role="dialog"]');
       [...dialog.querySelectorAll("button")].find((b) => /submit/i.test(b.innerText))?.click();
