@@ -290,25 +290,13 @@ const NAV_TABS: {
   { id: "history", label: "Loot history", icon: <History />, group: "records", count: (c) => c.history },
   { id: "wishlist", label: "My wishlist", icon: <Star />, group: "records" },
 ];
-// Contested loot is decided on how much the item is actually worth, so the
-// candidates are bucketed by gain rather than by roster status. Status still
-// matters, but as a tiebreak inside a bucket — a Main with no upgrade should
-// not sit above a Trial the item is worth 3% to.
-const CONTEST_BUCKETS = [
-  { id: "major", label: "Major upgrade", hint: "2%+ sim" },
-  { id: "solid", label: "Solid upgrade", hint: "0.5–2% sim" },
-  { id: "marginal", label: "Marginal", hint: "under 0.5% sim" },
-  { id: "unsimmed", label: "Item level only", hint: "no current sim" },
-  { id: "none", label: "No gain", hint: "sidegrade or downgrade" },
-] as const;
-type ContestBucket = (typeof CONTEST_BUCKETS)[number]["id"];
-const contestBucket = (sim: number | null, ilvl: number): ContestBucket => {
-  // No sim is not the same as no gain: the item level swing is all we know.
-  if (sim === null) return ilvl > 0 ? "unsimmed" : "none";
-  if (sim >= 2) return "major";
-  if (sim >= 0.5) return "solid";
-  if (sim > 0) return "marginal";
-  return "none";
+// Roster priority is the bucket on contested loot — who gets it first is the
+// call being made. Ordering INSIDE a bucket is by what the item is worth, so
+// the top name in each group is the one it helps most.
+const ROSTER_BUCKET_HINT: Record<RosterStatus, string> = {
+  Main: "first call",
+  Trial: "after mains",
+  Fill: "last",
 };
 const HOUR = 3600000, STALE_HOURS = 12, OLD_HOURS = 36;
 const ageInHours = (iso?: string) => {
@@ -2353,9 +2341,9 @@ export default function App() {
                       </div>
                     </div>
                     <div className="contender-buckets">
-                      {CONTEST_BUCKETS.map((bucket) => {
+                      {(["Main", "Trial", "Fill"] as RosterStatus[]).map((groupStatus) => {
                         const group = people
-                          .filter((p) => contestBucket(p.sim, p.ilvl) === bucket.id)
+                          .filter((p) => (rosterStatuses[p.c.id] || p.c.rosterStatus || "Main") === groupStatus)
                           .sort((a, b) => {
                             // Value first: an unsimmed raider cannot outrank a
                             // measured gain, and ties fall back to roster order.
@@ -2369,25 +2357,24 @@ export default function App() {
                           });
                         if (!group.length) return null;
                         return (
-                          <section className={`contender-bucket ${bucket.id}`} key={bucket.id}>
+                          <section className={`contender-bucket ${groupStatus.toLowerCase()}`} key={groupStatus}>
                             <div className="bucket-head">
-                              <strong>{bucket.label}</strong>
-                              <em>{bucket.hint}</em>
+                              <strong>{groupStatus}</strong>
+                              <em>{ROSTER_BUCKET_HINT[groupStatus]}</em>
                               <span>{group.length}</span>
                             </div>
                             <div className="contenders">
                               {group.map((p) => {
-                                const status = rosterStatuses[p.c.id] || p.c.rosterStatus || "Main";
                                 return (
                                   <div
-                                    className={`contender ${status.toLowerCase()}`}
+                                    className={`contender ${groupStatus.toLowerCase()}`}
                                     key={p.c.id}
                                     style={{ "--class": colors[p.c.class] } as React.CSSProperties}
                                   >
                                     <RaiderIdentity
                                       c={p.c}
                                       spec={specs[p.c.id] || p.c.defaultSpec}
-                                      status={status}
+                                      status={groupStatus}
                                       compact
                                     />
                                     <div className="contender-gain">

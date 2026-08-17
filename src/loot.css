@@ -1249,17 +1249,13 @@ footer .data-freshness{width:100%}
 .bucket-head strong{font-size:10px;font-weight:950;text-transform:uppercase;letter-spacing:.06em}
 .bucket-head em{flex:1;color:#6f656b;font-size:9px;font-style:normal}
 .bucket-head span{padding:1px 7px;border-radius:99px;background:#2a232a;color:#a99ea3;font-size:9px;font-weight:900}
-.contender-bucket.major{border-left-color:#3fbf7d;background:#101c15}
-.contender-bucket.major .bucket-head strong{color:#79e0a6}
-.contender-bucket.solid{border-left-color:#3f8fbf;background:#101820}
-.contender-bucket.solid .bucket-head strong{color:#7fc2e8}
-.contender-bucket.marginal{border-left-color:#b99542;background:#1c1810}
-.contender-bucket.marginal .bucket-head strong{color:#e0c07a}
-.contender-bucket.unsimmed{border-left-color:#7a6f86;background:#16141b}
-.contender-bucket.unsimmed .bucket-head strong{color:#b3a7c2}
-.contender-bucket.none{border-left-color:#4a4248;background:#131114}
-.contender-bucket.none .bucket-head strong{color:#8b8087}
-.contender-bucket.none .contender{opacity:.72}
+.contender-bucket.main{border-left-color:#3fbf7d;background:#101c15}
+.contender-bucket.main .bucket-head strong{color:#79e0a6}
+.contender-bucket.trial{border-left-color:#c69e3b;background:#1c1810}
+.contender-bucket.trial .bucket-head strong{color:#e0c07a}
+.contender-bucket.fill{border-left-color:#6b6470;background:#141216}
+.contender-bucket.fill .bucket-head strong{color:#a89eae}
+.contender-bucket.fill .contender{opacity:.82}
 
 .contender-bucket .contenders{display:grid;grid-template-columns:repeat(auto-fill,minmax(224px,1fr));gap:6px;padding:8px}
 .contender-bucket .contender{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0;padding:8px 10px;border:1px solid #38313a;border-radius:8px;background:#191520}
