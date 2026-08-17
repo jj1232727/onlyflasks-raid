@@ -38,7 +38,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 0;
+  gap: 20px;
+  padding: 14px 0 11px;
 }
 h1,
 h2,
@@ -77,7 +78,6 @@ h2 {
 }
 .app-tabs {
   display: flex;
-  align-self: stretch;
   gap: 4px;
 }
 .app-tabs button {
@@ -1029,21 +1029,12 @@ footer svg {
 footer .data-freshness{width:100%}
 
 /* --- Tab overflow on narrow screens --- */
-@media(max-width:900px){.app-tabs{overflow-x:auto;scrollbar-width:thin}.app-tabs button{flex:none}}
 
 
-/* --- Navigation bar --- */
-.app-tabs{align-items:center;gap:2px}
-.app-tabs button{position:relative;gap:7px;border-radius:9px 9px 0 0;padding:9px 11px;transition:color .12s,background .12s}
-.app-tabs button:hover{background:#191419;color:#d8c7bd}
-.app-tabs button.active{background:linear-gradient(180deg,#241a1b00,#241a1b);color:#f2cf89}
-.app-tabs button:focus-visible{outline:2px solid #d6a44d;outline-offset:-2px}
+/* Badge tone: a count that is a task reads differently from a total. */
 .app-tabs button b{background:#342c2d;color:#b3a7a4;font-weight:900}
 .app-tabs button b.alert{background:#5d2b28;color:#ffd9d4}
 .app-tabs button.active b.neutral{background:#4a3b28;color:#f2cf89}
-.tab-divider{width:1px;height:18px;margin:0 7px;background:#3a3136}
-@media(max-width:1180px){.app-tabs button span{display:none}.app-tabs button{padding:9px}}
-@media(max-width:900px){.app-tabs button span{display:inline}.tab-divider{display:none}}
 
 /* --- SimC snapshot age --- */
 .snapshot-age{display:flex;align-items:center;gap:6px;color:#6f656a;font-size:9px;font-weight:900;line-height:1.4}
@@ -1272,3 +1263,27 @@ footer .data-freshness{width:100%}
 .contender-gain .flat strong{color:#8d8289}
 .contender-gain .none strong{color:#6d636b}
 @media(max-width:700px){.contender-bucket .contenders{grid-template-columns:1fr}}
+
+/* --- Navigation: its own full-width row --- */
+/* Eight tabs never fit beside the title, which produced a horizontal
+   scrollbar. Three media queries then fought over it: labels were hidden
+   below 1180px and shown again below 900px, so a narrower window got MORE
+   content plus a scrollbar. The nav now owns a row and wraps instead. */
+.nav-row{display:flex;align-items:flex-end}
+.app-tabs{display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px;margin-bottom:-1px;overflow:visible}
+.app-tabs button{position:relative;flex:0 0 auto;gap:7px;border:1px solid transparent;border-bottom:2px solid transparent;border-radius:9px 9px 0 0;padding:8px 12px;white-space:nowrap;transition:color .12s,background .12s,border-color .12s}
+.app-tabs button:hover{background:#191419;color:#d8c7bd}
+.app-tabs button.active{border-color:#473a32;border-bottom-color:#d6a44d;background:linear-gradient(180deg,#241a1b00,#241a1b);color:#f2cf89}
+.app-tabs button:focus-visible{outline:2px solid #d6a44d;outline-offset:-2px}
+.tab-divider{align-self:center;width:1px;height:16px;margin:0 6px;background:#3a3136}
+/* Below this the labels genuinely do not fit; drop to icons and keep the
+   badge, which is the part that carries information. */
+@media(max-width:820px){
+  .app-tabs button span{display:none}
+  .app-tabs button{padding:8px 10px}
+  .tab-divider{display:none}
+}
+@media(max-width:620px){
+  .mast{align-items:flex-start;flex-direction:column;gap:10px}
+  .app-tabs{gap:1px}
+}

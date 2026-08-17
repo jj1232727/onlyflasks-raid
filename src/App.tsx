@@ -1802,6 +1802,8 @@ export default function App() {
             <span>Jump to…</span>
             <kbd>{navigator.platform.toLowerCase().includes("mac") ? "⌘" : "Ctrl"}K</kbd>
           </button>
+        </div>
+        <div className="shell nav-row">
           <nav className="app-tabs" aria-label="Board sections">
             {NAV_TABS.map((tab, index) => (
               <Fragment key={tab.id}>
