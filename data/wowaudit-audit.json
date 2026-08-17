@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-17T18:31:07.416Z",
+  "fetchedAt": "2026-08-17T20:19:55.848Z",
   "periodInfo": {
     "current_period": 1076,
     "current_season": {
@@ -119,7 +119,7 @@
       "metadata": {
         "first_period": 1077,
         "bonus_rolls_available": true,
-        "bonus_roll_currency_id": 3418,
+        "bonus_roll_currency_id": 0,
         "pvp_season": 42,
         "spark_label": "Tidal Crafted",
         "catalyst_charge_achievement_id": 62872,
@@ -709,6 +709,33 @@
       "realm": "Tanaris",
       "data": {
         "dungeons_done": [],
+        "world_quests_done": 1,
+        "regular_mythic_dungeons_done": 8,
+        "vault_options": {
+          "raids": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          },
+          "dungeons": {
+            "option_1": 292,
+            "option_2": 292,
+            "option_3": 292
+          },
+          "world": {
+            "option_1": 305,
+            "option_2": 302,
+            "option_3": 302
+          }
+        }
+      }
+    },
+    {
+      "id": 15176907,
+      "name": "Credibubble",
+      "realm": "Area 52",
+      "data": {
+        "dungeons_done": [],
         "world_quests_done": 0,
         "regular_mythic_dungeons_done": 8,
         "vault_options": {
@@ -723,18 +750,12 @@
             "option_3": 292
           },
           "world": {
-            "option_1": 302,
-            "option_2": 302,
-            "option_3": 302
+            "option_1": 305,
+            "option_2": 305,
+            "option_3": 305
           }
         }
       }
-    },
-    {
-      "id": 15176907,
-      "name": "Credibubble",
-      "realm": "Area 52",
-      "data": null
     },
     {
       "id": 4826466,
@@ -786,6 +807,33 @@
             "option_1": 305,
             "option_2": 305,
             "option_3": 292
+          }
+        }
+      }
+    },
+    {
+      "id": 5079917,
+      "name": "Demtotemsdoe",
+      "realm": "Zul'jin",
+      "data": {
+        "dungeons_done": [],
+        "world_quests_done": 0,
+        "regular_mythic_dungeons_done": 8,
+        "vault_options": {
+          "raids": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          },
+          "dungeons": {
+            "option_1": 292,
+            "option_2": 292,
+            "option_3": 292
+          },
+          "world": {
+            "option_1": 302,
+            "option_2": 292,
+            "option_3": null
           }
         }
       }
