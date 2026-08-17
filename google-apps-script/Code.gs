@@ -216,6 +216,18 @@ function saveSimcSnapshot_(body) {
 
 // QE Live reports are fetched and parsed in the browser (their API is CORS
 // open), so this only has to store the summary the board reads back.
+// Only the three known difficulties, and only id-shaped values - these end up
+// in an href on the board.
+function sanitiseReportIds_(value) {
+  var clean = {};
+  if (!value || typeof value !== 'object') return clean;
+  ['normal', 'heroic', 'mythic'].forEach(function (difficulty) {
+    var id = String(value[difficulty] || '');
+    if (/^[A-Za-z0-9_-]{6,40}$/.test(id)) clean[difficulty] = id;
+  });
+  return clean;
+}
+
 function saveQeReport_(body) {
   const id = Number(body.characterId), report = body.report;
   if (!Number.isFinite(id)) throw new Error('A valid characterId is required.');
@@ -230,6 +242,9 @@ function saveQeReport_(body) {
     contentType: String(report.contentType || '').slice(0, 40),
     capturedAt: String(report.capturedAt || new Date().toISOString()).slice(0, 40),
     difficulties: report.difficulties,
+    // QE writes one report per difficulty, so `id` alone only names the last of
+    // the three. Keep them all so each score can link back to its own run.
+    reportIds: sanitiseReportIds_(report.reportIds),
   };
   var lock = LockService.getScriptLock();
   lock.waitLock(10000);

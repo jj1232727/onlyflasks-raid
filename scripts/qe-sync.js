@@ -68,12 +68,18 @@ for (const job of pending) {
     await post({ action: "setQeQueueState", characterId: job.characterId, state: "error", error: run.failures[0]?.error || "QE run failed" }).catch(() => {});
     continue;
   }
-  // Merge every difficulty this run produced into one stored summary.
-  const merged = { difficulties: {} };
+  // Merge every difficulty this run produced into one stored summary. Keep the
+  // report id per difficulty as well as the last one: QE writes a separate
+  // report per difficulty, so this is what lets the board link each score back
+  // to the run behind it.
+  const merged = { difficulties: {}, reportIds: {} };
   for (const report of run.reports) {
     const response = await fetch(qeReportUrl(report.id));
     const summary = qeReportSummary(await response.text());
-    Object.assign(merged, summary, { difficulties: { ...merged.difficulties, ...summary.difficulties } });
+    Object.assign(merged, summary, {
+      difficulties: { ...merged.difficulties, ...summary.difficulties },
+      reportIds: { ...merged.reportIds, ...Object.fromEntries(Object.keys(summary.difficulties).map((d) => [d, report.id])) },
+    });
   }
   await post({
     action: "saveQeReport",

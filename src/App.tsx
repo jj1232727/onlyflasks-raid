@@ -2967,29 +2967,35 @@ export default function App() {
                     <div className={`qe-steps ${qeHave.length === 3 ? "done" : qeJob?.state === "error" ? "failed" : qeJob ? "running" : ""}`}>
                       <div className="qe-step-head">
                         <b>QE LIVE · YOUR LOOT RANKING</b>
+                        {/* "Queued" and "running" are different facts and the panel
+                            used to call both of them running — so a job still
+                            waiting on the worker claimed to be underway, which is
+                            what makes 40 seconds of yellow look broken. */}
                         <span>
                           {qeJob?.state === "error"
-                            ? `The QE run failed: ${qeJob.error || "unknown error"}. Re-paste your /simc to try again.`
-                            : qeJob
-                              ? `Running QE for Normal, Heroic and Mythic — started ${relativeAge(qeJob.requestedAt)}. Usually under a minute; the tiles below fill in on their own, so leave this open.`
-                              : qeHave.length === 3
-                                ? `All three difficulties scored from your ${qeStored.spec} export, ${relativeAge(qeStored.capturedAt)}.`
-                                : "Paste your /simc above and press the button. QE is run for you; there is nothing else to do."}
+                            ? `Failed: ${qeJob.error || "unknown error"}. Re-paste to retry.`
+                            : qeJob?.state === "running"
+                              ? `Running · started ${relativeAge(qeJob.requestedAt)}`
+                              : qeJob
+                                ? `Queued ${relativeAge(qeJob.requestedAt)} · waiting for the next sync`
+                                : qeHave.length === 3
+                                  ? `Scored from your ${qeStored.spec} export, ${relativeAge(qeStored.capturedAt)}.`
+                                  : "Paste your /simc above. QE is run for you."}
                         </span>
                       </div>
                       <div className="qe-difficulty-state">
-                        {(["normal", "heroic", "mythic"] as Difficulty[]).map((d) => (
-                          <span className={qeJob && qeJob.state !== "error" ? "working" : qeHave.includes(d) ? "have" : "missing"} key={d}>
-                            <b>{raidbotDifficulty[d].label}</b>
-                            <small>
-                              {qeJob && qeJob.state !== "error"
-                                ? "running…"
-                                : qeHave.includes(d)
-                                  ? `${Object.keys(qeStored.difficulties[d]).length} items`
-                                  : "not scored"}
-                            </small>
-                          </span>
-                        ))}
+                        {(["normal", "heroic", "mythic"] as Difficulty[]).map((d) => {
+                          const working = Boolean(qeJob) && qeJob.state !== "error",
+                            scored = !working && qeHave.includes(d),
+                            // Each difficulty is its own QE report, so each tile
+                            // can link to the run behind its own number.
+                            reportId = scored ? qeStored.reportIds?.[d] : "",
+                            className = working ? "working" : scored ? "have" : "missing",
+                            label = <><b>{raidbotDifficulty[d].label}</b><small>{working ? (qeJob.state === "running" ? "running…" : "queued…") : scored ? `${Object.keys(qeStored.difficulties[d]).length} items` : "not scored"}</small></>;
+                          return reportId
+                            ? <a className={className} key={d} href={`https://questionablyepic.com/live/upgradereport/${reportId}`} target="_blank" rel="noreferrer" title="Open this difficulty's QE report">{label}</a>
+                            : <span className={className} key={d}>{label}</span>;
+                        })}
                       </div>
                     </div>
                   )}

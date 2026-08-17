@@ -1326,7 +1326,11 @@ footer .data-freshness{width:100%}
 .qe-step-head span{color:#9990ab;font-size:10px;line-height:1.5}
 .qe-step-head code{padding:1px 5px;border-radius:4px;background:#221c31;color:#c9b8ee}
 .qe-difficulty-state{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:10px}
-.qe-difficulty-state>span{display:flex;align-items:center;flex-direction:column;padding:9px 8px;border:1px solid #3d3547;border-radius:8px;background:#131019}
+.qe-difficulty-state>span,.qe-difficulty-state>a{display:flex;align-items:center;flex-direction:column;padding:9px 8px;border:1px solid #3d3547;border-radius:8px;background:#131019;text-decoration:none}
+/* A scored tile links to the QE report behind its number. */
+.qe-difficulty-state>a{cursor:pointer}
+.qe-difficulty-state>a:hover{border-color:#5fa87d;background:#12261b}
+.qe-difficulty-state>a small{text-decoration:underline;text-underline-offset:2px}
 .qe-difficulty-state b{font-size:12px;font-weight:900}
 .qe-difficulty-state small{margin-top:4px;font-size:8px;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
 .qe-difficulty-state .have{border-color:#3d6b4f;background:#101d16}
