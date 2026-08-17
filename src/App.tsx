@@ -17,7 +17,7 @@ import {
   Swords,
   TrendingUp,
 } from "lucide-react";
-import { isBeforeReset, lastWeeklyReset, simStatus } from "./raid-week.js";
+import { isBeforeReset, lastWeeklyReset, simStatus, simTimestamps } from "./raid-week.js";
 import {
   tierIdsForClass,
   tierRosterSummary,
@@ -505,7 +505,10 @@ const enchantSlots = new Set([
   "FINGER_2",
   "MAIN_HAND",
 ]);
-function auditRaider(c: Raider) {
+// `week` carries this raid week's homework: the droptimizer WoWAudit holds and
+// the /simc capture the tier page needs. Both expire at Tuesday's reset, so
+// "ran it once in week one" is not the same as done.
+function auditRaider(c: Raider, week?: { sims?: any; snapshot?: any }) {
   const issues: {
     severity: "critical" | "warning";
     label: string;
@@ -588,6 +591,34 @@ function auditRaider(c: Raider) {
       severity: "warning",
       label: "Gear incomplete",
       detail: `${c.equipment.length}/16 slots detected`,
+    });
+  // A missing or stale droptimizer is not cosmetic: simFor drops last week's
+  // numbers, so loot ranking silently falls back to item level for this raider.
+  const newestSim = simTimestamps(week?.sims, c.id)[0];
+  if (!newestSim)
+    issues.push({
+      severity: "critical",
+      label: "No droptimizer sim",
+      detail: "Never uploaded · loot ranking falls back to item level",
+    });
+  else if (isBeforeReset(newestSim))
+    issues.push({
+      severity: "critical",
+      label: "Sim expired at reset",
+      detail: `Last run ${new Date(newestSim).toLocaleDateString()} · re-run for this week`,
+    });
+  const capturedAt = week?.snapshot?.capturedAt;
+  if (!capturedAt)
+    issues.push({
+      severity: "warning",
+      label: "No /simc capture",
+      detail: "Tier pieces, vault, crests and catalyst charges all unknown",
+    });
+  else if (isBeforeReset(capturedAt))
+    issues.push({
+      severity: "warning",
+      label: "/simc capture expired",
+      detail: `Captured ${new Date(capturedAt).toLocaleDateString()} · vault and charges are last week's`,
     });
   return {
     c,
@@ -1402,7 +1433,7 @@ export default function App() {
       (data.raiderio?.characters || []).map((x: any) => [+x.id, x]),
     ),
     audits = data.characters
-      .map(auditRaider)
+      .map((c) => auditRaider(c, { sims: data.sims, snapshot: simcSnapshots[c.id] }))
       .sort(
         (a, b) =>
           b.critical - a.critical ||
