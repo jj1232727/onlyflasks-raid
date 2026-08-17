@@ -974,6 +974,13 @@ function simFor(
   selectedDifficulty: Difficulty,
   selectedSpec = c.defaultSpec,
 ) {
+  // QE is the authoritative source for healers, so it outranks a droptimizer
+  // rather than merely filling in for a missing one. A healer who also ran
+  // Raidbots would otherwise be ranked on a number built for damage.
+  if (inferredRole(c) === "Healer") {
+    const healerScore = qeSimFor(data, c, item, selectedDifficulty, selectedSpec);
+    if (healerScore !== null) return healerScore;
+  }
   const root = data.sims?.characters || [],
     entry = root.find((x: any) => +x.id === +c.id),
     instance = entry?.instances?.find((x: any) => +x.id === 80),
@@ -2611,6 +2618,15 @@ export default function App() {
                     : snapshotResult.error || "Could not save the SimC audit snapshot");
                 }
                 setSimcSnapshots((existing) => ({ ...existing, [c.id]: snapshotResult.snapshot }));
+                // Healers rank on QE, so three Raidbots runs would burn their
+                // time and produce numbers the board deliberately ignores. The
+                // /simc paste still matters: tier, vault, crests and bags all
+                // come from it, and no sim provides those.
+                if (inferredRole(c) === "Healer") {
+                  setSimState("uploaded");
+                  setSimMessage("Gear captured. Healers rank on QE Live, so no Raidbots sims were run — add a QE report above.");
+                  return;
+                }
                 const difficulties: Difficulty[] = ["normal", "heroic", "mythic"];
                 const jobs: { difficulty: Difficulty; simId: string; reportUrl: string }[] = [];
                 for (let index = 0; index < difficulties.length; index++) {
@@ -2869,6 +2885,7 @@ export default function App() {
                     Icy Veins is the starting point. Change only what you want, then press <b>Save my wishlist</b>. Choices are limited to valid {selectedSpec} loot.
                   </span>
                 </div>
+                {inferredRole(c) === "Healer" && (
                 <details className={`simc-disclosure qe-disclosure ${qeHave.length === 3 ? "done" : "needed"}`}>
                   <summary>
                     <span className="simc-summary-copy">
@@ -2919,6 +2936,7 @@ export default function App() {
                     </div>
                   </section>
                 </details>
+                )}
                 <details className={`simc-disclosure ${simcOutstanding.length ? "needed" : "done"}`}>
                   <summary>
                     <span className="simc-summary-copy">
