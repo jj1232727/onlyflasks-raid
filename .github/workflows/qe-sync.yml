@@ -1,8 +1,11 @@
 name: Run queued QE sims
 
-# Healers paste a /simc on the board; QE only computes in a browser, so this
-# drives QE Live for whoever is queued and saves the scores back.
+# QE computes in about a second, so the cost here is all start-up. The board
+# fires repository_dispatch the moment a healer pastes; the schedule is only a
+# safety net for a dispatch that never arrived.
 on:
+  repository_dispatch:
+    types: [qe-sync]
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch:
@@ -14,7 +17,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,8 +26,8 @@ jobs:
           cache: npm
       - run: npm ci
 
-      # Most runs have nothing to do. Ask first, so an empty queue does not
-      # download a browser or touch questionablyepic.com at all.
+      # A dispatch always has work; the schedule usually does not, and an empty
+      # run should not download a browser or touch questionablyepic.com.
       - name: Anything queued?
         id: queue
         run: |
@@ -32,9 +35,23 @@ jobs:
           echo "count=$COUNT" >> "$GITHUB_OUTPUT"
           echo "$COUNT healer(s) queued."
 
+      # Reusing the browser across runs is most of the wall clock.
+      - name: Cache the playwright browser
+        if: steps.queue.outputs.count != '0'
+        id: browser-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ hashFiles('package-lock.json') }}
+
       - name: Install a browser for playwright
         if: steps.queue.outputs.count != '0'
-        run: npx playwright install --with-deps chromium
+        run: |
+          if [ "${{ steps.browser-cache.outputs.cache-hit }}" = "true" ]; then
+            npx playwright install-deps chromium
+          else
+            npx playwright install --with-deps chromium
+          fi
 
       - name: Drive QE Live for queued healers
         if: steps.queue.outputs.count != '0'

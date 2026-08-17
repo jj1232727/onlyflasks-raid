@@ -12,6 +12,11 @@ const QE_QUEUE_HEADERS = ['characterId', 'characterName', 'lootSpec', 'simc', 'r
 const OFFICER_HASH_PROPERTY = 'OFFICER_PASSPHRASE_HASH';
 const OFFICER_SESSION_SECONDS = 21600;
 const WOWAUDIT_API_KEY_PROPERTY = 'WOWAUDIT_API_KEY';
+// Optional. Set GITHUB_DISPATCH_TOKEN (fine-grained PAT, Actions: read+write)
+// and GITHUB_REPO ("owner/name") in Script Properties to start a QE run the
+// moment a healer pastes, instead of waiting for the 15-minute schedule.
+const GITHUB_TOKEN_PROPERTY = 'GITHUB_DISPATCH_TOKEN';
+const GITHUB_REPO_PROPERTY = 'GITHUB_REPO';
 const RAIDBOTS_SUBMIT_URL = 'https://www.raidbots.com/sim';
 const RAIDBOTS_REPORT_URL = 'https://www.raidbots.com/reports/';
 
@@ -287,8 +292,25 @@ function queueQeRun_(body) {
       id, String(body.characterName).slice(0, 80), String(body.lootSpec).slice(0, 80),
       simc, requestedAt, 'pending', '',
     ]]);
-    return json_({ ok: true, characterId: id, requestedAt: requestedAt, state: 'pending' });
+    var dispatched = triggerQeSync_();
+    return json_({ ok: true, characterId: id, requestedAt: requestedAt, state: 'pending', dispatched: dispatched });
   } finally { lock.releaseLock(); }
+}
+
+// Kick the workflow now. A failure here is not fatal - the schedule still
+// catches the job - so never let it break the paste.
+function triggerQeSync_() {
+  var props = PropertiesService.getScriptProperties();
+  var token = props.getProperty(GITHUB_TOKEN_PROPERTY), repo = props.getProperty(GITHUB_REPO_PROPERTY);
+  if (!token || !repo) return false;
+  try {
+    var response = UrlFetchApp.fetch('https://api.github.com/repos/' + repo + '/dispatches', {
+      method: 'post', contentType: 'application/json', muteHttpExceptions: true,
+      headers: { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
+      payload: JSON.stringify({ event_type: 'qe-sync' }),
+    });
+    return response.getResponseCode() === 204;
+  } catch (error) { return false; }
 }
 
 function setQeQueueState_(body) {

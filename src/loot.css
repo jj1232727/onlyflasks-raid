@@ -1339,3 +1339,8 @@ footer .data-freshness{width:100%}
 .qe-steps.done .qe-step-head b{color:#8fe0b0}
 .qe-steps.failed{border-color:#713636;background:linear-gradient(180deg,#1e1214,#110e15)}
 .qe-steps.failed .qe-step-head b{color:#e98580}
+.qe-steps.running{border-color:#6b5a2a;background:linear-gradient(180deg,#1f1a10,#110e15)}
+.qe-steps.running .qe-step-head b{color:#e2c58c}
+.qe-difficulty-state .working{border-color:#6b5a2a;background:#1b1610}
+.qe-difficulty-state .working b{color:#e2c58c}
+.qe-difficulty-state .working small{color:#a8926a}

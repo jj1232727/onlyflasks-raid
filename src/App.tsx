@@ -2593,7 +2593,9 @@ export default function App() {
                   if (!queueResult.ok) throw new Error(queueResult.error || "Could not queue the QE run.");
                   setQeQueue((current) => ({ ...current, [String(c.id)]: { state: "pending", requestedAt: queueResult.requestedAt, characterName: c.name, lootSpec: selectedSpec, error: "" } }));
                   setSimState("uploaded");
-                  setSimMessage("Gear captured and QE queued. Normal, Heroic and Mythic scores land automatically — nothing else to do.");
+                  setSimMessage(queueResult.dispatched
+                    ? "Gear captured. QE is running now for all three difficulties — reload in about a minute."
+                    : "Gear captured and QE queued. It runs on the next sync, usually within 15 minutes.");
                   return;
                 }
                 const difficulties: Difficulty[] = ["normal", "heroic", "mythic"];
@@ -2919,23 +2921,25 @@ export default function App() {
                       <div className="qe-step-head">
                         <b>QE LIVE · YOUR LOOT RANKING</b>
                         <span>
-                          {qeHave.length === 3
-                            ? `All three difficulties scored from your ${qeStored.spec} export, ${relativeAge(qeStored.capturedAt)}.`
-                            : qeJob?.state === "error"
-                              ? `The QE run failed: ${qeJob.error || "unknown error"}. Re-paste your /simc to try again.`
-                              : qeJob
-                                ? "Queued. QE runs for Normal, Heroic and Mythic on the next sync — usually within 15 minutes. Nothing else to do."
+                          {qeJob?.state === "error"
+                            ? `The QE run failed: ${qeJob.error || "unknown error"}. Re-paste your /simc to try again.`
+                            : qeJob
+                              ? `Running QE for Normal, Heroic and Mythic — started ${relativeAge(qeJob.requestedAt)}. Usually about a minute; this panel updates when you reload.`
+                              : qeHave.length === 3
+                                ? `All three difficulties scored from your ${qeStored.spec} export, ${relativeAge(qeStored.capturedAt)}.`
                                 : "Paste your /simc above and press the button. QE is run for you; there is nothing else to do."}
                         </span>
                       </div>
                       <div className="qe-difficulty-state">
                         {(["normal", "heroic", "mythic"] as Difficulty[]).map((d) => (
-                          <span className={qeHave.includes(d) ? "have" : "missing"} key={d}>
+                          <span className={qeJob && qeJob.state !== "error" ? "working" : qeHave.includes(d) ? "have" : "missing"} key={d}>
                             <b>{raidbotDifficulty[d].label}</b>
                             <small>
-                              {qeHave.includes(d)
-                                ? `${Object.keys(qeStored.difficulties[d]).length} items`
-                                : qeJob && qeJob.state !== "error" ? "queued" : "not scored"}
+                              {qeJob && qeJob.state !== "error"
+                                ? "running…"
+                                : qeHave.includes(d)
+                                  ? `${Object.keys(qeStored.difficulties[d]).length} items`
+                                  : "not scored"}
                             </small>
                           </span>
                         ))}
