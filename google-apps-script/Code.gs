@@ -12,9 +12,14 @@ const QE_QUEUE_HEADERS = ['characterId', 'characterName', 'lootSpec', 'simc', 'r
 const OFFICER_HASH_PROPERTY = 'OFFICER_PASSPHRASE_HASH';
 const OFFICER_SESSION_SECONDS = 21600;
 const WOWAUDIT_API_KEY_PROPERTY = 'WOWAUDIT_API_KEY';
-// Optional. Set GITHUB_DISPATCH_TOKEN (fine-grained PAT, Actions: read+write)
-// and GITHUB_REPO ("owner/name") in Script Properties to start a QE run the
-// moment a healer pastes, instead of waiting for the 15-minute schedule.
+// Optional. Set GITHUB_DISPATCH_TOKEN and GITHUB_REPO ("owner/name") in Script
+// Properties to start a QE run the moment a healer pastes, instead of waiting
+// for the 15-minute schedule.
+//
+// The fine-grained PAT needs "Contents: read and write" - confirmed against the
+// permissions GitHub publishes for POST /repos/{owner}/{repo}/dispatches. Not
+// "Actions", which is the obvious guess and silently returns 403, which
+// triggerQeSync_ reports as a plain dispatched:false.
 const GITHUB_TOKEN_PROPERTY = 'GITHUB_DISPATCH_TOKEN';
 const GITHUB_REPO_PROPERTY = 'GITHUB_REPO';
 const RAIDBOTS_SUBMIT_URL = 'https://www.raidbots.com/sim';
