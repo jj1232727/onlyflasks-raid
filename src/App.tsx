@@ -922,17 +922,22 @@ function RaiderIdentity({
   status = "Main",
   detail,
   compact = false,
+  chip = false,
 }: {
   c: Raider;
   spec: string;
   status?: RosterStatus;
   detail?: string;
   compact?: boolean;
+  chip?: boolean;
 }) {
   const role = inferredRole(c);
+  // Main is the default and every list is mostly Mains, so a chip on all three
+  // would be noise that hides the two worth noticing.
+  const showChip = chip && status !== "Main";
   return (
     <div
-      className={`raider-identity ${status.toLowerCase()} ${compact ? "compact" : ""}`}
+      className={`raider-identity ${status.toLowerCase()} ${compact ? "compact" : ""} ${showChip ? "has-chip" : ""}`}
       style={{ "--class": colors[c.class] } as React.CSSProperties}
       title={`${status} · ${role} · ${spec}`}
     >
@@ -942,6 +947,7 @@ function RaiderIdentity({
       </span>
       <span className="raider-copy">
         <strong>{c.name}</strong>
+        {showChip && <em className={`roster-chip ${status.toLowerCase()}`}>{status.toUpperCase()}</em>}
         {detail && <small>{detail}</small>}
       </span>
     </div>
@@ -3325,6 +3331,7 @@ export default function App() {
                                 c={c}
                                 spec={specs[c.id] || c.defaultSpec}
                                 status={rosterStatuses[c.id] || c.rosterStatus || "Main"}
+                                chip
                               />
                             </div>
                             <div className="current-card">
