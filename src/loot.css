@@ -1241,3 +1241,38 @@ footer .data-freshness{width:100%}
 .simc-check.warn{border-color:#6b5226;background:#1e1810;color:#e2c58c}
 .simc-check.bad{border-color:#713636;background:#1e1214;color:#e98580}
 .simc-check b{color:inherit}
+
+/* --- Contested loot: value-first buckets, numbers you can read across a room --- */
+.contender-buckets{display:grid;gap:8px;min-width:0}
+.contender-bucket{border:1px solid #383036;border-left-width:3px;border-radius:9px;background:#131016}
+.bucket-head{display:flex;align-items:baseline;gap:8px;padding:7px 10px;border-bottom:1px solid #2b252b}
+.bucket-head strong{font-size:10px;font-weight:950;text-transform:uppercase;letter-spacing:.06em}
+.bucket-head em{flex:1;color:#6f656b;font-size:9px;font-style:normal}
+.bucket-head span{padding:1px 7px;border-radius:99px;background:#2a232a;color:#a99ea3;font-size:9px;font-weight:900}
+.contender-bucket.major{border-left-color:#3fbf7d;background:#101c15}
+.contender-bucket.major .bucket-head strong{color:#79e0a6}
+.contender-bucket.solid{border-left-color:#3f8fbf;background:#101820}
+.contender-bucket.solid .bucket-head strong{color:#7fc2e8}
+.contender-bucket.marginal{border-left-color:#b99542;background:#1c1810}
+.contender-bucket.marginal .bucket-head strong{color:#e0c07a}
+.contender-bucket.unsimmed{border-left-color:#7a6f86;background:#16141b}
+.contender-bucket.unsimmed .bucket-head strong{color:#b3a7c2}
+.contender-bucket.none{border-left-color:#4a4248;background:#131114}
+.contender-bucket.none .bucket-head strong{color:#8b8087}
+.contender-bucket.none .contender{opacity:.72}
+
+.contender-bucket .contenders{display:grid;grid-template-columns:repeat(auto-fill,minmax(224px,1fr));gap:6px;padding:8px}
+.contender-bucket .contender{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0;padding:8px 10px;border:1px solid #38313a;border-radius:8px;background:#191520}
+.contender-bucket .contender>.raider-identity{min-width:0;flex:1}
+.contender-gain{display:flex;flex:none;align-items:stretch;gap:6px}
+.contender-gain>span{display:flex;align-items:center;flex-direction:column;justify-content:center;min-width:58px;padding:4px 7px;border:1px solid #3d353f;border-radius:7px;background:#0e0c11}
+.contender-gain strong{font-size:16px;font-weight:900;line-height:1.1;letter-spacing:-.02em}
+.contender-gain small{margin-top:2px;color:#7a7079;font-size:6px;font-weight:950;letter-spacing:.09em}
+.contender-gain .gain-ilvl strong{font-size:14px}
+.contender-gain .up{border-color:#2f6d4c;background:#0f1d15}
+.contender-gain .up strong{color:#6fe0a2}
+.contender-gain .down{border-color:#743a3a;background:#1d1112}
+.contender-gain .down strong{color:#ef8b84}
+.contender-gain .flat strong{color:#8d8289}
+.contender-gain .none strong{color:#6d636b}
+@media(max-width:700px){.contender-bucket .contenders{grid-template-columns:1fr}}

@@ -290,6 +290,26 @@ const NAV_TABS: {
   { id: "history", label: "Loot history", icon: <History />, group: "records", count: (c) => c.history },
   { id: "wishlist", label: "My wishlist", icon: <Star />, group: "records" },
 ];
+// Contested loot is decided on how much the item is actually worth, so the
+// candidates are bucketed by gain rather than by roster status. Status still
+// matters, but as a tiebreak inside a bucket — a Main with no upgrade should
+// not sit above a Trial the item is worth 3% to.
+const CONTEST_BUCKETS = [
+  { id: "major", label: "Major upgrade", hint: "2%+ sim" },
+  { id: "solid", label: "Solid upgrade", hint: "0.5–2% sim" },
+  { id: "marginal", label: "Marginal", hint: "under 0.5% sim" },
+  { id: "unsimmed", label: "Item level only", hint: "no current sim" },
+  { id: "none", label: "No gain", hint: "sidegrade or downgrade" },
+] as const;
+type ContestBucket = (typeof CONTEST_BUCKETS)[number]["id"];
+const contestBucket = (sim: number | null, ilvl: number): ContestBucket => {
+  // No sim is not the same as no gain: the item level swing is all we know.
+  if (sim === null) return ilvl > 0 ? "unsimmed" : "none";
+  if (sim >= 2) return "major";
+  if (sim >= 0.5) return "solid";
+  if (sim > 0) return "marginal";
+  return "none";
+};
 const HOUR = 3600000, STALE_HOURS = 12, OLD_HOURS = 36;
 const ageInHours = (iso?: string) => {
   const parsed = iso ? Date.parse(iso) : NaN;
@@ -2332,83 +2352,61 @@ export default function App() {
                         </span>
                       </div>
                     </div>
-                    <div className="contender-groups">
-                      {(["Main", "Trial", "Fill"] as RosterStatus[]).map(
-                        (groupStatus) => {
-                          const group = people.filter(
-                            (p) =>
-                              (rosterStatuses[p.c.id] ||
-                                p.c.rosterStatus ||
-                                "Main") === groupStatus,
-                          );
-                          if (!group.length) return null;
-                          return (
-                            <section
-                              className={`contender-group ${groupStatus.toLowerCase()}`}
-                              key={groupStatus}
-                            >
-                              <div className="contender-group-head">
-                                <strong>{groupStatus}</strong>
-                                <span>{group.length}</span>
-                              </div>
-                              <div className="contenders">
-                                {group.map((p) => {
-                                  return (
-                                    <div
-                                      className={`contender ${groupStatus.toLowerCase()}`}
-                                      key={p.c.id}
-                                      style={
-                                        {
-                                          "--class": colors[p.c.class],
-                                        } as React.CSSProperties
-                                      }
-                                    >
-                                      <span>
-                                        <RaiderIdentity
-                                          c={p.c}
-                                          spec={specs[p.c.id] || p.c.defaultSpec}
-                                          status={groupStatus}
-                                          compact
-                                        />
-                                        <small className="gain-metrics">
-                                          {p.sim !== null ? (
-                                            <em
-                                              className={
-                                                p.sim < 0
-                                                  ? "negative"
-                                                  : "positive"
-                                              }
-                                            >
-                                              {p.sim > 0 ? "+" : ""}
-                                              {p.sim.toFixed(2)}% sim
-                                            </em>
-                                          ) : (
-                                            <em className="unavailable">
-                                              No sim
-                                            </em>
-                                          )}
-                                          <i
-                                            className={
-                                              p.ilvl < 0
-                                                ? "negative"
-                                                : p.ilvl > 0
-                                                  ? "positive"
-                                                  : "neutral"
-                                            }
-                                          >
-                                            {p.ilvl > 0 ? "+" : ""}
-                                            {p.ilvl} ilvl
-                                          </i>
-                                        </small>
+                    <div className="contender-buckets">
+                      {CONTEST_BUCKETS.map((bucket) => {
+                        const group = people
+                          .filter((p) => contestBucket(p.sim, p.ilvl) === bucket.id)
+                          .sort((a, b) => {
+                            // Value first: an unsimmed raider cannot outrank a
+                            // measured gain, and ties fall back to roster order.
+                            const as = a.sim ?? Number.NEGATIVE_INFINITY,
+                              bs = b.sim ?? Number.NEGATIVE_INFINITY;
+                            if (as !== bs) return bs - as;
+                            return (
+                              b.ilvl - a.ilvl ||
+                              priorityValue(a.c, rosterStatuses) - priorityValue(b.c, rosterStatuses)
+                            );
+                          });
+                        if (!group.length) return null;
+                        return (
+                          <section className={`contender-bucket ${bucket.id}`} key={bucket.id}>
+                            <div className="bucket-head">
+                              <strong>{bucket.label}</strong>
+                              <em>{bucket.hint}</em>
+                              <span>{group.length}</span>
+                            </div>
+                            <div className="contenders">
+                              {group.map((p) => {
+                                const status = rosterStatuses[p.c.id] || p.c.rosterStatus || "Main";
+                                return (
+                                  <div
+                                    className={`contender ${status.toLowerCase()}`}
+                                    key={p.c.id}
+                                    style={{ "--class": colors[p.c.class] } as React.CSSProperties}
+                                  >
+                                    <RaiderIdentity
+                                      c={p.c}
+                                      spec={specs[p.c.id] || p.c.defaultSpec}
+                                      status={status}
+                                      compact
+                                    />
+                                    <div className="contender-gain">
+                                      <span className={`gain-sim ${p.sim === null ? "none" : p.sim > 0 ? "up" : p.sim < 0 ? "down" : "flat"}`}>
+                                        <strong>{p.sim === null ? "—" : `${p.sim > 0 ? "+" : ""}${p.sim.toFixed(2)}%`}</strong>
+                                        <small>{p.sim === null ? "NO SIM" : "SIM"}</small>
+                                      </span>
+                                      <span className={`gain-ilvl ${p.ilvl > 0 ? "up" : p.ilvl < 0 ? "down" : "flat"}`}>
+                                        <strong>{p.ilvl > 0 ? "+" : ""}{p.ilvl}</strong>
+                                        <small>ILVL</small>
                                       </span>
                                     </div>
-                                  );
-                                })}
-                              </div>
-                            </section>
-                          );
-                        },
-                      )}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </section>
+                        );
+                      })}
                     </div>
                     <strong className="contest-count">
                       {people.length}
