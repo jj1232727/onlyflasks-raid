@@ -1076,9 +1076,9 @@ footer .data-freshness{width:100%}
 @media(max-width:1180px){.palette-trigger span{display:none}}
 @media(max-width:760px){.palette-trigger kbd{display:none}}
 
-/* --- Tier card: one column, fixed row order, cards stretch to equal height --- */
-.tier-board .tier-grid{align-items:stretch}
-.tier-board .tier-person{display:flex;flex-direction:column;gap:9px;height:100%}
+/* --- Tier card: one column, fixed row order, natural height per card --- */
+.tier-board .tier-grid{align-items:start}
+.tier-board .tier-person{display:flex;flex-direction:column;gap:9px}
 .tier-person.tier-actionable{border-left-color:#e2a04a;background:linear-gradient(135deg,#241b12,#100e12)}
 .tier-card-head{margin-bottom:0}
 .tier-bonus{flex:none;display:flex!important;flex-direction:column;align-items:flex-end;margin:0!important}
@@ -1225,12 +1225,12 @@ footer .data-freshness{width:100%}
 .tier-slot-visual{min-height:92px}
 .bags-row>b{color:#e2c58c}
 
-/* Tier cards stretch to the tallest card in their grid row, so on raiders with
-   no /simc capture the leftover height fell as dead air under the SIMC NEEDED
-   strip — present or absent purely by which row they landed in. Let the
-   resource block absorb the slack instead. */
-.tier-board .tier-person>.tier-resource-snapshot{flex:1 1 auto;align-content:start}
-.tier-board .tier-person>.tier-resource-snapshot.no-data{align-content:center}
+/* Cards used to stretch to the tallest in their grid row, which dumped the
+   leftover height into the last block. Absorbing it just turned that dead air
+   into a huge empty bordered box on raiders with no capture. Let each card be
+   its own height instead, so nothing stretches and nothing is padded out. */
+.tier-board .tier-person>.tier-resource-snapshot{flex:0 0 auto;align-content:start}
+.tier-resource-snapshot.no-data{padding:7px 9px}
 
 /* --- Paste-time check on the /simc box --- */
 .simc-check{display:flex;align-items:flex-start;gap:9px;margin-top:9px;padding:9px 11px;border:1px solid #383034;border-radius:9px;background:#141115;font-size:11px;line-height:1.55}

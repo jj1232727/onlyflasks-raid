@@ -867,46 +867,6 @@ function CommandPalette({ commands, onClose }: { commands: Command[]; onClose: (
     </div>
   );
 }
-// The tier card already demands a /simc paste, so spend that data: show the
-// upgrades the droptimizer actually found. Expired sims are dropped by simFor,
-// so an empty list here means "nothing current", not "nothing good".
-function TierSimUpgrades({ data, c, difficulty, spec }: { data: Data; c: Raider; difficulty: Difficulty; spec: string }) {
-  // Tier page, so only tier counts: this character's actual set pieces and the
-  // class tokens that become them. A big weapon upgrade is real, but it belongs
-  // on the loot pages — here it just buries the tier answer.
-  const tierIds = new Set(
-    Object.values(
-      tierIdsForClass(data.auditActivity?.periodInfo?.current_season?.tier_items_by_slot, classIds[c.class]),
-    ).map(Number),
-  );
-  const isTier = (item: Item) =>
-    tierIds.has(+item.itemId) || (Boolean(item.tierToken) && tokenFitsClass(item, c));
-  const upgrades = data.raid.bosses
-    .flatMap((boss) =>
-      boss.items
-        .filter(isTier)
-        .map((item) => ({ item, boss, gain: simFor(data, c, item, boss, difficulty, spec) })),
-    )
-    .filter((row) => Number(row.gain) > 0)
-    .sort((a, b) => Number(b.gain) - Number(a.gain))
-    .slice(0, 3);
-  if (!upgrades.length) return null;
-  return (
-    <div className="tier-sim-upgrades">
-      <b>TOP TIER SIM UPGRADES</b>
-      {upgrades.map(({ item, boss, gain }) => (
-        <div key={`${boss.name}-${item.itemId}`} title={`${item.name}\n${boss.name}\n+${Number(gain).toFixed(2)}% ${difficulty}`}>
-          <WowItem item={item} size={26} />
-          <span>
-            <strong>{item.name}</strong>
-            <small>{boss.name}</small>
-          </span>
-          <em>+{Number(gain).toFixed(1)}%</em>
-        </div>
-      ))}
-    </div>
-  );
-}
 function RaiderIdentity({
   c,
   spec,
@@ -2170,7 +2130,6 @@ export default function App() {
                       </div>
                     ))}
                   </div>
-                  <TierSimUpgrades data={data} c={c} difficulty={difficulty} spec={specs[c.id] || c.defaultSpec} />
                   <TierResourceSnapshot info={{ catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, bagTier, bagBases, crests, crestsMissing, snapshotAt }} visuals={visualItems} icons={data.itemIcons || {}} />
                 </div>
               ))}
