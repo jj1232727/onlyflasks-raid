@@ -2473,6 +2473,15 @@ export default function App() {
                 setSyncState("error");
               }
             };
+            // What this character still owes this week. Both expire at reset.
+            const newestSim = simTimestamps(data.sims, c.id)[0],
+              simCurrent = Boolean(newestSim) && !isBeforeReset(newestSim),
+              captureAt = simcSnapshots[c.id]?.capturedAt,
+              captureCurrent = Boolean(captureAt) && !isBeforeReset(captureAt),
+              simcOutstanding = [
+                simCurrent ? "" : "droptimizer sim",
+                captureCurrent ? "" : "/simc capture",
+              ].filter(Boolean);
             // Plain const, not a hook: this block runs inside a JSX IIFE.
             const pasted = simcText.trim(),
               simcCheck = pasted.length >= 100 ? inspectSimcExport(pasted) : null,
@@ -2769,8 +2778,23 @@ export default function App() {
                     Icy Veins is the starting point. Change only what you want, then press <b>Save my wishlist</b>. Choices are limited to valid {selectedSpec} loot.
                   </span>
                 </div>
-                <details className="simc-disclosure">
-                  <summary><span><b>Optional</b> Update my Raidbots simulations</span><ChevronDown /></summary>
+                <details className={`simc-disclosure ${simcOutstanding.length ? "needed" : "done"}`}>
+                  <summary>
+                    <span className="simc-summary-copy">
+                      <b>{simcOutstanding.length ? "NEEDED THIS WEEK" : "DONE THIS WEEK"}</b>
+                      <strong>
+                        {simcOutstanding.length
+                          ? `Update my simulations — no current ${simcOutstanding.join(" or ")}`
+                          : "Simulations are current for this week"}
+                      </strong>
+                      <em>
+                        {simcOutstanding.length
+                          ? "Without a sim, loot ranking falls back to item level and your tier, vault and crests stay blank."
+                          : `Sim ${relativeAge(newestSim)} · capture ${relativeAge(captureAt)}. Re-run after Tuesday's reset.`}
+                      </em>
+                    </span>
+                    <ChevronDown />
+                  </summary>
                 <section className={`simc-panel ${simState}`}>
                   <div className="simc-panel-head">
                     <div>
