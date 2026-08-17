@@ -52,6 +52,8 @@ function doPost(event) {
     if (body.action === 'queueQeRun') return queueQeRun_(body);
     if (body.action === 'getQePending') return json_({ ok: true, pending: getQePending_() });
     if (body.action === 'setQeQueueState') return setQeQueueState_(body);
+    // Diagnostic: fire a dispatch and report exactly why it did or did not land.
+    if (body.action === 'checkQeDispatch') return json_({ ok: true, dispatch: triggerQeSync_() });
     return saveWishlist_(body);
   } catch (error) { return json_({ ok: false, error: String(error.message || error) }); }
 }
@@ -312,25 +314,35 @@ function queueQeRun_(body) {
       id, String(body.characterName).slice(0, 80), String(body.lootSpec).slice(0, 80),
       simc, requestedAt, 'pending', '',
     ]]);
-    var dispatched = triggerQeSync_();
-    return json_({ ok: true, characterId: id, requestedAt: requestedAt, state: 'pending', dispatched: dispatched });
+    var dispatch = triggerQeSync_();
+    return json_({ ok: true, characterId: id, requestedAt: requestedAt, state: 'pending', dispatched: dispatch.ok, dispatchNote: dispatch.reason });
   } finally { lock.releaseLock(); }
 }
 
 // Kick the workflow now. A failure here is not fatal - the schedule still
 // catches the job - so never let it break the paste.
+//
+// It used to answer a bare false for every kind of failure: properties unset,
+// repo misspelled, token short a permission, GitHub down. All identical, and all
+// only visible as "it did not run". Say which, and quote what GitHub said. The
+// token is never part of that - only its presence, and GitHub's own message.
 function triggerQeSync_() {
   var props = PropertiesService.getScriptProperties();
-  var token = props.getProperty(GITHUB_TOKEN_PROPERTY), repo = props.getProperty(GITHUB_REPO_PROPERTY);
-  if (!token || !repo) return false;
+  var token = String(props.getProperty(GITHUB_TOKEN_PROPERTY) || '').trim();
+  var repo = String(props.getProperty(GITHUB_REPO_PROPERTY) || '').trim();
+  if (!token) return { ok: false, reason: 'No ' + GITHUB_TOKEN_PROPERTY + ' in Script Properties.' };
+  if (!repo) return { ok: false, reason: 'No ' + GITHUB_REPO_PROPERTY + ' in Script Properties.' };
+  if (!/^[\w.-]+\/[\w.-]+$/.test(repo)) return { ok: false, reason: GITHUB_REPO_PROPERTY + ' should be "owner/name", got "' + repo + '".' };
   try {
     var response = UrlFetchApp.fetch('https://api.github.com/repos/' + repo + '/dispatches', {
       method: 'post', contentType: 'application/json', muteHttpExceptions: true,
       headers: { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
       payload: JSON.stringify({ event_type: 'qe-sync' }),
     });
-    return response.getResponseCode() === 204;
-  } catch (error) { return false; }
+    var code = response.getResponseCode();
+    if (code === 204) return { ok: true, reason: 'Dispatched.' };
+    return { ok: false, reason: 'GitHub answered ' + code + ': ' + String(response.getContentText() || '').slice(0, 200) };
+  } catch (error) { return { ok: false, reason: 'Request failed: ' + String(error.message || error).slice(0, 200) }; }
 }
 
 function setQeQueueState_(body) {
