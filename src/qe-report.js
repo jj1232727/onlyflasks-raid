@@ -53,10 +53,12 @@ export function parseQeReport(payload) {
 
 // Percentage gain per item, for one raid difficulty.
 //
-// Each item appears up to three times: "drop" at the item level it actually
-// drops at, "max" fully upgraded, and "bonus" at vault level. Loot council
-// ranks the item as it drops, so only "drop" rows are used — scoring off "max"
-// would credit an upgrade the raider has not paid the crests for yet.
+// Each item appears up to three times, matching the three sections QE prints
+// per difficulty: "drop" is plain "Normal", the item at the level it actually
+// drops at; "max" is "Normal - Upgraded", the same item after crests; "bonus" is
+// "Normal - Upgraded Bonus Rolls", vault level. Loot council hands out the item
+// as it drops, so only "drop" rows are used — "max" credits crests the raider
+// has not spent, and bonus rolls are not a council call at all.
 export function qeRaidScores(report, difficulty = "normal") {
   const parsed = parseQeReport(report),
     scores = new Map();

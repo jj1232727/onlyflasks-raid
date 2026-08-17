@@ -1344,5 +1344,16 @@ footer .data-freshness{width:100%}
 .qe-difficulty-state .working{border-color:#6b5a2a;background:#1b1610}
 .qe-difficulty-state .working b{color:#e2c58c}
 .qe-difficulty-state .working small{color:#a8926a}
-/* A catalyst target on boss pages: the drop leads, the tier result follows. */
-.boss-player-item small.converts{color:#8ee6df!important}
+/* A catalyst or token target on boss pages: the drop leads, what it becomes
+   follows, in the same conversion-route loot decisions uses — only sized for a
+   row rather than a candidate card. */
+.boss-player-item.has-route{grid-template-columns:30px minmax(110px,1fr) minmax(0,240px) auto}
+.conversion-route.compact{flex:0 0 auto;width:auto;height:auto;grid-template-columns:14px 24px minmax(0,1fr);gap:5px;padding:4px 7px}
+.conversion-route.compact .conversion-arrow{font-size:14px}
+.conversion-route.compact small{margin:0 0 1px;font-size:6px}
+.conversion-route.compact b{font-size:9px}
+@media(max-width:820px){
+.boss-player-item.has-route{grid-template-columns:30px minmax(0,1fr) auto}
+.boss-player-item.has-route>.gain-badges{grid-column:3;grid-row:1}
+.boss-player-item.has-route>.conversion-route{grid-column:1/-1;grid-row:2}
+}

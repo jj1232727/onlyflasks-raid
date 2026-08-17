@@ -1775,7 +1775,12 @@ export default function App() {
           ),
           simulatedNonBis: any[] = weeklyOverview.flatMap((row) => raidBoss.items.flatMap((item) => {
             const selectedSpec = specs[row.c.id] || row.c.defaultSpec;
-            if (!itemEligibleForSpec(item, row.c, selectedSpec) || wishlistClaims.some((claim) => claim.c.id === row.c.id && +claim.target.itemId === +item.itemId)) return [];
+            // A catalyst claim's target is the tier piece, but the item this boss
+            // drops is the base — so matching on the target alone let the base
+            // through again as a bare "SIM UPGRADE", listing one drop twice for
+            // the same raider. Match the source too: that is what falls on the
+            // floor, and it is the row a council actually sees.
+            if (!itemEligibleForSpec(item, row.c, selectedSpec) || wishlistClaims.some((claim) => claim.c.id === row.c.id && (+claim.target.itemId === +item.itemId || +claim.source.item.itemId === +item.itemId))) return [];
             const sim = simFor(data, row.c, item, raidBoss, selectedDifficulty, selectedSpec);
             if (sim === null || sim <= 0) return [];
             const current = equipped(row.c, item);
@@ -2103,9 +2108,15 @@ export default function App() {
                         // target that is the base, not the tier piece it becomes — and
                         // the sim score is the base's too, because a lone tier piece
                         // with no set bonus scores as a weak standalone item.
-                        const converts = Boolean(claim.target.catalyst) && claim.source?.item && +claim.source.item.itemId !== +claim.target.itemId,
-                          dropped = converts ? claim.source.item : claim.target;
-                        return <div className="boss-player-item" key={`${claim.target.itemId}-${claimIndex}`}><WowItem item={dropped} size={30} /><span><b>{dropped.name}</b><small className={converts ? "converts" : ""}>{converts ? `↻ ${claim.target.name}` : claim.simUpgradeOnly ? "SIM UPGRADE" : "BiS TARGET"}</small></span><div className="gain-badges"><b className={ilvlGain > 0 ? "ilvl" : "muted"}>{ilvlGain > 0 ? `+${ilvlGain} ilvl` : "0 ilvl"}</b><b className={claim.sim !== null && claim.sim > 0 ? "sim" : "muted"}>{claim.sim !== null ? `${claim.sim > 0 ? "+" : ""}${claim.sim.toFixed(2)}%` : "— sim"}</b></div></div>; })}</div>
+                        //
+                        // Loot decisions already draws "what drops → what it becomes"
+                        // as a conversion-route, and covers tier tokens as well as the
+                        // catalyst. Reuse it rather than invent a second dialect.
+                        const route = claim.source?.item && +claim.source.item.itemId !== +claim.target.itemId
+                            ? claim.target.catalyst ? "catalyst" : claim.source.item.tierToken ? "token" : null
+                            : null,
+                          dropped = route ? claim.source.item : claim.target;
+                        return <div className={`boss-player-item ${route ? "has-route" : ""}`} key={`${claim.target.itemId}-${claimIndex}`}><WowItem item={dropped} size={30} /><span><b>{dropped.name}</b><small>{claim.simUpgradeOnly ? "SIM UPGRADE" : "BiS TARGET"}</small></span>{route && <div className={`conversion-route compact ${route}`}><span className="conversion-arrow" aria-hidden="true">→</span><WowItem item={claim.target} size={24} /><a href={`https://www.wowhead.com/item=${claim.target.itemId}`} data-wowhead={`item=${claim.target.itemId}`} target="_blank" rel="noreferrer"><small>{route === "catalyst" ? "CATALYST RESULT" : "TIER RESULT"}</small><b>{claim.target.name}</b></a></div>}<div className="gain-badges"><b className={ilvlGain > 0 ? "ilvl" : "muted"}>{ilvlGain > 0 ? `+${ilvlGain} ilvl` : "0 ilvl"}</b><b className={claim.sim !== null && claim.sim > 0 ? "sim" : "muted"}>{claim.sim !== null ? `${claim.sim > 0 ? "+" : ""}${claim.sim.toFixed(2)}%` : "— sim"}</b></div></div>; })}</div>
                     </article>;
                   })}</div>
                 </div>}

@@ -17,6 +17,27 @@ export const QE_DIFFICULTIES = ["normal", "heroic", "mythic"];
 // Confirmed against the board's own item level table, not inferred.
 export const QE_DIFFICULTY_CODE = { normal: 1, heroic: 2, mythic: 3 };
 const FINDER_URL = "https://questionablyepic.com/live/upgradefinder";
+// The import dialog carries three switches, and QE's defaults are not the
+// question loot council is asking. Pin all three so a report means one thing
+// no matter what QE ships as default:
+//
+//   Auto Catalyze          ON  — the guild catalyses, so a tier target has to be
+//                                scored through the base that drops. Off, QE
+//                                never considers the converted item. This one is
+//                                required: it moves the numbers the board ranks
+//                                on, so a run that cannot set it is worthless.
+//   Upgrade ALL to Max     OFF — council ranks gear as it drops, not as it would
+//                                be after crests nobody has spent yet.
+//   Upgrade Vault to Max   OFF — bonus rolls and the vault are not a council
+//                                call at all.
+//
+// The two OFF switches only add report sections; qeRaidScores reads "drop" rows
+// only, so failing to set them is untidy rather than wrong.
+const DIALOG_SETTINGS = [
+  { label: /auto catalyze/, want: true, required: true },
+  { label: /upgrade all to max/, want: false, required: false },
+  { label: /upgrade vault to max/, want: false, required: false },
+];
 
 async function runOne(browser, { simc, spec, difficulty }) {
   const page = await browser.newPage();
@@ -70,20 +91,21 @@ async function runOne(browser, { simc, spec, difficulty }) {
     await page.locator(box).first().click();
     await page.keyboard.insertText(simc);
     await page.waitForTimeout(700);
-    // "Auto Catalyze" is OFF by default, so QE scores a catalyst piece as zero
-    // — it never considers the converted item. The guild does catalyse, so a
-    // report without this understates every tier target that comes from a base.
-    // "Upgrade ALL to Max Level" stays off on purpose: loot council ranks gear
-    // as it drops, not as it would be after crests.
-    const catalyzed = await page.evaluate(() => {
-      const dialog = document.querySelector('[role="dialog"]');
-      const box = [...dialog.querySelectorAll('input[type="checkbox"]')]
-        .find((cb) => /auto catalyze/i.test(cb.closest("label")?.innerText || ""));
-      if (!box) return "missing";
-      if (!box.checked) box.click();
-      return box.checked;
-    });
-    if (catalyzed !== true) throw new Error(`QE Live: could not enable Auto Catalyze (${catalyzed}).`);
+    for (const { label, want, required } of DIALOG_SETTINGS) {
+      const state = await page.evaluate(({ source, want }) => {
+        const dialog = document.querySelector('[role="dialog"]');
+        const rx = new RegExp(source, "i"),
+          box = [...dialog.querySelectorAll('input[type="checkbox"]')]
+            .find((cb) => rx.test(cb.closest("label")?.innerText || ""));
+        if (!box) return "missing";
+        if (box.checked !== want) box.click();
+        return box.checked;
+      }, { source: label.source, want });
+      if (state === want) { await page.waitForTimeout(250); continue; }
+      if (required) throw new Error(`QE Live: could not set "${label.source}" to ${want} (${state}).`);
+      // Not fatal: these two only add report sections the board never reads.
+      console.warn(`  note: QE Live "${label.source}" could not be set to ${want} (${state}).`);
+    }
     await page.waitForTimeout(400);
     await page.evaluate(() => {
       const dialog = document.querySelector('[role="dialog"]');
