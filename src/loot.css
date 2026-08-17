@@ -1325,6 +1325,15 @@ footer .data-freshness{width:100%}
 .qe-step-head b{display:block;margin-bottom:4px;color:#c3aef0;font-size:8px;font-weight:950;letter-spacing:.09em}
 .qe-step-head span{color:#9990ab;font-size:10px;line-height:1.5}
 .qe-step-head code{padding:1px 5px;border-radius:4px;background:#221c31;color:#c9b8ee}
+.qe-difficulty-state{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:10px}
+.qe-difficulty-state>span{display:flex;align-items:center;flex-direction:column;padding:9px 8px;border:1px solid #3d3547;border-radius:8px;background:#131019}
+.qe-difficulty-state b{font-size:12px;font-weight:900}
+.qe-difficulty-state small{margin-top:4px;font-size:8px;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+.qe-difficulty-state .have{border-color:#3d6b4f;background:#101d16}
+.qe-difficulty-state .have b{color:#8fe0b0}
+.qe-difficulty-state .have small{color:#6fae8b}
+.qe-difficulty-state .missing b{color:#8d8289}
+.qe-difficulty-state .missing small{color:#6b6169}
 .qe-steps.running{border-color:#4a3a6b}
 .qe-steps.done{border-color:#2c5f45;background:linear-gradient(180deg,#101d16,#110e15)}
 .qe-steps.done .qe-step-head b{color:#8fe0b0}
