@@ -14,9 +14,9 @@
 
 export const QE_REPORT_API = "https://questionablyepic.com/api/getUpgradeReport.php";
 
-// QE numbers each raid difficulty; the drop item levels line up exactly with the
-// board's own table (Normal 292/295/298/302), which is how this mapping was
-// confirmed. Only Normal has been seen in a real report so far.
+// Confirmed by running all three through QE and comparing drop item levels to
+// the board's own table: 1 -> 292/295/298/302, 2 -> 305/308/311/315,
+// 3 -> 318/321/324. Not inferred.
 export const QE_RAID_DIFFICULTY = { 1: "normal", 2: "heroic", 3: "mythic" };
 
 // Accepts a bare id, a report URL, or a full API URL.

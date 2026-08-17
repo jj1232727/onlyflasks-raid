@@ -31,6 +31,7 @@
     "raid:effects": "node scripts/enrich-raid-effects.js",
     "gear:icons": "node scripts/enrich-gear-icons.js",
     "snapshot:icons": "node scripts/enrich-snapshot-icons.js",
+    "qe:run": "node scripts/qe-run.js",
     "test": "node --test"
   },
   "dependencies": {
@@ -44,6 +45,7 @@
   "devDependencies": {
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
+    "playwright-core": "^1.62.1",
     "prettier": "^3.9.6"
   },
   "engines": {
