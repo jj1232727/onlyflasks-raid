@@ -1,10 +1,12 @@
 const SHEET_NAME = 'Wishlists';
 const ROSTER_SHEET_NAME = 'RosterPriority';
 const SIMC_SHEET_NAME = 'SimcSnapshots';
+const QE_SHEET_NAME = 'QeReports';
 const SPREADSHEET_ID = '1y7cgwp_m_aPDznRz7kwS-G1IPlvZWz3vXwilLmBNCKU';
 const HEADERS = ['characterId', 'characterName', 'characterClass', 'lootSpec', 'wishlistJson', 'updatedAt', 'version'];
 const ROSTER_HEADERS = ['characterId', 'characterName', 'status', 'updatedAt'];
 const SIMC_HEADERS = ['characterId', 'characterName', 'lootSpec', 'snapshotJson', 'capturedAt', 'updatedAt', 'version'];
+const QE_HEADERS = ['characterId', 'characterName', 'lootSpec', 'reportId', 'reportJson', 'capturedAt', 'updatedAt'];
 const OFFICER_HASH_PROPERTY = 'OFFICER_PASSPHRASE_HASH';
 const OFFICER_SESSION_SECONDS = 21600;
 const WOWAUDIT_API_KEY_PROPERTY = 'WOWAUDIT_API_KEY';
@@ -20,7 +22,7 @@ function doGet() {
       lootSpec: String(row[3] || ''), wishlist: JSON.parse(String(row[4] || '[]')),
       updatedAt: String(row[5] || ''), version: Number(row[6] || 1),
     }));
-    return json_({ ok: true, wishlists, rosterStatuses: getRosterStatuses_(), simcSnapshots: getSimcSnapshots_() });
+    return json_({ ok: true, wishlists, rosterStatuses: getRosterStatuses_(), simcSnapshots: getSimcSnapshots_(), qeReports: getQeReports_() });
   } catch (error) { return json_({ ok: false, error: String(error.message || error) }); }
 }
 
@@ -34,6 +36,7 @@ function doPost(event) {
     if (body.action === 'checkDroptimizer') return checkDroptimizer_(body);
     if (body.action === 'getWowauditSims') return getWowauditSims_();
     if (body.action === 'saveSimcSnapshot') return saveSimcSnapshot_(body);
+    if (body.action === 'saveQeReport') return saveQeReport_(body);
     return saveWishlist_(body);
   } catch (error) { return json_({ ok: false, error: String(error.message || error) }); }
 }
@@ -201,6 +204,71 @@ function saveSimcSnapshot_(body) {
   } finally { lock.releaseLock(); }
 }
 
+// QE Live reports are fetched and parsed in the browser (their API is CORS
+// open), so this only has to store the summary the board reads back.
+function saveQeReport_(body) {
+  const id = Number(body.characterId), report = body.report;
+  if (!Number.isFinite(id)) throw new Error('A valid characterId is required.');
+  if (!body.characterName || !report || typeof report !== 'object') throw new Error('Character identity and a QE report are required.');
+  if (!report.difficulties || typeof report.difficulties !== 'object') throw new Error('The QE report has no raid difficulties.');
+  var compact = {
+    id: String(report.id || '').slice(0, 40),
+    character: String(report.character || '').slice(0, 80),
+    realm: String(report.realm || '').slice(0, 60),
+    region: String(report.region || '').slice(0, 8),
+    spec: String(report.spec || '').slice(0, 80),
+    contentType: String(report.contentType || '').slice(0, 40),
+    capturedAt: String(report.capturedAt || new Date().toISOString()).slice(0, 40),
+    difficulties: report.difficulties,
+  };
+  var lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+  try {
+    var sheet = getQeSheet_(), values = sheet.getDataRange().getValues();
+    var row = values.findIndex(function (value, index) { return index > 0 && Number(value[0]) === id; }) + 1;
+    if (row) {
+      // Merge, so running Heroic later does not erase this week's Normal.
+      try {
+        var previous = JSON.parse(String(values[row - 1][4] || '{}'));
+        if (previous && previous.difficulties && previous.capturedAt && !expiredAtReset_(previous.capturedAt)) {
+          var merged = {};
+          Object.keys(previous.difficulties).forEach(function (k) { merged[k] = previous.difficulties[k]; });
+          Object.keys(compact.difficulties).forEach(function (k) { merged[k] = compact.difficulties[k]; });
+          compact.difficulties = merged;
+        }
+      } catch (error) { /* a damaged previous report must not block a new one */ }
+    }
+    if (!row) row = sheet.getLastRow() + 1;
+    var encoded = JSON.stringify(compact);
+    if (encoded.length > 45000) throw new Error('The QE report is too large to store.');
+    var updatedAt = new Date().toISOString();
+    sheet.getRange(row, 1, 1, QE_HEADERS.length).setValues([[
+      id, String(body.characterName).slice(0, 80), String(body.lootSpec || '').slice(0, 80),
+      compact.id, encoded, compact.capturedAt, updatedAt,
+    ]]);
+    return json_({ ok: true, characterId: id, report: compact, updatedAt });
+  } finally { lock.releaseLock(); }
+}
+
+// NA weekly reset, Tuesday 15:00 UTC - mirrors src/raid-week.js.
+function expiredAtReset_(iso) {
+  var parsed = Date.parse(iso);
+  if (!isFinite(parsed)) return true;
+  var now = new Date();
+  var reset = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 15, 0, 0, 0));
+  reset.setUTCDate(reset.getUTCDate() - ((reset.getUTCDay() - 2 + 7) % 7));
+  if (reset > now) reset.setUTCDate(reset.getUTCDate() - 7);
+  return parsed < reset.getTime();
+}
+
+function getQeReports_() {
+  return getQeSheet_().getDataRange().getValues().slice(1).reduce(function (result, row) {
+    if (row[0] === '') return result;
+    try { result[String(Number(row[0]))] = JSON.parse(String(row[4] || '{}')); } catch (error) { /* skip damaged rows */ }
+    return result;
+  }, {});
+}
+
 function getSimcSnapshots_() {
   return getSimcSheet_().getDataRange().getValues().slice(1).reduce((result, row) => {
     if (row[0] === '') return result;
@@ -219,6 +287,7 @@ function getRosterStatuses_() {
 function getSheet_() { return getOrCreateSheet_(SHEET_NAME, HEADERS); }
 function getRosterSheet_() { return getOrCreateSheet_(ROSTER_SHEET_NAME, ROSTER_HEADERS); }
 function getSimcSheet_() { return getOrCreateSheet_(SIMC_SHEET_NAME, SIMC_HEADERS); }
+function getQeSheet_() { return getOrCreateSheet_(QE_SHEET_NAME, QE_HEADERS); }
 function getOrCreateSheet_(name, headers) {
   const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
   let sheet = spreadsheet.getSheetByName(name);

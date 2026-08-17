@@ -1318,3 +1318,21 @@ footer .data-freshness{width:100%}
 .coverage-verdict.thin{background:#4a4218;color:#e7d179}
 .coverage-verdict.done{background:#1b4531;color:#8fe0b0}
 .coverage-score.done .coverage-ring b{color:#8fe0b0}
+
+/* --- QE Live report panel (healers) --- */
+.qe-disclosure.needed{border-color:#4a3a6b;background:linear-gradient(180deg,#181423,#100e12)}
+.qe-disclosure.needed .simc-summary-copy b{background:#332a52;color:#c3aef0}
+.qe-disclosure.needed .simc-summary-copy strong{color:#c9b8ee}
+.qe-disclosure.needed>summary svg{color:#a48fd6}
+.qe-panel .rune{color:#b79ce8}
+.qe-difficulty-state{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:11px 0}
+.qe-difficulty-state>span{display:flex;align-items:center;flex-direction:column;padding:8px;border:1px solid #3d3547;border-radius:8px;background:#131019}
+.qe-difficulty-state b{font-size:11px;font-weight:900}
+.qe-difficulty-state small{margin-top:3px;font-size:8px;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+.qe-difficulty-state .have{border-color:#3d6b4f;background:#101d16}
+.qe-difficulty-state .have b{color:#8fe0b0}
+.qe-difficulty-state .have small{color:#6fae8b}
+.qe-difficulty-state .missing b{color:#8d8289}
+.qe-difficulty-state .missing small{color:#6b6169}
+.qe-input{width:100%;padding:11px;border:1px solid #4b4055;border-radius:8px;background:#0b090d;color:#e8ddd7;font-size:12px}
+.qe-input:focus-visible{outline:2px solid #a48fd6;outline-offset:-2px}

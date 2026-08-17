@@ -17,6 +17,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { isBeforeReset, lastWeeklyReset, simStatus, simTimestamps } from "./raid-week.js";
+import { qeReportSummary, qeReportUrl } from "./qe-report.js";
 import {
   tierIdsForClass,
   tierRosterSummary,
@@ -94,6 +95,8 @@ type Data = {
     characters?: any[];
   };
   raiderio?: { fetchedAt?: string; characters?: any[] };
+  // characterId -> QE Live report summary, for healers.
+  qeReports?: Record<string, any>;
   // itemId -> icon, for bag/vault items that appear nowhere else.
   itemIcons?: Record<string, string>;
   specs: string[];
@@ -945,6 +948,24 @@ function RaiderIdentity({
     </div>
   );
 }
+// Healers sim in QE Live, which WoWAudit does not hold, so their droptimizer
+// lookup finds nothing and the item falls back to item level. If this character
+// has a QE report for the spec and difficulty being asked about, use it. QE
+// percentages are the same measure as a droptimizer's, and both expire at reset.
+function qeSimFor(
+  data: Data,
+  c: Raider,
+  item: Item,
+  selectedDifficulty: Difficulty,
+  selectedSpec: string,
+) {
+  const report = data.qeReports?.[String(c.id)];
+  if (!report || isBeforeReset(report.capturedAt)) return null;
+  // A report describes one spec. Do not lend its numbers to another.
+  if (report.spec && norm(report.spec) !== norm(selectedSpec)) return null;
+  const value = report.difficulties?.[selectedDifficulty]?.[String(item.itemId)];
+  return Number.isFinite(Number(value)) ? Number(value) : null;
+}
 function simFor(
   data: Data,
   c: Raider,
@@ -973,7 +994,8 @@ function simFor(
   // A droptimizer only describes the week it ran in. Gear, vault and crests all
   // move at Tuesday's reset, so last week's percentages rank people wrongly —
   // drop them rather than let a stale number decide who gets loot.
-  if (isBeforeReset(difficulty?.wishlist?.updated_at?.[specName])) return null;
+  if (isBeforeReset(difficulty?.wishlist?.updated_at?.[specName]))
+    return qeSimFor(data, c, item, selectedDifficulty, selectedSpec);
   const
     specScore = hit?.score_by_spec?.[specName]?.percentage,
     wishScore = hit?.wishes?.find(
@@ -985,7 +1007,7 @@ function simFor(
   }
   // Generic percentages belong to the spec that generated the report. Do not
   // leak them into a newly selected spec that has not been simulated yet.
-  if (reportIds && !specReportId) return null;
+  if (reportIds && !specReportId) return qeSimFor(data, c, item, selectedDifficulty, selectedSpec);
   for (const k of [
     "upgrade_percentage",
     "item_percentage",
@@ -997,7 +1019,7 @@ function simFor(
     const n = Number(hit?.[k]);
     if (Number.isFinite(n)) return n;
   }
-  return null;
+  return qeSimFor(data, c, item, selectedDifficulty, selectedSpec);
 }
 function targetSatisfactionReason(data: Data, c: Raider, entry: any, selectedDifficulty: Difficulty, selectedSpec: string) {
   const required = selectedDifficulty === "mythic" ? 3 : selectedDifficulty === "heroic" ? 2 : 1;
@@ -1037,6 +1059,10 @@ export default function App() {
         ),
     ),
     [simcSnapshots, setSimcSnapshots] = useState<Record<number, any>>({}),
+    [qeReports, setQeReports] = useState<Record<string, any>>({}),
+    [qeText, setQeText] = useState(""),
+    [qeState, setQeState] = useState<"idle" | "loading" | "saved" | "error">("idle"),
+    [qeMessage, setQeMessage] = useState(""),
     [wishlistCharacter, setWishlistCharacter] = useState<number | null>(null),
     [wishlistApiUrl, setWishlistApiUrl] = useState(""),
     [officerUnlocked, setOfficerUnlocked] = useState(false),
@@ -1103,6 +1129,9 @@ export default function App() {
     if (liveSims) setData((current) => current ? { ...current, sims: liveSims } : current);
   }, [liveSims]);
   useEffect(() => {
+    setData((current) => (current ? { ...current, qeReports } : current));
+  }, [qeReports]);
+  useEffect(() => {
     fetch("./app-config.json", { cache: "no-store" })
       .then((r) => r.json())
       .then(async (config) => {
@@ -1122,6 +1151,7 @@ export default function App() {
         }
         setRosterStatuses(payload.rosterStatuses || {});
         setSimcSnapshots(payload.simcSnapshots || {});
+        setQeReports(payload.qeReports || {});
         fetch(url, {
           method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify({ action: "getWowauditSims" }),
@@ -2478,6 +2508,7 @@ export default function App() {
                   verifiedSpecs[+entry.characterId] = entry.lootSpec;
                 }
                 setSimcSnapshots(shared.simcSnapshots || {});
+                setQeReports(shared.qeReports || {});
                 setCustomWishlists(verifiedLists);
                 setSpecs((existing) => ({ ...existing, ...verifiedSpecs }));
                 localStorage.setItem("onlyflasks-custom-wishlists-v3", JSON.stringify(verifiedLists));
@@ -2489,6 +2520,50 @@ export default function App() {
                 setSyncState("error");
               }
             };
+            const submitQe = async () => {
+              const raw = qeText.trim();
+              if (!wishlistApiUrl || !raw) return;
+              setQeState("loading");
+              setQeMessage("Reading the QE Live report…");
+              try {
+                // QE's API is CORS open, so the browser reads it directly.
+                const response = await fetch(qeReportUrl(raw), { cache: "no-store" });
+                if (!response.ok) throw new Error(`QE Live returned HTTP ${response.status}.`);
+                const report = qeReportSummary(await response.text());
+                if (norm(report.character) !== norm(c.name))
+                  throw new Error(`That report belongs to ${report.character || "another character"}, not ${c.name}.`);
+                const found = Object.keys(report.difficulties);
+                if (!found.length)
+                  throw new Error("That report has no raid upgrades. Run the Upgrade Finder with Raid content selected.");
+                const saved = await fetch(wishlistApiUrl, {
+                  method: "POST",
+                  headers: { "Content-Type": "text/plain;charset=utf-8" },
+                  body: JSON.stringify({ action: "saveQeReport", characterId: c.id, characterName: c.name, lootSpec: selectedSpec, report }),
+                });
+                const result = await saved.json();
+                if (!result.ok || !result.report) {
+                  // An Apps Script without saveQeReport falls through to the
+                  // wishlist writer, which rejects this payload for missing
+                  // fields. Name the real cause instead of that error.
+                  const outdated = /characterClass|lootSpec are required|Wishlist must contain/i.test(String(result.error || ""));
+                  throw new Error(outdated
+                    ? "The Google Apps Script deployment does not support QE reports yet. Re-deploy Code.gs, then try again."
+                    : result.error || "Could not save the QE report.");
+                }
+                setQeReports((current) => ({ ...current, [String(c.id)]: result.report }));
+                setQeState("saved");
+                setQeText("");
+                const stored = Object.keys(result.report.difficulties || {});
+                setQeMessage(`Saved ${report.spec} · ${found.join(", ")} from this report. Stored: ${stored.join(", ")}.`);
+              } catch (error) {
+                console.error(error);
+                setQeState("error");
+                setQeMessage(error instanceof Error ? error.message : "Could not read that QE Live report.");
+              }
+            };
+            const qeStored = qeReports[String(c.id)],
+              qeFresh = Boolean(qeStored?.capturedAt) && !isBeforeReset(qeStored.capturedAt),
+              qeHave = qeFresh ? Object.keys(qeStored.difficulties || {}) : [];
             // What this character still owes this week. Both expire at reset.
             const newestSim = simTimestamps(data.sims, c.id)[0],
               simCurrent = Boolean(newestSim) && !isBeforeReset(newestSim),
@@ -2794,6 +2869,56 @@ export default function App() {
                     Icy Veins is the starting point. Change only what you want, then press <b>Save my wishlist</b>. Choices are limited to valid {selectedSpec} loot.
                   </span>
                 </div>
+                <details className={`simc-disclosure qe-disclosure ${qeHave.length === 3 ? "done" : "needed"}`}>
+                  <summary>
+                    <span className="simc-summary-copy">
+                      <b>{qeHave.length === 3 ? "ALL THREE SAVED" : qeHave.length ? `${qeHave.length} OF 3 SAVED` : "HEALERS ONLY"}</b>
+                      <strong>QE Live upgrade report</strong>
+                      <em>
+                        {qeHave.length
+                          ? `Have ${qeHave.join(", ")} · captured ${relativeAge(qeStored.capturedAt)}. Run the others and paste each link.`
+                          : "Healers sim in QE Live, which WoWAudit does not hold. Paste the report link so your numbers rank alongside everyone else's."}
+                      </em>
+                    </span>
+                    <ChevronDown />
+                  </summary>
+                  <section className="simc-panel qe-panel">
+                    <div className="simc-panel-head">
+                      <div>
+                        <p className="rune">Questionably Epic</p>
+                        <h3>Add a QE Live report</h3>
+                        <p>
+                          Run <b>Upgrade Finder</b> with <b>Raid</b> content on{" "}
+                          <a href="https://questionablyepic.com/live/upgradefinder" target="_blank" rel="noreferrer">questionablyepic.com</a>,
+                          once per raid difficulty, and paste each report link here. Difficulties merge, so a later Heroic run keeps this week's Normal.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="qe-difficulty-state">
+                      {(["normal", "heroic", "mythic"] as Difficulty[]).map((d) => (
+                        <span className={qeHave.includes(d) ? "have" : "missing"} key={d}>
+                          <b>{raidbotDifficulty[d].label}</b>
+                          <small>{qeHave.includes(d) ? `${Object.keys(qeStored.difficulties[d]).length} items` : "not saved"}</small>
+                        </span>
+                      ))}
+                    </div>
+                    <input
+                      className="qe-input"
+                      value={qeText}
+                      onChange={(e) => setQeText(e.target.value)}
+                      placeholder="https://questionablyepic.com/live/upgradereport/… or the report id"
+                      aria-label="QE Live report link"
+                    />
+                    <div className="simc-actions">
+                      <span>{qeMessage || "Nothing is saved until you press Add report."}</span>
+                      <div className="simc-action-buttons">
+                        <button disabled={!wishlistApiUrl || !qeText.trim() || qeState === "loading"} onClick={submitQe}>
+                          {qeState === "loading" ? "Reading report…" : qeState === "error" ? "Retry" : "Add report"}
+                        </button>
+                      </div>
+                    </div>
+                  </section>
+                </details>
                 <details className={`simc-disclosure ${simcOutstanding.length ? "needed" : "done"}`}>
                   <summary>
                     <span className="simc-summary-copy">
