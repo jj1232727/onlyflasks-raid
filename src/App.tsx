@@ -1142,6 +1142,10 @@ export default function App() {
     ),
     [simcSnapshots, setSimcSnapshots] = useState<Record<number, any>>({}),
     [specSaveError, setSpecSaveError] = useState(""),
+    [simcLog, setSimcLog] = useState<any[] | null>(null),
+    [simcLogState, setSimcLogState] = useState<"idle" | "loading" | "error">("idle"),
+    [simcLogError, setSimcLogError] = useState(""),
+    [simcLogFailedOnly, setSimcLogFailedOnly] = useState(false),
     [qeReports, setQeReports] = useState<Record<string, any>>({}),
     [qeQueue, setQeQueue] = useState<Record<string, any>>({}),
     [wishlistCharacter, setWishlistCharacter] = useState<number | null>(null),
@@ -1378,6 +1382,29 @@ export default function App() {
       setSimReports(pending.reportUrls.map((report: any) => ({ ...report, state: "uploaded" })));
     void refreshLiveSims({ before: pending.before, character, selectedSpec: pending.selectedSpec, attempts: 13 });
   }, [wishlistApiUrl, data]);
+  // Every /simc paste and what became of it. Officer-gated, because an export
+  // names a character, realm and full gear and doPost is public - so the board
+  // reads it with the session it already holds, rather than sending anyone to a
+  // terminal to answer "did he actually sim?".
+  const loadSimcLog = async () => {
+    const token = localStorage.getItem("onlyflasks-officer-session") || "";
+    if (!wishlistApiUrl || !token) return;
+    setSimcLogState("loading");
+    setSimcLogError("");
+    try {
+      const payload = await (await fetch(wishlistApiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ action: "getSimcLog", token, limit: 100 }),
+      })).json();
+      if (!payload.ok) throw new Error(payload.error || "Could not read the paste log.");
+      setSimcLog(payload.log || []);
+      setSimcLogState("idle");
+    } catch (error) {
+      setSimcLogState("error");
+      setSimcLogError(error instanceof Error ? error.message : "Could not read the paste log.");
+    }
+  };
   const officerLogin = async () => {
     if (!wishlistApiUrl || !officerPassphrase) return;
     setOfficerBusy(true);
@@ -2434,6 +2461,7 @@ export default function App() {
               </div>
             </div>
             {officerUnlocked ? (
+              <>
               <details className="roster-control">
                 <summary>
                   <span>
@@ -2482,6 +2510,51 @@ export default function App() {
                   })}
                 </div>
               </details>
+              <details className="roster-control simc-log-control" onToggle={(e) => { if ((e.target as HTMLDetailsElement).open && simcLog === null) void loadSimcLog(); }}>
+                <summary>
+                  <span>
+                    <b>/simc paste log</b>
+                    <small>
+                      Every paste and what became of it - the answer to &quot;I simmed and it is not showing&quot;
+                      {simcLogState === "loading" ? " · Loading…" : simcLogState === "error" ? " · Failed" : simcLog ? ` · ${simcLog.length} recorded` : ""}
+                    </small>
+                  </span>
+                  <ChevronDown />
+                </summary>
+                <div className="simc-log">
+                  <div className="simc-log-actions">
+                    <button type="button" onClick={() => void loadSimcLog()} disabled={simcLogState === "loading"}>
+                      <RefreshCw /> Refresh
+                    </button>
+                    <label>
+                      <input type="checkbox" checked={simcLogFailedOnly} onChange={(e) => setSimcLogFailedOnly(e.target.checked)} />
+                      Failures only
+                    </label>
+                  </div>
+                  {simcLogState === "error" && <p className="simc-log-error">{simcLogError}</p>}
+                  {simcLog && !simcLog.length && <p className="muted">No pastes recorded yet.</p>}
+                  {simcLog && simcLog.length > 0 && (() => {
+                    const rows = simcLogFailedOnly ? simcLog.filter((row) => !row.ok) : simcLog;
+                    if (!rows.length) return <p className="muted">No failures recorded.</p>;
+                    return (
+                      <div className="simc-log-rows">
+                        <div className="simc-log-head"><span>When</span><span>Raider</span><span>Loot spec</span><span>Step</span><span>Result</span><span>Detail</span></div>
+                        {rows.map((row, index) => (
+                          <div className={`simc-log-row ${row.ok ? "ok" : "failed"}`} key={`${row.at}-${index}`}>
+                            <span>{String(row.at).replace("T", " ").slice(0, 19)}</span>
+                            <span>{row.characterName}</span>
+                            <span>{row.lootSpec || "(none)"}</span>
+                            <span>{row.step}</span>
+                            <span>{row.ok ? "OK" : "FAILED"}</span>
+                            <span title={row.detail}>{row.detail}</span>
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  })()}
+                </div>
+              </details>
+              </>
             ) : (
               <div className="officer-gate">
                 {officerPrompt ? (

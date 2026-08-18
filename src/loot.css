@@ -1397,3 +1397,42 @@ footer .data-freshness{width:100%}
   font: inherit;
   cursor: pointer;
 }
+
+/* Officer view: every /simc paste and what became of it. */
+.simc-log { padding: 4px 2px 2px; }
+.simc-log-actions { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+.simc-log-actions button {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid #ffffff22; background: transparent; color: inherit;
+  border-radius: 8px; padding: 5px 11px; font: inherit; font-size: 12px;
+  font-weight: 600; cursor: pointer;
+}
+.simc-log-actions button:disabled { opacity: .5; cursor: default; }
+.simc-log-actions button svg { width: 13px; height: 13px; }
+.simc-log-actions label {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 600; color: var(--muted);
+}
+.simc-log-error { color: #ff6b6b; font-size: 12px; font-weight: 600; }
+.simc-log-rows { display: flex; flex-direction: column; gap: 2px; }
+.simc-log-head, .simc-log-row {
+  display: grid;
+  grid-template-columns: 150px 130px 150px 110px 74px minmax(0, 1fr);
+  gap: 10px; align-items: baseline;
+}
+.simc-log-head {
+  font-size: 10px; letter-spacing: .09em; text-transform: uppercase;
+  color: var(--muted); font-weight: 700;
+  padding-bottom: 6px; border-bottom: 1px solid #ffffff14; margin-bottom: 4px;
+}
+.simc-log-row { font-size: 12px; padding: 5px 0; border-bottom: 1px solid #ffffff0a; }
+.simc-log-row span:last-child {
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted);
+}
+.simc-log-row.ok span:nth-child(5) { color: #58d68d; font-weight: 700; }
+.simc-log-row.failed span:nth-child(5) { color: #ff6b6b; font-weight: 700; }
+.simc-log-row.failed { background: #ff6b6b08; }
+@media (max-width: 900px) {
+  .simc-log-head { display: none; }
+  .simc-log-row { grid-template-columns: 1fr 1fr; gap: 2px 10px; padding: 8px 0; }
+}
