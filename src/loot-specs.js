@@ -67,3 +67,57 @@ export function defaultSpecFor(className, role, availableSpecs = []) {
 // a data problem, so the builder refuses to publish rather than warn.
 export const invalidDefaults = (availableSpecs = []) =>
   [...new Set(Object.values(DEFAULT_SPECS))].filter((spec) => !availableSpecs.includes(spec));
+
+// What a character actually plays, as opposed to what class and role guess.
+//
+// DEFAULT_SPECS picks one spec per class|role, and a raider on any other spec of
+// the same class then has every sim hidden: a droptimizer is filed under the
+// spec that produced it, and simFor refuses to read one filed under a different
+// spec than the board asked for. That refusal is right — a Frost player must not
+// be ranked on Unholy numbers — so it is the guess that has to give.
+//
+// Two Hunters made the cost obvious: Orchuntarded sims Beast Mastery and matched
+// the guess, so his numbers showed. Galsnipes sims Marksmanship and his did not,
+// though both had uploaded a full droptimizer.
+//
+// Evidence beats guessing, newest first: the /simc they pasted names the spec
+// they were playing at the time, and a droptimizer names the spec it ran as.
+// Neither is a preference — an explicit choice still outranks both.
+
+const flatten = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9]/gu, "");
+
+// "Unholy" or the simc export's "beast_mastery" -> "Unholy Death Knight".
+// Scoped to the character's class, so Restoration cannot pick the wrong one.
+export function matchSpec(availableSpecs, className, shortName) {
+  const wanted = flatten(shortName);
+  if (!wanted) return "";
+  return (
+    (availableSpecs || [])
+      .filter((spec) => spec.endsWith(className))
+      .find((spec) => flatten(spec.slice(0, spec.length - className.length)) === wanted) || ""
+  );
+}
+
+// `simmedSpecs` is every spec name a report was actually filed under.
+export function playedSpec({ availableSpecs = [], className, snapshotSpec = "", simmedSpecs = [] }) {
+  const fromPaste = matchSpec(availableSpecs, className, snapshotSpec);
+  if (fromPaste) return fromPaste;
+  for (const spec of simmedSpecs) {
+    const hit = matchSpec(availableSpecs, className, spec);
+    if (hit) return hit;
+  }
+  return "";
+}
+
+// Every spec a droptimizer was filed under, from a WoWAudit character entry.
+export function simmedSpecsOf(entry) {
+  const found = [];
+  for (const instance of entry?.instances || []) {
+    for (const difficulty of instance?.difficulties || []) {
+      for (const [spec, reportId] of Object.entries(difficulty?.wishlist?.report_id || {})) {
+        if (reportId && !found.includes(spec)) found.push(spec);
+      }
+    }
+  }
+  return found;
+}

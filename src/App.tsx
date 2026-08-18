@@ -34,6 +34,7 @@ import {
   norm,
   slot,
 } from "./gear-slots.js";
+import { playedSpec, simmedSpecsOf } from "./loot-specs.js";
 import {
   CATALYST_CURRENCIES,
   MIDNIGHT_S2_CATALYST,
@@ -1432,9 +1433,28 @@ export default function App() {
       }
     }
   };
+  // What each raider actually plays, from their own /simc paste or the spec a
+  // droptimizer was filed under. Only a fallback for the class/role guess - an
+  // explicit pick in the dropdown still wins. Recomputed when the live WoWAudit
+  // sims or a new snapshot arrive, which is exactly when the evidence changes.
+  const playedSpecs = useMemo(() => {
+    const result: Record<number, string> = {};
+    if (!data) return result;
+    for (const c of data.characters) {
+      const found = playedSpec({
+        availableSpecs: data.specs,
+        className: c.class,
+        snapshotSpec: simcSnapshots?.[c.id]?.spec || "",
+        simmedSpecs: simmedSpecsOf((data.sims?.characters || []).find((x: any) => +x.id === +c.id)),
+      });
+      if (found) result[c.id] = found;
+    }
+    return result;
+  }, [data, simcSnapshots]);
+  const specFor = (c: Raider) => specs[c.id] || playedSpecs[c.id] || c.defaultSpec;
   const wishlistFor = (c: Raider) =>
     customWishlists[c.id] ||
-    data?.bis.lists[specs[c.id] || c.defaultSpec]?.items ||
+    data?.bis.lists[specFor(c)]?.items ||
     [];
   const model = useMemo(() => {
     if (!data) return [];
@@ -1444,7 +1464,7 @@ export default function App() {
     return boss.items
       .map((item) => {
         const people = data.characters.flatMap((c) => {
-          const chosen = specs[c.id] || c.defaultSpec,
+          const chosen = specFor(c),
             list = wishlistFor(c),
             target = list.find(
               (t) =>
@@ -1500,7 +1520,7 @@ export default function App() {
         return boss.items.flatMap((item) => {
           const people = data.characters
             .flatMap((c) => {
-              const chosen = specs[c.id] || c.defaultSpec,
+              const chosen = specFor(c),
                 list = wishlistFor(c);
               const target = list.find(
                 (t) =>
@@ -1614,7 +1634,7 @@ export default function App() {
       ...data.characters.map((c) => ({
         id: `raider-${c.id}`,
         label: c.name,
-        hint: `${c.class} · ${specs[c.id] || c.defaultSpec || c.role}`,
+        hint: `${c.class} · ${specFor(c) || c.role}`,
         kind: "Raider",
         run: () => { setWishlistCharacter(c.id); setView("wishlist"); },
       })),
@@ -1815,7 +1835,7 @@ export default function App() {
           heroCount = targets.filter((x) => x.state === "hero").length,
           championCount = targets.filter((x) => x.state === "champion").length,
           readiness = (["normal", "heroic", "mythic"] as Difficulty[]).reduce((result, selectedDifficulty) => {
-            result[selectedDifficulty] = targets.filter((entry) => targetSatisfiedAtDifficulty(data, c, entry, selectedDifficulty, specs[c.id] || c.defaultSpec)).length;
+            result[selectedDifficulty] = targets.filter((entry) => targetSatisfiedAtDifficulty(data, c, entry, selectedDifficulty, specFor(c))).length;
             return result;
           }, {} as Record<Difficulty, number>);
         return { c, targets, exactCount, readiness, mythCount, heroCount, championCount };
@@ -1828,7 +1848,7 @@ export default function App() {
       ),
     overviewInsights = (["normal", "heroic", "mythic"] as Difficulty[]).map((selectedDifficulty) => {
       const evaluated = weeklyOverview.flatMap((row) => row.targets.map((entry) => ({
-          reason: targetSatisfactionReason(data, row.c, entry, selectedDifficulty, specs[row.c.id] || row.c.defaultSpec),
+          reason: targetSatisfactionReason(data, row.c, entry, selectedDifficulty, specFor(row.c)),
         }))),
         total = evaluated.length,
         bis = evaluated.filter((x) => x.reason === "bis").length,
@@ -1859,7 +1879,7 @@ export default function App() {
                     x.source.item,
                     raidBoss,
                     selectedDifficulty,
-                    specs[row.c.id] || row.c.defaultSpec,
+                    specFor(row.c),
                   ),
                   ilvlGain = expected - (x.current?.itemLevel || 0),
                   equalOrHigher = currentTrackOrder >= targetTrackOrder;
@@ -1878,7 +1898,7 @@ export default function App() {
               }),
           ),
           simulatedNonBis: any[] = weeklyOverview.flatMap((row) => raidBoss.items.flatMap((item) => {
-            const selectedSpec = specs[row.c.id] || row.c.defaultSpec;
+            const selectedSpec = specFor(row.c);
             // A catalyst claim's target is the tier piece, but the item this boss
             // drops is the base — so matching on the target alone let the base
             // through again as a bare "SIM UPGRADE", listing one drop twice for
@@ -2064,7 +2084,7 @@ export default function App() {
                       <span>
                         <RaiderIdentity
                           c={row.c}
-                          spec={specs[row.c.id] || row.c.defaultSpec}
+                          spec={specFor(row.c)}
                           status={rosterStatuses[row.c.id] || row.c.rosterStatus || "Main"}
                           compact
                         />
@@ -2206,7 +2226,7 @@ export default function App() {
                   <div className="boss-target-claims">{[...row.claims.reduce((groups: Map<number, { c: Raider; claims: any[] }>, claim: any) => { const group = groups.get(claim.c.id) || { c: claim.c, claims: [] as any[] }; group.claims.push(claim); groups.set(claim.c.id, group); return groups; }, new Map<number, { c: Raider; claims: any[] }>()).values()].sort((a, b) => Math.max(...b.claims.map((x) => x.sim || -1)) - Math.max(...a.claims.map((x) => x.sim || -1)) || priorityValue(a.c, rosterStatuses) - priorityValue(b.c, rosterStatuses)).map((group) => {
                     const bestSim = Math.max(...group.claims.map((x) => x.sim || -1)), bestIlvl = Math.max(...group.claims.map((x) => Math.max(0, x.ilvlGain)));
                     return <article className="boss-target-player" key={group.c.id} style={{ "--class": colors[group.c.class] } as React.CSSProperties}>
-                      <div className="boss-player-summary"><RaiderIdentity c={group.c} spec={specs[group.c.id] || group.c.defaultSpec} status={rosterStatuses[group.c.id] || group.c.rosterStatus || "Main"} compact /><span>{group.claims.length} {group.claims.length === 1 ? "item" : "items"}</span><div className="gain-badges"><b className={bestIlvl > 0 ? "ilvl" : "muted"}>{bestIlvl > 0 ? `up to +${bestIlvl} ilvl` : "0 ilvl"}</b><b className={bestSim > 0 ? "sim" : "muted"}>{bestSim > 0 ? `up to +${bestSim.toFixed(2)}%` : "— sim"}</b></div></div>
+                      <div className="boss-player-summary"><RaiderIdentity c={group.c} spec={specFor(group.c)} status={rosterStatuses[group.c.id] || group.c.rosterStatus || "Main"} compact /><span>{group.claims.length} {group.claims.length === 1 ? "item" : "items"}</span><div className="gain-badges"><b className={bestIlvl > 0 ? "ilvl" : "muted"}>{bestIlvl > 0 ? `up to +${bestIlvl} ilvl` : "0 ilvl"}</b><b className={bestSim > 0 ? "sim" : "muted"}>{bestSim > 0 ? `up to +${bestSim.toFixed(2)}%` : "— sim"}</b></div></div>
                       <div className="boss-player-items">{group.claims.sort((a, b) => (b.sim || -1) - (a.sim || -1) || b.ilvlGain - a.ilvlGain).map((claim, claimIndex) => { const ilvlGain = Math.max(0, claim.ilvlGain);
                         // Boss targets are about the item that drops. For a catalyst
                         // target that is the base, not the tier piece it becomes — and
@@ -2298,7 +2318,7 @@ export default function App() {
                   }
                 >
                   <div className="tier-card-head">
-                    <RaiderIdentity c={c} spec={specs[c.id] || c.defaultSpec} status={rosterStatuses[c.id] || c.rosterStatus || "Main"} />
+                    <RaiderIdentity c={c} spec={specFor(c)} status={rosterStatuses[c.id] || c.rosterStatus || "Main"} />
                     <span
                       className={`tier-charges ${catalystCharges ? "has" : "none"}`}
                       title={`${catalystCharges ?? 0} Venomblight Manaflux held${catalystCharges === null ? " (no /simc captured)" : ""}`}
@@ -2405,7 +2425,7 @@ export default function App() {
                           { "--class": colors[c.class] } as React.CSSProperties
                         }
                       >
-                        <RaiderIdentity c={c} spec={specs[c.id] || c.defaultSpec} status={value} compact />
+                        <RaiderIdentity c={c} spec={specFor(c)} status={value} compact />
                         <select
                           value={value}
                           disabled={rosterSaveState === "saving"}
@@ -2548,7 +2568,7 @@ export default function App() {
                                   >
                                     <RaiderIdentity
                                       c={p.c}
-                                      spec={specs[p.c.id] || p.c.defaultSpec}
+                                      spec={specFor(p.c)}
                                       status={groupStatus}
                                       compact
                                     />
@@ -2593,7 +2613,7 @@ export default function App() {
               return (
                 <div className="empty">No roster characters available.</div>
               );
-            const selectedSpec = specs[c.id] || c.defaultSpec;
+            const selectedSpec = specFor(c);
             const classSpecs = data.specs.filter((s) => s.endsWith(c.class));
             const baseline = data.bis.lists[selectedSpec]?.items || [];
             const current = customWishlists[c.id] || baseline;
@@ -3435,7 +3455,7 @@ export default function App() {
                             <div className="player">
                               <RaiderIdentity
                                 c={c}
-                                spec={specs[c.id] || c.defaultSpec}
+                                spec={specFor(c)}
                                 status={rosterStatuses[c.id] || c.rosterStatus || "Main"}
                                 chip
                               />
@@ -3564,9 +3584,9 @@ export default function App() {
                       { "--class": colors[c.class] } as React.CSSProperties
                     }
                   >
-                    <RaiderIdentity c={c} spec={specs[c.id] || c.defaultSpec} status={rosterStatuses[c.id] || c.rosterStatus || "Main"} compact />
+                    <RaiderIdentity c={c} spec={specFor(c)} status={rosterStatuses[c.id] || c.rosterStatus || "Main"} compact />
                     <select
-                      value={specs[c.id] || c.defaultSpec}
+                      value={specFor(c)}
                       onChange={(e) => {
                         const next = { ...specs, [c.id]: e.target.value };
                         setSpecs(next);
@@ -3576,9 +3596,9 @@ export default function App() {
                         );
                       }}
                     >
-                      {!data.specs.includes(specs[c.id] || c.defaultSpec) && (
-                        <option value={specs[c.id] || c.defaultSpec}>
-                          {specs[c.id] || c.defaultSpec || "Select a loot specialization…"}
+                      {!data.specs.includes(specFor(c)) && (
+                        <option value={specFor(c)}>
+                          {specFor(c) || "Select a loot specialization…"}
                         </option>
                       )}
                       {data.specs
@@ -3778,7 +3798,7 @@ export default function App() {
                           { "--class": colors[c.class] } as React.CSSProperties
                         }
                       >
-                        <RaiderIdentity c={c} spec={specs[c.id] || c.defaultSpec} status={rosterStatuses[c.id] || c.rosterStatus || "Main"} compact />
+                        <RaiderIdentity c={c} spec={specFor(c)} status={rosterStatuses[c.id] || c.rosterStatus || "Main"} compact />
                       </div>
                       <span
                         className={`readiness ${issues.length ? "bad" : "ok"}`}
