@@ -49,6 +49,9 @@ const PENDING_SIM_SHEET_NAME = 'PendingSims';
 const PENDING_SIM_HEADERS = ['characterId', 'characterName', 'simId', 'difficulty', 'submittedAt', 'state', 'error'];
 // Raidbots finishes in about a minute. Well past that it is not coming.
 const PENDING_SIM_GIVE_UP_MS = 3 * 60 * 60 * 1000;
+// Finished rows are kept only long enough to be worth reading. 26 raiders at
+// three sims a week fills this steadily, and nothing else would ever clear it.
+const PENDING_SIM_KEEP = 300;
 const OFFICER_HASH_PROPERTY = 'OFFICER_PASSPHRASE_HASH';
 const OFFICER_SESSION_SECONDS = 21600;
 const WOWAUDIT_API_KEY_PROPERTY = 'WOWAUDIT_API_KEY';
@@ -640,7 +643,23 @@ function drainPendingSims() {
       sheet.getRange(i + 1, 6, 1, 2).setValues([['error', String(error.message || error).slice(0, 300)]]);
     }
   }
+  trimPendingSims_(sheet);
   return touched;
+}
+
+// Oldest settled rows first. Anything still pending is left alone, whatever its
+// age - the give-up check above is what ends those.
+function trimPendingSims_(sheet) {
+  var values = sheet.getDataRange().getValues();
+  var extra = values.length - 1 - PENDING_SIM_KEEP;
+  if (extra <= 0) return;
+  for (var i = 1; i < values.length && extra > 0; i++) {
+    if (String(values[i][5]) === 'pending') continue;
+    sheet.deleteRow(i + 1);
+    values.splice(i, 1);
+    i--;
+    extra--;
+  }
 }
 
 // Run once from the Apps Script editor. Safe to re-run - it replaces its own
