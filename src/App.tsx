@@ -3098,6 +3098,17 @@ export default function App() {
                 }
                 setSimState("running");
                 setSimReports(jobs.map((job) => ({ difficulty: job.difficulty, url: job.reportUrl, state: "running" })));
+                // Write it here, not after the uploads. Everything from this
+                // point on is polling that a refresh throws away, and that is
+                // exactly when there is something worth resuming - recording it
+                // only on success meant a mid-run refresh left no trace and the
+                // resume button never appeared.
+                localStorage.setItem("onlyflasks-pending-sim-refresh-v1", JSON.stringify({
+                  characterId: c.id,
+                  selectedSpec,
+                  before,
+                  reportUrls: jobs.map((job) => ({ difficulty: job.difficulty, url: job.reportUrl, simId: job.simId })),
+                }));
                 for (let index = 0; index < jobs.length; index++) {
                   const job = jobs[index], label = raidbotDifficulty[job.difficulty].label;
                   setSimReports((reports) => reports.map((report) => report.difficulty === job.difficulty ? { ...report, state: "running" } : report));
