@@ -1187,6 +1187,7 @@ export default function App() {
     [simcExport, setSimcExport] = useState<any>(null),
     [simcExportState, setSimcExportState] = useState<"idle" | "loading" | "error">("idle"),
     [simcExportError, setSimcExportError] = useState(""),
+    [simcExportCopied, setSimcExportCopied] = useState<"" | "copied" | "failed">(""),
     [qeReports, setQeReports] = useState<Record<string, any>>({}),
     [qeQueue, setQeQueue] = useState<Record<string, any>>({}),
     // Which character the wishlist panel is on. Persisted, because resetting to
@@ -1442,6 +1443,31 @@ export default function App() {
   // names a character, realm and full gear and doPost is public - so the board
   // reads it with the session it already holds, rather than sending anyone to a
   // terminal to answer "did he actually sim?".
+  const simcExportRef = useRef<HTMLPreElement>(null);
+  // Ctrl+A inside the export frame should take the export, not the whole board.
+  // The frame is focusable, so this only fires once someone has clicked into it.
+  const selectExportText = () => {
+    const node = simcExportRef.current;
+    if (!node) return;
+    const range = document.createRange();
+    range.selectNodeContents(node);
+    const selection = window.getSelection();
+    selection?.removeAllRanges();
+    selection?.addRange(range);
+  };
+  const copyExport = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setSimcExportCopied("copied");
+    } catch {
+      // Clipboard access can be refused outright. Select it instead, so Ctrl+C
+      // still works and the button has not simply done nothing.
+      selectExportText();
+      setSimcExportCopied("failed");
+    }
+    window.setTimeout(() => setSimcExportCopied(""), 2500);
+  };
+
   // The stored /simc behind a log row. Saving the export is only half of a
   // diagnostic - the log says which step broke, and this says what it broke on.
   //
@@ -1452,6 +1478,7 @@ export default function App() {
     if (!wishlistApiUrl || !token) return;
     setSimcExportState("loading");
     setSimcExportError("");
+    setSimcExportCopied("");
     setSimcExport({ characterName, pending: true });
     try {
       const payload = await (await fetch(wishlistApiUrl, {
@@ -2657,12 +2684,38 @@ export default function App() {
                         )}
                         <span className="simc-export-actions">
                           {!simcExport.pending && (
-                            <button type="button" onClick={() => void navigator.clipboard?.writeText(simcExport.simc || "")}>Copy</button>
+                            <button
+                              type="button"
+                              className={simcExportCopied ? `copy-${simcExportCopied}` : ""}
+                              onClick={() => void copyExport(simcExport.simc || "")}
+                            >
+                              {simcExportCopied === "copied"
+                                ? "Copied"
+                                : simcExportCopied === "failed"
+                                  ? "Selected — press Ctrl+C"
+                                  : "Copy"}
+                            </button>
+                          )}
+                          {!simcExport.pending && (
+                            <button type="button" onClick={selectExportText}>Select all</button>
                           )}
                           <button type="button" onClick={() => { setSimcExport(null); setSimcExportError(""); }}>Close</button>
                         </span>
                       </div>
-                      {!simcExport.pending && <pre>{simcExport.simc}</pre>}
+                      {!simcExport.pending && (
+                        <pre
+                          ref={simcExportRef}
+                          tabIndex={0}
+                          onKeyDown={(e) => {
+                            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "a") {
+                              e.preventDefault();
+                              selectExportText();
+                            }
+                          }}
+                        >
+                          {simcExport.simc}
+                        </pre>
+                      )}
                     </div>
                   )}
                 </div>

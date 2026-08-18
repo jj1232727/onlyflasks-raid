@@ -1468,3 +1468,16 @@ footer .data-freshness{width:100%}
   .simc-log-row { grid-template-columns: 1fr 1fr; }
   .simc-log-export { grid-column: 1 / -1; justify-self: start; margin-top: 4px; }
 }
+
+/* Copy feedback: the button was silent, so a successful copy and a blocked one
+   looked identical. */
+.simc-export-actions button.copy-copied { color: #58d68d; border-color: #58d68d55; }
+.simc-export-actions button.copy-failed { color: #f0b232; border-color: #f0b23255; }
+/* The frame takes focus so Ctrl+A inside it selects the export, not the page. */
+.simc-export-view pre:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 1px #ffffff33;
+}
+.simc-export-view pre::selection, .simc-export-view pre *::selection {
+  background: #58d68d33;
+}
