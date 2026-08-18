@@ -31,20 +31,24 @@ const FINDER_URL = "https://questionablyepic.com/live/upgradefinder";
 //                                never considers the converted item. This one is
 //                                required: it moves the numbers the board ranks
 //                                on, so a run that cannot set it is worthless.
-//   Upgrade ALL to Max     OFF — council ranks gear as it drops, not as it would
-//                                be after crests nobody has spent yet.
+//   Upgrade ALL to Max     ON  — asked for: rank drops at what they become once
+//                                upgraded, not at the level they land on.
 //   Upgrade Vault to Max   OFF — bonus rolls and the vault are not a council
 //                                call at all.
 //
 // Read off the dialog on 2026-08-17, QE's own defaults are Auto Catalyze off,
-// Upgrade ALL to Max off, Upgrade Vault to Max ON — so the vault switch was
-// being left on and is the one this actually changes today.
+// Upgrade ALL to Max off, Upgrade Vault to Max ON, so two of the three are ours
+// to set on every run.
 //
-// The two OFF switches only add report sections; qeRaidScores reads "drop" rows
-// only, so failing to set them is untidy rather than wrong.
+// Only Auto Catalyze is required. Checked against report midrdwqdanqb, run with
+// both upgrade switches OFF: the uploaded payload still carried all three
+// sections — 37 Raid "drop" rows, 37 "max", 37 "bonus". So these two switches
+// decide what QE's own page shows, not what it uploads, and which numbers reach
+// the board is decided by qeRaidScores picking a dropType. Set them anyway, so a
+// healer reading the report by hand sees what the board ranks on.
 const DIALOG_SETTINGS = [
   { label: /auto catalyze/, want: true, required: true },
-  { label: /upgrade all to max/, want: false, required: false },
+  { label: /upgrade all to max/, want: true, required: false },
   { label: /upgrade vault to max/, want: false, required: false },
 ];
 

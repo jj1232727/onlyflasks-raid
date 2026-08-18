@@ -56,14 +56,21 @@ export function parseQeReport(payload) {
 // Each item appears up to three times, matching the three sections QE prints
 // per difficulty: "drop" is plain "Normal", the item at the level it actually
 // drops at; "max" is "Normal - Upgraded", the same item after crests; "bonus" is
-// "Normal - Upgraded Bonus Rolls", vault level. Loot council hands out the item
-// as it drops, so only "drop" rows are used — "max" credits crests the raider
-// has not spent, and bonus rolls are not a council call at all.
+// "Normal - Upgraded Bonus Rolls", vault level.
+//
+// "max" is the row to read, because it is the only one that matches the other
+// half of the board. The Raidbots droptimizer is submitted at Champion 6/6, Hero
+// 6/6 and Myth 6/6 (raidbotDifficulty in App.tsx) — every drop evaluated at the
+// top of its track — and QE's "max" rows land on exactly those item levels: 308,
+// 321, 334. Reading "drop" scored healers at the raw 292-315 an item lands on
+// while every DPS beside them was scored fully upgraded, in the same column, so
+// healers came out systematically understated. Bonus rolls stay out: the vault
+// is not a council call.
 export function qeRaidScores(report, difficulty = "normal") {
   const parsed = parseQeReport(report),
     scores = new Map();
   for (const row of parsed.results) {
-    if (row?.dropLoc !== "Raid" || row?.dropType !== "drop") continue;
+    if (row?.dropLoc !== "Raid" || row?.dropType !== "max") continue;
     if (QE_RAID_DIFFICULTY[row.dropDifficulty] !== difficulty) continue;
     const itemId = Number(row.item),
       percent = Number(row.percDiff);

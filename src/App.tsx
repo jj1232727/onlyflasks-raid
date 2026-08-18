@@ -79,7 +79,14 @@ type Raider = {
   rosterStatus?: RosterStatus;
 };
 type RosterStatus = "Main" | "Trial" | "Fill";
-type Boss = { name: string; items: Item[] };
+// raid and levels are set only for bosses outside the main instance's ladder —
+// see bossLevel and the EXTRA_RAIDS merge in scripts/build-app-data.js.
+type Boss = {
+  name: string;
+  items: Item[];
+  raid?: string;
+  levels?: Record<Difficulty, number>;
+};
 type Data = {
   raid: { raid: string; bosses: Boss[] };
   characters: Raider[];
@@ -138,6 +145,13 @@ const colors: Record<string, string> = {
   },
   tracks = { normal: "Champion", heroic: "Hero", mythic: "Myth" };
 type Difficulty = keyof typeof levels;
+// What a boss actually drops at. The table above is the ladder inside The
+// Venomous Abyss, so it only means anything for a boss's position in that raid.
+// A boss from another instance — The Tidebound Grotto is one boss on its own
+// lockout — carries its own levels, because it is not the ninth rung of a ladder
+// it was never on. The builder refuses to publish such a boss without them.
+const bossLevel = (boss: any, difficulty: Difficulty, index: number): number =>
+  boss?.levels?.[difficulty] ?? levels[difficulty][index];
 type SimState = "idle" | "submitting" | "running" | "refreshing" | "uploaded" | "stale" | "error";
 type SimReport = { difficulty: Difficulty; url: string; state: "queued" | "running" | "uploaded" | "error"; error?: string };
 const specIds: Record<string, number> = {
@@ -971,6 +985,28 @@ function qeSimFor(
   const value = report.difficulties?.[selectedDifficulty]?.[String(item.itemId)];
   return Number.isFinite(Number(value)) ? Number(value) : null;
 }
+// WoWAudit files a wishlist per instance, and this used to pin instance 80 —
+// The Venomous Abyss. Every sim for a boss in any other raid was therefore read
+// as "no sim": The Tidebound Grotto is instance 81, already simmed on all three
+// difficulties for the whole roster, and all of it was being thrown away, so
+// Nymrissa's drops ranked on item level alone.
+//
+// Match the instance the boss actually belongs to. Fall back to the encounter
+// name, then to the old pin, so a rename upstream degrades to today's behaviour
+// rather than to nothing.
+function simInstanceFor(entry: any, boss: Boss, data: Data) {
+  const instances = entry?.instances || [],
+    raidName = boss.raid || data.raid.raid;
+  return (
+    instances.find((x: any) => norm(x.name) === norm(raidName)) ||
+    instances.find((x: any) =>
+      (x.difficulties || []).some((d: any) =>
+        (d.wishlist?.encounters || []).some((e: any) => norm(e.name) === norm(boss.name)),
+      ),
+    ) ||
+    instances.find((x: any) => +x.id === 80)
+  );
+}
 function simFor(
   data: Data,
   c: Raider,
@@ -988,7 +1024,7 @@ function simFor(
   }
   const root = data.sims?.characters || [],
     entry = root.find((x: any) => +x.id === +c.id),
-    instance = entry?.instances?.find((x: any) => +x.id === 80),
+    instance = simInstanceFor(entry, boss, data),
     difficulty = instance?.difficulties?.find(
       (x: any) => x.difficulty === selectedDifficulty,
     ),
@@ -1370,7 +1406,7 @@ export default function App() {
   const model = useMemo(() => {
     if (!data) return [];
     const boss = data.raid.bosses[bossIndex],
-      expected = levels[difficulty][bossIndex],
+      expected = bossLevel(boss, difficulty, bossIndex),
       targetTrack = tracks[difficulty];
     return boss.items
       .map((item) => {
@@ -1426,7 +1462,7 @@ export default function App() {
     if (!data) return [];
     return data.raid.bosses
       .flatMap((boss, bossIndex) => {
-        const expected = levels[difficulty][bossIndex],
+        const expected = bossLevel(boss, difficulty, bossIndex),
           targetTrack = tracks[difficulty];
         return boss.items.flatMap((item) => {
           const people = data.characters
@@ -1538,7 +1574,7 @@ export default function App() {
       ...data.raid.bosses.map((raidBoss, index) => ({
         id: `boss-${index}`,
         label: raidBoss.name,
-        hint: `Boss ${index + 1} of ${data.raid.bosses.length}`,
+        hint: raidBoss.raid && raidBoss.raid !== data.raid.raid ? raidBoss.raid : `Boss ${index + 1} of ${data.raid.bosses.length}`,
         kind: "Boss",
         run: () => { setBoss(index); setView("bosses"); },
       })),
@@ -1773,7 +1809,7 @@ export default function App() {
       .map((raidBoss, bossOrder) => {
         const targetTrackOrder =
             selectedDifficulty === "mythic" ? 3 : selectedDifficulty === "heroic" ? 2 : 1,
-          expected = levels[selectedDifficulty][bossOrder];
+          expected = bossLevel(raidBoss, selectedDifficulty, bossOrder);
         const wishlistClaims: any[] = weeklyOverview.flatMap((row) =>
             row.targets
               .filter(
@@ -2129,7 +2165,7 @@ export default function App() {
               <div className="boss-target-columns"><span>#</span><span>Boss</span><span>Players</span><span>BiS gaps</span><span>Sim upgrades</span><span>Weapons / trinkets</span><span>Tier</span><span>Best sim</span></div>
               {bossAnalyticsByDifficulty[difficulty].map((row, index) => <details className="boss-target-entry" key={row.raidBoss.name}>
                 <summary className={row.claims.length ? "has-value" : "no-value"}>
-                  <b className="boss-target-rank">{index + 1}</b><span className="boss-target-name"><strong>{row.raidBoss.name}</strong><small>{row.claims.length ? "Open for loot targets" : `No ${difficulty} value`}</small></span>
+                  <b className="boss-target-rank">{index + 1}</b><span className="boss-target-name"><strong>{row.raidBoss.name}</strong><small>{row.raidBoss.raid && row.raidBoss.raid !== data.raid.raid ? `${row.raidBoss.raid} · ` : ""}{row.claims.length ? "Open for loot targets" : `No ${difficulty} value`}</small></span>
                   <b>{row.raiders.length}</b><b>{row.missing.length}</b><b className={row.simulated.length ? "sim" : "muted"}>{row.simulated.length || "—"}</b><b className={row.impact.length ? "impact" : ""}>{row.impact.length}</b><b className={row.tierPlayers ? "tier" : ""}>{row.tierPlayers}</b><b className={row.maxSim > 0 ? "sim" : "muted"}>{row.maxSim > 0 ? `+${row.maxSim.toFixed(2)}%` : "—"}</b><ChevronDown />
                 </summary>
                 {row.claims.length > 0 && <div className="boss-target-expanded">
@@ -3266,7 +3302,9 @@ export default function App() {
             </nav>
             <section className="section-head">
               <div>
-                <p className="rune">Boss {bossIndex + 1}</p>
+                {/* "Boss 9" would be a lie for a boss sitting in its own raid on
+                    its own lockout, so name the instance instead of the rung. */}
+                <p className="rune">{boss.raid && boss.raid !== data.raid.raid ? boss.raid : `Boss ${bossIndex + 1}`}</p>
                 <h2>{boss.name}</h2>
               </div>
             </section>
@@ -3298,7 +3336,7 @@ export default function App() {
                         </a>
                         <p>
                           {item.slot} <i /> {difficulty}{" "}
-                          {levels[difficulty][bossIndex]} · {tracks[difficulty]}{" "}
+                          {bossLevel(boss, difficulty, bossIndex)} · {tracks[difficulty]}{" "}
                           track
                         </p>
                       </div>
