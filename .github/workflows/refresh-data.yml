@@ -43,7 +43,25 @@ jobs:
           git add data public/loot-data.json
           if git diff --staged --quiet; then
             echo "No data changed."
-          else
-            git commit -m "Refresh raid data ($(date -u '+%Y-%m-%d %H:%M UTC'))"
-            git push
+            exit 0
           fi
+          git commit -m "Refresh raid data ($(date -u '+%Y-%m-%d %H:%M UTC'))"
+          # This job runs for a minute or two, so anything pushed meanwhile makes
+          # the push a non-fast-forward and the whole refresh fails - losing data
+          # that was fetched perfectly well. Replay onto the new tip instead.
+          #
+          # These files are regenerated in full every run, so on a conflict this
+          # commit is by definition the newer one: -X theirs keeps it (in a
+          # rebase "theirs" is the patch being applied, not the upstream). The
+          # commit only ever stages data/ and public/loot-data.json, so nothing
+          # else can be overwritten by that.
+          for attempt in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt); rebasing onto the new tip."
+            git fetch origin main
+            git rebase -X theirs origin/main || { git rebase --abort; exit 1; }
+          done
+          echo "Still could not push after three attempts."
+          exit 1
