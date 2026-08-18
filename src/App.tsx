@@ -1132,7 +1132,7 @@ export default function App() {
       Record<number, RosterStatus>
     >({}),
     [specs, setSpecs] = useState<Record<number, string>>(() =>
-      JSON.parse(localStorage.getItem("onlyflasks-board-specs-v1") || "{}"),
+      JSON.parse(localStorage.getItem("onlyflasks-board-specs-v2") || "{}"),
     ),
     [customWishlists, setCustomWishlists] = useState<Record<number, Item[]>>(
       () =>
@@ -1141,6 +1141,7 @@ export default function App() {
         ),
     ),
     [simcSnapshots, setSimcSnapshots] = useState<Record<number, any>>({}),
+    [specSaveError, setSpecSaveError] = useState(""),
     [qeReports, setQeReports] = useState<Record<string, any>>({}),
     [qeQueue, setQeQueue] = useState<Record<string, any>>({}),
     [wishlistCharacter, setWishlistCharacter] = useState<number | null>(null),
@@ -1258,6 +1259,10 @@ export default function App() {
           lists[+entry.characterId] = entry.wishlist || [];
           sharedSpecs[+entry.characterId] = entry.lootSpec;
         }
+        // An explicit pick outranks the spec a wishlist happened to be saved
+        // under, and both outrank anything cached in this browser.
+        for (const [characterId, lootSpec] of Object.entries(payload.lootSpecs || {}))
+          if (lootSpec) sharedSpecs[+characterId] = String(lootSpec);
         setRosterStatuses(payload.rosterStatuses || {});
         setSimcSnapshots(payload.simcSnapshots || {});
         setQeReports(payload.qeReports || {});
@@ -1273,7 +1278,7 @@ export default function App() {
           JSON.stringify(lists),
         );
         localStorage.setItem(
-          "onlyflasks-board-specs-v1",
+          "onlyflasks-board-specs-v2",
           JSON.stringify({ ...specs, ...sharedSpecs }),
         );
         const officerToken =
@@ -1452,6 +1457,29 @@ export default function App() {
     return result;
   }, [data, simcSnapshots]);
   const specFor = (c: Raider) => specs[c.id] || playedSpecs[c.id] || c.defaultSpec;
+  // A loot spec decides which sims the board reads, so it cannot live only in
+  // the browser that picked it - two officers would rank the same raider off
+  // different numbers and neither would see a difference. Update locally for
+  // responsiveness, then write through so every browser agrees.
+  const chooseSpec = async (c: Raider, lootSpec: string) => {
+    const next = { ...specs, [c.id]: lootSpec };
+    setSpecs(next);
+    localStorage.setItem("onlyflasks-board-specs-v2", JSON.stringify(next));
+    if (!wishlistApiUrl) return;
+    try {
+      const result = await (await fetch(wishlistApiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ action: "setLootSpec", characterId: c.id, characterName: c.name, lootSpec }),
+      })).json();
+      if (!result.ok) throw new Error(result.error || "Could not save the loot spec.");
+      setSpecSaveError("");
+    } catch (error) {
+      // Say so. A pick that silently failed to save is the divergence this is
+      // meant to remove, wearing a friendlier face.
+      setSpecSaveError(`${c.name}: loot spec saved in this browser only - ${error instanceof Error ? error.message : "the board could not reach the sheet"}`);
+    }
+  };
   const wishlistFor = (c: Raider) =>
     customWishlists[c.id] ||
     data?.bis.lists[specFor(c)]?.items ||
@@ -1976,6 +2004,16 @@ export default function App() {
             <kbd>{navigator.platform.toLowerCase().includes("mac") ? "⌘" : "Ctrl"}K</kbd>
           </button>
         </div>
+        {specSaveError && (
+          /* The whole point of writing the spec through is that every browser
+             agrees. If the write failed, this browser is now the odd one out,
+             and saying nothing would recreate the exact problem silently. */
+          <div className="shell spec-save-warning" role="alert">
+            <CircleAlert />
+            <span>{specSaveError}</span>
+            <button type="button" onClick={() => setSpecSaveError("")}>Dismiss</button>
+          </div>
+        )}
         <div className="shell nav-row">
           <nav className="app-tabs" aria-label="Board sections">
             {NAV_TABS.map((tab, index) => (
@@ -2660,7 +2698,7 @@ export default function App() {
                 setCustomWishlists(verifiedLists);
                 setSpecs((existing) => ({ ...existing, ...verifiedSpecs }));
                 localStorage.setItem("onlyflasks-custom-wishlists-v3", JSON.stringify(verifiedLists));
-                localStorage.setItem("onlyflasks-board-specs-v1", JSON.stringify({ ...specs, ...verifiedSpecs }));
+                localStorage.setItem("onlyflasks-board-specs-v2", JSON.stringify({ ...specs, ...verifiedSpecs }));
                 setSyncState("saved");
                 setTimeout(() => setSyncState("idle"), 2500);
               } catch (error) {
@@ -2959,12 +2997,7 @@ export default function App() {
                     <select
                       value={selectedSpec}
                       onChange={(e) => {
-                        const nextSpecs = { ...specs, [c.id]: e.target.value };
-                        setSpecs(nextSpecs);
-                        localStorage.setItem(
-                          "onlyflasks-board-specs-v1",
-                          JSON.stringify(nextSpecs),
-                        );
+                        void chooseSpec(c, e.target.value);
                         const nextLists = { ...customWishlists };
                         delete nextLists[c.id];
                         setCustomWishlists(nextLists);
@@ -3587,14 +3620,7 @@ export default function App() {
                     <RaiderIdentity c={c} spec={specFor(c)} status={rosterStatuses[c.id] || c.rosterStatus || "Main"} compact />
                     <select
                       value={specFor(c)}
-                      onChange={(e) => {
-                        const next = { ...specs, [c.id]: e.target.value };
-                        setSpecs(next);
-                        localStorage.setItem(
-                          "onlyflasks-board-specs-v1",
-                          JSON.stringify(next),
-                        );
-                      }}
+                      onChange={(e) => void chooseSpec(c, e.target.value)}
                     >
                       {!data.specs.includes(specFor(c)) && (
                         <option value={specFor(c)}>

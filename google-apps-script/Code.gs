@@ -25,6 +25,16 @@ const SIMC_EXPORT_HEADERS = ['characterId', 'characterName', 'lootSpec', 'simc',
 const SIMC_LOG_HEADERS = ['at', 'characterId', 'characterName', 'lootSpec', 'step', 'ok', 'detail'];
 // Oldest rows are dropped past this. Enough to cover a raid week of pastes.
 const SIMC_LOG_LIMIT = 500;
+// The loot spec a raider picked, shared.
+//
+// This used to live only in the viewer's localStorage, so "the spec they chose"
+// meant a different thing in every browser: two officers could read different
+// sims off the same board for the same raider and neither would know. A choice
+// that drives who gets loot has to be one value for everyone, like roster status
+// already is. Not officer-gated - a raider sets their own spec here, the same
+// way saveWishlist_ already accepts a lootSpec from anyone.
+const LOOT_SPEC_SHEET_NAME = 'LootSpecs';
+const LOOT_SPEC_HEADERS = ['characterId', 'characterName', 'lootSpec', 'updatedAt'];
 const OFFICER_HASH_PROPERTY = 'OFFICER_PASSPHRASE_HASH';
 const OFFICER_SESSION_SECONDS = 21600;
 const WOWAUDIT_API_KEY_PROPERTY = 'WOWAUDIT_API_KEY';
@@ -50,7 +60,7 @@ function doGet() {
       lootSpec: String(row[3] || ''), wishlist: JSON.parse(String(row[4] || '[]')),
       updatedAt: String(row[5] || ''), version: Number(row[6] || 1),
     }));
-    return json_({ ok: true, wishlists, rosterStatuses: getRosterStatuses_(), simcSnapshots: getSimcSnapshots_(), qeReports: getQeReports_(), qeQueue: getQeQueue_() });
+    return json_({ ok: true, wishlists, rosterStatuses: getRosterStatuses_(), lootSpecs: getLootSpecs_(), simcSnapshots: getSimcSnapshots_(), qeReports: getQeReports_(), qeQueue: getQeQueue_() });
   } catch (error) { return json_({ ok: false, error: String(error.message || error) }); }
 }
 
@@ -60,6 +70,7 @@ function doPost(event) {
     if (body.action === 'officerLogin') return officerLogin_(body);
     if (body.action === 'officerVerify') return json_({ ok: true, authorized: officerAuthorized_(body.token) });
     if (body.action === 'setRosterStatus') return setRosterStatus_(body);
+    if (body.action === 'setLootSpec') return setLootSpec_(body);
     if (body.action === 'submitDroptimizer') return submitDroptimizer_(body);
     if (body.action === 'checkDroptimizer') return checkDroptimizer_(body);
     if (body.action === 'getWowauditSims') return getWowauditSims_();
@@ -186,6 +197,32 @@ function setRosterStatus_(body) {
     ]]);
     return json_({ ok: true, characterId: id, status, updatedAt });
   } finally { lock.releaseLock(); }
+}
+
+function setLootSpec_(body) {
+  var id = Number(body.characterId), lootSpec = String(body.lootSpec || '').trim();
+  if (!Number.isFinite(id)) throw new Error('A valid characterId is required.');
+  if (!lootSpec) throw new Error('A loot spec is required.');
+  if (lootSpec.length > 80) throw new Error('That loot spec name is too long.');
+  var lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+  try {
+    var sheet = getLootSpecSheet_(), values = sheet.getDataRange().getValues();
+    var row = values.findIndex(function (value, index) { return index > 0 && Number(value[0]) === id; }) + 1;
+    if (!row) row = sheet.getLastRow() + 1;
+    var updatedAt = new Date().toISOString();
+    sheet.getRange(row, 1, 1, LOOT_SPEC_HEADERS.length).setValues([[
+      id, String(body.characterName || '').slice(0, 80), lootSpec, updatedAt,
+    ]]);
+    return json_({ ok: true, characterId: id, lootSpec: lootSpec, updatedAt: updatedAt });
+  } finally { lock.releaseLock(); }
+}
+
+function getLootSpecs_() {
+  return getLootSpecSheet_().getDataRange().getValues().slice(1).reduce(function (result, row) {
+    if (row[0] !== '' && String(row[2] || '')) result[String(Number(row[0]))] = String(row[2]);
+    return result;
+  }, {});
 }
 
 function saveWishlist_(body) {
@@ -532,6 +569,7 @@ function getQeSheet_() { return getOrCreateSheet_(QE_SHEET_NAME, QE_HEADERS); }
 function getQeQueueSheet_() { return getOrCreateSheet_(QE_QUEUE_SHEET_NAME, QE_QUEUE_HEADERS); }
 function getSimcExportSheet_() { return getOrCreateSheet_(SIMC_EXPORT_SHEET_NAME, SIMC_EXPORT_HEADERS); }
 function getSimcLogSheet_() { return getOrCreateSheet_(SIMC_LOG_SHEET_NAME, SIMC_LOG_HEADERS); }
+function getLootSpecSheet_() { return getOrCreateSheet_(LOOT_SPEC_SHEET_NAME, LOOT_SPEC_HEADERS); }
 function getOrCreateSheet_(name, headers) {
   const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
   let sheet = spreadsheet.getSheetByName(name);

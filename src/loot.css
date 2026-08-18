@@ -1370,3 +1370,30 @@ footer .data-freshness{width:100%}
 .boss-player-item.has-route>.gain-badges{grid-column:3;grid-row:1}
 .boss-player-item.has-route>.conversion-route{grid-column:1/-1;grid-row:2}
 }
+
+/* A loot spec that saved only in this browser. Not fatal, but it means this
+   board now disagrees with everyone else's, so it must not be quiet. */
+.spec-save-warning {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px auto;
+  padding: 10px 14px;
+  border: 1px solid #f0b23255;
+  border-radius: 10px;
+  background: #f0b2320f;
+  color: #f0b232;
+  font-size: 13px;
+  font-weight: 600;
+}
+.spec-save-warning svg { width: 16px; height: 16px; flex: none; }
+.spec-save-warning span { flex: 1; }
+.spec-save-warning button {
+  border: 1px solid #f0b23255;
+  background: transparent;
+  color: inherit;
+  border-radius: 7px;
+  padding: 4px 10px;
+  font: inherit;
+  cursor: pointer;
+}
