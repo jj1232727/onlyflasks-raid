@@ -2916,7 +2916,15 @@ export default function App() {
                         setSyncState("idle");
                       }}
                     >
-                      {!selectedSpec && <option value="">Select a loot specialization…</option>}
+                      {/* A <select> whose value matches no option still renders
+                          the first one, so an unlisted spec looks selected when
+                          it is not — the exact trap an empty spec fell into.
+                          Always carry an option for the current value. */}
+                      {!classSpecs.includes(selectedSpec) && (
+                        <option value={selectedSpec}>
+                          {selectedSpec ? `${selectedSpec} — no BiS list` : "Select a loot specialization…"}
+                        </option>
+                      )}
                       {classSpecs.map((s) => (
                         <option key={s}>{s}</option>
                       ))}
@@ -3525,6 +3533,11 @@ export default function App() {
                         );
                       }}
                     >
+                      {!data.specs.includes(specs[c.id] || c.defaultSpec) && (
+                        <option value={specs[c.id] || c.defaultSpec}>
+                          {specs[c.id] || c.defaultSpec || "Select a loot specialization…"}
+                        </option>
+                      )}
                       {data.specs
                         .filter((s) => s.endsWith(c.class))
                         .map((s) => (
