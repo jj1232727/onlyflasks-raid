@@ -87,7 +87,7 @@ const SIMS_CACHE_SECONDS = 60;
 const CACHE_CHUNK = 90000;
 // Everything else is a write, or leads to one. Over-invalidating costs a few
 // seconds of cache; under-invalidating shows someone last minute's loot data.
-const READ_ONLY_ACTIONS = ['officerVerify', 'getWowauditSims', 'getQePending', 'getSimcLog', 'getSimcExport', 'checkQeDispatch'];
+const READ_ONLY_ACTIONS = ['cacheStatus', 'officerVerify', 'getWowauditSims', 'getQePending', 'getSimcLog', 'getSimcExport', 'checkQeDispatch'];
 
 function cacheRead_(key) {
   try {
@@ -127,6 +127,17 @@ function cacheDrop_(key) {
 function invalidateBoardCache_() { cacheDrop_(BOARD_CACHE_KEY); }
 // Only an upload changes what WoWAudit will answer.
 function invalidateSimsCache_() { cacheDrop_(SIMS_CACHE_KEY); }
+
+// Latency here swings by seconds, so a hit cannot be inferred from timing.
+function cacheStatus_() {
+  var cache = CacheService.getScriptCache(), out = {};
+  [['board', BOARD_CACHE_KEY], ['sims', SIMS_CACHE_KEY]].forEach(function (pair) {
+    var count = Number(cache.get(pair[1] + ':n') || 0), held = 0;
+    for (var i = 0; i < count; i++) if (cache.get(pair[1] + ':' + i) !== null) held++;
+    out[pair[0]] = { chunks: count, present: held, usable: count > 0 && held === count };
+  });
+  return out;
+}
 
 function doGet() {
   try {
@@ -182,6 +193,7 @@ function routePost_(body) {
   if (body.action === 'setQeQueueState') return setQeQueueState_(body);
   // Diagnostic. Deliberately does NOT dispatch: doPost is public, so an action
   // that starts a workflow run is a button anyone can hold down.
+  if (body.action === 'cacheStatus') return json_({ ok: true, cache: cacheStatus_() });
   if (body.action === 'checkQeDispatch') return json_({ ok: true, dispatch: checkQeDispatchConfig_() });
   return saveWishlist_(body);
 }
@@ -726,7 +738,7 @@ function getPendingSims_() {
 // Trigger target - no underscore, so it can be selected in the editor.
 // Finishes anything Raidbots has completed that nobody uploaded.
 function drainPendingSims() {
-  var sheet = getPendingSimSheet_(), values = sheet.getDataRange().getValues(), now = Date.now(), touched = 0;
+  var sheet = getPendingSimSheet_(), values = sheet.getDataRange().getValues(), now = Date.now(), touched = 0, changed = false;
   for (var i = 1; i < values.length; i++) {
     var row = values[i];
     if (row[0] === '' || String(row[5]) !== 'pending') continue;
@@ -737,10 +749,12 @@ function drainPendingSims() {
     // someone re-pastes rather than waiting for a stranded run.
     if (supersededPendingSim_(values, i)) {
       sheet.getRange(i + 1, 6, 1, 2).setValues([['superseded', 'A newer sim for this difficulty already uploaded.']]);
+      changed = true;
       continue;
     }
     if (isFinite(submitted) && now - submitted > PENDING_SIM_GIVE_UP_MS) {
       sheet.getRange(i + 1, 6, 1, 2).setValues([['expired', 'Raidbots never produced a report.']]);
+      changed = true;
       continue;
     }
     try {
@@ -748,7 +762,7 @@ function drainPendingSims() {
       var code = report.getResponseCode();
       // 404 is the normal "still running" answer, so leave it pending.
       if (code === 404 || code === 403) continue;
-      if (code !== 200) { sheet.getRange(i + 1, 6, 1, 2).setValues([['error', 'Raidbots status ' + code]]); continue; }
+      if (code !== 200) { sheet.getRange(i + 1, 6, 1, 2).setValues([['error', 'Raidbots status ' + code]]); changed = true; continue; }
       var parsed = parseJson_(report.getContentText());
       if (parsed.error || parsed.errors || (parsed.meta && parsed.meta.error)) {
         sheet.getRange(i + 1, 6, 1, 2).setValues([['error', String(parsed.error || (parsed.meta && parsed.meta.error) || 'Simulation failed').slice(0, 300)]]);
@@ -761,9 +775,11 @@ function drainPendingSims() {
       sheet.getRange(i + 1, 6, 1, 2).setValues([['error', String(error.message || error).slice(0, 300)]]);
     }
   }
-  trimPendingSims_(sheet);
-  // Runs on a timer, so doPost's invalidation never sees it.
-  invalidateBoardCache_();
+  var settled = trimPendingSims_(sheet) || touched || changed;
+  // Runs on a timer, where doPost's invalidation never sees it - but only when
+  // it actually changed something. Dropping the cache on every tick threw away
+  // a good cache every five minutes for nothing.
+  if (settled) invalidateBoardCache_();
   if (touched) invalidateSimsCache_();
   return touched;
 }
@@ -786,14 +802,17 @@ function supersededPendingSim_(values, index) {
 function trimPendingSims_(sheet) {
   var values = sheet.getDataRange().getValues();
   var extra = values.length - 1 - PENDING_SIM_KEEP;
-  if (extra <= 0) return;
+  if (extra <= 0) return false;
+  var removed = false;
   for (var i = 1; i < values.length && extra > 0; i++) {
     if (String(values[i][5]) === 'pending') continue;
     sheet.deleteRow(i + 1);
     values.splice(i, 1);
     i--;
     extra--;
+    removed = true;
   }
+  return removed;
 }
 
 // Run once from the Apps Script editor. Safe to re-run - it replaces its own
