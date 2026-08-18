@@ -68,8 +68,70 @@ const GITHUB_REPO_PROPERTY = 'GITHUB_REPO';
 const RAIDBOTS_SUBMIT_URL = 'https://www.raidbots.com/sim';
 const RAIDBOTS_REPORT_URL = 'https://www.raidbots.com/reports/';
 
+// Caching, because every board load costs a doGet and a live WoWAudit call, and
+// twenty-five raiders refreshing on raid night multiplies both. WoWAudit
+// publishes no rate limit, so the aim is simply not to find it.
+//
+// Correctness first: a cache that can serve stale loot data is worse than a slow
+// board. So it is invalidated centrally in doPost - any action that is not on
+// the read-only list drops it - rather than by each writer remembering to. A
+// writer added later cannot forget. The TTLs are short enough to self-heal in
+// under a minute even if something does slip through, and drainPendingSims
+// drops it too since it writes outside doPost.
+const BOARD_CACHE_KEY = 'board:doGet:v1';
+const SIMS_CACHE_KEY = 'board:sims:v1';
+const BOARD_CACHE_SECONDS = 30;
+const SIMS_CACHE_SECONDS = 60;
+// CacheService caps a value at 100KB and the sims payload runs about 200KB, so
+// it is stored in chunks with a count under the base key.
+const CACHE_CHUNK = 90000;
+// Everything else is a write, or leads to one. Over-invalidating costs a few
+// seconds of cache; under-invalidating shows someone last minute's loot data.
+const READ_ONLY_ACTIONS = ['officerVerify', 'getWowauditSims', 'getQePending', 'getSimcLog', 'getSimcExport', 'checkQeDispatch'];
+
+function cacheRead_(key) {
+  try {
+    var cache = CacheService.getScriptCache();
+    var count = Number(cache.get(key + ':n') || 0);
+    if (!count) return null;
+    var parts = [];
+    for (var i = 0; i < count; i++) {
+      var part = cache.get(key + ':' + i);
+      // A chunk can expire on its own; a partial value is not a value.
+      if (part === null) return null;
+      parts.push(part);
+    }
+    return parts.join('');
+  } catch (error) { return null; }
+}
+
+function cacheWrite_(key, value, seconds) {
+  try {
+    var cache = CacheService.getScriptCache(), parts = [];
+    for (var i = 0; i < value.length; i += CACHE_CHUNK) parts.push(value.slice(i, i + CACHE_CHUNK));
+    for (var j = 0; j < parts.length; j++) cache.put(key + ':' + j, parts[j], seconds);
+    cache.put(key + ':n', String(parts.length), seconds);
+  } catch (error) { /* a cache that cannot be written is just a slow board */ }
+}
+
+function cacheDrop_(key) {
+  try {
+    var cache = CacheService.getScriptCache();
+    var count = Number(cache.get(key + ':n') || 0), keys = [key + ':n'];
+    for (var i = 0; i < count; i++) keys.push(key + ':' + i);
+    cache.removeAll(keys);
+  } catch (error) { /* best effort */ }
+}
+
+// Anything that changes what the board shows.
+function invalidateBoardCache_() { cacheDrop_(BOARD_CACHE_KEY); }
+// Only an upload changes what WoWAudit will answer.
+function invalidateSimsCache_() { cacheDrop_(SIMS_CACHE_KEY); }
+
 function doGet() {
   try {
+    var cached = cacheRead_(BOARD_CACHE_KEY);
+    if (cached) return ContentService.createTextOutput(cached).setMimeType(ContentService.MimeType.JSON);
     const sheet = getSheet_();
     const rows = sheet.getDataRange().getValues().slice(1);
     const wishlists = rows.filter(row => row[0] !== '').map(row => ({
@@ -77,36 +139,56 @@ function doGet() {
       lootSpec: String(row[3] || ''), wishlist: JSON.parse(String(row[4] || '[]')),
       updatedAt: String(row[5] || ''), version: Number(row[6] || 1),
     }));
-    return json_({ ok: true, wishlists, rosterStatuses: getRosterStatuses_(), lootSpecs: getLootSpecs_(), simcSnapshots: getSimcSnapshots_(), qeReports: getQeReports_(), qeQueue: getQeQueue_(), pendingSims: getPendingSims_() });
+    var payload = JSON.stringify({ ok: true, wishlists: wishlists, rosterStatuses: getRosterStatuses_(), lootSpecs: getLootSpecs_(), simcSnapshots: getSimcSnapshots_(), qeReports: getQeReports_(), qeQueue: getQeQueue_(), pendingSims: getPendingSims_() });
+    cacheWrite_(BOARD_CACHE_KEY, payload, BOARD_CACHE_SECONDS);
+    return ContentService.createTextOutput(payload).setMimeType(ContentService.MimeType.JSON);
   } catch (error) { return json_({ ok: false, error: String(error.message || error) }); }
 }
 
 function doPost(event) {
   try {
     const body = JSON.parse(event.postData && event.postData.contents || '{}');
-    if (body.action === 'officerLogin') return officerLogin_(body);
-    if (body.action === 'officerVerify') return json_({ ok: true, authorized: officerAuthorized_(body.token) });
-    if (body.action === 'setRosterStatus') return setRosterStatus_(body);
-    if (body.action === 'setLootSpec') return setLootSpec_(body);
-    if (body.action === 'submitDroptimizer') return submitDroptimizer_(body);
-    if (body.action === 'checkDroptimizer') return checkDroptimizer_(body);
-    if (body.action === 'getWowauditSims') return getWowauditSims_();
-    if (body.action === 'saveSimcSnapshot') return saveSimcSnapshot_(body);
-    if (body.action === 'logSimcAttempt') return logSimcAttempt_(body);
-    if (body.action === 'getSimcLog') return getSimcLog_(body);
-    if (body.action === 'getSimcExport') return getSimcExport_(body);
-    if (body.action === 'saveQeReport') return saveQeReport_(body);
-    if (body.action === 'queueQeRun') return queueQeRun_(body);
-    if (body.action === 'getQePending') return json_({ ok: true, pending: getQePending_() });
-    if (body.action === 'setQeQueueState') return setQeQueueState_(body);
-    // Diagnostic. Deliberately does NOT dispatch: doPost is public, so an action
-    // that starts a workflow run is a button anyone can hold down.
-    if (body.action === 'checkQeDispatch') return json_({ ok: true, dispatch: checkQeDispatchConfig_() });
-    return saveWishlist_(body);
+    var writes = READ_ONLY_ACTIONS.indexOf(String(body.action || '')) < 0;
+    if (!writes) return routePost_(body);
+    // Twice, deliberately. Dropping it only before the write leaves a race: a
+    // board load landing mid-write reads the old sheets and caches them, and
+    // that pre-write copy then outlives the write by the whole TTL. Dropping it
+    // again afterwards kills anything cached during the window. The finally is
+    // for the throwing case, which can still have written first.
+    invalidateBoardCache_();
+    try {
+      return routePost_(body);
+    } finally {
+      invalidateBoardCache_();
+    }
   } catch (error) { return json_({ ok: false, error: String(error.message || error) }); }
 }
 
+function routePost_(body) {
+  if (body.action === 'officerLogin') return officerLogin_(body);
+  if (body.action === 'officerVerify') return json_({ ok: true, authorized: officerAuthorized_(body.token) });
+  if (body.action === 'setRosterStatus') return setRosterStatus_(body);
+  if (body.action === 'setLootSpec') return setLootSpec_(body);
+  if (body.action === 'submitDroptimizer') return submitDroptimizer_(body);
+  if (body.action === 'checkDroptimizer') return checkDroptimizer_(body);
+  if (body.action === 'getWowauditSims') return getWowauditSims_();
+  if (body.action === 'saveSimcSnapshot') return saveSimcSnapshot_(body);
+  if (body.action === 'logSimcAttempt') return logSimcAttempt_(body);
+  if (body.action === 'getSimcLog') return getSimcLog_(body);
+  if (body.action === 'getSimcExport') return getSimcExport_(body);
+  if (body.action === 'saveQeReport') return saveQeReport_(body);
+  if (body.action === 'queueQeRun') return queueQeRun_(body);
+  if (body.action === 'getQePending') return json_({ ok: true, pending: getQePending_() });
+  if (body.action === 'setQeQueueState') return setQeQueueState_(body);
+  // Diagnostic. Deliberately does NOT dispatch: doPost is public, so an action
+  // that starts a workflow run is a button anyone can hold down.
+  if (body.action === 'checkQeDispatch') return json_({ ok: true, dispatch: checkQeDispatchConfig_() });
+  return saveWishlist_(body);
+}
+
 function getWowauditSims_() {
+  var cachedSims = cacheRead_(SIMS_CACHE_KEY);
+  if (cachedSims) return ContentService.createTextOutput(cachedSims).setMimeType(ContentService.MimeType.JSON);
   const apiKey = PropertiesService.getScriptProperties().getProperty(WOWAUDIT_API_KEY_PROPERTY);
   if (!apiKey) throw new Error('WoWAudit API access has not been configured in Apps Script.');
   const response = UrlFetchApp.fetch('https://wowaudit.com/v1/wishlists', {
@@ -114,7 +196,9 @@ function getWowauditSims_() {
   });
   const status = response.getResponseCode(), result = parseJson_(response.getContentText());
   if (status < 200 || status >= 300) throw new Error('WoWAudit refresh failed (' + status + ').');
-  return json_({ ok: true, sims: result });
+  var simsPayload = JSON.stringify({ ok: true, sims: result });
+  cacheWrite_(SIMS_CACHE_KEY, simsPayload, SIMS_CACHE_SECONDS);
+  return ContentService.createTextOutput(simsPayload).setMimeType(ContentService.MimeType.JSON);
 }
 
 function submitDroptimizer_(body) {
@@ -588,6 +672,9 @@ function wowauditUpload_(simId, characterId, characterName, configurationName, r
     var details = Array.isArray(result.base) ? result.base.join('; ') : (result.error || result.message || 'WoWAudit rejected the report.');
     throw new Error(String(details).slice(0, 240));
   }
+  // A freshly uploaded sim must not wait out the cache to appear.
+  invalidateSimsCache_();
+  invalidateBoardCache_();
   return true;
 }
 
@@ -675,6 +762,9 @@ function drainPendingSims() {
     }
   }
   trimPendingSims_(sheet);
+  // Runs on a timer, so doPost's invalidation never sees it.
+  invalidateBoardCache_();
+  if (touched) invalidateSimsCache_();
   return touched;
 }
 
