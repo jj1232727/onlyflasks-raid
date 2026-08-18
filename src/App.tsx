@@ -35,6 +35,7 @@ import {
   slot,
 } from "./gear-slots.js";
 import { playedSpec, simmedSpecsOf } from "./loot-specs.js";
+import { qeReportId, qeReportSummary, qeReportUrl } from "./qe-report.js";
 import {
   CATALYST_CURRENCIES,
   MIDNIGHT_S2_CATALYST,
@@ -1191,6 +1192,9 @@ export default function App() {
     [specSaveError, setSpecSaveError] = useState(""),
     [staleSimsError, setStaleSimsError] = useState(""),
     [pendingSims, setPendingSims] = useState<Record<string, any[]>>({}),
+    [qeLink, setQeLink] = useState(""),
+    [qeLinkState, setQeLinkState] = useState<"idle" | "saving" | "error" | "saved">("idle"),
+    [qeLinkMessage, setQeLinkMessage] = useState(""),
     [simcLog, setSimcLog] = useState<any[] | null>(null),
     [simcLogState, setSimcLogState] = useState<"idle" | "loading" | "error">("idle"),
     [simcLogError, setSimcLogError] = useState(""),
@@ -3483,6 +3487,58 @@ export default function App() {
                                   ? `Scored from your ${qeStored.spec} export, ${relativeAge(qeStored.capturedAt)}.`
                                   : "Paste your /simc above. QE is run for you."}
                         </span>
+                      </div>
+                      <div className="qe-own-report">
+                        {/* Running QE yourself takes seconds - the page is already
+                            open and it computes locally. The worker exists so a
+                            healer does not have to, not because it is faster. So
+                            take a report they ran: QE's report API is CORS-open,
+                            which is why the board can read one directly. */}
+                        <label>
+                          <small>ALREADY RAN IT? PASTE THE QE REPORT LINK</small>
+                          <div className="qe-own-row">
+                            <input
+                              type="text"
+                              value={qeLink}
+                              placeholder="https://questionablyepic.com/live/upgradereport/…"
+                              onChange={(e) => { setQeLink(e.target.value); setQeLinkState("idle"); setQeLinkMessage(""); }}
+                            />
+                            <button
+                              type="button"
+                              disabled={!qeLink.trim() || qeLinkState === "saving" || !wishlistApiUrl}
+                              onClick={async () => {
+                                setQeLinkState("saving");
+                                setQeLinkMessage("Reading the report…");
+                                try {
+                                  const id = qeReportId(qeLink.trim());
+                                  const report = qeReportSummary(await (await fetch(qeReportUrl(id))).text());
+                                  const difficulties = Object.keys(report.difficulties || {});
+                                  if (!difficulties.length) throw new Error("That report has no raid scores in it.");
+                                  if (report.character && norm(report.character) !== norm(c.name))
+                                    throw new Error(`That report is for ${report.character}, not ${c.name}.`);
+                                  const saved = await (await fetch(wishlistApiUrl, {
+                                    method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
+                                    body: JSON.stringify({ action: "saveQeReport", characterId: c.id, characterName: c.name, lootSpec: selectedSpec,
+                                      // One report is one difficulty, so name the id per difficulty the
+                                      // same way the worker does - each score keeps a link to its run.
+                                      report: { ...report, reportIds: Object.fromEntries(difficulties.map((d) => [d, id])) } }),
+                                  })).json();
+                                  if (!saved.ok) throw new Error(saved.error || "The board could not save that report.");
+                                  setQeReports((current) => ({ ...current, [String(c.id)]: saved.report }));
+                                  setQeLink("");
+                                  setQeLinkState("saved");
+                                  setQeLinkMessage(`Saved ${difficulties.join(", ")}.`);
+                                } catch (error) {
+                                  setQeLinkState("error");
+                                  setQeLinkMessage(error instanceof Error ? error.message : "Could not read that report.");
+                                }
+                              }}
+                            >
+                              {qeLinkState === "saving" ? "Reading…" : "Use it"}
+                            </button>
+                          </div>
+                          {qeLinkMessage && <em className={qeLinkState}>{qeLinkMessage}</em>}
+                        </label>
                       </div>
                       <div className="qe-difficulty-state">
                         {(["normal", "heroic", "mythic"] as Difficulty[]).map((d) => {

@@ -1492,3 +1492,27 @@ footer .data-freshness{width:100%}
 .sim-status-strip b { text-transform: uppercase; letter-spacing: .06em; font-size: 10px; }
 .sim-status-strip .busy { border-color: #76a8ff44; color: #76a8ff; }
 .sim-status-strip .bad { border-color: #ff6b6b44; color: #ff6b6b; }
+
+/* Paste a QE report you ran yourself. Instant, because QE computes locally and
+   its report API is CORS-open. */
+.qe-own-report { margin: 10px 0 12px; }
+.qe-own-report small {
+  display: block; font-size: 10px; letter-spacing: .08em;
+  color: var(--muted); font-weight: 700; margin-bottom: 5px;
+}
+.qe-own-row { display: flex; gap: 8px; }
+.qe-own-row input {
+  flex: 1; min-width: 0; background: #00000030; color: inherit;
+  border: 1px solid #ffffff1f; border-radius: 8px; padding: 7px 10px;
+  font: inherit; font-size: 12px;
+}
+.qe-own-row button {
+  border: 1px solid #ffffff26; background: transparent; color: inherit;
+  border-radius: 8px; padding: 7px 14px; font: inherit; font-size: 12px;
+  font-weight: 700; cursor: pointer;
+}
+.qe-own-row button:disabled { opacity: .45; cursor: default; }
+.qe-own-report em { display: block; margin-top: 6px; font-size: 12px; font-style: normal; }
+.qe-own-report em.error { color: #ff6b6b; }
+.qe-own-report em.saved { color: #58d68d; }
+.qe-own-report em.saving { color: var(--muted); }
