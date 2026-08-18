@@ -9,6 +9,22 @@ const ROSTER_HEADERS = ['characterId', 'characterName', 'status', 'updatedAt'];
 const SIMC_HEADERS = ['characterId', 'characterName', 'lootSpec', 'snapshotJson', 'capturedAt', 'updatedAt', 'version'];
 const QE_HEADERS = ['characterId', 'characterName', 'lootSpec', 'reportId', 'reportJson', 'capturedAt', 'updatedAt'];
 const QE_QUEUE_HEADERS = ['characterId', 'characterName', 'lootSpec', 'simc', 'requestedAt', 'state', 'error'];
+// Diagnostics. A paste that fails leaves nothing behind anywhere else: the
+// snapshot is only written on success, and a client-side failure never reaches
+// this script at all. An Elemental Shaman insisted he had simmed while the board
+// held no trace of him, and there was no way to tell a failed paste from one
+// that never happened. SimcLog answers that; SimcExports keeps what he pasted so
+// the run can be reproduced by hand.
+//
+// Neither is in doGet. The board is public and a /simc export names a character,
+// realm and full gear - same reason the QE queue keeps its simc out of the
+// payload. Reading either one needs an officer token.
+const SIMC_EXPORT_SHEET_NAME = 'SimcExports';
+const SIMC_LOG_SHEET_NAME = 'SimcLog';
+const SIMC_EXPORT_HEADERS = ['characterId', 'characterName', 'lootSpec', 'simc', 'capturedAt', 'updatedAt'];
+const SIMC_LOG_HEADERS = ['at', 'characterId', 'characterName', 'lootSpec', 'step', 'ok', 'detail'];
+// Oldest rows are dropped past this. Enough to cover a raid week of pastes.
+const SIMC_LOG_LIMIT = 500;
 const OFFICER_HASH_PROPERTY = 'OFFICER_PASSPHRASE_HASH';
 const OFFICER_SESSION_SECONDS = 21600;
 const WOWAUDIT_API_KEY_PROPERTY = 'WOWAUDIT_API_KEY';
@@ -48,6 +64,9 @@ function doPost(event) {
     if (body.action === 'checkDroptimizer') return checkDroptimizer_(body);
     if (body.action === 'getWowauditSims') return getWowauditSims_();
     if (body.action === 'saveSimcSnapshot') return saveSimcSnapshot_(body);
+    if (body.action === 'logSimcAttempt') return logSimcAttempt_(body);
+    if (body.action === 'getSimcLog') return getSimcLog_(body);
+    if (body.action === 'getSimcExport') return getSimcExport_(body);
     if (body.action === 'saveQeReport') return saveQeReport_(body);
     if (body.action === 'queueQeRun') return queueQeRun_(body);
     if (body.action === 'getQePending') return json_({ ok: true, pending: getQePending_() });
@@ -218,6 +237,9 @@ function saveSimcSnapshot_(body) {
       id, String(body.characterName).slice(0, 80), String(body.lootSpec).slice(0, 80),
       encoded, compact.capturedAt, updatedAt, 1,
     ]]);
+    // Keep the export itself when the board sends it. Never fatal: a paste must
+    // not fail because a diagnostic could not be written.
+    try { saveSimcExport_(body); } catch (error) { /* diagnostics are best effort */ }
     return json_({ ok: true, characterId: id, snapshot: compact, updatedAt });
   } finally { lock.releaseLock(); }
 }
@@ -442,11 +464,74 @@ function getRosterStatuses_() {
   }, {});
 }
 
+// Latest export per character, overwritten each paste. History lives in the log.
+function saveSimcExport_(body) {
+  var id = Number(body.characterId), simc = String(body.simc || '');
+  if (!Number.isFinite(id) || simc.length < 100) return null;
+  // A sheet cell tops out at 50000 characters, and a truncated export is worse
+  // than none - it would look reproducible and not be.
+  if (simc.length > 45000) simc = simc.slice(0, 45000);
+  var sheet = getSimcExportSheet_(), values = sheet.getDataRange().getValues();
+  var row = values.findIndex(function (value, index) { return index > 0 && Number(value[0]) === id; }) + 1;
+  if (!row) row = sheet.getLastRow() + 1;
+  var now = new Date().toISOString();
+  sheet.getRange(row, 1, 1, SIMC_EXPORT_HEADERS.length).setValues([[
+    id, String(body.characterName || '').slice(0, 80), String(body.lootSpec || '').slice(0, 80),
+    simc, String(body.capturedAt || now).slice(0, 40), now,
+  ]]);
+  return row;
+}
+
+// One row per paste attempt, success or failure. The board calls this without
+// waiting for it, so it must never throw back at the paste.
+function logSimcAttempt_(body) {
+  var id = Number(body.characterId);
+  if (!Number.isFinite(id)) throw new Error('A valid characterId is required.');
+  var sheet = getSimcLogSheet_();
+  sheet.appendRow([
+    new Date().toISOString(), id, String(body.characterName || '').slice(0, 80),
+    String(body.lootSpec || '').slice(0, 80), String(body.step || '').slice(0, 40),
+    body.ok ? 'OK' : 'FAILED', String(body.detail || '').slice(0, 500),
+  ]);
+  // Trim oldest first so the sheet cannot grow without bound.
+  var extra = sheet.getLastRow() - 1 - SIMC_LOG_LIMIT;
+  if (extra > 0) sheet.deleteRows(2, extra);
+  // A failure is exactly when the export matters, and the snapshot writer never
+  // ran to store it.
+  try { if (body.simc) saveSimcExport_(body); } catch (error) { /* best effort */ }
+  return json_({ ok: true, logged: true });
+}
+
+function getSimcLog_(body) {
+  if (!officerAuthorized_(body.token)) throw new Error('Officer session expired. Sign in again.');
+  var limit = Math.min(Math.max(Number(body.limit) || 100, 1), SIMC_LOG_LIMIT);
+  var rows = getSimcLogSheet_().getDataRange().getValues().slice(1).filter(function (row) { return row[0] !== ''; });
+  return json_({ ok: true, log: rows.slice(-limit).reverse().map(function (row) {
+    return {
+      at: String(row[0] || ''), characterId: Number(row[1]), characterName: String(row[2] || ''),
+      lootSpec: String(row[3] || ''), step: String(row[4] || ''), ok: String(row[5]) === 'OK',
+      detail: String(row[6] || ''),
+    };
+  }) });
+}
+
+function getSimcExport_(body) {
+  if (!officerAuthorized_(body.token)) throw new Error('Officer session expired. Sign in again.');
+  var id = Number(body.characterId);
+  if (!Number.isFinite(id)) throw new Error('A valid characterId is required.');
+  var values = getSimcExportSheet_().getDataRange().getValues();
+  var row = values.find(function (value, index) { return index > 0 && Number(value[0]) === id; });
+  if (!row) throw new Error('No stored /simc export for that character.');
+  return json_({ ok: true, characterId: id, characterName: String(row[1] || ''), lootSpec: String(row[2] || ''), simc: String(row[3] || ''), capturedAt: String(row[4] || ''), updatedAt: String(row[5] || '') });
+}
+
 function getSheet_() { return getOrCreateSheet_(SHEET_NAME, HEADERS); }
 function getRosterSheet_() { return getOrCreateSheet_(ROSTER_SHEET_NAME, ROSTER_HEADERS); }
 function getSimcSheet_() { return getOrCreateSheet_(SIMC_SHEET_NAME, SIMC_HEADERS); }
 function getQeSheet_() { return getOrCreateSheet_(QE_SHEET_NAME, QE_HEADERS); }
 function getQeQueueSheet_() { return getOrCreateSheet_(QE_QUEUE_SHEET_NAME, QE_QUEUE_HEADERS); }
+function getSimcExportSheet_() { return getOrCreateSheet_(SIMC_EXPORT_SHEET_NAME, SIMC_EXPORT_HEADERS); }
+function getSimcLogSheet_() { return getOrCreateSheet_(SIMC_LOG_SHEET_NAME, SIMC_LOG_HEADERS); }
 function getOrCreateSheet_(name, headers) {
   const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
   let sheet = spreadsheet.getSheetByName(name);

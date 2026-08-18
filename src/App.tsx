@@ -1007,6 +1007,39 @@ function simInstanceFor(entry: any, boss: Boss, data: Data) {
     instances.find((x: any) => +x.id === 80)
   );
 }
+// Leave a trace for every /simc paste, so "he says he simmed and the board has
+// nothing" is answerable. A failure is the case that matters and the case that
+// currently records nothing: the snapshot is only written on success, and a
+// client-side failure never reaches Apps Script at all. Send the export with a
+// failure so the attempt can be reproduced.
+//
+// Never awaited and never allowed to throw. Diagnostics must not be able to
+// break the thing they are diagnosing.
+function logSimcAttempt(
+  wishlistApiUrl: string,
+  c: Raider,
+  lootSpec: string,
+  step: string,
+  ok: boolean,
+  detail = "",
+  simc = "",
+) {
+  if (!wishlistApiUrl) return;
+  try {
+    void fetch(wishlistApiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({
+        action: "logSimcAttempt",
+        characterId: c.id, characterName: c.name, lootSpec,
+        step, ok, detail: String(detail).slice(0, 500),
+        ...(ok ? {} : { simc }),
+      }),
+    }).catch(() => {});
+  } catch {
+    /* diagnostics are best effort */
+  }
+}
 function simFor(
   data: Data,
   c: Raider,
@@ -2642,6 +2675,7 @@ export default function App() {
               if (!selectedSpec) {
                 setSimState("error");
                 setSimMessage("Pick a loot specialization first — none is selected for this character yet, even though the dropdown shows one.");
+                logSimcAttempt(wishlistApiUrl, c, "", "spec-check", false, "no loot spec selected", simcText.trim());
                 return;
               }
               const parsedSnapshot = parseSimcSnapshot(simcText.trim()),
@@ -2656,6 +2690,7 @@ export default function App() {
               if (norm(parsedSnapshot.character) !== norm(c.name)) {
                 setSimState("error");
                 setSimMessage(`This /simc export belongs to ${parsedSnapshot.character || "another character"}, not ${c.name}.`);
+                logSimcAttempt(wishlistApiUrl, c, selectedSpec, "character-check", false, `export is for ${parsedSnapshot.character || "unknown"}`, simcText.trim());
                 return;
               }
               const before = simFreshness(data.sims, c.id, simSpecName(c, selectedSpec));
@@ -2666,7 +2701,7 @@ export default function App() {
                 const snapshotResponse = await fetch(wishlistApiUrl, {
                   method: "POST",
                   headers: { "Content-Type": "text/plain;charset=utf-8" },
-                  body: JSON.stringify({ action: "saveSimcSnapshot", characterId: c.id, characterName: c.name, lootSpec: selectedSpec, snapshot }),
+                  body: JSON.stringify({ action: "saveSimcSnapshot", characterId: c.id, characterName: c.name, lootSpec: selectedSpec, snapshot, simc: simcText.trim() }),
                 });
                 const snapshotResult = await snapshotResponse.json();
                 if (!snapshotResult.ok || !snapshotResult.snapshot) {
@@ -2682,6 +2717,7 @@ export default function App() {
                     : snapshotResult.error || "Could not save the SimC audit snapshot");
                 }
                 setSimcSnapshots((existing) => ({ ...existing, [c.id]: snapshotResult.snapshot }));
+                logSimcAttempt(wishlistApiUrl, c, selectedSpec, "snapshot", true);
                 // Healers rank on QE, so three Raidbots runs would burn their
                 // time and produce numbers the board deliberately ignores. The
                 // /simc paste still matters: tier, vault, crests and bags all
@@ -2759,9 +2795,16 @@ export default function App() {
                   reportUrls: jobs.map((job) => ({ difficulty: job.difficulty, url: job.reportUrl })),
                 }));
                 await refreshLiveSims({ before, character: c, selectedSpec, attempts: 13 });
+                logSimcAttempt(wishlistApiUrl, c, selectedSpec, "submitted", true, `${jobs.length} difficulties`);
               } catch (error) {
                 setSimState("error");
-                setSimMessage(error instanceof Error ? error.message : "Simulation failed");
+                const detail = error instanceof Error ? error.message : "Simulation failed";
+                setSimMessage(detail);
+                // Everything past the snapshot lands here: the Raidbots submit,
+                // each difficulty, and the WoWAudit upload. That is exactly the
+                // stretch where a raider sees a sim run and the board still ends
+                // up with nothing.
+                logSimcAttempt(wishlistApiUrl, c, selectedSpec, "submit", false, detail, simcText.trim());
               }
             };
             const retrySimRefresh = async () => {

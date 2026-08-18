@@ -33,7 +33,8 @@
     "snapshot:icons": "node scripts/enrich-snapshot-icons.js",
     "qe:run": "node scripts/qe-run.js",
     "qe:sync": "node scripts/qe-sync.js",
-    "test": "node --test"
+    "test": "node --test",
+    "simc:log": "node scripts/check-simc-log.js"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.0.4",
