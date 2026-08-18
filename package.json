@@ -23,7 +23,7 @@
     "wowaudit:character": "node scripts/check-character-detail.js",
     "audit:activity": "node scripts/check-audit-activity.js",
     "audit:raiderio": "node scripts/check-raiderio.js",
-    "audit:refresh": "node scripts/check-roster.js --out data/roster.json && node scripts/check-gear.js --out data/gear.json && node scripts/enrich-gear-icons.js && node scripts/check-audit-activity.js && node scripts/check-raiderio.js && node scripts/enrich-snapshot-icons.js && node scripts/build-app-data.js",
+    "audit:refresh": "node scripts/check-roster.js --out data/roster.json && node scripts/check-gear.js --out data/gear.json && node scripts/enrich-gear-icons.js && node scripts/check-audit-activity.js && node scripts/check-raiderio.js && node scripts/check-wowaudit-sims.js && node scripts/enrich-snapshot-icons.js && node scripts/build-app-data.js",
     "board:refresh": "node scripts/check-wowaudit-sims.js && node scripts/build-raid-board.js",
     "raid:board": "node scripts/build-raid-board.js",
     "raid:import": "node scripts/import-raid-loot.js",

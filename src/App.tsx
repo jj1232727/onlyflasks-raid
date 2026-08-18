@@ -1049,6 +1049,15 @@ function logSimcAttempt(
 // but that copy is officer-gated because it names a character, realm and full
 // gear, and doPost is public. Reading it back into a box anyone can see would
 // undo that. This copy never leaves the machine that typed it.
+function readCustomWishlists(): Record<number, Item[]> {
+  try {
+    const parsed = JSON.parse(localStorage.getItem("onlyflasks-custom-wishlists-v3") || "{}");
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
 const SIMC_DRAFT_KEY = "onlyflasks-simc-drafts-v1";
 // A /simc export runs 10-45KB and localStorage is about 5MB, so keep only the
 // few characters someone actually pilots rather than the whole roster.
@@ -1180,6 +1189,7 @@ export default function App() {
     ),
     [simcSnapshots, setSimcSnapshots] = useState<Record<number, any>>({}),
     [specSaveError, setSpecSaveError] = useState(""),
+    [staleSimsError, setStaleSimsError] = useState(""),
     [simcLog, setSimcLog] = useState<any[] | null>(null),
     [simcLogState, setSimcLogState] = useState<"idle" | "loading" | "error">("idle"),
     [simcLogError, setSimcLogError] = useState(""),
@@ -1323,12 +1333,25 @@ export default function App() {
         fetch(url, {
           method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify({ action: "getWowauditSims" }),
-        }).then((result) => result.json()).then((result) => { if (result.ok && result.sims) setLiveSims(result.sims); }).catch(console.error);
-        setCustomWishlists(lists);
+        }).then((result) => result.json()).then((result) => {
+          if (result.ok && result.sims) setLiveSims(result.sims);
+          else throw new Error(result.error || "WoWAudit did not answer");
+        }).catch((error) => {
+          // Without this the board falls back to the sims committed in
+          // loot-data.json - hours old, and every bit as confident-looking as
+          // live ones. Loot gets handed out on those numbers, so say it.
+          console.error(error);
+          setStaleSimsError(String(error?.message || error));
+        });
+        // Merge, do not replace. The sheet is the truth for anyone who has
+        // saved, but replacing wholesale also deleted an edit that had never
+        // been saved - silently, on the next reload, with no way to notice.
+        // Server wins where the server has a row; a local-only draft survives.
+        setCustomWishlists((current) => ({ ...current, ...lists }));
         setSpecs((current) => ({ ...current, ...sharedSpecs }));
         localStorage.setItem(
           "onlyflasks-custom-wishlists-v3",
-          JSON.stringify(lists),
+          JSON.stringify({ ...readCustomWishlists(), ...lists }),
         );
         localStorage.setItem(
           "onlyflasks-board-specs-v2",
@@ -2141,6 +2164,16 @@ export default function App() {
             <kbd>{navigator.platform.toLowerCase().includes("mac") ? "⌘" : "Ctrl"}K</kbd>
           </button>
         </div>
+        {staleSimsError && (
+          <div className="shell spec-save-warning" role="alert">
+            <CircleAlert />
+            <span>
+              Live sims could not be read from WoWAudit ({staleSimsError}). The board is
+              showing the sims baked into its last data refresh, which may be hours old.
+            </span>
+            <button type="button" onClick={() => setStaleSimsError("")}>Dismiss</button>
+          </div>
+        )}
         {specSaveError && (
           /* The whole point of writing the spec through is that every browser
              agrees. If the write failed, this browser is now the odd one out,
@@ -2891,6 +2924,16 @@ export default function App() {
                 <div className="empty">No roster characters available.</div>
               );
             const selectedSpec = specFor(c);
+            // Offered only when this character really has a sim that Raidbots
+            // ran and nothing uploaded, so the button is never decorative.
+            const resumableSim = (() => {
+              try {
+                const pending = JSON.parse(localStorage.getItem("onlyflasks-pending-sim-refresh-v1") || "null");
+                return Boolean(pending && +pending.characterId === +c.id && (pending.reportUrls || []).some((job: any) => job?.simId));
+              } catch {
+                return false;
+              }
+            })();
             const classSpecs = data.specs.filter((s) => s.endsWith(c.class));
             const baseline = data.bis.lists[selectedSpec]?.items || [];
             const current = customWishlists[c.id] || baseline;
@@ -3089,7 +3132,11 @@ export default function App() {
                   characterId: c.id,
                   selectedSpec,
                   before,
-                  reportUrls: jobs.map((job) => ({ difficulty: job.difficulty, url: job.reportUrl })),
+                  // simId, not just the link. The upload to WoWAudit happens in
+                  // this tab, so closing it strands a sim that Raidbots has
+                  // already finished - and without the id there is no way to
+                  // pick it back up.
+                  reportUrls: jobs.map((job) => ({ difficulty: job.difficulty, url: job.reportUrl, simId: job.simId })),
                 }));
                 await refreshLiveSims({ before, character: c, selectedSpec, attempts: 13 });
                 logSimcAttempt(wishlistApiUrl, c, selectedSpec, "submitted", true, `${jobs.length} difficulties`);
@@ -3103,6 +3150,42 @@ export default function App() {
                 // up with nothing.
                 logSimcAttempt(wishlistApiUrl, c, selectedSpec, "submit", false, detail, simcText.trim());
               }
+            };
+            // Raidbots keeps running after the tab closes, but the upload to
+            // WoWAudit does not - it is driven from here. So a paste-and-walk-away
+            // leaves a finished sim that the board will never see. Finish it.
+            const resumeSimUpload = async () => {
+              let pending: any = null;
+              try { pending = JSON.parse(localStorage.getItem("onlyflasks-pending-sim-refresh-v1") || "null"); } catch { /* ignore damaged local state */ }
+              const jobs = (pending?.reportUrls || []).filter((job: any) => job?.simId);
+              if (!wishlistApiUrl || !pending || +pending.characterId !== +c.id || !jobs.length) return;
+              setSimState("refreshing");
+              setSimReports(jobs.map((job: any) => ({ difficulty: job.difficulty, url: job.url, state: "running" })));
+              let done = 0;
+              for (const job of jobs) {
+                const label = raidbotDifficulty[job.difficulty as Difficulty]?.label || job.difficulty;
+                setSimMessage(`${label} · finishing the upload…`);
+                try {
+                  const status = await (await fetch(wishlistApiUrl, {
+                    method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    body: JSON.stringify({ action: "checkDroptimizer", simId: job.simId, reportReady: false, upload: true,
+                      characterId: c.id, characterName: c.name, configurationName: "Single Target", replaceManualEdits: false }),
+                  })).json();
+                  if (status.ok && status.state === "uploaded") {
+                    done++;
+                    setSimReports((reports) => reports.map((r) => r.difficulty === job.difficulty ? { ...r, state: "uploaded" } : r));
+                  } else if (status.ok && status.state === "running") {
+                    setSimReports((reports) => reports.map((r) => r.difficulty === job.difficulty ? { ...r, state: "running" } : r));
+                  } else {
+                    setSimReports((reports) => reports.map((r) => r.difficulty === job.difficulty ? { ...r, state: "error", error: status.error } : r));
+                  }
+                } catch (error) {
+                  setSimReports((reports) => reports.map((r) => r.difficulty === job.difficulty ? { ...r, state: "error" } : r));
+                }
+              }
+              setSimMessage(done ? `Uploaded ${done} of ${jobs.length}. Refreshing…` : "Nothing was ready to upload yet — try again in a minute.");
+              logSimcAttempt(wishlistApiUrl, c, selectedSpec, "resume-upload", done > 0, `${done} of ${jobs.length}`);
+              await refreshLiveSims({ before: pending.before, character: c, selectedSpec, attempts: done ? 13 : 1 });
             };
             const retrySimRefresh = async () => {
               let pending: any = null;
@@ -3368,6 +3451,11 @@ export default function App() {
                     <button className="refresh-sims" disabled={!wishlistApiUrl || simState === "submitting" || simState === "running" || simState === "refreshing"} onClick={retrySimRefresh}>
                       <RefreshCw /> Refresh existing sims
                     </button>
+                    {resumableSim && (
+                      <button className="refresh-sims" disabled={!wishlistApiUrl || simState === "submitting" || simState === "running" || simState === "refreshing"} onClick={resumeSimUpload}>
+                        <RefreshCw /> Finish interrupted upload
+                      </button>
+                    )}
                     <button disabled={!wishlistApiUrl || simcText.trim().length < 100 || wrongCharacter || simState === "submitting" || simState === "running" || simState === "refreshing"} onClick={submitSim}>
                       {simState === "submitting" ? "Submitting simulations…" : simState === "running" ? "Updating simulations…" : simState === "error" ? "Retry simulation update" : simState === "uploaded" ? "Update simulations again" : simcCheck && !simcCheck.hasCurrencies && !wrongCharacter ? "Submit without crest data" : "Update my simulations"}
                     </button>
