@@ -1481,3 +1481,14 @@ footer .data-freshness{width:100%}
 .simc-export-view pre::selection, .simc-export-view pre *::selection {
   background: #58d68d33;
 }
+
+/* Sim status read from the sheet, so it survives closing the tab. */
+.sim-status-strip { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; }
+.sim-status-strip span {
+  display: inline-flex; align-items: baseline; gap: 7px;
+  border: 1px solid #ffffff1a; border-radius: 8px; padding: 5px 11px;
+  font-size: 12px; color: var(--muted);
+}
+.sim-status-strip b { text-transform: uppercase; letter-spacing: .06em; font-size: 10px; }
+.sim-status-strip .busy { border-color: #76a8ff44; color: #76a8ff; }
+.sim-status-strip .bad { border-color: #ff6b6b44; color: #ff6b6b; }

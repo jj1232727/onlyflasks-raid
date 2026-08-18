@@ -1190,6 +1190,7 @@ export default function App() {
     [simcSnapshots, setSimcSnapshots] = useState<Record<number, any>>({}),
     [specSaveError, setSpecSaveError] = useState(""),
     [staleSimsError, setStaleSimsError] = useState(""),
+    [pendingSims, setPendingSims] = useState<Record<string, any[]>>({}),
     [simcLog, setSimcLog] = useState<any[] | null>(null),
     [simcLogState, setSimcLogState] = useState<"idle" | "loading" | "error">("idle"),
     [simcLogError, setSimcLogError] = useState(""),
@@ -1297,6 +1298,7 @@ export default function App() {
           const payload = await (await fetch(wishlistApiUrl, { cache: "no-store" })).json();
           if (stopped || !payload.ok) return;
           setQeQueue(payload.qeQueue || {});
+        setPendingSims(payload.pendingSims || {});
           setQeReports(payload.qeReports || {});
         } catch {
           // A dropped poll is not worth surfacing — the next tick retries.
@@ -3402,6 +3404,23 @@ export default function App() {
                     </span>
                     <ChevronDown />
                   </summary>
+                {(pendingSims[String(c.id)] || []).filter((job: any) => job.state === "pending" || job.state === "error").length > 0 && (
+                  /* Server-side status, so it reads the same after closing the
+                     tab, refreshing, or opening the board somewhere else. The
+                     upload finishes without this page either way. */
+                  <div className="sim-status-strip">
+                    {(pendingSims[String(c.id)] || [])
+                      .filter((job: any) => job.state === "pending" || job.state === "error")
+                      .map((job: any) => (
+                        <span className={job.state === "error" ? "bad" : "busy"} key={job.simId}>
+                          <b>{String(job.difficulty || "raid").replace("raid-", "")}</b>
+                          {job.state === "error"
+                            ? `failed — ${job.error || "see the paste log"}`
+                            : `running on Raidbots since ${relativeAge(job.submittedAt)} — uploads on its own`}
+                        </span>
+                      ))}
+                  </div>
+                )}
                 <section className={`simc-panel ${simState}`}>
                   <div className="simc-panel-head">
                     <div>

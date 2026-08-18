@@ -77,7 +77,7 @@ function doGet() {
       lootSpec: String(row[3] || ''), wishlist: JSON.parse(String(row[4] || '[]')),
       updatedAt: String(row[5] || ''), version: Number(row[6] || 1),
     }));
-    return json_({ ok: true, wishlists, rosterStatuses: getRosterStatuses_(), lootSpecs: getLootSpecs_(), simcSnapshots: getSimcSnapshots_(), qeReports: getQeReports_(), qeQueue: getQeQueue_() });
+    return json_({ ok: true, wishlists, rosterStatuses: getRosterStatuses_(), lootSpecs: getLootSpecs_(), simcSnapshots: getSimcSnapshots_(), qeReports: getQeReports_(), qeQueue: getQeQueue_(), pendingSims: getPendingSims_() });
   } catch (error) { return json_({ ok: false, error: String(error.message || error) }); }
 }
 
@@ -613,6 +613,29 @@ function setPendingSimState_(simId, state, error) {
   return false;
 }
 
+// Sim status the board can read without having been the tab that started it.
+//
+// Whether a droptimizer is still running belonged in localStorage, so closing
+// the tab lost the answer as well as the upload. It is per character and per
+// difficulty, and only the states matter - the simId is already public in the
+// Raidbots report link the board shows.
+function getPendingSims_() {
+  var cutoff = Date.now() - PENDING_SIM_GIVE_UP_MS;
+  return getPendingSimSheet_().getDataRange().getValues().slice(1).reduce(function (result, row) {
+    if (row[0] === '') return result;
+    var at = Date.parse(String(row[4]));
+    // Settled rows are kept for a while for reading; only recent ones are news.
+    if (isFinite(at) && at < cutoff) return result;
+    var key = String(Number(row[0]));
+    if (!result[key]) result[key] = [];
+    result[key].push({
+      simId: String(row[2] || ''), difficulty: String(row[3] || ''),
+      submittedAt: String(row[4] || ''), state: String(row[5] || ''), error: String(row[6] || ''),
+    });
+    return result;
+  }, {});
+}
+
 // Trigger target - no underscore, so it can be selected in the editor.
 // Finishes anything Raidbots has completed that nobody uploaded.
 function drainPendingSims() {
@@ -668,7 +691,7 @@ function installPendingSimTrigger() {
   ScriptApp.getProjectTriggers().forEach(function (trigger) {
     if (trigger.getHandlerFunction() === 'drainPendingSims') ScriptApp.deleteTrigger(trigger);
   });
-  ScriptApp.newTrigger('drainPendingSims').timeBased().everyMinutes(10).create();
+  ScriptApp.newTrigger('drainPendingSims').timeBased().everyMinutes(5).create();
 }
 
 function getSheet_() { return getOrCreateSheet_(SHEET_NAME, HEADERS); }
