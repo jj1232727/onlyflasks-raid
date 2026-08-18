@@ -3174,7 +3174,16 @@ export default function App() {
               } catch (error) {
                 setSimState("error");
                 const detail = error instanceof Error ? error.message : "Simulation failed";
-                setSimMessage(detail);
+                // Once Raidbots has the jobs the board owns them: the simIds are
+                // recorded and a trigger finishes the upload whatever happens
+                // here. Twenty-five people pasting at once is exactly when this
+                // path throttles, and reporting a bare failure would send them
+                // all to re-paste - more load, for sims that were already in
+                // hand. Say which it is.
+                const submitted = simReports.length > 0;
+                setSimMessage(submitted
+                  ? `${detail} — your sims are already with Raidbots and the board will finish uploading them within 5 minutes. You can close this page; do not re-paste.`
+                  : detail);
                 // Everything past the snapshot lands here: the Raidbots submit,
                 // each difficulty, and the WoWAudit upload. That is exactly the
                 // stretch where a raider sees a sim run and the board still ends
@@ -3420,7 +3429,7 @@ export default function App() {
                           <b>{String(job.difficulty || "raid").replace("raid-", "")}</b>
                           {job.state === "error"
                             ? `failed — ${job.error || "see the paste log"}`
-                            : `running on Raidbots since ${relativeAge(job.submittedAt)} — uploads on its own`}
+                            : `with Raidbots since ${relativeAge(job.submittedAt)} — the board uploads it automatically, retrying if Raidbots is busy. Nothing to do.`}
                         </span>
                       ))}
                   </div>

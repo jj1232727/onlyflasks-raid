@@ -763,6 +763,11 @@ function drainPendingSims() {
       var code = report.getResponseCode();
       // 404 is the normal "still running" answer, so leave it pending.
       if (code === 404 || code === 403) continue;
+      // Nor is a throttle or an outage a failure. Twenty-five raiders pasting
+      // together is exactly when Raidbots pushes back, and marking those rows
+      // errored would abandon sims that were only ever going to be a minute
+      // late. Leave them pending; the give-up window is three hours.
+      if (code === 429 || code >= 500) continue;
       if (code !== 200) { sheet.getRange(i + 1, 6, 1, 2).setValues([['error', 'Raidbots status ' + code]]); changed = true; continue; }
       var parsed = parseJson_(report.getContentText());
       if (parsed.error || parsed.errors || (parsed.meta && parsed.meta.error)) {
@@ -773,7 +778,12 @@ function drainPendingSims() {
       sheet.getRange(i + 1, 6, 1, 2).setValues([['done', '']]);
       touched++;
     } catch (error) {
-      sheet.getRange(i + 1, 6, 1, 2).setValues([['error', String(error.message || error).slice(0, 300)]]);
+      var why = String(error.message || error);
+      // Transient upstream trouble keeps its turn in the queue rather than
+      // burning the row.
+      if (retryableFailure_(why)) continue;
+      sheet.getRange(i + 1, 6, 1, 2).setValues([['error', why.slice(0, 300)]]);
+      changed = true;
     }
   }
   var settled = trimPendingSims_(sheet) || touched || changed;
@@ -782,6 +792,12 @@ function drainPendingSims() {
   // a good cache every five minutes for nothing.
   if (settled) invalidateBoardCache_();
   return touched;
+}
+
+// Throttling, gateways and timeouts come back on the next tick. A rejected
+// report or a bad request will not, and should stop consuming turns.
+function retryableFailure_(message) {
+  return /\b(429|500|502|503|504)\b|timed out|timeout|rate limit|too many requests|temporarily/i.test(String(message || ''));
 }
 
 function supersededPendingSim_(values, index) {
