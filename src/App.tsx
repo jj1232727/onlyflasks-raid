@@ -1186,7 +1186,14 @@ export default function App() {
     [simcLogFailedOnly, setSimcLogFailedOnly] = useState(false),
     [qeReports, setQeReports] = useState<Record<string, any>>({}),
     [qeQueue, setQeQueue] = useState<Record<string, any>>({}),
-    [wishlistCharacter, setWishlistCharacter] = useState<number | null>(null),
+    // Which character the wishlist panel is on. Persisted, because resetting to
+    // data.characters[0] on every reload meant a raider came back to someone
+    // else's empty panel - and it made keeping the pasted /simc pointless, since
+    // the box you returned to was never the box you pasted into.
+    [wishlistCharacter, setWishlistCharacter] = useState<number | null>(() => {
+      const stored = Number(localStorage.getItem("onlyflasks-wishlist-character") || "");
+      return Number.isFinite(stored) && stored > 0 ? stored : null;
+    }),
     [wishlistApiUrl, setWishlistApiUrl] = useState(""),
     [officerUnlocked, setOfficerUnlocked] = useState(false),
     [officerPrompt, setOfficerPrompt] = useState(false),
@@ -3073,6 +3080,7 @@ export default function App() {
                         value={c.id}
                         onChange={(e) => {
                           setWishlistCharacter(+e.target.value);
+                          localStorage.setItem("onlyflasks-wishlist-character", e.target.value);
                           setSimcText(readSimcDrafts()[String(+e.target.value)] || "");
                           setSimState("idle");
                           setSimMessage("");
