@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-17T22:18:17.697Z",
+  "fetchedAt": "2026-08-18T00:53:56.880Z",
   "periodInfo": {
     "current_period": 1076,
     "current_season": {
@@ -316,11 +316,11 @@
           },
           "dungeon": {
             "0": {
-              "ilvl": 279,
+              "ilvl": 289,
               "track": "Veteran"
             },
             "1": {
-              "ilvl": 292,
+              "ilvl": 302,
               "track": "Champion"
             },
             "2": {
@@ -422,6 +422,7 @@
             "thumbnailUrl": null,
             "tileUrl": "https://data.wowaudit.com/img/the-venomous-abyss.webp",
             "expansion": "Midnight",
+            "orderInSeason": 1,
             "encounters": [
               {
                 "id": 16824,
@@ -565,6 +566,7 @@
             "thumbnailUrl": null,
             "tileUrl": "https://data.wowaudit.com/img/the-tidebound-grotto.webp",
             "expansion": "Midnight",
+            "orderInSeason": 0,
             "encounters": [
               {
                 "id": 16832,
@@ -610,14 +612,14 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": 292,
-            "option_2": 292,
-            "option_3": 292
+            "option_1": 302,
+            "option_2": 302,
+            "option_3": 302
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_1": 298,
+            "option_2": 298,
+            "option_3": 298
           }
         }
       }
@@ -637,9 +639,9 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": 292,
-            "option_2": 292,
-            "option_3": 292
+            "option_1": 302,
+            "option_2": 302,
+            "option_3": 302
           },
           "world": {
             "option_1": 305,
@@ -826,12 +828,12 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": 292,
-            "option_2": 292,
-            "option_3": 292
+            "option_1": 302,
+            "option_2": 302,
+            "option_3": 302
           },
           "world": {
-            "option_1": 302,
+            "option_1": 298,
             "option_2": 292,
             "option_3": null
           }
@@ -860,6 +862,33 @@
           "world": {
             "option_1": 305,
             "option_2": 305,
+            "option_3": 298
+          }
+        }
+      }
+    },
+    {
+      "id": 5067865,
+      "name": "Zynszn",
+      "realm": "Zul'jin",
+      "data": {
+        "dungeons_done": [],
+        "world_quests_done": 11,
+        "regular_mythic_dungeons_done": 8,
+        "vault_options": {
+          "raids": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          },
+          "dungeons": {
+            "option_1": 302,
+            "option_2": 302,
+            "option_3": 302
+          },
+          "world": {
+            "option_1": 298,
+            "option_2": 298,
             "option_3": 298
           }
         }
@@ -1150,13 +1179,13 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": 292,
-            "option_2": 292,
-            "option_3": 292
+            "option_1": 302,
+            "option_2": 302,
+            "option_3": 302
           },
           "world": {
-            "option_1": 305,
-            "option_2": 302,
+            "option_1": 298,
+            "option_2": 298,
             "option_3": 292
           }
         }
@@ -1204,9 +1233,9 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": 292,
-            "option_2": 292,
-            "option_3": 292
+            "option_1": 302,
+            "option_2": 302,
+            "option_3": 302
           },
           "world": {
             "option_1": 305,
@@ -1231,14 +1260,14 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": 292,
-            "option_2": 292,
-            "option_3": 292
+            "option_1": 302,
+            "option_2": 302,
+            "option_3": 302
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_1": 298,
+            "option_2": 298,
+            "option_3": 298
           }
         }
       }
