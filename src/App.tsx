@@ -2601,7 +2601,10 @@ export default function App() {
                       </div>
                     ))}
                   </div>
-                  <TierResourceSnapshot info={{ catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, bagTier, bagBases, crests, crestsMissing, snapshotAt }} visuals={visualItems} icons={data.itemIcons || {}} />
+                  {/* Tier view: only what can become tier. A vault full of trinkets and
+                      weapons is worth seeing, but not here - the audit view shows
+                      the whole vault, this one answers "can I complete a set". */}
+                  <TierResourceSnapshot info={{ catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther: [], bagTier, bagBases, crests, crestsMissing, snapshotAt }} visuals={visualItems} icons={data.itemIcons || {}} />
                 </div>
               ))}
             </div>
@@ -3038,15 +3041,16 @@ export default function App() {
                 logSimcAttempt(wishlistApiUrl, c, "", "spec-check", false, "no loot spec selected", simcText.trim());
                 return;
               }
+              // Store the whole vault and bags, and let each view decide what it
+              // cares about. This used to filter to tier slots here, at capture,
+              // which threw the rest away permanently - so the audit view could
+              // never show a full vault, and vaultOther below was always empty
+              // however it was rendered. Filtering belongs at display; discarding
+              // at capture cannot be undone.
+              //
+              // Apps Script still caps this: 50 bag items, 20 vault, 45KB total.
               const parsedSnapshot = parseSimcSnapshot(simcText.trim()),
-                tierSlots = new Set(["HEAD", "SHOULDER", "CHEST", "HANDS", "LEGS"]),
-                tierIds = new Set(baseline.flatMap((item) => [Number(item.itemId), Number(item.sourceItemId || 0)]).filter(Boolean)),
-                tierEvidence = (item: Item) => tierSlots.has(slot(item.slot)) && (currentSeasonTrackOrder(item) > 0 || tierIds.has(+item.itemId)),
-                snapshot = {
-                  ...parsedSnapshot,
-                  bags: parsedSnapshot.bags.filter(tierEvidence),
-                  vault: parsedSnapshot.vault.filter(tierEvidence),
-                };
+                snapshot = parsedSnapshot;
               if (norm(parsedSnapshot.character) !== norm(c.name)) {
                 setSimState("error");
                 setSimMessage(`This /simc export belongs to ${parsedSnapshot.character || "another character"}, not ${c.name}.`);
