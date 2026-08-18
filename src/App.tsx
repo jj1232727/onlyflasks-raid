@@ -2634,6 +2634,16 @@ export default function App() {
               wrongCharacter = Boolean(simcCheck?.character && norm(simcCheck.character) !== norm(c.name));
             const submitSim = async () => {
               if (!wishlistApiUrl || !simcText.trim()) return;
+              // A <select> whose value matches no option still DISPLAYS the first
+              // one, so a character with no default spec looks configured while
+              // selectedSpec is "". That reached Apps Script as an empty lootSpec
+              // and came back as a validation error the code below then blamed on
+              // an outdated deployment. Catch it here, where the cause is known.
+              if (!selectedSpec) {
+                setSimState("error");
+                setSimMessage("Pick a loot specialization first — none is selected for this character yet, even though the dropdown shows one.");
+                return;
+              }
               const parsedSnapshot = parseSimcSnapshot(simcText.trim()),
                 tierSlots = new Set(["HEAD", "SHOULDER", "CHEST", "HANDS", "LEGS"]),
                 tierIds = new Set(baseline.flatMap((item) => [Number(item.itemId), Number(item.sourceItemId || 0)]).filter(Boolean)),
@@ -2660,7 +2670,13 @@ export default function App() {
                 });
                 const snapshotResult = await snapshotResponse.json();
                 if (!snapshotResult.ok || !snapshotResult.snapshot) {
-                  const deploymentMissing = /character identity|wishlist must contain/i.test(String(snapshotResult.error || ""));
+                  // Only saveWishlist_ says these, and doPost falls through to it
+                  // for an action the deployment does not have. saveSimcSnapshot_'s
+                  // own complaint is "Character identity, lootSpec, and snapshot
+                  // are required." — one word apart, and it used to match here, so
+                  // any thin payload to a perfectly current deployment was reported
+                  // as an outdated one. Match the fallthrough, not the prefix.
+                  const deploymentMissing = /character identity and lootSpec are required|wishlist must contain/i.test(String(snapshotResult.error || ""));
                   throw new Error(deploymentMissing
                     ? "The Google Apps Script deployment is outdated and does not support SimC audit snapshots yet."
                     : snapshotResult.error || "Could not save the SimC audit snapshot");
@@ -2900,6 +2916,7 @@ export default function App() {
                         setSyncState("idle");
                       }}
                     >
+                      {!selectedSpec && <option value="">Select a loot specialization…</option>}
                       {classSpecs.map((s) => (
                         <option key={s}>{s}</option>
                       ))}

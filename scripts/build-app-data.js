@@ -13,7 +13,13 @@ for(const boss of extra)if(!boss.levels?.normal||!boss.levels?.heroic||!boss.lev
 // is a silent hole in every "what is worth running" view. Say so loudly.
 if(!extra.length)throw new Error("Refusing to write public/loot-data.json: no bosses came back for the extra raids. Run \"npm run season:loot\" — data/season-loot.json is the source for them.");
 raid.bosses=[...raid.bosses,...extra];
-const defaults={"Evoker|Heal":"Preservation Evoker","Druid|Ranged":"Balance Druid","Druid|Heal":"Restoration Druid","Monk|Heal":"Mistweaver Monk","Mage|Ranged":"Arcane Mage","Warrior|Melee":"Fury Warrior","Warrior|Tank":"Protection Warrior","Hunter|Ranged":"Beast Mastery Hunter","Hunter|Melee":"Survival Hunter","Demon Hunter|Ranged":"Devourer Demon Hunter","Paladin|Melee":"Retribution Paladin","Paladin|Heal":"Holy Paladin","Warlock|Ranged":"Destruction Warlock","Death Knight|Melee":"Frost Death Knight","Death Knight|Tank":"Blood Death Knight","Shaman|Heal":"Restoration Shaman","Rogue|Melee":"Assassination Rogue","Priest|Heal":"Holy Priest"},byId=new Map(gear.characters.map(x=>[x.character.wowauditId,x.equipment]));
+// Every class/role the roster can produce. A combo missing from here left the
+// character with defaultSpec "", and the loot-spec dropdown still DISPLAYS its
+// first option, so the panel looked configured while selectedSpec was empty —
+// the paste then failed on an Apps Script validation the board misreported as
+// an outdated deployment. Hit by Elemental Shaman (Shaman|Ranged) and
+// Protection Paladin (Paladin|Tank). Keep this exhaustive.
+const defaults={"Warrior|Melee":"Fury Warrior","Warrior|Tank":"Protection Warrior","Paladin|Melee":"Retribution Paladin","Paladin|Heal":"Holy Paladin","Paladin|Tank":"Protection Paladin","Hunter|Ranged":"Beast Mastery Hunter","Hunter|Melee":"Survival Hunter","Rogue|Melee":"Assassination Rogue","Priest|Heal":"Holy Priest","Priest|Ranged":"Shadow Priest","Death Knight|Melee":"Frost Death Knight","Death Knight|Tank":"Blood Death Knight","Shaman|Heal":"Restoration Shaman","Shaman|Ranged":"Elemental Shaman","Shaman|Melee":"Enhancement Shaman","Mage|Ranged":"Arcane Mage","Warlock|Ranged":"Destruction Warlock","Monk|Heal":"Mistweaver Monk","Monk|Melee":"Windwalker Monk","Monk|Tank":"Brewmaster Monk","Druid|Ranged":"Balance Druid","Druid|Heal":"Restoration Druid","Druid|Melee":"Feral Druid","Druid|Tank":"Guardian Druid","Demon Hunter|Ranged":"Devourer Demon Hunter","Demon Hunter|Melee":"Havoc Demon Hunter","Demon Hunter|Tank":"Vengeance Demon Hunter","Evoker|Heal":"Preservation Evoker","Evoker|Ranged":"Devastation Evoker"},byId=new Map(gear.characters.map(x=>[x.character.wowauditId,x.equipment]));
 const statusFor=c=>/fill/i.test(`${c.rank} ${c.raw?.note||""}`)?"Fill":/trial/i.test(`${c.rank} ${c.raw?.note||""}`)?"Trial":"Main";
 const characters=roster.characters.map(({raw,...c})=>({...c,rosterStatus:statusFor({...c,raw}),defaultSpec:defaults[`${c.class}|${c.role}`]||"",equipment:(byId.get(c.id)||[]).map(({raw:itemRaw,...i})=>{const crafted=(i.bonusList||[]).includes(12214),effect=itemRaw?.spells?.[0]?.spell?.name,secondaryStats=(itemRaw?.stats||[]).filter(stat=>/CRIT|HASTE|MASTERY|VERSATILITY/.test(stat.type?.type||"")).map(stat=>({type:stat.type.type,value:Number(stat.value||0)}));return{...i,secondaryStats,isWeapon:itemRaw?.item_class?.id===2,crafted,embellished:Boolean(crafted&&effect),...(crafted&&effect?{embellishmentName:effect}:{})}})}));
 // public/loot-data.json has two producers: CI on a schedule, and a developer
@@ -48,6 +54,11 @@ if(empty.length)throw new Error(`Refusing to write public/loot-data.json: ${empt
 // Icons are a separate enrichment pass over gear.json. Skipping it does not
 // break the build, it just renders every equipped item as a question mark, so
 // the failure is invisible until someone looks at the site.
+// A character with no defaultSpec reaches the board with an empty loot spec,
+// and the failure only shows up when they paste a /simc and it is rejected.
+// Name them here instead, where CI logs it.
+const unmapped=characters.filter(c=>!c.defaultSpec);
+if(unmapped.length)console.warn(`Warning: no default loot spec for ${unmapped.map(c=>`${c.name} (${c.class}|${c.role})`).join(", ")}. Add the class|role to the defaults map in scripts/build-app-data.js.`);
 const wornItems=characters.flatMap(c=>c.equipment),wornWithIcon=wornItems.filter(i=>i.icon).length;
 if(wornItems.length&&!wornWithIcon)throw new Error(`Refusing to write public/loot-data.json: none of ${wornItems.length} equipped items have an icon. Run "npm run gear:icons" after check-gear.js.`);
 if(wornWithIcon<wornItems.length)console.warn(`Warning: ${wornItems.length-wornWithIcon} of ${wornItems.length} equipped items have no icon.`);
