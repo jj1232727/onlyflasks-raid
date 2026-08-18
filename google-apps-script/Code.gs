@@ -35,6 +35,20 @@ const SIMC_LOG_LIMIT = 500;
 // way saveWishlist_ already accepts a lootSpec from anyone.
 const LOOT_SPEC_SHEET_NAME = 'LootSpecs';
 const LOOT_SPEC_HEADERS = ['characterId', 'characterName', 'lootSpec', 'updatedAt'];
+// Droptimizers that Raidbots is running.
+//
+// The submit and the upload are both done here, but nothing here decides WHEN:
+// the page polls Raidbots and then asks for the upload. Close the tab and the
+// sim finishes on Raidbots and is never fetched, so it never reaches WoWAudit
+// and the board never sees it. A time trigger drains this sheet and finishes
+// those, which is the only part that has to survive the tab.
+//
+// The page still does its own upload while it is open - that path is seconds
+// faster and unchanged - and clears its row when it succeeds.
+const PENDING_SIM_SHEET_NAME = 'PendingSims';
+const PENDING_SIM_HEADERS = ['characterId', 'characterName', 'simId', 'difficulty', 'submittedAt', 'state', 'error'];
+// Raidbots finishes in about a minute. Well past that it is not coming.
+const PENDING_SIM_GIVE_UP_MS = 3 * 60 * 60 * 1000;
 const OFFICER_HASH_PROPERTY = 'OFFICER_PASSPHRASE_HASH';
 const OFFICER_SESSION_SECONDS = 21600;
 const WOWAUDIT_API_KEY_PROPERTY = 'WOWAUDIT_API_KEY';
@@ -114,6 +128,8 @@ function submitDroptimizer_(body) {
   if (status < 200 || status >= 300 || !result.simId) {
     throw new Error('Raidbots submission failed (' + status + '): ' + String(result.error || result.message || response.getContentText()).slice(0, 240));
   }
+  // Never fatal: a sim that ran is worth more than a tidy queue.
+  try { recordPendingSim_(body, String(result.simId)); } catch (error) { /* best effort */ }
   return json_({ ok: true, jobId: String(result.jobId || ''), simId: String(result.simId), reportUrl: 'https://www.raidbots.com/simbot/report/' + result.simId });
 }
 
@@ -132,25 +148,8 @@ function checkDroptimizer_(body) {
   if (!body.upload) return json_({ ok: true, state: 'complete', simId: simId });
   const apiKey = PropertiesService.getScriptProperties().getProperty(WOWAUDIT_API_KEY_PROPERTY);
   if (!apiKey) throw new Error('WoWAudit API access has not been configured in Apps Script.');
-  const uploadPayload = {
-    report_id: simId,
-    character_id: Number(body.characterId),
-    character_name: String(body.characterName || '').slice(0, 80),
-    configuration_name: String(body.configurationName || 'Single Target').slice(0, 80),
-    replace_manual_edits: Boolean(body.replaceManualEdits),
-  };
-  const uploadResponse = UrlFetchApp.fetch('https://wowaudit.com/v1/wishlists', {
-    method: 'post', contentType: 'application/json', muteHttpExceptions: true,
-    headers: { Authorization: 'Bearer ' + apiKey }, payload: JSON.stringify(uploadPayload),
-  });
-  const uploadStatus = uploadResponse.getResponseCode(), uploadResult = parseJson_(uploadResponse.getContentText());
-  if (uploadStatus < 200 || uploadStatus >= 300) {
-    throw new Error('WoWAudit upload failed (' + uploadStatus + '): ' + String(uploadResult.error || uploadResult.message || uploadResponse.getContentText()).slice(0, 240));
-  }
-  if (uploadResult.created === false) {
-    const details = Array.isArray(uploadResult.base) ? uploadResult.base.join('; ') : (uploadResult.error || uploadResult.message || 'WoWAudit rejected the report.');
-    throw new Error(String(details).slice(0, 240));
-  }
+  wowauditUpload_(simId, body.characterId, body.characterName, body.configurationName, body.replaceManualEdits);
+  try { setPendingSimState_(simId, 'done', ''); } catch (error) { /* best effort */ }
   return json_({ ok: true, state: 'uploaded', simId: simId, reportUrl: 'https://www.raidbots.com/simbot/report/' + simId });
 }
 
@@ -562,6 +561,97 @@ function getSimcExport_(body) {
   return json_({ ok: true, characterId: id, characterName: String(row[1] || ''), lootSpec: String(row[2] || ''), simc: String(row[3] || ''), capturedAt: String(row[4] || ''), updatedAt: String(row[5] || '') });
 }
 
+// One place both the page and the trigger push a finished report from, so they
+// cannot drift into uploading it two different ways.
+function wowauditUpload_(simId, characterId, characterName, configurationName, replaceManualEdits) {
+  var apiKey = PropertiesService.getScriptProperties().getProperty(WOWAUDIT_API_KEY_PROPERTY);
+  if (!apiKey) throw new Error('WoWAudit API access has not been configured in Apps Script.');
+  var response = UrlFetchApp.fetch('https://wowaudit.com/v1/wishlists', {
+    method: 'post', contentType: 'application/json', muteHttpExceptions: true,
+    headers: { Authorization: 'Bearer ' + apiKey },
+    payload: JSON.stringify({
+      report_id: simId,
+      character_id: Number(characterId),
+      character_name: String(characterName || '').slice(0, 80),
+      configuration_name: String(configurationName || 'Single Target').slice(0, 80),
+      replace_manual_edits: Boolean(replaceManualEdits),
+    }),
+  });
+  var status = response.getResponseCode(), result = parseJson_(response.getContentText());
+  if (status < 200 || status >= 300) {
+    throw new Error('WoWAudit upload failed (' + status + '): ' + String(result.error || result.message || response.getContentText()).slice(0, 240));
+  }
+  if (result.created === false) {
+    var details = Array.isArray(result.base) ? result.base.join('; ') : (result.error || result.message || 'WoWAudit rejected the report.');
+    throw new Error(String(details).slice(0, 240));
+  }
+  return true;
+}
+
+function recordPendingSim_(body, simId) {
+  var id = Number(body.characterId);
+  if (!Number.isFinite(id) || !simId) return;
+  var sheet = getPendingSimSheet_();
+  sheet.appendRow([
+    id, String(body.characterName || '').slice(0, 80), simId,
+    String((body.payload && body.payload.droptimizer && body.payload.droptimizer.difficulty) || '').slice(0, 40),
+    new Date().toISOString(), 'pending', '',
+  ]);
+}
+
+function setPendingSimState_(simId, state, error) {
+  var sheet = getPendingSimSheet_(), values = sheet.getDataRange().getValues();
+  for (var i = 1; i < values.length; i++) {
+    if (String(values[i][2]) === String(simId)) {
+      sheet.getRange(i + 1, 6, 1, 2).setValues([[state, String(error || '').slice(0, 300)]]);
+      return true;
+    }
+  }
+  return false;
+}
+
+// Trigger target - no underscore, so it can be selected in the editor.
+// Finishes anything Raidbots has completed that nobody uploaded.
+function drainPendingSims() {
+  var sheet = getPendingSimSheet_(), values = sheet.getDataRange().getValues(), now = Date.now(), touched = 0;
+  for (var i = 1; i < values.length; i++) {
+    var row = values[i];
+    if (row[0] === '' || String(row[5]) !== 'pending') continue;
+    var simId = String(row[2]), submitted = Date.parse(String(row[4]));
+    if (isFinite(submitted) && now - submitted > PENDING_SIM_GIVE_UP_MS) {
+      sheet.getRange(i + 1, 6, 1, 2).setValues([['expired', 'Raidbots never produced a report.']]);
+      continue;
+    }
+    try {
+      var report = UrlFetchApp.fetch(RAIDBOTS_REPORT_URL + encodeURIComponent(simId) + '/data.json', { muteHttpExceptions: true });
+      var code = report.getResponseCode();
+      // 404 is the normal "still running" answer, so leave it pending.
+      if (code === 404 || code === 403) continue;
+      if (code !== 200) { sheet.getRange(i + 1, 6, 1, 2).setValues([['error', 'Raidbots status ' + code]]); continue; }
+      var parsed = parseJson_(report.getContentText());
+      if (parsed.error || parsed.errors || (parsed.meta && parsed.meta.error)) {
+        sheet.getRange(i + 1, 6, 1, 2).setValues([['error', String(parsed.error || (parsed.meta && parsed.meta.error) || 'Simulation failed').slice(0, 300)]]);
+        continue;
+      }
+      wowauditUpload_(simId, row[0], row[1], 'Single Target', false);
+      sheet.getRange(i + 1, 6, 1, 2).setValues([['done', '']]);
+      touched++;
+    } catch (error) {
+      sheet.getRange(i + 1, 6, 1, 2).setValues([['error', String(error.message || error).slice(0, 300)]]);
+    }
+  }
+  return touched;
+}
+
+// Run once from the Apps Script editor. Safe to re-run - it replaces its own
+// trigger rather than stacking another one.
+function installPendingSimTrigger() {
+  ScriptApp.getProjectTriggers().forEach(function (trigger) {
+    if (trigger.getHandlerFunction() === 'drainPendingSims') ScriptApp.deleteTrigger(trigger);
+  });
+  ScriptApp.newTrigger('drainPendingSims').timeBased().everyMinutes(10).create();
+}
+
 function getSheet_() { return getOrCreateSheet_(SHEET_NAME, HEADERS); }
 function getRosterSheet_() { return getOrCreateSheet_(ROSTER_SHEET_NAME, ROSTER_HEADERS); }
 function getSimcSheet_() { return getOrCreateSheet_(SIMC_SHEET_NAME, SIMC_HEADERS); }
@@ -570,6 +660,7 @@ function getQeQueueSheet_() { return getOrCreateSheet_(QE_QUEUE_SHEET_NAME, QE_Q
 function getSimcExportSheet_() { return getOrCreateSheet_(SIMC_EXPORT_SHEET_NAME, SIMC_EXPORT_HEADERS); }
 function getSimcLogSheet_() { return getOrCreateSheet_(SIMC_LOG_SHEET_NAME, SIMC_LOG_HEADERS); }
 function getLootSpecSheet_() { return getOrCreateSheet_(LOOT_SPEC_SHEET_NAME, LOOT_SPEC_HEADERS); }
+function getPendingSimSheet_() { return getOrCreateSheet_(PENDING_SIM_SHEET_NAME, PENDING_SIM_HEADERS); }
 function getOrCreateSheet_(name, headers) {
   const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
   let sheet = spreadsheet.getSheetByName(name);
