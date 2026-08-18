@@ -1451,8 +1451,32 @@ export default function App() {
     simResumeAttempted.current = true;
     setWishlistCharacter(character.id);
     if (Array.isArray(pending.reportUrls))
-      setSimReports(pending.reportUrls.map((report: any) => ({ ...report, state: "uploaded" })));
-    void refreshLiveSims({ before: pending.before, character, selectedSpec: pending.selectedSpec, attempts: 13 });
+      setSimReports(pending.reportUrls.map((report: any) => ({ ...report, state: "running" })));
+    // Finish the upload, do not just watch for it.
+    //
+    // Raidbots keeps running after a refresh but the upload is driven from this
+    // page, so a reload used to sit here polling WoWAudit for a report nobody
+    // had pushed - it would never arrive, and the only way out was a button.
+    // The reload already knows which sims are outstanding; ask for them.
+    void (async () => {
+      const jobs = (pending.reportUrls || []).filter((job: any) => job?.simId);
+      for (const job of jobs) {
+        try {
+          const status = await (await fetch(wishlistApiUrl, {
+            method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify({ action: "checkDroptimizer", simId: job.simId, reportReady: false, upload: true,
+              characterId: character.id, characterName: character.name, configurationName: "Single Target", replaceManualEdits: false }),
+          })).json();
+          setSimReports((reports) => reports.map((report) => report.difficulty === job.difficulty
+            ? { ...report, state: status.ok && status.state === "uploaded" ? "uploaded" : status.ok && status.state === "running" ? "running" : "error", error: status.error }
+            : report));
+        } catch {
+          // Still worth refreshing below: another difficulty may have landed,
+          // and the 10-minute trigger is behind this either way.
+        }
+      }
+      await refreshLiveSims({ before: pending.before, character, selectedSpec: pending.selectedSpec, attempts: 13 });
+    })();
   }, [wishlistApiUrl, data]);
   // Restore the pasted export on a reload, for whichever character the panel
   // will land on - it resolves that inside JSX, so mirror the same fallback
