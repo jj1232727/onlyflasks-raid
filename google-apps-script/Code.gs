@@ -644,6 +644,14 @@ function drainPendingSims() {
     var row = values[i];
     if (row[0] === '' || String(row[5]) !== 'pending') continue;
     var simId = String(row[2]), submitted = Date.parse(String(row[4]));
+    // A newer sim for the same character and difficulty already landed, so this
+    // one is not late - it is stale. Uploading it would replace good data with
+    // older data, which is worse than never finishing it. Happens whenever
+    // someone re-pastes rather than waiting for a stranded run.
+    if (supersededPendingSim_(values, i)) {
+      sheet.getRange(i + 1, 6, 1, 2).setValues([['superseded', 'A newer sim for this difficulty already uploaded.']]);
+      continue;
+    }
     if (isFinite(submitted) && now - submitted > PENDING_SIM_GIVE_UP_MS) {
       sheet.getRange(i + 1, 6, 1, 2).setValues([['expired', 'Raidbots never produced a report.']]);
       continue;
@@ -668,6 +676,19 @@ function drainPendingSims() {
   }
   trimPendingSims_(sheet);
   return touched;
+}
+
+function supersededPendingSim_(values, index) {
+  var row = values[index], at = Date.parse(String(row[4]));
+  if (!isFinite(at)) return false;
+  for (var j = 1; j < values.length; j++) {
+    if (j === index || values[j][0] === '') continue;
+    if (Number(values[j][0]) !== Number(row[0])) continue;
+    if (String(values[j][3]) !== String(row[3])) continue;
+    var other = Date.parse(String(values[j][4]));
+    if (String(values[j][5]) === 'done' && isFinite(other) && other > at) return true;
+  }
+  return false;
 }
 
 // Oldest settled rows first. Anything still pending is left alone, whatever its
