@@ -2948,16 +2948,6 @@ export default function App() {
                 <div className="empty">No roster characters available.</div>
               );
             const selectedSpec = specFor(c);
-            // Offered only when this character really has a sim that Raidbots
-            // ran and nothing uploaded, so the button is never decorative.
-            const resumableSim = (() => {
-              try {
-                const pending = JSON.parse(localStorage.getItem("onlyflasks-pending-sim-refresh-v1") || "null");
-                return Boolean(pending && +pending.characterId === +c.id && (pending.reportUrls || []).some((job: any) => job?.simId));
-              } catch {
-                return false;
-              }
-            })();
             const classSpecs = data.specs.filter((s) => s.endsWith(c.class));
             const baseline = data.bis.lists[selectedSpec]?.items || [];
             const current = customWishlists[c.id] || baseline;
@@ -3185,42 +3175,6 @@ export default function App() {
                 // up with nothing.
                 logSimcAttempt(wishlistApiUrl, c, selectedSpec, "submit", false, detail, simcText.trim());
               }
-            };
-            // Raidbots keeps running after the tab closes, but the upload to
-            // WoWAudit does not - it is driven from here. So a paste-and-walk-away
-            // leaves a finished sim that the board will never see. Finish it.
-            const resumeSimUpload = async () => {
-              let pending: any = null;
-              try { pending = JSON.parse(localStorage.getItem("onlyflasks-pending-sim-refresh-v1") || "null"); } catch { /* ignore damaged local state */ }
-              const jobs = (pending?.reportUrls || []).filter((job: any) => job?.simId);
-              if (!wishlistApiUrl || !pending || +pending.characterId !== +c.id || !jobs.length) return;
-              setSimState("refreshing");
-              setSimReports(jobs.map((job: any) => ({ difficulty: job.difficulty, url: job.url, state: "running" })));
-              let done = 0;
-              for (const job of jobs) {
-                const label = raidbotDifficulty[job.difficulty as Difficulty]?.label || job.difficulty;
-                setSimMessage(`${label} · finishing the upload…`);
-                try {
-                  const status = await (await fetch(wishlistApiUrl, {
-                    method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
-                    body: JSON.stringify({ action: "checkDroptimizer", simId: job.simId, reportReady: false, upload: true,
-                      characterId: c.id, characterName: c.name, configurationName: "Single Target", replaceManualEdits: false }),
-                  })).json();
-                  if (status.ok && status.state === "uploaded") {
-                    done++;
-                    setSimReports((reports) => reports.map((r) => r.difficulty === job.difficulty ? { ...r, state: "uploaded" } : r));
-                  } else if (status.ok && status.state === "running") {
-                    setSimReports((reports) => reports.map((r) => r.difficulty === job.difficulty ? { ...r, state: "running" } : r));
-                  } else {
-                    setSimReports((reports) => reports.map((r) => r.difficulty === job.difficulty ? { ...r, state: "error", error: status.error } : r));
-                  }
-                } catch (error) {
-                  setSimReports((reports) => reports.map((r) => r.difficulty === job.difficulty ? { ...r, state: "error" } : r));
-                }
-              }
-              setSimMessage(done ? `Uploaded ${done} of ${jobs.length}. Refreshing…` : "Nothing was ready to upload yet — try again in a minute.");
-              logSimcAttempt(wishlistApiUrl, c, selectedSpec, "resume-upload", done > 0, `${done} of ${jobs.length}`);
-              await refreshLiveSims({ before: pending.before, character: c, selectedSpec, attempts: done ? 13 : 1 });
             };
             const retrySimRefresh = async () => {
               let pending: any = null;
@@ -3486,11 +3440,6 @@ export default function App() {
                     <button className="refresh-sims" disabled={!wishlistApiUrl || simState === "submitting" || simState === "running" || simState === "refreshing"} onClick={retrySimRefresh}>
                       <RefreshCw /> Refresh existing sims
                     </button>
-                    {resumableSim && (
-                      <button className="refresh-sims" disabled={!wishlistApiUrl || simState === "submitting" || simState === "running" || simState === "refreshing"} onClick={resumeSimUpload}>
-                        <RefreshCw /> Finish interrupted upload
-                      </button>
-                    )}
                     <button disabled={!wishlistApiUrl || simcText.trim().length < 100 || wrongCharacter || simState === "submitting" || simState === "running" || simState === "refreshing"} onClick={submitSim}>
                       {simState === "submitting" ? "Submitting simulations…" : simState === "running" ? "Updating simulations…" : simState === "error" ? "Retry simulation update" : simState === "uploaded" ? "Update simulations again" : simcCheck && !simcCheck.hasCurrencies && !wrongCharacter ? "Submit without crest data" : "Update my simulations"}
                     </button>
