@@ -68,9 +68,12 @@ const GITHUB_REPO_PROPERTY = 'GITHUB_REPO';
 const RAIDBOTS_SUBMIT_URL = 'https://www.raidbots.com/sim';
 const RAIDBOTS_REPORT_URL = 'https://www.raidbots.com/reports/';
 
-// Caching, because every board load costs a doGet and a live WoWAudit call, and
-// twenty-five raiders refreshing on raid night multiplies both. WoWAudit
-// publishes no rate limit, so the aim is simply not to find it.
+// Caching for doGet only. Every board load reads eight sheets, about five
+// seconds of it, and Apps Script runs at most thirty executions at once - so
+// twenty-five raiders opening the board together is the real ceiling, not any
+// API limit.
+//
+// The WoWAudit read is deliberately NOT cached; see getWowauditSims_.
 //
 // Correctness first: a cache that can serve stale loot data is worse than a slow
 // board. So it is invalidated centrally in doPost - any action that is not on
@@ -79,11 +82,10 @@ const RAIDBOTS_REPORT_URL = 'https://www.raidbots.com/reports/';
 // under a minute even if something does slip through, and drainPendingSims
 // drops it too since it writes outside doPost.
 const BOARD_CACHE_KEY = 'board:doGet:v1';
-const SIMS_CACHE_KEY = 'board:sims:v1';
 const BOARD_CACHE_SECONDS = 30;
-const SIMS_CACHE_SECONDS = 60;
-// CacheService caps a value at 100KB and the sims payload runs about 200KB, so
-// it is stored in chunks with a count under the base key.
+// CacheService caps a value at 100KB. The board payload is about 34KB so it
+// fits in one, but the chunking stays: it costs nothing at this size and the
+// payload only grows.
 const CACHE_CHUNK = 90000;
 // Everything else is a write, or leads to one. Over-invalidating costs a few
 // seconds of cache; under-invalidating shows someone last minute's loot data.
@@ -125,13 +127,11 @@ function cacheDrop_(key) {
 
 // Anything that changes what the board shows.
 function invalidateBoardCache_() { cacheDrop_(BOARD_CACHE_KEY); }
-// Only an upload changes what WoWAudit will answer.
-function invalidateSimsCache_() { cacheDrop_(SIMS_CACHE_KEY); }
 
 // Latency here swings by seconds, so a hit cannot be inferred from timing.
 function cacheStatus_() {
   var cache = CacheService.getScriptCache(), out = {};
-  [['board', BOARD_CACHE_KEY], ['sims', SIMS_CACHE_KEY]].forEach(function (pair) {
+  [['board', BOARD_CACHE_KEY]].forEach(function (pair) {
     var count = Number(cache.get(pair[1] + ':n') || 0), held = 0;
     for (var i = 0; i < count; i++) if (cache.get(pair[1] + ':' + i) !== null) held++;
     out[pair[0]] = { chunks: count, present: held, usable: count > 0 && held === count };
@@ -198,9 +198,12 @@ function routePost_(body) {
   return saveWishlist_(body);
 }
 
+// Always live, never cached. WoWAudit serves this from their own scheduled
+// syncs, so a read is cheap for them and no published limit is close - and this
+// is the number loot is handed out on. Caching it bought a little latency on a
+// call that is mostly Apps Script overhead anyway, in exchange for a window
+// where the board could show a sim that had already been replaced.
 function getWowauditSims_() {
-  var cachedSims = cacheRead_(SIMS_CACHE_KEY);
-  if (cachedSims) return ContentService.createTextOutput(cachedSims).setMimeType(ContentService.MimeType.JSON);
   const apiKey = PropertiesService.getScriptProperties().getProperty(WOWAUDIT_API_KEY_PROPERTY);
   if (!apiKey) throw new Error('WoWAudit API access has not been configured in Apps Script.');
   const response = UrlFetchApp.fetch('https://wowaudit.com/v1/wishlists', {
@@ -208,9 +211,7 @@ function getWowauditSims_() {
   });
   const status = response.getResponseCode(), result = parseJson_(response.getContentText());
   if (status < 200 || status >= 300) throw new Error('WoWAudit refresh failed (' + status + ').');
-  var simsPayload = JSON.stringify({ ok: true, sims: result });
-  cacheWrite_(SIMS_CACHE_KEY, simsPayload, SIMS_CACHE_SECONDS);
-  return ContentService.createTextOutput(simsPayload).setMimeType(ContentService.MimeType.JSON);
+  return json_({ ok: true, sims: result });
 }
 
 function submitDroptimizer_(body) {
@@ -684,8 +685,8 @@ function wowauditUpload_(simId, characterId, characterName, configurationName, r
     var details = Array.isArray(result.base) ? result.base.join('; ') : (result.error || result.message || 'WoWAudit rejected the report.');
     throw new Error(String(details).slice(0, 240));
   }
-  // A freshly uploaded sim must not wait out the cache to appear.
-  invalidateSimsCache_();
+  // The board reads sims live, so an upload is visible immediately. Only the
+  // doGet payload needs dropping.
   invalidateBoardCache_();
   return true;
 }
@@ -780,7 +781,6 @@ function drainPendingSims() {
   // it actually changed something. Dropping the cache on every tick threw away
   // a good cache every five minutes for nothing.
   if (settled) invalidateBoardCache_();
-  if (touched) invalidateSimsCache_();
   return touched;
 }
 
