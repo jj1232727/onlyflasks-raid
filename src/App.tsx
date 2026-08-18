@@ -1184,6 +1184,9 @@ export default function App() {
     [simcLogState, setSimcLogState] = useState<"idle" | "loading" | "error">("idle"),
     [simcLogError, setSimcLogError] = useState(""),
     [simcLogFailedOnly, setSimcLogFailedOnly] = useState(false),
+    [simcExport, setSimcExport] = useState<any>(null),
+    [simcExportState, setSimcExportState] = useState<"idle" | "loading" | "error">("idle"),
+    [simcExportError, setSimcExportError] = useState(""),
     [qeReports, setQeReports] = useState<Record<string, any>>({}),
     [qeQueue, setQeQueue] = useState<Record<string, any>>({}),
     // Which character the wishlist panel is on. Persisted, because resetting to
@@ -1439,6 +1442,33 @@ export default function App() {
   // names a character, realm and full gear and doPost is public - so the board
   // reads it with the session it already holds, rather than sending anyone to a
   // terminal to answer "did he actually sim?".
+  // The stored /simc behind a log row. Saving the export is only half of a
+  // diagnostic - the log says which step broke, and this says what it broke on.
+  //
+  // Latest paste per character, not per row: a failure overwrites the export
+  // too, so capturedAt is shown to make clear which paste this actually is.
+  const loadSimcExport = async (characterId: number, characterName: string) => {
+    const token = localStorage.getItem("onlyflasks-officer-session") || "";
+    if (!wishlistApiUrl || !token) return;
+    setSimcExportState("loading");
+    setSimcExportError("");
+    setSimcExport({ characterName, pending: true });
+    try {
+      const payload = await (await fetch(wishlistApiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ action: "getSimcExport", token, characterId }),
+      })).json();
+      if (!payload.ok) throw new Error(payload.error || "Could not read the stored export.");
+      setSimcExport(payload);
+      setSimcExportState("idle");
+    } catch (error) {
+      setSimcExportState("error");
+      setSimcExport(null);
+      setSimcExportError(error instanceof Error ? error.message : "Could not read the stored export.");
+    }
+  };
+
   const loadSimcLog = async () => {
     const token = localStorage.getItem("onlyflasks-officer-session") || "";
     if (!wishlistApiUrl || !token) return;
@@ -2591,7 +2621,7 @@ export default function App() {
                     if (!rows.length) return <p className="muted">No failures recorded.</p>;
                     return (
                       <div className="simc-log-rows">
-                        <div className="simc-log-head"><span>When</span><span>Raider</span><span>Loot spec</span><span>Step</span><span>Result</span><span>Detail</span></div>
+                        <div className="simc-log-head"><span>When</span><span>Raider</span><span>Loot spec</span><span>Step</span><span>Result</span><span>Detail</span><span>Export</span></div>
                         {rows.map((row, index) => (
                           <div className={`simc-log-row ${row.ok ? "ok" : "failed"}`} key={`${row.at}-${index}`}>
                             <span>{String(row.at).replace("T", " ").slice(0, 19)}</span>
@@ -2600,11 +2630,41 @@ export default function App() {
                             <span>{row.step}</span>
                             <span>{row.ok ? "OK" : "FAILED"}</span>
                             <span title={row.detail}>{row.detail}</span>
+                            <button
+                              type="button"
+                              className="simc-log-export"
+                              title={`Show the /simc stored for ${row.characterName}`}
+                              onClick={() => void loadSimcExport(row.characterId, row.characterName)}
+                            >
+                              /simc
+                            </button>
                           </div>
                         ))}
                       </div>
                     );
                   })()}
+                  {simcExportState === "error" && <p className="simc-log-error">{simcExportError}</p>}
+                  {simcExport && (
+                    <div className="simc-export-view">
+                      <div className="simc-export-head">
+                        <strong>{simcExport.characterName}</strong>
+                        {simcExport.pending ? (
+                          <small>Loading…</small>
+                        ) : (
+                          <small>
+                            {simcExport.lootSpec || "(no spec)"} · captured {String(simcExport.capturedAt || "").replace("T", " ").slice(0, 19)} · {(simcExport.simc || "").length.toLocaleString()} chars
+                          </small>
+                        )}
+                        <span className="simc-export-actions">
+                          {!simcExport.pending && (
+                            <button type="button" onClick={() => void navigator.clipboard?.writeText(simcExport.simc || "")}>Copy</button>
+                          )}
+                          <button type="button" onClick={() => { setSimcExport(null); setSimcExportError(""); }}>Close</button>
+                        </span>
+                      </div>
+                      {!simcExport.pending && <pre>{simcExport.simc}</pre>}
+                    </div>
+                  )}
                 </div>
               </details>
               </>
