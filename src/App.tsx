@@ -1041,6 +1041,44 @@ function logSimcAttempt(
     /* diagnostics are best effort */
   }
 }
+// The pasted /simc stays in the box, the way Raidbots' own droptimizer keeps it.
+// Re-pasting is the annoying part of re-simming, and someone who submits a stale
+// export has made a normal mistake with a normal fix.
+//
+// Kept in this browser only, deliberately: the export is stored server-side too,
+// but that copy is officer-gated because it names a character, realm and full
+// gear, and doPost is public. Reading it back into a box anyone can see would
+// undo that. This copy never leaves the machine that typed it.
+const SIMC_DRAFT_KEY = "onlyflasks-simc-drafts-v1";
+// A /simc export runs 10-45KB and localStorage is about 5MB, so keep only the
+// few characters someone actually pilots rather than the whole roster.
+const SIMC_DRAFT_LIMIT = 5;
+
+function readSimcDrafts(): Record<string, string> {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(SIMC_DRAFT_KEY) || "{}");
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function writeSimcDraft(characterId: number, text: string) {
+  const drafts = readSimcDrafts();
+  if (text.trim()) drafts[String(characterId)] = text;
+  else delete drafts[String(characterId)];
+  // Most recent last, so the oldest fall off the front.
+  const keys = Object.keys(drafts);
+  for (const key of keys.slice(0, Math.max(0, keys.length - SIMC_DRAFT_LIMIT))) delete drafts[key];
+  try {
+    localStorage.setItem(SIMC_DRAFT_KEY, JSON.stringify(drafts));
+  } catch {
+    // Out of quota: drop everything but this one rather than losing the paste
+    // in hand.
+    try { localStorage.setItem(SIMC_DRAFT_KEY, JSON.stringify(text.trim() ? { [String(characterId)]: text } : {})); } catch { /* give up quietly */ }
+  }
+}
+
 function simFor(
   data: Data,
   c: Raider,
@@ -1382,6 +1420,14 @@ export default function App() {
       setSimReports(pending.reportUrls.map((report: any) => ({ ...report, state: "uploaded" })));
     void refreshLiveSims({ before: pending.before, character, selectedSpec: pending.selectedSpec, attempts: 13 });
   }, [wishlistApiUrl, data]);
+  // Restore the pasted export on a reload, for whichever character the panel
+  // will land on - it resolves that inside JSX, so mirror the same fallback
+  // here. Only fills an empty box, so it can never overwrite live typing.
+  const panelCharacterId = wishlistCharacter ?? data?.characters?.[0]?.id ?? null;
+  useEffect(() => {
+    if (panelCharacterId === null) return;
+    setSimcText((current) => current || readSimcDrafts()[String(panelCharacterId)] || "");
+  }, [panelCharacterId]);
   // Every /simc paste and what became of it. Officer-gated, because an export
   // names a character, realm and full gear and doPost is public - so the board
   // reads it with the session it already holds, rather than sending anyone to a
@@ -3027,7 +3073,7 @@ export default function App() {
                         value={c.id}
                         onChange={(e) => {
                           setWishlistCharacter(+e.target.value);
-                          setSimcText("");
+                          setSimcText(readSimcDrafts()[String(+e.target.value)] || "");
                           setSimState("idle");
                           setSimMessage("");
                           setSimReports([]);
@@ -3078,7 +3124,11 @@ export default function App() {
                           "onlyflasks-custom-wishlists-v3",
                           JSON.stringify(nextLists),
                         );
+                        // This one really does clear: the panel is asking for a
+                        // fresh export for the new spec, so leaving the old one
+                        // in the box would be arguing with itself.
                         setSimcText("");
+                        writeSimcDraft(c.id, "");
                         setSimState("idle");
                         setSimMessage("This loot spec needs its own simulations. Save the wishlist, then paste a fresh /simc export.");
                         setSimReports([]);
@@ -3170,7 +3220,7 @@ export default function App() {
                   </div>
                   <textarea
                     value={simcText}
-                    onChange={(e) => setSimcText(e.target.value)}
+                    onChange={(e) => { setSimcText(e.target.value); writeSimcDraft(c.id, e.target.value); }}
                     placeholder={'hunter="Character"\nlevel=90\n…'}
                     aria-label="SimulationCraft export"
                   />
