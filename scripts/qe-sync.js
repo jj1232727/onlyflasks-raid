@@ -24,7 +24,7 @@ const config = JSON.parse(await readFile("public/app-config.json", "utf8"));
 const api = String(config.wishlistApiUrl || "").trim();
 if (!api) { console.error("No wishlistApiUrl in public/app-config.json."); process.exit(2); }
 
-const post = async (payload, attempt = 1) => {
+const post = async (payload, expect = null, attempt = 1) => {
   const response = await fetch(api, {
     method: "POST",
     headers: { "Content-Type": "text/plain;charset=utf-8" },
@@ -39,7 +39,7 @@ const post = async (payload, attempt = 1) => {
   if (!text.trimStart().startsWith("{")) {
     if (attempt < 3) {
       await new Promise((resolve) => setTimeout(resolve, attempt * 4000));
-      return post(payload, attempt + 1);
+      return post(payload, expect, attempt + 1);
     }
     throw new Error(`Apps Script returned ${response.status} and a non-JSON body (${text.trim().slice(0, 120)}...). It is usually mid-deployment; try again shortly.`);
   }
@@ -51,10 +51,21 @@ const post = async (payload, attempt = 1) => {
       throw new Error("The Apps Script deployment does not have the QE actions yet. Re-deploy google-apps-script/Code.gs, then run this again.");
     throw new Error(result.error || "Apps Script rejected the request.");
   }
+  // ok:true with the payload missing has happened twice, transiently - and the
+  // caller then died on "Cannot read properties of undefined", which names
+  // neither the action nor the cause. Treat a missing field like a missing
+  // body: wait, retry, and if it sticks say which action came back hollow.
+  if (expect && result[expect] === undefined) {
+    if (attempt < 3) {
+      await new Promise((resolve) => setTimeout(resolve, attempt * 4000));
+      return post(payload, expect, attempt + 1);
+    }
+    throw new Error(`Apps Script answered ok but without "${expect}" for ${payload.action}. Re-deploy google-apps-script/Code.gs if this persists.`);
+  }
   return result;
 };
 
-const { pending } = await post({ action: "getQePending" });
+const { pending } = await post({ action: "getQePending" }, "pending");
 if (values.count) { console.log(pending.length); process.exit(0); }
 if (!pending.length) { console.log("Nothing queued."); process.exit(0); }
 console.log(`${pending.length} healer${pending.length === 1 ? "" : "s"} queued.`);
