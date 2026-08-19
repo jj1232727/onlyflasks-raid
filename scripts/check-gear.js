@@ -56,9 +56,23 @@ try {
   const outputPath = resolve(values.out ?? "data/gear.json");
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, `${JSON.stringify(snapshot, null, 2)}\n`, { encoding: "utf8", mode: 0o600 });
-  const succeeded = results.filter((result) => result.status === "ok").length;
+  const succeeded = results.filter((result) => result.status === "ok").length,
+    missed = results.filter((result) => result.status !== "ok");
   console.log(`Saved equipment for ${succeeded}/${results.length} characters to ${outputPath}`);
-  if (succeeded !== results.length) process.exitCode = 1;
+  // A rename, a transfer or a deleted character 404s here forever, and this used
+  // to exit non-zero for it - which stops the && chain in audit:refresh, so no
+  // icons, no activity, no Raider.IO and no rebuild. One stale roster entry
+  // froze the whole board's data for hours.
+  //
+  // Missing a few is a roster problem to fix at leisure; missing all of them is
+  // credentials or an outage, and that should still fail loudly.
+  if (missed.length) {
+    console.warn(`Warning: no equipment for ${missed.map((x) => `${x.character.name}-${x.character.realm} (${x.error})`).join(", ")}. Fix the roster entry, or remove them from WoWAudit.`);
+  }
+  if (!succeeded) {
+    console.error("No character returned equipment at all - check BLIZZARD_CLIENT_ID/SECRET and the Blizzard API status.");
+    process.exitCode = 1;
+  }
 } catch (error) {
   console.error(error.message);
   process.exitCode = 1;

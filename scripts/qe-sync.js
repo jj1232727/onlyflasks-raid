@@ -24,14 +24,26 @@ const config = JSON.parse(await readFile("public/app-config.json", "utf8"));
 const api = String(config.wishlistApiUrl || "").trim();
 if (!api) { console.error("No wishlistApiUrl in public/app-config.json."); process.exit(2); }
 
-const post = async (payload) => {
+const post = async (payload, attempt = 1) => {
   const response = await fetch(api, {
     method: "POST",
     headers: { "Content-Type": "text/plain;charset=utf-8" },
     body: JSON.stringify(payload),
     redirect: "follow",
   });
-  const result = await response.json();
+  const text = await response.text();
+  // Apps Script answers with an HTML error page while a deployment is being
+  // replaced, and calling .json() on that threw "Unexpected token '<'" - which
+  // failed the whole workflow and said nothing about why. It is transient, so
+  // wait it out before giving up, and if it persists say what actually arrived.
+  if (!text.trimStart().startsWith("{")) {
+    if (attempt < 3) {
+      await new Promise((resolve) => setTimeout(resolve, attempt * 4000));
+      return post(payload, attempt + 1);
+    }
+    throw new Error(`Apps Script returned ${response.status} and a non-JSON body (${text.trim().slice(0, 120)}...). It is usually mid-deployment; try again shortly.`);
+  }
+  const result = JSON.parse(text);
   if (!result.ok) {
     // An Apps Script without these actions falls through to the wishlist
     // writer, which complains about fields this payload never had.
