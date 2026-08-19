@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-19T08:30:23.002Z",
+  "fetchedAt": "2026-08-19T10:23:50.537Z",
   "characters": [
     {
       "id": 5454087,
@@ -3613,7 +3613,7 @@
       "id": 5067865,
       "name": "Zynszn",
       "status": "ok",
-      "lastCrawledAt": "2026-08-18T06:50:53.000Z",
+      "lastCrawledAt": "2026-08-19T09:46:58.000Z",
       "profileUrl": "https://raider.io/characters/us/zuljin/Zynszn",
       "weeklyRuns": [
         {
@@ -4501,7 +4501,7 @@
       "id": 20303172,
       "name": "Mazzshiesty",
       "status": "ok",
-      "lastCrawledAt": "2026-08-19T06:42:53.000Z",
+      "lastCrawledAt": "2026-08-19T09:46:59.000Z",
       "profileUrl": "https://raider.io/characters/us/zuljin/Mazzshiesty",
       "weeklyRuns": [
         {
@@ -5959,7 +5959,7 @@
       "id": 4910785,
       "name": "Magicalsauce",
       "status": "ok",
-      "lastCrawledAt": "2026-08-18T20:04:02.000Z",
+      "lastCrawledAt": "2026-08-19T10:06:07.000Z",
       "profileUrl": "https://raider.io/characters/us/stormrage/Magicalsauce",
       "weeklyRuns": [
         {
@@ -6179,6 +6179,60 @@
           "role": "dps"
         },
         {
+          "dungeon": "Altar of Fangs",
+          "short_name": "AOF",
+          "mythic_level": 10,
+          "completed_at": "2026-08-19T01:36:55.000Z",
+          "clear_time_ms": 1697517,
+          "keystone_run_id": 170017,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 1,
+          "map_challenge_mode_id": 588,
+          "zone_id": 16865,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
+          "score": 322.2,
+          "affixes": [
+            {
+              "id": 162,
+              "name": "Xal'atath's Bargain: Pulsar",
+              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+              "icon": "inv_cosmicvoid_nova",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+              "wowhead_url": "https://wowhead.com/affix=162"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/170017-10-altar-of-fangs",
+          "spec": {
+            "id": 62,
+            "name": "Arcane",
+            "slug": "arcane",
+            "class_id": 8,
+            "role": "dps",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "dps"
+        },
+        {
           "dungeon": "Kings' Rest",
           "short_name": "KR",
           "mythic_level": 10,
@@ -6220,6 +6274,60 @@
             }
           ],
           "url": "https://raider.io/mythic-plus-runs/season-mn-2/111502-10-kings-rest",
+          "spec": {
+            "id": 62,
+            "name": "Arcane",
+            "slug": "arcane",
+            "class_id": 8,
+            "role": "dps",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "Den of Nalorakk",
+          "short_name": "DON",
+          "mythic_level": 10,
+          "completed_at": "2026-08-19T03:28:01.000Z",
+          "clear_time_ms": 2109539,
+          "keystone_run_id": 181150,
+          "par_time_ms": 1920999,
+          "num_keystone_upgrades": 0,
+          "map_challenge_mode_id": 586,
+          "zone_id": 16368,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_proveyourworth.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/den-of-nalorakk.jpg",
+          "score": 301.3,
+          "affixes": [
+            {
+              "id": 162,
+              "name": "Xal'atath's Bargain: Pulsar",
+              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+              "icon": "inv_cosmicvoid_nova",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+              "wowhead_url": "https://wowhead.com/affix=162"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/181150-10-den-of-nalorakk",
           "spec": {
             "id": 62,
             "name": "Arcane",
@@ -6369,35 +6477,6 @@
             "ordinal": 0
           },
           "role": "dps"
-        },
-        {
-          "dungeon": "Kings' Rest",
-          "short_name": "KR",
-          "mythic_level": 2,
-          "completed_at": "2026-08-18T17:57:38.000Z",
-          "clear_time_ms": 795544,
-          "keystone_run_id": 13290,
-          "par_time_ms": 1980999,
-          "num_keystone_upgrades": 3,
-          "map_challenge_mode_id": 249,
-          "zone_id": 9526,
-          "zone_expansion_id": 7,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
-          "score": 170,
-          "affixes": [],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/13290-2-kings-rest",
-          "spec": {
-            "id": 62,
-            "name": "Arcane",
-            "slug": "arcane",
-            "class_id": 8,
-            "role": "dps",
-            "is_melee": false,
-            "patch": "1.0.0",
-            "ordinal": 0
-          },
-          "role": "dps"
         }
       ],
       "raidProgression": {
@@ -6481,7 +6560,7 @@
       "id": 8698491,
       "name": "Aeoñ",
       "status": "ok",
-      "lastCrawledAt": "2026-08-19T07:44:53.000Z",
+      "lastCrawledAt": "2026-08-19T09:32:01.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Aeoñ",
       "weeklyRuns": [
         {
@@ -6941,7 +7020,7 @@
       "id": 20149133,
       "name": "Randomblade",
       "status": "ok",
-      "lastCrawledAt": "2026-08-18T22:20:17.000Z",
+      "lastCrawledAt": "2026-08-19T10:05:59.000Z",
       "profileUrl": "https://raider.io/characters/us/stormrage/Randomblade",
       "weeklyRuns": [
         {
@@ -8605,6 +8684,60 @@
           "role": "healer"
         },
         {
+          "dungeon": "Den of Nalorakk",
+          "short_name": "DON",
+          "mythic_level": 10,
+          "completed_at": "2026-08-19T03:28:01.000Z",
+          "clear_time_ms": 2109539,
+          "keystone_run_id": 181150,
+          "par_time_ms": 1920999,
+          "num_keystone_upgrades": 0,
+          "map_challenge_mode_id": 586,
+          "zone_id": 16368,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_proveyourworth.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/den-of-nalorakk.jpg",
+          "score": 301.3,
+          "affixes": [
+            {
+              "id": 162,
+              "name": "Xal'atath's Bargain: Pulsar",
+              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+              "icon": "inv_cosmicvoid_nova",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+              "wowhead_url": "https://wowhead.com/affix=162"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/181150-10-den-of-nalorakk",
+          "spec": {
+            "id": 258,
+            "name": "Shadow",
+            "slug": "shadow",
+            "class_id": 5,
+            "role": "dps",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 2
+          },
+          "role": "dps"
+        },
+        {
           "dungeon": "The Blinding Vale",
           "short_name": "BV",
           "mythic_level": 9,
@@ -9037,7 +9170,7 @@
       "id": 4329634,
       "name": "Brïdgess",
       "status": "ok",
-      "lastCrawledAt": "2026-08-15T22:14:02.000Z",
+      "lastCrawledAt": "2026-08-19T10:06:07.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Brïdgess",
       "weeklyRuns": [
         {
@@ -9527,20 +9660,20 @@
           "role": "dps"
         },
         {
-          "dungeon": "Murder Row",
-          "short_name": "MR",
+          "dungeon": "Altar of Fangs",
+          "short_name": "AOF",
           "mythic_level": 10,
-          "completed_at": "2026-08-18T20:34:54.000Z",
-          "clear_time_ms": 1730928,
-          "keystone_run_id": 16654,
-          "par_time_ms": 2040999,
+          "completed_at": "2026-08-19T01:36:55.000Z",
+          "clear_time_ms": 1697517,
+          "keystone_run_id": 170017,
+          "par_time_ms": 1800999,
           "num_keystone_upgrades": 1,
-          "map_challenge_mode_id": 587,
-          "zone_id": 16091,
+          "map_challenge_mode_id": 588,
+          "zone_id": 16865,
           "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_murderrow.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/murder-row.jpg",
-          "score": 325.7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
+          "score": 322.2,
           "affixes": [
             {
               "id": 162,
@@ -9567,18 +9700,18 @@
               "wowhead_url": "https://wowhead.com/affix=9"
             }
           ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/16654-10-murder-row",
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/170017-10-altar-of-fangs",
           "spec": {
-            "id": 251,
-            "name": "Frost",
-            "slug": "frost",
+            "id": 250,
+            "name": "Blood",
+            "slug": "blood",
             "class_id": 6,
-            "role": "dps",
+            "role": "tank",
             "is_melee": true,
             "patch": "3.0.0",
-            "ordinal": 1
+            "ordinal": 0
           },
-          "role": "dps"
+          "role": "tank"
         }
       ],
       "raidProgression": {
