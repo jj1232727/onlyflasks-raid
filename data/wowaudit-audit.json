@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-19T20:20:29.555Z",
+  "fetchedAt": "2026-08-19T22:18:41.945Z",
   "periodInfo": {
     "current_period": 1077,
     "current_season": {
@@ -241,14 +241,14 @@
             "name": "Myth",
             "ilvl_cap": 334,
             "weekly_increase": 100,
-            "first_period": 1076,
+            "first_period": 1077,
             "icon_item_id": 269866
           },
           {
             "name": "Hero",
             "ilvl_cap": 321,
             "weekly_increase": 100,
-            "first_period": 1076,
+            "first_period": 1077,
             "icon_item_id": 269865
           },
           {
@@ -1281,6 +1281,10 @@
           {
             "level": 10,
             "dungeon": 399
+          },
+          {
+            "level": 10,
+            "dungeon": 587
           }
         ],
         "world_quests_done": 0,
@@ -2436,13 +2440,17 @@
           {
             "level": 10,
             "dungeon": 587
+          },
+          {
+            "level": 10,
+            "dungeon": 249
           }
         ],
         "world_quests_done": 0,
         "regular_mythic_dungeons_done": 8,
         "vault_options": {
           "raids": {
-            "option_1": null,
+            "option_1": 292,
             "option_2": null,
             "option_3": null
           },
@@ -2452,7 +2460,7 @@
             "option_3": 318
           },
           "world": {
-            "option_1": null,
+            "option_1": 272,
             "option_2": null,
             "option_3": null
           }
