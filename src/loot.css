@@ -1516,3 +1516,7 @@ footer .data-freshness{width:100%}
 .qe-own-report em.error { color: #ff6b6b; }
 .qe-own-report em.saved { color: #58d68d; }
 .qe-own-report em.saving { color: var(--muted); }
+
+/* A tab running yesterday's code cannot tell, so make it loud. */
+.spec-save-warning.stale-build { border-color: #ff6b6b55; background: #ff6b6b0f; color: #ff6b6b; }
+.spec-save-warning.stale-build button { border-color: #ff6b6b55; }

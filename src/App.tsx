@@ -1089,6 +1089,30 @@ function writeSimcDraft(characterId: number, text: string) {
   }
 }
 
+// A tab runs the JavaScript it loaded and nothing else, for as long as it is
+// open. Deploying does not change that, and asset names are content-hashed so
+// only index.html ever refreshes - which means someone who left the board open
+// yesterday is pasting through yesterday's code and cannot tell.
+//
+// That is not hypothetical: a vault fix shipped, was verified live, and the next
+// paste still went through the removed filter because the tab predated it. Hours
+// went into proving the deployed code was right.
+//
+// import.meta.url is this bundle's own hashed filename, so comparing it to the
+// one index.html currently points at says exactly whether this tab is stale.
+const RUNNING_BUNDLE = String(import.meta.url || "").split("/").pop() || "";
+
+async function deployedBundleDiffers(): Promise<boolean> {
+  if (!RUNNING_BUNDLE) return false;
+  try {
+    const html = await (await fetch("./index.html", { cache: "no-store" })).text();
+    const deployed = html.match(/assets\/(index-[A-Za-z0-9_-]+\.js)/)?.[1];
+    return Boolean(deployed && deployed !== RUNNING_BUNDLE);
+  } catch {
+    // Offline or blocked: never claim staleness we cannot prove.
+    return false;
+  }
+}
 function simFor(
   data: Data,
   c: Raider,
@@ -1191,6 +1215,7 @@ export default function App() {
     [simcSnapshots, setSimcSnapshots] = useState<Record<number, any>>({}),
     [specSaveError, setSpecSaveError] = useState(""),
     [staleSimsError, setStaleSimsError] = useState(""),
+    [staleBuild, setStaleBuild] = useState(false),
     [pendingSims, setPendingSims] = useState<Record<string, any[]>>({}),
     [qeLink, setQeLink] = useState(""),
     [qeLinkState, setQeLinkState] = useState<"idle" | "saving" | "error" | "saved">("idle"),
@@ -1484,6 +1509,18 @@ export default function App() {
       await refreshLiveSims({ before: pending.before, character, selectedSpec: pending.selectedSpec, attempts: 13 });
     })();
   }, [wishlistApiUrl, data]);
+  // Cheap: one conditional GET of a small HTML file. Checked on load and every
+  // ten minutes, so a tab left open overnight notices by morning.
+  useEffect(() => {
+    let cancelled = false;
+    const check = async () => {
+      const stale = await deployedBundleDiffers();
+      if (!cancelled && stale) setStaleBuild(true);
+    };
+    void check();
+    const timer = window.setInterval(check, 600000);
+    return () => { cancelled = true; window.clearInterval(timer); };
+  }, []);
   // Restore the pasted export on a reload, for whichever character the panel
   // will land on - it resolves that inside JSX, so mirror the same fallback
   // here. Only fills an empty box, so it can never overwrite live typing.
@@ -2194,6 +2231,16 @@ export default function App() {
             <kbd>{navigator.platform.toLowerCase().includes("mac") ? "⌘" : "Ctrl"}K</kbd>
           </button>
         </div>
+        {staleBuild && (
+          <div className="shell spec-save-warning stale-build" role="alert">
+            <CircleAlert />
+            <span>
+              This tab is running an older version of the board. Reload before pasting a
+              /simc — otherwise it is saved by the old code, whatever has been fixed since.
+            </span>
+            <button type="button" onClick={() => window.location.reload()}>Reload</button>
+          </div>
+        )}
         {staleSimsError && (
           <div className="shell spec-save-warning" role="alert">
             <CircleAlert />
@@ -3030,6 +3077,15 @@ export default function App() {
               wrongCharacter = Boolean(simcCheck?.character && norm(simcCheck.character) !== norm(c.name));
             const submitSim = async () => {
               if (!wishlistApiUrl || !simcText.trim()) return;
+              // Checked here as well as on a timer: this is the one action where
+              // running old code silently writes wrong data, rather than just
+              // showing a stale page.
+              if (await deployedBundleDiffers()) {
+                setStaleBuild(true);
+                setSimState("error");
+                setSimMessage("This tab is running an older version of the board. Reload the page, then paste again — otherwise your gear is saved by the old code.");
+                return;
+              }
               // A <select> whose value matches no option still DISPLAYS the first
               // one, so a character with no default spec looks configured while
               // selectedSpec is "". That reached Apps Script as an empty lootSpec
