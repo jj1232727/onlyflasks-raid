@@ -11557,71 +11557,816 @@
               "wishlist": {
                 "updated_at": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "2026-08-18T23:35:28.000+00:00",
                   "Destruction": null
                 },
                 "report_uploaded_at": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "2026-08-18T23:33:15.000Z",
                   "Destruction": null
                 },
                 "report_id": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "gmi4Wio17T1ZbHU9p3jmtB",
                   "Destruction": null
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 8.5459,
+                    "encounter_absolute": 10231,
+                    "items": [
+                      {
+                        "name": "Initiate's Sacrificial Tights",
+                        "id": 268236,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1359,
+                            "percentage": 1.1351
+                          }
+                        },
+                        "alternative": {
+                          "item": 270918,
+                          "percentage": 1.5353,
+                          "absolute": 1838.419,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1351,
+                            "absolute": 1359.2211,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Hexing Spiritrender",
+                        "id": 268203,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 7214,
+                            "percentage": 6.0251
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 8.9704,
+                          "absolute": 10741.6414,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 6.0251,
+                            "absolute": 7214.7661,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Nek'zali's Spiritwalkers",
+                        "id": 268218,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 811,
+                            "percentage": 0.678
+                          }
+                        },
+                        "alternative": {
+                          "item": 268255,
+                          "percentage": 1.4528,
+                          "absolute": 1739.6779,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.678,
+                            "absolute": 811.8455,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Amani Summoning Shawl",
+                        "id": 268248,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 847,
+                            "percentage": 0.7077
+                          }
+                        },
+                        "alternative": {
+                          "item": 268253,
+                          "percentage": 1.3048,
+                          "absolute": 1562.5011,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7077,
+                            "absolute": 847.3849,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 6.4051,
+                    "encounter_absolute": 7668,
+                    "items": [
+                      {
+                        "name": "Venomwoven Idol",
+                        "id": 270910,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1311,
+                            "percentage": 1.0951
+                          }
+                        },
+                        "alternative": {
+                          "item": 268243,
+                          "percentage": 1.6978,
+                          "absolute": 2033.036,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.0951,
+                            "absolute": 1311.3477,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venom-Singed Cuffs",
+                        "id": 268228,
+                        "slot": "wrist",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 907,
+                            "percentage": 0.7576
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7576,
+                            "absolute": 907.1739,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Sentinel's Vitriolic Chain",
+                        "id": 268250,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1578,
+                            "percentage": 1.3183
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 2.4464,
+                          "absolute": 2929.4836,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.3183,
+                            "absolute": 1578.5559,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Spine of the Hissing Abyss",
+                        "id": 268197,
+                        "slot": "off_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 3872,
+                            "percentage": 3.2341
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.2341,
+                            "absolute": 3872.7378,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 14.746,
+                    "encounter_absolute": 17656,
+                    "items": [
+                      {
+                        "name": "Fang of Umbral Malignance",
+                        "id": 270161,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 3102,
+                            "percentage": 2.5906
+                          }
+                        },
+                        "alternative": {
+                          "item": 270170,
+                          "percentage": 2.7947,
+                          "absolute": 3346.4977,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.5906,
+                            "absolute": 3102.1057,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vile Alchemist's Band",
+                        "id": 268249,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 2070,
+                            "percentage": 1.7294
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 1.8709,
+                          "absolute": 2240.3055,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.7294,
+                            "absolute": 2070.9072,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomwoven Icon",
+                        "id": 270926,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1134,
+                            "percentage": 0.947
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.947,
+                            "absolute": 1134.0188,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomancer's Winged Channeler",
+                        "id": 268205,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 11350,
+                            "percentage": 9.479
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 9.479,
+                            "absolute": 11350.7734,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.2754,
+                    "encounter_absolute": 2724,
+                    "items": [
+                      {
+                        "name": "Gebbo's Bottomless Bag",
+                        "id": 270164,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 2724,
+                            "percentage": 2.2754
+                          }
+                        },
+                        "alternative": {
+                          "item": 270170,
+                          "percentage": 2.7947,
+                          "absolute": 3346.4977,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.2754,
+                            "absolute": 2724.7581,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 5.331300000000001,
+                    "encounter_absolute": 6383,
+                    "items": [
+                      {
+                        "name": "Apex Brute's Claw Ring",
+                        "id": 268252,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 2240,
+                            "percentage": 1.8709
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.8709,
+                            "absolute": 2240.3055,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Caustic Chain-Wrapped Sash",
+                        "id": 268257,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 2305,
+                            "percentage": 1.9251
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.9251,
+                            "absolute": 2305.2115,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomwoven Relic",
+                        "id": 270918,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1838,
+                            "percentage": 1.5353
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.5353,
+                            "absolute": 1838.419,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 4.1618,
+                    "encounter_absolute": 4983,
+                    "items": [
+                      {
+                        "name": "Amulet of the Twin Fangs",
+                        "id": 268251,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1637,
+                            "percentage": 1.3671
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 2.4464,
+                          "absolute": 2929.4836,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.3671,
+                            "absolute": 1637.0027,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vexhul's Everflowing Gland",
+                        "id": 270170,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 3346,
+                            "percentage": 2.7947
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.7947,
+                            "absolute": 3346.4977,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 13.3985,
+                    "encounter_absolute": 16042,
+                    "items": [
+                      {
+                        "name": "Grasps of the Eternal Shadow",
+                        "id": 268243,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 2033,
+                            "percentage": 1.6978
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.6978,
+                            "absolute": 2033.036,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Baleful Hexblade",
+                        "id": 268211,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 9427,
+                            "percentage": 7.8731
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 8.9704,
+                          "absolute": 10741.6414,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 7.8731,
+                            "absolute": 9427.7494,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Hex Lord's Dooming Idol",
+                        "id": 270169,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1281,
+                            "percentage": 1.07
+                          }
+                        },
+                        "alternative": {
+                          "item": 270170,
+                          "percentage": 2.7947,
+                          "absolute": 3346.4977,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.07,
+                            "absolute": 1281.2962,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Cackling Soultreads",
+                        "id": 268255,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1739,
+                            "percentage": 1.4528
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4528,
+                            "absolute": 1739.6779,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Silken Voodoo Drape",
+                        "id": 268253,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1562,
+                            "percentage": 1.3048
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.3048,
+                            "absolute": 1562.5011,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 16.3572,
+                    "encounter_absolute": 19584,
+                    "items": [
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1857,
+                            "percentage": 1.5515
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.5515,
+                            "absolute": 1857.8618,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Font of Venomous Rage",
+                        "id": 270168,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 2663,
+                            "percentage": 2.2245
+                          }
+                        },
+                        "alternative": {
+                          "item": 270170,
+                          "percentage": 2.7947,
+                          "absolute": 3346.4977,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.2245,
+                            "absolute": 2663.7644,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomkeeper's Horrific Cowl",
+                        "id": 271874,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1394,
+                            "percentage": 1.1644
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1644,
+                            "absolute": 1394.3445,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Jan'thrazet, the Soul Fang",
+                        "id": 271092,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 10741,
+                            "percentage": 8.9704
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 8.9704,
+                            "absolute": 10741.6414,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 2929,
+                            "percentage": 2.4464
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.4464,
+                            "absolute": 2929.4836,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 71.2212,
+                "total_absolute": 85271
               }
             },
             {
@@ -11629,71 +12374,686 @@
               "wishlist": {
                 "updated_at": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "2026-08-18T23:35:16.000+00:00",
                   "Destruction": null
                 },
                 "report_uploaded_at": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "2026-08-18T23:33:15.000Z",
                   "Destruction": null
                 },
                 "report_id": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "gmi4Wio17T1ZbHU9p3jmtB",
                   "Destruction": null
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 4.0069,
+                    "encounter_absolute": 4795,
+                    "items": [
+                      {
+                        "name": "Amani Summoning Shawl",
+                        "id": 268248,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 248,
+                            "percentage": 0.2078
+                          }
+                        },
+                        "alternative": {
+                          "item": 268253,
+                          "percentage": 0.2606,
+                          "absolute": 311.9822,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2078,
+                            "absolute": 248.6919,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Initiate's Sacrificial Tights",
+                        "id": 268236,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 176,
+                            "percentage": 0.1476
+                          }
+                        },
+                        "alternative": {
+                          "item": 270918,
+                          "percentage": 0.623,
+                          "absolute": 745.8,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1476,
+                            "absolute": 176.7067,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Hexing Spiritrender",
+                        "id": 268203,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 4371,
+                            "percentage": 3.6515
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 4.4789,
+                          "absolute": 5361.5931,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.6515,
+                            "absolute": 4371.0589,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.5774,
+                    "encounter_absolute": 4280,
+                    "items": [
+                      {
+                        "name": "Venom-Singed Cuffs",
+                        "id": 268228,
+                        "slot": "wrist",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 310,
+                            "percentage": 0.2596
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2596,
+                            "absolute": 310.7379,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Sentinel's Vitriolic Chain",
+                        "id": 268250,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1297,
+                            "percentage": 1.0843
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 1.6997,
+                          "absolute": 2034.6721,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.0843,
+                            "absolute": 1297.9967,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomwoven Idol",
+                        "id": 270910,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 393,
+                            "percentage": 0.3283
+                          }
+                        },
+                        "alternative": {
+                          "item": 268243,
+                          "percentage": 0.3768,
+                          "absolute": 451.0956,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.3283,
+                            "absolute": 393.0448,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Spine of the Hissing Abyss",
+                        "id": 268197,
+                        "slot": "off_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 2280,
+                            "percentage": 1.9052
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.9052,
+                            "absolute": 2280.6191,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 8.4026,
+                    "encounter_absolute": 10057,
+                    "items": [
+                      {
+                        "name": "Vile Alchemist's Band",
+                        "id": 268249,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1534,
+                            "percentage": 1.2822
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 1.4265,
+                          "absolute": 1707.6333,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.2822,
+                            "absolute": 1534.8367,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Fang of Umbral Malignance",
+                        "id": 270161,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1621,
+                            "percentage": 1.3542
+                          }
+                        },
+                        "alternative": {
+                          "item": 270170,
+                          "percentage": 1.4306,
+                          "absolute": 1712.5788,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.3542,
+                            "absolute": 1621.0673,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomancer's Winged Channeler",
+                        "id": 268205,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 6902,
+                            "percentage": 5.7662
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 5.7662,
+                            "absolute": 6902.528,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.4141,
+                    "encounter_absolute": 1692,
+                    "items": [
+                      {
+                        "name": "Gebbo's Bottomless Bag",
+                        "id": 270164,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1692,
+                            "percentage": 1.4141
+                          }
+                        },
+                        "alternative": {
+                          "item": 270170,
+                          "percentage": 1.4306,
+                          "absolute": 1712.5788,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4141,
+                            "absolute": 1692.8011,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.2248,
+                    "encounter_absolute": 3858,
+                    "items": [
+                      {
+                        "name": "Venomwoven Relic",
+                        "id": 270918,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 745,
+                            "percentage": 0.623
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.623,
+                            "absolute": 745.8,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Caustic Chain-Wrapped Sash",
+                        "id": 268257,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1406,
+                            "percentage": 1.1753
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1753,
+                            "absolute": 1406.969,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Apex Brute's Claw Ring",
+                        "id": 268252,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1707,
+                            "percentage": 1.4265
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4265,
+                            "absolute": 1707.6333,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.4125,
+                    "encounter_absolute": 2887,
+                    "items": [
+                      {
+                        "name": "Amulet of the Twin Fangs",
+                        "id": 268251,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1175,
+                            "percentage": 0.9819
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 1.6997,
+                          "absolute": 2034.6721,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.9819,
+                            "absolute": 1175.4432,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vexhul's Everflowing Gland",
+                        "id": 270170,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1712,
+                            "percentage": 1.4306
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4306,
+                            "absolute": 1712.5788,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 4.1877,
+                    "encounter_absolute": 5011,
+                    "items": [
+                      {
+                        "name": "Grasps of the Eternal Shadow",
+                        "id": 268243,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 451,
+                            "percentage": 0.3768
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.3768,
+                            "absolute": 451.0956,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Baleful Hexblade",
+                        "id": 268211,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 4249,
+                            "percentage": 3.5503
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 4.4789,
+                          "absolute": 5361.5931,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.5503,
+                            "absolute": 4249.9384,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Silken Voodoo Drape",
+                        "id": 268253,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 311,
+                            "percentage": 0.2606
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2606,
+                            "absolute": 311.9822,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 7.212400000000001,
+                    "encounter_absolute": 8632,
+                    "items": [
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 812,
+                            "percentage": 0.6785
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.6785,
+                            "absolute": 812.2576,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 2034,
+                            "percentage": 1.6997
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.6997,
+                            "absolute": 2034.6721,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Font of Venomous Rage",
+                        "id": 270168,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 425,
+                            "percentage": 0.3553
+                          }
+                        },
+                        "alternative": {
+                          "item": 270170,
+                          "percentage": 1.4306,
+                          "absolute": 1712.5788,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.3553,
+                            "absolute": 425.2767,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Jan'thrazet, the Soul Fang",
+                        "id": 271092,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 5361,
+                            "percentage": 4.4789
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 4.4789,
+                            "absolute": 5361.5931,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 34.4384,
+                "total_absolute": 41212
               }
             },
             {
@@ -11701,71 +13061,450 @@
               "wishlist": {
                 "updated_at": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "2026-08-18T23:34:42.000+00:00",
                   "Destruction": null
                 },
                 "report_uploaded_at": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "2026-08-18T23:33:15.000Z",
                   "Destruction": null
                 },
                 "report_id": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "gmi4Wio17T1ZbHU9p3jmtB",
                   "Destruction": null
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.5092,
+                    "encounter_absolute": 1795,
+                    "items": [
+                      {
+                        "name": "Hexing Spiritrender",
+                        "id": 268203,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1795,
+                            "percentage": 1.5092
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 2.3103,
+                          "absolute": 2748.7628,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.5092,
+                            "absolute": 1795.5683,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.5041,
+                    "encounter_absolute": 1788,
+                    "items": [
+                      {
+                        "name": "Spine of the Hissing Abyss",
+                        "id": 268197,
+                        "slot": "off_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 880,
+                            "percentage": 0.7401
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7401,
+                            "absolute": 880.5468,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Sentinel's Vitriolic Chain",
+                        "id": 268250,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 908,
+                            "percentage": 0.764
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 1.1195,
+                          "absolute": 1331.9638,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.764,
+                            "absolute": 908.9858,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.3986,
+                    "encounter_absolute": 4042,
+                    "items": [
+                      {
+                        "name": "Vile Alchemist's Band",
+                        "id": 268249,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 851,
+                            "percentage": 0.7158
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 0.9579,
+                          "absolute": 1139.7541,
+                          "item_level": 298
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7158,
+                            "absolute": 851.6331,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Fang of Umbral Malignance",
+                        "id": 270161,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 251,
+                            "percentage": 0.2116
+                          }
+                        },
+                        "alternative": {
+                          "item": 270164,
+                          "percentage": 0.5649,
+                          "absolute": 672.1119,
+                          "item_level": 298
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2116,
+                            "absolute": 251.7562,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomancer's Winged Channeler",
+                        "id": 268205,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 2940,
+                            "percentage": 2.4712
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.4712,
+                            "absolute": 2940.1642,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.5649,
+                    "encounter_absolute": 672,
+                    "items": [
+                      {
+                        "name": "Gebbo's Bottomless Bag",
+                        "id": 270164,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 672,
+                            "percentage": 0.5649
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5649,
+                            "absolute": 672.1119,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.3038,
+                    "encounter_absolute": 1550,
+                    "items": [
+                      {
+                        "name": "Apex Brute's Claw Ring",
+                        "id": 268252,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1139,
+                            "percentage": 0.9579
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.9579,
+                            "absolute": 1139.7541,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Caustic Chain-Wrapped Sash",
+                        "id": 268257,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 411,
+                            "percentage": 0.3459
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.3459,
+                            "absolute": 411.4936,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.6264,
+                    "encounter_absolute": 745,
+                    "items": [
+                      {
+                        "name": "Vexhul's Everflowing Gland",
+                        "id": 270170,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 155,
+                            "percentage": 0.1303
+                          }
+                        },
+                        "alternative": {
+                          "item": 270164,
+                          "percentage": 0.5649,
+                          "absolute": 672.1119,
+                          "item_level": 298
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1303,
+                            "absolute": 155.0773,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Amulet of the Twin Fangs",
+                        "id": 268251,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 590,
+                            "percentage": 0.4961
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 1.1195,
+                          "absolute": 1331.9638,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.4961,
+                            "absolute": 590.2565,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.4083,
+                    "encounter_absolute": 1675,
+                    "items": [
+                      {
+                        "name": "Baleful Hexblade",
+                        "id": 268211,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1675,
+                            "percentage": 1.4083
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 2.3103,
+                          "absolute": 2748.7628,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4083,
+                            "absolute": 1675.5926,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.4298,
+                    "encounter_absolute": 4079,
+                    "items": [
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1331,
+                            "percentage": 1.1195
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1195,
+                            "absolute": 1331.9638,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Jan'thrazet, the Soul Fang",
+                        "id": 271092,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 2748,
+                            "percentage": 2.3103
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.3103,
+                            "absolute": 2748.7628,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 13.7451,
+                "total_absolute": 16346
               }
             }
           ]
@@ -11779,29 +13518,146 @@
               "wishlist": {
                 "updated_at": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "2026-08-18T23:35:28.000+00:00",
                   "Destruction": null
                 },
                 "report_uploaded_at": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "2026-08-18T23:33:15.000Z",
                   "Destruction": null
                 },
                 "report_id": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "gmi4Wio17T1ZbHU9p3jmtB",
                   "Destruction": null
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 7.3973,
+                    "encounter_absolute": 8857,
+                    "items": [
+                      {
+                        "name": "Frostscale's Mystic Frond",
+                        "id": 268263,
+                        "slot": "off_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 3594,
+                            "percentage": 3.0014
+                          }
+                        },
+                        "alternative": {
+                          "item": 268197,
+                          "percentage": 3.2341,
+                          "absolute": 3872.7378,
+                          "item_level": 321
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.0014,
+                            "absolute": 3594.0975,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Tidebound Sorcereress's Robes",
+                        "id": 268221,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 866,
+                            "percentage": 0.7234
+                          }
+                        },
+                        "alternative": {
+                          "item": 270926,
+                          "percentage": 0.947,
+                          "absolute": 1134.0188,
+                          "item_level": 321
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7234,
+                            "absolute": 866.2842,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Wavecaller's Seastone",
+                        "id": 270167,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 2528,
+                            "percentage": 2.1113
+                          }
+                        },
+                        "alternative": {
+                          "item": 270170,
+                          "percentage": 2.7947,
+                          "absolute": 3346.4977,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.1113,
+                            "absolute": 2528.1767,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Cincture of the Abyssal Grotto",
+                        "id": 268232,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1869,
+                            "percentage": 1.5612
+                          }
+                        },
+                        "alternative": {
+                          "item": 268257,
+                          "percentage": 1.9251,
+                          "absolute": 2305.2115,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.5612,
+                            "absolute": 1869.5344,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 7.3973,
+                "total_absolute": 8857
               }
             },
             {
@@ -11809,29 +13665,117 @@
               "wishlist": {
                 "updated_at": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "2026-08-18T23:35:16.000+00:00",
                   "Destruction": null
                 },
                 "report_uploaded_at": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "2026-08-18T23:33:15.000Z",
                   "Destruction": null
                 },
                 "report_id": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "gmi4Wio17T1ZbHU9p3jmtB",
                   "Destruction": null
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.8951,
+                    "encounter_absolute": 4662,
+                    "items": [
+                      {
+                        "name": "Wavecaller's Seastone",
+                        "id": 270167,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1487,
+                            "percentage": 1.2425
+                          }
+                        },
+                        "alternative": {
+                          "item": 270170,
+                          "percentage": 1.4306,
+                          "absolute": 1712.5788,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.2425,
+                            "absolute": 1487.312,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Frostscale's Mystic Frond",
+                        "id": 268263,
+                        "slot": "off_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 2037,
+                            "percentage": 1.7018
+                          }
+                        },
+                        "alternative": {
+                          "item": 268197,
+                          "percentage": 1.9052,
+                          "absolute": 2280.6191,
+                          "item_level": 308
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.7018,
+                            "absolute": 2037.1163,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Cincture of the Abyssal Grotto",
+                        "id": 268232,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 1138,
+                            "percentage": 0.9508
+                          }
+                        },
+                        "alternative": {
+                          "item": 268257,
+                          "percentage": 1.1753,
+                          "absolute": 1406.969,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:35:16.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.9508,
+                            "absolute": 1138.2255,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 3.8951,
+                "total_absolute": 4662
               }
             },
             {
@@ -11839,29 +13783,117 @@
               "wishlist": {
                 "updated_at": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "2026-08-18T23:34:42.000+00:00",
                   "Destruction": null
                 },
                 "report_uploaded_at": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "2026-08-18T23:33:15.000Z",
                   "Destruction": null
                 },
                 "report_id": {
                   "Affliction": null,
-                  "Demonology": null,
+                  "Demonology": "gmi4Wio17T1ZbHU9p3jmtB",
                   "Destruction": null
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.8949,
+                    "encounter_absolute": 1063,
+                    "items": [
+                      {
+                        "name": "Frostscale's Mystic Frond",
+                        "id": 268263,
+                        "slot": "off_hand",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 522,
+                            "percentage": 0.4394
+                          }
+                        },
+                        "alternative": {
+                          "item": 268197,
+                          "percentage": 0.7401,
+                          "absolute": 880.5468,
+                          "item_level": 295
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.4394,
+                            "absolute": 522.7484,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Cincture of the Abyssal Grotto",
+                        "id": 268232,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 157,
+                            "percentage": 0.1321
+                          }
+                        },
+                        "alternative": {
+                          "item": 268257,
+                          "percentage": 0.3459,
+                          "absolute": 411.4936,
+                          "item_level": 298
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1321,
+                            "absolute": 157.1816,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Wavecaller's Seastone",
+                        "id": 270167,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Demonology": {
+                            "score": 384,
+                            "percentage": 0.3234
+                          }
+                        },
+                        "alternative": {
+                          "item": 270164,
+                          "percentage": 0.5649,
+                          "absolute": 672.1119,
+                          "item_level": 298
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Demonology",
+                            "timestamp": "2026-08-18T23:34:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.3234,
+                            "absolute": 384.7839,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 0.8949,
+                "total_absolute": 1063
               }
             }
           ]
