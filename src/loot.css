@@ -1520,3 +1520,20 @@ footer .data-freshness{width:100%}
 /* A tab running yesterday's code cannot tell, so make it loud. */
 .spec-save-warning.stale-build { border-color: #ff6b6b55; background: #ff6b6b0f; color: #ff6b6b; }
 .spec-save-warning.stale-build button { border-color: #ff6b6b55; }
+
+/* The sim uploaded fine but under another spec, so the board shows nothing.
+   Silence here reads as "broken" - three raiders reported it in one evening. */
+.spec-mismatch {
+  display: flex; align-items: center; gap: 10px;
+  margin: 0 0 12px; padding: 10px 14px;
+  border: 1px solid #f0b23255; border-radius: 10px; background: #f0b2320f;
+  color: #f0b232; font-size: 13px;
+}
+.spec-mismatch svg { width: 16px; height: 16px; flex: none; }
+.spec-mismatch span { flex: 1; font-weight: 500; }
+.spec-mismatch strong { font-weight: 700; }
+.spec-mismatch button {
+  border: 1px solid #f0b23255; background: transparent; color: inherit;
+  border-radius: 8px; padding: 6px 12px; font: inherit; font-size: 12px;
+  font-weight: 700; cursor: pointer; white-space: nowrap;
+}

@@ -1684,6 +1684,16 @@ export default function App() {
     return result;
   }, [data, simcSnapshots]);
   const specFor = (c: Raider) => specs[c.id] || playedSpecs[c.id] || c.defaultSpec;
+  // A report is filed under the spec that produced it, and simFor refuses to
+  // read one filed under any other - correctly, a Frost player must not be
+  // ranked on Blood numbers. But it refused silently, so three raiders in one
+  // evening reported "my sim is not appearing" when it had uploaded fine and
+  // the board was simply set to a different spec. Say which.
+  const simmedElsewhere = (c: Raider) => {
+    const chosen = specFor(c),
+      actual = playedSpecs[c.id];
+    return actual && chosen && actual !== chosen ? actual : "";
+  };
   // A loot spec decides which sims the board reads, so it cannot live only in
   // the browser that picked it - two officers would rank the same raider off
   // different numbers and neither would see a difference. Update locally for
@@ -3477,6 +3487,19 @@ export default function App() {
                     </span>
                     <ChevronDown />
                   </summary>
+                {simmedElsewhere(c) && (
+                  <div className="spec-mismatch" role="alert">
+                    <CircleAlert />
+                    <span>
+                      <strong>Your sims are for {simmedElsewhere(c)}, but this character is set to {specFor(c)}.</strong>{" "}
+                      Loot is ranked on the spec chosen here, so nothing shows. Switch the loot
+                      spec above to {simmedElsewhere(c)}, or re-sim as {specFor(c)}.
+                    </span>
+                    <button type="button" onClick={() => void chooseSpec(c, simmedElsewhere(c))}>
+                      Use {simmedElsewhere(c)}
+                    </button>
+                  </div>
+                )}
                 {(pendingSims[String(c.id)] || []).filter((job: any) => job.state === "pending" || job.state === "error").length > 0 && (
                   /* Server-side status, so it reads the same after closing the
                      tab, refreshing, or opening the board somewhere else. The
