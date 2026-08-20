@@ -96,7 +96,7 @@ type Data = {
   bis: { lists: Record<string, { items: Item[] }> };
   seasonLoot?: { items: Item[] };
   sims: any;
-  lootHistory: { history_items?: any[] };
+  lootHistory: { history_items?: any[]; seasonId?: number; fetchedAt?: string };
   auditActivity?: {
     fetchedAt?: string;
     period?: number;
@@ -4232,7 +4232,18 @@ export default function App() {
                 </div>
               ) : (
                 <div className="empty">
-                  No Season 2 awards are currently recorded in WoWAudit.
+                  {/* This panel only ever mirrors WoWAudit, so an empty one is
+                      almost always an upstream gap rather than a stale pull:
+                      loot reaches WoWAudit when RC Loot Council (or a manual
+                      entry) sends it, and nothing here can conjure awards it
+                      was never told about. Say which, or the raid reads a
+                      truthful "none" as a broken board. */}
+                  No season {data.lootHistory?.seasonId ?? "—"} awards are recorded in WoWAudit
+                  {data.lootHistory?.fetchedAt
+                    ? ` as of ${new Date(data.lootHistory.fetchedAt).toLocaleString()}`
+                    : ""}
+                  . If loot was handed out, it has not reached WoWAudit yet — check the RC
+                  Loot Council sync there, not this board.
                 </div>
               )}
             </div>
