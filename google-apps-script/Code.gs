@@ -238,8 +238,16 @@ function checkDroptimizer_(body) {
   if (!/^[A-Za-z0-9_-]{8,80}$/.test(simId)) throw new Error('A valid Raidbots simId is required.');
   if (!body.reportReady) {
     const reportResponse = UrlFetchApp.fetch(RAIDBOTS_REPORT_URL + encodeURIComponent(simId) + '/data.json', { muteHttpExceptions: true });
-    if (reportResponse.getResponseCode() === 404) return json_({ ok: true, state: 'running', simId: simId });
-    if (reportResponse.getResponseCode() !== 200) throw new Error('Raidbots status check failed (' + reportResponse.getResponseCode() + ').');
+    // Raidbots serves reports from object storage that answers 403, not 404,
+    // for a key that does not exist yet - so 403 is the ordinary "still
+    // running" reply, and it is the one this path sees most. Treating it as a
+    // failure turned every resume of a sim that had not finished into an
+    // error the raider had to read as if something had broken. The page's own
+    // poller and drainPendingSims already accept both codes; this was the last
+    // place that did not.
+    var reportCode = reportResponse.getResponseCode();
+    if (reportCode === 404 || reportCode === 403) return json_({ ok: true, state: 'running', simId: simId });
+    if (reportCode !== 200) throw new Error('Raidbots status check failed (' + reportCode + ').');
     const report = parseJson_(reportResponse.getContentText());
     if (report.error || report.errors || report.meta && report.meta.error) {
       return json_({ ok: true, state: 'failed', simId: simId, error: String(report.error || report.meta && report.meta.error || 'Simulation failed') });
