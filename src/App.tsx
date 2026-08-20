@@ -238,7 +238,12 @@ const allSimDifficultiesChanged = (
 function droptimizerPayload(text: string, c: Raider, selectedSpec: string, difficulty: Difficulty = "normal") {
   const specId = specIds[selectedSpec];
   if (!specId) throw new Error(`Raidbots spec mapping is missing for ${selectedSpec}.`);
-  const actor = simcValue(text, c.class === "Death Knight" ? "deathknight" : c.class.toLowerCase().replace(/\s+/g, "_"));
+  // SimC writes the actor line with the space removed, not underscored:
+  // "deathknight=", "demonhunter=". Death Knight was special-cased and Demon
+  // Hunter was not, so every Demon Hunter paste was refused as "not for a Demon
+  // Hunter" while holding a perfectly good export. Drop the space for all of
+  // them and the special case goes with it.
+  const actor = simcValue(text, c.class.toLowerCase().replace(/\s+/gu, ""));
   if (!actor) throw new Error(`This /simc export is not for a ${c.class}.`);
   const raidbot = raidbotDifficulty[difficulty];
   return {
