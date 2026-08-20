@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-20T04:31:52.984Z",
+  "fetchedAt": "2026-08-20T06:36:09.533Z",
   "characters": [
     {
       "id": 5454087,
@@ -212,6 +212,60 @@
             }
           ],
           "url": "https://raider.io/mythic-plus-runs/season-mn-2/70001-11-murder-row",
+          "spec": {
+            "id": 65,
+            "name": "Holy",
+            "slug": "holy",
+            "class_id": 2,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "healer"
+        },
+        {
+          "dungeon": "Altar of Fangs",
+          "short_name": "AOF",
+          "mythic_level": 11,
+          "completed_at": "2026-08-20T03:48:15.000Z",
+          "clear_time_ms": 1884386,
+          "keystone_run_id": 555425,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 0,
+          "map_challenge_mode_id": 588,
+          "zone_id": 16865,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
+          "score": 303.3,
+          "affixes": [
+            {
+              "id": 162,
+              "name": "Xal'atath's Bargain: Pulsar",
+              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+              "icon": "inv_cosmicvoid_nova",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+              "wowhead_url": "https://wowhead.com/affix=162"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/555425-11-altar-of-fangs",
           "spec": {
             "id": 65,
             "name": "Holy",
@@ -485,52 +539,6 @@
             "ordinal": 0
           },
           "role": "healer"
-        },
-        {
-          "dungeon": "Murder Row",
-          "short_name": "MR",
-          "mythic_level": 9,
-          "completed_at": "2026-08-19T15:47:33.000Z",
-          "clear_time_ms": 1756007,
-          "keystone_run_id": 285898,
-          "par_time_ms": 2040999,
-          "num_keystone_upgrades": 1,
-          "map_challenge_mode_id": 587,
-          "zone_id": 16091,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_murderrow.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/murder-row.jpg",
-          "score": 295.2,
-          "affixes": [
-            {
-              "id": 162,
-              "name": "Xal'atath's Bargain: Pulsar",
-              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
-              "icon": "inv_cosmicvoid_nova",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
-              "wowhead_url": "https://wowhead.com/affix=162"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/285898-9-murder-row",
-          "spec": {
-            "id": 65,
-            "name": "Holy",
-            "slug": "holy",
-            "class_id": 2,
-            "role": "healer",
-            "is_melee": false,
-            "patch": "1.0.0",
-            "ordinal": 0
-          },
-          "role": "healer"
         }
       ],
       "raidProgression": {
@@ -546,7 +554,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -959,7 +967,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -985,7 +993,7 @@
       "id": 4165902,
       "name": "Neomonk",
       "status": "ok",
-      "lastCrawledAt": "2026-08-19T14:52:24.000Z",
+      "lastCrawledAt": "2026-08-20T05:46:28.000Z",
       "profileUrl": "https://raider.io/characters/us/sargeras/Neomonk",
       "weeklyRuns": [
         {
@@ -1473,6 +1481,52 @@
             "ordinal": 1
           },
           "role": "healer"
+        },
+        {
+          "dungeon": "Den of Nalorakk",
+          "short_name": "DON",
+          "mythic_level": 8,
+          "completed_at": "2026-08-20T03:44:44.000Z",
+          "clear_time_ms": 2100903,
+          "keystone_run_id": 542225,
+          "par_time_ms": 1920999,
+          "num_keystone_upgrades": 0,
+          "map_challenge_mode_id": 586,
+          "zone_id": 16368,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_proveyourworth.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/den-of-nalorakk.jpg",
+          "score": 256.5,
+          "affixes": [
+            {
+              "id": 162,
+              "name": "Xal'atath's Bargain: Pulsar",
+              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+              "icon": "inv_cosmicvoid_nova",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+              "wowhead_url": "https://wowhead.com/affix=162"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/542225-8-den-of-nalorakk",
+          "spec": {
+            "id": 270,
+            "name": "Mistweaver",
+            "slug": "mistweaver",
+            "class_id": 10,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "5.0.0",
+            "ordinal": 1
+          },
+          "role": "healer"
         }
       ],
       "raidProgression": {
@@ -1488,7 +1542,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -2071,7 +2125,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -2646,7 +2700,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -3229,7 +3283,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -3812,7 +3866,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -3854,7 +3908,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -4100,6 +4154,60 @@
           "role": "dps"
         },
         {
+          "dungeon": "Altar of Fangs",
+          "short_name": "AOF",
+          "mythic_level": 11,
+          "completed_at": "2026-08-20T03:48:15.000Z",
+          "clear_time_ms": 1884386,
+          "keystone_run_id": 555425,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 0,
+          "map_challenge_mode_id": 588,
+          "zone_id": 16865,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
+          "score": 303.3,
+          "affixes": [
+            {
+              "id": 162,
+              "name": "Xal'atath's Bargain: Pulsar",
+              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+              "icon": "inv_cosmicvoid_nova",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+              "wowhead_url": "https://wowhead.com/affix=162"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/555425-11-altar-of-fangs",
+          "spec": {
+            "id": 73,
+            "name": "Protection",
+            "slug": "protection",
+            "class_id": 1,
+            "role": "tank",
+            "is_melee": true,
+            "patch": "1.0.0",
+            "ordinal": 2
+          },
+          "role": "tank"
+        },
+        {
           "dungeon": "Temple of Sethraliss",
           "short_name": "TOS",
           "mythic_level": 10,
@@ -4193,7 +4301,7 @@
       "id": 5067865,
       "name": "Zynszn",
       "status": "ok",
-      "lastCrawledAt": "2026-08-19T23:59:55.000Z",
+      "lastCrawledAt": "2026-08-20T05:51:35.000Z",
       "profileUrl": "https://raider.io/characters/us/zuljin/Zynszn",
       "weeklyRuns": [
         {
@@ -4750,7 +4858,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -5333,7 +5441,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -5592,7 +5700,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -5959,7 +6067,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -6205,6 +6313,60 @@
           "role": "dps"
         },
         {
+          "dungeon": "Altar of Fangs",
+          "short_name": "AOF",
+          "mythic_level": 11,
+          "completed_at": "2026-08-20T03:48:15.000Z",
+          "clear_time_ms": 1884386,
+          "keystone_run_id": 555425,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 0,
+          "map_challenge_mode_id": 588,
+          "zone_id": 16865,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
+          "score": 303.3,
+          "affixes": [
+            {
+              "id": 162,
+              "name": "Xal'atath's Bargain: Pulsar",
+              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+              "icon": "inv_cosmicvoid_nova",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+              "wowhead_url": "https://wowhead.com/affix=162"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/555425-11-altar-of-fangs",
+          "spec": {
+            "id": 252,
+            "name": "Unholy",
+            "slug": "unholy",
+            "class_id": 6,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "3.0.0",
+            "ordinal": 2
+          },
+          "role": "dps"
+        },
+        {
           "dungeon": "Temple of Sethraliss",
           "short_name": "TOS",
           "mythic_level": 10,
@@ -6272,7 +6434,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -6855,7 +7017,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -7438,7 +7600,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -7464,7 +7626,7 @@
       "id": 4910785,
       "name": "Magicalsauce",
       "status": "ok",
-      "lastCrawledAt": "2026-08-20T01:34:56.000Z",
+      "lastCrawledAt": "2026-08-20T05:24:59.000Z",
       "profileUrl": "https://raider.io/characters/us/stormrage/Magicalsauce",
       "weeklyRuns": [
         {
@@ -8021,7 +8183,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -8089,9 +8251,63 @@
       "id": 8698491,
       "name": "Aeoñ",
       "status": "ok",
-      "lastCrawledAt": "2026-08-19T22:24:11.000Z",
+      "lastCrawledAt": "2026-08-20T05:56:49.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Aeoñ",
       "weeklyRuns": [
+        {
+          "dungeon": "Voidscar Arena",
+          "short_name": "VSA",
+          "mythic_level": 10,
+          "completed_at": "2026-08-20T05:06:05.000Z",
+          "clear_time_ms": 1373326,
+          "keystone_run_id": 548840,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 585,
+          "zone_id": 16425,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
+          "score": 328.9,
+          "affixes": [
+            {
+              "id": 162,
+              "name": "Xal'atath's Bargain: Pulsar",
+              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+              "icon": "inv_cosmicvoid_nova",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+              "wowhead_url": "https://wowhead.com/affix=162"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/548840-10-voidscar-arena",
+          "spec": {
+            "id": 65,
+            "name": "Holy",
+            "slug": "holy",
+            "class_id": 2,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "healer"
+        },
         {
           "dungeon": "The Blinding Vale",
           "short_name": "BV",
@@ -8134,6 +8350,60 @@
             }
           ],
           "url": "https://raider.io/mythic-plus-runs/season-mn-2/478944-10-the-blinding-vale",
+          "spec": {
+            "id": 65,
+            "name": "Holy",
+            "slug": "holy",
+            "class_id": 2,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "healer"
+        },
+        {
+          "dungeon": "Murder Row",
+          "short_name": "MR",
+          "mythic_level": 10,
+          "completed_at": "2026-08-20T04:20:07.000Z",
+          "clear_time_ms": 1516605,
+          "keystone_run_id": 548850,
+          "par_time_ms": 2040999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 587,
+          "zone_id": 16091,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_murderrow.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/murder-row.jpg",
+          "score": 329.6,
+          "affixes": [
+            {
+              "id": 162,
+              "name": "Xal'atath's Bargain: Pulsar",
+              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+              "icon": "inv_cosmicvoid_nova",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+              "wowhead_url": "https://wowhead.com/affix=162"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/548850-10-murder-row",
           "spec": {
             "id": 65,
             "name": "Holy",
@@ -8507,98 +8777,6 @@
             "ordinal": 0
           },
           "role": "healer"
-        },
-        {
-          "dungeon": "Voidscar Arena",
-          "short_name": "VSA",
-          "mythic_level": 9,
-          "completed_at": "2026-08-19T04:00:25.000Z",
-          "clear_time_ms": 1668987,
-          "keystone_run_id": 83516,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 1,
-          "map_challenge_mode_id": 585,
-          "zone_id": 16425,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
-          "score": 292.7,
-          "affixes": [
-            {
-              "id": 162,
-              "name": "Xal'atath's Bargain: Pulsar",
-              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
-              "icon": "inv_cosmicvoid_nova",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
-              "wowhead_url": "https://wowhead.com/affix=162"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/83516-9-voidscar-arena",
-          "spec": {
-            "id": 65,
-            "name": "Holy",
-            "slug": "holy",
-            "class_id": 2,
-            "role": "healer",
-            "is_melee": false,
-            "patch": "1.0.0",
-            "ordinal": 0
-          },
-          "role": "healer"
-        },
-        {
-          "dungeon": "Altar of Fangs",
-          "short_name": "AOF",
-          "mythic_level": 9,
-          "completed_at": "2026-08-19T05:14:12.000Z",
-          "clear_time_ms": 1854228,
-          "keystone_run_id": 99782,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 0,
-          "map_challenge_mode_id": 588,
-          "zone_id": 16865,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
-          "score": 273.9,
-          "affixes": [
-            {
-              "id": 162,
-              "name": "Xal'atath's Bargain: Pulsar",
-              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
-              "icon": "inv_cosmicvoid_nova",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
-              "wowhead_url": "https://wowhead.com/affix=162"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/99782-9-altar-of-fangs",
-          "spec": {
-            "id": 65,
-            "name": "Holy",
-            "slug": "holy",
-            "class_id": 2,
-            "role": "healer",
-            "is_melee": false,
-            "patch": "1.0.0",
-            "ordinal": 0
-          },
-          "role": "healer"
         }
       ],
       "raidProgression": {
@@ -8614,7 +8792,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -9194,10 +9372,10 @@
           "mythic_bosses_killed": 0
         },
         "the-venomous-abyss": {
-          "summary": "7/8 N",
+          "summary": "8/8 N",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 0,
           "mythic_bosses_killed": 0
         },
@@ -10100,7 +10278,7 @@
       "id": 16876827,
       "name": "Mushyxd",
       "status": "ok",
-      "lastCrawledAt": "2026-08-20T01:05:05.000Z",
+      "lastCrawledAt": "2026-08-20T05:51:02.000Z",
       "profileUrl": "https://raider.io/characters/us/illidan/Mushyxd",
       "weeklyRuns": [
         {
@@ -10264,6 +10442,60 @@
             "ordinal": 2
           },
           "role": "dps"
+        },
+        {
+          "dungeon": "Temple of Sethraliss",
+          "short_name": "TOS",
+          "mythic_level": 10,
+          "completed_at": "2026-08-20T04:24:47.000Z",
+          "clear_time_ms": 1461088,
+          "keystone_run_id": 545067,
+          "par_time_ms": 1920999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 250,
+          "zone_id": 9527,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
+          "score": 329,
+          "affixes": [
+            {
+              "id": 162,
+              "name": "Xal'atath's Bargain: Pulsar",
+              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+              "icon": "inv_cosmicvoid_nova",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+              "wowhead_url": "https://wowhead.com/affix=162"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/545067-10-temple-of-sethraliss",
+          "spec": {
+            "id": 257,
+            "name": "Holy",
+            "slug": "holy",
+            "class_id": 5,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 1
+          },
+          "role": "healer"
         },
         {
           "dungeon": "The Blinding Vale",
@@ -10587,7 +10819,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -10888,7 +11120,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -10914,7 +11146,7 @@
       "id": 4329634,
       "name": "Brïdgess",
       "status": "ok",
-      "lastCrawledAt": "2026-08-20T01:34:55.000Z",
+      "lastCrawledAt": "2026-08-20T06:14:33.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Brïdgess",
       "weeklyRuns": [
         {
@@ -11013,6 +11245,60 @@
             }
           ],
           "url": "https://raider.io/mythic-plus-runs/season-mn-2/404839-12-ruby-life-pools",
+          "spec": {
+            "id": 251,
+            "name": "Frost",
+            "slug": "frost",
+            "class_id": 6,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "3.0.0",
+            "ordinal": 1
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "Kings' Rest",
+          "short_name": "KR",
+          "mythic_level": 11,
+          "completed_at": "2026-08-20T05:34:28.000Z",
+          "clear_time_ms": 1616001,
+          "keystone_run_id": 552878,
+          "par_time_ms": 1980999,
+          "num_keystone_upgrades": 1,
+          "map_challenge_mode_id": 249,
+          "zone_id": 9526,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
+          "score": 341.9,
+          "affixes": [
+            {
+              "id": 162,
+              "name": "Xal'atath's Bargain: Pulsar",
+              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+              "icon": "inv_cosmicvoid_nova",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+              "wowhead_url": "https://wowhead.com/affix=162"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/552878-11-kings-rest",
           "spec": {
             "id": 251,
             "name": "Frost",
@@ -11402,60 +11688,6 @@
             "ordinal": 1
           },
           "role": "dps"
-        },
-        {
-          "dungeon": "Voidscar Arena",
-          "short_name": "VSA",
-          "mythic_level": 10,
-          "completed_at": "2026-08-19T04:14:41.000Z",
-          "clear_time_ms": 1359965,
-          "keystone_run_id": 86522,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 2,
-          "map_challenge_mode_id": 585,
-          "zone_id": 16425,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
-          "score": 329.2,
-          "affixes": [
-            {
-              "id": 162,
-              "name": "Xal'atath's Bargain: Pulsar",
-              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
-              "icon": "inv_cosmicvoid_nova",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
-              "wowhead_url": "https://wowhead.com/affix=162"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/86522-10-voidscar-arena",
-          "spec": {
-            "id": 250,
-            "name": "Blood",
-            "slug": "blood",
-            "class_id": 6,
-            "role": "tank",
-            "is_melee": true,
-            "patch": "3.0.0",
-            "ordinal": 0
-          },
-          "role": "tank"
         }
       ],
       "raidProgression": {
@@ -11471,7 +11703,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
@@ -12054,7 +12286,7 @@
           "summary": "1/8 H",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 8,
           "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },

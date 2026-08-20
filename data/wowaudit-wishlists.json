@@ -13766,70 +13766,912 @@
                 "updated_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "2026-08-20T05:08:03.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "2026-08-20T05:03:58.000Z"
                 },
                 "report_id": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "x6H8ZDfaxk4822eTyszkzJ"
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 9.6725,
+                    "encounter_absolute": 14957,
+                    "items": [
+                      {
+                        "name": "Vestment of the Awakening",
+                        "id": 268235,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2638,
+                            "percentage": 1.7058
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.7058,
+                            "absolute": 2638.0238,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Hexing Spiritrender",
+                        "id": 268203,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 8685,
+                            "percentage": 5.6162
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 9.6684,
+                          "absolute": 14952.0106,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 5.6162,
+                            "absolute": 8685.3062,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Amani Summoning Shawl",
+                        "id": 268248,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2423,
+                            "percentage": 1.5671
+                          }
+                        },
+                        "alternative": {
+                          "item": 268253,
+                          "percentage": 1.7522,
+                          "absolute": 2709.7007,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.5671,
+                            "absolute": 2423.4853,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Restless Spirit Shackles",
+                        "id": 268240,
+                        "slot": "wrist",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1211,
+                            "percentage": 0.7834
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7834,
+                            "absolute": 1211.5413,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 4.357,
+                    "encounter_absolute": 6737,
+                    "items": [
+                      {
+                        "name": "Venomcured Idol",
+                        "id": 270911,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1582,
+                            "percentage": 1.0234
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.0234,
+                            "absolute": 1582.6028,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Sentinel's Vitriolic Chain",
+                        "id": 268250,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2941,
+                            "percentage": 1.9019
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 4.7881,
+                          "absolute": 7404.6248,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.9019,
+                            "absolute": 2941.2958,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Shadow Hunter's Warmask",
+                        "id": 268219,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2214,
+                            "percentage": 1.4317
+                          }
+                        },
+                        "alternative": {
+                          "item": 271875,
+                          "percentage": 4.092,
+                          "absolute": 6328.2007,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4317,
+                            "absolute": 2214.0833,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 6.133,
+                    "encounter_absolute": 9482,
+                    "items": [
+                      {
+                        "name": "Vile Alchemist's Band",
+                        "id": 268249,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1299,
+                            "percentage": 0.8405
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 4.1339,
+                          "absolute": 6392.9812,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8405,
+                            "absolute": 1299.8419,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Icon",
+                        "id": 270927,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2335,
+                            "percentage": 1.5104
+                          }
+                        },
+                        "alternative": {
+                          "item": 268235,
+                          "percentage": 1.7058,
+                          "absolute": 2638.0238,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.5104,
+                            "absolute": 2335.7499,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Frothing Venom Spaulders",
+                        "id": 268246,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2890,
+                            "percentage": 1.8693
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.8693,
+                            "absolute": 2890.8487,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Fang of Umbral Malignance",
+                        "id": 270161,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2958,
+                            "percentage": 1.9128
+                          }
+                        },
+                        "alternative": {
+                          "item": 270167,
+                          "percentage": 3.3655,
+                          "absolute": 5204.6981,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.9128,
+                            "absolute": 2958.0513,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 5.7729,
+                    "encounter_absolute": 8926,
+                    "items": [
+                      {
+                        "name": "Unpossessed Skullsash",
+                        "id": 268227,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2212,
+                            "percentage": 1.4307
+                          }
+                        },
+                        "alternative": {
+                          "item": 268256,
+                          "percentage": 1.6053,
+                          "absolute": 2482.5848,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4307,
+                            "absolute": 2212.6,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Remnant",
+                        "id": 270923,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1957,
+                            "percentage": 1.266
+                          }
+                        },
+                        "alternative": {
+                          "item": 268246,
+                          "percentage": 1.8693,
+                          "absolute": 2890.8487,
+                          "item_level": 321
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.266,
+                            "absolute": 1957.7872,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Gebbo's Bottomless Bag",
+                        "id": 270164,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 4757,
+                            "percentage": 3.0762
+                          }
+                        },
+                        "alternative": {
+                          "item": 270167,
+                          "percentage": 3.3655,
+                          "absolute": 5204.6981,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.0762,
+                            "absolute": 4757.3188,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 12.1162,
+                    "encounter_absolute": 18736,
+                    "items": [
+                      {
+                        "name": "Ruthless Slaughtergrips",
+                        "id": 268234,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 821,
+                            "percentage": 0.5309
+                          }
+                        },
+                        "alternative": {
+                          "item": 270911,
+                          "percentage": 1.0234,
+                          "absolute": 1582.6028,
+                          "item_level": 321
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5309,
+                            "absolute": 821.0182,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Apex Brute's Claw Ring",
+                        "id": 268252,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 6392,
+                            "percentage": 4.1339
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 4.1339,
+                            "absolute": 6392.9812,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Relic",
+                        "id": 270919,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2893,
+                            "percentage": 1.8708
+                          }
+                        },
+                        "alternative": {
+                          "item": 268225,
+                          "percentage": 2.599,
+                          "absolute": 4019.263,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.8708,
+                            "absolute": 2893.208,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomous Boneglaive",
+                        "id": 268201,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 8630,
+                            "percentage": 5.5806
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 9.6684,
+                          "absolute": 14952.0106,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 5.5806,
+                            "absolute": 8630.2459,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 6.4156,
+                    "encounter_absolute": 9920,
+                    "items": [
+                      {
+                        "name": "Vexhul's Everflowing Gland",
+                        "id": 270170,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 3580,
+                            "percentage": 2.3153
+                          }
+                        },
+                        "alternative": {
+                          "item": 270167,
+                          "percentage": 3.3655,
+                          "absolute": 5204.6981,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.3153,
+                            "absolute": 3580.5525,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Effigy",
+                        "id": 270915,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 4177,
+                            "percentage": 2.701
+                          }
+                        },
+                        "alternative": {
+                          "item": 271875,
+                          "percentage": 4.092,
+                          "absolute": 6328.2007,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.701,
+                            "absolute": 4177.1037,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Bespittled Slitherslippers",
+                        "id": 268261,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2163,
+                            "percentage": 1.3993
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.3993,
+                            "absolute": 2163.9368,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 16.1314,
+                    "encounter_absolute": 24945,
+                    "items": [
+                      {
+                        "name": "Silken Voodoo Drape",
+                        "id": 268253,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2709,
+                            "percentage": 1.7522
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.7522,
+                            "absolute": 2709.7007,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Sash of the Forlorn Vessel",
+                        "id": 268256,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2482,
+                            "percentage": 1.6053
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.6053,
+                            "absolute": 2482.5848,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Hex Lord's Dooming Idol",
+                        "id": 270169,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 3532,
+                            "percentage": 2.284
+                          }
+                        },
+                        "alternative": {
+                          "item": 270167,
+                          "percentage": 3.3655,
+                          "absolute": 5204.6981,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.284,
+                            "absolute": 3532.1003,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Baleful Hexblade",
+                        "id": 268211,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 12203,
+                            "percentage": 7.8909
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 9.6684,
+                          "absolute": 14952.0106,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 7.8909,
+                            "absolute": 12203.1606,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Coiled Hex Legguards",
+                        "id": 268225,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 4019,
+                            "percentage": 2.599
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.599,
+                            "absolute": 4019.263,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 23.1835,
+                    "encounter_absolute": 35851,
+                    "items": [
+                      {
+                        "name": "Jan'thrazet, the Soul Fang",
+                        "id": 271092,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 14952,
+                            "percentage": 9.6684
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 9.6684,
+                            "absolute": 14952.0106,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 6328,
+                            "percentage": 4.092
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 4.092,
+                            "absolute": 6328.2007,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Gaze of the Coiled Watcher",
+                        "id": 271875,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 6328,
+                            "percentage": 4.092
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 4.092,
+                            "absolute": 6328.2007,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 7404,
+                            "percentage": 4.7881
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 4.7881,
+                            "absolute": 7404.6248,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Font of Venomous Rage",
+                        "id": 270168,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 839,
+                            "percentage": 0.543
+                          }
+                        },
+                        "alternative": {
+                          "item": 270167,
+                          "percentage": 3.3655,
+                          "absolute": 5204.6981,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.543,
+                            "absolute": 839.7628,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 83.78209999999999,
+                "total_absolute": 129554
               }
             },
             {
@@ -13838,70 +14680,854 @@
                 "updated_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "2026-08-20T05:07:32.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "2026-08-20T05:03:58.000Z"
                 },
                 "report_id": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "x6H8ZDfaxk4822eTyszkzJ"
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 5.3163,
+                    "encounter_absolute": 8220,
+                    "items": [
+                      {
+                        "name": "Vestment of the Awakening",
+                        "id": 268235,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1198,
+                            "percentage": 0.7749
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7749,
+                            "absolute": 1198.4981,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Amani Summoning Shawl",
+                        "id": 268248,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1497,
+                            "percentage": 0.9684
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.9684,
+                            "absolute": 1497.7648,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Restless Spirit Shackles",
+                        "id": 268240,
+                        "slot": "wrist",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 425,
+                            "percentage": 0.275
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.275,
+                            "absolute": 425.3862,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Hexing Spiritrender",
+                        "id": 268203,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 5100,
+                            "percentage": 3.298
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 5.2463,
+                          "absolute": 8113.973,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.298,
+                            "absolute": 5100.7741,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.0237,
+                    "encounter_absolute": 3129,
+                    "items": [
+                      {
+                        "name": "Shadow Hunter's Warmask",
+                        "id": 268219,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 708,
+                            "percentage": 0.458
+                          }
+                        },
+                        "alternative": {
+                          "item": 271875,
+                          "percentage": 2.3738,
+                          "absolute": 3671.3532,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.458,
+                            "absolute": 708.341,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Sentinel's Vitriolic Chain",
+                        "id": 268250,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1983,
+                            "percentage": 1.2825
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 3.0831,
+                          "absolute": 4768.4176,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.2825,
+                            "absolute": 1983.5955,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Idol",
+                        "id": 270911,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 438,
+                            "percentage": 0.2832
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2832,
+                            "absolute": 438.0539,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.9398,
+                    "encounter_absolute": 4545,
+                    "items": [
+                      {
+                        "name": "Frothing Venom Spaulders",
+                        "id": 268246,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1734,
+                            "percentage": 1.1215
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1215,
+                            "absolute": 1734.4863,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vile Alchemist's Band",
+                        "id": 268249,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 527,
+                            "percentage": 0.3413
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 3.4418,
+                          "absolute": 5323.1688,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.3413,
+                            "absolute": 527.893,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Icon",
+                        "id": 270927,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 939,
+                            "percentage": 0.6072
+                          }
+                        },
+                        "alternative": {
+                          "item": 268235,
+                          "percentage": 0.7749,
+                          "absolute": 1198.4981,
+                          "item_level": 305
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.6072,
+                            "absolute": 939.1734,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Fang of Umbral Malignance",
+                        "id": 270161,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1345,
+                            "percentage": 0.8698
+                          }
+                        },
+                        "alternative": {
+                          "item": 270167,
+                          "percentage": 2.3686,
+                          "absolute": 3663.404,
+                          "item_level": 331
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8698,
+                            "absolute": 1345.1835,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.498,
+                    "encounter_absolute": 5409,
+                    "items": [
+                      {
+                        "name": "Unpossessed Skullsash",
+                        "id": 268227,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1038,
+                            "percentage": 0.6714
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.6714,
+                            "absolute": 1038.4255,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Gebbo's Bottomless Bag",
+                        "id": 270164,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 3453,
+                            "percentage": 2.233
+                          }
+                        },
+                        "alternative": {
+                          "item": 270167,
+                          "percentage": 2.3686,
+                          "absolute": 3663.404,
+                          "item_level": 331
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.233,
+                            "absolute": 3453.6032,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Remnant",
+                        "id": 270923,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 918,
+                            "percentage": 0.5936
+                          }
+                        },
+                        "alternative": {
+                          "item": 268246,
+                          "percentage": 1.1215,
+                          "absolute": 1734.4863,
+                          "item_level": 308
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5936,
+                            "absolute": 918.0142,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 7.5762,
+                    "encounter_absolute": 11716,
+                    "items": [
+                      {
+                        "name": "Venomcured Relic",
+                        "id": 270919,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1264,
+                            "percentage": 0.8178
+                          }
+                        },
+                        "alternative": {
+                          "item": 268225,
+                          "percentage": 0.8296,
+                          "absolute": 1283.0959,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8178,
+                            "absolute": 1264.8405,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Apex Brute's Claw Ring",
+                        "id": 268252,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 5323,
+                            "percentage": 3.4418
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.4418,
+                            "absolute": 5323.1688,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomous Boneglaive",
+                        "id": 268201,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 5129,
+                            "percentage": 3.3166
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 5.2463,
+                          "absolute": 8113.973,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.3166,
+                            "absolute": 5129.5296,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.5095,
+                    "encounter_absolute": 5427,
+                    "items": [
+                      {
+                        "name": "Bespittled Slitherslippers",
+                        "id": 268261,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1008,
+                            "percentage": 0.6518
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.6518,
+                            "absolute": 1008.0427,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Effigy",
+                        "id": 270915,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2631,
+                            "percentage": 1.7014
+                          }
+                        },
+                        "alternative": {
+                          "item": 271875,
+                          "percentage": 2.3738,
+                          "absolute": 3671.3532,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.7014,
+                            "absolute": 2631.4889,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vexhul's Everflowing Gland",
+                        "id": 270170,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1788,
+                            "percentage": 1.1563
+                          }
+                        },
+                        "alternative": {
+                          "item": 270167,
+                          "percentage": 2.3686,
+                          "absolute": 3663.404,
+                          "item_level": 331
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1563,
+                            "absolute": 1788.3229,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 6.2446,
+                    "encounter_absolute": 9656,
+                    "items": [
+                      {
+                        "name": "Coiled Hex Legguards",
+                        "id": 268225,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1283,
+                            "percentage": 0.8296
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8296,
+                            "absolute": 1283.0959,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Sash of the Forlorn Vessel",
+                        "id": 268256,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 546,
+                            "percentage": 0.3534
+                          }
+                        },
+                        "alternative": {
+                          "item": 268227,
+                          "percentage": 0.6714,
+                          "absolute": 1038.4255,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.3534,
+                            "absolute": 546.6045,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Baleful Hexblade",
+                        "id": 268211,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 5391,
+                            "percentage": 3.4862
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 5.2463,
+                          "absolute": 8113.973,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.4862,
+                            "absolute": 5391.8304,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Silken Voodoo Drape",
+                        "id": 268253,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1168,
+                            "percentage": 0.7555
+                          }
+                        },
+                        "alternative": {
+                          "item": 268248,
+                          "percentage": 0.9684,
+                          "absolute": 1497.7648,
+                          "item_level": 305
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7555,
+                            "absolute": 1168.4954,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Hex Lord's Dooming Idol",
+                        "id": 270169,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1268,
+                            "percentage": 0.8199
+                          }
+                        },
+                        "alternative": {
+                          "item": 270167,
+                          "percentage": 2.3686,
+                          "absolute": 3663.404,
+                          "item_level": 331
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8199,
+                            "absolute": 1268.1498,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 13.077,
+                    "encounter_absolute": 20223,
+                    "items": [
+                      {
+                        "name": "Jan'thrazet, the Soul Fang",
+                        "id": 271092,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 8113,
+                            "percentage": 5.2463
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 5.2463,
+                            "absolute": 8113.973,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 3671,
+                            "percentage": 2.3738
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.3738,
+                            "absolute": 3671.3532,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Gaze of the Coiled Watcher",
+                        "id": 271875,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 3671,
+                            "percentage": 2.3738
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.3738,
+                            "absolute": 3671.3532,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 4768,
+                            "percentage": 3.0831
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.0831,
+                            "absolute": 4768.4176,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 44.1851,
+                "total_absolute": 68325
               }
             },
             {
@@ -13910,70 +15536,531 @@
                 "updated_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "2026-08-20T05:01:57.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "2026-08-20T05:03:58.000Z"
                 },
                 "report_id": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "x6H8ZDfaxk4822eTyszkzJ"
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.9685,
+                    "encounter_absolute": 3027,
+                    "items": [
+                      {
+                        "name": "Amani Summoning Shawl",
+                        "id": 268248,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 832,
+                            "percentage": 0.5412
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5412,
+                            "absolute": 832.8187,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Restless Spirit Shackles",
+                        "id": 268240,
+                        "slot": "wrist",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 295,
+                            "percentage": 0.1923
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1923,
+                            "absolute": 295.9701,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Hexing Spiritrender",
+                        "id": 268203,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1900,
+                            "percentage": 1.235
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 3.0751,
+                          "absolute": 4731.9574,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.235,
+                            "absolute": 1900.3359,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.4995,
+                    "encounter_absolute": 768,
+                    "items": [
+                      {
+                        "name": "Sentinel's Vitriolic Chain",
+                        "id": 268250,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 768,
+                            "percentage": 0.4995
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 2.2817,
+                          "absolute": 3511.0843,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.4995,
+                            "absolute": 768.5487,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.4217,
+                    "encounter_absolute": 648,
+                    "items": [
+                      {
+                        "name": "Frothing Venom Spaulders",
+                        "id": 268246,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 648,
+                            "percentage": 0.4217
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.4217,
+                            "absolute": 648.8849,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.4129,
+                    "encounter_absolute": 2174,
+                    "items": [
+                      {
+                        "name": "Gebbo's Bottomless Bag",
+                        "id": 270164,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2174,
+                            "percentage": 1.4129
+                          }
+                        },
+                        "alternative": {
+                          "item": 270167,
+                          "percentage": 1.5137,
+                          "absolute": 2329.3162,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4129,
+                            "absolute": 2174.1951,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.9142,
+                    "encounter_absolute": 6022,
+                    "items": [
+                      {
+                        "name": "Apex Brute's Claw Ring",
+                        "id": 268252,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 4046,
+                            "percentage": 2.6295
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.6295,
+                            "absolute": 4046.2598,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomous Boneglaive",
+                        "id": 268201,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1976,
+                            "percentage": 1.2847
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 3.0751,
+                          "absolute": 4731.9574,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.2847,
+                            "absolute": 1976.8859,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.0647,
+                    "encounter_absolute": 1637,
+                    "items": [
+                      {
+                        "name": "Vexhul's Everflowing Gland",
+                        "id": 270170,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 312,
+                            "percentage": 0.2031
+                          }
+                        },
+                        "alternative": {
+                          "item": 270167,
+                          "percentage": 1.5137,
+                          "absolute": 2329.3162,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2031,
+                            "absolute": 312.552,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Effigy",
+                        "id": 270915,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1325,
+                            "percentage": 0.8616
+                          }
+                        },
+                        "alternative": {
+                          "item": 271875,
+                          "percentage": 1.558,
+                          "absolute": 2397.4461,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8616,
+                            "absolute": 1325.8593,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.85,
+                    "encounter_absolute": 2845,
+                    "items": [
+                      {
+                        "name": "Silken Voodoo Drape",
+                        "id": 268253,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 342,
+                            "percentage": 0.2223
+                          }
+                        },
+                        "alternative": {
+                          "item": 268248,
+                          "percentage": 0.5412,
+                          "absolute": 832.8187,
+                          "item_level": 292
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2223,
+                            "absolute": 342.0852,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Hex Lord's Dooming Idol",
+                        "id": 270169,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 292,
+                            "percentage": 0.1902
+                          }
+                        },
+                        "alternative": {
+                          "item": 270167,
+                          "percentage": 1.5137,
+                          "absolute": 2329.3162,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1902,
+                            "absolute": 292.674,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Baleful Hexblade",
+                        "id": 268211,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2211,
+                            "percentage": 1.4375
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 3.0751,
+                          "absolute": 4731.9574,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4375,
+                            "absolute": 2211.9387,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 8.4728,
+                    "encounter_absolute": 13036,
+                    "items": [
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2397,
+                            "percentage": 1.558
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.558,
+                            "absolute": 2397.4461,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Gaze of the Coiled Watcher",
+                        "id": 271875,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2397,
+                            "percentage": 1.558
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.558,
+                            "absolute": 2397.4461,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 3511,
+                            "percentage": 2.2817
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.2817,
+                            "absolute": 3511.0843,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Jan'thrazet, the Soul Fang",
+                        "id": 271092,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 4731,
+                            "percentage": 3.0751
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.0751,
+                            "absolute": 4731.9574,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 19.6043,
+                "total_absolute": 30157
               }
             }
           ]
@@ -13988,28 +16075,111 @@
                 "updated_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "2026-08-20T05:08:03.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "2026-08-20T05:03:58.000Z"
                 },
                 "report_id": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "x6H8ZDfaxk4822eTyszkzJ"
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 6.3374,
+                    "encounter_absolute": 9799,
+                    "items": [
+                      {
+                        "name": "Wavecaller's Seastone",
+                        "id": 270167,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 5204,
+                            "percentage": 3.3655
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.3655,
+                            "absolute": 5204.6981,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Breakwater Boots",
+                        "id": 268247,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1185,
+                            "percentage": 0.7663
+                          }
+                        },
+                        "alternative": {
+                          "item": 268261,
+                          "percentage": 1.3993,
+                          "absolute": 2163.9368,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7663,
+                            "absolute": 1185.0503,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Alluring Bubbleband",
+                        "id": 268266,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 3410,
+                            "percentage": 2.2056
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 4.1339,
+                          "absolute": 6392.9812,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:08:03.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.2056,
+                            "absolute": 3410.9627,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 6.3374,
+                "total_absolute": 9799
               }
             },
             {
@@ -14018,28 +16188,111 @@
                 "updated_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "2026-08-20T05:07:32.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "2026-08-20T05:03:58.000Z"
                 },
                 "report_id": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "x6H8ZDfaxk4822eTyszkzJ"
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 4.1586,
+                    "encounter_absolute": 6431,
+                    "items": [
+                      {
+                        "name": "Wavecaller's Seastone",
+                        "id": 270167,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 3663,
+                            "percentage": 2.3686
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.3686,
+                            "absolute": 3663.404,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Alluring Bubbleband",
+                        "id": 268266,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2639,
+                            "percentage": 1.7065
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 3.4418,
+                          "absolute": 5323.1688,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.7065,
+                            "absolute": 2639.2609,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Breakwater Boots",
+                        "id": 268247,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 129,
+                            "percentage": 0.0835
+                          }
+                        },
+                        "alternative": {
+                          "item": 268261,
+                          "percentage": 0.6518,
+                          "absolute": 1008.0427,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:07:32.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.0835,
+                            "absolute": 129.1429,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 4.1586,
+                "total_absolute": 6431
               }
             },
             {
@@ -14048,28 +16301,82 @@
                 "updated_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "2026-08-20T05:01:57.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "2026-08-20T05:03:58.000Z"
                 },
                 "report_id": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": null
+                  "Devourer": "x6H8ZDfaxk4822eTyszkzJ"
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.5655,
+                    "encounter_absolute": 3947,
+                    "items": [
+                      {
+                        "name": "Wavecaller's Seastone",
+                        "id": 270167,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 2329,
+                            "percentage": 1.5137
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.5137,
+                            "absolute": 2329.3162,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Alluring Bubbleband",
+                        "id": 268266,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1618,
+                            "percentage": 1.0518
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 2.6295,
+                          "absolute": 4046.2598,
+                          "item_level": 298
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-08-20T05:01:57.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.0518,
+                            "absolute": 1618.5484,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 2.5655,
+                "total_absolute": 3947
               }
             }
           ]
