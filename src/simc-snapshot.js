@@ -140,10 +140,41 @@ export const MIDNIGHT_S2_CATALYST = 3465;
 // A /simc export keeps every season's leftovers, and showing a stale Dawnlight
 // balance reads as "you can catalyze now" when you cannot. Only a currency
 // newer than ours wins, so this keeps working into the next season.
+//
+// `quantity` is null when the export never mentioned this currency, which is a
+// different thing from holding none of it, and the two must not be shown the
+// same way. The addon walks a hardcoded list of catalyst currency ids and emits
+// every one the client knows about - zero balances included, unlike the upgrade
+// currencies, which it filters to quantity > 0. So a currency that is IN the
+// addon's list always appears, and one that is missing entirely was never asked
+// about.
+//
+// That is the state the whole roster is in: SimC addon 12.1.0-02 lists 2813,
+// 3116, 3269 and 3378 and stops, so no export carries 3465 (Venomblight
+// Manaflux) and every raider read as zero charges. Blizzard's own achievement
+// data says otherwise - eight of them have progress on "Midnight Season 2:
+// Catalyst Unbound", which only advances when a charge is spent - so zero was
+// not just unknown, it was wrong. Nothing here can fix that; the addon has to
+// add the id. Saying "unknown" is what this can do honestly.
 export function currentCatalystBalance(snapshot, currencies = snapshot?.catalystCurrencies) {
   const newer = Object.keys(currencies || {})
     .map(Number)
     .filter((id) => Number.isFinite(id) && id > MIDNIGHT_S2_CATALYST);
   const currentId = newer.length ? Math.max(...newer) : MIDNIGHT_S2_CATALYST;
-  return { id: currentId, quantity: Number(currencies?.[String(currentId)] || 0) };
+  const reported = currencies?.[String(currentId)];
+  return {
+    id: currentId,
+    quantity: reported === undefined || reported === null || !Number.isFinite(Number(reported))
+      ? null
+      : Number(reported),
+  };
+}
+
+// Why the count is unknown, for the raider looking at a "?". Only ever called
+// when currentCatalystBalance came back null, so it explains the two ways that
+// happens and nothing else.
+export function catalystUnknownReason(snapshot) {
+  if (!snapshot || !snapshot.capturedAt) return "No /simc export captured yet.";
+  const currency = CATALYST_CURRENCIES[String(currentCatalystBalance(snapshot).id)];
+  return `The SimC addon does not export ${currency ? currency.name : "this season's catalyst currency"} yet, so the board cannot read the balance. Re-paste once the addon updates.`;
 }

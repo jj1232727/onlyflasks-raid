@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { MIDNIGHT_S2_CRESTS, currentCatalystBalance, hasCurrencyData, inspectSimcExport, parseSimcSnapshot } from "../src/simc-snapshot.js";
+import { MIDNIGHT_S2_CRESTS, catalystUnknownReason, currentCatalystBalance, hasCurrencyData, inspectSimcExport, parseSimcSnapshot } from "../src/simc-snapshot.js";
 
 test("extracts bag, vault, catalyst, and crest snapshot data", () => {
   const text = `hunter="Example"
@@ -29,12 +29,26 @@ spec=beast_mastery
 test("reads Venomblight Manaflux, never last season's leftover charges", () => {
   // 3378 (Dawnlight) lingers on characters that played Season 1.
   assert.deepEqual(currentCatalystBalance(null, { 3378: 4, 3465: 2, 3116: 8 }), { id: 3465, quantity: 2 });
-  // Leftovers only: report zero Venomblight rather than 4 unusable Dawnlight.
-  assert.deepEqual(currentCatalystBalance(null, { 3378: 4 }), { id: 3465, quantity: 0 });
-  assert.deepEqual(currentCatalystBalance(null, {}), { id: 3465, quantity: 0 });
-  assert.deepEqual(currentCatalystBalance(null, undefined), { id: 3465, quantity: 0 });
+  // The addon exports a zero balance for every catalyst currency it knows, so a
+  // reported 0 is a real 0 and stays one.
+  assert.deepEqual(currentCatalystBalance(null, { 3378: 4, 3465: 0 }), { id: 3465, quantity: 0 });
+  // Leftovers only: the addon never asked about 3465, so the balance is unknown.
+  // Reporting 0 here told the whole roster they could not catalyse while they
+  // were spending charges - see currentCatalystBalance.
+  assert.deepEqual(currentCatalystBalance(null, { 3378: 4 }), { id: 3465, quantity: null });
+  assert.deepEqual(currentCatalystBalance(null, {}), { id: 3465, quantity: null });
+  assert.deepEqual(currentCatalystBalance(null, undefined), { id: 3465, quantity: null });
   // A future season's currency still takes over without a code change.
   assert.deepEqual(currentCatalystBalance(null, { 3465: 2, 3599: 1 }), { id: 3599, quantity: 1 });
+});
+
+test("an unknown charge balance says why, and a captured one does not pretend", () => {
+  assert.match(catalystUnknownReason(null), /No \/simc export captured/);
+  const pasted = parseSimcSnapshot(`hunter="Galsnipes"
+# catalyst_currencies=3269:8/3378:8/2813:8/3116:8
+`, "2026-08-19T23:08:00.000Z");
+  assert.match(catalystUnknownReason(pasted), /Venomblight Manaflux/);
+  assert.match(catalystUnknownReason(pasted), /addon/i);
 });
 
 test("an export with no currency ids is missing data, not holding zero", () => {
@@ -70,12 +84,16 @@ test("upgrade_currencies splits currencies from crafting reagents by tag", () =>
   assert.equal(hasCurrencyData(current), true);
 });
 
-test("catalyst_currencies stays untagged, and Galsnipes holds no Venomblight", () => {
+test("catalyst_currencies stays untagged, and Galsnipes' Venomblight is unknown", () => {
+  // Verbatim from a 2026-08-19 paste. SimC addon 12.1.0-02 lists 2813, 3116,
+  // 3269 and 3378 and stops, so 3465 is absent from every export on the board -
+  // while Blizzard's "Midnight Season 2: Catalyst Unbound" says this character
+  // has already spent three of them.
   const snap = parseSimcSnapshot(`hunter="Galsnipes"
 # catalyst_currencies=3269:8/3378:8/2813:8/3116:8
 `);
   assert.deepEqual(snap.catalystCurrencies, { 3269: 8, 3378: 8, 2813: 8, 3116: 8 });
-  assert.deepEqual(currentCatalystBalance(snap), { id: 3465, quantity: 0 });
+  assert.deepEqual(currentCatalystBalance(snap), { id: 3465, quantity: null });
 });
 
 test("paste check spots the out-of-date addon that drops currencies", () => {

@@ -26,7 +26,8 @@ export declare function tierSetStatus<T = any>(input: {
     sourceTrackOrder: number;
     track: string;
     trackOrder: number;
-    state: "tier" | "stored" | "ready" | "waiting" | "missing";
+    // "unknown" — a convertible base, with no charge balance to judge it by.
+    state: "tier" | "stored" | "ready" | "waiting" | "unknown" | "missing";
     evidence?: T;
   }[];
   pieces: number;

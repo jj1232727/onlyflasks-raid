@@ -42,6 +42,7 @@ import {
   MIDNIGHT_S2_CRESTS,
   hasCurrencyData,
   inspectSimcExport,
+  catalystUnknownReason,
   currentCatalystBalance,
   parseSimcSnapshot,
 } from "./simc-snapshot.js";
@@ -282,6 +283,7 @@ const TIER_SLOT_HELP: Record<string, string> = {
   stored: "Tier piece is in their bags — they just need to put it on",
   ready: "Not tier, but convertible — they hold a catalyst charge",
   waiting: "Convertible base, but no catalyst charge in hand",
+  unknown: "Convertible base — charge balance unknown, the SimC addon does not export this season's catalyst currency yet",
   missing: "Nothing here the Catalyst can use — needs a drop",
 };
 const VIEWS = ["overview", "bosses", "tier", "contested", "audit", "decisions", "history", "wishlist"] as const;
@@ -763,9 +765,9 @@ function TierResourceSnapshot({ info, visuals, icons = {}, compact = false }: { 
         </span>
       </div>
       <div className="resource-currencies">
-        <a className={`catalyst-currency ${info.catalystCharges > 0 ? "available" : "empty"}`} href={`https://www.wowhead.com/currency=${catalystId}`} data-wowhead={`currency=${catalystId}`} target="_blank" rel="noreferrer" title={`${catalystName} · ${info.catalystCharges} charge${info.catalystCharges === 1 ? "" : "s"}`}>
+        <a className={`catalyst-currency ${info.catalystCharges === null ? "unknown" : info.catalystCharges > 0 ? "available" : "empty"}`} href={`https://www.wowhead.com/currency=${catalystId}`} data-wowhead={`currency=${catalystId}`} target="_blank" rel="noreferrer" title={info.catalystCharges === null ? `${catalystName} · ${info.catalystUnknownReason || "not reported by the /simc export"}` : `${catalystName} · ${info.catalystCharges} charge${info.catalystCharges === 1 ? "" : "s"}`}>
           <img src={wowIcon(catalyst?.icon || CATALYST_CURRENCIES[MIDNIGHT_S2_CATALYST].icon)} />
-          <span><strong>{info.catalystCharges}</strong><small>{catalyst ? catalystName.split(" ")[0].toUpperCase() : "CATALYST"}</small></span>
+          <span><strong>{info.catalystCharges ?? "?"}</strong><small>{catalyst ? catalystName.split(" ")[0].toUpperCase() : "CATALYST"}</small></span>
           {info.catalystDelta !== null && info.catalystDelta !== 0 && <em>{info.catalystDelta > 0 ? "+" : ""}{info.catalystDelta}</em>}
         </a>
         <div className="crest-icons">
@@ -1949,9 +1951,14 @@ export default function App() {
           c, equippedCount, storedCount, readyCount, waitingCount, missingCount,
           charges: catalystCharges || 0,
           catalystCharges,
+          // Only meaningful when catalystCharges is null; every place that
+          // renders a "?" needs to be able to say why.
+          catalystUnknownReason: catalystCharges === null ? catalystUnknownReason(snapshot) : "",
           catalystId: catalystBalance?.id || null,
-          catalystDelta: catalystBalance && snapshot?.previousCatalystCurrencies && Number.isFinite(Number(snapshot.previousCatalystCurrencies[String(catalystBalance.id)]))
-            ? catalystBalance.quantity - Number(snapshot.previousCatalystCurrencies[String(catalystBalance.id)])
+          // "since last paste" needs both ends. An unknown balance has no end to
+          // subtract from, so there is no delta to show either.
+          catalystDelta: catalystCharges !== null && snapshot?.previousCatalystCurrencies && Number.isFinite(Number(snapshot.previousCatalystCurrencies[String(catalystBalance.id)]))
+            ? catalystCharges - Number(snapshot.previousCatalystCurrencies[String(catalystBalance.id)])
             : null,
           vaultTier: snapshotVault.filter((item) => tierIdSet.has(+item.itemId)),
           vaultCatalyst: snapshotVault.filter((item) => !tierIdSet.has(+item.itemId) && TIER_SLOT_SET.has(slot(item.slot))),
@@ -2598,6 +2605,7 @@ export default function App() {
               <span className="k-tier"><i />Tier equipped</span>
               <span className="k-ready"><i />Worn base, charge in hand</span>
               <span className="k-waiting"><i />Worn base, no charge</span>
+              <span className="k-unknown"><i />Worn base, charges unknown</span>
               <span className="k-missing"><i />Nothing usable equipped</span>
               <span className="legend-split">
                 Letter = track of the item they have on:
@@ -2609,7 +2617,7 @@ export default function App() {
             </div>
             <div className="tier-grid">
               {tierStatus.map(
-                ({ c, slots, equippedCount, storedCount, readyCount, waitingCount, trackMix, setBonus, reachable, reachableBonus, hiddenUpgrade, freePieces, catalysable, catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, bagTier, bagBases, crests, crestsMissing, snapshotAt }) => (
+                ({ c, slots, equippedCount, storedCount, readyCount, waitingCount, trackMix, setBonus, reachable, reachableBonus, hiddenUpgrade, freePieces, catalysable, catalystCharges, catalystUnknownReason: chargesUnknownWhy, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, bagTier, bagBases, crests, crestsMissing, snapshotAt }) => (
                 <div
                   className={`tier-person ${equippedCount === 5 ? "tier-complete" : ""} ${hiddenUpgrade ? "tier-actionable" : ""}`}
                   key={c.id}
@@ -2620,8 +2628,8 @@ export default function App() {
                   <div className="tier-card-head">
                     <RaiderIdentity c={c} spec={specFor(c)} status={rosterStatuses[c.id] || c.rosterStatus || "Main"} />
                     <span
-                      className={`tier-charges ${catalystCharges ? "has" : "none"}`}
-                      title={`${catalystCharges ?? 0} Venomblight Manaflux held${catalystCharges === null ? " (no /simc captured)" : ""}`}
+                      className={`tier-charges ${catalystCharges === null ? "unknown" : catalystCharges ? "has" : "none"}`}
+                      title={catalystCharges === null ? chargesUnknownWhy : `${catalystCharges} Venomblight Manaflux held`}
                     >
                       <strong>{catalystCharges ?? "?"}</strong>
                       <small>CATA</small>
@@ -2666,7 +2674,7 @@ export default function App() {
                   {/* Tier view: only what can become tier. A vault full of trinkets and
                       weapons is worth seeing, but not here - the audit view shows
                       the whole vault, this one answers "can I complete a set". */}
-                  <TierResourceSnapshot info={{ catalystCharges, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther: [], bagTier, bagBases, crests, crestsMissing, snapshotAt }} visuals={visualItems} icons={data.itemIcons || {}} />
+                  <TierResourceSnapshot info={{ catalystCharges, catalystUnknownReason: chargesUnknownWhy, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther: [], bagTier, bagBases, crests, crestsMissing, snapshotAt }} visuals={visualItems} icons={data.itemIcons || {}} />
                 </div>
               ))}
             </div>

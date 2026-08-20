@@ -71,6 +71,27 @@ test("the same base with no charge is blocked, not hidden", () => {
   assert.equal(status.hiddenUpgrade, false, "cannot act without a charge");
 });
 
+test("an unreported charge balance is unknown, and never read as a spare charge", () => {
+  // What every export on the board looks like today: the SimC addon does not
+  // export this season's catalyst currency, so charges arrives null.
+  const status = tierSetStatus({
+    equipment: [
+      piece("HEAD", 100, CHAMP), piece("SHOULDER", 101, CHAMP), piece("CHEST", 102, CHAMP),
+      base("HANDS", 900, CHAMP),
+    ],
+    tierIds,
+    charges: null,
+  });
+  assert.equal(status.slots.find((s) => s.slot === "HANDS").state, "unknown");
+  assert.equal(status.ready, 0, "never claims a charge is in hand");
+  assert.equal(status.waiting, 1, "still counted as a slot that is not done");
+  assert.equal(status.convertibleSlots, 1, "the base is still convertible");
+  assert.equal(status.catalysable, 0, "but nothing can be promised from it");
+  assert.equal(status.reachable, 3);
+  assert.equal(status.hiddenUpgrade, false);
+  assert.equal(status.verdict, "charge", "a charge is what unblocks them either way");
+});
+
 test("charges cap how many bases can actually be converted", () => {
   const status = tierSetStatus({
     equipment: [base("HEAD", 900), base("SHOULDER", 901), base("CHEST", 902), base("HANDS", 903)],

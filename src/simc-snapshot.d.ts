@@ -36,7 +36,12 @@ export declare function inspectSimcExport(text: string): {
 export declare function hasCurrencyData(
   snapshot: { upgradeCurrencies?: Record<string, number> } | null | undefined,
 ): boolean;
+// `quantity` is null when the export did not report this currency at all -
+// unknown, not zero.
 export declare function currentCatalystBalance(
   snapshot: { catalystCurrencies?: Record<string, number> } | null | undefined,
   currencies?: Record<string, number>,
-): { id: number; quantity: number };
+): { id: number; quantity: number | null };
+export declare function catalystUnknownReason(
+  snapshot: { capturedAt?: string; catalystCurrencies?: Record<string, number> } | null | undefined,
+): string;

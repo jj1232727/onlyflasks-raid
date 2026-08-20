@@ -47,7 +47,13 @@ export function tierIdsForClass(tierItemsBySlot, classId) {
   return ids;
 }
 
+// `charges` is null when the /simc export never reported the catalyst currency
+// - see currentCatalystBalance. A convertible base then cannot be sorted into
+// "ready" or "waiting", because both state a fact about charges we do not have,
+// so it gets its own state. Everything that only cares "is this slot still open"
+// treats it exactly like waiting; only the claim about charges is withheld.
 export function tierSetStatus({ equipment = [], bags = [], tierIds = {}, charges = 0 }) {
+  const chargesKnown = charges !== null && charges !== undefined;
   const allTierIds = new Set(Object.values(tierIds).map(Number));
 
   // A slot describes the character, not their inventory: what is ON them right
@@ -72,7 +78,11 @@ export function tierSetStatus({ equipment = [], bags = [], tierIds = {}, charges
       sourceTrackOrder: trackOrder(worn),
       track: trackName(worn),
       trackOrder: trackOrder(worn),
-      state: equippedPiece ? "tier" : wornBase ? (charges > 0 ? "ready" : "waiting") : "missing",
+      state: equippedPiece
+        ? "tier"
+        : wornBase
+          ? (chargesKnown ? (charges > 0 ? "ready" : "waiting") : "unknown")
+          : "missing",
       evidence: worn,
     };
   });
@@ -86,14 +96,16 @@ export function tierSetStatus({ equipment = [], bags = [], tierIds = {}, charges
   const tierSlots = new Set(slots.filter((x) => x.state === "tier").map((x) => x.slot)),
     bagTierSlots = bySlot(bagTier),
     baseSlots = new Set([
-      ...slots.filter((x) => x.state === "ready" || x.state === "waiting").map((x) => x.slot),
+      ...slots.filter((x) => x.state === "ready" || x.state === "waiting" || x.state === "unknown").map((x) => x.slot),
       ...bySlot(bagBases),
     ]);
 
   const count = (state) => slots.filter((x) => x.state === state).length,
     pieces = count("tier"),
     ready = count("ready"),
-    waiting = count("waiting"),
+    // An unreported charge balance is not a charge, so these slots sit with the
+    // ones that are still blocked. The card's "?" is what says which it is.
+    waiting = count("waiting") + count("unknown"),
     missing = count("missing");
 
   // Track mix over equipped pieces only — a bag piece is not giving stats yet.
@@ -107,7 +119,9 @@ export function tierSetStatus({ equipment = [], bags = [], tierIds = {}, charges
   // base would be counted twice and reachable could exceed five.
   const freeSlots = [...bagTierSlots].filter((s) => !tierSlots.has(s)).length,
     convertibleSlots = [...baseSlots].filter((s) => !tierSlots.has(s) && !bagTierSlots.has(s)).length,
-    catalysable = Math.min(convertibleSlots, Math.max(0, charges || 0)),
+    // Unknown charges count as none: `reachable` drives "can self-solve", and
+    // promising a 4PC nobody can actually assemble is the worse mistake.
+    catalysable = Math.min(convertibleSlots, Math.max(0, chargesKnown ? charges : 0)),
     reachable = Math.min(TIER_SLOTS.length, pieces + freeSlots + catalysable),
     setBonus = bonusForPieces(pieces),
     reachableBonus = bonusForPieces(reachable);
