@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-20T12:36:42.496Z",
+  "fetchedAt": "2026-08-20T14:30:34.666Z",
   "characters": [
     {
       "id": 5454087,
@@ -2151,9 +2151,63 @@
       "id": 7422636,
       "name": "Aerenn",
       "status": "ok",
-      "lastCrawledAt": "2026-08-19T23:27:07.000Z",
+      "lastCrawledAt": "2026-08-20T13:15:57.000Z",
       "profileUrl": "https://raider.io/characters/us/zuljin/Aerenn",
       "weeklyRuns": [
+        {
+          "dungeon": "Altar of Fangs",
+          "short_name": "AOF",
+          "mythic_level": 11,
+          "completed_at": "2026-08-20T12:28:08.000Z",
+          "clear_time_ms": 1747700,
+          "keystone_run_id": 635758,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 1,
+          "map_challenge_mode_id": 588,
+          "zone_id": 16865,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
+          "score": 336.1,
+          "affixes": [
+            {
+              "id": 162,
+              "name": "Xal'atath's Bargain: Pulsar",
+              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+              "icon": "inv_cosmicvoid_nova",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+              "wowhead_url": "https://wowhead.com/affix=162"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/635758-11-altar-of-fangs",
+          "spec": {
+            "id": 71,
+            "name": "Arms",
+            "slug": "arms",
+            "class_id": 1,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "dps"
+        },
         {
           "dungeon": "Voidscar Arena",
           "short_name": "VSA",
@@ -2587,20 +2641,20 @@
           "role": "dps"
         },
         {
-          "dungeon": "Murder Row",
-          "short_name": "MR",
+          "dungeon": "Altar of Fangs",
+          "short_name": "AOF",
           "mythic_level": 10,
-          "completed_at": "2026-08-18T22:22:14.000Z",
-          "clear_time_ms": 1807661,
-          "keystone_run_id": 33935,
-          "par_time_ms": 2040999,
+          "completed_at": "2026-08-20T03:40:13.000Z",
+          "clear_time_ms": 1773408,
+          "keystone_run_id": 639015,
+          "par_time_ms": 1800999,
           "num_keystone_upgrades": 1,
-          "map_challenge_mode_id": 587,
-          "zone_id": 16091,
+          "map_challenge_mode_id": 588,
+          "zone_id": 16865,
           "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_murderrow.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/murder-row.jpg",
-          "score": 324.3,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
+          "score": 320.6,
           "affixes": [
             {
               "id": 162,
@@ -2627,53 +2681,7 @@
               "wowhead_url": "https://wowhead.com/affix=9"
             }
           ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/33935-10-murder-row",
-          "spec": {
-            "id": 71,
-            "name": "Arms",
-            "slug": "arms",
-            "class_id": 1,
-            "role": "dps",
-            "is_melee": true,
-            "patch": "1.0.0",
-            "ordinal": 0
-          },
-          "role": "dps"
-        },
-        {
-          "dungeon": "Altar of Fangs",
-          "short_name": "AOF",
-          "mythic_level": 9,
-          "completed_at": "2026-08-19T22:43:23.000Z",
-          "clear_time_ms": 1372571,
-          "keystone_run_id": 435260,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 2,
-          "map_challenge_mode_id": 588,
-          "zone_id": 16865,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
-          "score": 298.9,
-          "affixes": [
-            {
-              "id": 162,
-              "name": "Xal'atath's Bargain: Pulsar",
-              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
-              "icon": "inv_cosmicvoid_nova",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
-              "wowhead_url": "https://wowhead.com/affix=162"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/435260-9-altar-of-fangs",
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/639015-10-altar-of-fangs",
           "spec": {
             "id": 71,
             "name": "Arms",
