@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-21T06:36:12.853Z",
+  "fetchedAt": "2026-08-21T08:33:53.004Z",
   "periodInfo": {
     "current_period": 1077,
     "current_season": {
@@ -578,7 +578,9 @@
                 "maxItemLevel": 344,
                 "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/achievement_boss_elitenagamale.jpg",
                 "zoomUrl": "https://data.wowaudit.com/img/nymrissa-wavecaller.jpg",
-                "encounterAreaImages": null,
+                "encounterAreaImages": [
+                  "Room"
+                ],
                 "tierSlotDrop": null
               }
             ],
@@ -1040,8 +1042,8 @@
         "regular_mythic_dungeons_done": 8,
         "vault_options": {
           "raids": {
-            "option_1": 305,
-            "option_2": 305,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": 305
           },
           "dungeons": {
@@ -1170,14 +1172,18 @@
           {
             "level": 10,
             "dungeon": 585
+          },
+          {
+            "level": 12,
+            "dungeon": 586
           }
         ],
         "world_quests_done": 3,
         "regular_mythic_dungeons_done": 8,
         "vault_options": {
           "raids": {
-            "option_1": 305,
-            "option_2": 305,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": 305
           },
           "dungeons": {
@@ -1515,8 +1521,8 @@
         "regular_mythic_dungeons_done": 8,
         "vault_options": {
           "raids": {
-            "option_1": 305,
-            "option_2": 305,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": 305
           },
           "dungeons": {
@@ -1751,8 +1757,8 @@
         "regular_mythic_dungeons_done": 7,
         "vault_options": {
           "raids": {
-            "option_1": 305,
-            "option_2": 305,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": 305
           },
           "dungeons": {
@@ -1762,7 +1768,7 @@
           },
           "world": {
             "option_1": 305,
-            "option_2": null,
+            "option_2": 272,
             "option_3": null
           }
         }
@@ -2467,14 +2473,18 @@
           {
             "level": 10,
             "dungeon": 587
+          },
+          {
+            "level": 11,
+            "dungeon": 587
           }
         ],
-        "world_quests_done": 1,
+        "world_quests_done": 2,
         "regular_mythic_dungeons_done": 8,
         "vault_options": {
           "raids": {
-            "option_1": 305,
-            "option_2": 305,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": 305
           },
           "dungeons": {
