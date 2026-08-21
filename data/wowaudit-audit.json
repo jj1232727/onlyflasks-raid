@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-21T16:25:52.391Z",
+  "fetchedAt": "2026-08-21T18:28:21.576Z",
   "periodInfo": {
     "current_period": 1077,
     "current_season": {
@@ -242,14 +242,43 @@
             "ilvl_cap": 334,
             "weekly_increase": 100,
             "first_period": 1077,
-            "icon_item_id": 269866
+            "icon_item_id": 269866,
+            "uncapped_crests": {
+              "/quest=97910": {
+                "amount": 20,
+                "name": "Bountiful Delve (Tier 11)",
+                "icon": "inv_relics_hourglass_02"
+              },
+              "/achievement=63332": {
+                "amount": 30,
+                "name": "Azta'rec (Tier ??)",
+                "icon": "spell_nature_poisoncleansingtotem"
+              }
+            }
           },
           {
             "name": "Hero",
             "ilvl_cap": 321,
             "weekly_increase": 100,
             "first_period": 1077,
-            "icon_item_id": 269865
+            "icon_item_id": 269865,
+            "uncapped_crests": {
+              "/quest=97910": {
+                "amount": 20,
+                "name": "Bountiful Delve (Tier 11)",
+                "icon": "inv_relics_hourglass_02"
+              },
+              "/achievement=63332": {
+                "amount": 30,
+                "name": "Azta'rec (Tier ??)",
+                "icon": "spell_nature_poisoncleansingtotem"
+              },
+              "/achievement=63326": {
+                "amount": 30,
+                "name": "Azta'rec (Tier ?)",
+                "icon": "inv_cape_special_ulatek_d_01_red"
+              }
+            }
           },
           {
             "name": "Champion",
@@ -940,9 +969,17 @@
           {
             "level": 8,
             "dungeon": 586
+          },
+          {
+            "level": 10,
+            "dungeon": 587
+          },
+          {
+            "level": 10,
+            "dungeon": 399
           }
         ],
-        "world_quests_done": 0,
+        "world_quests_done": 1,
         "regular_mythic_dungeons_done": 7,
         "vault_options": {
           "raids": {
@@ -1288,7 +1325,7 @@
             "option_3": 318
           },
           "world": {
-            "option_1": 292,
+            "option_1": 305,
             "option_2": 272,
             "option_3": null
           }
