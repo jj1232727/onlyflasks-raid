@@ -43016,70 +43016,820 @@
                 "updated_at": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2026-08-24T12:34:22.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2026-08-24T12:31:34.000Z"
                 },
                 "report_id": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2Uoez2tZLmyNsaSQbUTnbK"
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.6631,
+                    "encounter_absolute": 2632,
+                    "items": [
+                      {
+                        "name": "Initiate's Sacrificial Tights",
+                        "id": 268236,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1108,
+                            "percentage": 0.7001
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7001,
+                            "absolute": 1108.651,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Nek'zali's Spiritwalkers",
+                        "id": 268218,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 826,
+                            "percentage": 0.5219
+                          }
+                        },
+                        "alternative": {
+                          "item": 268255,
+                          "percentage": 1.1021,
+                          "absolute": 1745.1752,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5219,
+                            "absolute": 826.4923,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Amani Summoning Shawl",
+                        "id": 268248,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 698,
+                            "percentage": 0.4411
+                          }
+                        },
+                        "alternative": {
+                          "item": 268253,
+                          "percentage": 0.8261,
+                          "absolute": 1308.128,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.4411,
+                            "absolute": 698.4814,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 4.4962,
+                    "encounter_absolute": 7119,
+                    "items": [
+                      {
+                        "name": "Spine of the Hissing Abyss",
+                        "id": 268197,
+                        "slot": "off_hand",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1706,
+                            "percentage": 1.0774
+                          }
+                        },
+                        "alternative": {
+                          "item": 268263,
+                          "percentage": 1.2363,
+                          "absolute": 1957.6363,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.0774,
+                            "absolute": 1706.0316,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venom-Singed Cuffs",
+                        "id": 268228,
+                        "slot": "wrist",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1229,
+                            "percentage": 0.7765
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7765,
+                            "absolute": 1229.5295,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomwoven Idol",
+                        "id": 270910,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 4184,
+                            "percentage": 2.6423
+                          }
+                        },
+                        "alternative": {
+                          "item": 268243,
+                          "percentage": 3.3283,
+                          "absolute": 5270.3365,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.6423,
+                            "absolute": 4184.0743,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 4.4498,
+                    "encounter_absolute": 7044,
+                    "items": [
+                      {
+                        "name": "Venomancer's Winged Channeler",
+                        "id": 268205,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 361,
+                            "percentage": 0.2284
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2284,
+                            "absolute": 361.6617,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vile Alchemist's Band",
+                        "id": 268249,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 509,
+                            "percentage": 0.3219
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 1.2735,
+                          "absolute": 2016.6786,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.3219,
+                            "absolute": 509.722,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Fang of Umbral Malignance",
+                        "id": 270161,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 3279,
+                            "percentage": 2.0711
+                          }
+                        },
+                        "alternative": {
+                          "item": 270164,
+                          "percentage": 3.0052,
+                          "absolute": 4758.7416,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.0711,
+                            "absolute": 3279.692,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomwoven Icon",
+                        "id": 270926,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 2895,
+                            "percentage": 1.8284
+                          }
+                        },
+                        "alternative": {
+                          "item": 268221,
+                          "percentage": 1.9674,
+                          "absolute": 3115.3661,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.8284,
+                            "absolute": 2895.3015,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 4.7552,
+                    "encounter_absolute": 7528,
+                    "items": [
+                      {
+                        "name": "Gebbo's Bottomless Bag",
+                        "id": 270164,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 4758,
+                            "percentage": 3.0052
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.0052,
+                            "absolute": 4758.7416,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Errant Scrollsage's Hood",
+                        "id": 268242,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1437,
+                            "percentage": 0.9079
+                          }
+                        },
+                        "alternative": {
+                          "item": 271874,
+                          "percentage": 2.3092,
+                          "absolute": 3656.6908,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.9079,
+                            "absolute": 1437.6999,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomwoven Remnant",
+                        "id": 270922,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1333,
+                            "percentage": 0.8421
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8421,
+                            "absolute": 1333.4704,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.5579,
+                    "encounter_absolute": 4049,
+                    "items": [
+                      {
+                        "name": "Apex Brute's Claw Ring",
+                        "id": 268252,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 2016,
+                            "percentage": 1.2735
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.2735,
+                            "absolute": 2016.6786,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomwoven Relic",
+                        "id": 270918,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 923,
+                            "percentage": 0.5833
+                          }
+                        },
+                        "alternative": {
+                          "item": 268236,
+                          "percentage": 0.7001,
+                          "absolute": 1108.651,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5833,
+                            "absolute": 923.6458,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Caustic Chain-Wrapped Sash",
+                        "id": 268257,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1110,
+                            "percentage": 0.7011
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7011,
+                            "absolute": 1110.1292,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 5.2488,
+                    "encounter_absolute": 8309,
+                    "items": [
+                      {
+                        "name": "Ornaments of the Eternal Coil",
+                        "id": 268241,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 889,
+                            "percentage": 0.5619
+                          }
+                        },
+                        "alternative": {
+                          "item": 270922,
+                          "percentage": 0.8421,
+                          "absolute": 1333.4704,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5619,
+                            "absolute": 889.7042,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomwoven Effigy",
+                        "id": 270914,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1742,
+                            "percentage": 1.1002
+                          }
+                        },
+                        "alternative": {
+                          "item": 271874,
+                          "percentage": 2.3092,
+                          "absolute": 3656.6908,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1002,
+                            "absolute": 1742.1948,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Amulet of the Twin Fangs",
+                        "id": 268251,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 2880,
+                            "percentage": 1.8192
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 3.5696,
+                          "absolute": 5652.5289,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.8192,
+                            "absolute": 2880.7285,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vexhul's Everflowing Gland",
+                        "id": 270170,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 2798,
+                            "percentage": 1.7675
+                          }
+                        },
+                        "alternative": {
+                          "item": 270164,
+                          "percentage": 3.0052,
+                          "absolute": 4758.7416,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.7675,
+                            "absolute": 2798.8031,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 7.5835,
+                    "encounter_absolute": 12007,
+                    "items": [
+                      {
+                        "name": "Grasps of the Eternal Shadow",
+                        "id": 268243,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 5270,
+                            "percentage": 3.3283
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.3283,
+                            "absolute": 5270.3365,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Hex Lord's Dooming Idol",
+                        "id": 270169,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 3684,
+                            "percentage": 2.327
+                          }
+                        },
+                        "alternative": {
+                          "item": 270164,
+                          "percentage": 3.0052,
+                          "absolute": 4758.7416,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.327,
+                            "absolute": 3684.7627,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Cackling Soultreads",
+                        "id": 268255,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1745,
+                            "percentage": 1.1021
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1021,
+                            "absolute": 1745.1752,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Silken Voodoo Drape",
+                        "id": 268253,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1308,
+                            "percentage": 0.8261
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8261,
+                            "absolute": 1308.128,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 10.6013,
+                    "encounter_absolute": 16785,
+                    "items": [
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 4087,
+                            "percentage": 2.5812
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.5812,
+                            "absolute": 4087.3437,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomkeeper's Horrific Cowl",
+                        "id": 271874,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 3656,
+                            "percentage": 2.3092
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.3092,
+                            "absolute": 3656.6908,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Jan'thrazet, the Soul Fang",
+                        "id": 271092,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 3390,
+                            "percentage": 2.1413
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.1413,
+                            "absolute": 3390.8283,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 5652,
+                            "percentage": 3.5696
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.5696,
+                            "absolute": 5652.5289,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 41.3558,
+                "total_absolute": 65473
               }
             },
             {
@@ -43088,17 +43838,17 @@
                 "updated_at": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2026-08-24T12:34:21.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2026-08-24T12:31:34.000Z"
                 },
                 "report_id": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2Uoez2tZLmyNsaSQbUTnbK"
                 },
                 "encounters": [
                   {
@@ -43109,49 +43859,451 @@
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.2151,
+                    "encounter_absolute": 3507,
+                    "items": [
+                      {
+                        "name": "Venomwoven Idol",
+                        "id": 270910,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 3061,
+                            "percentage": 1.9333
+                          }
+                        },
+                        "alternative": {
+                          "item": 268243,
+                          "percentage": 2.1084,
+                          "absolute": 3338.6314,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.9333,
+                            "absolute": 3061.3949,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venom-Singed Cuffs",
+                        "id": 268228,
+                        "slot": "wrist",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 446,
+                            "percentage": 0.2818
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2818,
+                            "absolute": 446.24,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.0492,
+                    "encounter_absolute": 3244,
+                    "items": [
+                      {
+                        "name": "Fang of Umbral Malignance",
+                        "id": 270161,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1745,
+                            "percentage": 1.1025
+                          }
+                        },
+                        "alternative": {
+                          "item": 270164,
+                          "percentage": 2.1818,
+                          "absolute": 3454.888,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1025,
+                            "absolute": 1745.7767,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomwoven Icon",
+                        "id": 270926,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1499,
+                            "percentage": 0.9467
+                          }
+                        },
+                        "alternative": {
+                          "item": 268221,
+                          "percentage": 1.0283,
+                          "absolute": 1628.2759,
+                          "item_level": 331
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.9467,
+                            "absolute": 1499.1706,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.3269,
+                    "encounter_absolute": 3683,
+                    "items": [
+                      {
+                        "name": "Venomwoven Remnant",
+                        "id": 270922,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 229,
+                            "percentage": 0.1451
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1451,
+                            "absolute": 229.7107,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Gebbo's Bottomless Bag",
+                        "id": 270164,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 3454,
+                            "percentage": 2.1818
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.1818,
+                            "absolute": 3454.888,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.7394,
+                    "encounter_absolute": 1170,
+                    "items": [
+                      {
+                        "name": "Apex Brute's Claw Ring",
+                        "id": 268252,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1170,
+                            "percentage": 0.7394
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7394,
+                            "absolute": 1170.87,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.1458,
+                    "encounter_absolute": 3396,
+                    "items": [
+                      {
+                        "name": "Vexhul's Everflowing Gland",
+                        "id": 270170,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1085,
+                            "percentage": 0.6857
+                          }
+                        },
+                        "alternative": {
+                          "item": 270164,
+                          "percentage": 2.1818,
+                          "absolute": 3454.888,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.6857,
+                            "absolute": 1085.805,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Amulet of the Twin Fangs",
+                        "id": 268251,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 2044,
+                            "percentage": 1.2914
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 2.4418,
+                          "absolute": 3866.5937,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.2914,
+                            "absolute": 2044.8898,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomwoven Effigy",
+                        "id": 270914,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 267,
+                            "percentage": 0.1687
+                          }
+                        },
+                        "alternative": {
+                          "item": 271874,
+                          "percentage": 0.6282,
+                          "absolute": 994.7059,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1687,
+                            "absolute": 267.1614,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.8912,
+                    "encounter_absolute": 4577,
+                    "items": [
+                      {
+                        "name": "Grasps of the Eternal Shadow",
+                        "id": 268243,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 3338,
+                            "percentage": 2.1084
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.1084,
+                            "absolute": 3338.6314,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Hex Lord's Dooming Idol",
+                        "id": 270169,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1239,
+                            "percentage": 0.7828
+                          }
+                        },
+                        "alternative": {
+                          "item": 270164,
+                          "percentage": 2.1818,
+                          "absolute": 3454.888,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7828,
+                            "absolute": 1239.6084,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 4.972,
+                    "encounter_absolute": 7871,
+                    "items": [
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 3011,
+                            "percentage": 1.902
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.902,
+                            "absolute": 3011.8405,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 3866,
+                            "percentage": 2.4418
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.4418,
+                            "absolute": 3866.5937,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomkeeper's Horrific Cowl",
+                        "id": 271874,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 994,
+                            "percentage": 0.6282
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.6282,
+                            "absolute": 994.7059,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 17.3396,
+                "total_absolute": 27448
               }
             },
             {
@@ -43160,17 +44312,17 @@
                 "updated_at": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2026-08-24T12:34:20.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2026-08-24T12:31:34.000Z"
                 },
                 "report_id": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2Uoez2tZLmyNsaSQbUTnbK"
                 },
                 "encounters": [
                   {
@@ -43181,49 +44333,316 @@
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.4207,
+                    "encounter_absolute": 2145,
+                    "items": [
+                      {
+                        "name": "Venomwoven Idol",
+                        "id": 270910,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 2145,
+                            "percentage": 1.4207
+                          }
+                        },
+                        "alternative": {
+                          "item": 268243,
+                          "percentage": 1.6595,
+                          "absolute": 2505.6847,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:20.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4207,
+                            "absolute": 2145.1047,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.3898,
+                    "encounter_absolute": 587,
+                    "items": [
+                      {
+                        "name": "Venomwoven Icon",
+                        "id": 270926,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 236,
+                            "percentage": 0.1567
+                          }
+                        },
+                        "alternative": {
+                          "item": 268221,
+                          "percentage": 0.2434,
+                          "absolute": 367.5435,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:20.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1567,
+                            "absolute": 236.5249,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Fang of Umbral Malignance",
+                        "id": 270161,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 351,
+                            "percentage": 0.2331
+                          }
+                        },
+                        "alternative": {
+                          "item": 270164,
+                          "percentage": 1.4001,
+                          "absolute": 2113.9505,
+                          "item_level": 298
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:20.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2331,
+                            "absolute": 351.9517,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.4001,
+                    "encounter_absolute": 2113,
+                    "items": [
+                      {
+                        "name": "Gebbo's Bottomless Bag",
+                        "id": 270164,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 2113,
+                            "percentage": 1.4001
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:20.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4001,
+                            "absolute": 2113.9505,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.2088,
+                    "encounter_absolute": 315,
+                    "items": [
+                      {
+                        "name": "Apex Brute's Claw Ring",
+                        "id": 268252,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 315,
+                            "percentage": 0.2088
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:20.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2088,
+                            "absolute": 315.2487,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.8618,
+                    "encounter_absolute": 1301,
+                    "items": [
+                      {
+                        "name": "Amulet of the Twin Fangs",
+                        "id": 268251,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1301,
+                            "percentage": 0.8618
+                          }
+                        },
+                        "alternative": {
+                          "item": 268265,
+                          "percentage": 1.8386,
+                          "absolute": 2776.0764,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:20.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8618,
+                            "absolute": 1301.2257,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.6595,
+                    "encounter_absolute": 2505,
+                    "items": [
+                      {
+                        "name": "Grasps of the Eternal Shadow",
+                        "id": 268243,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 2505,
+                            "percentage": 1.6595
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:20.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.6595,
+                            "absolute": 2505.6847,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.7003,
+                    "encounter_absolute": 5586,
+                    "items": [
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 2154,
+                            "percentage": 1.4272
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:20.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4272,
+                            "absolute": 2154.8442,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomkeeper's Horrific Cowl",
+                        "id": 271874,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 656,
+                            "percentage": 0.4345
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:20.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.4345,
+                            "absolute": 656.1198,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 2776,
+                            "percentage": 1.8386
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:20.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.8386,
+                            "absolute": 2776.0764,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 9.641,
+                "total_absolute": 14552
               }
             }
           ]
@@ -43238,28 +44657,164 @@
                 "updated_at": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2026-08-24T12:34:22.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2026-08-24T12:31:34.000Z"
                 },
                 "report_id": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2Uoez2tZLmyNsaSQbUTnbK"
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 7.690300000000001,
+                    "encounter_absolute": 12176,
+                    "items": [
+                      {
+                        "name": "Frostscale's Mystic Frond",
+                        "id": 268263,
+                        "slot": "off_hand",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1957,
+                            "percentage": 1.2363
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.2363,
+                            "absolute": 1957.6363,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Tidebound Sorcereress's Robes",
+                        "id": 268221,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 3115,
+                            "percentage": 1.9674
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.9674,
+                            "absolute": 3115.3661,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Wavecaller's Seastone",
+                        "id": 270167,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 4553,
+                            "percentage": 2.8755
+                          }
+                        },
+                        "alternative": {
+                          "item": 270164,
+                          "percentage": 3.0052,
+                          "absolute": 4758.7416,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.8755,
+                            "absolute": 4553.3667,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Cincture of the Abyssal Grotto",
+                        "id": 268232,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 940,
+                            "percentage": 0.5937
+                          }
+                        },
+                        "alternative": {
+                          "item": 268257,
+                          "percentage": 0.7011,
+                          "absolute": 1110.1292,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5937,
+                            "absolute": 940.1764,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Alluring Bubbleband",
+                        "id": 268266,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1611,
+                            "percentage": 1.0174
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 1.2735,
+                          "absolute": 2016.6786,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:22.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.0174,
+                            "absolute": 1611.0575,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 7.690300000000001,
+                "total_absolute": 12176
               }
             },
             {
@@ -43268,28 +44823,135 @@
                 "updated_at": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2026-08-24T12:34:21.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2026-08-24T12:31:34.000Z"
                 },
                 "report_id": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2Uoez2tZLmyNsaSQbUTnbK"
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.5524,
+                    "encounter_absolute": 5623,
+                    "items": [
+                      {
+                        "name": "Tidebound Sorcereress's Robes",
+                        "id": 268221,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1628,
+                            "percentage": 1.0283
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.0283,
+                            "absolute": 1628.2759,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Alluring Bubbleband",
+                        "id": 268266,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 755,
+                            "percentage": 0.4769
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 0.7394,
+                          "absolute": 1170.87,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.4769,
+                            "absolute": 755.1756,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Frostscale's Mystic Frond",
+                        "id": 268263,
+                        "slot": "off_hand",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 69,
+                            "percentage": 0.0441
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.0441,
+                            "absolute": 69.7984,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Wavecaller's Seastone",
+                        "id": 270167,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 3171,
+                            "percentage": 2.0031
+                          }
+                        },
+                        "alternative": {
+                          "item": 270164,
+                          "percentage": 2.1818,
+                          "absolute": 3454.888,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:21.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.0031,
+                            "absolute": 3171.9945,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 3.5524,
+                "total_absolute": 5623
               }
             },
             {
@@ -43298,28 +44960,111 @@
                 "updated_at": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2026-08-24T12:34:20.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2026-08-24T12:31:34.000Z"
                 },
                 "report_id": {
                   "Discipline": null,
                   "Holy": null,
-                  "Shadow": null
+                  "Shadow": "2Uoez2tZLmyNsaSQbUTnbK"
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.5663,
+                    "encounter_absolute": 2363,
+                    "items": [
+                      {
+                        "name": "Tidebound Sorcereress's Robes",
+                        "id": 268221,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 367,
+                            "percentage": 0.2434
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:20.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2434,
+                            "absolute": 367.5435,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Alluring Bubbleband",
+                        "id": 268266,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 76,
+                            "percentage": 0.0508
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 0.2088,
+                          "absolute": 315.2487,
+                          "item_level": 298
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:20.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.0508,
+                            "absolute": 76.69,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Wavecaller's Seastone",
+                        "id": 270167,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Shadow": {
+                            "score": 1920,
+                            "percentage": 1.2721
+                          }
+                        },
+                        "alternative": {
+                          "item": 270164,
+                          "percentage": 1.4001,
+                          "absolute": 2113.9505,
+                          "item_level": 298
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Shadow",
+                            "timestamp": "2026-08-24T12:34:20.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.2721,
+                            "absolute": 1920.6733,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 1.5663,
+                "total_absolute": 2363
               }
             }
           ]
