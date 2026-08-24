@@ -338,19 +338,19 @@
               "difficulty": "mythic",
               "wishlist": {
                 "updated_at": {
-                  "Balance": "2026-08-20T23:43:26.000+00:00",
+                  "Balance": "2026-08-24T16:23:42.000+00:00",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Balance": "2026-08-20T23:41:42.000Z",
+                  "Balance": "2026-08-24T16:21:42.000Z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Balance": "tcHT2Kqd8mpkWB6g1CT46d",
+                  "Balance": "gUxvDuu6UJHm6NfybxbT9C",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
@@ -358,8 +358,8 @@
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 6.1685,
-                    "encounter_absolute": 8377,
+                    "encounter_percentage": 5.1888000000000005,
+                    "encounter_absolute": 6757,
                     "items": [
                       {
                         "name": "Amani Summoning Shawl",
@@ -367,23 +367,23 @@
                         "slot": "back",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1072,
-                            "percentage": 0.7895
+                            "score": 1037,
+                            "percentage": 0.7966
                           }
                         },
                         "alternative": {
                           "item": 268253,
-                          "percentage": 1.346,
-                          "absolute": 1828.1306,
+                          "percentage": 1.371,
+                          "absolute": 1786.1679,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.7895,
-                            "absolute": 1072.3204,
+                            "percentage": 0.7966,
+                            "absolute": 1037.8661,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -396,30 +396,21 @@
                         "slot": "wrist",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1611,
-                            "percentage": 1.1866
+                            "score": 729,
+                            "percentage": 0.5601
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.1866,
-                            "absolute": 1611.7447,
+                            "percentage": 0.5601,
+                            "absolute": 729.6923,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 292,
-                                "id": 251183
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 251183
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -429,35 +420,50 @@
                         "slot": "main_hand",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 5694,
-                            "percentage": 4.1924
+                            "score": 2672,
+                            "percentage": 2.0516
                           }
                         },
                         "alternative": {
                           "item": 271092,
-                          "percentage": 8.0754,
-                          "absolute": 10968.2749,
+                          "percentage": 5.3118,
+                          "absolute": 6920.4485,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 4.1924,
-                            "absolute": 5694.2406,
+                            "percentage": 2.0516,
+                            "absolute": 2672.8714,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 251225
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 158369
-                              }
-                            }
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vestment of the Awakening",
+                        "id": 268235,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 2319,
+                            "percentage": 1.7805
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.7805,
+                            "absolute": 2319.7375,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
                           }
                         ]
                       }
@@ -465,8 +471,8 @@
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 2.7078,
-                    "encounter_absolute": 3677,
+                    "encounter_percentage": 1.6823,
+                    "encounter_absolute": 2191,
                     "items": [
                       {
                         "name": "Sentinel's Vitriolic Chain",
@@ -474,23 +480,23 @@
                         "slot": "neck",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 3329,
-                            "percentage": 2.451
+                            "score": 1629,
+                            "percentage": 1.2504
                           }
                         },
                         "alternative": {
                           "item": 268265,
-                          "percentage": 3.1467,
-                          "absolute": 4273.933,
+                          "percentage": 3.1561,
+                          "absolute": 4111.9486,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 2.451,
-                            "absolute": 3329.0321,
+                            "percentage": 1.2504,
+                            "absolute": 1629.0402,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -503,35 +509,26 @@
                         "slot": "hands",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 348,
-                            "percentage": 0.2568
+                            "score": 562,
+                            "percentage": 0.4319
                           }
                         },
                         "alternative": {
                           "item": 268234,
-                          "percentage": 0.3433,
-                          "absolute": 466.29,
+                          "percentage": 0.5972,
+                          "absolute": 778.0111,
                           "item_level": 324
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.2568,
-                            "absolute": 348.8517,
+                            "percentage": 0.4319,
+                            "absolute": 562.7296,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 305,
-                                "id": 272241
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 251124
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -539,8 +536,8 @@
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 5.7645,
-                    "encounter_absolute": 7829,
+                    "encounter_percentage": 7.6914,
+                    "encounter_absolute": 10018,
                     "items": [
                       {
                         "name": "Fang of Umbral Malignance",
@@ -548,23 +545,23 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1903,
-                            "percentage": 1.4013
+                            "score": 4884,
+                            "percentage": 3.7491
                           }
                         },
                         "alternative": {
                           "item": 270167,
-                          "percentage": 2.6735,
-                          "absolute": 3631.1951,
+                          "percentage": 4.5014,
+                          "absolute": 5864.6359,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.4013,
-                            "absolute": 1903.317,
+                            "percentage": 3.7491,
+                            "absolute": 4884.482,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -577,35 +574,26 @@
                         "slot": "finger",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1286,
-                            "percentage": 0.9469
+                            "score": 777,
+                            "percentage": 0.597
                           }
                         },
                         "alternative": {
                           "item": 268266,
-                          "percentage": 2.3677,
-                          "absolute": 3215.9463,
+                          "percentage": 1.1001,
+                          "absolute": 1433.2538,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.9469,
-                            "absolute": 1286.1014,
+                            "percentage": 0.597,
+                            "absolute": 777.736,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 289,
-                                "id": 251217
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 251136
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -615,30 +603,74 @@
                         "slot": "main_hand",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 4640,
-                            "percentage": 3.4163
+                            "score": 1377,
+                            "percentage": 1.0573
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 3.4163,
-                            "absolute": 4640.1692,
+                            "percentage": 1.0573,
+                            "absolute": 1377.4781,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 251225
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 158369
-                              }
-                            }
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Frothing Venom Spaulders",
+                        "id": 268246,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 899,
+                            "percentage": 0.6904
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.6904,
+                            "absolute": 899.4687,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Icon",
+                        "id": 270927,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 2081,
+                            "percentage": 1.5976
+                          }
+                        },
+                        "alternative": {
+                          "item": 268235,
+                          "percentage": 1.7805,
+                          "absolute": 2319.7375,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.5976,
+                            "absolute": 2081.471,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
                           }
                         ]
                       }
@@ -646,8 +678,8 @@
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 7.1355,
-                    "encounter_absolute": 9690,
+                    "encounter_percentage": 7.8321,
+                    "encounter_absolute": 10203,
                     "items": [
                       {
                         "name": "Gebbo's Bottomless Bag",
@@ -655,23 +687,23 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 2838,
-                            "percentage": 2.0899
+                            "score": 5593,
+                            "percentage": 4.2932
                           }
                         },
                         "alternative": {
                           "item": 270167,
-                          "percentage": 2.6735,
-                          "absolute": 3631.1951,
+                          "percentage": 4.5014,
+                          "absolute": 5864.6359,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 2.0899,
-                            "absolute": 2838.6192,
+                            "percentage": 4.2932,
+                            "absolute": 5593.3253,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -684,23 +716,23 @@
                         "slot": "waist",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1092,
-                            "percentage": 0.8045
+                            "score": 1097,
+                            "percentage": 0.8421
                           }
                         },
                         "alternative": {
                           "item": 268256,
-                          "percentage": 1.5601,
-                          "absolute": 2118.947,
+                          "percentage": 1.514,
+                          "absolute": 1972.4769,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8045,
-                            "absolute": 1092.7396,
+                            "percentage": 0.8421,
+                            "absolute": 1097.098,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -713,35 +745,55 @@
                         "slot": "main_hand",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 5760,
-                            "percentage": 4.2411
+                            "score": 2619,
+                            "percentage": 2.0103
                           }
                         },
                         "alternative": {
                           "item": 271092,
-                          "percentage": 8.0754,
-                          "absolute": 10968.2749,
+                          "percentage": 5.3118,
+                          "absolute": 6920.4485,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 4.2411,
-                            "absolute": 5760.3664,
+                            "percentage": 2.0103,
+                            "absolute": 2619.0849,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 251225
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 158369
-                              }
-                            }
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Remnant",
+                        "id": 270923,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 894,
+                            "percentage": 0.6865
+                          }
+                        },
+                        "alternative": {
+                          "item": 268246,
+                          "percentage": 0.6904,
+                          "absolute": 899.4687,
+                          "item_level": 321
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.6865,
+                            "absolute": 894.4125,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
                           }
                         ]
                       }
@@ -749,8 +801,8 @@
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 2.1996,
-                    "encounter_absolute": 2987,
+                    "encounter_percentage": 2.8607,
+                    "encounter_absolute": 3726,
                     "items": [
                       {
                         "name": "Apex Brute's Claw Ring",
@@ -758,35 +810,26 @@
                         "slot": "finger",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 2521,
-                            "percentage": 1.8563
+                            "score": 806,
+                            "percentage": 0.6194
                           }
                         },
                         "alternative": {
                           "item": 268266,
-                          "percentage": 2.3677,
-                          "absolute": 3215.9463,
+                          "percentage": 1.1001,
+                          "absolute": 1433.2538,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.8563,
-                            "absolute": 2521.3567,
+                            "percentage": 0.6194,
+                            "absolute": 806.9638,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 289,
-                                "id": 251217
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 251136
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -796,30 +839,50 @@
                         "slot": "hands",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 466,
-                            "percentage": 0.3433
+                            "score": 778,
+                            "percentage": 0.5972
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.3433,
-                            "absolute": 466.29,
+                            "percentage": 0.5972,
+                            "absolute": 778.0111,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 305,
-                                "id": 272241
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 251124
-                              }
-                            }
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Relic",
+                        "id": 270919,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 2142,
+                            "percentage": 1.6441
+                          }
+                        },
+                        "alternative": {
+                          "item": 268225,
+                          "percentage": 2.457,
+                          "absolute": 3201.0852,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.6441,
+                            "absolute": 2142.0132,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
                           }
                         ]
                       }
@@ -827,8 +890,8 @@
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 4.7703,
-                    "encounter_absolute": 6478,
+                    "encounter_percentage": 7.215700000000001,
+                    "encounter_absolute": 9399,
                     "items": [
                       {
                         "name": "Vexhul's Everflowing Gland",
@@ -836,35 +899,26 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 2025,
-                            "percentage": 1.4909
+                            "score": 5290,
+                            "percentage": 4.0608
                           }
                         },
                         "alternative": {
                           "item": 270167,
-                          "percentage": 2.6735,
-                          "absolute": 3631.1951,
+                          "percentage": 4.5014,
+                          "absolute": 5864.6359,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.4909,
-                            "absolute": 2025.0601,
+                            "percentage": 4.0608,
+                            "absolute": 5290.6253,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 285,
-                                "id": 249346
-                              },
-                              "new": {
-                                "item_level": 298,
-                                "id": 249343
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -874,23 +928,23 @@
                         "slot": "neck",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 2360,
-                            "percentage": 1.7378
+                            "score": 2137,
+                            "percentage": 1.6408
                           }
                         },
                         "alternative": {
                           "item": 268265,
-                          "percentage": 3.1467,
-                          "absolute": 4273.933,
+                          "percentage": 3.1561,
+                          "absolute": 4111.9486,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.7378,
-                            "absolute": 2360.3815,
+                            "percentage": 1.6408,
+                            "absolute": 2137.7721,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -903,23 +957,47 @@
                         "slot": "feet",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 2093,
-                            "percentage": 1.5416
+                            "score": 1630,
+                            "percentage": 1.2513
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.2513,
+                            "absolute": 1630.1939,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Effigy",
+                        "id": 270915,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 342,
+                            "percentage": 0.2628
                           }
                         },
                         "alternative": {
-                          "item": 268247,
-                          "percentage": 1.6013,
-                          "absolute": 2174.8807,
+                          "item": 271875,
+                          "percentage": 2.6406,
+                          "absolute": 3440.2345,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.5416,
-                            "absolute": 2093.7967,
+                            "percentage": 0.2628,
+                            "absolute": 342.3446,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -930,8 +1008,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 5.0655,
-                    "encounter_absolute": 6878,
+                    "encounter_percentage": 9.5494,
+                    "encounter_absolute": 12440,
                     "items": [
                       {
                         "name": "Sash of the Forlorn Vessel",
@@ -939,18 +1017,18 @@
                         "slot": "waist",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 2118,
-                            "percentage": 1.5601
+                            "score": 1972,
+                            "percentage": 1.514
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.5601,
-                            "absolute": 2118.947,
+                            "percentage": 1.514,
+                            "absolute": 1972.4769,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -963,18 +1041,18 @@
                         "slot": "back",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1828,
-                            "percentage": 1.346
+                            "score": 1786,
+                            "percentage": 1.371
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.346,
-                            "absolute": 1828.1306,
+                            "percentage": 1.371,
+                            "absolute": 1786.1679,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -987,35 +1065,50 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 2932,
-                            "percentage": 2.1594
+                            "score": 5481,
+                            "percentage": 4.2074
                           }
                         },
                         "alternative": {
                           "item": 270167,
-                          "percentage": 2.6735,
-                          "absolute": 3631.1951,
+                          "percentage": 4.5014,
+                          "absolute": 5864.6359,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 2.1594,
-                            "absolute": 2932.9946,
+                            "percentage": 4.2074,
+                            "absolute": 5481.5472,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 285,
-                                "id": 249346
-                              },
-                              "new": {
-                                "item_level": 298,
-                                "id": 249343
-                              }
-                            }
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Coiled Hex Legguards",
+                        "id": 268225,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 3201,
+                            "percentage": 2.457
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.457,
+                            "absolute": 3201.0852,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
                           }
                         ]
                       }
@@ -1023,8 +1116,8 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 13.9015,
-                    "encounter_absolute": 18878,
+                    "encounter_percentage": 17.4734,
+                    "encounter_absolute": 22763,
                     "items": [
                       {
                         "name": "Font of Venomous Rage",
@@ -1032,35 +1125,26 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1241,
-                            "percentage": 0.9142
+                            "score": 4852,
+                            "percentage": 3.7243
                           }
                         },
                         "alternative": {
                           "item": 270167,
-                          "percentage": 2.6735,
-                          "absolute": 3631.1951,
+                          "percentage": 4.5014,
+                          "absolute": 5864.6359,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.9142,
-                            "absolute": 1241.7118,
+                            "percentage": 3.7243,
+                            "absolute": 4852.2397,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 285,
-                                "id": 249346
-                              },
-                              "new": {
-                                "item_level": 298,
-                                "id": 249343
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -1070,18 +1154,18 @@
                         "slot": "neck",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 4273,
-                            "percentage": 3.1467
+                            "score": 4111,
+                            "percentage": 3.1561
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 3.1467,
-                            "absolute": 4273.933,
+                            "percentage": 3.1561,
+                            "absolute": 4111.9486,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -1094,18 +1178,18 @@
                         "slot": null,
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1198,
-                            "percentage": 0.8826
+                            "score": 3440,
+                            "percentage": 2.6406
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8826,
-                            "absolute": 1198.7653,
+                            "percentage": 2.6406,
+                            "absolute": 3440.2345,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -1118,18 +1202,18 @@
                         "slot": "head",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1198,
-                            "percentage": 0.8826
+                            "score": 3440,
+                            "percentage": 2.6406
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8826,
-                            "absolute": 1198.7653,
+                            "percentage": 2.6406,
+                            "absolute": 3440.2345,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -1142,57 +1226,48 @@
                         "slot": "main_hand",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 10968,
-                            "percentage": 8.0754
+                            "score": 6920,
+                            "percentage": 5.3118
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 8.0754,
-                            "absolute": 10968.2749,
+                            "percentage": 5.3118,
+                            "absolute": 6920.4485,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 251225
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 158369
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 47.7132,
-                "total_absolute": 64794
+                "total_percentage": 59.49379999999999,
+                "total_absolute": 77497
               }
             },
             {
               "difficulty": "heroic",
               "wishlist": {
                 "updated_at": {
-                  "Balance": "2026-08-20T23:43:11.000+00:00",
+                  "Balance": "2026-08-24T16:23:27.000+00:00",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Balance": "2026-08-20T23:41:42.000Z",
+                  "Balance": "2026-08-24T16:21:42.000Z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Balance": "tcHT2Kqd8mpkWB6g1CT46d",
+                  "Balance": "gUxvDuu6UJHm6NfybxbT9C",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
@@ -1200,8 +1275,8 @@
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 2.9232,
-                    "encounter_absolute": 3968,
+                    "encounter_percentage": 1.0643,
+                    "encounter_absolute": 1387,
                     "items": [
                       {
                         "name": "Amani Summoning Shawl",
@@ -1209,23 +1284,23 @@
                         "slot": "back",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 370,
-                            "percentage": 0.2732
+                            "score": 364,
+                            "percentage": 0.2794
                           }
                         },
                         "alternative": {
                           "item": 268253,
-                          "percentage": 0.4154,
-                          "absolute": 564.1321,
+                          "percentage": 0.3795,
+                          "absolute": 494.729,
                           "item_level": 314
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.2732,
-                            "absolute": 370.9913,
+                            "percentage": 0.2794,
+                            "absolute": 364.2952,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -1233,73 +1308,26 @@
                         ]
                       },
                       {
-                        "name": "Restless Spirit Shackles",
-                        "id": 268240,
-                        "slot": "wrist",
+                        "name": "Vestment of the Awakening",
+                        "id": 268235,
+                        "slot": "chest",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 863,
-                            "percentage": 0.6357
+                            "score": 1023,
+                            "percentage": 0.7849
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6357,
-                            "absolute": 863.3861,
+                            "percentage": 0.7849,
+                            "absolute": 1023.2873,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 292,
-                                "id": 251183
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 251183
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Hexing Spiritrender",
-                        "id": 268203,
-                        "slot": "main_hand",
-                        "score_by_spec": {
-                          "Balance": {
-                            "score": 2735,
-                            "percentage": 2.0143
-                          }
-                        },
-                        "alternative": {
-                          "item": 271092,
-                          "percentage": 3.7926,
-                          "absolute": 5150.9292,
-                          "item_level": 314
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
-                            "upgrade": null,
-                            "percentage": 2.0143,
-                            "absolute": 2735.7423,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 251225
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 158369
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -1307,8 +1335,8 @@
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 1.8996,
-                    "encounter_absolute": 2580,
+                    "encounter_percentage": 0.7284,
+                    "encounter_absolute": 949,
                     "items": [
                       {
                         "name": "Sentinel's Vitriolic Chain",
@@ -1316,23 +1344,23 @@
                         "slot": "neck",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 2580,
-                            "percentage": 1.8996
+                            "score": 949,
+                            "percentage": 0.7284
                           }
                         },
                         "alternative": {
                           "item": 268265,
-                          "percentage": 2.0194,
-                          "absolute": 2742.6562,
+                          "percentage": 1.9443,
+                          "absolute": 2534.9442,
                           "item_level": 314
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.8996,
-                            "absolute": 2580.0281,
+                            "percentage": 0.7284,
+                            "absolute": 949.7093,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -1343,8 +1371,8 @@
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0.7747999999999999,
-                    "encounter_absolute": 1052,
+                    "encounter_percentage": 3.3248,
+                    "encounter_absolute": 4333,
                     "items": [
                       {
                         "name": "Vile Alchemist's Band",
@@ -1352,35 +1380,26 @@
                         "slot": "finger",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 577,
-                            "percentage": 0.425
+                            "score": 108,
+                            "percentage": 0.083
                           }
                         },
                         "alternative": {
                           "item": 268266,
-                          "percentage": 1.7432,
-                          "absolute": 2367.6001,
+                          "percentage": 0.476,
+                          "absolute": 620.5371,
                           "item_level": 331
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.425,
-                            "absolute": 577.2459,
+                            "percentage": 0.083,
+                            "absolute": 108.2673,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 289,
-                                "id": 251217
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 251136
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -1390,23 +1409,52 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 475,
-                            "percentage": 0.3498
+                            "score": 3475,
+                            "percentage": 2.6658
                           }
                         },
                         "alternative": {
                           "item": 270167,
-                          "percentage": 1.7628,
-                          "absolute": 2394.2275,
+                          "percentage": 3.6245,
+                          "absolute": 4725.4875,
                           "item_level": 331
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.3498,
-                            "absolute": 475.0679,
+                            "percentage": 2.6658,
+                            "absolute": 3475.6316,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Icon",
+                        "id": 270927,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 750,
+                            "percentage": 0.576
+                          }
+                        },
+                        "alternative": {
+                          "item": 268235,
+                          "percentage": 0.7849,
+                          "absolute": 1023.2873,
+                          "item_level": 305
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.576,
+                            "absolute": 750.9517,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -1417,8 +1465,8 @@
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 3.4026,
-                    "encounter_absolute": 4620,
+                    "encounter_percentage": 3.55,
+                    "encounter_absolute": 4628,
                     "items": [
                       {
                         "name": "Gebbo's Bottomless Bag",
@@ -1426,23 +1474,23 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1748,
-                            "percentage": 1.2874
+                            "score": 4484,
+                            "percentage": 3.4393
                           }
                         },
                         "alternative": {
                           "item": 270167,
-                          "percentage": 1.7628,
-                          "absolute": 2394.2275,
+                          "percentage": 3.6245,
+                          "absolute": 4725.4875,
                           "item_level": 331
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.2874,
-                            "absolute": 1748.5068,
+                            "percentage": 3.4393,
+                            "absolute": 4484.1118,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -1455,64 +1503,26 @@
                         "slot": "waist",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 143,
-                            "percentage": 0.1053
+                            "score": 144,
+                            "percentage": 0.1107
                           }
                         },
                         "alternative": {
                           "item": 268256,
-                          "percentage": 0.2854,
-                          "absolute": 387.6731,
+                          "percentage": 0.2492,
+                          "absolute": 324.8567,
                           "item_level": 314
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.1053,
-                            "absolute": 143.047,
+                            "percentage": 0.1107,
+                            "absolute": 144.3464,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Malevolent Spiritcudgel",
-                        "id": 268210,
-                        "slot": "main_hand",
-                        "score_by_spec": {
-                          "Balance": {
-                            "score": 2729,
-                            "percentage": 2.0099
-                          }
-                        },
-                        "alternative": {
-                          "item": 271092,
-                          "percentage": 3.7926,
-                          "absolute": 5150.9292,
-                          "item_level": 314
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
-                            "upgrade": null,
-                            "percentage": 2.0099,
-                            "absolute": 2729.7102,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 251225
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 158369
-                              }
-                            }
                           }
                         ]
                       }
@@ -1520,44 +1530,35 @@
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 1.2402,
-                    "encounter_absolute": 1684,
+                    "encounter_percentage": 0.6486,
+                    "encounter_absolute": 845,
                     "items": [
                       {
-                        "name": "Apex Brute's Claw Ring",
-                        "id": 268252,
-                        "slot": "finger",
+                        "name": "Venomcured Relic",
+                        "id": 270919,
+                        "slot": "legs",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1684,
-                            "percentage": 1.2402
+                            "score": 845,
+                            "percentage": 0.6486
                           }
                         },
                         "alternative": {
-                          "item": 268266,
-                          "percentage": 1.7432,
-                          "absolute": 2367.6001,
-                          "item_level": 331
+                          "item": 268225,
+                          "percentage": 0.7702,
+                          "absolute": 1004.1641,
+                          "item_level": 314
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.2402,
-                            "absolute": 1684.4107,
+                            "percentage": 0.6486,
+                            "absolute": 845.6664,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 289,
-                                "id": 251217
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 251136
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -1565,8 +1566,8 @@
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 2.5534,
-                    "encounter_absolute": 3466,
+                    "encounter_percentage": 4.325,
+                    "encounter_absolute": 5637,
                     "items": [
                       {
                         "name": "Vexhul's Everflowing Gland",
@@ -1574,35 +1575,26 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 633,
-                            "percentage": 0.4665
+                            "score": 3656,
+                            "percentage": 2.8045
                           }
                         },
                         "alternative": {
                           "item": 270167,
-                          "percentage": 1.7628,
-                          "absolute": 2394.2275,
+                          "percentage": 3.6245,
+                          "absolute": 4725.4875,
                           "item_level": 331
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.4665,
-                            "absolute": 633.6473,
+                            "percentage": 2.8045,
+                            "absolute": 3656.407,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 285,
-                                "id": 249346
-                              },
-                              "new": {
-                                "item_level": 298,
-                                "id": 249343
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -1612,23 +1604,23 @@
                         "slot": "neck",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1631,
-                            "percentage": 1.2011
+                            "score": 1312,
+                            "percentage": 1.007
                           }
                         },
                         "alternative": {
                           "item": 268265,
-                          "percentage": 2.0194,
-                          "absolute": 2742.6562,
+                          "percentage": 1.9443,
+                          "absolute": 2534.9442,
                           "item_level": 314
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.2011,
-                            "absolute": 1631.2364,
+                            "percentage": 1.007,
+                            "absolute": 1312.9019,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -1641,23 +1633,23 @@
                         "slot": "feet",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1202,
-                            "percentage": 0.8858
+                            "score": 669,
+                            "percentage": 0.5135
                           }
                         },
                         "alternative": {
                           "item": 268247,
-                          "percentage": 0.936,
-                          "absolute": 1271.171,
+                          "percentage": 0.5182,
+                          "absolute": 675.5994,
                           "item_level": 331
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8858,
-                            "absolute": 1202.9972,
+                            "percentage": 0.5135,
+                            "absolute": 669.4611,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -1668,8 +1660,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 1.3679,
-                    "encounter_absolute": 1857,
+                    "encounter_percentage": 4.1966,
+                    "encounter_absolute": 5469,
                     "items": [
                       {
                         "name": "Silken Voodoo Drape",
@@ -1677,18 +1669,18 @@
                         "slot": "back",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 564,
-                            "percentage": 0.4154
+                            "score": 494,
+                            "percentage": 0.3795
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.4154,
-                            "absolute": 564.1321,
+                            "percentage": 0.3795,
+                            "absolute": 494.729,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -1701,35 +1693,26 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 906,
-                            "percentage": 0.6671
+                            "score": 3647,
+                            "percentage": 2.7977
                           }
                         },
                         "alternative": {
                           "item": 270167,
-                          "percentage": 1.7628,
-                          "absolute": 2394.2275,
+                          "percentage": 3.6245,
+                          "absolute": 4725.4875,
                           "item_level": 331
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6671,
-                            "absolute": 906.0903,
+                            "percentage": 2.7977,
+                            "absolute": 3647.5161,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 285,
-                                "id": 249346
-                              },
-                              "new": {
-                                "item_level": 298,
-                                "id": 249343
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -1739,18 +1722,42 @@
                         "slot": "waist",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 387,
-                            "percentage": 0.2854
+                            "score": 324,
+                            "percentage": 0.2492
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.2854,
-                            "absolute": 387.6731,
+                            "percentage": 0.2492,
+                            "absolute": 324.8567,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Coiled Hex Legguards",
+                        "id": 268225,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 1004,
+                            "percentage": 0.7702
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7702,
+                            "absolute": 1004.1641,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -1761,8 +1768,8 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 5.812,
-                    "encounter_absolute": 7892,
+                    "encounter_percentage": 6.8122,
+                    "encounter_absolute": 8879,
                     "items": [
                       {
                         "name": "Aqirbane Reliquary",
@@ -1770,18 +1777,18 @@
                         "slot": "neck",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 2742,
-                            "percentage": 2.0194
+                            "score": 2534,
+                            "percentage": 1.9443
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 2.0194,
-                            "absolute": 2742.6562,
+                            "percentage": 1.9443,
+                            "absolute": 2534.9442,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -1794,57 +1801,125 @@
                         "slot": "main_hand",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 5150,
-                            "percentage": 3.7926
+                            "score": 1556,
+                            "percentage": 1.1935
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 3.7926,
-                            "absolute": 5150.9292,
+                            "percentage": 1.1935,
+                            "absolute": 1556.0711,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 251225
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 158369
-                              }
-                            }
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 988,
+                            "percentage": 0.7584
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7584,
+                            "absolute": 988.7331,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Gaze of the Coiled Watcher",
+                        "id": 271875,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 1065,
+                            "percentage": 0.8173
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8173,
+                            "absolute": 1065.6126,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Font of Venomous Rage",
+                        "id": 270168,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 2736,
+                            "percentage": 2.0987
+                          }
+                        },
+                        "alternative": {
+                          "item": 270167,
+                          "percentage": 3.6245,
+                          "absolute": 4725.4875,
+                          "item_level": 331
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.0987,
+                            "absolute": 2736.1826,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
                           }
                         ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 19.9737,
-                "total_absolute": 27119
+                "total_percentage": 24.6499,
+                "total_absolute": 32127
               }
             },
             {
               "difficulty": "normal",
               "wishlist": {
                 "updated_at": {
-                  "Balance": "2026-08-20T23:42:46.000+00:00",
+                  "Balance": "2026-08-24T16:23:12.000+00:00",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Balance": "2026-08-20T23:41:42.000Z",
+                  "Balance": "2026-08-24T16:21:42.000Z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Balance": "tcHT2Kqd8mpkWB6g1CT46d",
+                  "Balance": "gUxvDuu6UJHm6NfybxbT9C",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
@@ -1852,86 +1927,14 @@
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0.3583,
-                    "encounter_absolute": 480,
-                    "items": [
-                      {
-                        "name": "Restless Spirit Shackles",
-                        "id": 268240,
-                        "slot": "wrist",
-                        "score_by_spec": {
-                          "Balance": {
-                            "score": 377,
-                            "percentage": 0.2811
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:42:46.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.2811,
-                            "absolute": 377.431,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 292,
-                                "id": 251183
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 251183
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Hexing Spiritrender",
-                        "id": 268203,
-                        "slot": "main_hand",
-                        "score_by_spec": {
-                          "Balance": {
-                            "score": 103,
-                            "percentage": 0.0772
-                          }
-                        },
-                        "alternative": {
-                          "item": 271092,
-                          "percentage": 1.7251,
-                          "absolute": 2316.2819,
-                          "item_level": 301
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:42:46.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.0772,
-                            "absolute": 103.6876,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 251225
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 158369
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 1.2564,
-                    "encounter_absolute": 1686,
+                    "encounter_percentage": 0.1603,
+                    "encounter_absolute": 202,
                     "items": [
                       {
                         "name": "Sentinel's Vitriolic Chain",
@@ -1939,23 +1942,23 @@
                         "slot": "neck",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1686,
-                            "percentage": 1.2564
+                            "score": 202,
+                            "percentage": 0.1603
                           }
                         },
                         "alternative": {
                           "item": 268265,
-                          "percentage": 1.4441,
-                          "absolute": 1938.9,
+                          "percentage": 1.325,
+                          "absolute": 1672.4577,
                           "item_level": 301
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:42:46.000+00:00",
+                            "timestamp": "2026-08-24T16:23:12.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.2564,
-                            "absolute": 1686.9409,
+                            "percentage": 0.1603,
+                            "absolute": 202.3438,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -1966,14 +1969,44 @@
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.7844,
+                    "encounter_absolute": 2252,
+                    "items": [
+                      {
+                        "name": "Fang of Umbral Malignance",
+                        "id": 270161,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 2252,
+                            "percentage": 1.7844
+                          }
+                        },
+                        "alternative": {
+                          "item": 270167,
+                          "percentage": 2.7948,
+                          "absolute": 3527.5259,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-08-24T16:23:12.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.7844,
+                            "absolute": 2252.2862,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0.6396999999999999,
-                    "encounter_absolute": 858,
+                    "encounter_percentage": 2.6835,
+                    "encounter_absolute": 3387,
                     "items": [
                       {
                         "name": "Gebbo's Bottomless Bag",
@@ -1981,64 +2014,26 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 750,
-                            "percentage": 0.5588
+                            "score": 3387,
+                            "percentage": 2.6835
                           }
                         },
                         "alternative": {
                           "item": 270167,
-                          "percentage": 1.0003,
-                          "absolute": 1343.109,
+                          "percentage": 2.7948,
+                          "absolute": 3527.5259,
                           "item_level": 318
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:42:46.000+00:00",
+                            "timestamp": "2026-08-24T16:23:12.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.5588,
-                            "absolute": 750.3517,
+                            "percentage": 2.6835,
+                            "absolute": 3387.0665,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Malevolent Spiritcudgel",
-                        "id": 268210,
-                        "slot": "main_hand",
-                        "score_by_spec": {
-                          "Balance": {
-                            "score": 108,
-                            "percentage": 0.0809
-                          }
-                        },
-                        "alternative": {
-                          "item": 271092,
-                          "percentage": 1.7251,
-                          "absolute": 2316.2819,
-                          "item_level": 301
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:42:46.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.0809,
-                            "absolute": 108.5847,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 251225
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 158369
-                              }
-                            }
                           }
                         ]
                       }
@@ -2046,53 +2041,14 @@
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0.7986,
-                    "encounter_absolute": 1072,
-                    "items": [
-                      {
-                        "name": "Apex Brute's Claw Ring",
-                        "id": 268252,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Balance": {
-                            "score": 1072,
-                            "percentage": 0.7986
-                          }
-                        },
-                        "alternative": {
-                          "item": 268266,
-                          "percentage": 1.15,
-                          "absolute": 1544.1126,
-                          "item_level": 318
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:42:46.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.7986,
-                            "absolute": 1072.2979,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 289,
-                                "id": 251217
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 251136
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0.8900999999999999,
-                    "encounter_absolute": 1194,
+                    "encounter_percentage": 2.4395,
+                    "encounter_absolute": 3078,
                     "items": [
                       {
                         "name": "Amulet of the Twin Fangs",
@@ -2100,23 +2056,23 @@
                         "slot": "neck",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 832,
-                            "percentage": 0.6202
+                            "score": 599,
+                            "percentage": 0.4752
                           }
                         },
                         "alternative": {
                           "item": 268265,
-                          "percentage": 1.4441,
-                          "absolute": 1938.9,
+                          "percentage": 1.325,
+                          "absolute": 1672.4577,
                           "item_level": 301
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:42:46.000+00:00",
+                            "timestamp": "2026-08-24T16:23:12.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6202,
-                            "absolute": 832.7569,
+                            "percentage": 0.4752,
+                            "absolute": 599.7349,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -2124,28 +2080,28 @@
                         ]
                       },
                       {
-                        "name": "Bespittled Slitherslippers",
-                        "id": 268261,
-                        "slot": "feet",
+                        "name": "Vexhul's Everflowing Gland",
+                        "id": 270170,
+                        "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 362,
-                            "percentage": 0.2699
+                            "score": 2479,
+                            "percentage": 1.9643
                           }
                         },
                         "alternative": {
-                          "item": 268247,
-                          "percentage": 0.3954,
-                          "absolute": 530.8683,
+                          "item": 270167,
+                          "percentage": 2.7948,
+                          "absolute": 3527.5259,
                           "item_level": 318
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:42:46.000+00:00",
+                            "timestamp": "2026-08-24T16:23:12.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.2699,
-                            "absolute": 362.378,
+                            "percentage": 1.9643,
+                            "absolute": 2479.2751,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -2156,8 +2112,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0.209,
-                    "encounter_absolute": 280,
+                    "encounter_percentage": 2.1619,
+                    "encounter_absolute": 2728,
                     "items": [
                       {
                         "name": "Sash of the Forlorn Vessel",
@@ -2165,18 +2121,18 @@
                         "slot": "waist",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 191,
-                            "percentage": 0.1427
+                            "score": 111,
+                            "percentage": 0.0883
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:42:46.000+00:00",
+                            "timestamp": "2026-08-24T16:23:12.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.1427,
-                            "absolute": 191.6199,
+                            "percentage": 0.0883,
+                            "absolute": 111.4054,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -2189,35 +2145,26 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 89,
-                            "percentage": 0.0663
+                            "score": 2617,
+                            "percentage": 2.0736
                           }
                         },
                         "alternative": {
                           "item": 270167,
-                          "percentage": 1.0003,
-                          "absolute": 1343.109,
+                          "percentage": 2.7948,
+                          "absolute": 3527.5259,
                           "item_level": 318
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:42:46.000+00:00",
+                            "timestamp": "2026-08-24T16:23:12.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.0663,
-                            "absolute": 89.0224,
+                            "percentage": 2.0736,
+                            "absolute": 2617.3132,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 285,
-                                "id": 249346
-                              },
-                              "new": {
-                                "item_level": 298,
-                                "id": 249343
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -2225,8 +2172,8 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 3.1692,
-                    "encounter_absolute": 4254,
+                    "encounter_percentage": 3.3972,
+                    "encounter_absolute": 4286,
                     "items": [
                       {
                         "name": "Aqirbane Reliquary",
@@ -2234,18 +2181,18 @@
                         "slot": "neck",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1938,
-                            "percentage": 1.4441
+                            "score": 1672,
+                            "percentage": 1.325
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:42:46.000+00:00",
+                            "timestamp": "2026-08-24T16:23:12.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.4441,
-                            "absolute": 1938.9,
+                            "percentage": 1.325,
+                            "absolute": 1672.4577,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -2258,38 +2205,58 @@
                         "slot": "main_hand",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 2316,
-                            "percentage": 1.7251
+                            "score": 928,
+                            "percentage": 0.7359
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:42:46.000+00:00",
+                            "timestamp": "2026-08-24T16:23:12.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.7251,
-                            "absolute": 2316.2819,
+                            "percentage": 0.7359,
+                            "absolute": 928.8873,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 251225
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 158369
-                              }
-                            }
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Font of Venomous Rage",
+                        "id": 270168,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 1686,
+                            "percentage": 1.3363
+                          }
+                        },
+                        "alternative": {
+                          "item": 270167,
+                          "percentage": 2.7948,
+                          "absolute": 3527.5259,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-08-24T16:23:12.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.3363,
+                            "absolute": 1686.6986,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
                           }
                         ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 7.3213,
-                "total_absolute": 9824
+                "total_percentage": 12.6268,
+                "total_absolute": 15933
               }
             }
           ]
@@ -2302,19 +2269,19 @@
               "difficulty": "mythic",
               "wishlist": {
                 "updated_at": {
-                  "Balance": "2026-08-20T23:43:26.000+00:00",
+                  "Balance": "2026-08-24T16:23:42.000+00:00",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Balance": "2026-08-20T23:41:42.000Z",
+                  "Balance": "2026-08-24T16:21:42.000Z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Balance": "tcHT2Kqd8mpkWB6g1CT46d",
+                  "Balance": "gUxvDuu6UJHm6NfybxbT9C",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
@@ -2322,8 +2289,8 @@
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 6.6425,
-                    "encounter_absolute": 9020,
+                    "encounter_percentage": 6.8049,
+                    "encounter_absolute": 8864,
                     "items": [
                       {
                         "name": "Wavecaller's Seastone",
@@ -2331,18 +2298,18 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 3631,
-                            "percentage": 2.6735
+                            "score": 5864,
+                            "percentage": 4.5014
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 2.6735,
-                            "absolute": 3631.1951,
+                            "percentage": 4.5014,
+                            "absolute": 5864.6359,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -2355,30 +2322,21 @@
                         "slot": "finger",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 3215,
-                            "percentage": 2.3677
+                            "score": 1433,
+                            "percentage": 1.1001
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 2.3677,
-                            "absolute": 3215.9463,
+                            "percentage": 1.1001,
+                            "absolute": 1433.2538,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 289,
-                                "id": 251217
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 251136
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -2388,18 +2346,23 @@
                         "slot": "feet",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 2174,
-                            "percentage": 1.6013
+                            "score": 1567,
+                            "percentage": 1.2034
                           }
                         },
-                        "alternative": null,
+                        "alternative": {
+                          "item": 268261,
+                          "percentage": 1.2513,
+                          "absolute": 1630.1939,
+                          "item_level": 324
+                        },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:26.000+00:00",
+                            "timestamp": "2026-08-24T16:23:42.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.6013,
-                            "absolute": 2174.8807,
+                            "percentage": 1.2034,
+                            "absolute": 1567.7922,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -2409,27 +2372,27 @@
                     ]
                   }
                 ],
-                "total_percentage": 6.6425,
-                "total_absolute": 9020
+                "total_percentage": 6.8049,
+                "total_absolute": 8864
               }
             },
             {
               "difficulty": "heroic",
               "wishlist": {
                 "updated_at": {
-                  "Balance": "2026-08-20T23:43:11.000+00:00",
+                  "Balance": "2026-08-24T16:23:27.000+00:00",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Balance": "2026-08-20T23:41:42.000Z",
+                  "Balance": "2026-08-24T16:21:42.000Z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Balance": "tcHT2Kqd8mpkWB6g1CT46d",
+                  "Balance": "gUxvDuu6UJHm6NfybxbT9C",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
@@ -2437,8 +2400,8 @@
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 4.442,
-                    "encounter_absolute": 6032,
+                    "encounter_percentage": 4.6187,
+                    "encounter_absolute": 6020,
                     "items": [
                       {
                         "name": "Alluring Bubbleband",
@@ -2446,30 +2409,21 @@
                         "slot": "finger",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 2367,
-                            "percentage": 1.7432
+                            "score": 620,
+                            "percentage": 0.476
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.7432,
-                            "absolute": 2367.6001,
+                            "percentage": 0.476,
+                            "absolute": 620.5371,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 289,
-                                "id": 251217
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 251136
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -2479,18 +2433,18 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 2394,
-                            "percentage": 1.7628
+                            "score": 4725,
+                            "percentage": 3.6245
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.7628,
-                            "absolute": 2394.2275,
+                            "percentage": 3.6245,
+                            "absolute": 4725.4875,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -2503,18 +2457,18 @@
                         "slot": "feet",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1271,
-                            "percentage": 0.936
+                            "score": 675,
+                            "percentage": 0.5182
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:43:11.000+00:00",
+                            "timestamp": "2026-08-24T16:23:27.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.936,
-                            "absolute": 1271.171,
+                            "percentage": 0.5182,
+                            "absolute": 675.5994,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -2524,27 +2478,27 @@
                     ]
                   }
                 ],
-                "total_percentage": 4.442,
-                "total_absolute": 6032
+                "total_percentage": 4.6187,
+                "total_absolute": 6020
               }
             },
             {
               "difficulty": "normal",
               "wishlist": {
                 "updated_at": {
-                  "Balance": "2026-08-20T23:42:46.000+00:00",
+                  "Balance": "2026-08-24T16:23:12.000+00:00",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Balance": "2026-08-20T23:41:42.000Z",
+                  "Balance": "2026-08-24T16:21:42.000Z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Balance": "tcHT2Kqd8mpkWB6g1CT46d",
+                  "Balance": "gUxvDuu6UJHm6NfybxbT9C",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
@@ -2552,8 +2506,8 @@
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 2.5457,
-                    "encounter_absolute": 3417,
+                    "encounter_percentage": 2.7948,
+                    "encounter_absolute": 3527,
                     "items": [
                       {
                         "name": "Wavecaller's Seastone",
@@ -2561,75 +2515,18 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1343,
-                            "percentage": 1.0003
+                            "score": 3527,
+                            "percentage": 2.7948
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:42:46.000+00:00",
+                            "timestamp": "2026-08-24T16:23:12.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.0003,
-                            "absolute": 1343.109,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Alluring Bubbleband",
-                        "id": 268266,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Balance": {
-                            "score": 1544,
-                            "percentage": 1.15
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:42:46.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.15,
-                            "absolute": 1544.1126,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 289,
-                                "id": 251217
-                              },
-                              "new": {
-                                "item_level": 311,
-                                "id": 251136
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Breakwater Boots",
-                        "id": 268247,
-                        "slot": "feet",
-                        "score_by_spec": {
-                          "Balance": {
-                            "score": 530,
-                            "percentage": 0.3954
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Balance",
-                            "timestamp": "2026-08-20T23:42:46.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.3954,
-                            "absolute": 530.8683,
+                            "percentage": 2.7948,
+                            "absolute": 3527.5259,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -2639,8 +2536,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 2.5457,
-                "total_absolute": 3417
+                "total_percentage": 2.7948,
+                "total_absolute": 3527
               }
             }
           ]
