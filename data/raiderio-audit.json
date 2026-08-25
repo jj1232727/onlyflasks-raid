@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-25T02:53:34.036Z",
+  "fetchedAt": "2026-08-25T04:33:29.230Z",
   "characters": [
     {
       "id": 5454087,
@@ -8209,7 +8209,7 @@
       "id": 5105248,
       "name": "Tamagotchi",
       "status": "ok",
-      "lastCrawledAt": "2026-08-25T02:12:35.000Z",
+      "lastCrawledAt": "2026-08-25T03:02:43.000Z",
       "profileUrl": "https://raider.io/characters/us/malganis/Tamagotchi",
       "weeklyRuns": [
         {
@@ -8796,6 +8796,60 @@
       "profileUrl": "https://raider.io/characters/us/area-52/Darkdrpepper",
       "weeklyRuns": [
         {
+          "dungeon": "Den of Nalorakk",
+          "short_name": "DON",
+          "mythic_level": 13,
+          "completed_at": "2026-08-25T03:40:59.000Z",
+          "clear_time_ms": 1585739,
+          "keystone_run_id": 3471783,
+          "par_time_ms": 1920999,
+          "num_keystone_upgrades": 1,
+          "map_challenge_mode_id": 586,
+          "zone_id": 16368,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_proveyourworth.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/den-of-nalorakk.jpg",
+          "score": 386.5,
+          "affixes": [
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 147,
+              "name": "Xal'atath's Guile",
+              "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+              "icon": "ability_racial_chillofnight",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+              "wowhead_url": "https://wowhead.com/affix=147"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/3471783-13-den-of-nalorakk",
+          "spec": {
+            "id": 250,
+            "name": "Blood",
+            "slug": "blood",
+            "class_id": 6,
+            "role": "tank",
+            "is_melee": true,
+            "patch": "3.0.0",
+            "ordinal": 0
+          },
+          "role": "tank"
+        },
+        {
           "dungeon": "Voidscar Arena",
           "short_name": "VSA",
           "mythic_level": 13,
@@ -9269,60 +9323,6 @@
             }
           ],
           "url": "https://raider.io/mythic-plus-runs/season-mn-2/261013-12-murder-row",
-          "spec": {
-            "id": 250,
-            "name": "Blood",
-            "slug": "blood",
-            "class_id": 6,
-            "role": "tank",
-            "is_melee": true,
-            "patch": "3.0.0",
-            "ordinal": 0
-          },
-          "role": "tank"
-        },
-        {
-          "dungeon": "Ruby Life Pools",
-          "short_name": "RLP",
-          "mythic_level": 11,
-          "completed_at": "2026-08-19T19:52:49.000Z",
-          "clear_time_ms": 1235756,
-          "keystone_run_id": 405636,
-          "par_time_ms": 1680999,
-          "num_keystone_upgrades": 2,
-          "map_challenge_mode_id": 399,
-          "zone_id": 14063,
-          "zone_expansion_id": 9,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_lifepools.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion9/base/ruby-life-pools.jpg",
-          "score": 344.9,
-          "affixes": [
-            {
-              "id": 162,
-              "name": "Xal'atath's Bargain: Pulsar",
-              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
-              "icon": "inv_cosmicvoid_nova",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
-              "wowhead_url": "https://wowhead.com/affix=162"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/405636-11-ruby-life-pools",
           "spec": {
             "id": 250,
             "name": "Blood",
@@ -11124,7 +11124,7 @@
       "id": 4165930,
       "name": "Abenasters",
       "status": "ok",
-      "lastCrawledAt": "2026-08-20T17:19:18.000Z",
+      "lastCrawledAt": "2026-08-25T03:08:02.000Z",
       "profileUrl": "https://raider.io/characters/us/illidan/Abenasters",
       "weeklyRuns": [
         {
@@ -11331,6 +11331,60 @@
             }
           ],
           "url": "https://raider.io/mythic-plus-runs/season-mn-2/91680-10-the-blinding-vale",
+          "spec": {
+            "id": 266,
+            "name": "Demonology",
+            "slug": "demonology",
+            "class_id": 9,
+            "role": "dps",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 1
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "Den of Nalorakk",
+          "short_name": "DON",
+          "mythic_level": 10,
+          "completed_at": "2026-08-25T03:37:10.000Z",
+          "clear_time_ms": 1504143,
+          "keystone_run_id": 3471315,
+          "par_time_ms": 1920999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 586,
+          "zone_id": 16368,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_proveyourworth.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/den-of-nalorakk.jpg",
+          "score": 328.1,
+          "affixes": [
+            {
+              "id": 162,
+              "name": "Xal'atath's Bargain: Pulsar",
+              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+              "icon": "inv_cosmicvoid_nova",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+              "wowhead_url": "https://wowhead.com/affix=162"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/3471315-10-den-of-nalorakk",
           "spec": {
             "id": 266,
             "name": "Demonology",
