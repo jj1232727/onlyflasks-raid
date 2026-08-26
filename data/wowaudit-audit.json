@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-26T08:36:45.989Z",
+  "fetchedAt": "2026-08-26T10:29:51.102Z",
   "periodInfo": {
     "current_period": 1078,
     "current_season": {
@@ -1071,10 +1071,18 @@
           {
             "level": 14,
             "dungeon": 249
+          },
+          {
+            "level": 15,
+            "dungeon": 587
+          },
+          {
+            "level": 14,
+            "dungeon": 588
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 3,
+        "regular_mythic_dungeons_done": 4,
         "vault_options": {
           "raids": {
             "option_1": 292,
@@ -1083,7 +1091,7 @@
           },
           "dungeons": {
             "option_1": 318,
-            "option_2": null,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
@@ -1167,6 +1175,14 @@
           {
             "level": 15,
             "dungeon": 588
+          },
+          {
+            "level": 15,
+            "dungeon": 249
+          },
+          {
+            "level": 15,
+            "dungeon": 587
           }
         ],
         "world_quests_done": 0,
@@ -1180,7 +1196,7 @@
           "dungeons": {
             "option_1": 318,
             "option_2": 318,
-            "option_3": null
+            "option_3": 318
           },
           "world": {
             "option_1": null,
@@ -1288,7 +1304,45 @@
       "id": 8698484,
       "name": "Faredino",
       "realm": "Area 52",
-      "data": null
+      "data": {
+        "dungeons_done": [
+          {
+            "level": 10,
+            "dungeon": 584
+          },
+          {
+            "level": 8,
+            "dungeon": 588
+          },
+          {
+            "level": 10,
+            "dungeon": 584
+          },
+          {
+            "level": 10,
+            "dungeon": 399
+          }
+        ],
+        "world_quests_done": 0,
+        "regular_mythic_dungeons_done": 4,
+        "vault_options": {
+          "raids": {
+            "option_1": 292,
+            "option_2": 292,
+            "option_3": null
+          },
+          "dungeons": {
+            "option_1": 318,
+            "option_2": 311,
+            "option_3": null
+          },
+          "world": {
+            "option_1": 305,
+            "option_2": 282,
+            "option_3": 272
+          }
+        }
+      }
     },
     {
       "id": 5105248,
