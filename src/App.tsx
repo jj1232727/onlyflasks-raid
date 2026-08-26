@@ -1201,6 +1201,9 @@ const targetSatisfiedAtDifficulty = (data: Data, c: Raider, entry: any, selected
   Boolean(targetSatisfactionReason(data, c, entry, selectedDifficulty, selectedSpec));
 export default function App() {
   const simResumeAttempted = useRef(false);
+  // True while the poll below is watching a droptimizer it has seen pending, so
+  // it can tell "settled just now" from "there was never anything to settle".
+  const watchedPendingSim = useRef(false);
   const [data, setData] = useState<Data | null>(null),
     [liveSims, setLiveSims] = useState<any>(null),
     [bossIndex, setBoss] = useState(0),
@@ -1326,26 +1329,63 @@ export default function App() {
   const qeWaiting = Object.values(qeQueue).some(
     (job: any) => job?.state === "pending" || job?.state === "running",
   );
+  // Same reasoning for droptimizers. A sim outlives the tab that started it -
+  // that is what the 5-minute drain trigger is for - so the page has to be
+  // willing to hear about one it did not submit, on a reload or in another
+  // browser. Without this the panel showed whatever was true at page load,
+  // forever, and the only way to learn a sim had landed was to reload and look.
+  const simsWaiting = Object.values(pendingSims).some((jobs: any) =>
+    (jobs || []).some((job: any) => job?.state === "pending"),
+  );
+  const waitingOnWork = qeWaiting || simsWaiting;
   useEffect(() => {
-    if (!wishlistApiUrl || !qeWaiting) return;
+    if (!wishlistApiUrl || !waitingOnWork) return;
     let stopped = false;
     const startedAt = Date.now(),
       timer = setInterval(async () => {
-        // Give up after six minutes rather than polling a wedged job forever;
-        // the panel still shows whatever state the queue last reported.
-        if (stopped || Date.now() - startedAt > 360000) { clearInterval(timer); return; }
+        // Give up eventually rather than polling a wedged job forever; the
+        // panel still shows whatever state the queue last reported. Twelve
+        // minutes, not six: a stranded droptimizer is finished by the drain
+        // trigger, which only wakes every five, so a shorter window could stop
+        // watching in the gap between two of its ticks and never see the row
+        // settle. Nothing is polled for twelve minutes in the normal case -
+        // both flags clear the moment the work lands, and the effect tears its
+        // own timer down when they do.
+        if (stopped || Date.now() - startedAt > 720000) { clearInterval(timer); return; }
         try {
           const payload = await (await fetch(wishlistApiUrl, { cache: "no-store" })).json();
           if (stopped || !payload.ok) return;
           setQeQueue(payload.qeQueue || {});
-        setPendingSims(payload.pendingSims || {});
+          setPendingSims(payload.pendingSims || {});
           setQeReports(payload.qeReports || {});
+          const stillPending = Object.values(payload.pendingSims || {}).some((jobs: any) =>
+            (jobs || []).some((job: any) => job?.state === "pending"),
+          );
+          if (stillPending) watchedPendingSim.current = true;
+          else if (watchedPendingSim.current) {
+            watchedPendingSim.current = false;
+            // The row settling is only half the answer. What the sim actually
+            // produced lives in WoWAudit, and the board reads that live exactly
+            // once, at page load - so without this the panel would say "done"
+            // over numbers from before the sim ran, which is the version of
+            // "did it go through" that is worth least.
+            try {
+              const sims = await (await fetch(wishlistApiUrl, {
+                method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
+                body: JSON.stringify({ action: "getWowauditSims" }), cache: "no-store",
+              })).json();
+              if (!stopped && sims.ok && sims.sims) setLiveSims(sims.sims);
+            } catch { /* the numbers keep until the next load; the state is still right */ }
+          }
         } catch {
           // A dropped poll is not worth surfacing — the next tick retries.
         }
       }, 5000);
     return () => { stopped = true; clearInterval(timer); };
-  }, [wishlistApiUrl, qeWaiting]);
+    // The booleans, never the objects they came from: every tick replaces
+    // qeQueue and pendingSims wholesale, so an effect keyed on those would tear
+    // down and restart its own timer forever.
+  }, [wishlistApiUrl, waitingOnWork]);
   useEffect(() => {
     fetch("./app-config.json", { cache: "no-store" })
       .then((r) => r.json())
@@ -1372,6 +1412,12 @@ export default function App() {
         setSimcSnapshots(payload.simcSnapshots || {});
         setQeReports(payload.qeReports || {});
         setQeQueue(payload.qeQueue || {});
+        // doGet has always carried this and the page has always dropped it, so
+        // the "still running" panel was fed by exactly one writer: the QE poll
+        // below, which only runs for healers. A DPS who pasted and reloaded got
+        // an empty object and no sign their sims existed - which is the whole
+        // reason PendingSims was moved out of localStorage in the first place.
+        setPendingSims(payload.pendingSims || {});
         fetch(url, {
           method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify({ action: "getWowauditSims" }),
@@ -1786,7 +1832,16 @@ export default function App() {
         return { item, people };
       })
       .filter((x) => x.people.length);
-  }, [data, bossIndex, specs, difficulty, rosterStatuses, customWishlists]);
+    // playedSpecs belongs here even though nothing above names it: specFor
+    // falls back to it, and it is what a fresh /simc paste changes. Left out,
+    // this list kept ranking people on the spec the board assumed before the
+    // paste, while the per-boss counts in the nav - which are computed inline
+    // on every render, not memoised - moved immediately. Same predicate, two
+    // different answers on the same screen: a boss advertising three raiders
+    // who need it, opening onto a list with none of them. Clicking to another
+    // boss and back changed bossIndex and quietly fixed it, which is why it
+    // read as random.
+  }, [data, bossIndex, specs, playedSpecs, difficulty, rosterStatuses, customWishlists]);
   const tonight = useMemo(() => {
     if (!data) return [];
     return data.raid.bosses
@@ -1847,7 +1902,10 @@ export default function App() {
       })
       .sort((a, b) => b.people.length - a.people.length)
       .slice(0, 12);
-  }, [data, specs, difficulty, rosterStatuses, customWishlists]);
+    // Same omission as `model` above, and the same fix: specFor reads
+    // playedSpecs. Contested loot hid it better - it has no inline counter to
+    // disagree with, so it just went quietly stale until something else moved.
+  }, [data, specs, playedSpecs, difficulty, rosterStatuses, customWishlists]);
   if (loadError)
     return (
       <div className="board-status error" role="alert">
@@ -3950,6 +4008,11 @@ export default function App() {
                 <h2>{boss.name}</h2>
               </div>
             </section>
+            {/* The footer carries this on every view, but it sits under a full
+                boss's worth of loot cards, which during a raid is the same as
+                not being there. This is the page someone hands out an item
+                from, so the age of what they are reading belongs on it. */}
+            <DataFreshness data={data} compact />
             <div className="key">
               <span className="sim">
                 <Sparkles /> SIM result
