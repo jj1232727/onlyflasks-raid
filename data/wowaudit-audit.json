@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-26T04:34:22.868Z",
+  "fetchedAt": "2026-08-26T06:38:36.094Z",
   "periodInfo": {
     "current_period": 1078,
     "current_season": {
@@ -761,17 +761,30 @@
       "name": "Teldral",
       "realm": "Stormrage",
       "data": {
-        "dungeons_done": [],
-        "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "dungeons_done": [
+          {
+            "level": 10,
+            "dungeon": 249
+          },
+          {
+            "level": 11,
+            "dungeon": 250
+          },
+          {
+            "level": 10,
+            "dungeon": 586
+          }
+        ],
+        "world_quests_done": 7,
+        "regular_mythic_dungeons_done": 5,
         "vault_options": {
           "raids": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 292,
+            "option_2": 292,
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -800,6 +813,10 @@
           {
             "level": 10,
             "dungeon": 249
+          },
+          {
+            "level": 10,
+            "dungeon": 584
           }
         ],
         "world_quests_done": 0,
@@ -812,7 +829,7 @@
           },
           "dungeons": {
             "option_1": 318,
-            "option_2": null,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
@@ -828,9 +845,26 @@
       "name": "Nóva",
       "realm": "Hyjal",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 12,
+            "dungeon": 584
+          },
+          {
+            "level": 13,
+            "dungeon": 588
+          },
+          {
+            "level": 13,
+            "dungeon": 586
+          },
+          {
+            "level": 13,
+            "dungeon": 587
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 5,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -838,8 +872,8 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
@@ -855,9 +889,26 @@
       "name": "Aerenn",
       "realm": "Zul'jin",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 12,
+            "dungeon": 584
+          },
+          {
+            "level": 12,
+            "dungeon": 249
+          },
+          {
+            "level": 11,
+            "dungeon": 587
+          },
+          {
+            "level": 13,
+            "dungeon": 588
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 4,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -865,12 +916,12 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
-            "option_1": null,
+            "option_1": 272,
             "option_2": null,
             "option_3": null
           }
@@ -1004,10 +1055,18 @@
           {
             "level": 10,
             "dungeon": 249
+          },
+          {
+            "level": 14,
+            "dungeon": 585
+          },
+          {
+            "level": 14,
+            "dungeon": 249
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 2,
+        "regular_mythic_dungeons_done": 3,
         "vault_options": {
           "raids": {
             "option_1": 292,
@@ -1044,10 +1103,14 @@
           {
             "level": 14,
             "dungeon": 586
+          },
+          {
+            "level": 15,
+            "dungeon": 249
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 3,
+        "regular_mythic_dungeons_done": 5,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1056,7 +1119,7 @@
           },
           "dungeons": {
             "option_1": 318,
-            "option_2": null,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
@@ -1072,9 +1135,34 @@
       "name": "Mazzshiesty",
       "realm": "Zul'jin",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 14,
+            "dungeon": 584
+          },
+          {
+            "level": 14,
+            "dungeon": 585
+          },
+          {
+            "level": 14,
+            "dungeon": 249
+          },
+          {
+            "level": 15,
+            "dungeon": 586
+          },
+          {
+            "level": 14,
+            "dungeon": 587
+          },
+          {
+            "level": 15,
+            "dungeon": 588
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 6,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1082,8 +1170,8 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
@@ -1126,17 +1214,30 @@
       "name": "Xret",
       "realm": "Area 52",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 10,
+            "dungeon": 584
+          },
+          {
+            "level": 11,
+            "dungeon": 250
+          },
+          {
+            "level": 10,
+            "dungeon": 587
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 3,
         "vault_options": {
           "raids": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 292,
+            "option_2": 292,
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1220,10 +1321,22 @@
           {
             "level": 13,
             "dungeon": 249
+          },
+          {
+            "level": 12,
+            "dungeon": 584
+          },
+          {
+            "level": 13,
+            "dungeon": 588
+          },
+          {
+            "level": 13,
+            "dungeon": 399
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 2,
+        "regular_mythic_dungeons_done": 6,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1232,7 +1345,7 @@
           },
           "dungeons": {
             "option_1": 318,
-            "option_2": null,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
@@ -1307,24 +1420,33 @@
       "name": "Mushyxd",
       "realm": "Illidan",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 15,
+            "dungeon": 249
+          },
+          {
+            "level": 14,
+            "dungeon": 250
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 3,
         "vault_options": {
           "raids": {
-            "option_1": null,
+            "option_1": 292,
             "option_2": null,
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 298,
-            "option_3": 292
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
@@ -1342,6 +1464,14 @@
           {
             "level": 10,
             "dungeon": 586
+          },
+          {
+            "level": 10,
+            "dungeon": 584
+          },
+          {
+            "level": 10,
+            "dungeon": 249
           }
         ],
         "world_quests_done": 0,
@@ -1354,7 +1484,7 @@
           },
           "dungeons": {
             "option_1": 318,
-            "option_2": null,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
@@ -1437,10 +1567,14 @@
           {
             "level": 13,
             "dungeon": 587
+          },
+          {
+            "level": 12,
+            "dungeon": 249
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 1,
+        "regular_mythic_dungeons_done": 2,
         "vault_options": {
           "raids": {
             "option_1": null,
