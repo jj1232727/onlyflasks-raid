@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-26T16:44:17.354Z",
+  "fetchedAt": "2026-08-26T19:42:22.778Z",
   "periodInfo": {
     "current_period": 1078,
     "current_season": {
@@ -733,9 +733,13 @@
           {
             "level": 13,
             "dungeon": 587
+          },
+          {
+            "level": 12,
+            "dungeon": 584
           }
         ],
-        "world_quests_done": 4,
+        "world_quests_done": 5,
         "regular_mythic_dungeons_done": 2,
         "vault_options": {
           "raids": {
@@ -1125,7 +1129,7 @@
             "dungeon": 249
           }
         ],
-        "world_quests_done": 0,
+        "world_quests_done": 4,
         "regular_mythic_dungeons_done": 5,
         "vault_options": {
           "raids": {
@@ -1139,7 +1143,7 @@
             "option_3": null
           },
           "world": {
-            "option_1": null,
+            "option_1": 305,
             "option_2": null,
             "option_3": null
           }
@@ -1262,33 +1266,6 @@
           },
           "dungeons": {
             "option_1": 318,
-            "option_2": null,
-            "option_3": null
-          },
-          "world": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          }
-        }
-      }
-    },
-    {
-      "id": 3745578,
-      "name": "Chihirð",
-      "realm": "Area 52",
-      "data": {
-        "dungeons_done": [],
-        "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
-        "vault_options": {
-          "raids": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          },
-          "dungeons": {
-            "option_1": null,
             "option_2": null,
             "option_3": null
           },
@@ -1437,10 +1414,14 @@
           {
             "level": 15,
             "dungeon": 250
+          },
+          {
+            "level": 15,
+            "dungeon": 585
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 1,
+        "regular_mythic_dungeons_done": 2,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1450,6 +1431,50 @@
           "dungeons": {
             "option_1": 318,
             "option_2": null,
+            "option_3": null
+          },
+          "world": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          }
+        }
+      }
+    },
+    {
+      "id": 5325650,
+      "name": "Rapunzele",
+      "realm": "Tichondrius",
+      "data": {
+        "dungeons_done": [
+          {
+            "level": 6,
+            "dungeon": 584
+          },
+          {
+            "level": 11,
+            "dungeon": 584
+          },
+          {
+            "level": 11,
+            "dungeon": 585
+          },
+          {
+            "level": 11,
+            "dungeon": 587
+          }
+        ],
+        "world_quests_done": 0,
+        "regular_mythic_dungeons_done": 3,
+        "vault_options": {
+          "raids": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          },
+          "dungeons": {
+            "option_1": 318,
+            "option_2": 311,
             "option_3": null
           },
           "world": {
@@ -1544,10 +1569,18 @@
           {
             "level": 10,
             "dungeon": 249
+          },
+          {
+            "level": 12,
+            "dungeon": 584
+          },
+          {
+            "level": 10,
+            "dungeon": 588
           }
         ],
         "world_quests_done": 5,
-        "regular_mythic_dungeons_done": 4,
+        "regular_mythic_dungeons_done": 5,
         "vault_options": {
           "raids": {
             "option_1": 292,
@@ -1562,33 +1595,6 @@
           "world": {
             "option_1": 305,
             "option_2": 272,
-            "option_3": null
-          }
-        }
-      }
-    },
-    {
-      "id": 20351597,
-      "name": "Twhitegirl",
-      "realm": "Tichondrius",
-      "data": {
-        "dungeons_done": [],
-        "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
-        "vault_options": {
-          "raids": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          },
-          "dungeons": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          },
-          "world": {
-            "option_1": null,
-            "option_2": null,
             "option_3": null
           }
         }
