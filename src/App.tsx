@@ -28,8 +28,10 @@ import {
 } from "./tier-set.js";
 import {
   assignReplacements,
+  displayItemLevel,
   equipped,
   equippedGroup,
+  filledSlotCount,
   keptForOwnTargets,
   norm,
   slot,
@@ -623,15 +625,17 @@ function auditRaider(c: Raider, week?: { sims?: any; snapshot?: any }) {
       label: "Epic gem missing",
       detail: "No Eversong Diamond equipped",
     });
-  const endgame = c.equipment.filter((i) => (i.itemLevel || 0) >= 279);
-  const average = endgame.length
-    ? endgame.reduce((n, i) => n + (i.itemLevel || 0), 0) / endgame.length
-    : 0;
-  if (c.equipment.length < 15)
+  const average = displayItemLevel(c.equipment);
+  // Counted slots, not rows: c.equipment carries the shirt and tabard too, so
+  // the old length check passed a raider with an empty slot as long as they
+  // wore a shirt, and there is nothing to warn about when a two-hander leaves
+  // the off-hand empty.
+  const filled = filledSlotCount(c.equipment);
+  if (filled < 16)
     issues.push({
       severity: "warning",
       label: "Gear incomplete",
-      detail: `${c.equipment.length}/16 slots detected`,
+      detail: `${filled}/16 slots equipped`,
     });
   // A missing or stale droptimizer is not cosmetic: simFor drops last week's
   // numbers, so loot ranking silently falls back to item level for this raider.
@@ -4364,7 +4368,7 @@ export default function App() {
                           <small>embellishments</small>
                         </span>
                         <strong className="audit-ilvl">
-                          {average ? average.toFixed(1) : "—"}
+                          {average || "—"}
                           <small>avg ilvl</small>
                         </strong>
                       </div>

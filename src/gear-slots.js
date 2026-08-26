@@ -91,3 +91,50 @@ export function assignReplacements(c, list) {
   }
   return assigned;
 }
+
+// The 16 slots WoW counts toward equipped item level. Shirt and tabard are
+// worn but cosmetic, and carry an item level of 1, so averaging them in drags
+// a raider down by ~19.
+const COSMETIC_SLOTS = new Set(["SHIRT", "TABARD"]);
+const COUNTED_SLOTS = 16;
+
+// Equipped item level, matching the armory and Raider.IO exactly.
+//
+// The audit tile used to average only pieces at 279 or above, which quietly
+// deleted a raider's worst gear from their own score: Abenasters wears a 276
+// neck and 276 legs, so the board read him at 307.9 while the armory said 303.
+// The filter flattered exactly the people an audit exists to catch.
+//
+// Two details make this agree with Blizzard on all 21 raiders rather than 13:
+//
+//   1. A two-handed weapon counts twice. WoW fills the off-hand slot with the
+//      same weapon for this calculation, so a two-hander is added again rather
+//      than dividing by fifteen. Dividing by the number of pieces worn instead
+//      lands within a point but still rounds wrong for every 2H user.
+//   2. The divisor is always 16. An empty slot is a zero, not an absence -
+//      which is the point, since a missing piece should cost a raider score.
+//
+// Blizzard truncates the result, so 303.88 displays as 303. Do the same and the
+// number is checkable against the armory instead of nearly matching it.
+export function equippedItemLevel(equipment) {
+  const worn = (equipment || []).filter((i) => !COSMETIC_SLOTS.has(String(i.slot)));
+  if (!worn.length) return 0;
+  const total = worn.reduce((sum, i) => sum + (i.itemLevel || 0), 0);
+  const mainHand = worn.find((i) => String(i.slot) === "MAIN_HAND"),
+    twoHanded = mainHand && !worn.some((i) => String(i.slot) === "OFF_HAND");
+  return (total + (twoHanded ? mainHand.itemLevel || 0 : 0)) / COUNTED_SLOTS;
+}
+
+// What the armory shows. Kept separate so callers that want the raw average for
+// sorting are not forced through the truncation.
+export const displayItemLevel = (equipment) => Math.floor(equippedItemLevel(equipment));
+
+// How many of the 16 counted slots actually hold something. A two-hander
+// legitimately leaves the off-hand empty, so it counts for both.
+export function filledSlotCount(equipment) {
+  const worn = (equipment || []).filter((i) => !COSMETIC_SLOTS.has(String(i.slot)));
+  const twoHanded =
+    worn.some((i) => String(i.slot) === "MAIN_HAND") &&
+    !worn.some((i) => String(i.slot) === "OFF_HAND");
+  return worn.length + (twoHanded ? 1 : 0);
+}

@@ -21,3 +21,12 @@ export declare const assignReplacements: <T>(
   c: { equipment: T[] },
   list: { itemId: number | string; slot?: string }[],
 ) => Map<number, T | undefined>;
+export declare const equippedItemLevel: (
+  equipment: { slot?: string; itemLevel?: number | null }[],
+) => number;
+export declare const displayItemLevel: (
+  equipment: { slot?: string; itemLevel?: number | null }[],
+) => number;
+export declare const filledSlotCount: (
+  equipment: { slot?: string; itemLevel?: number | null }[],
+) => number;
