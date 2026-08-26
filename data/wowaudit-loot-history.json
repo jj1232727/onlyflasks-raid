@@ -46,51 +46,6 @@
       "wish_value": null
     },
     {
-      "id": 1204940125,
-      "rclootcouncil_id": "1787617822-1",
-      "item_id": 270917,
-      "name": "Venomforged Effigy",
-      "icon": "inv_jewelcrafting_rubyserpent",
-      "slot": "Tier",
-      "quality": "epic",
-      "character_id": 5121174,
-      "awarded_by_character_id": 10581386,
-      "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-24T17:29:00.000Z",
-      "difficulty": "heroic",
-      "discarded": false,
-      "response_type": {
-        "id": 91631,
-        "name": "Fourth",
-        "rgba": "rgba(160,160,160,1.0)",
-        "excluded": false,
-        "propagated_to": null
-      },
-      "bonus_ids": [
-        "13705",
-        "13692",
-        "13334"
-      ],
-      "old_items": [
-        {
-          "item_id": 249970,
-          "bonus_ids": [
-            "12806",
-            "6652",
-            "13440",
-            "13338",
-            "13575",
-            "3174",
-            "13534"
-          ]
-        }
-      ],
-      "same_response_amount": 3,
-      "note": "",
-      "wish_data": [],
-      "wish_value": null
-    },
-    {
       "id": 1204940162,
       "rclootcouncil_id": "1787617816-0",
       "item_id": 270916,
@@ -174,6 +129,51 @@
         }
       ],
       "same_response_amount": 1,
+      "note": "",
+      "wish_data": [],
+      "wish_value": null
+    },
+    {
+      "id": 1204940125,
+      "rclootcouncil_id": "1787617822-1",
+      "item_id": 270917,
+      "name": "Venomforged Effigy",
+      "icon": "inv_jewelcrafting_rubyserpent",
+      "slot": "Tier",
+      "quality": "epic",
+      "character_id": 5121174,
+      "awarded_by_character_id": 10581386,
+      "awarded_by_name": "Orchuntarded-Tichondrius",
+      "awarded_at": "2026-08-24T17:29:00.000Z",
+      "difficulty": "heroic",
+      "discarded": false,
+      "response_type": {
+        "id": 91631,
+        "name": "Fourth",
+        "rgba": "rgba(160,160,160,1.0)",
+        "excluded": false,
+        "propagated_to": null
+      },
+      "bonus_ids": [
+        "13705",
+        "13692",
+        "13334"
+      ],
+      "old_items": [
+        {
+          "item_id": 249970,
+          "bonus_ids": [
+            "12806",
+            "6652",
+            "13440",
+            "13338",
+            "13575",
+            "3174",
+            "13534"
+          ]
+        }
+      ],
+      "same_response_amount": 3,
       "note": "",
       "wish_data": [],
       "wish_value": null
@@ -445,6 +445,50 @@
       "wish_value": null
     },
     {
+      "id": 1204940159,
+      "rclootcouncil_id": "1787275064-12",
+      "item_id": 268258,
+      "name": "Boots of the Reckless Wayfarer",
+      "icon": "inv_boot_mail_raidevokerulatek_d_01",
+      "slot": "Feet",
+      "quality": "epic",
+      "character_id": 5105248,
+      "awarded_by_character_id": 10581386,
+      "awarded_by_name": "Orchuntarded-Tichondrius",
+      "awarded_at": "2026-08-20T18:17:00.000Z",
+      "difficulty": "heroic",
+      "discarded": false,
+      "response_type": {
+        "id": 87940,
+        "name": "Upgrade",
+        "rgba": "rgba(255,127,0,1.0)",
+        "excluded": false,
+        "propagated_to": null
+      },
+      "bonus_ids": [
+        "6652",
+        "13662",
+        "13334",
+        "12842"
+      ],
+      "old_items": [
+        {
+          "item_id": 251125,
+          "bonus_ids": [
+            "13439",
+            "6652",
+            "13662",
+            "12699",
+            "12838"
+          ]
+        }
+      ],
+      "same_response_amount": 1,
+      "note": "",
+      "wish_data": [],
+      "wish_value": null
+    },
+    {
       "id": 1204940147,
       "rclootcouncil_id": "1787275069-13",
       "item_id": 270160,
@@ -586,50 +630,6 @@
       "wish_value": null
     },
     {
-      "id": 1204940159,
-      "rclootcouncil_id": "1787275064-12",
-      "item_id": 268258,
-      "name": "Boots of the Reckless Wayfarer",
-      "icon": "inv_boot_mail_raidevokerulatek_d_01",
-      "slot": "Feet",
-      "quality": "epic",
-      "character_id": 5105248,
-      "awarded_by_character_id": 10581386,
-      "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-20T18:17:00.000Z",
-      "difficulty": "heroic",
-      "discarded": false,
-      "response_type": {
-        "id": 87940,
-        "name": "Upgrade",
-        "rgba": "rgba(255,127,0,1.0)",
-        "excluded": false,
-        "propagated_to": null
-      },
-      "bonus_ids": [
-        "6652",
-        "13662",
-        "13334",
-        "12842"
-      ],
-      "old_items": [
-        {
-          "item_id": 251125,
-          "bonus_ids": [
-            "13439",
-            "6652",
-            "13662",
-            "12699",
-            "12838"
-          ]
-        }
-      ],
-      "same_response_amount": 1,
-      "note": "",
-      "wish_data": [],
-      "wish_value": null
-    },
-    {
       "id": 1204940172,
       "rclootcouncil_id": "1787273608-8",
       "item_id": 270166,
@@ -723,46 +723,6 @@
       "wish_value": null
     },
     {
-      "id": 1204940134,
-      "rclootcouncil_id": "1787273556-5",
-      "item_id": 270926,
-      "name": "Venomwoven Icon",
-      "icon": "inv_jewelcrafting_azureserpent",
-      "slot": "Tier",
-      "quality": "epic",
-      "character_id": 4965817,
-      "awarded_by_character_id": 10581386,
-      "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-20T17:52:00.000Z",
-      "difficulty": "heroic",
-      "discarded": false,
-      "response_type": {
-        "id": 87940,
-        "name": "Upgrade",
-        "rgba": "rgba(255,127,0,1.0)",
-        "excluded": false,
-        "propagated_to": null
-      },
-      "bonus_ids": [
-        "13705",
-        "13334"
-      ],
-      "old_items": [
-        {
-          "item_id": 272231,
-          "bonus_ids": [
-            "6652",
-            "13662",
-            "12835"
-          ]
-        }
-      ],
-      "same_response_amount": 0,
-      "note": "",
-      "wish_data": [],
-      "wish_value": null
-    },
-    {
       "id": 1196938959,
       "rclootcouncil_id": "1787273561-6",
       "item_id": 268246,
@@ -847,6 +807,46 @@
       ],
       "same_response_amount": 1,
       "note": "bad stats give if needed",
+      "wish_data": [],
+      "wish_value": null
+    },
+    {
+      "id": 1204940134,
+      "rclootcouncil_id": "1787273556-5",
+      "item_id": 270926,
+      "name": "Venomwoven Icon",
+      "icon": "inv_jewelcrafting_azureserpent",
+      "slot": "Tier",
+      "quality": "epic",
+      "character_id": 4965817,
+      "awarded_by_character_id": 10581386,
+      "awarded_by_name": "Orchuntarded-Tichondrius",
+      "awarded_at": "2026-08-20T17:52:00.000Z",
+      "difficulty": "heroic",
+      "discarded": false,
+      "response_type": {
+        "id": 87940,
+        "name": "Upgrade",
+        "rgba": "rgba(255,127,0,1.0)",
+        "excluded": false,
+        "propagated_to": null
+      },
+      "bonus_ids": [
+        "13705",
+        "13334"
+      ],
+      "old_items": [
+        {
+          "item_id": 272231,
+          "bonus_ids": [
+            "6652",
+            "13662",
+            "12835"
+          ]
+        }
+      ],
+      "same_response_amount": 0,
+      "note": "",
       "wish_data": [],
       "wish_value": null
     },
@@ -1164,50 +1164,6 @@
       "wish_value": null
     },
     {
-      "id": 1204940146,
-      "rclootcouncil_id": "1787193755-41",
-      "item_id": 268229,
-      "name": "Skullguard of the Risen Sacrifice",
-      "icon": "inv_helm_plate_raiddeathknightulatek_d_01",
-      "slot": "Head",
-      "quality": "epic",
-      "character_id": 15176907,
-      "awarded_by_character_id": 10581386,
-      "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-19T19:42:00.000Z",
-      "difficulty": "heroic",
-      "discarded": false,
-      "response_type": {
-        "id": 87939,
-        "name": "Need",
-        "rgba": "rgba(0,255,0,1.0)",
-        "excluded": false,
-        "propagated_to": null
-      },
-      "bonus_ids": [
-        "6652",
-        "13696",
-        "13662",
-        "13334",
-        "12841"
-      ],
-      "old_items": [
-        {
-          "item_id": 277768,
-          "bonus_ids": [
-            "6652",
-            "13696",
-            "13662",
-            "12834"
-          ]
-        }
-      ],
-      "same_response_amount": 1,
-      "note": "BiS Helm catalyst",
-      "wish_data": [],
-      "wish_value": null
-    },
-    {
       "id": 1204940164,
       "rclootcouncil_id": "1787193766-42",
       "item_id": 268229,
@@ -1250,6 +1206,50 @@
       ],
       "same_response_amount": 4,
       "note": "",
+      "wish_data": [],
+      "wish_value": null
+    },
+    {
+      "id": 1204940146,
+      "rclootcouncil_id": "1787193755-41",
+      "item_id": 268229,
+      "name": "Skullguard of the Risen Sacrifice",
+      "icon": "inv_helm_plate_raiddeathknightulatek_d_01",
+      "slot": "Head",
+      "quality": "epic",
+      "character_id": 15176907,
+      "awarded_by_character_id": 10581386,
+      "awarded_by_name": "Orchuntarded-Tichondrius",
+      "awarded_at": "2026-08-19T19:42:00.000Z",
+      "difficulty": "heroic",
+      "discarded": false,
+      "response_type": {
+        "id": 87939,
+        "name": "Need",
+        "rgba": "rgba(0,255,0,1.0)",
+        "excluded": false,
+        "propagated_to": null
+      },
+      "bonus_ids": [
+        "6652",
+        "13696",
+        "13662",
+        "13334",
+        "12841"
+      ],
+      "old_items": [
+        {
+          "item_id": 277768,
+          "bonus_ids": [
+            "6652",
+            "13696",
+            "13662",
+            "12834"
+          ]
+        }
+      ],
+      "same_response_amount": 1,
+      "note": "BiS Helm catalyst",
       "wish_data": [],
       "wish_value": null
     },
@@ -1343,56 +1343,6 @@
       "wish_value": null
     },
     {
-      "id": 1204940112,
-      "rclootcouncil_id": "1787192729-39",
-      "item_id": 270175,
-      "name": "Voracious Heart of Ula'tek",
-      "icon": "inv_121_trinket_raid_ulatek_heart",
-      "slot": "Trinket",
-      "quality": "epic",
-      "character_id": 4329634,
-      "awarded_by_character_id": 10581386,
-      "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-19T19:23:00.000Z",
-      "difficulty": "normal",
-      "discarded": false,
-      "response_type": {
-        "id": 87939,
-        "name": "Need",
-        "rgba": "rgba(0,255,0,1.0)",
-        "excluded": false,
-        "propagated_to": null
-      },
-      "bonus_ids": [
-        "6652",
-        "13333",
-        "12836"
-      ],
-      "old_items": [
-        {
-          "item_id": 249344,
-          "bonus_ids": [
-            "6652",
-            "13335",
-            "13654"
-          ]
-        },
-        {
-          "item_id": 273796,
-          "bonus_ids": [
-            "12842",
-            "13440",
-            "42",
-            "12699"
-          ]
-        }
-      ],
-      "same_response_amount": 7,
-      "note": "litteral BiS",
-      "wish_data": [],
-      "wish_value": null
-    },
-    {
       "id": 1204940137,
       "rclootcouncil_id": "1787192723-38",
       "item_id": 270168,
@@ -1443,17 +1393,17 @@
       "wish_value": null
     },
     {
-      "id": 1195000950,
-      "rclootcouncil_id": "1787192562-35",
-      "item_id": 271875,
-      "name": "Gaze of the Coiled Watcher",
-      "icon": "inv_helm_leather_raiddruidulatek_d_01",
-      "slot": "Head",
+      "id": 1204940112,
+      "rclootcouncil_id": "1787192729-39",
+      "item_id": 270175,
+      "name": "Voracious Heart of Ula'tek",
+      "icon": "inv_121_trinket_raid_ulatek_heart",
+      "slot": "Trinket",
       "quality": "epic",
-      "character_id": 4725968,
+      "character_id": 4329634,
       "awarded_by_character_id": 10581386,
       "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-19T19:21:00.000Z",
+      "awarded_at": "2026-08-19T19:23:00.000Z",
       "difficulty": "normal",
       "discarded": false,
       "response_type": {
@@ -1465,28 +1415,83 @@
       },
       "bonus_ids": [
         "6652",
-        "13696",
-        "13662",
         "13333",
-        "12836",
-        "13847"
+        "12836"
       ],
       "old_items": [
         {
-          "item_id": 250024,
+          "item_id": 249344,
           "bonus_ids": [
             "6652",
             "13335",
-            "13786",
-            "13338",
-            "13575",
-            "3183",
-            "13534"
+            "13654"
+          ]
+        },
+        {
+          "item_id": 273796,
+          "bonus_ids": [
+            "12842",
+            "13440",
+            "42",
+            "12699"
           ]
         }
       ],
-      "same_response_amount": 0,
-      "note": "BIS",
+      "same_response_amount": 7,
+      "note": "litteral BiS",
+      "wish_data": [],
+      "wish_value": null
+    },
+    {
+      "id": 1204940178,
+      "rclootcouncil_id": "1787192600-37",
+      "item_id": 270909,
+      "name": "Slumbering Coil Curio",
+      "icon": "rogue_paralytic_poison",
+      "slot": "Tier",
+      "quality": "epic",
+      "character_id": 4669066,
+      "awarded_by_character_id": 10581386,
+      "awarded_by_name": "Orchuntarded-Tichondrius",
+      "awarded_at": "2026-08-19T19:21:00.000Z",
+      "difficulty": "normal",
+      "discarded": false,
+      "response_type": {
+        "id": 91631,
+        "name": "Fourth",
+        "rgba": "rgba(160,160,160,1.0)",
+        "excluded": false,
+        "propagated_to": null
+      },
+      "bonus_ids": [
+        "13703",
+        "13333"
+      ],
+      "old_items": [
+        {
+          "item_id": 251232,
+          "bonus_ids": [
+            "12843",
+            "13440",
+            "6652",
+            "13696",
+            "13662",
+            "12699"
+          ]
+        },
+        {
+          "item_id": 251139,
+          "bonus_ids": [
+            "12843",
+            "13440",
+            "6652",
+            "13662",
+            "12699"
+          ]
+        }
+      ],
+      "same_response_amount": 3,
+      "note": "4piece with this",
       "wish_data": [],
       "wish_value": null
     },
@@ -1545,70 +1550,17 @@
       "wish_value": null
     },
     {
-      "id": 1204940178,
-      "rclootcouncil_id": "1787192600-37",
-      "item_id": 270909,
-      "name": "Slumbering Coil Curio",
-      "icon": "rogue_paralytic_poison",
-      "slot": "Tier",
+      "id": 1195000950,
+      "rclootcouncil_id": "1787192562-35",
+      "item_id": 271875,
+      "name": "Gaze of the Coiled Watcher",
+      "icon": "inv_helm_leather_raiddruidulatek_d_01",
+      "slot": "Head",
       "quality": "epic",
-      "character_id": 4669066,
+      "character_id": 4725968,
       "awarded_by_character_id": 10581386,
       "awarded_by_name": "Orchuntarded-Tichondrius",
       "awarded_at": "2026-08-19T19:21:00.000Z",
-      "difficulty": "normal",
-      "discarded": false,
-      "response_type": {
-        "id": 91631,
-        "name": "Fourth",
-        "rgba": "rgba(160,160,160,1.0)",
-        "excluded": false,
-        "propagated_to": null
-      },
-      "bonus_ids": [
-        "13703",
-        "13333"
-      ],
-      "old_items": [
-        {
-          "item_id": 251232,
-          "bonus_ids": [
-            "12843",
-            "13440",
-            "6652",
-            "13696",
-            "13662",
-            "12699"
-          ]
-        },
-        {
-          "item_id": 251139,
-          "bonus_ids": [
-            "12843",
-            "13440",
-            "6652",
-            "13662",
-            "12699"
-          ]
-        }
-      ],
-      "same_response_amount": 3,
-      "note": "4piece with this",
-      "wish_data": [],
-      "wish_value": null
-    },
-    {
-      "id": 1204940177,
-      "rclootcouncil_id": "1787191176-33",
-      "item_id": 268255,
-      "name": "Cackling Soultreads",
-      "icon": "inv_boot_cloth_raidmageulatek_d_01",
-      "slot": "Feet",
-      "quality": "epic",
-      "character_id": 4669066,
-      "awarded_by_character_id": 10581386,
-      "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-19T18:58:00.000Z",
       "difficulty": "normal",
       "discarded": false,
       "response_type": {
@@ -1620,23 +1572,28 @@
       },
       "bonus_ids": [
         "6652",
+        "13696",
         "13662",
         "13333",
-        "12836"
+        "12836",
+        "13847"
       ],
       "old_items": [
         {
-          "item_id": 268282,
+          "item_id": 250024,
           "bonus_ids": [
             "6652",
-            "13577",
             "13335",
-            "13786"
+            "13786",
+            "13338",
+            "13575",
+            "3183",
+            "13534"
           ]
         }
       ],
       "same_response_amount": 0,
-      "note": "bis for normal",
+      "note": "BIS",
       "wish_data": [],
       "wish_value": null
     },
@@ -1773,6 +1730,49 @@
       "wish_value": null
     },
     {
+      "id": 1204940177,
+      "rclootcouncil_id": "1787191176-33",
+      "item_id": 268255,
+      "name": "Cackling Soultreads",
+      "icon": "inv_boot_cloth_raidmageulatek_d_01",
+      "slot": "Feet",
+      "quality": "epic",
+      "character_id": 4669066,
+      "awarded_by_character_id": 10581386,
+      "awarded_by_name": "Orchuntarded-Tichondrius",
+      "awarded_at": "2026-08-19T18:58:00.000Z",
+      "difficulty": "normal",
+      "discarded": false,
+      "response_type": {
+        "id": 87939,
+        "name": "Need",
+        "rgba": "rgba(0,255,0,1.0)",
+        "excluded": false,
+        "propagated_to": null
+      },
+      "bonus_ids": [
+        "6652",
+        "13662",
+        "13333",
+        "12836"
+      ],
+      "old_items": [
+        {
+          "item_id": 268282,
+          "bonus_ids": [
+            "6652",
+            "13577",
+            "13335",
+            "13786"
+          ]
+        }
+      ],
+      "same_response_amount": 0,
+      "note": "bis for normal",
+      "wish_data": [],
+      "wish_value": null
+    },
+    {
       "id": 1204940129,
       "rclootcouncil_id": "1787191152-30",
       "item_id": 268243,
@@ -1811,140 +1811,6 @@
       ],
       "same_response_amount": 3,
       "note": "",
-      "wish_data": [],
-      "wish_value": null
-    },
-    {
-      "id": 1204940152,
-      "rclootcouncil_id": "1787189207-28",
-      "item_id": 268261,
-      "name": "Bespittled Slitherslippers",
-      "icon": "inv_boot_leather_raidmonkulatek_d_01",
-      "slot": "Feet",
-      "quality": "epic",
-      "character_id": 3745578,
-      "awarded_by_character_id": 10581386,
-      "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-19T18:26:00.000Z",
-      "difficulty": "normal",
-      "discarded": false,
-      "response_type": {
-        "id": 87940,
-        "name": "Upgrade",
-        "rgba": "rgba(255,127,0,1.0)",
-        "excluded": false,
-        "propagated_to": null
-      },
-      "bonus_ids": [
-        "6652",
-        "13662",
-        "13333",
-        "12835"
-      ],
-      "old_items": [
-        {
-          "item_id": 244569,
-          "bonus_ids": [
-            "12214",
-            "13667",
-            "12497",
-            "12066",
-            "8960",
-            "12384",
-            "8793",
-            "13622"
-          ]
-        }
-      ],
-      "same_response_amount": 0,
-      "note": "",
-      "wish_data": [],
-      "wish_value": null
-    },
-    {
-      "id": 1204940116,
-      "rclootcouncil_id": "1787189202-27",
-      "item_id": 268220,
-      "name": "Scaleplate Strangulators",
-      "icon": "inv_glove_plate_raidpaladinulatek_d_01",
-      "slot": "Hands",
-      "quality": "epic",
-      "character_id": 7422636,
-      "awarded_by_character_id": 10581386,
-      "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-19T18:26:00.000Z",
-      "difficulty": "normal",
-      "discarded": false,
-      "response_type": {
-        "id": 87939,
-        "name": "Need",
-        "rgba": "rgba(0,255,0,1.0)",
-        "excluded": false,
-        "propagated_to": null
-      },
-      "bonus_ids": [
-        "6652",
-        "13662",
-        "13333",
-        "12835"
-      ],
-      "old_items": [
-        {
-          "item_id": 277769,
-          "bonus_ids": [
-            "6652",
-            "13662",
-            "12830"
-          ]
-        }
-      ],
-      "same_response_amount": 0,
-      "note": "bis stats",
-      "wish_data": [],
-      "wish_value": null
-    },
-    {
-      "id": 1195000979,
-      "rclootcouncil_id": "1787189190-25",
-      "item_id": 270915,
-      "name": "Venomcured Effigy",
-      "icon": "inv_jewelcrafting_purpleserpent",
-      "slot": "Tier",
-      "quality": "epic",
-      "character_id": 4165902,
-      "awarded_by_character_id": 10581386,
-      "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-19T18:26:00.000Z",
-      "difficulty": "normal",
-      "discarded": false,
-      "response_type": {
-        "id": 91631,
-        "name": "Fourth",
-        "rgba": "rgba(160,160,160,1.0)",
-        "excluded": false,
-        "propagated_to": null
-      },
-      "bonus_ids": [
-        "13703",
-        "13692",
-        "13333"
-      ],
-      "old_items": [
-        {
-          "item_id": 250015,
-          "bonus_ids": [
-            "6652",
-            "13335",
-            "12667",
-            "13786",
-            "13338",
-            "13575",
-            "3183"
-          ]
-        }
-      ],
-      "same_response_amount": 0,
-      "note": "1972 mythic rating...just need 1 mplus for 4th piece cata",
       "wish_data": [],
       "wish_value": null
     },
@@ -2044,14 +1910,193 @@
       "wish_value": null
     },
     {
-      "id": 1204940145,
-      "rclootcouncil_id": "1787188375-23",
-      "item_id": 268201,
-      "name": "Venomous Boneglaive",
-      "icon": "inv_glaive_1h_ulatek_d_01",
-      "slot": "One_hand",
+      "id": 1204940116,
+      "rclootcouncil_id": "1787189202-27",
+      "item_id": 268220,
+      "name": "Scaleplate Strangulators",
+      "icon": "inv_glove_plate_raidpaladinulatek_d_01",
+      "slot": "Hands",
       "quality": "epic",
-      "character_id": 4826470,
+      "character_id": 7422636,
+      "awarded_by_character_id": 10581386,
+      "awarded_by_name": "Orchuntarded-Tichondrius",
+      "awarded_at": "2026-08-19T18:26:00.000Z",
+      "difficulty": "normal",
+      "discarded": false,
+      "response_type": {
+        "id": 87939,
+        "name": "Need",
+        "rgba": "rgba(0,255,0,1.0)",
+        "excluded": false,
+        "propagated_to": null
+      },
+      "bonus_ids": [
+        "6652",
+        "13662",
+        "13333",
+        "12835"
+      ],
+      "old_items": [
+        {
+          "item_id": 277769,
+          "bonus_ids": [
+            "6652",
+            "13662",
+            "12830"
+          ]
+        }
+      ],
+      "same_response_amount": 0,
+      "note": "bis stats",
+      "wish_data": [],
+      "wish_value": null
+    },
+    {
+      "id": 1204940152,
+      "rclootcouncil_id": "1787189207-28",
+      "item_id": 268261,
+      "name": "Bespittled Slitherslippers",
+      "icon": "inv_boot_leather_raidmonkulatek_d_01",
+      "slot": "Feet",
+      "quality": "epic",
+      "character_id": 3745578,
+      "awarded_by_character_id": 10581386,
+      "awarded_by_name": "Orchuntarded-Tichondrius",
+      "awarded_at": "2026-08-19T18:26:00.000Z",
+      "difficulty": "normal",
+      "discarded": false,
+      "response_type": {
+        "id": 87940,
+        "name": "Upgrade",
+        "rgba": "rgba(255,127,0,1.0)",
+        "excluded": false,
+        "propagated_to": null
+      },
+      "bonus_ids": [
+        "6652",
+        "13662",
+        "13333",
+        "12835"
+      ],
+      "old_items": [
+        {
+          "item_id": 244569,
+          "bonus_ids": [
+            "12214",
+            "13667",
+            "12497",
+            "12066",
+            "8960",
+            "12384",
+            "8793",
+            "13622"
+          ]
+        }
+      ],
+      "same_response_amount": 0,
+      "note": "",
+      "wish_data": [],
+      "wish_value": null
+    },
+    {
+      "id": 1195000979,
+      "rclootcouncil_id": "1787189190-25",
+      "item_id": 270915,
+      "name": "Venomcured Effigy",
+      "icon": "inv_jewelcrafting_purpleserpent",
+      "slot": "Tier",
+      "quality": "epic",
+      "character_id": 4165902,
+      "awarded_by_character_id": 10581386,
+      "awarded_by_name": "Orchuntarded-Tichondrius",
+      "awarded_at": "2026-08-19T18:26:00.000Z",
+      "difficulty": "normal",
+      "discarded": false,
+      "response_type": {
+        "id": 91631,
+        "name": "Fourth",
+        "rgba": "rgba(160,160,160,1.0)",
+        "excluded": false,
+        "propagated_to": null
+      },
+      "bonus_ids": [
+        "13703",
+        "13692",
+        "13333"
+      ],
+      "old_items": [
+        {
+          "item_id": 250015,
+          "bonus_ids": [
+            "6652",
+            "13335",
+            "12667",
+            "13786",
+            "13338",
+            "13575",
+            "3183"
+          ]
+        }
+      ],
+      "same_response_amount": 0,
+      "note": "1972 mythic rating...just need 1 mplus for 4th piece cata",
+      "wish_data": [],
+      "wish_value": null
+    },
+    {
+      "id": 1195000978,
+      "rclootcouncil_id": "1787188346-20",
+      "item_id": 268234,
+      "name": "Ruthless Slaughtergrips",
+      "icon": "inv_glove_leather_raiddemonhunterulatek_d_01",
+      "slot": "Hands",
+      "quality": "epic",
+      "character_id": 4165902,
+      "awarded_by_character_id": 10581386,
+      "awarded_by_name": "Orchuntarded-Tichondrius",
+      "awarded_at": "2026-08-19T18:12:00.000Z",
+      "difficulty": "normal",
+      "discarded": false,
+      "response_type": {
+        "id": 87941,
+        "name": "OS",
+        "rgba": "rgba(0,178,178,1.0)",
+        "excluded": false,
+        "propagated_to": null
+      },
+      "bonus_ids": [
+        "6652",
+        "13662",
+        "13333",
+        "12835"
+      ],
+      "old_items": [
+        {
+          "item_id": 250016,
+          "bonus_ids": [
+            "12806",
+            "6652",
+            "13440",
+            "13337",
+            "13574",
+            "3174"
+          ]
+        }
+      ],
+      "same_response_amount": 0,
+      "note": "mastery gear for mythic plus",
+      "wish_data": [],
+      "wish_value": null
+    },
+    {
+      "id": 1204940122,
+      "rclootcouncil_id": "1787188379-24",
+      "item_id": 270163,
+      "name": "Sszorak's Ferocity",
+      "icon": "inv_121_trinket_raid_ulatek_ulatekclaw",
+      "slot": "Trinket",
+      "quality": "epic",
+      "character_id": 5121174,
       "awarded_by_character_id": 10581386,
       "awarded_by_name": "Orchuntarded-Tichondrius",
       "awarded_at": "2026-08-19T18:12:00.000Z",
@@ -2065,35 +2110,30 @@
         "propagated_to": null
       },
       "bonus_ids": [
-        "6652",
+        "41",
         "13333",
         "12835"
       ],
       "old_items": [
         {
-          "item_id": 237840,
+          "item_id": 249344,
           "bonus_ids": [
-            "12214",
-            "13655",
-            "12497",
-            "12066",
-            "12693",
-            "8960",
-            "8793",
-            "13622"
+            "6652",
+            "13335",
+            "13654"
           ]
         },
         {
-          "item_id": 193710,
+          "item_id": 250245,
           "bonus_ids": [
+            "12843",
             "13440",
             "6652",
-            "12701",
-            "13654"
+            "12699"
           ]
         }
       ],
-      "same_response_amount": 1,
+      "same_response_amount": 0,
       "note": "",
       "wish_data": [],
       "wish_value": null
@@ -2185,14 +2225,14 @@
       "wish_value": null
     },
     {
-      "id": 1204940122,
-      "rclootcouncil_id": "1787188379-24",
-      "item_id": 270163,
-      "name": "Sszorak's Ferocity",
-      "icon": "inv_121_trinket_raid_ulatek_ulatekclaw",
-      "slot": "Trinket",
+      "id": 1204940145,
+      "rclootcouncil_id": "1787188375-23",
+      "item_id": 268201,
+      "name": "Venomous Boneglaive",
+      "icon": "inv_glaive_1h_ulatek_d_01",
+      "slot": "One_hand",
       "quality": "epic",
-      "character_id": 5121174,
+      "character_id": 4826470,
       "awarded_by_character_id": 10581386,
       "awarded_by_name": "Orchuntarded-Tichondrius",
       "awarded_at": "2026-08-19T18:12:00.000Z",
@@ -2206,76 +2246,36 @@
         "propagated_to": null
       },
       "bonus_ids": [
-        "41",
+        "6652",
         "13333",
         "12835"
       ],
       "old_items": [
         {
-          "item_id": 249344,
+          "item_id": 237840,
           "bonus_ids": [
-            "6652",
-            "13335",
-            "13654"
+            "12214",
+            "13655",
+            "12497",
+            "12066",
+            "12693",
+            "8960",
+            "8793",
+            "13622"
           ]
         },
         {
-          "item_id": 250245,
+          "item_id": 193710,
           "bonus_ids": [
-            "12843",
             "13440",
             "6652",
-            "12699"
+            "12701",
+            "13654"
           ]
         }
       ],
-      "same_response_amount": 0,
+      "same_response_amount": 1,
       "note": "",
-      "wish_data": [],
-      "wish_value": null
-    },
-    {
-      "id": 1195000978,
-      "rclootcouncil_id": "1787188346-20",
-      "item_id": 268234,
-      "name": "Ruthless Slaughtergrips",
-      "icon": "inv_glove_leather_raiddemonhunterulatek_d_01",
-      "slot": "Hands",
-      "quality": "epic",
-      "character_id": 4165902,
-      "awarded_by_character_id": 10581386,
-      "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-19T18:12:00.000Z",
-      "difficulty": "normal",
-      "discarded": false,
-      "response_type": {
-        "id": 87941,
-        "name": "OS",
-        "rgba": "rgba(0,178,178,1.0)",
-        "excluded": false,
-        "propagated_to": null
-      },
-      "bonus_ids": [
-        "6652",
-        "13662",
-        "13333",
-        "12835"
-      ],
-      "old_items": [
-        {
-          "item_id": 250016,
-          "bonus_ids": [
-            "12806",
-            "6652",
-            "13440",
-            "13337",
-            "13574",
-            "3174"
-          ]
-        }
-      ],
-      "same_response_amount": 0,
-      "note": "mastery gear for mythic plus",
       "wish_data": [],
       "wish_value": null
     },
@@ -2376,49 +2376,6 @@
       "wish_value": null
     },
     {
-      "id": 1204940176,
-      "rclootcouncil_id": "1787187435-16",
-      "item_id": 270922,
-      "name": "Venomwoven Remnant",
-      "icon": "inv_jewelcrafting_azureserpent",
-      "slot": "Tier",
-      "quality": "epic",
-      "character_id": 4669066,
-      "awarded_by_character_id": 10581386,
-      "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-19T17:57:00.000Z",
-      "difficulty": "normal",
-      "discarded": false,
-      "response_type": {
-        "id": 94253,
-        "name": "Third",
-        "rgba": "rgba(163,155,170,1.0)",
-        "excluded": false,
-        "propagated_to": null
-      },
-      "bonus_ids": [
-        "13702",
-        "13694",
-        "13333"
-      ],
-      "old_items": [
-        {
-          "item_id": 251085,
-          "bonus_ids": [
-            "13440",
-            "6652",
-            "13577",
-            "12699",
-            "12806"
-          ]
-        }
-      ],
-      "same_response_amount": 1,
-      "note": "",
-      "wish_data": [],
-      "wish_value": null
-    },
-    {
       "id": 1204940144,
       "rclootcouncil_id": "1787187445-17",
       "item_id": 268227,
@@ -2468,6 +2425,49 @@
       "wish_value": null
     },
     {
+      "id": 1204940176,
+      "rclootcouncil_id": "1787187435-16",
+      "item_id": 270922,
+      "name": "Venomwoven Remnant",
+      "icon": "inv_jewelcrafting_azureserpent",
+      "slot": "Tier",
+      "quality": "epic",
+      "character_id": 4669066,
+      "awarded_by_character_id": 10581386,
+      "awarded_by_name": "Orchuntarded-Tichondrius",
+      "awarded_at": "2026-08-19T17:57:00.000Z",
+      "difficulty": "normal",
+      "discarded": false,
+      "response_type": {
+        "id": 94253,
+        "name": "Third",
+        "rgba": "rgba(163,155,170,1.0)",
+        "excluded": false,
+        "propagated_to": null
+      },
+      "bonus_ids": [
+        "13702",
+        "13694",
+        "13333"
+      ],
+      "old_items": [
+        {
+          "item_id": 251085,
+          "bonus_ids": [
+            "13440",
+            "6652",
+            "13577",
+            "12699",
+            "12806"
+          ]
+        }
+      ],
+      "same_response_amount": 1,
+      "note": "",
+      "wish_data": [],
+      "wish_value": null
+    },
+    {
       "id": 1204940115,
       "rclootcouncil_id": "1787187412-15",
       "item_id": 270925,
@@ -2507,6 +2507,48 @@
       ],
       "same_response_amount": 2,
       "note": "4th, have 2pcs to cata already",
+      "wish_data": [],
+      "wish_value": null
+    },
+    {
+      "id": 1204940166,
+      "rclootcouncil_id": "1787186610-14",
+      "item_id": 268214,
+      "name": "Malignant Toothed Edge",
+      "icon": "inv_sword_2h_ulatek_d_01",
+      "slot": "Two_hand",
+      "quality": "epic",
+      "character_id": 5014656,
+      "awarded_by_character_id": 10581386,
+      "awarded_by_name": "Orchuntarded-Tichondrius",
+      "awarded_at": "2026-08-19T17:43:00.000Z",
+      "difficulty": "normal",
+      "discarded": false,
+      "response_type": {
+        "id": 87938,
+        "name": "Transmog",
+        "rgba": "rgba(142,30,178,1.0)",
+        "excluded": false,
+        "propagated_to": null
+      },
+      "bonus_ids": [
+        "6652",
+        "13333",
+        "12835"
+      ],
+      "old_items": [
+        {
+          "item_id": 193755,
+          "bonus_ids": [
+            "12843",
+            "13440",
+            "6652",
+            "12701"
+          ]
+        }
+      ],
+      "same_response_amount": 2,
+      "note": "That mog ",
       "wish_data": [],
       "wish_value": null
     },
@@ -2565,44 +2607,44 @@
       "wish_value": null
     },
     {
-      "id": 1204940166,
-      "rclootcouncil_id": "1787186610-14",
-      "item_id": 268214,
-      "name": "Malignant Toothed Edge",
-      "icon": "inv_sword_2h_ulatek_d_01",
-      "slot": "Two_hand",
+      "id": 1204940157,
+      "rclootcouncil_id": "1787186561-12",
+      "item_id": 270928,
+      "name": "Venomcast Icon",
+      "icon": "inv_jewelcrafting_goldenserpent",
+      "slot": "Tier",
       "quality": "epic",
-      "character_id": 5014656,
+      "character_id": 5105248,
       "awarded_by_character_id": 10581386,
       "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-19T17:43:00.000Z",
+      "awarded_at": "2026-08-19T17:42:00.000Z",
       "difficulty": "normal",
       "discarded": false,
       "response_type": {
-        "id": 87938,
-        "name": "Transmog",
-        "rgba": "rgba(142,30,178,1.0)",
+        "id": 91631,
+        "name": "Fourth",
+        "rgba": "rgba(160,160,160,1.0)",
         "excluded": false,
         "propagated_to": null
       },
       "bonus_ids": [
-        "6652",
-        "13333",
-        "12835"
+        "13703",
+        "13333"
       ],
       "old_items": [
         {
-          "item_id": 193755,
+          "item_id": 249982,
           "bonus_ids": [
-            "12843",
+            "43",
             "13440",
-            "6652",
-            "12701"
+            "13336",
+            "13575",
+            "12806"
           ]
         }
       ],
-      "same_response_amount": 2,
-      "note": "That mog ",
+      "same_response_amount": 0,
+      "note": "",
       "wish_data": [],
       "wish_value": null
     },
@@ -2702,65 +2744,23 @@
       "wish_value": null
     },
     {
-      "id": 1204940157,
-      "rclootcouncil_id": "1787186561-12",
-      "item_id": 270928,
-      "name": "Venomcast Icon",
-      "icon": "inv_jewelcrafting_goldenserpent",
-      "slot": "Tier",
+      "id": 1204940169,
+      "rclootcouncil_id": "1787185858-8",
+      "item_id": 268198,
+      "name": "Caustic Keeper-Crusher",
+      "icon": "inv_mace_2h_ulatek_d_01",
+      "slot": "Two_hand",
       "quality": "epic",
-      "character_id": 5105248,
-      "awarded_by_character_id": 10581386,
-      "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-19T17:42:00.000Z",
-      "difficulty": "normal",
-      "discarded": false,
-      "response_type": {
-        "id": 91631,
-        "name": "Fourth",
-        "rgba": "rgba(160,160,160,1.0)",
-        "excluded": false,
-        "propagated_to": null
-      },
-      "bonus_ids": [
-        "13703",
-        "13333"
-      ],
-      "old_items": [
-        {
-          "item_id": 249982,
-          "bonus_ids": [
-            "43",
-            "13440",
-            "13336",
-            "13575",
-            "12806"
-          ]
-        }
-      ],
-      "same_response_amount": 0,
-      "note": "",
-      "wish_data": [],
-      "wish_value": null
-    },
-    {
-      "id": 1204940154,
-      "rclootcouncil_id": "1787185864-9",
-      "item_id": 268197,
-      "name": "Spine of the Hissing Abyss",
-      "icon": "inv_offhand_1h_ulatek_d_01",
-      "slot": "Off_hand",
-      "quality": "epic",
-      "character_id": 16876827,
+      "character_id": 5454087,
       "awarded_by_character_id": 10581386,
       "awarded_by_name": "Orchuntarded-Tichondrius",
       "awarded_at": "2026-08-19T17:29:00.000Z",
       "difficulty": "normal",
       "discarded": false,
       "response_type": {
-        "id": 87940,
-        "name": "Upgrade",
-        "rgba": "rgba(255,127,0,1.0)",
+        "id": 87941,
+        "name": "OS",
+        "rgba": "rgba(0,178,178,1.0)",
         "excluded": false,
         "propagated_to": null
       },
@@ -2771,12 +2771,11 @@
       ],
       "old_items": [
         {
-          "item_id": 251156,
+          "item_id": 264630,
           "bonus_ids": [
-            "12843",
-            "13440",
             "6652",
-            "12701"
+            "11311",
+            "12822"
           ]
         }
       ],
@@ -2826,23 +2825,23 @@
       "wish_value": null
     },
     {
-      "id": 1204940169,
-      "rclootcouncil_id": "1787185858-8",
-      "item_id": 268198,
-      "name": "Caustic Keeper-Crusher",
-      "icon": "inv_mace_2h_ulatek_d_01",
-      "slot": "Two_hand",
+      "id": 1204940154,
+      "rclootcouncil_id": "1787185864-9",
+      "item_id": 268197,
+      "name": "Spine of the Hissing Abyss",
+      "icon": "inv_offhand_1h_ulatek_d_01",
+      "slot": "Off_hand",
       "quality": "epic",
-      "character_id": 5454087,
+      "character_id": 16876827,
       "awarded_by_character_id": 10581386,
       "awarded_by_name": "Orchuntarded-Tichondrius",
       "awarded_at": "2026-08-19T17:29:00.000Z",
       "difficulty": "normal",
       "discarded": false,
       "response_type": {
-        "id": 87941,
-        "name": "OS",
-        "rgba": "rgba(0,178,178,1.0)",
+        "id": 87940,
+        "name": "Upgrade",
+        "rgba": "rgba(255,127,0,1.0)",
         "excluded": false,
         "propagated_to": null
       },
@@ -2853,54 +2852,12 @@
       ],
       "old_items": [
         {
-          "item_id": 264630,
+          "item_id": 251156,
           "bonus_ids": [
+            "12843",
+            "13440",
             "6652",
-            "11311",
-            "12822"
-          ]
-        }
-      ],
-      "same_response_amount": 2,
-      "note": "",
-      "wish_data": [],
-      "wish_value": null
-    },
-    {
-      "id": 1204940170,
-      "rclootcouncil_id": "1787185832-5",
-      "item_id": 270912,
-      "name": "Venomcast Idol",
-      "icon": "inv_jewelcrafting_goldenserpent",
-      "slot": "Tier",
-      "quality": "epic",
-      "character_id": 13331173,
-      "awarded_by_character_id": 10581386,
-      "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-19T17:29:00.000Z",
-      "difficulty": "normal",
-      "discarded": false,
-      "response_type": {
-        "id": 94253,
-        "name": "Third",
-        "rgba": "rgba(163,155,170,1.0)",
-        "excluded": false,
-        "propagated_to": null
-      },
-      "bonus_ids": [
-        "13702",
-        "13691",
-        "13333"
-      ],
-      "old_items": [
-        {
-          "item_id": 249989,
-          "bonus_ids": [
-            "13335",
-            "13337",
-            "6652",
-            "13574",
-            "12806"
+            "12701"
           ]
         }
       ],
@@ -2957,45 +2914,44 @@
       "wish_value": null
     },
     {
-      "id": 1204940175,
-      "rclootcouncil_id": "1787184948-3",
-      "item_id": 268236,
-      "name": "Initiate's Sacrificial Tights",
-      "icon": "inv_pant_cloth_raidpriestulatek_d_01",
-      "slot": "Legs",
+      "id": 1204940170,
+      "rclootcouncil_id": "1787185832-5",
+      "item_id": 270912,
+      "name": "Venomcast Idol",
+      "icon": "inv_jewelcrafting_goldenserpent",
+      "slot": "Tier",
       "quality": "epic",
-      "character_id": 4669066,
+      "character_id": 13331173,
       "awarded_by_character_id": 10581386,
       "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-19T17:14:00.000Z",
+      "awarded_at": "2026-08-19T17:29:00.000Z",
       "difficulty": "normal",
       "discarded": false,
       "response_type": {
-        "id": 87940,
-        "name": "Upgrade",
-        "rgba": "rgba(255,127,0,1.0)",
+        "id": 94253,
+        "name": "Third",
+        "rgba": "rgba(163,155,170,1.0)",
         "excluded": false,
         "propagated_to": null
       },
       "bonus_ids": [
-        "6652",
-        "13662",
-        "13333",
-        "12833"
+        "13702",
+        "13691",
+        "13333"
       ],
       "old_items": [
         {
-          "item_id": 250059,
+          "item_id": 249989,
           "bonus_ids": [
-            "13339",
-            "13440",
+            "13335",
+            "13337",
             "6652",
-            "13575",
+            "13574",
             "12806"
           ]
         }
       ],
-      "same_response_amount": 1,
+      "same_response_amount": 2,
       "note": "",
       "wish_data": [],
       "wish_value": null
@@ -3035,6 +2991,50 @@
             "13577",
             "13335",
             "13786"
+          ]
+        }
+      ],
+      "same_response_amount": 1,
+      "note": "",
+      "wish_data": [],
+      "wish_value": null
+    },
+    {
+      "id": 1204940175,
+      "rclootcouncil_id": "1787184948-3",
+      "item_id": 268236,
+      "name": "Initiate's Sacrificial Tights",
+      "icon": "inv_pant_cloth_raidpriestulatek_d_01",
+      "slot": "Legs",
+      "quality": "epic",
+      "character_id": 4669066,
+      "awarded_by_character_id": 10581386,
+      "awarded_by_name": "Orchuntarded-Tichondrius",
+      "awarded_at": "2026-08-19T17:14:00.000Z",
+      "difficulty": "normal",
+      "discarded": false,
+      "response_type": {
+        "id": 87940,
+        "name": "Upgrade",
+        "rgba": "rgba(255,127,0,1.0)",
+        "excluded": false,
+        "propagated_to": null
+      },
+      "bonus_ids": [
+        "6652",
+        "13662",
+        "13333",
+        "12833"
+      ],
+      "old_items": [
+        {
+          "item_id": 250059,
+          "bonus_ids": [
+            "13339",
+            "13440",
+            "6652",
+            "13575",
+            "12806"
           ]
         }
       ],
@@ -3091,6 +3091,50 @@
       "wish_value": null
     },
     {
+      "id": 1204940174,
+      "rclootcouncil_id": "1787184811-2",
+      "item_id": 268248,
+      "name": "Amani Summoning Shawl",
+      "icon": "inv_cape_leather_raidmonkulatek_d_01",
+      "slot": "Back",
+      "quality": "epic",
+      "character_id": 4669066,
+      "awarded_by_character_id": 10581386,
+      "awarded_by_name": "Orchuntarded-Tichondrius",
+      "awarded_at": "2026-08-19T17:12:00.000Z",
+      "difficulty": "normal",
+      "discarded": false,
+      "response_type": {
+        "id": 87940,
+        "name": "Upgrade",
+        "rgba": "rgba(255,127,0,1.0)",
+        "excluded": false,
+        "propagated_to": null
+      },
+      "bonus_ids": [
+        "6652",
+        "13662",
+        "13333",
+        "12833"
+      ],
+      "old_items": [
+        {
+          "item_id": 258575,
+          "bonus_ids": [
+            "13440",
+            "6652",
+            "13577",
+            "12699",
+            "12806"
+          ]
+        }
+      ],
+      "same_response_amount": 2,
+      "note": "",
+      "wish_data": [],
+      "wish_value": null
+    },
+    {
       "id": 1204940165,
       "rclootcouncil_id": "1787184800-0",
       "item_id": 268229,
@@ -3135,52 +3179,8 @@
       "note": "",
       "wish_data": [],
       "wish_value": null
-    },
-    {
-      "id": 1204940174,
-      "rclootcouncil_id": "1787184811-2",
-      "item_id": 268248,
-      "name": "Amani Summoning Shawl",
-      "icon": "inv_cape_leather_raidmonkulatek_d_01",
-      "slot": "Back",
-      "quality": "epic",
-      "character_id": 4669066,
-      "awarded_by_character_id": 10581386,
-      "awarded_by_name": "Orchuntarded-Tichondrius",
-      "awarded_at": "2026-08-19T17:12:00.000Z",
-      "difficulty": "normal",
-      "discarded": false,
-      "response_type": {
-        "id": 87940,
-        "name": "Upgrade",
-        "rgba": "rgba(255,127,0,1.0)",
-        "excluded": false,
-        "propagated_to": null
-      },
-      "bonus_ids": [
-        "6652",
-        "13662",
-        "13333",
-        "12833"
-      ],
-      "old_items": [
-        {
-          "item_id": 258575,
-          "bonus_ids": [
-            "13440",
-            "6652",
-            "13577",
-            "12699",
-            "12806"
-          ]
-        }
-      ],
-      "same_response_amount": 2,
-      "note": "",
-      "wish_data": [],
-      "wish_value": null
     }
   ],
   "seasonId": 18,
-  "fetchedAt": "2026-08-26T06:46:00.957Z"
+  "fetchedAt": "2026-08-26T08:36:54.634Z"
 }
