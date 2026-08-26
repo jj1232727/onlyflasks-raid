@@ -176,5 +176,5 @@ export function currentCatalystBalance(snapshot, currencies = snapshot?.catalyst
 export function catalystUnknownReason(snapshot) {
   if (!snapshot || !snapshot.capturedAt) return "No /simc export captured yet.";
   const currency = CATALYST_CURRENCIES[String(currentCatalystBalance(snapshot).id)];
-  return `The SimC addon does not export ${currency ? currency.name : "this season's catalyst currency"} yet, so the board cannot read the balance. Re-paste once the addon updates.`;
+  return `This export carried no ${currency ? currency.name : "catalyst currency"} balance - the SimC addon's currency list has not been updated for this season. Update OnlyFlasks Loot Export, which adds the id at login, then /reload and re-paste.`;
 }

@@ -2568,6 +2568,27 @@ export default function App() {
                 <p>Who has 4PC, who can get there alone, and who needs a kill.</p>
               </div>
             </div>
+            {/* Explain the row of "?" once, at the top, instead of leaving
+                twenty-six of them on the cards reading as twenty-six broken
+                pastes. This is not per-raider and nothing they do fixes it, so
+                it does not belong on a raider's card. */}
+            {tierStatus.some((row) => row.catalystCharges === null && row.snapshotAt) && (
+              <div className="source-warning">
+                <CircleAlert />
+                <div>
+                  <strong>Catalyst charges show “?” — update OnlyFlasks Loot Export.</strong>
+                  <span>
+                    The SimC addon walks a fixed list of catalyst currency ids that has not
+                    been updated for this season, so no <code>/simc</code> paste carries a
+                    Venomblight Manaflux balance — Raidbots gets the same four out-of-date
+                    ids from the same export. The guild addon now adds the missing id at
+                    login: update it, <code>/reload</code>, and re-paste. Until a raider
+                    does, their charges stay unknown. Everything else here — equipped tier,
+                    bags, Vault and crests — is unaffected.
+                  </span>
+                </div>
+              </div>
+            )}
           <section className="tier-board">
             <div className="plan-section-title">
               <div>

@@ -100,11 +100,63 @@ local function exportRaid()
     print("|cff63d497OnlyFlasks:|r Exported " .. OnlyFlasksLootExportDB.itemCount .. " loot entries. Log out or /reload to save them.")
 end
 
+-- Teach SimulationCraft this season's catalyst currency.
+--
+-- The addon builds "# catalyst_currencies=" by walking a hardcoded id table in
+-- its extras.lua, and that table stops at 3378 (Dawnlight Manaflux, Season 1).
+-- 3465 (Venomblight Manaflux) is not in it, so no /simc export carries a
+-- Venomblight balance - and Raidbots, which parses the same export, does not
+-- have it either. The board reads 3465 correctly; the export is simply silent
+-- about it, which is why every catalyst count on the tier page is a "?".
+--
+-- Adding the id is the whole fix. GetCatalystCurrencies has no quantity filter,
+-- unlike GetUpgradeCurrencies, so once the id is in the table every export
+-- carries the balance - zero included, which is what lets the board tell "none
+-- held" apart from "never asked".
+--
+-- Done here rather than by editing SimulationCraft directly so raiders keep
+-- getting SimC updates normally, and so an update cannot quietly revert it.
+-- Upstream should carry this; until it does, this is what makes the pastes
+-- complete.
+local CATALYST_CURRENCIES = {
+    [3465] = "Venomblight Manaflux", -- Midnight Season 2
+}
+
+local function teachSimcCatalystCurrencies()
+    if not LibStub then return end
+    local aceAddon = LibStub("AceAddon-3.0", true)
+    if not aceAddon then return end
+    -- Silent form: SimulationCraft not being installed is normal, and this
+    -- addon's own job does not depend on it.
+    local simc = aceAddon:GetAddon("Simulationcraft", true)
+    if not simc or type(simc.catalystCurrencies) ~= "table" then return end
+    local added = 0
+    for id, name in pairs(CATALYST_CURRENCIES) do
+        if simc.catalystCurrencies[id] == nil then
+            simc.catalystCurrencies[id] = name
+            added = added + 1
+        end
+    end
+    if added > 0 then
+        print("|cff63d497OnlyFlasks:|r taught SimulationCraft " .. added ..
+            " missing catalyst currency id" .. (added == 1 and "" or "s") ..
+            ". Your next /simc paste will carry your catalyst charges.")
+    end
+end
+
 SLASH_ONLYFLASKSLOOT1 = "/ofloot"
 SlashCmdList.ONLYFLASKSLOOT = exportRaid
 
 frame:RegisterEvent("ADDON_LOADED")
-frame:SetScript("OnEvent", function(_, _, loadedAddon)
+-- PLAYER_LOGIN, not ADDON_LOADED: SimulationCraft has to have finished loading
+-- and registered with AceAddon before its table can be reached, and load order
+-- between two independent addons is not ours to decide.
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function(_, event, loadedAddon)
+    if event == "PLAYER_LOGIN" then
+        teachSimcCatalystCurrencies()
+        return
+    end
     if loadedAddon == addonName then
         OnlyFlasksLootExportDB = OnlyFlasksLootExportDB or {}
         print("|cff7c9cffOnlyFlasks Loot Export loaded.|r Run /ofloot to export the live Mythic raid table.")

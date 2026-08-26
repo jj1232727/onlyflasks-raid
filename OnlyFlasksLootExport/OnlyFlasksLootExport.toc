@@ -1,9 +1,13 @@
 ## Interface: 120007
 ## Title: OnlyFlasks Loot Export
-## Notes: Exports Encounter Journal loot for the OnlyFlasks raid board.
+## Notes: Exports Encounter Journal loot for the OnlyFlasks raid board, and teaches SimulationCraft this season's catalyst currency.
 ## Author: OnlyFlasks
 ## Version: 0.1.0
 ## SavedVariables: OnlyFlasksLootExportDB
+# Optional, and only for the catalyst-currency patch below - /ofloot works
+# without SimulationCraft installed. Listing it makes WoW load SimulationCraft
+# first when both are present.
+## OptionalDeps: SimulationCraft
 
 OnlyFlasksLootExport.lua
 
