@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-08-29T08:32:14.419Z",
+  "fetchedAt": "2026-08-29T14:54:10.933Z",
   "characters": [
     {
       "id": 4826466,
       "name": "Xeonips",
       "status": "ok",
-      "lastCrawledAt": "2026-08-28T20:41:58.000Z",
+      "lastCrawledAt": "2026-08-29T09:35:45.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Xeonips",
       "weeklyRuns": [
         {
@@ -225,6 +225,60 @@
           "role": "dps"
         },
         {
+          "dungeon": "Murder Row",
+          "short_name": "MR",
+          "mythic_level": 11,
+          "completed_at": "2026-08-28T22:18:30.000Z",
+          "clear_time_ms": 1397394,
+          "keystone_run_id": 5275381,
+          "par_time_ms": 2040999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 587,
+          "zone_id": 16091,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_murderrow.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/murder-row.jpg",
+          "score": 346.8,
+          "affixes": [
+            {
+              "id": 158,
+              "name": "Xal'atath's Bargain: Voidbound",
+              "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+              "icon": "inv_cosmicvoid_buff",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+              "wowhead_url": "https://wowhead.com/affix=158"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/5275381-11-murder-row",
+          "spec": {
+            "id": 102,
+            "name": "Balance",
+            "slug": "balance",
+            "class_id": 11,
+            "role": "dps",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "dps"
+        },
+        {
           "dungeon": "Ruby Life Pools",
           "short_name": "RLP",
           "mythic_level": 11,
@@ -277,6 +331,60 @@
             "ordinal": 0
           },
           "role": "dps"
+        },
+        {
+          "dungeon": "The Blinding Vale",
+          "short_name": "BV",
+          "mythic_level": 11,
+          "completed_at": "2026-08-28T22:53:15.000Z",
+          "clear_time_ms": 1634286,
+          "keystone_run_id": 5275326,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 1,
+          "map_challenge_mode_id": 584,
+          "zone_id": 16359,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_lightbloom.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/the-blinding-vale.jpg",
+          "score": 338.5,
+          "affixes": [
+            {
+              "id": 158,
+              "name": "Xal'atath's Bargain: Voidbound",
+              "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+              "icon": "inv_cosmicvoid_buff",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+              "wowhead_url": "https://wowhead.com/affix=158"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/5275326-11-the-blinding-vale",
+          "spec": {
+            "id": 105,
+            "name": "Restoration",
+            "slug": "restoration",
+            "class_id": 11,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 3
+          },
+          "role": "healer"
         },
         {
           "dungeon": "The Blinding Vale",
@@ -428,106 +536,6 @@
             }
           ],
           "url": "https://raider.io/mythic-plus-runs/season-mn-2/5144655-10-altar-of-fangs",
-          "spec": {
-            "id": 102,
-            "name": "Balance",
-            "slug": "balance",
-            "class_id": 11,
-            "role": "dps",
-            "is_melee": false,
-            "patch": "1.0.0",
-            "ordinal": 0
-          },
-          "role": "dps"
-        },
-        {
-          "dungeon": "The Blinding Vale",
-          "short_name": "BV",
-          "mythic_level": 10,
-          "completed_at": "2026-08-28T18:24:11.000Z",
-          "clear_time_ms": 1620090,
-          "keystone_run_id": 5076565,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 1,
-          "map_challenge_mode_id": 584,
-          "zone_id": 16359,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_lightbloom.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/the-blinding-vale.jpg",
-          "score": 323.8,
-          "affixes": [
-            {
-              "id": 158,
-              "name": "Xal'atath's Bargain: Voidbound",
-              "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
-              "icon": "inv_cosmicvoid_buff",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
-              "wowhead_url": "https://wowhead.com/affix=158"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/5076565-10-the-blinding-vale",
-          "spec": {
-            "id": 105,
-            "name": "Restoration",
-            "slug": "restoration",
-            "class_id": 11,
-            "role": "healer",
-            "is_melee": false,
-            "patch": "1.0.0",
-            "ordinal": 3
-          },
-          "role": "healer"
-        },
-        {
-          "dungeon": "Voidscar Arena",
-          "short_name": "VSA",
-          "mythic_level": 8,
-          "completed_at": "2026-08-27T16:25:44.000Z",
-          "clear_time_ms": 1672091,
-          "keystone_run_id": 4500765,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 1,
-          "map_challenge_mode_id": 585,
-          "zone_id": 16425,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
-          "score": 277.7,
-          "affixes": [
-            {
-              "id": 158,
-              "name": "Xal'atath's Bargain: Voidbound",
-              "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
-              "icon": "inv_cosmicvoid_buff",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
-              "wowhead_url": "https://wowhead.com/affix=158"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/4500765-8-voidscar-arena",
           "spec": {
             "id": 102,
             "name": "Balance",
@@ -1584,7 +1592,7 @@
       "id": 4165902,
       "name": "Neomonk",
       "status": "ok",
-      "lastCrawledAt": "2026-08-28T21:15:38.000Z",
+      "lastCrawledAt": "2026-08-29T09:52:33.000Z",
       "profileUrl": "https://raider.io/characters/us/sargeras/Neomonk",
       "weeklyRuns": [
         {
@@ -1750,6 +1758,60 @@
           "role": "healer"
         },
         {
+          "dungeon": "Murder Row",
+          "short_name": "MR",
+          "mythic_level": 11,
+          "completed_at": "2026-08-28T22:18:30.000Z",
+          "clear_time_ms": 1397394,
+          "keystone_run_id": 5275381,
+          "par_time_ms": 2040999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 587,
+          "zone_id": 16091,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_murderrow.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/murder-row.jpg",
+          "score": 346.8,
+          "affixes": [
+            {
+              "id": 158,
+              "name": "Xal'atath's Bargain: Voidbound",
+              "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+              "icon": "inv_cosmicvoid_buff",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+              "wowhead_url": "https://wowhead.com/affix=158"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/5275381-11-murder-row",
+          "spec": {
+            "id": 270,
+            "name": "Mistweaver",
+            "slug": "mistweaver",
+            "class_id": 10,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "5.0.0",
+            "ordinal": 1
+          },
+          "role": "healer"
+        },
+        {
           "dungeon": "Ruby Life Pools",
           "short_name": "RLP",
           "mythic_level": 11,
@@ -1802,6 +1864,60 @@
             "ordinal": 1
           },
           "role": "healer"
+        },
+        {
+          "dungeon": "The Blinding Vale",
+          "short_name": "BV",
+          "mythic_level": 11,
+          "completed_at": "2026-08-28T22:53:15.000Z",
+          "clear_time_ms": 1634286,
+          "keystone_run_id": 5275326,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 1,
+          "map_challenge_mode_id": 584,
+          "zone_id": 16359,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_lightbloom.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/the-blinding-vale.jpg",
+          "score": 338.5,
+          "affixes": [
+            {
+              "id": 158,
+              "name": "Xal'atath's Bargain: Voidbound",
+              "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+              "icon": "inv_cosmicvoid_buff",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+              "wowhead_url": "https://wowhead.com/affix=158"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/5275326-11-the-blinding-vale",
+          "spec": {
+            "id": 269,
+            "name": "Windwalker",
+            "slug": "windwalker",
+            "class_id": 10,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "5.0.0",
+            "ordinal": 2
+          },
+          "role": "dps"
         },
         {
           "dungeon": "Kings' Rest",
@@ -2018,60 +2134,6 @@
             "ordinal": 1
           },
           "role": "healer"
-        },
-        {
-          "dungeon": "Den of Nalorakk",
-          "short_name": "DON",
-          "mythic_level": 10,
-          "completed_at": "2026-08-26T02:19:06.000Z",
-          "clear_time_ms": 1681954,
-          "keystone_run_id": 3875873,
-          "par_time_ms": 1920999,
-          "num_keystone_upgrades": 1,
-          "map_challenge_mode_id": 586,
-          "zone_id": 16368,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_proveyourworth.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/den-of-nalorakk.jpg",
-          "score": 324.7,
-          "affixes": [
-            {
-              "id": 158,
-              "name": "Xal'atath's Bargain: Voidbound",
-              "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
-              "icon": "inv_cosmicvoid_buff",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
-              "wowhead_url": "https://wowhead.com/affix=158"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/3875873-10-den-of-nalorakk",
-          "spec": {
-            "id": 270,
-            "name": "Mistweaver",
-            "slug": "mistweaver",
-            "class_id": 10,
-            "role": "healer",
-            "is_melee": false,
-            "patch": "5.0.0",
-            "ordinal": 1
-          },
-          "role": "healer"
         }
       ],
       "raidProgression": {
@@ -2113,7 +2175,7 @@
       "id": 4669066,
       "name": "Nóva",
       "status": "ok",
-      "lastCrawledAt": "2026-08-28T23:16:11.000Z",
+      "lastCrawledAt": "2026-08-29T09:52:33.000Z",
       "profileUrl": "https://raider.io/characters/us/hyjal/Nóva",
       "weeklyRuns": [
         {
@@ -3009,7 +3071,7 @@
       "id": 13331173,
       "name": "Galsnipes",
       "status": "ok",
-      "lastCrawledAt": "2026-08-28T23:16:13.000Z",
+      "lastCrawledAt": "2026-08-29T09:52:33.000Z",
       "profileUrl": "https://raider.io/characters/us/tanaris/Galsnipes",
       "weeklyRuns": [
         {
@@ -3162,6 +3224,60 @@
             }
           ],
           "url": "https://raider.io/mythic-plus-runs/season-mn-2/4051586-11-kings-rest",
+          "spec": {
+            "id": 254,
+            "name": "Marksmanship",
+            "slug": "marksmanship",
+            "class_id": 3,
+            "role": "dps",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 1
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "The Blinding Vale",
+          "short_name": "BV",
+          "mythic_level": 11,
+          "completed_at": "2026-08-28T22:53:15.000Z",
+          "clear_time_ms": 1634286,
+          "keystone_run_id": 5275326,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 1,
+          "map_challenge_mode_id": 584,
+          "zone_id": 16359,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_lightbloom.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/the-blinding-vale.jpg",
+          "score": 338.5,
+          "affixes": [
+            {
+              "id": 158,
+              "name": "Xal'atath's Bargain: Voidbound",
+              "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+              "icon": "inv_cosmicvoid_buff",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+              "wowhead_url": "https://wowhead.com/affix=158"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/5275326-11-the-blinding-vale",
           "spec": {
             "id": 254,
             "name": "Marksmanship",
@@ -3486,60 +3602,6 @@
             }
           ],
           "url": "https://raider.io/mythic-plus-runs/season-mn-2/4903896-10-the-blinding-vale",
-          "spec": {
-            "id": 254,
-            "name": "Marksmanship",
-            "slug": "marksmanship",
-            "class_id": 3,
-            "role": "dps",
-            "is_melee": false,
-            "patch": "1.0.0",
-            "ordinal": 1
-          },
-          "role": "dps"
-        },
-        {
-          "dungeon": "Kings' Rest",
-          "short_name": "KR",
-          "mythic_level": 10,
-          "completed_at": "2026-08-26T15:56:09.000Z",
-          "clear_time_ms": 1679514,
-          "keystone_run_id": 4098963,
-          "par_time_ms": 1980999,
-          "num_keystone_upgrades": 1,
-          "map_challenge_mode_id": 249,
-          "zone_id": 9526,
-          "zone_expansion_id": 7,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
-          "score": 325.7,
-          "affixes": [
-            {
-              "id": 158,
-              "name": "Xal'atath's Bargain: Voidbound",
-              "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
-              "icon": "inv_cosmicvoid_buff",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
-              "wowhead_url": "https://wowhead.com/affix=158"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/4098963-10-kings-rest",
           "spec": {
             "id": 254,
             "name": "Marksmanship",
@@ -6596,6 +6658,60 @@
           "role": "dps"
         },
         {
+          "dungeon": "Voidscar Arena",
+          "short_name": "VSA",
+          "mythic_level": 11,
+          "completed_at": "2026-08-29T00:24:34.000Z",
+          "clear_time_ms": 1368980,
+          "keystone_run_id": 5366410,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 585,
+          "zone_id": 16425,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
+          "score": 344,
+          "affixes": [
+            {
+              "id": 158,
+              "name": "Xal'atath's Bargain: Voidbound",
+              "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+              "icon": "inv_cosmicvoid_buff",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+              "wowhead_url": "https://wowhead.com/affix=158"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/5366410-11-voidscar-arena",
+          "spec": {
+            "id": 252,
+            "name": "Unholy",
+            "slug": "unholy",
+            "class_id": 6,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "3.0.0",
+            "ordinal": 2
+          },
+          "role": "dps"
+        },
+        {
           "dungeon": "Altar of Fangs",
           "short_name": "AOF",
           "mythic_level": 11,
@@ -6961,60 +7077,6 @@
             }
           ],
           "url": "https://raider.io/mythic-plus-runs/season-mn-2/3910598-10-the-blinding-vale",
-          "spec": {
-            "id": 252,
-            "name": "Unholy",
-            "slug": "unholy",
-            "class_id": 6,
-            "role": "dps",
-            "is_melee": true,
-            "patch": "3.0.0",
-            "ordinal": 2
-          },
-          "role": "dps"
-        },
-        {
-          "dungeon": "Altar of Fangs",
-          "short_name": "AOF",
-          "mythic_level": 10,
-          "completed_at": "2026-08-27T11:51:42.000Z",
-          "clear_time_ms": 1696504,
-          "keystone_run_id": 4409968,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 1,
-          "map_challenge_mode_id": 588,
-          "zone_id": 16865,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
-          "score": 322.2,
-          "affixes": [
-            {
-              "id": 158,
-              "name": "Xal'atath's Bargain: Voidbound",
-              "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
-              "icon": "inv_cosmicvoid_buff",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
-              "wowhead_url": "https://wowhead.com/affix=158"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/4409968-10-altar-of-fangs",
           "spec": {
             "id": 252,
             "name": "Unholy",
@@ -9801,48 +9863,6 @@
       }
     },
     {
-      "id": 8698491,
-      "name": "Aeoñ",
-      "status": "ok",
-      "lastCrawledAt": "2026-08-28T22:23:29.000Z",
-      "profileUrl": "https://raider.io/characters/us/area-52/Aeoñ",
-      "weeklyRuns": [],
-      "raidProgression": {
-        "the-tidebound-grotto": {
-          "summary": "1/1 H",
-          "expansion_id": 11,
-          "total_bosses": 1,
-          "normal_bosses_killed": 1,
-          "heroic_bosses_killed": 1,
-          "mythic_bosses_killed": 0
-        },
-        "the-venomous-abyss": {
-          "summary": "6/8 H",
-          "expansion_id": 11,
-          "total_bosses": 8,
-          "normal_bosses_killed": 8,
-          "heroic_bosses_killed": 6,
-          "mythic_bosses_killed": 0
-        },
-        "sporefall": {
-          "summary": "1/1 M",
-          "expansion_id": 11,
-          "total_bosses": 1,
-          "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 1,
-          "mythic_bosses_killed": 1
-        },
-        "tier-mn-1": {
-          "summary": "2/9 M",
-          "expansion_id": 11,
-          "total_bosses": 9,
-          "normal_bosses_killed": 4,
-          "heroic_bosses_killed": 8,
-          "mythic_bosses_killed": 2
-        }
-      }
-    },
-    {
       "id": 16876827,
       "name": "Mushyxd",
       "status": "ok",
@@ -12000,48 +12020,6 @@
           "total_bosses": 9,
           "normal_bosses_killed": 0,
           "heroic_bosses_killed": 5,
-          "mythic_bosses_killed": 5
-        }
-      }
-    },
-    {
-      "id": 4965246,
-      "name": "Tavoker",
-      "status": "ok",
-      "lastCrawledAt": "2026-08-27T05:31:06.000Z",
-      "profileUrl": "https://raider.io/characters/us/thrall/Tavoker",
-      "weeklyRuns": [],
-      "raidProgression": {
-        "the-tidebound-grotto": {
-          "summary": "1/1 H",
-          "expansion_id": 11,
-          "total_bosses": 1,
-          "normal_bosses_killed": 1,
-          "heroic_bosses_killed": 1,
-          "mythic_bosses_killed": 0
-        },
-        "the-venomous-abyss": {
-          "summary": "6/8 H",
-          "expansion_id": 11,
-          "total_bosses": 8,
-          "normal_bosses_killed": 8,
-          "heroic_bosses_killed": 6,
-          "mythic_bosses_killed": 0
-        },
-        "sporefall": {
-          "summary": "",
-          "expansion_id": 11,
-          "total_bosses": 1,
-          "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
-          "mythic_bosses_killed": 0
-        },
-        "tier-mn-1": {
-          "summary": "5/9 M",
-          "expansion_id": 11,
-          "total_bosses": 9,
-          "normal_bosses_killed": 7,
-          "heroic_bosses_killed": 7,
           "mythic_bosses_killed": 5
         }
       }
