@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-09-01T03:07:28.965Z",
+  "fetchedAt": "2026-09-01T09:05:44.541Z",
   "characters": [
     {
       "id": 4579002,
       "name": "Gosu",
       "status": "ok",
-      "lastCrawledAt": "2026-08-31T11:43:47.000Z",
+      "lastCrawledAt": "2026-09-01T07:21:55.000Z",
       "profileUrl": "https://raider.io/characters/us/kiljaeden/Gosu",
       "weeklyRuns": [
         {
@@ -1096,7 +1096,7 @@
       "id": 4826466,
       "name": "Xeonips",
       "status": "ok",
-      "lastCrawledAt": "2026-09-01T01:23:14.000Z",
+      "lastCrawledAt": "2026-09-01T08:40:08.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Xeonips",
       "weeklyRuns": [
         {
@@ -1679,7 +1679,7 @@
       "id": 4725968,
       "name": "Teldral",
       "status": "ok",
-      "lastCrawledAt": "2026-08-31T07:04:33.000Z",
+      "lastCrawledAt": "2026-09-01T08:40:08.000Z",
       "profileUrl": "https://raider.io/characters/us/stormrage/Teldral",
       "weeklyRuns": [
         {
@@ -3428,7 +3428,7 @@
       "id": 7422636,
       "name": "Aerenn",
       "status": "ok",
-      "lastCrawledAt": "2026-08-31T11:49:48.000Z",
+      "lastCrawledAt": "2026-09-01T08:40:08.000Z",
       "profileUrl": "https://raider.io/characters/us/zuljin/Aerenn",
       "weeklyRuns": [
         {
@@ -3808,6 +3808,60 @@
             "ordinal": 0
           },
           "role": "dps"
+        },
+        {
+          "dungeon": "Temple of Sethraliss",
+          "short_name": "TOS",
+          "mythic_level": 10,
+          "completed_at": "2026-08-31T17:45:45.000Z",
+          "clear_time_ms": 1328304,
+          "keystone_run_id": 6653929,
+          "par_time_ms": 1920999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 250,
+          "zone_id": 9527,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
+          "score": 331.6,
+          "affixes": [
+            {
+              "id": 158,
+              "name": "Xal'atath's Bargain: Voidbound",
+              "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+              "icon": "inv_cosmicvoid_buff",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+              "wowhead_url": "https://wowhead.com/affix=158"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/6653929-10-temple-of-sethraliss",
+          "spec": {
+            "id": 71,
+            "name": "Arms",
+            "slug": "arms",
+            "class_id": 1,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "dps"
         }
       ],
       "raidProgression": {
@@ -3849,7 +3903,7 @@
       "id": 13331173,
       "name": "Galsnipes",
       "status": "ok",
-      "lastCrawledAt": "2026-08-31T11:44:37.000Z",
+      "lastCrawledAt": "2026-09-01T08:40:06.000Z",
       "profileUrl": "https://raider.io/characters/us/tanaris/Galsnipes",
       "weeklyRuns": [
         {
@@ -4432,7 +4486,7 @@
       "id": 15176907,
       "name": "Credibubble",
       "status": "ok",
-      "lastCrawledAt": "2026-08-31T11:45:52.000Z",
+      "lastCrawledAt": "2026-09-01T08:40:07.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Credibubble",
       "weeklyRuns": [
         {
@@ -6602,7 +6656,7 @@
       "id": 3840743,
       "name": "Gambinò",
       "status": "ok",
-      "lastCrawledAt": "2026-08-31T02:56:54.000Z",
+      "lastCrawledAt": "2026-09-01T08:40:07.000Z",
       "profileUrl": "https://raider.io/characters/us/illidan/Gambinò",
       "weeklyRuns": [
         {
@@ -8297,7 +8351,7 @@
       "id": 20303172,
       "name": "Mazzshiesty",
       "status": "ok",
-      "lastCrawledAt": "2026-08-31T07:07:37.000Z",
+      "lastCrawledAt": "2026-09-01T08:40:07.000Z",
       "profileUrl": "https://raider.io/characters/us/zuljin/Mazzshiesty",
       "weeklyRuns": [
         {
@@ -9463,7 +9517,7 @@
       "id": 5014656,
       "name": "Xret",
       "status": "ok",
-      "lastCrawledAt": "2026-08-31T08:18:54.000Z",
+      "lastCrawledAt": "2026-09-01T08:40:14.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Xret",
       "weeklyRuns": [
         {
@@ -10046,7 +10100,7 @@
       "id": 8698484,
       "name": "Faredino",
       "status": "ok",
-      "lastCrawledAt": "2026-08-31T05:40:37.000Z",
+      "lastCrawledAt": "2026-09-01T04:19:00.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Faredino",
       "weeklyRuns": [
         {
@@ -11212,7 +11266,7 @@
       "id": 5121174,
       "name": "Darkdrpepper",
       "status": "ok",
-      "lastCrawledAt": "2026-08-31T03:19:36.000Z",
+      "lastCrawledAt": "2026-09-01T08:40:08.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Darkdrpepper",
       "weeklyRuns": [
         {
@@ -11795,7 +11849,7 @@
       "id": 5325650,
       "name": "Rapunzele",
       "status": "ok",
-      "lastCrawledAt": "2026-08-31T06:11:54.000Z",
+      "lastCrawledAt": "2026-09-01T08:40:08.000Z",
       "profileUrl": "https://raider.io/characters/us/tichondrius/Rapunzele",
       "weeklyRuns": [
         {
@@ -12853,7 +12907,7 @@
       "id": 4165930,
       "name": "Abenasters",
       "status": "ok",
-      "lastCrawledAt": "2026-08-31T11:45:35.000Z",
+      "lastCrawledAt": "2026-09-01T08:40:07.000Z",
       "profileUrl": "https://raider.io/characters/us/illidan/Abenasters",
       "weeklyRuns": [
         {
