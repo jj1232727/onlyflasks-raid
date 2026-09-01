@@ -340,70 +340,772 @@
                 "updated_at": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "2026-09-01T21:31:53.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "2026-09-01T21:30:18.000Z"
                 },
                 "report_id": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "95trykycgviPmT4RZvkNrw"
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.6038,
+                    "encounter_absolute": 3867,
+                    "items": [
+                      {
+                        "name": "Restless Spirit Shackles",
+                        "id": 268240,
+                        "slot": "wrist",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1644,
+                            "percentage": 1.1069
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1069,
+                            "absolute": 1644.2255,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vestment of the Awakening",
+                        "id": 268235,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 2223,
+                            "percentage": 1.4969
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.4969,
+                            "absolute": 2223.4517,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 10.0141,
+                    "encounter_absolute": 14873,
+                    "items": [
+                      {
+                        "name": "Venomcured Idol",
+                        "id": 270911,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1857,
+                            "percentage": 1.2504
+                          }
+                        },
+                        "alternative": {
+                          "item": 268234,
+                          "percentage": 1.6188,
+                          "absolute": 2404.4507,
+                          "item_level": 324
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.2504,
+                            "absolute": 1857.26,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Shadow Hunter's Warmask",
+                        "id": 268219,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 4123,
+                            "percentage": 2.7761
+                          }
+                        },
+                        "alternative": {
+                          "item": 271875,
+                          "percentage": 5.2218,
+                          "absolute": 7756.2995,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.7761,
+                            "absolute": 4123.5323,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Keeper's Seething Core",
+                        "id": 270165,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 7183,
+                            "percentage": 4.8361
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 7.7927,
+                          "absolute": 11574.9834,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 4.8361,
+                            "absolute": 7183.4101,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Ancient Construct's Venomshiv",
+                        "id": 268204,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1710,
+                            "percentage": 1.1515
+                          }
+                        },
+                        "alternative": {
+                          "item": 271093,
+                          "percentage": 3.4044,
+                          "absolute": 5056.8211,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1515,
+                            "absolute": 1710.3387,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 6.6539,
+                    "encounter_absolute": 9882,
+                    "items": [
+                      {
+                        "name": "Vile Alchemist's Band",
+                        "id": 268249,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 2131,
+                            "percentage": 1.435
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.435,
+                            "absolute": 2131.4563,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Icon",
+                        "id": 270927,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1632,
+                            "percentage": 1.0993
+                          }
+                        },
+                        "alternative": {
+                          "item": 268235,
+                          "percentage": 1.4969,
+                          "absolute": 2223.4517,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.0993,
+                            "absolute": 1632.9112,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vashnik's Sanguine Rancor",
+                        "id": 270166,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 6119,
+                            "percentage": 4.1196
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 7.7927,
+                          "absolute": 11574.9834,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 4.1196,
+                            "absolute": 6119.171,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 4.1048,
+                    "encounter_absolute": 6097,
+                    "items": [
+                      {
+                        "name": "Gebbo's Bottomless Bag",
+                        "id": 270164,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 5274,
+                            "percentage": 3.5507
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 7.7927,
+                          "absolute": 11574.9834,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.5507,
+                            "absolute": 5274.0376,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Unpossessed Skullsash",
+                        "id": 268227,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 823,
+                            "percentage": 0.5541
+                          }
+                        },
+                        "alternative": {
+                          "item": 268256,
+                          "percentage": 1.6489,
+                          "absolute": 2449.1944,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5541,
+                            "absolute": 823.0703,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.4656,
+                    "encounter_absolute": 3661,
+                    "items": [
+                      {
+                        "name": "Venomcured Relic",
+                        "id": 270919,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1257,
+                            "percentage": 0.8468
+                          }
+                        },
+                        "alternative": {
+                          "item": 268225,
+                          "percentage": 2.614,
+                          "absolute": 3882.6844,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8468,
+                            "absolute": 1257.808,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Ruthless Slaughtergrips",
+                        "id": 268234,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 2404,
+                            "percentage": 1.6188
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.6188,
+                            "absolute": 2404.4507,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.5325,
+                    "encounter_absolute": 5246,
+                    "items": [
+                      {
+                        "name": "Bespittled Slitherslippers",
+                        "id": 268261,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1376,
+                            "percentage": 0.9268
+                          }
+                        },
+                        "alternative": {
+                          "item": 268247,
+                          "percentage": 1.6041,
+                          "absolute": 2382.7109,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.9268,
+                            "absolute": 1376.6201,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Effigy",
+                        "id": 270915,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 3659,
+                            "percentage": 2.4634
+                          }
+                        },
+                        "alternative": {
+                          "item": 271875,
+                          "percentage": 5.2218,
+                          "absolute": 7756.2995,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.4634,
+                            "absolute": 3659.1179,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Ravenous Feaster's Fang",
+                        "id": 268264,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 211,
+                            "percentage": 0.1423
+                          }
+                        },
+                        "alternative": {
+                          "item": 271093,
+                          "percentage": 3.4044,
+                          "absolute": 5056.8211,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1423,
+                            "absolute": 211.4357,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 12.2044,
+                    "encounter_absolute": 18126,
+                    "items": [
+                      {
+                        "name": "Sash of the Forlorn Vessel",
+                        "id": 268256,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 2449,
+                            "percentage": 1.6489
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.6489,
+                            "absolute": 2449.1944,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Coiled Hex Legguards",
+                        "id": 268225,
+                        "slot": "legs",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 3882,
+                            "percentage": 2.614
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.614,
+                            "absolute": 3882.6844,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Zul'jin's Guillotine Technique",
+                        "id": 270173,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 11574,
+                            "percentage": 7.7927
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 7.7927,
+                            "absolute": 11574.9834,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Silken Voodoo Drape",
+                        "id": 268253,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 221,
+                            "percentage": 0.1488
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1488,
+                            "absolute": 221.0651,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 26.5062,
+                    "encounter_absolute": 39369,
+                    "items": [
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 7738,
+                            "percentage": 5.2096
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 5.2096,
+                            "absolute": 7738.2374,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Gaze of the Coiled Watcher",
+                        "id": 271875,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 7756,
+                            "percentage": 5.2218
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 5.2218,
+                            "absolute": 7756.2995,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Font of Venomous Rage",
+                        "id": 270168,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 7617,
+                            "percentage": 5.1281
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 7.7927,
+                          "absolute": 11574.9834,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 5.1281,
+                            "absolute": 7617.1469,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Zatha'tek, Breath of Corruption",
+                        "id": 271093,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 5056,
+                            "percentage": 3.4044
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.4044,
+                            "absolute": 5056.8211,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Voracious Heart of Ula'tek",
+                        "id": 270175,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 10617,
+                            "percentage": 7.1483
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 7.7927,
+                          "absolute": 11574.9834,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 7.1483,
+                            "absolute": 10617.88,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 585,
+                            "percentage": 0.394
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.394,
+                            "absolute": 585.2553,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 68.08529999999999,
+                "total_absolute": 101121
               }
             },
             {
@@ -412,70 +1114,560 @@
                 "updated_at": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "2026-09-01T21:31:39.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "2026-09-01T21:30:18.000Z"
                 },
                 "report_id": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "95trykycgviPmT4RZvkNrw"
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.3736,
+                    "encounter_absolute": 2039,
+                    "items": [
+                      {
+                        "name": "Vestment of the Awakening",
+                        "id": 268235,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 818,
+                            "percentage": 0.5512
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5512,
+                            "absolute": 818.71,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Restless Spirit Shackles",
+                        "id": 268240,
+                        "slot": "wrist",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1221,
+                            "percentage": 0.8224
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8224,
+                            "absolute": 1221.646,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 6.3957,
+                    "encounter_absolute": 9498,
+                    "items": [
+                      {
+                        "name": "Shadow Hunter's Warmask",
+                        "id": 268219,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 2741,
+                            "percentage": 1.8456
+                          }
+                        },
+                        "alternative": {
+                          "item": 271875,
+                          "percentage": 3.2834,
+                          "absolute": 4877.2723,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.8456,
+                            "absolute": 2741.5904,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Idol",
+                        "id": 270911,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 891,
+                            "percentage": 0.6005
+                          }
+                        },
+                        "alternative": {
+                          "item": 268234,
+                          "percentage": 0.8481,
+                          "absolute": 1259.7418,
+                          "item_level": 311
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.6005,
+                            "absolute": 891.9941,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Keeper's Seething Core",
+                        "id": 270165,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 5866,
+                            "percentage": 3.9496
+                          }
+                        },
+                        "alternative": {
+                          "item": 270175,
+                          "percentage": 4.7584,
+                          "absolute": 7068.3345,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.9496,
+                            "absolute": 5866.8481,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 3.9756,
+                    "encounter_absolute": 5904,
+                    "items": [
+                      {
+                        "name": "Venomcured Icon",
+                        "id": 270927,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 266,
+                            "percentage": 0.1794
+                          }
+                        },
+                        "alternative": {
+                          "item": 268235,
+                          "percentage": 0.5512,
+                          "absolute": 818.71,
+                          "item_level": 305
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1794,
+                            "absolute": 266.4484,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vile Alchemist's Band",
+                        "id": 268249,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1364,
+                            "percentage": 0.9186
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.9186,
+                            "absolute": 1364.5288,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vashnik's Sanguine Rancor",
+                        "id": 270166,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 4274,
+                            "percentage": 2.8776
+                          }
+                        },
+                        "alternative": {
+                          "item": 270175,
+                          "percentage": 4.7584,
+                          "absolute": 7068.3345,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.8776,
+                            "absolute": 4274.5041,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.6422,
+                    "encounter_absolute": 3924,
+                    "items": [
+                      {
+                        "name": "Gebbo's Bottomless Bag",
+                        "id": 270164,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 3924,
+                            "percentage": 2.6422
+                          }
+                        },
+                        "alternative": {
+                          "item": 270175,
+                          "percentage": 4.7584,
+                          "absolute": 7068.3345,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.6422,
+                            "absolute": 3924.7802,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.8481,
+                    "encounter_absolute": 1259,
+                    "items": [
+                      {
+                        "name": "Ruthless Slaughtergrips",
+                        "id": 268234,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1259,
+                            "percentage": 0.8481
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8481,
+                            "absolute": 1259.7418,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.7993,
+                    "encounter_absolute": 2672,
+                    "items": [
+                      {
+                        "name": "Bespittled Slitherslippers",
+                        "id": 268261,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 436,
+                            "percentage": 0.294
+                          }
+                        },
+                        "alternative": {
+                          "item": 268247,
+                          "percentage": 0.8523,
+                          "absolute": 1266.0014,
+                          "item_level": 331
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.294,
+                            "absolute": 436.6854,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Effigy",
+                        "id": 270915,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 2236,
+                            "percentage": 1.5053
+                          }
+                        },
+                        "alternative": {
+                          "item": 271875,
+                          "percentage": 3.2834,
+                          "absolute": 4877.2723,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.5053,
+                            "absolute": 2236.1053,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 5.105,
+                    "encounter_absolute": 7582,
+                    "items": [
+                      {
+                        "name": "Sash of the Forlorn Vessel",
+                        "id": 268256,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 589,
+                            "percentage": 0.397
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.397,
+                            "absolute": 589.6649,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Zul'jin's Guillotine Technique",
+                        "id": 270173,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 6993,
+                            "percentage": 4.708
+                          }
+                        },
+                        "alternative": {
+                          "item": 270175,
+                          "percentage": 4.7584,
+                          "absolute": 7068.3345,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 4.708,
+                            "absolute": 6993.5114,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 14.4741,
+                    "encounter_absolute": 21499,
+                    "items": [
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 4877,
+                            "percentage": 3.2834
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.2834,
+                            "absolute": 4877.2723,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Font of Venomous Rage",
+                        "id": 270168,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 4677,
+                            "percentage": 3.1489
+                          }
+                        },
+                        "alternative": {
+                          "item": 270175,
+                          "percentage": 4.7584,
+                          "absolute": 7068.3345,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.1489,
+                            "absolute": 4677.5402,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Gaze of the Coiled Watcher",
+                        "id": 271875,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 4877,
+                            "percentage": 3.2834
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.2834,
+                            "absolute": 4877.2723,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Voracious Heart of Ula'tek",
+                        "id": 270175,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 7068,
+                            "percentage": 4.7584
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 4.7584,
+                            "absolute": 7068.3345,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 36.613600000000005,
+                "total_absolute": 54377
               }
             },
             {
@@ -484,70 +1676,608 @@
                 "updated_at": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "2026-09-01T21:31:24.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "2026-09-01T21:30:18.000Z"
                 },
                 "report_id": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "95trykycgviPmT4RZvkNrw"
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.7296,
+                    "encounter_absolute": 2501,
+                    "items": [
+                      {
+                        "name": "Restless Spirit Shackles",
+                        "id": 268240,
+                        "slot": "wrist",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1586,
+                            "percentage": 1.0964
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.0964,
+                            "absolute": 1586.0214,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vestment of the Awakening",
+                        "id": 268235,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 915,
+                            "percentage": 0.6332
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.6332,
+                            "absolute": 915.9769,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 5.5573,
+                    "encounter_absolute": 8037,
+                    "items": [
+                      {
+                        "name": "Shadow Hunter's Warmask",
+                        "id": 268219,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1363,
+                            "percentage": 0.9429
+                          }
+                        },
+                        "alternative": {
+                          "item": 271875,
+                          "percentage": 3.3988,
+                          "absolute": 4916.6283,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.9429,
+                            "absolute": 1363.9935,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Keeper's Seething Core",
+                        "id": 270165,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 5926,
+                            "percentage": 4.0971
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 4.0971,
+                            "absolute": 5926.8281,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Ancient Construct's Venomshiv",
+                        "id": 268204,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 748,
+                            "percentage": 0.5173
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5173,
+                            "absolute": 748.3357,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.4978,
+                    "encounter_absolute": 3612,
+                    "items": [
+                      {
+                        "name": "Vashnik's Sanguine Rancor",
+                        "id": 270166,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 2414,
+                            "percentage": 1.6691
+                          }
+                        },
+                        "alternative": {
+                          "item": 270165,
+                          "percentage": 4.0971,
+                          "absolute": 5926.8281,
+                          "item_level": 295
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.6691,
+                            "absolute": 2414.5073,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vile Alchemist's Band",
+                        "id": 268249,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 717,
+                            "percentage": 0.4957
+                          }
+                        },
+                        "alternative": {
+                          "item": 268266,
+                          "percentage": 1.2456,
+                          "absolute": 1801.9162,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.4957,
+                            "absolute": 717.1251,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Icon",
+                        "id": 270927,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 481,
+                            "percentage": 0.333
+                          }
+                        },
+                        "alternative": {
+                          "item": 268235,
+                          "percentage": 0.6332,
+                          "absolute": 915.9769,
+                          "item_level": 292
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.333,
+                            "absolute": 481.7105,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.1533,
+                    "encounter_absolute": 3114,
+                    "items": [
+                      {
+                        "name": "Gebbo's Bottomless Bag",
+                        "id": 270164,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 3046,
+                            "percentage": 2.1059
+                          }
+                        },
+                        "alternative": {
+                          "item": 270165,
+                          "percentage": 4.0971,
+                          "absolute": 5926.8281,
+                          "item_level": 295
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.1059,
+                            "absolute": 3046.3612,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Remnant",
+                        "id": 270923,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 68,
+                            "percentage": 0.0474
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.0474,
+                            "absolute": 68.5571,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.2645,
+                    "encounter_absolute": 382,
+                    "items": [
+                      {
+                        "name": "Ruthless Slaughtergrips",
+                        "id": 268234,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 382,
+                            "percentage": 0.2645
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2645,
+                            "absolute": 382.5643,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.4018,
+                    "encounter_absolute": 2027,
+                    "items": [
+                      {
+                        "name": "Venomcured Effigy",
+                        "id": 270915,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1024,
+                            "percentage": 0.7083
+                          }
+                        },
+                        "alternative": {
+                          "item": 271875,
+                          "percentage": 3.3988,
+                          "absolute": 4916.6283,
+                          "item_level": 301
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7083,
+                            "absolute": 1024.5842,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Bespittled Slitherslippers",
+                        "id": 268261,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1003,
+                            "percentage": 0.6935
+                          }
+                        },
+                        "alternative": {
+                          "item": 268247,
+                          "percentage": 1.1595,
+                          "absolute": 1677.2861,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.6935,
+                            "absolute": 1003.1379,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 4.4874,
+                    "encounter_absolute": 6491,
+                    "items": [
+                      {
+                        "name": "Zul'jin's Guillotine Technique",
+                        "id": 270173,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 4662,
+                            "percentage": 3.2229
+                          }
+                        },
+                        "alternative": {
+                          "item": 270165,
+                          "percentage": 4.0971,
+                          "absolute": 5926.8281,
+                          "item_level": 295
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.2229,
+                            "absolute": 4662.171,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Sash of the Forlorn Vessel",
+                        "id": 268256,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1829,
+                            "percentage": 1.2645
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.2645,
+                            "absolute": 1829.1654,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 12.4487,
+                    "encounter_absolute": 18006,
+                    "items": [
+                      {
+                        "name": "Voracious Heart of Ula'tek",
+                        "id": 270175,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 5026,
+                            "percentage": 3.4745
+                          }
+                        },
+                        "alternative": {
+                          "item": 270165,
+                          "percentage": 4.0971,
+                          "absolute": 5926.8281,
+                          "item_level": 295
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.4745,
+                            "absolute": 5026.1971,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 4916,
+                            "percentage": 3.3988
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.3988,
+                            "absolute": 4916.6283,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Gaze of the Coiled Watcher",
+                        "id": 271875,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 4916,
+                            "percentage": 3.3988
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 3.3988,
+                            "absolute": 4916.6283,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Font of Venomous Rage",
+                        "id": 270168,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 2994,
+                            "percentage": 2.0698
+                          }
+                        },
+                        "alternative": {
+                          "item": 270165,
+                          "percentage": 4.0971,
+                          "absolute": 5926.8281,
+                          "item_level": 295
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.0698,
+                            "absolute": 2994.0868,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 154,
+                            "percentage": 0.1068
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1068,
+                            "absolute": 154.5598,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 30.5404,
+                "total_absolute": 44170
               }
             }
           ]
@@ -562,28 +2292,82 @@
                 "updated_at": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "2026-09-01T21:31:53.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "2026-09-01T21:30:18.000Z"
                 },
                 "report_id": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "95trykycgviPmT4RZvkNrw"
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.8483,
+                    "encounter_absolute": 4230,
+                    "items": [
+                      {
+                        "name": "Alluring Bubbleband",
+                        "id": 268266,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1848,
+                            "percentage": 1.2442
+                          }
+                        },
+                        "alternative": {
+                          "item": 268249,
+                          "percentage": 1.435,
+                          "absolute": 2131.4563,
+                          "item_level": 321
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.2442,
+                            "absolute": 1848.0586,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Breakwater Boots",
+                        "id": 268247,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 2382,
+                            "percentage": 1.6041
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.6041,
+                            "absolute": 2382.7109,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 2.8483,
+                "total_absolute": 4230
               }
             },
             {
@@ -592,28 +2376,82 @@
                 "updated_at": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "2026-09-01T21:31:39.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "2026-09-01T21:30:18.000Z"
                 },
                 "report_id": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "95trykycgviPmT4RZvkNrw"
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 1.599,
+                    "encounter_absolute": 2375,
+                    "items": [
+                      {
+                        "name": "Alluring Bubbleband",
+                        "id": 268266,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1109,
+                            "percentage": 0.7467
+                          }
+                        },
+                        "alternative": {
+                          "item": 268249,
+                          "percentage": 0.9186,
+                          "absolute": 1364.5288,
+                          "item_level": 308
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.7467,
+                            "absolute": 1109.113,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Breakwater Boots",
+                        "id": 268247,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1266,
+                            "percentage": 0.8523
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:39.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.8523,
+                            "absolute": 1266.0014,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 1.599,
+                "total_absolute": 2375
               }
             },
             {
@@ -622,28 +2460,77 @@
                 "updated_at": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "2026-09-01T21:31:24.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "2026-09-01T21:30:18.000Z"
                 },
                 "report_id": {
                   "Assassination": null,
                   "Outlaw": null,
-                  "Subtlety": null
+                  "Subtlety": "95trykycgviPmT4RZvkNrw"
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 2.4051,
+                    "encounter_absolute": 3478,
+                    "items": [
+                      {
+                        "name": "Alluring Bubbleband",
+                        "id": 268266,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1801,
+                            "percentage": 1.2456
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.2456,
+                            "absolute": 1801.9162,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Breakwater Boots",
+                        "id": 268247,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Subtlety": {
+                            "score": 1677,
+                            "percentage": 1.1595
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Subtlety",
+                            "timestamp": "2026-09-01T21:31:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.1595,
+                            "absolute": 1677.2861,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 2.4051,
+                "total_absolute": 3478
               }
             }
           ]
