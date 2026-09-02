@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-01T22:19:19.420Z",
+  "fetchedAt": "2026-09-02T02:27:02.517Z",
   "periodInfo": {
     "current_period": 1079,
     "current_season": {
@@ -120,6 +120,7 @@
         "first_period": 1077,
         "bonus_rolls_available": true,
         "bonus_roll_currency_id": 3418,
+        "catalyst_currency_id": 3465,
         "pvp_season": 42,
         "spark_label": "Tidal Crafted",
         "catalyst_charge_achievement_id": 62872,
@@ -243,6 +244,7 @@
             "weekly_increase": 100,
             "first_period": 1077,
             "icon_item_id": 269866,
+            "currency_id": 3446,
             "uncapped_crests": {
               "/quest=97910": {
                 "amount": 20,
@@ -262,6 +264,7 @@
             "weekly_increase": 100,
             "first_period": 1077,
             "icon_item_id": 269865,
+            "currency_id": 3445,
             "uncapped_crests": {
               "/quest=97910": {
                 "amount": 20,
@@ -285,14 +288,16 @@
             "ilvl_cap": 308,
             "weekly_increase": 100,
             "first_period": 1076,
-            "icon_item_id": 269864
+            "icon_item_id": 269864,
+            "currency_id": 3444
           },
           {
             "name": "Veteran",
             "ilvl_cap": 295,
             "weekly_increase": 100,
             "first_period": 1076,
-            "icon_item_id": 269867
+            "icon_item_id": 269867,
+            "currency_id": 3443
           }
         ],
         "track_cutoffs": [
@@ -477,8 +482,8 @@
                 "defaultOrder": 0,
                 "wclId": 3470,
                 "maxItemLevel": 318,
-                "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_priestess.jpg",
-                "zoomUrl": "https://data.wowaudit.com/img/nek-zali-the-soulcoiler.jpg",
+                "thumbnailUrl": "https://wowaudit-assets.nyc3.cdn.digitaloceanspaces.com/images/achievement-icons/inv_121_raid_achievement_priestess.jpg",
+                "zoomUrl": "https://render.worldofwarcraft.com/eu/npcs/zoom/creature-display-142077.jpg",
                 "encounterAreaImages": [
                   "Room"
                 ],
@@ -546,8 +551,8 @@
                 "defaultOrder": 1,
                 "wclId": 3445,
                 "maxItemLevel": 321,
-                "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_golems.jpg",
-                "zoomUrl": "https://data.wowaudit.com/img/entombed-sentinels.jpg",
+                "thumbnailUrl": "https://wowaudit-assets.nyc3.cdn.digitaloceanspaces.com/images/achievement-icons/inv_121_raid_achievement_golems.jpg",
+                "zoomUrl": "https://render.worldofwarcraft.com/eu/npcs/zoom/creature-display-143437.jpg",
                 "encounterAreaImages": [
                   "Platform"
                 ],
@@ -562,8 +567,8 @@
                 "defaultOrder": 2,
                 "wclId": 3455,
                 "maxItemLevel": 321,
-                "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_alchemist.jpg",
-                "zoomUrl": "https://data.wowaudit.com/img/vashnik-the-malignant.jpg",
+                "thumbnailUrl": "https://wowaudit-assets.nyc3.cdn.digitaloceanspaces.com/images/achievement-icons/inv_121_raid_achievement_alchemist.jpg",
+                "zoomUrl": "https://render.worldofwarcraft.com/eu/npcs/zoom/creature-display-141675.jpg",
                 "encounterAreaImages": [
                   "Room"
                 ],
@@ -582,8 +587,8 @@
                 "defaultOrder": 3,
                 "wclId": 3497,
                 "maxItemLevel": 324,
-                "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_tortollans.jpg",
-                "zoomUrl": "https://data.wowaudit.com/img/the-lost-explorers.jpg",
+                "thumbnailUrl": "https://wowaudit-assets.nyc3.cdn.digitaloceanspaces.com/images/achievement-icons/inv_121_raid_achievement_tortollans.jpg",
+                "zoomUrl": "https://render.worldofwarcraft.com/eu/npcs/zoom/creature-display-143824.jpg",
                 "encounterAreaImages": [
                   "Platform"
                 ],
@@ -598,8 +603,8 @@
                 "defaultOrder": 4,
                 "wclId": 3420,
                 "maxItemLevel": 324,
-                "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_brute.jpg",
-                "zoomUrl": "https://data.wowaudit.com/img/sszorak.jpg",
+                "thumbnailUrl": "https://wowaudit-assets.nyc3.cdn.digitaloceanspaces.com/images/achievement-icons/inv_121_raid_achievement_brute.jpg",
+                "zoomUrl": "https://render.worldofwarcraft.com/eu/npcs/zoom/creature-display-142788.jpg",
                 "encounterAreaImages": [
                   "Platform"
                 ],
@@ -614,8 +619,8 @@
                 "defaultOrder": 5,
                 "wclId": 3421,
                 "maxItemLevel": 324,
-                "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_twins.jpg",
-                "zoomUrl": "https://data.wowaudit.com/img/the-twin-fangs.jpg",
+                "thumbnailUrl": "https://wowaudit-assets.nyc3.cdn.digitaloceanspaces.com/images/achievement-icons/inv_121_raid_achievement_twins.jpg",
+                "zoomUrl": "https://render.worldofwarcraft.com/eu/npcs/zoom/creature-display-140993.jpg",
                 "encounterAreaImages": [
                   "Platform"
                 ],
@@ -645,8 +650,8 @@
                 "defaultOrder": 6,
                 "wclId": 3429,
                 "maxItemLevel": 327,
-                "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_zuljinmalacrass.jpg",
-                "zoomUrl": "https://data.wowaudit.com/img/the-coiled-altar.jpg",
+                "thumbnailUrl": "https://wowaudit-assets.nyc3.cdn.digitaloceanspaces.com/images/achievement-icons/inv_121_raid_achievement_zuljinmalacrass.jpg",
+                "zoomUrl": "https://render.worldofwarcraft.com/eu/npcs/zoom/creature-display-142472.jpg",
                 "encounterAreaImages": [
                   "Platform"
                 ],
@@ -661,8 +666,8 @@
                 "defaultOrder": 7,
                 "wclId": 3492,
                 "maxItemLevel": 327,
-                "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_121_raid_achievement_ulatek.jpg",
-                "zoomUrl": "https://data.wowaudit.com/img/ula-tek.jpg",
+                "thumbnailUrl": "https://wowaudit-assets.nyc3.cdn.digitaloceanspaces.com/images/achievement-icons/inv_121_raid_achievement_ulatek.jpg",
+                "zoomUrl": "https://render.worldofwarcraft.com/eu/npcs/zoom/creature-display-140369.jpg",
                 "encounterAreaImages": [
                   "Platform",
                   "Broken"
@@ -697,8 +702,8 @@
                 "defaultOrder": 0,
                 "wclId": 3379,
                 "maxItemLevel": 344,
-                "thumbnailUrl": "https://wow.zamimg.com/images/wow/icons/large/achievement_boss_elitenagamale.jpg",
-                "zoomUrl": "https://data.wowaudit.com/img/nymrissa-wavecaller.jpg",
+                "thumbnailUrl": "https://wowaudit-assets.nyc3.cdn.digitaloceanspaces.com/images/achievement-icons/achievement_boss_elitenagamale.jpg",
+                "zoomUrl": "https://render.worldofwarcraft.com/eu/npcs/zoom/creature-display-137687.jpg",
                 "encounterAreaImages": [
                   "Room"
                 ],
@@ -752,9 +757,30 @@
       "name": "Brigdèss",
       "realm": "Proudmoore",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 12,
+            "dungeon": 585
+          },
+          {
+            "level": 10,
+            "dungeon": 249
+          },
+          {
+            "level": 11,
+            "dungeon": 586
+          },
+          {
+            "level": 12,
+            "dungeon": 587
+          },
+          {
+            "level": 11,
+            "dungeon": 588
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 5,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -762,8 +788,8 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
@@ -838,8 +864,8 @@
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 292,
+            "option_2": 292,
             "option_3": null
           },
           "dungeons": {
@@ -848,7 +874,7 @@
             "option_3": null
           },
           "world": {
-            "option_1": null,
+            "option_1": 302,
             "option_2": null,
             "option_3": null
           }
@@ -902,9 +928,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_1": 302,
+            "option_2": 272,
+            "option_3": null
           }
         }
       }
@@ -913,33 +939,6 @@
       "id": 13331173,
       "name": "Galsnipes",
       "realm": "Tanaris",
-      "data": {
-        "dungeons_done": [],
-        "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
-        "vault_options": {
-          "raids": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          },
-          "dungeons": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          },
-          "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 302
-          }
-        }
-      }
-    },
-    {
-      "id": 15176907,
-      "name": "Credibubble",
-      "realm": "Area 52",
       "data": {
         "dungeons_done": [],
         "world_quests_done": 0,
@@ -956,9 +955,41 @@
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          }
+        }
+      }
+    },
+    {
+      "id": 15176907,
+      "name": "Credibubble",
+      "realm": "Area 52",
+      "data": {
+        "dungeons_done": [
+          {
+            "level": 11,
+            "dungeon": 586
+          }
+        ],
+        "world_quests_done": 0,
+        "regular_mythic_dungeons_done": 3,
+        "vault_options": {
+          "raids": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          },
+          "dungeons": {
+            "option_1": 318,
+            "option_2": null,
+            "option_3": null
+          },
+          "world": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
@@ -1078,7 +1109,7 @@
       "data": {
         "dungeons_done": [],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1091,9 +1122,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
@@ -1157,9 +1188,14 @@
       "name": "Melarorah",
       "realm": "Area 52",
       "data": {
-        "dungeons_done": [],
-        "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "dungeons_done": [
+          {
+            "level": 14,
+            "dungeon": 584
+          }
+        ],
+        "world_quests_done": 1,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1167,7 +1203,7 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1238,9 +1274,14 @@
       "name": "Tamagotchi",
       "realm": "Mal'Ganis",
       "data": {
-        "dungeons_done": [],
-        "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "dungeons_done": [
+          {
+            "level": 15,
+            "dungeon": 587
+          }
+        ],
+        "world_quests_done": 1,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1248,13 +1289,13 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
           "world": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 305,
+            "option_2": 305,
             "option_3": null
           }
         }
@@ -1267,7 +1308,7 @@
       "data": {
         "dungeons_done": [],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 5,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1280,9 +1321,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
