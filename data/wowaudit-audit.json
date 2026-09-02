@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-02T19:10:02.072Z",
+  "fetchedAt": "2026-09-02T22:16:04.721Z",
   "periodInfo": {
     "current_period": 1079,
     "current_season": {
@@ -1074,9 +1074,14 @@
       "name": "Aerenn",
       "realm": "Zul'jin",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 10,
+            "dungeon": 399
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 3,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1084,14 +1089,14 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
           "world": {
-            "option_1": 302,
+            "option_1": 305,
             "option_2": 272,
-            "option_3": null
+            "option_3": 272
           }
         }
       }
@@ -1561,10 +1566,14 @@
           {
             "level": 16,
             "dungeon": 586
+          },
+          {
+            "level": 16,
+            "dungeon": 399
           }
         ],
         "world_quests_done": 1,
-        "regular_mythic_dungeons_done": 2,
+        "regular_mythic_dungeons_done": 3,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1579,7 +1588,7 @@
           "world": {
             "option_1": 305,
             "option_2": 305,
-            "option_3": null
+            "option_3": 305
           }
         }
       }

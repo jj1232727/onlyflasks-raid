@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-02T19:10:09.564Z",
+  "fetchedAt": "2026-09-02T22:16:10.621Z",
   "characters": [
     {
       "id": 4579002,
@@ -700,6 +700,60 @@
           "role": "dps"
         },
         {
+          "dungeon": "Altar of Fangs",
+          "short_name": "AOF",
+          "mythic_level": 11,
+          "completed_at": "2026-09-02T20:23:05.000Z",
+          "clear_time_ms": 1270952,
+          "keystone_run_id": 7266225,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 588,
+          "zone_id": 16865,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
+          "score": 346,
+          "affixes": [
+            {
+              "id": 160,
+              "name": "Xal'atath's Bargain: Devour",
+              "description": "While in combat, Xal'atath tears open rifts that devour the essence of players.",
+              "icon": "inv_ability_voidweaverpriest_entropicrift",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
+              "wowhead_url": "https://wowhead.com/affix=160"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7266225-11-altar-of-fangs",
+          "spec": {
+            "id": 261,
+            "name": "Subtlety",
+            "slug": "subtlety",
+            "class_id": 4,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "1.0.0",
+            "ordinal": 2
+          },
+          "role": "dps"
+        },
+        {
           "dungeon": "Den of Nalorakk",
           "short_name": "DON",
           "mythic_level": 11,
@@ -865,6 +919,114 @@
           "dungeon": "Kings' Rest",
           "short_name": "KR",
           "mythic_level": 10,
+          "completed_at": "2026-09-02T21:37:22.000Z",
+          "clear_time_ms": 1313476,
+          "keystone_run_id": 7295699,
+          "par_time_ms": 1980999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 249,
+          "zone_id": 9526,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
+          "score": 332.6,
+          "affixes": [
+            {
+              "id": 160,
+              "name": "Xal'atath's Bargain: Devour",
+              "description": "While in combat, Xal'atath tears open rifts that devour the essence of players.",
+              "icon": "inv_ability_voidweaverpriest_entropicrift",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
+              "wowhead_url": "https://wowhead.com/affix=160"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7295699-10-kings-rest",
+          "spec": {
+            "id": 261,
+            "name": "Subtlety",
+            "slug": "subtlety",
+            "class_id": 4,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "1.0.0",
+            "ordinal": 2
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "Temple of Sethraliss",
+          "short_name": "TOS",
+          "mythic_level": 10,
+          "completed_at": "2026-09-02T21:06:13.000Z",
+          "clear_time_ms": 1431071,
+          "keystone_run_id": 7295451,
+          "par_time_ms": 1920999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 250,
+          "zone_id": 9527,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
+          "score": 329.6,
+          "affixes": [
+            {
+              "id": 160,
+              "name": "Xal'atath's Bargain: Devour",
+              "description": "While in combat, Xal'atath tears open rifts that devour the essence of players.",
+              "icon": "inv_ability_voidweaverpriest_entropicrift",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
+              "wowhead_url": "https://wowhead.com/affix=160"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7295451-10-temple-of-sethraliss",
+          "spec": {
+            "id": 261,
+            "name": "Subtlety",
+            "slug": "subtlety",
+            "class_id": 4,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "1.0.0",
+            "ordinal": 2
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "Kings' Rest",
+          "short_name": "KR",
+          "mythic_level": 10,
           "completed_at": "2026-09-01T20:55:27.000Z",
           "clear_time_ms": 1450326,
           "keystone_run_id": 7065277,
@@ -955,7 +1117,7 @@
       "id": 4826466,
       "name": "Xeonips",
       "status": "ok",
-      "lastCrawledAt": "2026-09-02T09:37:10.000Z",
+      "lastCrawledAt": "2026-09-02T20:06:32.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Xeonips",
       "weeklyRuns": [
         {
@@ -1283,6 +1445,60 @@
           "role": "healer"
         },
         {
+          "dungeon": "Temple of Sethraliss",
+          "short_name": "TOS",
+          "mythic_level": 11,
+          "completed_at": "2026-09-02T18:30:44.000Z",
+          "clear_time_ms": 1776128,
+          "keystone_run_id": 7245408,
+          "par_time_ms": 1920999,
+          "num_keystone_upgrades": 1,
+          "map_challenge_mode_id": 250,
+          "zone_id": 9527,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
+          "score": 337.8,
+          "affixes": [
+            {
+              "id": 160,
+              "name": "Xal'atath's Bargain: Devour",
+              "description": "While in combat, Xal'atath tears open rifts that devour the essence of players.",
+              "icon": "inv_ability_voidweaverpriest_entropicrift",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
+              "wowhead_url": "https://wowhead.com/affix=160"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7245408-11-temple-of-sethraliss",
+          "spec": {
+            "id": 105,
+            "name": "Restoration",
+            "slug": "restoration",
+            "class_id": 11,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 3
+          },
+          "role": "healer"
+        },
+        {
           "dungeon": "Voidscar Arena",
           "short_name": "VSA",
           "mythic_level": 10,
@@ -1337,20 +1553,74 @@
           "role": "healer"
         },
         {
+          "dungeon": "Temple of Sethraliss",
+          "short_name": "TOS",
+          "mythic_level": 10,
+          "completed_at": "2026-09-02T20:03:03.000Z",
+          "clear_time_ms": 1033949,
+          "keystone_run_id": 7243646,
+          "par_time_ms": 1920999,
+          "num_keystone_upgrades": 3,
+          "map_challenge_mode_id": 250,
+          "zone_id": 9527,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
+          "score": 335,
+          "affixes": [
+            {
+              "id": 160,
+              "name": "Xal'atath's Bargain: Devour",
+              "description": "While in combat, Xal'atath tears open rifts that devour the essence of players.",
+              "icon": "inv_ability_voidweaverpriest_entropicrift",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
+              "wowhead_url": "https://wowhead.com/affix=160"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7243646-10-temple-of-sethraliss",
+          "spec": {
+            "id": 105,
+            "name": "Restoration",
+            "slug": "restoration",
+            "class_id": 11,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 3
+          },
+          "role": "healer"
+        },
+        {
           "dungeon": "Voidscar Arena",
           "short_name": "VSA",
           "mythic_level": 10,
-          "completed_at": "2026-09-02T05:11:57.000Z",
-          "clear_time_ms": 1178812,
-          "keystone_run_id": 7011298,
+          "completed_at": "2026-09-02T21:54:22.000Z",
+          "clear_time_ms": 1059372,
+          "keystone_run_id": 7295268,
           "par_time_ms": 1800999,
-          "num_keystone_upgrades": 2,
+          "num_keystone_upgrades": 3,
           "map_challenge_mode_id": 585,
           "zone_id": 16425,
           "zone_expansion_id": 11,
           "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
           "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
-          "score": 333,
+          "score": 335,
           "affixes": [
             {
               "id": 160,
@@ -1377,115 +1647,7 @@
               "wowhead_url": "https://wowhead.com/affix=9"
             }
           ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7011298-10-voidscar-arena",
-          "spec": {
-            "id": 105,
-            "name": "Restoration",
-            "slug": "restoration",
-            "class_id": 11,
-            "role": "healer",
-            "is_melee": false,
-            "patch": "1.0.0",
-            "ordinal": 3
-          },
-          "role": "healer"
-        },
-        {
-          "dungeon": "Den of Nalorakk",
-          "short_name": "DON",
-          "mythic_level": 10,
-          "completed_at": "2026-09-01T21:24:23.000Z",
-          "clear_time_ms": 1242835,
-          "keystone_run_id": 6918683,
-          "par_time_ms": 1920999,
-          "num_keystone_upgrades": 2,
-          "map_challenge_mode_id": 586,
-          "zone_id": 16368,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_proveyourworth.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/den-of-nalorakk.jpg",
-          "score": 333.2,
-          "affixes": [
-            {
-              "id": 160,
-              "name": "Xal'atath's Bargain: Devour",
-              "description": "While in combat, Xal'atath tears open rifts that devour the essence of players.",
-              "icon": "inv_ability_voidweaverpriest_entropicrift",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
-              "wowhead_url": "https://wowhead.com/affix=160"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/6918683-10-den-of-nalorakk",
-          "spec": {
-            "id": 105,
-            "name": "Restoration",
-            "slug": "restoration",
-            "class_id": 11,
-            "role": "healer",
-            "is_melee": false,
-            "patch": "1.0.0",
-            "ordinal": 3
-          },
-          "role": "healer"
-        },
-        {
-          "dungeon": "Kings' Rest",
-          "short_name": "KR",
-          "mythic_level": 10,
-          "completed_at": "2026-09-01T20:55:27.000Z",
-          "clear_time_ms": 1450326,
-          "keystone_run_id": 7065277,
-          "par_time_ms": 1980999,
-          "num_keystone_upgrades": 2,
-          "map_challenge_mode_id": 249,
-          "zone_id": 9526,
-          "zone_expansion_id": 7,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
-          "score": 330,
-          "affixes": [
-            {
-              "id": 160,
-              "name": "Xal'atath's Bargain: Devour",
-              "description": "While in combat, Xal'atath tears open rifts that devour the essence of players.",
-              "icon": "inv_ability_voidweaverpriest_entropicrift",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
-              "wowhead_url": "https://wowhead.com/affix=160"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7065277-10-kings-rest",
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7295268-10-voidscar-arena",
           "spec": {
             "id": 105,
             "name": "Restoration",
@@ -2045,9 +2207,172 @@
       "id": 7422636,
       "name": "Aerenn",
       "status": "ok",
-      "lastCrawledAt": "2026-09-01T08:40:08.000Z",
+      "lastCrawledAt": "2026-09-02T19:36:10.000Z",
       "profileUrl": "https://raider.io/characters/us/zuljin/Aerenn",
-      "weeklyRuns": [],
+      "weeklyRuns": [
+        {
+          "dungeon": "Kings' Rest",
+          "short_name": "KR",
+          "mythic_level": 11,
+          "completed_at": "2026-09-02T19:22:43.000Z",
+          "clear_time_ms": 1311881,
+          "keystone_run_id": 7235846,
+          "par_time_ms": 1980999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 249,
+          "zone_id": 9526,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
+          "score": 347.7,
+          "affixes": [
+            {
+              "id": 160,
+              "name": "Xal'atath's Bargain: Devour",
+              "description": "While in combat, Xal'atath tears open rifts that devour the essence of players.",
+              "icon": "inv_ability_voidweaverpriest_entropicrift",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
+              "wowhead_url": "https://wowhead.com/affix=160"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7235846-11-kings-rest",
+          "spec": {
+            "id": 71,
+            "name": "Arms",
+            "slug": "arms",
+            "class_id": 1,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "Temple of Sethraliss",
+          "short_name": "TOS",
+          "mythic_level": 10,
+          "completed_at": "2026-09-02T20:03:03.000Z",
+          "clear_time_ms": 1033949,
+          "keystone_run_id": 7243646,
+          "par_time_ms": 1920999,
+          "num_keystone_upgrades": 3,
+          "map_challenge_mode_id": 250,
+          "zone_id": 9527,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
+          "score": 335,
+          "affixes": [
+            {
+              "id": 160,
+              "name": "Xal'atath's Bargain: Devour",
+              "description": "While in combat, Xal'atath tears open rifts that devour the essence of players.",
+              "icon": "inv_ability_voidweaverpriest_entropicrift",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
+              "wowhead_url": "https://wowhead.com/affix=160"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7243646-10-temple-of-sethraliss",
+          "spec": {
+            "id": 71,
+            "name": "Arms",
+            "slug": "arms",
+            "class_id": 1,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "Ruby Life Pools",
+          "short_name": "RLP",
+          "mythic_level": 10,
+          "completed_at": "2026-09-02T18:45:20.000Z",
+          "clear_time_ms": 1041682,
+          "keystone_run_id": 7235948,
+          "par_time_ms": 1680999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 399,
+          "zone_id": 14063,
+          "zone_expansion_id": 9,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_lifepools.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion9/base/ruby-life-pools.jpg",
+          "score": 334.3,
+          "affixes": [
+            {
+              "id": 160,
+              "name": "Xal'atath's Bargain: Devour",
+              "description": "While in combat, Xal'atath tears open rifts that devour the essence of players.",
+              "icon": "inv_ability_voidweaverpriest_entropicrift",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
+              "wowhead_url": "https://wowhead.com/affix=160"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7235948-10-ruby-life-pools",
+          "spec": {
+            "id": 71,
+            "name": "Arms",
+            "slug": "arms",
+            "class_id": 1,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "dps"
+        }
+      ],
       "raidProgression": {
         "the-tidebound-grotto": {
           "summary": "",
@@ -2967,6 +3292,60 @@
           "dungeon": "Ruby Life Pools",
           "short_name": "RLP",
           "mythic_level": 10,
+          "completed_at": "2026-09-02T22:04:39.000Z",
+          "clear_time_ms": 845299,
+          "keystone_run_id": 7298783,
+          "par_time_ms": 1680999,
+          "num_keystone_upgrades": 3,
+          "map_challenge_mode_id": 399,
+          "zone_id": 14063,
+          "zone_expansion_id": 9,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_lifepools.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion9/base/ruby-life-pools.jpg",
+          "score": 335,
+          "affixes": [
+            {
+              "id": 160,
+              "name": "Xal'atath's Bargain: Devour",
+              "description": "While in combat, Xal'atath tears open rifts that devour the essence of players.",
+              "icon": "inv_ability_voidweaverpriest_entropicrift",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
+              "wowhead_url": "https://wowhead.com/affix=160"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7298783-10-ruby-life-pools",
+          "spec": {
+            "id": 254,
+            "name": "Marksmanship",
+            "slug": "marksmanship",
+            "class_id": 3,
+            "role": "dps",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 1
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "Ruby Life Pools",
+          "short_name": "RLP",
+          "mythic_level": 10,
           "completed_at": "2026-09-02T13:49:15.000Z",
           "clear_time_ms": 1072402,
           "keystone_run_id": 7119839,
@@ -3522,6 +3901,60 @@
             }
           ],
           "url": "https://raider.io/mythic-plus-runs/season-mn-2/6936510-11-kings-rest",
+          "spec": {
+            "id": 252,
+            "name": "Unholy",
+            "slug": "unholy",
+            "class_id": 6,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "3.0.0",
+            "ordinal": 2
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "Kings' Rest",
+          "short_name": "KR",
+          "mythic_level": 11,
+          "completed_at": "2026-09-02T21:38:58.000Z",
+          "clear_time_ms": 1256492,
+          "keystone_run_id": 7289088,
+          "par_time_ms": 1980999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 249,
+          "zone_id": 9526,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
+          "score": 348.7,
+          "affixes": [
+            {
+              "id": 160,
+              "name": "Xal'atath's Bargain: Devour",
+              "description": "While in combat, Xal'atath tears open rifts that devour the essence of players.",
+              "icon": "inv_ability_voidweaverpriest_entropicrift",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
+              "wowhead_url": "https://wowhead.com/affix=160"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7289088-11-kings-rest",
           "spec": {
             "id": 252,
             "name": "Unholy",
@@ -4547,6 +4980,60 @@
       "profileUrl": "https://raider.io/characters/us/malganis/Tamagotchi",
       "weeklyRuns": [
         {
+          "dungeon": "Ruby Life Pools",
+          "short_name": "RLP",
+          "mythic_level": 16,
+          "completed_at": "2026-09-02T20:04:42.000Z",
+          "clear_time_ms": 1601530,
+          "keystone_run_id": 7245301,
+          "par_time_ms": 1680999,
+          "num_keystone_upgrades": 1,
+          "map_challenge_mode_id": 399,
+          "zone_id": 14063,
+          "zone_expansion_id": 9,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_lifepools.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion9/base/ruby-life-pools.jpg",
+          "score": 426.8,
+          "affixes": [
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 147,
+              "name": "Xal'atath's Guile",
+              "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+              "icon": "ability_racial_chillofnight",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+              "wowhead_url": "https://wowhead.com/affix=147"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7245301-16-ruby-life-pools",
+          "spec": {
+            "id": 264,
+            "name": "Restoration",
+            "slug": "restoration",
+            "class_id": 7,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 2
+          },
+          "role": "healer"
+        },
+        {
           "dungeon": "Den of Nalorakk",
           "short_name": "DON",
           "mythic_level": 16,
@@ -5497,6 +5984,60 @@
           "role": "healer"
         },
         {
+          "dungeon": "Voidscar Arena",
+          "short_name": "VSA",
+          "mythic_level": 12,
+          "completed_at": "2026-09-02T20:50:45.000Z",
+          "clear_time_ms": 1599381,
+          "keystone_run_id": 7296462,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 1,
+          "map_challenge_mode_id": 585,
+          "zone_id": 16425,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
+          "score": 369.2,
+          "affixes": [
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 147,
+              "name": "Xal'atath's Guile",
+              "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+              "icon": "ability_racial_chillofnight",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+              "wowhead_url": "https://wowhead.com/affix=147"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7296462-12-voidscar-arena",
+          "spec": {
+            "id": 1473,
+            "name": "Augmentation",
+            "slug": "augmentation",
+            "class_id": 13,
+            "role": "dps",
+            "is_melee": false,
+            "patch": "10.1.5",
+            "ordinal": 2
+          },
+          "role": "dps"
+        },
+        {
           "dungeon": "Altar of Fangs",
           "short_name": "AOF",
           "mythic_level": 12,
@@ -5765,60 +6306,6 @@
             "ordinal": 1
           },
           "role": "healer"
-        },
-        {
-          "dungeon": "Voidscar Arena",
-          "short_name": "VSA",
-          "mythic_level": 10,
-          "completed_at": "2026-09-02T13:09:09.000Z",
-          "clear_time_ms": 1191762,
-          "keystone_run_id": 7194679,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 2,
-          "map_challenge_mode_id": 585,
-          "zone_id": 16425,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
-          "score": 332.7,
-          "affixes": [
-            {
-              "id": 160,
-              "name": "Xal'atath's Bargain: Devour",
-              "description": "While in combat, Xal'atath tears open rifts that devour the essence of players.",
-              "icon": "inv_ability_voidweaverpriest_entropicrift",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
-              "wowhead_url": "https://wowhead.com/affix=160"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/7194679-10-voidscar-arena",
-          "spec": {
-            "id": 1473,
-            "name": "Augmentation",
-            "slug": "augmentation",
-            "class_id": 13,
-            "role": "dps",
-            "is_melee": false,
-            "patch": "10.1.5",
-            "ordinal": 2
-          },
-          "role": "dps"
         }
       ],
       "raidProgression": {
