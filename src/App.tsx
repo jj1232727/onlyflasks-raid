@@ -1199,6 +1199,43 @@ function targetSatisfactionReason(data: Data, c: Raider, entry: any, selectedDif
 }
 const targetSatisfiedAtDifficulty = (data: Data, c: Raider, entry: any, selectedDifficulty: Difficulty, selectedSpec: string) =>
   Boolean(targetSatisfactionReason(data, c, entry, selectedDifficulty, selectedSpec));
+// Apps Script answers with an HTML page, not JSON, whenever Google turns the
+// request away before the script runs: a momentary 500, the simultaneous-
+// execution limit, a sign-in interstitial. Calling .json() on that throws
+//
+//   Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+//
+// which names neither the call that failed nor the reason, and in the sim path
+// it killed a run whose sims had already finished - the error escaped the retry
+// loop that existed precisely for this. Read the body once, say what came back,
+// and mark the cases worth retrying.
+class ApiError extends Error {
+  transient: boolean;
+  constructor(message: string, transient: boolean) {
+    super(message);
+    this.name = "ApiError";
+    this.transient = transient;
+  }
+}
+const isTransient = (error: unknown) => error instanceof ApiError && error.transient;
+async function readJson(response: Response, what: string) {
+  const text = await response.text();
+  try {
+    return JSON.parse(text);
+  } catch {
+    const html = /^\s*(<!DOCTYPE|<html)/iu.test(text);
+    // 5xx and 429 are Google being busy; an HTML body means it never reached the
+    // script at all. Both come good on their own, so they are worth another go.
+    const transient = html || response.status === 429 || response.status >= 500;
+    throw new ApiError(
+      html
+        ? `${what}: Google returned a web page instead of data (HTTP ${response.status}) - the script was not reached. This usually clears on its own.`
+        : `${what}: the reply was not JSON (HTTP ${response.status}): ${text.slice(0, 120)}`,
+      transient,
+    );
+  }
+}
+
 export default function App() {
   const simResumeAttempted = useRef(false);
   // True while the poll below is watching a droptimizer it has seen pending, so
@@ -1353,7 +1390,7 @@ export default function App() {
         // own timer down when they do.
         if (stopped || Date.now() - startedAt > 720000) { clearInterval(timer); return; }
         try {
-          const payload = await (await fetch(wishlistApiUrl, { cache: "no-store" })).json();
+          const payload = await readJson(await fetch(wishlistApiUrl, { cache: "no-store" }), "The board");
           if (stopped || !payload.ok) return;
           setQeQueue(payload.qeQueue || {});
           setPendingSims(payload.pendingSims || {});
@@ -1370,10 +1407,10 @@ export default function App() {
             // over numbers from before the sim ran, which is the version of
             // "did it go through" that is worth least.
             try {
-              const sims = await (await fetch(wishlistApiUrl, {
+              const sims = await readJson(await fetch(wishlistApiUrl, {
                 method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
                 body: JSON.stringify({ action: "getWowauditSims" }), cache: "no-store",
-              })).json();
+              }), "getWowauditSims");
               if (!stopped && sims.ok && sims.sims) setLiveSims(sims.sims);
             } catch { /* the numbers keep until the next load; the state is still right */ }
           }
@@ -1497,7 +1534,7 @@ export default function App() {
           body: JSON.stringify({ action: "getWowauditSims" }),
           cache: "no-store",
         });
-        const result = await response.json();
+        const result = await readJson(response, "getWowauditSims");
         if (!response.ok || !result.ok || !result.sims)
           throw new Error(result.error || `WoWAudit refresh failed (${response.status}).`);
         const fresh = !before || !character || !selectedSpec || allSimDifficultiesChanged(
@@ -1550,11 +1587,11 @@ export default function App() {
       const jobs = (pending.reportUrls || []).filter((job: any) => job?.simId);
       for (const job of jobs) {
         try {
-          const status = await (await fetch(wishlistApiUrl, {
+          const status = await readJson(await fetch(wishlistApiUrl, {
             method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
             body: JSON.stringify({ action: "checkDroptimizer", simId: job.simId, reportReady: false, upload: true,
               characterId: character.id, characterName: character.name, configurationName: "Single Target", replaceManualEdits: false }),
-          })).json();
+          }), "checkDroptimizer");
           setSimReports((reports) => reports.map((report) => report.difficulty === job.difficulty
             ? { ...report, state: status.ok && status.state === "uploaded" ? "uploaded" : status.ok && status.state === "running" ? "running" : "error", error: status.error }
             : report));
@@ -1628,11 +1665,11 @@ export default function App() {
     setSimcExportCopied("");
     setSimcExport({ characterName, pending: true });
     try {
-      const payload = await (await fetch(wishlistApiUrl, {
+      const payload = await readJson(await fetch(wishlistApiUrl, {
         method: "POST",
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify({ action: "getSimcExport", token, characterId }),
-      })).json();
+      }), "getSimcExport");
       if (!payload.ok) throw new Error(payload.error || "Could not read the stored export.");
       setSimcExport(payload);
       setSimcExportState("idle");
@@ -1649,11 +1686,11 @@ export default function App() {
     setSimcLogState("loading");
     setSimcLogError("");
     try {
-      const payload = await (await fetch(wishlistApiUrl, {
+      const payload = await readJson(await fetch(wishlistApiUrl, {
         method: "POST",
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify({ action: "getSimcLog", token, limit: 100 }),
-      })).json();
+      }), "getSimcLog");
       if (!payload.ok) throw new Error(payload.error || "Could not read the paste log.");
       setSimcLog(payload.log || []);
       setSimcLogState("idle");
@@ -1675,7 +1712,7 @@ export default function App() {
           passphrase: officerPassphrase,
         }),
       });
-      const payload = await response.json();
+      const payload = await readJson(response, "officerLogin");
       if (!payload.ok || !payload.token)
         throw new Error(payload.error || "Officer access failed");
       localStorage.setItem("onlyflasks-officer-session", payload.token);
@@ -1708,7 +1745,7 @@ export default function App() {
           status,
         }),
       });
-      const payload = await response.json();
+      const payload = await readJson(response, "setRosterStatus");
       if (!payload.ok)
         throw new Error(payload.error || "Could not save roster status");
       setRosterSaveState("saved");
@@ -1761,11 +1798,11 @@ export default function App() {
     localStorage.setItem("onlyflasks-board-specs-v2", JSON.stringify(next));
     if (!wishlistApiUrl) return;
     try {
-      const result = await (await fetch(wishlistApiUrl, {
+      const result = await readJson(await fetch(wishlistApiUrl, {
         method: "POST",
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify({ action: "setLootSpec", characterId: c.id, characterName: c.name, lootSpec }),
-      })).json();
+      }), "setLootSpec");
       if (!result.ok) throw new Error(result.error || "Could not save the loot spec.");
       setSpecSaveError("");
     } catch (error) {
@@ -3139,11 +3176,11 @@ export default function App() {
                     version: 1,
                   }),
                 });
-                const payload = await response.json();
+                const payload = await readJson(response, "saveWishlist");
                 if (!payload.ok)
                   throw new Error(payload.error || "Submission failed");
                 const sharedResponse = await fetch(wishlistApiUrl, { cache: "no-store" });
-                const shared = await sharedResponse.json();
+                const shared = await readJson(sharedResponse, "The board");
                 if (!shared.ok) throw new Error(shared.error || "Saved, but could not verify the shared wishlist");
                 const verifiedLists: Record<number, Item[]> = {}, verifiedSpecs: Record<number, string> = {};
                 for (const entry of shared.wishlists || []) {
@@ -3229,7 +3266,7 @@ export default function App() {
                   headers: { "Content-Type": "text/plain;charset=utf-8" },
                   body: JSON.stringify({ action: "saveSimcSnapshot", characterId: c.id, characterName: c.name, lootSpec: selectedSpec, snapshot, simc: simcText.trim() }),
                 });
-                const snapshotResult = await snapshotResponse.json();
+                const snapshotResult = await readJson(snapshotResponse, "saveSimcSnapshot");
                 if (!snapshotResult.ok || !snapshotResult.snapshot) {
                   // Only saveWishlist_ says these, and doPost falls through to it
                   // for an action the deployment does not have. saveSimcSnapshot_'s
@@ -3256,7 +3293,7 @@ export default function App() {
                     headers: { "Content-Type": "text/plain;charset=utf-8" },
                     body: JSON.stringify({ action: "queueQeRun", characterId: c.id, characterName: c.name, lootSpec: selectedSpec, simc: simcText.trim() }),
                   });
-                  const queueResult = await queued.json();
+                  const queueResult = await readJson(queued, "queueQeRun");
                   if (!queueResult.ok) throw new Error(queueResult.error || "Could not queue the QE run.");
                   // Keep whether the dispatch landed: "pending" means a run is
                   // seconds away when it did, and up to 15 minutes when it did
@@ -3277,7 +3314,7 @@ export default function App() {
                     method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
                     body: JSON.stringify({ action: "submitDroptimizer", characterId: c.id, payload: droptimizerPayload(simcText.trim(), c, selectedSpec, simDifficulty) }),
                   });
-                  const result = await response.json();
+                  const result = await readJson(response, "submitDroptimizer");
                   if (!result.ok || !result.simId) throw new Error(`${label}: ${result.error || "Raidbots submission failed"}`);
                   jobs.push({ difficulty: simDifficulty, simId: result.simId, reportUrl: result.reportUrl || `https://www.raidbots.com/simbot/report/${result.simId}` });
                   setSimReports(jobs.map((job) => ({ difficulty: job.difficulty, url: job.reportUrl, state: "queued" })));
@@ -3305,7 +3342,7 @@ export default function App() {
                     const reportResponse = await fetch(`https://www.raidbots.com/reports/${encodeURIComponent(job.simId)}/data.json`, { cache: "no-store" });
                     if (reportResponse.status === 403 || reportResponse.status === 404) continue;
                     if (reportResponse.ok) {
-                      const report = await reportResponse.json();
+                      const report = await readJson(reportResponse, `${label} report`);
                       if (report.error || report.errors || report.meta?.error) throw new Error(`${label}: ${String(report.error || report.meta?.error || "Raidbots simulation failed")}`);
                     } else throw new Error(`${label}: Raidbots status check failed (${reportResponse.status}).`);
                     setSimMessage(`${label} · report complete, uploading to WoWAudit…`);
@@ -3315,7 +3352,17 @@ export default function App() {
                         body: JSON.stringify({ action: "checkDroptimizer", simId: job.simId, reportReady: true, upload: true,
                           characterId: c.id, characterName: c.name, configurationName: "Single Target", replaceManualEdits: false }),
                       });
-                      const status = await statusResponse.json();
+                      let status;
+                      try {
+                        status = await readJson(statusResponse, "checkDroptimizer");
+                      } catch (error) {
+                        // The sim is finished either way; a garbled reply here
+                        // says nothing about that, so spend the remaining
+                        // attempts rather than discarding a completed run.
+                        if (!isTransient(error) || uploadAttempt === 2) throw error;
+                        await new Promise((resolve) => window.setTimeout(resolve, (uploadAttempt + 1) * 3000));
+                        continue;
+                      }
                       if (status.ok && status.state === "uploaded") { uploaded = true; break; }
                       if (uploadAttempt === 2) throw new Error(`${label}: ${status.error || "WoWAudit upload failed"}`);
                       await new Promise((resolve) => window.setTimeout(resolve, (uploadAttempt + 1) * 3000));
@@ -3704,13 +3751,13 @@ export default function App() {
                                   if (!difficulties.length) throw new Error("That report has no raid scores in it.");
                                   if (report.character && norm(report.character) !== norm(c.name))
                                     throw new Error(`That report is for ${report.character}, not ${c.name}.`);
-                                  const saved = await (await fetch(wishlistApiUrl, {
+                                  const saved = await readJson(await fetch(wishlistApiUrl, {
                                     method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
                                     body: JSON.stringify({ action: "saveQeReport", characterId: c.id, characterName: c.name, lootSpec: selectedSpec,
                                       // One report is one difficulty, so name the id per difficulty the
                                       // same way the worker does - each score keeps a link to its run.
                                       report: { ...report, reportIds: Object.fromEntries(difficulties.map((d) => [d, id])) } }),
-                                  })).json();
+                                  }), "saveQeReport");
                                   if (!saved.ok) throw new Error(saved.error || "The board could not save that report.");
                                   setQeReports((current) => ({ ...current, [String(c.id)]: saved.report }));
                                   setQeLink("");
