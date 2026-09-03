@@ -360,6 +360,10 @@ function saveSimcSnapshot_(body) {
     vault: Array.isArray(snapshot.vault) ? snapshot.vault.slice(0, 20) : [],
     catalystCurrencies: snapshot.catalystCurrencies || {},
     upgradeCurrencies: snapshot.upgradeCurrencies || {},
+    bonusRollCurrencies: snapshot.bonusRollCurrencies || {},
+    // Capped for the same reason bags and vault are: one row has to stay inside
+    // a cell, and a season of rolls is a list that only grows.
+    bonusRolls: Array.isArray(snapshot.bonusRolls) ? snapshot.bonusRolls.slice(0, 40) : [],
   };
   const lock = LockService.getScriptLock();
   lock.waitLock(10000);

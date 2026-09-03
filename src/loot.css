@@ -1540,3 +1540,23 @@ footer .data-freshness{width:100%}
   border-radius: 8px; padding: 6px 12px; font: inherit; font-size: 12px;
   font-weight: 700; cursor: pointer; white-space: nowrap;
 }
+
+/* Bonus roll charges, beside the catalyst chip and styled the same way: a
+   number you can spend reads differently from one you cannot. */
+.bonus-roll-currency {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+.bonus-roll-currency img { width: 22px; height: 22px; border-radius: 4px; }
+.bonus-roll-currency strong { display: block; font-size: 15px; line-height: 1; }
+.bonus-roll-currency small { display: block; font-size: 9px; letter-spacing: 0.06em; opacity: 0.62; }
+.bonus-roll-currency em { font-style: normal; font-size: 10px; opacity: 0.72; }
+.bonus-roll-currency.available { border-color: color-mix(in srgb, var(--good) 55%, var(--line)); }
+.bonus-roll-currency.empty { opacity: 0.55; }
+.bonus-roll-currency.unknown strong { opacity: 0.5; }

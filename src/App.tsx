@@ -41,6 +41,8 @@ import { qeReportId, qeReportSummary, qeReportUrl } from "./qe-report.js";
 import {
   CATALYST_CURRENCIES,
   MIDNIGHT_S2_CATALYST,
+  BONUS_ROLL_CURRENCIES,
+  bonusRollBalance,
   MIDNIGHT_S2_CRESTS,
   hasCurrencyData,
   inspectSimcExport,
@@ -774,6 +776,27 @@ function TierResourceSnapshot({ info, visuals, icons = {}, compact = false }: { 
           <span><strong>{info.catalystCharges ?? "?"}</strong><small>{catalyst ? catalystName.split(" ")[0].toUpperCase() : "CATALYST"}</small></span>
           {info.catalystDelta !== null && info.catalystDelta !== 0 && <em>{info.catalystDelta > 0 ? "+" : ""}{info.catalystDelta}</em>}
         </a>
+        {info.bonusRoll && (
+          <a
+            className={`bonus-roll-currency ${info.bonusRoll.quantity === null ? "unknown" : info.bonusRoll.quantity > 0 ? "available" : "empty"}`}
+            href={`https://www.wowhead.com/currency=${info.bonusRoll.id}`}
+            data-wowhead={`currency=${info.bonusRoll.id}`}
+            target="_blank"
+            rel="noreferrer"
+            title={
+              (info.bonusRoll.quantity === null
+                ? `${info.bonusRoll.name} · not reported by this /simc export`
+                : `${info.bonusRoll.name} · ${info.bonusRoll.quantity} to spend`) +
+              (info.bonusRollsWon?.length
+                ? `\n\nWon this season:\n${info.bonusRollsWon.map((won: any) => `  ${won.itemName}${won.sourceName ? ` — ${won.sourceName}` : ""}`).join("\n")}`
+                : "")
+            }
+          >
+            <img src={wowIcon(BONUS_ROLL_CURRENCIES[String(info.bonusRoll.id)]?.icon || "inv_misc_questionmark")} />
+            <span><strong>{info.bonusRoll.quantity ?? "?"}</strong><small>VOIDCORE</small></span>
+            {info.bonusRollsWon?.length > 0 && <em>{info.bonusRollsWon.length} won</em>}
+          </a>
+        )}
         <div className="crest-icons">
           {(Object.keys(crestVisuals) as (keyof typeof crestVisuals)[]).map((key) => { const crest = crestVisuals[key]; return (
             <a href={`https://www.wowhead.com/currency=${crest.id}`} data-wowhead={`currency=${crest.id}`} target="_blank" rel="noreferrer" className={key} key={key}>
@@ -2070,6 +2093,17 @@ export default function App() {
             myth: Number(snapshot.upgradeCurrencies?.[MIDNIGHT_S2_CRESTS.myth] || 0),
           } : null,
           crestsMissing: Boolean(snapshot && !hasCurrencyData(snapshot)),
+          // Bonus rolls: what is left to spend, and what has already been won
+          // with them this season. The second half matters to a loot council -
+          // a raider who bonus-rolled their neck last week got that for free.
+          bonusRoll: snapshot
+            ? { ...bonusRollBalance(snapshot), name: BONUS_ROLL_CURRENCIES[String(bonusRollBalance(snapshot).id)]?.name || "Bonus roll" }
+            : null,
+          bonusRollsWon: (snapshot?.bonusRolls || []).map((roll: any) => ({
+            ...roll,
+            itemName: visualItems.get(+roll.itemId)?.name || `Item ${roll.itemId}`,
+            sourceName: visualItems.get(+roll.source)?.name || "",
+          })),
           snapshotAt: snapshot?.capturedAt || null,
         };
       })
@@ -2737,7 +2771,7 @@ export default function App() {
             </div>
             <div className="tier-grid">
               {tierStatus.map(
-                ({ c, slots, equippedCount, storedCount, readyCount, waitingCount, trackMix, setBonus, reachable, reachableBonus, hiddenUpgrade, freePieces, catalysable, catalystCharges, catalystUnknownReason: chargesUnknownWhy, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, bagTier, bagBases, crests, crestsMissing, snapshotAt }) => (
+                ({ c, slots, equippedCount, storedCount, readyCount, waitingCount, trackMix, setBonus, reachable, reachableBonus, hiddenUpgrade, freePieces, catalysable, catalystCharges, catalystUnknownReason: chargesUnknownWhy, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther, bagTier, bagBases, crests, crestsMissing, bonusRoll, bonusRollsWon, snapshotAt }) => (
                 <div
                   className={`tier-person ${equippedCount === 5 ? "tier-complete" : ""} ${hiddenUpgrade ? "tier-actionable" : ""}`}
                   key={c.id}
@@ -2794,7 +2828,7 @@ export default function App() {
                   {/* Tier view: only what can become tier. A vault full of trinkets and
                       weapons is worth seeing, but not here - the audit view shows
                       the whole vault, this one answers "can I complete a set". */}
-                  <TierResourceSnapshot info={{ catalystCharges, catalystUnknownReason: chargesUnknownWhy, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther: [], bagTier, bagBases, crests, crestsMissing, snapshotAt }} visuals={visualItems} icons={data.itemIcons || {}} />
+                  <TierResourceSnapshot info={{ catalystCharges, catalystUnknownReason: chargesUnknownWhy, catalystId, catalystDelta, vaultTier, vaultCatalyst, vaultOther: [], bagTier, bagBases, crests, crestsMissing, bonusRoll, bonusRollsWon, snapshotAt }} visuals={visualItems} icons={data.itemIcons || {}} />
                 </div>
               ))}
             </div>

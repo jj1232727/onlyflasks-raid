@@ -63,6 +63,32 @@ const parseTaggedPairs = (text, key) => {
   return { currencies, items };
 };
 
+// Bonus rolls the character has spent this season, one per entry:
+//
+//   # bonus_roll_items=3418:278284:5:4:268265:266/3418:278286:5:2:270922:266
+//                      ^    ^      ^ ^ ^      ^
+//              currency|    |source| | |itemId|spec
+//                           context--/ |
+//                              keyLevel-/
+//
+// `source` is the Voidcache the roll was made on, so it names the boss; `itemId`
+// is what was actually won. Field order and meaning are from the addon's
+// bonusrolls.lua, which builds the string - not inferred from one example.
+const BONUS_ROLL_FIELDS = ["currency", "source", "context", "keyLevel", "itemId", "spec"];
+
+export function parseBonusRolls(text) {
+  const raw = text.match(/^#\s*bonus_roll_items=([^\r\n]*)/m)?.[1]?.trim() || "";
+  if (!raw) return [];
+  return raw
+    .split("/")
+    .map((entry) => {
+      const parts = entry.split(":").map(Number);
+      if (parts.length < BONUS_ROLL_FIELDS.length || parts.some((n) => !Number.isFinite(n))) return null;
+      return Object.fromEntries(BONUS_ROLL_FIELDS.map((field, index) => [field, parts[index]]));
+    })
+    .filter(Boolean);
+}
+
 export function parseSimcSnapshot(text, capturedAt = new Date().toISOString()) {
   const character = text.match(/^\w+="([^"]+)"/m)?.[1] || "";
   const upgrades = parseTaggedPairs(text, "upgrade_currencies");
@@ -76,7 +102,27 @@ export function parseSimcSnapshot(text, capturedAt = new Date().toISOString()) {
     catalystCurrencies: parsePairs(text, "catalyst_currencies"),
     upgradeCurrencies: upgrades.currencies,
     upgradeItems: upgrades.items,
+    bonusRollCurrencies: parsePairs(text, "bonus_roll_currencies"),
+    bonusRolls: parseBonusRolls(text),
   };
+}
+
+// Blizzard ships a second bonus-roll currency flagged "[DNT, Unused]" in the
+// addon's own table. It is always exported and always zero, so showing it would
+// add a permanent empty counter next to a real one.
+export const BONUS_ROLL_CURRENCIES = {
+  3418: { name: "Nebulous Voidcore", icon: "inv_1205_voidforge_fluctuatingvoidcores_green" },
+};
+
+// What the character can still spend. Unknown - not zero - when the export
+// predates the addon emitting the line at all, for the same reason the catalyst
+// balance distinguishes the two.
+export function bonusRollBalance(snapshot) {
+  const held = snapshot?.bonusRollCurrencies;
+  if (!held || !Object.keys(held).length) return { id: 3418, quantity: null };
+  const known = Object.keys(BONUS_ROLL_CURRENCIES).map(Number);
+  const id = known.find((currency) => String(currency) in held) ?? known[0];
+  return { id, quantity: Number(held[String(id)] ?? 0) };
 }
 
 // Verified against Blizzard/Wowhead: 3444 Champion Mistcrest, 3445 Hero

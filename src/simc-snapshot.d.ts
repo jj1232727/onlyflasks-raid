@@ -14,6 +14,8 @@ export type SimcSnapshot = {
   vault: SimcItem[];
   catalystCurrencies: Record<string, number>;
   upgradeCurrencies: Record<string, number>;
+  bonusRollCurrencies?: Record<string, number>;
+  bonusRolls?: BonusRoll[];
   upgradeItems: Record<string, number>;
   previousCatalystCurrencies?: Record<string, number>;
   previousCapturedAt?: string;
@@ -45,3 +47,15 @@ export declare function currentCatalystBalance(
 export declare function catalystUnknownReason(
   snapshot: { capturedAt?: string; catalystCurrencies?: Record<string, number> } | null | undefined,
 ): string;
+
+export interface BonusRoll {
+  currency: number;
+  source: number;
+  context: number;
+  keyLevel: number;
+  itemId: number;
+  spec: number;
+}
+export function parseBonusRolls(text: string): BonusRoll[];
+export const BONUS_ROLL_CURRENCIES: Record<string, { name: string; icon: string }>;
+export function bonusRollBalance(snapshot?: SimcSnapshot | null): { id: number; quantity: number | null };
