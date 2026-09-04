@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-03T22:11:22.864Z",
+  "fetchedAt": "2026-09-04T02:32:45.700Z",
   "periodInfo": {
     "current_period": 1079,
     "current_season": {
@@ -926,6 +926,14 @@
           {
             "level": 10,
             "dungeon": 250
+          },
+          {
+            "level": 11,
+            "dungeon": 250
+          },
+          {
+            "level": 11,
+            "dungeon": 586
           }
         ],
         "world_quests_done": 1,
@@ -1026,10 +1034,18 @@
           {
             "level": 10,
             "dungeon": 250
+          },
+          {
+            "level": 12,
+            "dungeon": 584
+          },
+          {
+            "level": 12,
+            "dungeon": 399
           }
         ],
         "world_quests_done": 1,
-        "regular_mythic_dungeons_done": 6,
+        "regular_mythic_dungeons_done": 8,
         "vault_options": {
           "raids": {
             "option_1": 318,
@@ -1045,6 +1061,46 @@
             "option_1": 305,
             "option_2": 305,
             "option_3": 305
+          }
+        }
+      }
+    },
+    {
+      "id": 4910785,
+      "name": "Magicalsauce",
+      "realm": "Stormrage",
+      "data": {
+        "dungeons_done": [
+          {
+            "level": 16,
+            "dungeon": 585
+          },
+          {
+            "level": 17,
+            "dungeon": 586
+          },
+          {
+            "level": 17,
+            "dungeon": 587
+          }
+        ],
+        "world_quests_done": 0,
+        "regular_mythic_dungeons_done": 3,
+        "vault_options": {
+          "raids": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          },
+          "dungeons": {
+            "option_1": 318,
+            "option_2": null,
+            "option_3": null
+          },
+          "world": {
+            "option_1": 272,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
@@ -1256,7 +1312,7 @@
             "dungeon": 587
           }
         ],
-        "world_quests_done": 3,
+        "world_quests_done": 4,
         "regular_mythic_dungeons_done": 4,
         "vault_options": {
           "raids": {
@@ -1567,7 +1623,7 @@
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 5,
+        "regular_mythic_dungeons_done": 6,
         "vault_options": {
           "raids": {
             "option_1": 318,
@@ -1764,9 +1820,18 @@
       "name": "Faredino",
       "realm": "Area 52",
       "data": {
-        "dungeons_done": [],
-        "world_quests_done": 2,
-        "regular_mythic_dungeons_done": 0,
+        "dungeons_done": [
+          {
+            "level": 12,
+            "dungeon": 250
+          },
+          {
+            "level": 11,
+            "dungeon": 586
+          }
+        ],
+        "world_quests_done": 3,
+        "regular_mythic_dungeons_done": 3,
         "vault_options": {
           "raids": {
             "option_1": 318,
@@ -1774,14 +1839,14 @@
             "option_3": 318
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
           "world": {
             "option_1": 305,
             "option_2": 305,
-            "option_3": null
+            "option_3": 272
           }
         }
       }
