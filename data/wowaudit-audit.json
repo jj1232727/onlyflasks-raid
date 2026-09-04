@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-04T20:09:47.617Z",
+  "fetchedAt": "2026-09-04T23:38:25.853Z",
   "periodInfo": {
     "current_period": 1079,
     "current_season": {
@@ -854,6 +854,22 @@
           {
             "level": 10,
             "dungeon": 250
+          },
+          {
+            "level": 6,
+            "dungeon": 250
+          },
+          {
+            "level": 6,
+            "dungeon": 250
+          },
+          {
+            "level": 7,
+            "dungeon": 250
+          },
+          {
+            "level": 10,
+            "dungeon": 587
           }
         ],
         "world_quests_done": 1,
@@ -934,6 +950,26 @@
           {
             "level": 11,
             "dungeon": 586
+          },
+          {
+            "level": 11,
+            "dungeon": 250
+          },
+          {
+            "level": 11,
+            "dungeon": 587
+          },
+          {
+            "level": 10,
+            "dungeon": 587
+          },
+          {
+            "level": 10,
+            "dungeon": 587
+          },
+          {
+            "level": 9,
+            "dungeon": 587
           }
         ],
         "world_quests_done": 1,
@@ -1042,6 +1078,10 @@
           {
             "level": 12,
             "dungeon": 399
+          },
+          {
+            "level": 11,
+            "dungeon": 586
           }
         ],
         "world_quests_done": 4,
@@ -1270,6 +1310,10 @@
           {
             "level": 10,
             "dungeon": 249
+          },
+          {
+            "level": 10,
+            "dungeon": 399
           }
         ],
         "world_quests_done": 0,
@@ -1449,6 +1493,10 @@
           {
             "level": 15,
             "dungeon": 587
+          },
+          {
+            "level": 15,
+            "dungeon": 249
           }
         ],
         "world_quests_done": 1,
@@ -1648,6 +1696,34 @@
           {
             "level": 16,
             "dungeon": 586
+          },
+          {
+            "level": 15,
+            "dungeon": 588
+          },
+          {
+            "level": 17,
+            "dungeon": 586
+          },
+          {
+            "level": 16,
+            "dungeon": 399
+          },
+          {
+            "level": 15,
+            "dungeon": 249
+          },
+          {
+            "level": 14,
+            "dungeon": 585
+          },
+          {
+            "level": 13,
+            "dungeon": 586
+          },
+          {
+            "level": 12,
+            "dungeon": 399
           }
         ],
         "world_quests_done": 0,
@@ -1784,6 +1860,14 @@
           {
             "level": 14,
             "dungeon": 585
+          },
+          {
+            "level": 10,
+            "dungeon": 584
+          },
+          {
+            "level": 10,
+            "dungeon": 249
           }
         ],
         "world_quests_done": 8,
@@ -1868,6 +1952,14 @@
           {
             "level": 11,
             "dungeon": 586
+          },
+          {
+            "level": 11,
+            "dungeon": 584
+          },
+          {
+            "level": 10,
+            "dungeon": 584
           }
         ],
         "world_quests_done": 3,
@@ -1915,6 +2007,14 @@
           },
           {
             "level": 12,
+            "dungeon": 587
+          },
+          {
+            "level": 11,
+            "dungeon": 587
+          },
+          {
+            "level": 10,
             "dungeon": 587
           }
         ],
@@ -1991,6 +2091,14 @@
           },
           {
             "level": 17,
+            "dungeon": 587
+          },
+          {
+            "level": 11,
+            "dungeon": 587
+          },
+          {
+            "level": 10,
             "dungeon": 587
           }
         ],
@@ -2196,9 +2304,14 @@
       "name": "Brïdgess",
       "realm": "Proudmoore",
       "data": {
-        "dungeons_done": [],
-        "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "dungeons_done": [
+          {
+            "level": 10,
+            "dungeon": 249
+          }
+        ],
+        "world_quests_done": 1,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -2206,7 +2319,7 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
