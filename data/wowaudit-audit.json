@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-09T22:10:16.927Z",
+  "fetchedAt": "2026-09-10T02:40:38.011Z",
   "periodInfo": {
     "current_period": 1080,
     "current_season": {
@@ -770,17 +770,22 @@
       "name": "Brigdèss",
       "realm": "Proudmoore",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 13,
+            "dungeon": 586
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 2,
         "vault_options": {
           "raids": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -797,9 +802,18 @@
       "name": "Asethi",
       "realm": "Proudmoore",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 15,
+            "dungeon": 588
+          },
+          {
+            "level": 13,
+            "dungeon": 399
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 1,
+        "regular_mythic_dungeons_done": 4,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -807,7 +821,7 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -924,7 +938,7 @@
             "option_3": null
           },
           "world": {
-            "option_1": null,
+            "option_1": 272,
             "option_2": null,
             "option_3": null
           }
@@ -1224,7 +1238,7 @@
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 2,
+        "regular_mythic_dungeons_done": 3,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1293,10 +1307,14 @@
           {
             "level": 16,
             "dungeon": 587
+          },
+          {
+            "level": 17,
+            "dungeon": 399
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 1,
+        "regular_mythic_dungeons_done": 2,
         "vault_options": {
           "raids": {
             "option_1": null,
