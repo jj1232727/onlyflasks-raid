@@ -397,38 +397,9 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 3.3959,
-                    "encounter_absolute": 6722,
+                    "encounter_percentage": 2.2757,
+                    "encounter_absolute": 4505,
                     "items": [
-                      {
-                        "name": "Font of Venomous Rage",
-                        "id": 270168,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Demonology": {
-                            "score": 1355,
-                            "percentage": 0.6845
-                          }
-                        },
-                        "alternative": {
-                          "item": 270170,
-                          "percentage": 0.7703,
-                          "absolute": 1525.2336,
-                          "item_level": 324
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Demonology",
-                            "timestamp": "2026-09-10T23:35:52.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.6845,
-                            "absolute": 1355.3558,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
                       {
                         "name": "Slumbering Coil Curio",
                         "id": 270909,
@@ -476,36 +447,12 @@
                             "outdated": null
                           }
                         ]
-                      },
-                      {
-                        "name": "Aqirbane Reliquary",
-                        "id": 268265,
-                        "slot": "neck",
-                        "score_by_spec": {
-                          "Demonology": {
-                            "score": 862,
-                            "percentage": 0.4357
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Demonology",
-                            "timestamp": "2026-09-10T23:35:52.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.4357,
-                            "absolute": 862.7547,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 10.5417,
-                "total_absolute": 20865
+                "total_percentage": 9.4215,
+                "total_absolute": 18648
               }
             },
             {
@@ -722,7 +669,16 @@
                             "absolute": 1006.2853,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 305,
+                                "id": 271545
+                              },
+                              "new": {
+                                "item_level": 311,
+                                "id": 271545
+                              }
+                            }
                           }
                         ]
                       }
@@ -796,8 +752,8 @@
                                 "id": 250224
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 273796
+                                "item_level": 334,
+                                "id": 270168
                               }
                             }
                           }
@@ -828,7 +784,16 @@
                             "absolute": 466.6268,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 311,
+                                "id": 271546
+                              },
+                              "new": {
+                                "item_level": 324,
+                                "id": 271546
+                              }
+                            }
                           }
                         ]
                       }
@@ -870,7 +835,16 @@
                             "absolute": 338.2046,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 311,
+                                "id": 271546
+                              },
+                              "new": {
+                                "item_level": 324,
+                                "id": 271546
+                              }
+                            }
                           }
                         ]
                       }
@@ -931,7 +905,16 @@
                             "absolute": 2298.0719,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 311,
+                                "id": 271546
+                              },
+                              "new": {
+                                "item_level": 324,
+                                "id": 271546
+                              }
+                            }
                           }
                         ]
                       }
@@ -1196,8 +1179,8 @@
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 4.1988,
-                    "encounter_absolute": 8946,
+                    "encounter_percentage": 2.4691,
+                    "encounter_absolute": 5260,
                     "items": [
                       {
                         "name": "Venomcured Idol",
@@ -1251,35 +1234,6 @@
                             "upgrade": null,
                             "percentage": 0.9614,
                             "absolute": 2048.8263,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Keeper's Seething Core",
-                        "id": 270165,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Subtlety": {
-                            "score": 3686,
-                            "percentage": 1.7297
-                          }
-                        },
-                        "alternative": {
-                          "item": 270175,
-                          "percentage": 4.5536,
-                          "absolute": 9704.3877,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Subtlety",
-                            "timestamp": "2026-09-10T23:54:56.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.7297,
-                            "absolute": 3686.2804,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -1764,8 +1718,8 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 13.4244,
-                    "encounter_absolute": 28606,
+                    "encounter_percentage": 12.9441,
+                    "encounter_absolute": 27583,
                     "items": [
                       {
                         "name": "Slumbering Coil Curio",
@@ -1859,7 +1813,16 @@
                             "absolute": 9704.3877,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 270168
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 250215
+                              }
+                            }
                           }
                         ]
                       },
@@ -1888,39 +1851,24 @@
                             "absolute": 1538.4716,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Aqirbane Reliquary",
-                        "id": 268265,
-                        "slot": "neck",
-                        "score_by_spec": {
-                          "Subtlety": {
-                            "score": 1023,
-                            "percentage": 0.4803
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Subtlety",
-                            "timestamp": "2026-09-10T23:54:56.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.4803,
-                            "absolute": 1023.6094,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 270168
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 250215
+                              }
+                            }
                           }
                         ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 32.8922,
-                "total_absolute": 70086
+                "total_percentage": 30.6822,
+                "total_absolute": 65377
               }
             },
             {
@@ -2032,7 +1980,16 @@
                             "absolute": 2272.6064,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 270168
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 250215
+                              }
+                            }
                           }
                         ]
                       }
@@ -2255,7 +2212,16 @@
                             "absolute": 2108.0507,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 270168
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 250215
+                              }
+                            }
                           }
                         ]
                       },
@@ -2448,7 +2414,16 @@
                             "absolute": 266.9801,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 270168
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 250215
+                              }
+                            }
                           }
                         ]
                       }
@@ -2974,7 +2949,7 @@
                           "item": 270167,
                           "percentage": 1.3699,
                           "absolute": 2600.9439,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -3063,7 +3038,7 @@
                           "item": 270167,
                           "percentage": 1.3699,
                           "absolute": 2600.9439,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -3178,7 +3153,7 @@
                           "item": 270167,
                           "percentage": 1.3699,
                           "absolute": 2600.9439,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -3267,7 +3242,7 @@
                           "item": 270167,
                           "percentage": 1.3699,
                           "absolute": 2600.9439,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -3278,16 +3253,7 @@
                             "absolute": 1431.0645,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 273796
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 250215
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -3432,7 +3398,7 @@
                           "item": 270167,
                           "percentage": 1.3699,
                           "absolute": 2600.9439,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -3443,16 +3409,7 @@
                             "absolute": 331.1422,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 273796
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 250215
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -3569,7 +3526,7 @@
                           "item": 270167,
                           "percentage": 0.6403,
                           "absolute": 1215.1199,
-                          "item_level": 331
+                          "item_level": 305
                         },
                         "wishes": [
                           {
@@ -5249,8 +5206,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 2.6498,
-                    "encounter_absolute": 4825,
+                    "encounter_percentage": 2.3337,
+                    "encounter_absolute": 4250,
                     "items": [
                       {
                         "name": "Sash of the Forlorn Vessel",
@@ -5299,37 +5256,13 @@
                             "outdated": null
                           }
                         ]
-                      },
-                      {
-                        "name": "Silken Voodoo Drape",
-                        "id": 268253,
-                        "slot": "back",
-                        "score_by_spec": {
-                          "Balance": {
-                            "score": 575,
-                            "percentage": 0.3161
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Balance",
-                            "timestamp": "2026-09-10T23:44:50.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.3161,
-                            "absolute": 575.8672,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
                       }
                     ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 5.3089,
-                    "encounter_absolute": 9669,
+                    "encounter_percentage": 3.6458,
+                    "encounter_absolute": 6640,
                     "items": [
                       {
                         "name": "Aqirbane Reliquary",
@@ -5399,39 +5332,24 @@
                             "absolute": 1354.3266,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Jan'thrazet, the Soul Fang",
-                        "id": 271092,
-                        "slot": "main_hand",
-                        "score_by_spec": {
-                          "Balance": {
-                            "score": 3029,
-                            "percentage": 1.6631
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Balance",
-                            "timestamp": "2026-09-10T23:44:50.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.6631,
-                            "absolute": 3029.6163,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 331,
+                                "id": 271528
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271528
+                              }
+                            }
                           }
                         ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 16.8322,
-                "total_absolute": 30649
+                "total_percentage": 14.853,
+                "total_absolute": 27045
               }
             },
             {
@@ -6973,7 +6891,7 @@
                           "item": 268266,
                           "percentage": 2.2377,
                           "absolute": 7672,
-                          "item_level": 318
+                          "item_level": 292
                         },
                         "wishes": [
                           {
@@ -7009,7 +6927,7 @@
                           "item": 268247,
                           "percentage": 0.3818,
                           "absolute": 1309,
-                          "item_level": 318
+                          "item_level": 292
                         },
                         "wishes": [
                           {
@@ -7924,8 +7842,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 6.3411,
-                    "encounter_absolute": 11667,
+                    "encounter_percentage": 5.9173,
+                    "encounter_absolute": 10887,
                     "items": [
                       {
                         "name": "Grasps of the Eternal Shadow",
@@ -8027,30 +7945,6 @@
                             "upgrade": null,
                             "percentage": 0.4557,
                             "absolute": 838.5927,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Silken Voodoo Drape",
-                        "id": 268253,
-                        "slot": "back",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 780,
-                            "percentage": 0.4238
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-10T23:43:33.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.4238,
-                            "absolute": 780.0147,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -8192,8 +8086,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 23.1367,
-                "total_absolute": 42568
+                "total_percentage": 22.7129,
+                "total_absolute": 41788
               }
             },
             {
@@ -8922,7 +8816,16 @@
                             "absolute": 665.3988,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 311,
+                                "id": 268252
+                              },
+                              "new": {
+                                "item_level": 331,
+                                "id": 240949
+                              }
+                            }
                           }
                         ]
                       },
@@ -9066,7 +8969,16 @@
                             "absolute": 1134.6027,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 311,
+                                "id": 268252
+                              },
+                              "new": {
+                                "item_level": 331,
+                                "id": 240949
+                              }
+                            }
                           }
                         ]
                       },
@@ -9168,33 +9080,9 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 8.7154,
-                    "encounter_absolute": 17304,
+                    "encounter_percentage": 5.5471,
+                    "encounter_absolute": 11014,
                     "items": [
-                      {
-                        "name": "Silken Voodoo Drape",
-                        "id": 268253,
-                        "slot": "back",
-                        "score_by_spec": {
-                          "Arms": {
-                            "score": 646,
-                            "percentage": 0.3258
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arms",
-                            "timestamp": "2026-09-10T23:38:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.3258,
-                            "absolute": 646.9521,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
                       {
                         "name": "Zul'jin's Guillotine Technique",
                         "id": 270173,
@@ -9239,7 +9127,16 @@
                             "absolute": 2102.259,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 311,
+                                "id": 159418
+                              },
+                              "new": {
+                                "item_level": 318,
+                                "id": 159418
+                              }
+                            }
                           }
                         ]
                       },
@@ -9266,37 +9163,13 @@
                             "outdated": null
                           }
                         ]
-                      },
-                      {
-                        "name": "Maze-roa, Warlord's Fury",
-                        "id": 268213,
-                        "slot": "main_hand",
-                        "score_by_spec": {
-                          "Arms": {
-                            "score": 5644,
-                            "percentage": 2.8425
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arms",
-                            "timestamp": "2026-09-10T23:38:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 2.8425,
-                            "absolute": 5644.9158,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
                       }
                     ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 5.1075,
-                    "encounter_absolute": 10141,
+                    "encounter_percentage": 4.6079,
+                    "encounter_absolute": 9149,
                     "items": [
                       {
                         "name": "Voracious Heart of Ula'tek",
@@ -9403,36 +9276,12 @@
                             "outdated": null
                           }
                         ]
-                      },
-                      {
-                        "name": "Aqirbane Reliquary",
-                        "id": 268265,
-                        "slot": "neck",
-                        "score_by_spec": {
-                          "Arms": {
-                            "score": 992,
-                            "percentage": 0.4996
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arms",
-                            "timestamp": "2026-09-10T23:38:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.4996,
-                            "absolute": 992.0729,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 21.2159,
-                "total_absolute": 42120
+                "total_percentage": 17.548,
+                "total_absolute": 34838
               }
             },
             {
@@ -9687,7 +9536,16 @@
                             "absolute": 108.9838,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 311,
+                                "id": 268252
+                              },
+                              "new": {
+                                "item_level": 331,
+                                "id": 240949
+                              }
+                            }
                           }
                         ]
                       }
@@ -9736,7 +9594,16 @@
                             "absolute": 149.6846,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 311,
+                                "id": 272230
+                              },
+                              "new": {
+                                "item_level": 318,
+                                "id": 268253
+                              }
+                            }
                           }
                         ]
                       }
@@ -9808,7 +9675,16 @@
                             "absolute": 846.6683,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 311,
+                                "id": 159418
+                              },
+                              "new": {
+                                "item_level": 318,
+                                "id": 159418
+                              }
+                            }
                           }
                         ]
                       },
@@ -10433,8 +10309,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 8.4704,
-                    "encounter_absolute": 16343,
+                    "encounter_percentage": 6.333600000000001,
+                    "encounter_absolute": 12219,
                     "items": [
                       {
                         "name": "Silken Voodoo Drape",
@@ -10559,56 +10435,13 @@
                             "outdated": null
                           }
                         ]
-                      },
-                      {
-                        "name": "Zul'jin's Guillotine Technique",
-                        "id": 270173,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Beast Mastery": {
-                            "score": 1990,
-                            "percentage": 1.0332
-                          },
-                          "Marksmanship": {
-                            "score": 2134,
-                            "percentage": 1.1036
-                          }
-                        },
-                        "alternative": {
-                          "item": 270175,
-                          "percentage": 6.0518,
-                          "absolute": 11704.8161,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Beast Mastery",
-                            "timestamp": "2026-09-10T23:25:44.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.0332,
-                            "absolute": 1990.7723,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          },
-                          {
-                            "specialization": "Marksmanship",
-                            "timestamp": "2026-09-10T23:44:58.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.1036,
-                            "absolute": 2134.45,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
                       }
                     ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 30.2056,
-                    "encounter_absolute": 58326,
+                    "encounter_percentage": 29.3216,
+                    "encounter_absolute": 56620,
                     "items": [
                       {
                         "name": "Caustic Repose Greatbow",
@@ -10804,50 +10637,12 @@
                             "outdated": null
                           }
                         ]
-                      },
-                      {
-                        "name": "Aqirbane Reliquary",
-                        "id": 268265,
-                        "slot": "neck",
-                        "score_by_spec": {
-                          "Beast Mastery": {
-                            "score": 927,
-                            "percentage": 0.4812
-                          },
-                          "Marksmanship": {
-                            "score": 779,
-                            "percentage": 0.4028
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Beast Mastery",
-                            "timestamp": "2026-09-10T23:25:44.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.4812,
-                            "absolute": 927.1633,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          },
-                          {
-                            "specialization": "Marksmanship",
-                            "timestamp": "2026-09-10T23:44:58.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.4028,
-                            "absolute": 779.0248,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 60.07509999999999,
-                "total_absolute": 115957
+                "total_percentage": 57.0543,
+                "total_absolute": 110127
               }
             },
             {
@@ -11776,7 +11571,16 @@
                             "absolute": 889.1976,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 311,
+                                "id": 273775
+                              },
+                              "new": {
+                                "item_level": 311,
+                                "id": 251200
+                              }
+                            }
                           },
                           {
                             "specialization": "Marksmanship",
@@ -12403,8 +12207,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 8.7105,
-                    "encounter_absolute": 9940,
+                    "encounter_percentage": 7.1255999999999995,
+                    "encounter_absolute": 8132,
                     "items": [
                       {
                         "name": "Aman'muso, Warlord's Vengeance",
@@ -12472,59 +12276,6 @@
                             "upgrade": null,
                             "percentage": 0.5899,
                             "absolute": 673.3494,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Zul'jin's Guillotine Technique",
-                        "id": 270173,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Protection": {
-                            "score": 1391,
-                            "percentage": 1.2192
-                          }
-                        },
-                        "alternative": {
-                          "item": 270175,
-                          "percentage": 2.5319,
-                          "absolute": 2890.1622,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Protection",
-                            "timestamp": "2026-09-10T23:54:00.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.2192,
-                            "absolute": 1391.7511,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Silken Voodoo Drape",
-                        "id": 268253,
-                        "slot": "back",
-                        "score_by_spec": {
-                          "Protection": {
-                            "score": 417,
-                            "percentage": 0.3657
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Protection",
-                            "timestamp": "2026-09-10T23:54:00.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.3657,
-                            "absolute": 417.4826,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -12666,8 +12417,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 27.8811,
-                "total_absolute": 31814
+                "total_percentage": 26.2962,
+                "total_absolute": 30006
               }
             },
             {
@@ -13727,7 +13478,7 @@
                           "item": 270167,
                           "percentage": 0.9123,
                           "absolute": 1942.8912,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -13765,7 +13516,7 @@
                           "item": 268247,
                           "percentage": 0.5886,
                           "absolute": 1253.5471,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -13801,7 +13552,7 @@
                           "item": 270167,
                           "percentage": 0.9123,
                           "absolute": 1942.8912,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -14022,7 +13773,7 @@
                           "item": 270167,
                           "percentage": 0.9123,
                           "absolute": 1942.8912,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -16227,7 +15978,7 @@
                           "item": 268226,
                           "percentage": 0.6629,
                           "absolute": 1125.6657,
-                          "item_level": 331
+                          "item_level": 305
                         },
                         "wishes": [
                           {
@@ -17710,7 +17461,7 @@
                                 "id": 268477
                               },
                               "new": {
-                                "item_level": 331,
+                                "item_level": 334,
                                 "id": 268207
                               }
                             }
@@ -19457,7 +19208,7 @@
                           "item": 268266,
                           "percentage": 0.3954,
                           "absolute": 849.4915,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -19774,7 +19525,7 @@
                           "item": 268247,
                           "percentage": 0.7931,
                           "absolute": 1703.8381,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -21092,7 +20843,16 @@
                             "absolute": 1077.1669,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 311,
+                                "id": 271475
+                              },
+                              "new": {
+                                "item_level": 324,
+                                "id": 271475
+                              }
+                            }
                           }
                         ]
                       }
@@ -21313,7 +21073,16 @@
                             "absolute": 336.6516,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 311,
+                                "id": 271475
+                              },
+                              "new": {
+                                "item_level": 324,
+                                "id": 271475
+                              }
+                            }
                           }
                         ]
                       }
@@ -21321,8 +21090,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 9.0438,
-                    "encounter_absolute": 18257,
+                    "encounter_percentage": 6.3115,
+                    "encounter_absolute": 12741,
                     "items": [
                       {
                         "name": "Silken Voodoo Drape",
@@ -21419,37 +21188,13 @@
                             "outdated": null
                           }
                         ]
-                      },
-                      {
-                        "name": "Maze-roa, Warlord's Fury",
-                        "id": 268213,
-                        "slot": "main_hand",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 5516,
-                            "percentage": 2.7323
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
-                            "upgrade": null,
-                            "percentage": 2.7323,
-                            "absolute": 5516.6002,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
                       }
                     ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 3.8668,
-                    "encounter_absolute": 7806,
+                    "encounter_percentage": 3.4685,
+                    "encounter_absolute": 7002,
                     "items": [
                       {
                         "name": "Chausses of Unbound Rancor",
@@ -21527,36 +21272,12 @@
                             "outdated": null
                           }
                         ]
-                      },
-                      {
-                        "name": "Aqirbane Reliquary",
-                        "id": 268265,
-                        "slot": "neck",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 804,
-                            "percentage": 0.3983
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.3983,
-                            "absolute": 804.2316,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 20.0388,
-                "total_absolute": 40449
+                "total_percentage": 16.9082,
+                "total_absolute": 34129
               }
             },
             {
@@ -22606,8 +22327,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 9.2962,
-                    "encounter_absolute": 17136,
+                    "encounter_percentage": 6.4987,
+                    "encounter_absolute": 11979,
                     "items": [
                       {
                         "name": "Silken Voodoo Drape",
@@ -22704,37 +22425,13 @@
                             "outdated": null
                           }
                         ]
-                      },
-                      {
-                        "name": "Maze-roa, Warlord's Fury",
-                        "id": 268213,
-                        "slot": "main_hand",
-                        "score_by_spec": {
-                          "Retribution": {
-                            "score": 5157,
-                            "percentage": 2.7975
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Retribution",
-                            "timestamp": "2026-09-10T23:59:19.000+00:00",
-                            "upgrade": null,
-                            "percentage": 2.7975,
-                            "absolute": 5157.4685,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
                       }
                     ]
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 6.2841,
-                    "encounter_absolute": 11582,
+                    "encounter_percentage": 5.419,
+                    "encounter_absolute": 9988,
                     "items": [
                       {
                         "name": "Font of Venomous Rage",
@@ -22836,41 +22533,12 @@
                             "outdated": null
                           }
                         ]
-                      },
-                      {
-                        "name": "Voracious Heart of Ula'tek",
-                        "id": 270175,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Retribution": {
-                            "score": 1594,
-                            "percentage": 0.8651
-                          }
-                        },
-                        "alternative": {
-                          "item": 270173,
-                          "percentage": 3.4089,
-                          "absolute": 6284.5849,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Retribution",
-                            "timestamp": "2026-09-10T23:59:19.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.8651,
-                            "absolute": 1594.866,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 22.2578,
-                "total_absolute": 41021
+                "total_percentage": 18.5952,
+                "total_absolute": 34270
               }
             },
             {
@@ -23661,7 +23329,7 @@
                                 "id": 273781
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 324,
                                 "id": 268265
                               }
                             }
@@ -23682,7 +23350,7 @@
                           "item": 268238,
                           "percentage": 0.8851,
                           "absolute": 1572.3951,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -23778,7 +23446,7 @@
                           "item": 270167,
                           "percentage": 0.8532,
                           "absolute": 1515.7208,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -23974,7 +23642,7 @@
                           "item": 270167,
                           "percentage": 0.8532,
                           "absolute": 1515.7208,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -24188,7 +23856,7 @@
                           "item": 270167,
                           "percentage": 0.8532,
                           "absolute": 1515.7208,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -24496,7 +24164,7 @@
                                 "id": 273781
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 324,
                                 "id": 268265
                               }
                             }
@@ -24763,7 +24431,7 @@
                                 "id": 273781
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 324,
                                 "id": 268265
                               }
                             }
@@ -25456,7 +25124,7 @@
                               },
                               "new": {
                                 "item_level": 315,
-                                "id": 251142
+                                "id": 268265
                               }
                             }
                           }
@@ -25655,7 +25323,7 @@
                                 "id": 272271
                               },
                               "new": {
-                                "item_level": 324,
+                                "item_level": 331,
                                 "id": 268203
                               }
                             }
@@ -26055,7 +25723,7 @@
                               },
                               "new": {
                                 "item_level": 315,
-                                "id": 251142
+                                "id": 268265
                               }
                             }
                           },
@@ -26189,7 +25857,7 @@
                                 "id": 272271
                               },
                               "new": {
-                                "item_level": 324,
+                                "item_level": 331,
                                 "id": 268203
                               }
                             }
@@ -26526,7 +26194,7 @@
                                 "id": 272271
                               },
                               "new": {
-                                "item_level": 324,
+                                "item_level": 331,
                                 "id": 268203
                               }
                             }
@@ -26574,7 +26242,7 @@
                               },
                               "new": {
                                 "item_level": 315,
-                                "id": 251142
+                                "id": 268265
                               }
                             }
                           },
@@ -27240,10 +26908,10 @@
                           }
                         },
                         "alternative": {
-                          "item": 268265,
-                          "percentage": 4.5263,
-                          "absolute": 5709.4793,
-                          "item_level": 314
+                          "item": 271638,
+                          "percentage": 1.1051,
+                          "absolute": 1393.9571,
+                          "item_level": 305
                         },
                         "wishes": [
                           {
@@ -27261,7 +26929,7 @@
                               },
                               "new": {
                                 "item_level": 315,
-                                "id": 251142
+                                "id": 268265
                               }
                             }
                           }
@@ -27343,7 +27011,7 @@
                                 "id": 272271
                               },
                               "new": {
-                                "item_level": 324,
+                                "item_level": 331,
                                 "id": 268203
                               }
                             }
@@ -27412,8 +27080,8 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 12.7948,
-                    "encounter_absolute": 16521,
+                    "encounter_percentage": 8.268500000000001,
+                    "encounter_absolute": 10812,
                     "items": [
                       {
                         "name": "Slumbering Coil Curio",
@@ -27450,39 +27118,6 @@
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Aqirbane Reliquary",
-                        "id": 268265,
-                        "slot": "neck",
-                        "score_by_spec": {
-                          "Demonology": {
-                            "score": 5709,
-                            "percentage": 4.5263
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Demonology",
-                            "timestamp": "2026-08-20T23:52:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 4.5263,
-                            "absolute": 5709.4793,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 298,
-                                "id": 268291
-                              },
-                              "new": {
-                                "item_level": 315,
-                                "id": 251142
-                              }
-                            }
                           }
                         ]
                       },
@@ -27545,7 +27180,7 @@
                                 "id": 272271
                               },
                               "new": {
-                                "item_level": 324,
+                                "item_level": 331,
                                 "id": 268203
                               }
                             }
@@ -27584,8 +27219,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 41.1425,
-                "total_absolute": 53980
+                "total_percentage": 36.6162,
+                "total_absolute": 48271
               }
             },
             {
@@ -27943,7 +27578,7 @@
                               },
                               "new": {
                                 "item_level": 315,
-                                "id": 251142
+                                "id": 268265
                               }
                             }
                           }
@@ -28013,7 +27648,7 @@
                               },
                               "new": {
                                 "item_level": 315,
-                                "id": 251142
+                                "id": 268265
                               }
                             }
                           }
@@ -29167,8 +28802,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 9.39,
-                    "encounter_absolute": 17689,
+                    "encounter_percentage": 7.9694,
+                    "encounter_absolute": 15014,
                     "items": [
                       {
                         "name": "Maze-roa, Warlord's Fury",
@@ -29212,59 +28847,6 @@
                             "upgrade": null,
                             "percentage": 1.4913,
                             "absolute": 2809.6192,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Zul'jin's Guillotine Technique",
-                        "id": 270173,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 2047,
-                            "percentage": 1.0869
-                          }
-                        },
-                        "alternative": {
-                          "item": 270175,
-                          "percentage": 5.3322,
-                          "absolute": 10046.2387,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:51:12.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.0869,
-                            "absolute": 2047.7099,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Silken Voodoo Drape",
-                        "id": 268253,
-                        "slot": "back",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 628,
-                            "percentage": 0.3337
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:51:12.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.3337,
-                            "absolute": 628.7015,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -29406,8 +28988,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 33.4501,
-                "total_absolute": 63011
+                "total_percentage": 32.0295,
+                "total_absolute": 60336
               }
             },
             {
@@ -30868,8 +30450,8 @@
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 4.1596,
-                    "encounter_absolute": 3950,
+                    "encounter_percentage": 1.5046,
+                    "encounter_absolute": 1428,
                     "items": [
                       {
                         "name": "Venomforged Idol",
@@ -30935,35 +30517,6 @@
                                 "id": 271473
                               }
                             }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Keeper's Seething Core",
-                        "id": 270165,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Blood": {
-                            "score": 2522,
-                            "percentage": 2.655
-                          }
-                        },
-                        "alternative": {
-                          "item": 270173,
-                          "percentage": 6.5503,
-                          "absolute": 6223.5123,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Blood",
-                            "timestamp": "2026-09-09T23:14:19.000+00:00",
-                            "upgrade": null,
-                            "percentage": 2.655,
-                            "absolute": 2522.5208,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
                           }
                         ]
                       },
@@ -31091,7 +30644,7 @@
                           "item": 268226,
                           "percentage": 0.4979,
                           "absolute": 473.0382,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -31131,7 +30684,16 @@
                             "absolute": 1617.3408,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 250229
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270165
+                              }
+                            }
                           }
                         ]
                       }
@@ -31205,7 +30767,16 @@
                             "absolute": 2342.499,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 250229
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270165
+                              }
+                            }
                           }
                         ]
                       }
@@ -31305,7 +30876,16 @@
                             "absolute": 6223.5123,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 250229
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270165
+                              }
+                            }
                           }
                         ]
                       },
@@ -31446,15 +31026,24 @@
                             "absolute": 5959.8923,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 250229
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270165
+                              }
+                            }
                           }
                         ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 32.5826,
-                "total_absolute": 30945
+                "total_percentage": 29.9276,
+                "total_absolute": 28423
               }
             },
             {
@@ -31579,7 +31168,16 @@
                             "absolute": 1750.1924,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 250229
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270165
+                              }
+                            }
                           }
                         ]
                       }
@@ -31621,7 +31219,16 @@
                             "absolute": 958.6373,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 250229
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270165
+                              }
+                            }
                           }
                         ]
                       }
@@ -31657,7 +31264,16 @@
                             "absolute": 1227.2979,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 250229
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270165
+                              }
+                            }
                           }
                         ]
                       }
@@ -31724,7 +31340,16 @@
                             "absolute": 3454.2991,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 250229
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270165
+                              }
+                            }
                           }
                         ]
                       },
@@ -31812,7 +31437,16 @@
                             "absolute": 3775.8525,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 250229
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270165
+                              }
+                            }
                           }
                         ]
                       },
@@ -31902,7 +31536,16 @@
                             "absolute": 1086.9379,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 250229
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270165
+                              }
+                            }
                           }
                         ]
                       }
@@ -31944,7 +31587,16 @@
                             "absolute": 348.6151,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 250229
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270165
+                              }
+                            }
                           }
                         ]
                       }
@@ -31980,7 +31632,16 @@
                             "absolute": 296.3314,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 250229
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270165
+                              }
+                            }
                           }
                         ]
                       }
@@ -32022,7 +31683,16 @@
                             "absolute": 2264.2912,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 250229
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270165
+                              }
+                            }
                           }
                         ]
                       }
@@ -32053,7 +31723,16 @@
                             "absolute": 2748.7993,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 250229
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270165
+                              }
+                            }
                           }
                         ]
                       },
@@ -32866,8 +32545,8 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0.6072,
-                    "encounter_absolute": 8273,
+                    "encounter_percentage": 0.5861,
+                    "encounter_absolute": 7985,
                     "items": [
                       {
                         "name": "Slumbering Coil Curio",
@@ -32964,41 +32643,12 @@
                             "outdated": null
                           }
                         ]
-                      },
-                      {
-                        "name": "Aqirbane Reliquary",
-                        "id": 268265,
-                        "slot": "neck",
-                        "score_by_spec": {
-                          "Augmentation": {
-                            "score": 288,
-                            "percentage": 0.0211
-                          }
-                        },
-                        "alternative": {
-                          "item": 271638,
-                          "percentage": 0.0416,
-                          "absolute": 567.4524,
-                          "item_level": 318
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Augmentation",
-                            "timestamp": "2026-09-10T23:44:35.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.0211,
-                            "absolute": 288.2062,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 1.9539,
-                "total_absolute": 26618
+                "total_percentage": 1.9328,
+                "total_absolute": 26330
               }
             },
             {
@@ -34403,7 +34053,7 @@
                           "item": 268263,
                           "percentage": 2.3377,
                           "absolute": 3805.8471,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -34590,7 +34240,7 @@
                           "item": 268221,
                           "percentage": 1.9925,
                           "absolute": 3243.9143,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -35699,7 +35349,7 @@
                           "item": 268263,
                           "percentage": 1.172,
                           "absolute": 1907.8834,
-                          "item_level": 331
+                          "item_level": 305
                         },
                         "wishes": [
                           {
@@ -35829,7 +35479,7 @@
                           "item": 268221,
                           "percentage": 0.992,
                           "absolute": 1614.8979,
-                          "item_level": 331
+                          "item_level": 305
                         },
                         "wishes": [
                           {
@@ -38985,10 +38635,10 @@
                           }
                         },
                         "alternative": {
-                          "item": 270173,
-                          "percentage": 3.8704,
-                          "absolute": 4504.6176,
-                          "item_level": 314
+                          "item": 270164,
+                          "percentage": 1.5648,
+                          "absolute": 2455.8715,
+                          "item_level": 311
                         },
                         "wishes": [
                           {
@@ -39442,65 +39092,9 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 12.2132,
-                    "encounter_absolute": 14416,
+                    "encounter_percentage": 5.472700000000001,
+                    "encounter_absolute": 6858,
                     "items": [
-                      {
-                        "name": "Zul'jin's Guillotine Technique",
-                        "id": 270173,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Blood": {
-                            "score": 3054,
-                            "percentage": 3.8704
-                          },
-                          "Frost": {
-                            "score": 4504,
-                            "percentage": 2.8701
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Blood",
-                            "timestamp": "2026-08-19T23:14:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 3.8704,
-                            "absolute": 3054.8872,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 273796
-                              },
-                              "new": {
-                                "item_level": 308,
-                                "id": 270175
-                              }
-                            }
-                          },
-                          {
-                            "specialization": "Frost",
-                            "timestamp": "2026-08-26T23:56:34.000+00:00",
-                            "upgrade": null,
-                            "percentage": 2.8701,
-                            "absolute": 4504.6176,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 311,
-                                "id": 273796
-                              },
-                              "new": {
-                                "item_level": 308,
-                                "id": 270175
-                              }
-                            }
-                          }
-                        ]
-                      },
                       {
                         "name": "Maze-roa, Warlord's Fury",
                         "id": 268213,
@@ -39712,10 +39306,10 @@
                           }
                         },
                         "alternative": {
-                          "item": 270173,
-                          "percentage": 3.8704,
-                          "absolute": 4504.6176,
-                          "item_level": 314
+                          "item": 270164,
+                          "percentage": 1.5648,
+                          "absolute": 2455.8715,
+                          "item_level": 311
                         },
                         "wishes": [
                           {
@@ -39760,10 +39354,10 @@
                           }
                         },
                         "alternative": {
-                          "item": 270173,
-                          "percentage": 3.8704,
-                          "absolute": 4504.6176,
-                          "item_level": 314
+                          "item": 270164,
+                          "percentage": 1.5648,
+                          "absolute": 2455.8715,
+                          "item_level": 311
                         },
                         "wishes": [
                           {
@@ -39909,8 +39503,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 34.7694,
-                "total_absolute": 45183
+                "total_percentage": 28.0289,
+                "total_absolute": 37625
               }
             },
             {
@@ -41226,7 +40820,7 @@
                           "item": 268238,
                           "percentage": 2.6608,
                           "absolute": 4688.0481,
-                          "item_level": 344
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -42814,7 +42408,7 @@
                           "item": 268238,
                           "percentage": 1.9542,
                           "absolute": 3445.8303,
-                          "item_level": 331
+                          "item_level": 305
                         },
                         "wishes": [
                           {
@@ -44154,7 +43748,7 @@
                           "item": 268238,
                           "percentage": 1.4845,
                           "absolute": 2513.9308,
-                          "item_level": 318
+                          "item_level": 292
                         },
                         "wishes": [
                           {
