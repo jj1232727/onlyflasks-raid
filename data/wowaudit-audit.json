@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-10T22:12:02.698Z",
+  "fetchedAt": "2026-09-11T02:33:37.766Z",
   "periodInfo": {
     "current_period": 1080,
     "current_season": {
@@ -1015,7 +1015,7 @@
       "realm": "Sargeras",
       "data": {
         "dungeons_done": [],
-        "world_quests_done": 1,
+        "world_quests_done": 2,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
@@ -1029,8 +1029,8 @@
             "option_3": null
           },
           "world": {
-            "option_1": 272,
-            "option_2": null,
+            "option_1": 305,
+            "option_2": 272,
             "option_3": null
           }
         }
@@ -1470,6 +1470,10 @@
           {
             "level": 18,
             "dungeon": 249
+          },
+          {
+            "level": 17,
+            "dungeon": 587
           }
         ],
         "world_quests_done": 0,
@@ -1482,7 +1486,7 @@
           },
           "dungeons": {
             "option_1": 318,
-            "option_2": null,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
@@ -1506,10 +1510,14 @@
           {
             "level": 10,
             "dungeon": 249
+          },
+          {
+            "level": 14,
+            "dungeon": 588
           }
         ],
         "world_quests_done": 1,
-        "regular_mythic_dungeons_done": 2,
+        "regular_mythic_dungeons_done": 3,
         "vault_options": {
           "raids": {
             "option_1": 334,
@@ -1523,7 +1531,7 @@
           },
           "world": {
             "option_1": 305,
-            "option_2": 272,
+            "option_2": 302,
             "option_3": null
           }
         }
@@ -1798,7 +1806,24 @@
       "name": "Brïdgess",
       "realm": "Proudmoore",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 11,
+            "dungeon": 586
+          },
+          {
+            "level": 11,
+            "dungeon": 586
+          },
+          {
+            "level": 11,
+            "dungeon": 586
+          },
+          {
+            "level": 10,
+            "dungeon": 586
+          }
+        ],
         "world_quests_done": 0,
         "regular_mythic_dungeons_done": 1,
         "vault_options": {
@@ -1808,8 +1833,8 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
