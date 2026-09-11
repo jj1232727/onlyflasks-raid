@@ -23151,25 +23151,25 @@
               "difficulty": "mythic",
               "wishlist": {
                 "updated_at": {
-                  "Elemental": "2026-09-07T23:58:08.000+00:00",
+                  "Elemental": "2026-09-11T08:50:43.000+00:00",
                   "Enhancement": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Elemental": "2026-09-07T23:57:17.000Z",
+                  "Elemental": "2026-09-11T08:49:22.000Z",
                   "Enhancement": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Elemental": "aJwNe5pbpm1Xc8vg9LwrFF",
+                  "Elemental": "7oxwiF9pd8Y7zojAWrHsGc",
                   "Enhancement": null,
                   "Restoration": null
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 3.7841,
-                    "encounter_absolute": 6721,
+                    "encounter_percentage": 4.1535,
+                    "encounter_absolute": 7726,
                     "items": [
                       {
                         "name": "Amani Summoning Shawl",
@@ -23177,23 +23177,18 @@
                         "slot": "back",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1240,
-                            "percentage": 0.6983
+                            "score": 1440,
+                            "percentage": 0.7741
                           }
                         },
-                        "alternative": {
-                          "item": 268253,
-                          "percentage": 1.0565,
-                          "absolute": 1876.9671,
-                          "item_level": 344
-                        },
+                        "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6983,
-                            "absolute": 1240.5081,
+                            "percentage": 0.7741,
+                            "absolute": 1440.1208,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23206,18 +23201,18 @@
                         "slot": "waist",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1475,
-                            "percentage": 0.8307
+                            "score": 2110,
+                            "percentage": 1.1343
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8307,
-                            "absolute": 1475.7506,
+                            "percentage": 1.1343,
+                            "absolute": 2110.3972,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23230,35 +23225,26 @@
                         "slot": "head",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 771,
-                            "percentage": 0.4341
+                            "score": 936,
+                            "percentage": 0.5034
                           }
                         },
                         "alternative": {
                           "item": 270916,
-                          "percentage": 0.6581,
-                          "absolute": 1169.2339,
+                          "percentage": 0.8305,
+                          "absolute": 1545.148,
                           "item_level": 324
                         },
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.4341,
-                            "absolute": 771.1393,
+                            "percentage": 0.5034,
+                            "absolute": 936.6211,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 311,
-                                "id": 271483
-                              },
-                              "new": {
-                                "item_level": 318,
-                                "id": 271483
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -23268,23 +23254,23 @@
                         "slot": "main_hand",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 3235,
-                            "percentage": 1.821
+                            "score": 3240,
+                            "percentage": 1.7417
                           }
                         },
                         "alternative": {
                           "item": 271092,
-                          "percentage": 4.9293,
-                          "absolute": 8757.1286,
+                          "percentage": 4.9873,
+                          "absolute": 9278.7281,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.821,
-                            "absolute": 3235.1701,
+                            "percentage": 1.7417,
+                            "absolute": 3240.4492,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23295,47 +23281,9 @@
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 1.022,
-                    "encounter_absolute": 1815,
+                    "encounter_percentage": 0.6058,
+                    "encounter_absolute": 1127,
                     "items": [
-                      {
-                        "name": "Sentinel's Vitriolic Chain",
-                        "id": 268250,
-                        "slot": "neck",
-                        "score_by_spec": {
-                          "Elemental": {
-                            "score": 688,
-                            "percentage": 0.3873
-                          }
-                        },
-                        "alternative": {
-                          "item": 268265,
-                          "percentage": 1.4702,
-                          "absolute": 2611.8034,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.3873,
-                            "absolute": 688.0335,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 273781
-                              },
-                              "new": {
-                                "item_level": 324,
-                                "id": 268265
-                              }
-                            }
-                          }
-                        ]
-                      },
                       {
                         "name": "Venomcast Idol",
                         "id": 270912,
@@ -23343,22 +23291,22 @@
                         "score_by_spec": {
                           "Elemental": {
                             "score": 1127,
-                            "percentage": 0.6347
+                            "percentage": 0.6058
                           }
                         },
                         "alternative": {
                           "item": 268238,
-                          "percentage": 0.8851,
-                          "absolute": 1572.3951,
+                          "percentage": 1.2157,
+                          "absolute": 2261.7109,
                           "item_level": 318
                         },
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6347,
-                            "absolute": 1127.6364,
+                            "percentage": 0.6058,
+                            "absolute": 1127.0001,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23369,8 +23317,8 @@
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 3.2384,
-                    "encounter_absolute": 5752,
+                    "encounter_percentage": 3.1077,
+                    "encounter_absolute": 5780,
                     "items": [
                       {
                         "name": "Serpentine Mixing Belt",
@@ -23378,23 +23326,23 @@
                         "slot": "waist",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 946,
-                            "percentage": 0.5327
+                            "score": 1034,
+                            "percentage": 0.556
                           }
                         },
                         "alternative": {
                           "item": 268216,
-                          "percentage": 0.8307,
-                          "absolute": 1475.7506,
+                          "percentage": 1.1343,
+                          "absolute": 2110.3972,
                           "item_level": 318
                         },
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.5327,
-                            "absolute": 946.3508,
+                            "percentage": 0.556,
+                            "absolute": 1034.4712,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23407,18 +23355,47 @@
                         "slot": "main_hand",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 4806,
-                            "percentage": 2.7057
+                            "score": 4415,
+                            "percentage": 2.3735
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 2.7057,
-                            "absolute": 4806.8746,
+                            "percentage": 2.3735,
+                            "absolute": 4415.7444,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcast Icon",
+                        "id": 270928,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Elemental": {
+                            "score": 331,
+                            "percentage": 0.1782
+                          }
+                        },
+                        "alternative": {
+                          "item": 271876,
+                          "percentage": 0.6153,
+                          "absolute": 1144.8136,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Elemental",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1782,
+                            "absolute": 331.4934,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23429,8 +23406,8 @@
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 4.2812,
-                    "encounter_absolute": 7604,
+                    "encounter_percentage": 4.0833,
+                    "encounter_absolute": 7594,
                     "items": [
                       {
                         "name": "Gebbo's Bottomless Bag",
@@ -23438,23 +23415,23 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1332,
-                            "percentage": 0.75
+                            "score": 1323,
+                            "percentage": 0.7114
                           }
                         },
                         "alternative": {
                           "item": 270167,
-                          "percentage": 0.8532,
-                          "absolute": 1515.7208,
+                          "percentage": 0.7362,
+                          "absolute": 1369.7302,
                           "item_level": 318
                         },
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.75,
-                            "absolute": 1332.4931,
+                            "percentage": 0.7114,
+                            "absolute": 1323.485,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23467,23 +23444,23 @@
                         "slot": "shoulder",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1003,
-                            "percentage": 0.5648
+                            "score": 1086,
+                            "percentage": 0.5841
                           }
                         },
                         "alternative": {
                           "item": 268231,
-                          "percentage": 1.0997,
-                          "absolute": 1953.6928,
+                          "percentage": 1.0466,
+                          "absolute": 1947.1462,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.5648,
-                            "absolute": 1003.453,
+                            "percentage": 0.5841,
+                            "absolute": 1086.7464,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23496,23 +23473,23 @@
                         "slot": "main_hand",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 3361,
-                            "percentage": 1.8923
+                            "score": 3278,
+                            "percentage": 1.7624
                           }
                         },
                         "alternative": {
                           "item": 271092,
-                          "percentage": 4.9293,
-                          "absolute": 8757.1286,
+                          "percentage": 4.9873,
+                          "absolute": 9278.7281,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.8923,
-                            "absolute": 3361.6884,
+                            "percentage": 1.7624,
+                            "absolute": 3278.8803,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23525,18 +23502,18 @@
                         "slot": "off_hand",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1908,
-                            "percentage": 1.0741
+                            "score": 1907,
+                            "percentage": 1.0254
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.0741,
-                            "absolute": 1908.1749,
+                            "percentage": 1.0254,
+                            "absolute": 1907.7569,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23547,8 +23524,8 @@
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 2.5476,
-                    "encounter_absolute": 4525,
+                    "encounter_percentage": 2.3735,
+                    "encounter_absolute": 4415,
                     "items": [
                       {
                         "name": "Venomcast Relic",
@@ -23556,35 +23533,26 @@
                         "slot": "legs",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 2918,
-                            "percentage": 1.6429
+                            "score": 1888,
+                            "percentage": 1.0149
                           }
                         },
                         "alternative": {
                           "item": 268237,
-                          "percentage": 2.2838,
-                          "absolute": 4057.2878,
+                          "percentage": 1.4902,
+                          "absolute": 2772.4779,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.6429,
-                            "absolute": 2918.7391,
+                            "percentage": 1.0149,
+                            "absolute": 1888.1144,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 268237
-                              },
-                              "new": {
-                                "item_level": 315,
-                                "id": 268237
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -23594,30 +23562,21 @@
                         "slot": "finger",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1607,
-                            "percentage": 0.9047
+                            "score": 2527,
+                            "percentage": 1.3586
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.9047,
-                            "absolute": 1607.1888,
+                            "percentage": 1.3586,
+                            "absolute": 2527.6162,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 318,
-                                "id": 158366
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 252258
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -23625,8 +23584,8 @@
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 1.056,
-                    "encounter_absolute": 1875,
+                    "encounter_percentage": 1.3488,
+                    "encounter_absolute": 2508,
                     "items": [
                       {
                         "name": "Vexhul's Everflowing Gland",
@@ -23634,23 +23593,23 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 706,
-                            "percentage": 0.3979
+                            "score": 672,
+                            "percentage": 0.3615
                           }
                         },
                         "alternative": {
                           "item": 270167,
-                          "percentage": 0.8532,
-                          "absolute": 1515.7208,
+                          "percentage": 0.7362,
+                          "absolute": 1369.7302,
                           "item_level": 318
                         },
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.3979,
-                            "absolute": 706.8093,
+                            "percentage": 0.3615,
+                            "absolute": 672.4999,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23663,30 +23622,50 @@
                         "slot": "head",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1169,
-                            "percentage": 0.6581
+                            "score": 1545,
+                            "percentage": 0.8305
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6581,
-                            "absolute": 1169.2339,
+                            "percentage": 0.8305,
+                            "absolute": 1545.148,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 311,
-                                "id": 271483
-                              },
-                              "new": {
-                                "item_level": 318,
-                                "id": 271483
-                              }
-                            }
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Ophidian Fangmail",
+                        "id": 268223,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Elemental": {
+                            "score": 291,
+                            "percentage": 0.1568
+                          }
+                        },
+                        "alternative": {
+                          "item": 271876,
+                          "percentage": 0.6153,
+                          "absolute": 1144.8136,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Elemental",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1568,
+                            "absolute": 291.7379,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
                           }
                         ]
                       }
@@ -23694,8 +23673,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 4.44,
-                    "encounter_absolute": 7886,
+                    "encounter_percentage": 3.2002,
+                    "encounter_absolute": 5953,
                     "items": [
                       {
                         "name": "Silken Voodoo Drape",
@@ -23703,18 +23682,23 @@
                         "slot": "back",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1876,
-                            "percentage": 1.0565
+                            "score": 1234,
+                            "percentage": 0.6634
                           }
                         },
-                        "alternative": null,
+                        "alternative": {
+                          "item": 268248,
+                          "percentage": 0.7741,
+                          "absolute": 1440.1208,
+                          "item_level": 318
+                        },
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.0565,
-                            "absolute": 1876.9671,
+                            "percentage": 0.6634,
+                            "absolute": 1234.2899,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23727,30 +23711,21 @@
                         "slot": "legs",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 4057,
-                            "percentage": 2.2838
+                            "score": 2772,
+                            "percentage": 1.4902
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 2.2838,
-                            "absolute": 4057.2878,
+                            "percentage": 1.4902,
+                            "absolute": 2772.4779,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 268237
-                              },
-                              "new": {
-                                "item_level": 315,
-                                "id": 268237
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -23760,18 +23735,18 @@
                         "slot": "shoulder",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1953,
-                            "percentage": 1.0997
+                            "score": 1947,
+                            "percentage": 1.0466
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.0997,
-                            "absolute": 1953.6928,
+                            "percentage": 1.0466,
+                            "absolute": 1947.1462,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23782,8 +23757,8 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 7.467999999999999,
-                    "encounter_absolute": 13265,
+                    "encounter_percentage": 7.064,
+                    "encounter_absolute": 13140,
                     "items": [
                       {
                         "name": "Slumbering Coil Curio",
@@ -23791,18 +23766,18 @@
                         "slot": null,
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 3124,
-                            "percentage": 1.759
+                            "score": 1986,
+                            "percentage": 1.0676
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.759,
-                            "absolute": 3124.8987,
+                            "percentage": 1.0676,
+                            "absolute": 1986.2186,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23815,56 +23790,18 @@
                         "slot": "chest",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1083,
-                            "percentage": 0.6097
+                            "score": 1144,
+                            "percentage": 0.6153
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6097,
-                            "absolute": 1083.204,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 318,
-                                "id": 271486
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 271486
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Font of Venomous Rage",
-                        "id": 270168,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Elemental": {
-                            "score": 301,
-                            "percentage": 0.17
-                          }
-                        },
-                        "alternative": {
-                          "item": 270167,
-                          "percentage": 0.8532,
-                          "absolute": 1515.7208,
-                          "item_level": 318
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.17,
-                            "absolute": 301.9809,
+                            "percentage": 0.6153,
+                            "absolute": 1144.8136,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23877,18 +23814,42 @@
                         "slot": "main_hand",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 8757,
-                            "percentage": 4.9293
+                            "score": 9278,
+                            "percentage": 4.9873
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 4.9293,
-                            "absolute": 8757.1286,
+                            "percentage": 4.9873,
+                            "absolute": 9278.7281,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Elemental": {
+                            "score": 732,
+                            "percentage": 0.3938
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Elemental",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.3938,
+                            "absolute": 732.7287,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23898,33 +23859,33 @@
                     ]
                   }
                 ],
-                "total_percentage": 27.8373,
-                "total_absolute": 49443
+                "total_percentage": 25.9368,
+                "total_absolute": 48243
               }
             },
             {
               "difficulty": "heroic",
               "wishlist": {
                 "updated_at": {
-                  "Elemental": "2026-09-07T23:57:43.000+00:00",
+                  "Elemental": "2026-09-11T08:50:29.000+00:00",
                   "Enhancement": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Elemental": "2026-09-07T23:57:17.000Z",
+                  "Elemental": "2026-09-11T08:49:22.000Z",
                   "Enhancement": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Elemental": "aJwNe5pbpm1Xc8vg9LwrFF",
+                  "Elemental": "7oxwiF9pd8Y7zojAWrHsGc",
                   "Enhancement": null,
                   "Restoration": null
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0.5009,
-                    "encounter_absolute": 882,
+                    "encounter_percentage": 0.9892000000000001,
+                    "encounter_absolute": 1839,
                     "items": [
                       {
                         "name": "Cursed Reliquary Cincture",
@@ -23932,18 +23893,18 @@
                         "slot": "waist",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 427,
-                            "percentage": 0.2425
+                            "score": 1085,
+                            "percentage": 0.5835
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:43.000+00:00",
+                            "timestamp": "2026-09-11T08:50:29.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.2425,
-                            "absolute": 427.2395,
+                            "percentage": 0.5835,
+                            "absolute": 1085.0094,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23956,18 +23917,18 @@
                         "slot": "back",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 455,
-                            "percentage": 0.2584
+                            "score": 754,
+                            "percentage": 0.4057
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:43.000+00:00",
+                            "timestamp": "2026-09-11T08:50:29.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.2584,
-                            "absolute": 455.205,
+                            "percentage": 0.4057,
+                            "absolute": 754.4638,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -23996,8 +23957,8 @@
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 1.1764,
-                    "encounter_absolute": 2072,
+                    "encounter_percentage": 1.0947,
+                    "encounter_absolute": 2034,
                     "items": [
                       {
                         "name": "Venomcast Relic",
@@ -24005,30 +23966,21 @@
                         "slot": "legs",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1525,
-                            "percentage": 0.8657
+                            "score": 512,
+                            "percentage": 0.2758
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:43.000+00:00",
+                            "timestamp": "2026-09-11T08:50:29.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8657,
-                            "absolute": 1525.1489,
+                            "percentage": 0.2758,
+                            "absolute": 512.9272,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 268237
-                              },
-                              "new": {
-                                "item_level": 315,
-                                "id": 268237
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -24038,30 +23990,21 @@
                         "slot": "finger",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 547,
-                            "percentage": 0.3107
+                            "score": 1522,
+                            "percentage": 0.8189
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:43.000+00:00",
+                            "timestamp": "2026-09-11T08:50:29.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.3107,
-                            "absolute": 547.4066,
+                            "percentage": 0.8189,
+                            "absolute": 1522.8819,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 318,
-                                "id": 158366
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 252258
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -24069,38 +24012,27 @@
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "The Coiled Altar",
-                    "encounter_percentage": 0.2318,
-                    "encounter_absolute": 408,
+                    "encounter_percentage": 0.0498,
+                    "encounter_absolute": 92,
                     "items": [
                       {
-                        "name": "Silken Voodoo Drape",
-                        "id": 268253,
-                        "slot": "back",
+                        "name": "Venomcast Effigy",
+                        "id": 270916,
+                        "slot": "head",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 408,
-                            "percentage": 0.2318
+                            "score": 92,
+                            "percentage": 0.0498
                           }
                         },
-                        "alternative": {
-                          "item": 268248,
-                          "percentage": 0.2584,
-                          "absolute": 455.205,
-                          "item_level": 305
-                        },
+                        "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:43.000+00:00",
+                            "timestamp": "2026-09-11T08:50:29.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.2318,
-                            "absolute": 408.3441,
+                            "percentage": 0.0498,
+                            "absolute": 92.6263,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -24110,9 +24042,15 @@
                     ]
                   },
                   {
+                    "name": "The Coiled Altar",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
                     "name": "Ula'tek",
-                    "encounter_percentage": 2.586,
-                    "encounter_absolute": 4554,
+                    "encounter_percentage": 1.4983,
+                    "encounter_absolute": 2786,
                     "items": [
                       {
                         "name": "Slumbering Coil Curio",
@@ -24120,54 +24058,21 @@
                         "slot": null,
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1542,
-                            "percentage": 0.8759
+                            "score": 382,
+                            "percentage": 0.2055
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:43.000+00:00",
+                            "timestamp": "2026-09-11T08:50:29.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8759,
-                            "absolute": 1542.9735,
+                            "percentage": 0.2055,
+                            "absolute": 382.0644,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Aqirbane Reliquary",
-                        "id": 268265,
-                        "slot": "neck",
-                        "score_by_spec": {
-                          "Elemental": {
-                            "score": 1029,
-                            "percentage": 0.5844
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:43.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5844,
-                            "absolute": 1029.5936,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 273781
-                              },
-                              "new": {
-                                "item_level": 324,
-                                "id": 268265
-                              }
-                            }
                           }
                         ]
                       },
@@ -24177,18 +24082,18 @@
                         "slot": "main_hand",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1983,
-                            "percentage": 1.1257
+                            "score": 2404,
+                            "percentage": 1.2928
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:43.000+00:00",
+                            "timestamp": "2026-09-11T08:50:29.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.1257,
-                            "absolute": 1983.0344,
+                            "percentage": 1.2928,
+                            "absolute": 2404.0748,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -24198,33 +24103,33 @@
                     ]
                   }
                 ],
-                "total_percentage": 4.4951,
-                "total_absolute": 7916
+                "total_percentage": 3.632,
+                "total_absolute": 6751
               }
             },
             {
               "difficulty": "normal",
               "wishlist": {
                 "updated_at": {
-                  "Elemental": "2026-09-07T23:57:20.000+00:00",
+                  "Elemental": "2026-09-11T08:50:14.000+00:00",
                   "Enhancement": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Elemental": "2026-09-07T23:57:17.000Z",
+                  "Elemental": "2026-09-11T08:49:22.000Z",
                   "Enhancement": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Elemental": "aJwNe5pbpm1Xc8vg9LwrFF",
+                  "Elemental": "7oxwiF9pd8Y7zojAWrHsGc",
                   "Enhancement": null,
                   "Restoration": null
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0.2814,
-                    "encounter_absolute": 481,
+                    "encounter_percentage": 0.3973,
+                    "encounter_absolute": 727,
                     "items": [
                       {
                         "name": "Amani Summoning Shawl",
@@ -24232,23 +24137,18 @@
                         "slot": "back",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 231,
-                            "percentage": 0.1352
+                            "score": 223,
+                            "percentage": 0.1219
                           }
                         },
-                        "alternative": {
-                          "item": 268253,
-                          "percentage": 0.1551,
-                          "absolute": 265.7877,
-                          "item_level": 301
-                        },
+                        "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:20.000+00:00",
+                            "timestamp": "2026-09-11T08:50:14.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.1352,
-                            "absolute": 231.7028,
+                            "percentage": 0.1219,
+                            "absolute": 223.2014,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -24261,18 +24161,18 @@
                         "slot": "waist",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 250,
-                            "percentage": 0.1462
+                            "score": 504,
+                            "percentage": 0.2754
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:20.000+00:00",
+                            "timestamp": "2026-09-11T08:50:14.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.1462,
-                            "absolute": 250.4727,
+                            "percentage": 0.2754,
+                            "absolute": 504.2646,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -24301,39 +24201,30 @@
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0.1968,
-                    "encounter_absolute": 337,
+                    "encounter_percentage": 0.2411,
+                    "encounter_absolute": 441,
                     "items": [
                       {
-                        "name": "Venomcast Relic",
-                        "id": 270920,
-                        "slot": "legs",
+                        "name": "Apex Brute's Claw Ring",
+                        "id": 268252,
+                        "slot": "finger",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 337,
-                            "percentage": 0.1968
+                            "score": 441,
+                            "percentage": 0.2411
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:20.000+00:00",
+                            "timestamp": "2026-09-11T08:50:14.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.1968,
-                            "absolute": 337.1529,
+                            "percentage": 0.2411,
+                            "absolute": 441.3792,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 268237
-                              },
-                              "new": {
-                                "item_level": 315,
-                                "id": 268237
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -24347,102 +24238,19 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0.1551,
-                    "encounter_absolute": 265,
-                    "items": [
-                      {
-                        "name": "Silken Voodoo Drape",
-                        "id": 268253,
-                        "slot": "back",
-                        "score_by_spec": {
-                          "Elemental": {
-                            "score": 265,
-                            "percentage": 0.1551
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.1551,
-                            "absolute": 265.7877,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0.2329,
-                    "encounter_absolute": 398,
-                    "items": [
-                      {
-                        "name": "Slumbering Coil Curio",
-                        "id": 270909,
-                        "slot": null,
-                        "score_by_spec": {
-                          "Elemental": {
-                            "score": 215,
-                            "percentage": 0.1257
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.1257,
-                            "absolute": 215.342,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Aqirbane Reliquary",
-                        "id": 268265,
-                        "slot": "neck",
-                        "score_by_spec": {
-                          "Elemental": {
-                            "score": 183,
-                            "percentage": 0.1072
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.1072,
-                            "absolute": 183.7243,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 273781
-                              },
-                              "new": {
-                                "item_level": 324,
-                                "id": 268265
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   }
                 ],
-                "total_percentage": 0.8662,
-                "total_absolute": 1481
+                "total_percentage": 0.6384,
+                "total_absolute": 1168
               }
             }
           ]
@@ -24455,25 +24263,25 @@
               "difficulty": "mythic",
               "wishlist": {
                 "updated_at": {
-                  "Elemental": "2026-09-07T23:58:08.000+00:00",
+                  "Elemental": "2026-09-11T08:50:43.000+00:00",
                   "Enhancement": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Elemental": "2026-09-07T23:57:17.000Z",
+                  "Elemental": "2026-09-11T08:49:22.000Z",
                   "Enhancement": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Elemental": "aJwNe5pbpm1Xc8vg9LwrFF",
+                  "Elemental": "7oxwiF9pd8Y7zojAWrHsGc",
                   "Enhancement": null,
                   "Restoration": null
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 3.4017,
-                    "encounter_absolute": 6041,
+                    "encounter_percentage": 3.5486,
+                    "encounter_absolute": 6600,
                     "items": [
                       {
                         "name": "Wavecaller's Seastone",
@@ -24481,18 +24289,18 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1515,
-                            "percentage": 0.8532
+                            "score": 1369,
+                            "percentage": 0.7362
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8532,
-                            "absolute": 1515.7208,
+                            "percentage": 0.7362,
+                            "absolute": 1369.7302,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -24505,56 +24313,23 @@
                         "slot": "finger",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1420,
-                            "percentage": 0.7996
+                            "score": 1938,
+                            "percentage": 1.0417
                           }
                         },
                         "alternative": {
                           "item": 268252,
-                          "percentage": 0.9047,
-                          "absolute": 1607.1888,
+                          "percentage": 1.3586,
+                          "absolute": 2527.6162,
                           "item_level": 324
                         },
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.7996,
-                            "absolute": 1420.4477,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 315,
-                                "id": 252258
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 252258
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Rising Tide Wristguards",
-                        "id": 268217,
-                        "slot": "wrist",
-                        "score_by_spec": {
-                          "Elemental": {
-                            "score": 103,
-                            "percentage": 0.0581
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.0581,
-                            "absolute": 103.1996,
+                            "percentage": 1.0417,
+                            "absolute": 1938.0013,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -24567,18 +24342,18 @@
                         "slot": "hands",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1572,
-                            "percentage": 0.8851
+                            "score": 2261,
+                            "percentage": 1.2157
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8851,
-                            "absolute": 1572.3951,
+                            "percentage": 1.2157,
+                            "absolute": 2261.7109,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -24591,23 +24366,23 @@
                         "slot": "off_hand",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 1431,
-                            "percentage": 0.8057
+                            "score": 1032,
+                            "percentage": 0.555
                           }
                         },
                         "alternative": {
                           "item": 268196,
-                          "percentage": 1.0741,
-                          "absolute": 1908.1749,
+                          "percentage": 1.0254,
+                          "absolute": 1907.7569,
                           "item_level": 324
                         },
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:58:08.000+00:00",
+                            "timestamp": "2026-09-11T08:50:43.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8057,
-                            "absolute": 1431.4159,
+                            "percentage": 0.555,
+                            "absolute": 1032.5427,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -24617,33 +24392,33 @@
                     ]
                   }
                 ],
-                "total_percentage": 3.4017,
-                "total_absolute": 6041
+                "total_percentage": 3.5486,
+                "total_absolute": 6600
               }
             },
             {
               "difficulty": "heroic",
               "wishlist": {
                 "updated_at": {
-                  "Elemental": "2026-09-07T23:57:43.000+00:00",
+                  "Elemental": "2026-09-11T08:50:29.000+00:00",
                   "Enhancement": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Elemental": "2026-09-07T23:57:17.000Z",
+                  "Elemental": "2026-09-11T08:49:22.000Z",
                   "Enhancement": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Elemental": "aJwNe5pbpm1Xc8vg9LwrFF",
+                  "Elemental": "7oxwiF9pd8Y7zojAWrHsGc",
                   "Enhancement": null,
                   "Restoration": null
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0.5309999999999999,
-                    "encounter_absolute": 935,
+                    "encounter_percentage": 1.2341,
+                    "encounter_absolute": 2293,
                     "items": [
                       {
                         "name": "Grips of Swirling Fury",
@@ -24651,18 +24426,18 @@
                         "slot": "hands",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 518,
-                            "percentage": 0.2941
+                            "score": 1158,
+                            "percentage": 0.6231
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:43.000+00:00",
+                            "timestamp": "2026-09-11T08:50:29.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.2941,
-                            "absolute": 518.1176,
+                            "percentage": 0.6231,
+                            "absolute": 1158.7884,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -24675,87 +24450,47 @@
                         "slot": "finger",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 417,
-                            "percentage": 0.2369
+                            "score": 1026,
+                            "percentage": 0.5519
                           }
                         },
                         "alternative": {
                           "item": 268252,
-                          "percentage": 0.3107,
-                          "absolute": 547.4066,
+                          "percentage": 0.8189,
+                          "absolute": 1522.8819,
                           "item_level": 311
                         },
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:43.000+00:00",
+                            "timestamp": "2026-09-11T08:50:29.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.2369,
-                            "absolute": 417.3635,
+                            "percentage": 0.5519,
+                            "absolute": 1026.3038,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 315,
-                                "id": 252258
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 252258
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
-                      }
-                    ]
-                  }
-                ],
-                "total_percentage": 0.5309999999999999,
-                "total_absolute": 935
-              }
-            },
-            {
-              "difficulty": "normal",
-              "wishlist": {
-                "updated_at": {
-                  "Elemental": "2026-09-07T23:57:20.000+00:00",
-                  "Enhancement": null,
-                  "Restoration": null
-                },
-                "report_uploaded_at": {
-                  "Elemental": "2026-09-07T23:57:17.000Z",
-                  "Enhancement": null,
-                  "Restoration": null
-                },
-                "report_id": {
-                  "Elemental": "aJwNe5pbpm1Xc8vg9LwrFF",
-                  "Enhancement": null,
-                  "Restoration": null
-                },
-                "encounters": [
-                  {
-                    "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0.187,
-                    "encounter_absolute": 320,
-                    "items": [
+                      },
                       {
-                        "name": "Grips of Swirling Fury",
-                        "id": 268238,
-                        "slot": "hands",
+                        "name": "Wavecaller's Seastone",
+                        "id": 270167,
+                        "slot": "trinket",
                         "score_by_spec": {
                           "Elemental": {
-                            "score": 320,
-                            "percentage": 0.187
+                            "score": 109,
+                            "percentage": 0.0591
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Elemental",
-                            "timestamp": "2026-09-07T23:57:20.000+00:00",
+                            "timestamp": "2026-09-11T08:50:29.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.187,
-                            "absolute": 320.4565,
+                            "percentage": 0.0591,
+                            "absolute": 109.8424,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -24765,8 +24500,63 @@
                     ]
                   }
                 ],
-                "total_percentage": 0.187,
-                "total_absolute": 320
+                "total_percentage": 1.2341,
+                "total_absolute": 2293
+              }
+            },
+            {
+              "difficulty": "normal",
+              "wishlist": {
+                "updated_at": {
+                  "Elemental": "2026-09-11T08:50:14.000+00:00",
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_uploaded_at": {
+                  "Elemental": "2026-09-11T08:49:22.000Z",
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_id": {
+                  "Elemental": "7oxwiF9pd8Y7zojAWrHsGc",
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "encounters": [
+                  {
+                    "name": "Nymrissa Wavecaller",
+                    "encounter_percentage": 0.3251,
+                    "encounter_absolute": 595,
+                    "items": [
+                      {
+                        "name": "Grips of Swirling Fury",
+                        "id": 268238,
+                        "slot": "hands",
+                        "score_by_spec": {
+                          "Elemental": {
+                            "score": 595,
+                            "percentage": 0.3251
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Elemental",
+                            "timestamp": "2026-09-11T08:50:14.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.3251,
+                            "absolute": 595.1605,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "total_percentage": 0.3251,
+                "total_absolute": 595
               }
             }
           ]
