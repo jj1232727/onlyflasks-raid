@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-12T16:41:14.258Z",
+  "fetchedAt": "2026-09-12T20:03:04.146Z",
   "periodInfo": {
     "current_period": 1080,
     "current_season": {
@@ -1082,6 +1082,10 @@
           {
             "level": 12,
             "dungeon": 587
+          },
+          {
+            "level": 16,
+            "dungeon": 584
           }
         ],
         "world_quests_done": 0,
@@ -1670,9 +1674,14 @@
       "name": "Tamagotchi",
       "realm": "Mal'Ganis",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 16,
+            "dungeon": 584
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": 334,
@@ -1680,7 +1689,7 @@
             "option_3": 318
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
