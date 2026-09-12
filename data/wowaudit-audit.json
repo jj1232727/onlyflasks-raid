@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-12T02:42:22.054Z",
+  "fetchedAt": "2026-09-12T08:18:11.157Z",
   "periodInfo": {
     "current_period": 1080,
     "current_season": {
@@ -1111,7 +1111,7 @@
       "realm": "Zul'jin",
       "data": {
         "dungeons_done": [],
-        "world_quests_done": 0,
+        "world_quests_done": 1,
         "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
@@ -1411,6 +1411,18 @@
           {
             "level": 18,
             "dungeon": 250
+          },
+          {
+            "level": 17,
+            "dungeon": 584
+          },
+          {
+            "level": 17,
+            "dungeon": 588
+          },
+          {
+            "level": 17,
+            "dungeon": 584
           }
         ],
         "world_quests_done": 0,
@@ -1467,10 +1479,14 @@
           {
             "level": 18,
             "dungeon": 250
+          },
+          {
+            "level": 17,
+            "dungeon": 584
           }
         ],
-        "world_quests_done": 3,
-        "regular_mythic_dungeons_done": 6,
+        "world_quests_done": 6,
+        "regular_mythic_dungeons_done": 7,
         "vault_options": {
           "raids": {
             "option_1": 334,
@@ -1480,7 +1496,7 @@
           "dungeons": {
             "option_1": 318,
             "option_2": 318,
-            "option_3": null
+            "option_3": 318
           },
           "world": {
             "option_1": 305,
@@ -1801,7 +1817,12 @@
       "name": "Mushyxd",
       "realm": "Illidan",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 17,
+            "dungeon": 584
+          }
+        ],
         "world_quests_done": 1,
         "regular_mythic_dungeons_done": 2,
         "vault_options": {
@@ -1811,7 +1832,7 @@
             "option_3": 318
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
