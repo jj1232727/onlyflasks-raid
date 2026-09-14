@@ -20705,23 +20705,23 @@
                 "updated_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-10T23:43:10.000+00:00"
+                  "Unholy": "2026-09-14T19:25:28.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-10T23:40:06.000Z"
+                  "Unholy": "2026-09-14T19:23:23.000Z"
                 },
                 "report_id": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "5PUsq3Ftcg19dqCiG8qK7s"
+                  "Unholy": "wiGj5jLpebrpgtF3FKVvZb"
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0.4455,
-                    "encounter_absolute": 899,
+                    "encounter_percentage": 0.3539,
+                    "encounter_absolute": 696,
                     "items": [
                       {
                         "name": "Amani Summoning Shawl",
@@ -20729,52 +20729,23 @@
                         "slot": "back",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 325,
-                            "percentage": 0.161
+                            "score": 696,
+                            "percentage": 0.3539
                           }
                         },
                         "alternative": {
                           "item": 268253,
-                          "percentage": 1.1238,
-                          "absolute": 2269.0119,
+                          "percentage": 1.0796,
+                          "absolute": 2123.6956,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.161,
-                            "absolute": 325.0744,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Skullguard of the Risen Sacrifice",
-                        "id": 268229,
-                        "slot": "head",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 574,
-                            "percentage": 0.2845
-                          }
-                        },
-                        "alternative": {
-                          "item": 270917,
-                          "percentage": 0.4715,
-                          "absolute": 951.9435,
-                          "item_level": 324
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.2845,
-                            "absolute": 574.4593,
+                            "percentage": 0.3539,
+                            "absolute": 696.0944,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20785,8 +20756,8 @@
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 1.8061,
-                    "encounter_absolute": 3646,
+                    "encounter_percentage": 0.6912,
+                    "encounter_absolute": 1359,
                     "items": [
                       {
                         "name": "Keeper's Seething Core",
@@ -20794,59 +20765,26 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 2569,
-                            "percentage": 1.2726
+                            "score": 1359,
+                            "percentage": 0.6912
                           }
                         },
                         "alternative": {
                           "item": 270173,
-                          "percentage": 3.3942,
-                          "absolute": 6852.9558,
+                          "percentage": 4.0909,
+                          "absolute": 8047.1299,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.2726,
-                            "absolute": 2569.477,
+                            "percentage": 0.6912,
+                            "absolute": 1359.6216,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Venomforged Idol",
-                        "id": 270913,
-                        "slot": "hands",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 1077,
-                            "percentage": 0.5335
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5335,
-                            "absolute": 1077.1669,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 311,
-                                "id": 271475
-                              },
-                              "new": {
-                                "item_level": 324,
-                                "id": 271475
-                              }
-                            }
                           }
                         ]
                       }
@@ -20854,8 +20792,8 @@
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 2.2896,
-                    "encounter_absolute": 4621,
+                    "encounter_percentage": 1.7568,
+                    "encounter_absolute": 3455,
                     "items": [
                       {
                         "name": "Vile Alchemist's Band",
@@ -20863,18 +20801,18 @@
                         "slot": "finger",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 2957,
-                            "percentage": 1.465
+                            "score": 1714,
+                            "percentage": 0.8716
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.465,
-                            "absolute": 2957.9516,
+                            "percentage": 0.8716,
+                            "absolute": 1714.544,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20887,23 +20825,18 @@
                         "slot": "chest",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1664,
-                            "percentage": 0.8246
+                            "score": 1741,
+                            "percentage": 0.8852
                           }
                         },
-                        "alternative": {
-                          "item": 268222,
-                          "percentage": 1.1653,
-                          "absolute": 2352.7416,
-                          "item_level": 344
-                        },
+                        "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8246,
-                            "absolute": 1664.8878,
+                            "percentage": 0.8852,
+                            "absolute": 1741.2463,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20914,8 +20847,8 @@
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0.9894,
-                    "encounter_absolute": 1997,
+                    "encounter_percentage": 0.9367,
+                    "encounter_absolute": 1841,
                     "items": [
                       {
                         "name": "Gebbo's Bottomless Bag",
@@ -20923,23 +20856,52 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1997,
-                            "percentage": 0.9894
+                            "score": 1759,
+                            "percentage": 0.8946
                           }
                         },
                         "alternative": {
                           "item": 270173,
-                          "percentage": 3.3942,
-                          "absolute": 6852.9558,
+                          "percentage": 4.0909,
+                          "absolute": 8047.1299,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.9894,
-                            "absolute": 1997.5792,
+                            "percentage": 0.8946,
+                            "absolute": 1759.6976,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomforged Remnant",
+                        "id": 270925,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Unholy": {
+                            "score": 82,
+                            "percentage": 0.0421
+                          }
+                        },
+                        "alternative": {
+                          "item": 268226,
+                          "percentage": 0.513,
+                          "absolute": 1009.19,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Unholy",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.0421,
+                            "absolute": 82.8286,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20950,8 +20912,8 @@
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0.9594,
-                    "encounter_absolute": 1936,
+                    "encounter_percentage": 1.2797,
+                    "encounter_absolute": 2517,
                     "items": [
                       {
                         "name": "Sszorak's Ferocity",
@@ -20959,23 +20921,23 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1111,
-                            "percentage": 0.5505
+                            "score": 2090,
+                            "percentage": 1.0626
                           }
                         },
                         "alternative": {
                           "item": 270173,
-                          "percentage": 3.3942,
-                          "absolute": 6852.9558,
+                          "percentage": 4.0909,
+                          "absolute": 8047.1299,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.5505,
-                            "absolute": 1111.4934,
+                            "percentage": 1.0626,
+                            "absolute": 2090.1469,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20988,23 +20950,23 @@
                         "slot": "finger",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 825,
-                            "percentage": 0.4089
+                            "score": 427,
+                            "percentage": 0.2171
                           }
                         },
                         "alternative": {
                           "item": 268249,
-                          "percentage": 1.465,
-                          "absolute": 2957.9516,
+                          "percentage": 0.8716,
+                          "absolute": 1714.544,
                           "item_level": 321
                         },
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.4089,
-                            "absolute": 825.5469,
+                            "percentage": 0.2171,
+                            "absolute": 427.0555,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21015,8 +20977,8 @@
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0.6382,
-                    "encounter_absolute": 1287,
+                    "encounter_percentage": 0.5723,
+                    "encounter_absolute": 1125,
                     "items": [
                       {
                         "name": "Venomforged Effigy",
@@ -21024,59 +20986,21 @@
                         "slot": "head",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 951,
-                            "percentage": 0.4715
+                            "score": 1125,
+                            "percentage": 0.5723
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.4715,
-                            "absolute": 951.9435,
+                            "percentage": 0.5723,
+                            "absolute": 1125.7444,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Scaleplate Strangulators",
-                        "id": 268220,
-                        "slot": "hands",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 336,
-                            "percentage": 0.1667
-                          }
-                        },
-                        "alternative": {
-                          "item": 270913,
-                          "percentage": 0.5335,
-                          "absolute": 1077.1669,
-                          "item_level": 321
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.1667,
-                            "absolute": 336.6516,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 311,
-                                "id": 271475
-                              },
-                              "new": {
-                                "item_level": 324,
-                                "id": 271475
-                              }
-                            }
                           }
                         ]
                       }
@@ -21084,8 +21008,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 6.3115,
-                    "encounter_absolute": 12741,
+                    "encounter_percentage": 9.2934,
+                    "encounter_absolute": 18279,
                     "items": [
                       {
                         "name": "Silken Voodoo Drape",
@@ -21093,18 +21017,18 @@
                         "slot": "back",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 2269,
-                            "percentage": 1.1238
+                            "score": 2123,
+                            "percentage": 1.0796
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.1238,
-                            "absolute": 2269.0119,
+                            "percentage": 1.0796,
+                            "absolute": 2123.6956,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21117,18 +21041,18 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 6852,
-                            "percentage": 3.3942
+                            "score": 8047,
+                            "percentage": 4.0909
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 3.3942,
-                            "absolute": 6852.9558,
+                            "percentage": 4.0909,
+                            "absolute": 8047.1299,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21141,18 +21065,18 @@
                         "slot": "waist",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1268,
-                            "percentage": 0.6282
+                            "score": 1290,
+                            "percentage": 0.6559
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6282,
-                            "absolute": 1268.3462,
+                            "percentage": 0.6559,
+                            "absolute": 1290.2311,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21165,18 +21089,47 @@
                         "slot": "chest",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 2352,
-                            "percentage": 1.1653
+                            "score": 1174,
+                            "percentage": 0.5969
+                          }
+                        },
+                        "alternative": {
+                          "item": 270929,
+                          "percentage": 0.8852,
+                          "absolute": 1741.2463,
+                          "item_level": 321
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Unholy",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5969,
+                            "absolute": 1174.2196,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Maze-roa, Warlord's Fury",
+                        "id": 268213,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Unholy": {
+                            "score": 5645,
+                            "percentage": 2.8701
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.1653,
-                            "absolute": 2352.7416,
+                            "percentage": 2.8701,
+                            "absolute": 5645.702,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21187,8 +21140,8 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 3.4685,
-                    "encounter_absolute": 7002,
+                    "encounter_percentage": 4.173,
+                    "encounter_absolute": 8206,
                     "items": [
                       {
                         "name": "Chausses of Unbound Rancor",
@@ -21196,18 +21149,18 @@
                         "slot": "legs",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1286,
-                            "percentage": 0.6372
+                            "score": 1335,
+                            "percentage": 0.6789
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6372,
-                            "absolute": 1286.5774,
+                            "percentage": 0.6789,
+                            "absolute": 1335.488,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21220,18 +21173,18 @@
                         "slot": null,
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1597,
-                            "percentage": 0.7911
+                            "score": 1807,
+                            "percentage": 0.919
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.7911,
-                            "absolute": 1597.2924,
+                            "percentage": 0.919,
+                            "absolute": 1807.7718,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21244,23 +21197,47 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 4119,
-                            "percentage": 2.0402
+                            "score": 4124,
+                            "percentage": 2.0968
                           }
                         },
                         "alternative": {
                           "item": 270173,
-                          "percentage": 3.3942,
-                          "absolute": 6852.9558,
+                          "percentage": 4.0909,
+                          "absolute": 8047.1299,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 2.0402,
-                            "absolute": 4119.2127,
+                            "percentage": 2.0968,
+                            "absolute": 4124.5681,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Unholy": {
+                            "score": 940,
+                            "percentage": 0.4783
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Unholy",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.4783,
+                            "absolute": 940.8634,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21270,8 +21247,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 16.9082,
-                "total_absolute": 34129
+                "total_percentage": 19.057,
+                "total_absolute": 37478
               }
             },
             {
@@ -21280,17 +21257,17 @@
                 "updated_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-10T23:41:23.000+00:00"
+                  "Unholy": "2026-09-14T19:24:04.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-10T23:40:06.000Z"
+                  "Unholy": "2026-09-14T19:23:23.000Z"
                 },
                 "report_id": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "5PUsq3Ftcg19dqCiG8qK7s"
+                  "Unholy": "wiGj5jLpebrpgtF3FKVvZb"
                 },
                 "encounters": [
                   {
@@ -21301,44 +21278,14 @@
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0.5987,
-                    "encounter_absolute": 1208,
-                    "items": [
-                      {
-                        "name": "Keeper's Seething Core",
-                        "id": 270165,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 1208,
-                            "percentage": 0.5987
-                          }
-                        },
-                        "alternative": {
-                          "item": 270173,
-                          "percentage": 1.2154,
-                          "absolute": 2452.419,
-                          "item_level": 314
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:41:23.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5987,
-                            "absolute": 1208.0026,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 1.0649,
-                    "encounter_absolute": 2147,
+                    "encounter_percentage": 0.4617,
+                    "encounter_absolute": 902,
                     "items": [
                       {
                         "name": "Vile Alchemist's Band",
@@ -21346,18 +21293,18 @@
                         "slot": "finger",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 2023,
-                            "percentage": 1.0031
+                            "score": 641,
+                            "percentage": 0.3279
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:41:23.000+00:00",
+                            "timestamp": "2026-09-14T19:24:04.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.0031,
-                            "absolute": 2023.968,
+                            "percentage": 0.3279,
+                            "absolute": 641.9368,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21370,18 +21317,18 @@
                         "slot": "chest",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 124,
-                            "percentage": 0.0618
+                            "score": 261,
+                            "percentage": 0.1338
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:41:23.000+00:00",
+                            "timestamp": "2026-09-14T19:24:04.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.0618,
-                            "absolute": 124.6252,
+                            "percentage": 0.1338,
+                            "absolute": 261.896,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21392,8 +21339,8 @@
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0.3248,
-                    "encounter_absolute": 655,
+                    "encounter_percentage": 0.2177,
+                    "encounter_absolute": 426,
                     "items": [
                       {
                         "name": "Gebbo's Bottomless Bag",
@@ -21401,23 +21348,23 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 655,
-                            "percentage": 0.3248
+                            "score": 426,
+                            "percentage": 0.2177
                           }
                         },
                         "alternative": {
                           "item": 270173,
-                          "percentage": 1.2154,
-                          "absolute": 2452.419,
+                          "percentage": 1.7655,
+                          "absolute": 3455.9362,
                           "item_level": 314
                         },
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:41:23.000+00:00",
+                            "timestamp": "2026-09-14T19:24:04.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.3248,
-                            "absolute": 655.3769,
+                            "percentage": 0.2177,
+                            "absolute": 426.1575,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21428,9 +21375,39 @@
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.0497,
+                    "encounter_absolute": 97,
+                    "items": [
+                      {
+                        "name": "Sszorak's Ferocity",
+                        "id": 270163,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Unholy": {
+                            "score": 97,
+                            "percentage": 0.0497
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 1.7655,
+                          "absolute": 3455.9362,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Unholy",
+                            "timestamp": "2026-09-14T19:24:04.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.0497,
+                            "absolute": 97.2398,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Twin Fangs",
@@ -21440,8 +21417,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 1.5407,
-                    "encounter_absolute": 3108,
+                    "encounter_percentage": 2.0494,
+                    "encounter_absolute": 4010,
                     "items": [
                       {
                         "name": "Zul'jin's Guillotine Technique",
@@ -21449,18 +21426,18 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 2452,
-                            "percentage": 1.2154
+                            "score": 3455,
+                            "percentage": 1.7655
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:41:23.000+00:00",
+                            "timestamp": "2026-09-14T19:24:04.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.2154,
-                            "absolute": 2452.419,
+                            "percentage": 1.7655,
+                            "absolute": 3455.9362,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21473,18 +21450,18 @@
                         "slot": "back",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 656,
-                            "percentage": 0.3253
+                            "score": 555,
+                            "percentage": 0.2839
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:41:23.000+00:00",
+                            "timestamp": "2026-09-14T19:24:04.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.3253,
-                            "absolute": 656.4611,
+                            "percentage": 0.2839,
+                            "absolute": 555.6792,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21495,8 +21472,8 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0.0425,
-                    "encounter_absolute": 85,
+                    "encounter_percentage": 0.1018,
+                    "encounter_absolute": 199,
                     "items": [
                       {
                         "name": "Slumbering Coil Curio",
@@ -21504,18 +21481,18 @@
                         "slot": null,
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 85,
-                            "percentage": 0.0425
+                            "score": 199,
+                            "percentage": 0.1018
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:41:23.000+00:00",
+                            "timestamp": "2026-09-14T19:24:04.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.0425,
-                            "absolute": 85.7183,
+                            "percentage": 0.1018,
+                            "absolute": 199.2874,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21525,8 +21502,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 3.5716,
-                "total_absolute": 7203
+                "total_percentage": 2.8803,
+                "total_absolute": 5634
               }
             },
             {
@@ -21535,17 +21512,17 @@
                 "updated_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-10T23:40:36.000+00:00"
+                  "Unholy": "2026-09-14T19:22:59.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-10T23:40:06.000Z"
+                  "Unholy": "2026-09-14T19:23:23.000Z"
                 },
                 "report_id": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "5PUsq3Ftcg19dqCiG8qK7s"
+                  "Unholy": "wiGj5jLpebrpgtF3FKVvZb"
                 },
                 "encounters": [
                   {
@@ -21562,34 +21539,9 @@
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0.3004,
-                    "encounter_absolute": 597,
-                    "items": [
-                      {
-                        "name": "Vile Alchemist's Band",
-                        "id": 268249,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 597,
-                            "percentage": 0.3004
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:40:36.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.3004,
-                            "absolute": 597.3814,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "The Lost Explorers",
@@ -21611,8 +21563,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0.3514,
-                    "encounter_absolute": 698,
+                    "encounter_percentage": 0.8972,
+                    "encounter_absolute": 1738,
                     "items": [
                       {
                         "name": "Silken Voodoo Drape",
@@ -21620,18 +21572,18 @@
                         "slot": "back",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 313,
-                            "percentage": 0.1575
+                            "score": 350,
+                            "percentage": 0.181
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:40:36.000+00:00",
+                            "timestamp": "2026-09-14T19:22:59.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.1575,
-                            "absolute": 313.1567,
+                            "percentage": 0.181,
+                            "absolute": 350.8299,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21644,18 +21596,18 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 385,
-                            "percentage": 0.1939
+                            "score": 1388,
+                            "percentage": 0.7162
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:40:36.000+00:00",
+                            "timestamp": "2026-09-14T19:22:59.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.1939,
-                            "absolute": 385.664,
+                            "percentage": 0.7162,
+                            "absolute": 1388.5699,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21671,8 +21623,8 @@
                     "items": []
                   }
                 ],
-                "total_percentage": 0.6517999999999999,
-                "total_absolute": 1295
+                "total_percentage": 0.8972,
+                "total_absolute": 1738
               }
             }
           ]
@@ -21687,23 +21639,23 @@
                 "updated_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-10T23:43:10.000+00:00"
+                  "Unholy": "2026-09-14T19:25:28.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-10T23:40:06.000Z"
+                  "Unholy": "2026-09-14T19:23:23.000Z"
                 },
                 "report_id": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "5PUsq3Ftcg19dqCiG8qK7s"
+                  "Unholy": "wiGj5jLpebrpgtF3FKVvZb"
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0.4513,
-                    "encounter_absolute": 910,
+                    "encounter_percentage": 0.513,
+                    "encounter_absolute": 1009,
                     "items": [
                       {
                         "name": "Swelling Sea Spaulders",
@@ -21711,47 +21663,18 @@
                         "slot": "shoulder",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 738,
-                            "percentage": 0.3657
+                            "score": 1009,
+                            "percentage": 0.513
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
+                            "timestamp": "2026-09-14T19:25:28.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.3657,
-                            "absolute": 738.4109,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Alluring Bubbleband",
-                        "id": 268266,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 172,
-                            "percentage": 0.0856
-                          }
-                        },
-                        "alternative": {
-                          "item": 268249,
-                          "percentage": 1.465,
-                          "absolute": 2957.9516,
-                          "item_level": 321
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-09-10T23:43:10.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.0856,
-                            "absolute": 172.8853,
+                            "percentage": 0.513,
+                            "absolute": 1009.19,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -21761,8 +21684,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 0.4513,
-                "total_absolute": 910
+                "total_percentage": 0.513,
+                "total_absolute": 1009
               }
             },
             {
@@ -21771,28 +21694,53 @@
                 "updated_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-10T23:41:23.000+00:00"
+                  "Unholy": "2026-09-14T19:24:04.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-10T23:40:06.000Z"
+                  "Unholy": "2026-09-14T19:23:23.000Z"
                 },
                 "report_id": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "5PUsq3Ftcg19dqCiG8qK7s"
+                  "Unholy": "wiGj5jLpebrpgtF3FKVvZb"
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.0359,
+                    "encounter_absolute": 70,
+                    "items": [
+                      {
+                        "name": "Swelling Sea Spaulders",
+                        "id": 268226,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Unholy": {
+                            "score": 70,
+                            "percentage": 0.0359
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Unholy",
+                            "timestamp": "2026-09-14T19:24:04.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.0359,
+                            "absolute": 70.3586,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 0,
-                "total_absolute": 0
+                "total_percentage": 0.0359,
+                "total_absolute": 70
               }
             },
             {
@@ -21801,17 +21749,17 @@
                 "updated_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-10T23:40:36.000+00:00"
+                  "Unholy": "2026-09-14T19:22:59.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-10T23:40:06.000Z"
+                  "Unholy": "2026-09-14T19:23:23.000Z"
                 },
                 "report_id": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "5PUsq3Ftcg19dqCiG8qK7s"
+                  "Unholy": "wiGj5jLpebrpgtF3FKVvZb"
                 },
                 "encounters": [
                   {
