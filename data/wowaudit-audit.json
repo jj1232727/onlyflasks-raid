@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-15T07:04:50.887Z",
+  "fetchedAt": "2026-09-15T13:04:03.421Z",
   "periodInfo": {
     "current_period": 1080,
     "current_season": {
@@ -1712,6 +1712,10 @@
           {
             "level": 17,
             "dungeon": 250
+          },
+          {
+            "level": 18,
+            "dungeon": 399
           }
         ],
         "world_quests_done": 1,
@@ -1789,7 +1793,7 @@
       "realm": "Area 52",
       "data": {
         "dungeons_done": [],
-        "world_quests_done": 1,
+        "world_quests_done": 3,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
@@ -1803,8 +1807,8 @@
             "option_3": null
           },
           "world": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 305,
+            "option_2": 289,
             "option_3": null
           }
         }
@@ -2192,11 +2196,11 @@
             "dungeon": 587
           }
         ],
-        "world_quests_done": 0,
+        "world_quests_done": 1,
         "regular_mythic_dungeons_done": 3,
         "vault_options": {
           "raids": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
