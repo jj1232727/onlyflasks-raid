@@ -37,6 +37,7 @@ import {
   slot,
 } from "./gear-slots.js";
 import { playedSpec, simmedSpecsOf } from "./loot-specs.js";
+import { classIds, droptimizerPayload, raidbotDifficulty, simcValue, specIds } from "./raidbots.js";
 import { qeReportId, qeReportSummary, qeReportUrl } from "./qe-report.js";
 import {
   CATALYST_CURRENCIES,
@@ -130,21 +131,6 @@ const colors: Record<string, string> = {
     Warlock: "#8788EE",
     Warrior: "#C69B6D",
   },
-  classIds: Record<string, number> = {
-    Warrior: 1,
-    Paladin: 2,
-    Hunter: 3,
-    Rogue: 4,
-    Priest: 5,
-    "Death Knight": 6,
-    Shaman: 7,
-    Mage: 8,
-    Warlock: 9,
-    Monk: 10,
-    Druid: 11,
-    "Demon Hunter": 12,
-    Evoker: 13,
-  },
   levels = {
     normal: [292, 295, 298, 295, 298, 298, 302, 302],
     heroic: [305, 308, 311, 308, 311, 311, 315, 315],
@@ -161,21 +147,6 @@ const bossLevel = (boss: any, difficulty: Difficulty, index: number): number =>
   boss?.levels?.[difficulty] ?? levels[difficulty][index];
 type SimState = "idle" | "submitting" | "running" | "refreshing" | "uploaded" | "stale" | "error";
 type SimReport = { difficulty: Difficulty; url: string; state: "queued" | "running" | "uploaded" | "error"; error?: string };
-const specIds: Record<string, number> = {
-  "Arms Warrior": 71, "Fury Warrior": 72, "Protection Warrior": 73,
-  "Holy Paladin": 65, "Protection Paladin": 66, "Retribution Paladin": 70,
-  "Beast Mastery Hunter": 253, "Marksmanship Hunter": 254, "Survival Hunter": 255,
-  "Assassination Rogue": 259, "Outlaw Rogue": 260, "Subtlety Rogue": 261,
-  "Discipline Priest": 256, "Holy Priest": 257, "Shadow Priest": 258,
-  "Blood Death Knight": 250, "Frost Death Knight": 251, "Unholy Death Knight": 252,
-  "Elemental Shaman": 262, "Enhancement Shaman": 263, "Restoration Shaman": 264,
-  "Arcane Mage": 62, "Fire Mage": 63, "Frost Mage": 64,
-  "Affliction Warlock": 265, "Demonology Warlock": 266, "Destruction Warlock": 267,
-  "Brewmaster Monk": 268, "Windwalker Monk": 269, "Mistweaver Monk": 270,
-  "Balance Druid": 102, "Feral Druid": 103, "Guardian Druid": 104, "Restoration Druid": 105,
-  "Havoc Demon Hunter": 577, "Vengeance Demon Hunter": 581, "Devourer Demon Hunter": 1480,
-  "Devastation Evoker": 1467, "Preservation Evoker": 1468, "Augmentation Evoker": 1473,
-};
 const specIcons: Record<string, string> = {
   "Arcane Mage": "spell_holy_magicalsentry", "Arms Warrior": "ability_warrior_savageblow", "Assassination Rogue": "ability_rogue_deadliness",
   "Balance Druid": "spell_nature_starfall", "Beast Mastery Hunter": "ability_hunter_bestialdiscipline",
@@ -211,15 +182,6 @@ const specIcons: Record<string, string> = {
 };
 const specIconUrl = (spec: string) =>
   `https://wow.zamimg.com/images/wow/icons/medium/${specIcons[spec] || "inv_misc_questionmark"}.jpg`;
-const simcValue = (text: string, key: string) =>
-  text.match(new RegExp(`^${key}=(?:"([^"]+)"|([^\\s#]+))`, "m"))?.slice(1).find(Boolean) || "";
-const factionForSimc = (text: string) =>
-  ["human", "dwarf", "night_elf", "gnome", "draenei", "worgen", "pandaren_alliance", "void_elf", "lightforged_draenei", "dark_iron_dwarf", "kul_tiran", "mechagnome", "earthen_alliance"].includes(simcValue(text, "race")) ? "alliance" : "horde";
-const raidbotDifficulty = {
-  normal: { value: "raid-normal", upgradeLevel: 12838, label: "Normal", track: "Champion 6/6" },
-  heroic: { value: "raid-heroic", upgradeLevel: 12846, label: "Heroic", track: "Hero 6/6" },
-  mythic: { value: "raid-mythic", upgradeLevel: 12854, label: "Mythic", track: "Myth 6/6" },
-} as const;
 const simSpecName = (c: Raider, selectedSpec: string) =>
   selectedSpec.replace(new RegExp(`\\s+${c.class}$`, "i"), "");
 const simFreshness = (sims: any, characterId: number, specName: string) => {
@@ -240,33 +202,6 @@ const allSimDifficultiesChanged = (
 ) => (["normal", "heroic", "mythic"] as Difficulty[]).every(
   (difficulty) => Boolean(after[difficulty].replace(/\|/g, "")) && after[difficulty] !== before[difficulty],
 );
-function droptimizerPayload(text: string, c: Raider, selectedSpec: string, difficulty: Difficulty = "normal") {
-  const specId = specIds[selectedSpec];
-  if (!specId) throw new Error(`Raidbots spec mapping is missing for ${selectedSpec}.`);
-  // SimC writes the actor line with the space removed, not underscored:
-  // "deathknight=", "demonhunter=". Death Knight was special-cased and Demon
-  // Hunter was not, so every Demon Hunter paste was refused as "not for a Demon
-  // Hunter" while holding a perfectly good export. Drop the space for all of
-  // them and the special case goes with it.
-  const actor = simcValue(text, c.class.toLowerCase().replace(/\s+/gu, ""));
-  if (!actor) throw new Error(`This /simc export is not for a ${c.class}.`);
-  const raidbot = raidbotDifficulty[difficulty];
-  return {
-    type: "droptimizer", text, baseActorName: actor,
-    reportName: `OnlyFlasks · Season 2 Raids · ${raidbot.label} · ${raidbot.track}`,
-    armory: { region: simcValue(text, "region") || "us", realm: simcValue(text, "server"), name: "" },
-    email: "", sendEmail: false, spec: selectedSpec.replace(` ${c.class}`, ""), talents: null,
-    droptimizer: { instance: -102, difficulty: raidbot.value, upgradeLevel: raidbot.upgradeLevel, upgradeEquipped: true, gem: null,
-      classId: classIds[c.class], specId, lootSpecId: specId, faction: factionForSimc(text), craftedStats: "49/32",
-      offSpecItems: false, includeConversions: true, excludedItems: [] },
-    simcVersion: "latest", iterations: "smart", smartHighPrecision: true, smartAggressive: false,
-    fightStyle: "Patchwerk", fightLength: 360, enemyCount: 1, enemyType: "FluffyPillow",
-    potion: "", food: "", flask: "", augmentation: "", bloodlust: true, arcaneIntellect: true,
-    fortitude: true, battleShout: true, mysticTouch: true, chaosBrand: true, bleeding: true,
-    skyfury: true, markOfTheWild: true, powerInfusion: false, huntersMark: true, vantusRune: false,
-    reportDetails: false, apl: "", ptr: false, frontendHost: "www.raidbots.com", locale: "en_US",
-  };
-}
 const wishlistSignature = (items: Item[]) => items.map((item) => [
   slot(item.slot),
   +item.itemId,
@@ -1241,6 +1176,42 @@ class ApiError extends Error {
   }
 }
 const isTransient = (error: unknown) => error instanceof ApiError && error.transient;
+// Apps Script answers /exec with a 302, and a 302 turns a POST into a GET.
+// Normally that redirect lands on the finished result; when it resolves back to
+// the script instead, doGet answers, and its board payload is { ok: true,
+// wishlists, ... } - no snapshot, no error. A write that gets this back was
+// never run at all, which is a different thing from a write that failed.
+function servedByBoardRead(result: any) {
+  return Boolean(result && result.ok && !result.error && (result.wishlists || result.simcSnapshots));
+}
+// Two shapes, one cause: the POST never reached doPost. Google's redirect hop
+// either answered it with the board read, or 404'd with a web page - and both
+// mean the write did not run, which is what makes retrying free. Anything that
+// did reach the script (a real error, a rejection) is returned untouched for the
+// caller to report; retrying those would be how a double submit happens.
+async function postAction(url: string, payload: any, what: string) {
+  const send = () => fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(payload),
+  });
+  let result: any, unreached: unknown;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    if (attempt) await new Promise((resolve) => window.setTimeout(resolve, attempt * 1500));
+    try {
+      result = await readJson(await send(), what);
+    } catch (error) {
+      if (!isTransient(error)) throw error;
+      unreached = error;
+      continue;
+    }
+    if (!servedByBoardRead(result)) return result;
+    unreached = undefined;
+  }
+  if (unreached) throw unreached;
+  return result;
+}
+const REDIRECTED_POST = "Google kept answering with the board's own data instead of running the request, so nothing was saved. Your paste is fine - wait a moment and submit it again.";
 async function readJson(response: Response, what: string) {
   const text = await response.text();
   try {
@@ -1252,7 +1223,7 @@ async function readJson(response: Response, what: string) {
     const transient = html || response.status === 429 || response.status >= 500;
     throw new ApiError(
       html
-        ? `${what}: Google returned a web page instead of data (HTTP ${response.status}) - the script was not reached. This usually clears on its own.`
+        ? `${what}: Google returned a web page instead of data (HTTP ${response.status}) - the script was not reached. This usually clears on its own; if it keeps happening, sign out of any extra Google accounts in this browser, or open the board in a private window.`
         : `${what}: the reply was not JSON (HTTP ${response.status}): ${text.slice(0, 120)}`,
       transient,
     );
@@ -3295,12 +3266,9 @@ export default function App() {
               setSimMessage("Submitting all three raid difficulties…");
               setSimReports([]);
               try {
-                const snapshotResponse = await fetch(wishlistApiUrl, {
-                  method: "POST",
-                  headers: { "Content-Type": "text/plain;charset=utf-8" },
-                  body: JSON.stringify({ action: "saveSimcSnapshot", characterId: c.id, characterName: c.name, lootSpec: selectedSpec, snapshot, simc: simcText.trim() }),
-                });
-                const snapshotResult = await readJson(snapshotResponse, "saveSimcSnapshot");
+                const snapshotResult = await postAction(wishlistApiUrl,
+                  { action: "saveSimcSnapshot", characterId: c.id, characterName: c.name, lootSpec: selectedSpec, snapshot, simc: simcText.trim() },
+                  "saveSimcSnapshot");
                 if (!snapshotResult.ok || !snapshotResult.snapshot) {
                   // Only saveWishlist_ says these, and doPost falls through to it
                   // for an action the deployment does not have. saveSimcSnapshot_'s
@@ -3311,7 +3279,9 @@ export default function App() {
                   const deploymentMissing = /character identity and lootSpec are required|wishlist must contain/i.test(String(snapshotResult.error || ""));
                   throw new Error(deploymentMissing
                     ? "The Google Apps Script deployment is outdated and does not support SimC audit snapshots yet."
-                    : snapshotResult.error || "Could not save the SimC audit snapshot");
+                    : servedByBoardRead(snapshotResult)
+                      ? REDIRECTED_POST
+                      : snapshotResult.error || "Could not save the SimC audit snapshot");
                 }
                 setSimcSnapshots((existing) => ({ ...existing, [c.id]: snapshotResult.snapshot }));
                 logSimcAttempt(wishlistApiUrl, c, selectedSpec, "snapshot", true);
@@ -3322,12 +3292,13 @@ export default function App() {
                 if (inferredRole(c) === "Healer") {
                   // QE only computes in a browser, so the board parks the export
                   // and a worker drives QE Live with it.
-                  const queued = await fetch(wishlistApiUrl, {
-                    method: "POST",
-                    headers: { "Content-Type": "text/plain;charset=utf-8" },
-                    body: JSON.stringify({ action: "queueQeRun", characterId: c.id, characterName: c.name, lootSpec: selectedSpec, simc: simcText.trim() }),
-                  });
-                  const queueResult = await readJson(queued, "queueQeRun");
+                  const queueResult = await postAction(wishlistApiUrl,
+                    { action: "queueQeRun", characterId: c.id, characterName: c.name, lootSpec: selectedSpec, simc: simcText.trim() },
+                    "queueQeRun");
+                  // ok alone is not enough: the board read is ok too, and taking
+                  // it for a queued run left the panel promising QE results that
+                  // nothing was ever going to produce.
+                  if (servedByBoardRead(queueResult)) throw new Error(REDIRECTED_POST);
                   if (!queueResult.ok) throw new Error(queueResult.error || "Could not queue the QE run.");
                   // Keep whether the dispatch landed: "pending" means a run is
                   // seconds away when it did, and up to 15 minutes when it did
@@ -3344,11 +3315,12 @@ export default function App() {
                 for (let index = 0; index < difficulties.length; index++) {
                   const simDifficulty = difficulties[index], label = raidbotDifficulty[simDifficulty].label;
                   setSimMessage(`${label} · submitting ${index + 1} of 3…`);
-                  const response = await fetch(wishlistApiUrl, {
-                    method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
-                    body: JSON.stringify({ action: "submitDroptimizer", characterId: c.id, payload: droptimizerPayload(simcText.trim(), c, selectedSpec, simDifficulty) }),
-                  });
-                  const result = await readJson(response, "submitDroptimizer");
+                  const result = await postAction(wishlistApiUrl,
+                    { action: "submitDroptimizer", characterId: c.id, payload: droptimizerPayload(simcText.trim(), c, selectedSpec, simDifficulty) },
+                    "submitDroptimizer");
+                  // Blaming Raidbots for a request that never left Google sent
+                  // raiders to check a sim queue that had never heard of them.
+                  if (servedByBoardRead(result)) throw new Error(`${label}: ${REDIRECTED_POST}`);
                   if (!result.ok || !result.simId) throw new Error(`${label}: ${result.error || "Raidbots submission failed"}`);
                   jobs.push({ difficulty: simDifficulty, simId: result.simId, reportUrl: result.reportUrl || `https://www.raidbots.com/simbot/report/${result.simId}` });
                   setSimReports(jobs.map((job) => ({ difficulty: job.difficulty, url: job.reportUrl, state: "queued" })));
