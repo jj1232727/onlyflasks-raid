@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-15T23:54:13.445Z",
+  "fetchedAt": "2026-09-16T02:54:54.607Z",
   "periodInfo": {
     "current_period": 1081,
     "current_season": {
@@ -812,7 +812,7 @@
       "realm": "Mal'Ganis",
       "data": {
         "dungeons_done": [],
-        "world_quests_done": 0,
+        "world_quests_done": 1,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
@@ -867,7 +867,7 @@
       "data": {
         "dungeons_done": [],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -880,9 +880,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
@@ -893,34 +893,7 @@
       "realm": "Sargeras",
       "data": {
         "dungeons_done": [],
-        "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
-        "vault_options": {
-          "raids": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          },
-          "dungeons": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          },
-          "world": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          }
-        }
-      }
-    },
-    {
-      "id": 4669066,
-      "name": "Nóva",
-      "realm": "Hyjal",
-      "data": {
-        "dungeons_done": [],
-        "world_quests_done": 0,
+        "world_quests_done": 1,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
@@ -935,8 +908,40 @@
           },
           "world": {
             "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_2": 272,
+            "option_3": null
+          }
+        }
+      }
+    },
+    {
+      "id": 4669066,
+      "name": "Nóva",
+      "realm": "Hyjal",
+      "data": {
+        "dungeons_done": [
+          {
+            "level": 17,
+            "dungeon": 588
+          }
+        ],
+        "world_quests_done": 0,
+        "regular_mythic_dungeons_done": 1,
+        "vault_options": {
+          "raids": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          },
+          "dungeons": {
+            "option_1": 318,
+            "option_2": null,
+            "option_3": null
+          },
+          "world": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
@@ -946,9 +951,14 @@
       "name": "Aerenn",
       "realm": "Zul'jin",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 13,
+            "dungeon": 399
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -956,12 +966,12 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
           "world": {
-            "option_1": null,
+            "option_1": 305,
             "option_2": null,
             "option_3": null
           }
@@ -1096,8 +1106,8 @@
             "option_3": null
           },
           "world": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 272,
+            "option_2": 272,
             "option_3": null
           }
         }
@@ -1358,7 +1368,7 @@
       "data": {
         "dungeons_done": [],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 1,
+        "regular_mythic_dungeons_done": 4,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1410,7 +1420,16 @@
       "name": "Abenasters",
       "realm": "Illidan",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 13,
+            "dungeon": 588
+          },
+          {
+            "level": 12,
+            "dungeon": 585
+          }
+        ],
         "world_quests_done": 0,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
@@ -1420,7 +1439,7 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
