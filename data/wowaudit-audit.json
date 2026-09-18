@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-17T19:29:02.844Z",
+  "fetchedAt": "2026-09-18T02:45:12.448Z",
   "periodInfo": {
     "current_period": 1081,
     "current_season": {
@@ -752,13 +752,13 @@
             "dungeon": 585
           }
         ],
-        "world_quests_done": 0,
+        "world_quests_done": 1,
         "regular_mythic_dungeons_done": 4,
         "vault_options": {
           "raids": {
             "option_1": 334,
-            "option_2": 318,
-            "option_3": null
+            "option_2": 334,
+            "option_3": 318
           },
           "dungeons": {
             "option_1": 318,
@@ -912,13 +912,13 @@
             "dungeon": 250
           }
         ],
-        "world_quests_done": 0,
+        "world_quests_done": 1,
         "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": 334,
-            "option_2": 318,
-            "option_3": null
+            "option_2": 334,
+            "option_3": 318
           },
           "dungeons": {
             "option_1": 318,
@@ -944,7 +944,7 @@
         "vault_options": {
           "raids": {
             "option_1": 334,
-            "option_2": null,
+            "option_2": 334,
             "option_3": null
           },
           "dungeons": {
@@ -1151,9 +1151,18 @@
       "name": "Sosapumpa",
       "realm": "Illidan",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 15,
+            "dungeon": 584
+          },
+          {
+            "level": 16,
+            "dungeon": 587
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 1,
+        "regular_mythic_dungeons_done": 3,
         "vault_options": {
           "raids": {
             "option_1": 334,
@@ -1161,7 +1170,7 @@
             "option_3": 305
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1652,7 +1661,16 @@
       "name": "Brïdgess",
       "realm": "Proudmoore",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 10,
+            "dungeon": 586
+          },
+          {
+            "level": 10,
+            "dungeon": 588
+          }
+        ],
         "world_quests_done": 0,
         "regular_mythic_dungeons_done": 2,
         "vault_options": {
@@ -1662,7 +1680,7 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1698,11 +1716,11 @@
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 5,
+        "regular_mythic_dungeons_done": 6,
         "vault_options": {
           "raids": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": null
           },
           "dungeons": {
