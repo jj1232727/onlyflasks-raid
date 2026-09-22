@@ -6552,17 +6552,17 @@
                 "updated_at": {
                   "Brewmaster": null,
                   "Windwalker": null,
-                  "Mistweaver": "2026-09-17T23:05:54.000+00:00"
+                  "Mistweaver": "2026-09-22T23:11:50.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Brewmaster": null,
                   "Windwalker": null,
-                  "Mistweaver": "2026-09-17T00:00:00.000Z"
+                  "Mistweaver": "2026-09-22T00:00:00.000Z"
                 },
                 "report_id": {
                   "Brewmaster": null,
                   "Windwalker": null,
-                  "Mistweaver": "depjquaqhzew"
+                  "Mistweaver": "yobfxbbqawue"
                 },
                 "encounters": [
                   {
@@ -6589,7 +6589,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.4052,
                             "absolute": 1419,
@@ -6613,7 +6613,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 2.408,
                             "absolute": 8433,
@@ -6642,7 +6642,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.5988,
                             "absolute": 2097,
@@ -6673,7 +6673,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.5971,
                             "absolute": 2091,
@@ -6702,7 +6702,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.0725,
                             "absolute": 254,
@@ -6744,7 +6744,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.0294,
                             "absolute": 103,
@@ -6773,7 +6773,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.6533,
                             "absolute": 2288,
@@ -6802,7 +6802,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.3344,
                             "absolute": 1171,
@@ -6838,7 +6838,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.2818,
                             "absolute": 987,
@@ -6867,7 +6867,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.775,
                             "absolute": 2714,
@@ -6881,8 +6881,8 @@
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0.3858,
-                    "encounter_absolute": 1351,
+                    "encounter_percentage": 2.2869,
+                    "encounter_absolute": 8009,
                     "items": [
                       {
                         "name": "Bespittled Slitherslippers",
@@ -6903,10 +6903,39 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.3858,
                             "absolute": 1351,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Preternatural Antivenom",
+                        "id": 270171,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Mistweaver": {
+                            "score": 6658,
+                            "percentage": 1.9011
+                          }
+                        },
+                        "alternative": {
+                          "item": 270162,
+                          "percentage": 2.408,
+                          "absolute": 8433,
+                          "item_level": 318
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Mistweaver",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.9011,
+                            "absolute": 6658,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -6939,7 +6968,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.8792,
                             "absolute": 3079,
@@ -6968,7 +6997,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.476,
                             "absolute": 1667,
@@ -6997,7 +7026,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.2287,
                             "absolute": 801,
@@ -7026,7 +7055,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.1756,
                             "absolute": 615,
@@ -7057,7 +7086,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.4009,
                             "absolute": 1404,
@@ -7081,7 +7110,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.7284,
                             "absolute": 2551,
@@ -7094,8 +7123,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 9.4301,
-                "total_absolute": 33025
+                "total_percentage": 11.3312,
+                "total_absolute": 39683
               }
             },
             {
@@ -7104,17 +7133,17 @@
                 "updated_at": {
                   "Brewmaster": null,
                   "Windwalker": null,
-                  "Mistweaver": "2026-09-17T23:05:54.000+00:00"
+                  "Mistweaver": "2026-09-22T23:11:50.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Brewmaster": null,
                   "Windwalker": null,
-                  "Mistweaver": "2026-09-17T00:00:00.000Z"
+                  "Mistweaver": "2026-09-22T00:00:00.000Z"
                 },
                 "report_id": {
                   "Brewmaster": null,
                   "Windwalker": null,
-                  "Mistweaver": "jouoziuqbcav"
+                  "Mistweaver": "ayerhozerpau"
                 },
                 "encounters": [
                   {
@@ -7136,7 +7165,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:05:08.000+00:00",
+                            "timestamp": "2026-09-22T23:11:50.000+00:00",
                             "upgrade": null,
                             "percentage": 1.1222,
                             "absolute": 3926,
@@ -7174,9 +7203,39 @@
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.9687,
+                    "encounter_absolute": 3389,
+                    "items": [
+                      {
+                        "name": "Preternatural Antivenom",
+                        "id": 270171,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Mistweaver": {
+                            "score": 3389,
+                            "percentage": 0.9687
+                          }
+                        },
+                        "alternative": {
+                          "item": 270162,
+                          "percentage": 1.1222,
+                          "absolute": 3926,
+                          "item_level": 305
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Mistweaver",
+                            "timestamp": "2026-09-22T23:11:50.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.9687,
+                            "absolute": 3389,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
@@ -7191,8 +7250,8 @@
                     "items": []
                   }
                 ],
-                "total_percentage": 1.1222,
-                "total_absolute": 3926
+                "total_percentage": 2.0909,
+                "total_absolute": 7315
               }
             },
             {
@@ -7279,17 +7338,17 @@
                 "updated_at": {
                   "Brewmaster": null,
                   "Windwalker": null,
-                  "Mistweaver": "2026-09-17T23:05:54.000+00:00"
+                  "Mistweaver": "2026-09-22T23:11:50.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Brewmaster": null,
                   "Windwalker": null,
-                  "Mistweaver": "2026-09-17T00:00:00.000Z"
+                  "Mistweaver": "2026-09-22T00:00:00.000Z"
                 },
                 "report_id": {
                   "Brewmaster": null,
                   "Windwalker": null,
-                  "Mistweaver": "depjquaqhzew"
+                  "Mistweaver": "yobfxbbqawue"
                 },
                 "encounters": [
                   {
@@ -7311,7 +7370,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 1.2275,
                             "absolute": 4299,
@@ -7335,7 +7394,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:03:52.000+00:00",
+                            "timestamp": "2026-09-22T23:08:51.000+00:00",
                             "upgrade": null,
                             "percentage": 0.5517,
                             "absolute": 1932,
@@ -7358,17 +7417,17 @@
                 "updated_at": {
                   "Brewmaster": null,
                   "Windwalker": null,
-                  "Mistweaver": "2026-09-17T23:05:54.000+00:00"
+                  "Mistweaver": "2026-09-22T23:11:50.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Brewmaster": null,
                   "Windwalker": null,
-                  "Mistweaver": "2026-09-17T00:00:00.000Z"
+                  "Mistweaver": "2026-09-22T00:00:00.000Z"
                 },
                 "report_id": {
                   "Brewmaster": null,
                   "Windwalker": null,
-                  "Mistweaver": "jouoziuqbcav"
+                  "Mistweaver": "ayerhozerpau"
                 },
                 "encounters": [
                   {
@@ -7390,7 +7449,7 @@
                         "wishes": [
                           {
                             "specialization": "Mistweaver",
-                            "timestamp": "2026-09-17T23:05:08.000+00:00",
+                            "timestamp": "2026-09-22T23:11:50.000+00:00",
                             "upgrade": null,
                             "percentage": 0.718,
                             "absolute": 2512,
@@ -27551,1536 +27610,6 @@
                 ],
                 "total_percentage": 0.5441,
                 "total_absolute": 1008
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 4262480,
-      "name": "Darkdiver",
-      "realm": "Proudmoore",
-      "instances": [
-        {
-          "id": 80,
-          "name": "The Venomous Abyss",
-          "difficulties": [
-            {
-              "difficulty": "mythic",
-              "wishlist": {
-                "updated_at": {
-                  "Arcane": "2026-09-16T22:17:37.000+00:00",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "report_uploaded_at": {
-                  "Arcane": "2026-09-16T22:15:42.000Z",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "report_id": {
-                  "Arcane": "dMbX2z5G2Rgbxgp8VZVnwd",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "encounters": [
-                  {
-                    "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 3.435,
-                    "encounter_absolute": 6362,
-                    "items": [
-                      {
-                        "name": "Initiate's Sacrificial Tights",
-                        "id": 268236,
-                        "slot": "legs",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1015,
-                            "percentage": 0.5481
-                          }
-                        },
-                        "alternative": {
-                          "item": 270918,
-                          "percentage": 0.9137,
-                          "absolute": 1692.8849,
-                          "item_level": 324
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5481,
-                            "absolute": 1015.5735,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Hexing Spiritrender",
-                        "id": 268203,
-                        "slot": "main_hand",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 3316,
-                            "percentage": 1.7901
-                          }
-                        },
-                        "alternative": {
-                          "item": 271092,
-                          "percentage": 4.4307,
-                          "absolute": 8209.0108,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.7901,
-                            "absolute": 3316.6022,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Nek'zali's Spiritwalkers",
-                        "id": 268218,
-                        "slot": "feet",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 976,
-                            "percentage": 0.5271
-                          }
-                        },
-                        "alternative": {
-                          "item": 268255,
-                          "percentage": 0.908,
-                          "absolute": 1682.3748,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5271,
-                            "absolute": 976.5684,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 315,
-                                "id": 159243
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 159243
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Amani Summoning Shawl",
-                        "id": 268248,
-                        "slot": "back",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1055,
-                            "percentage": 0.5697
-                          }
-                        },
-                        "alternative": {
-                          "item": 268253,
-                          "percentage": 0.7047,
-                          "absolute": 1305.6598,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5697,
-                            "absolute": 1055.4362,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Entombed Sentinels",
-                    "encounter_percentage": 0.4961,
-                    "encounter_absolute": 919,
-                    "items": [
-                      {
-                        "name": "Venomwoven Idol",
-                        "id": 270910,
-                        "slot": "hands",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 919,
-                            "percentage": 0.4961
-                          }
-                        },
-                        "alternative": {
-                          "item": 268243,
-                          "percentage": 1.1348,
-                          "absolute": 2102.4863,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.4961,
-                            "absolute": 919.1724,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 311,
-                                "id": 271565
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 271565
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Vashnik the Malignant",
-                    "encounter_percentage": 2.536,
-                    "encounter_absolute": 4696,
-                    "items": [
-                      {
-                        "name": "Venomwoven Icon",
-                        "id": 270926,
-                        "slot": "chest",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1700,
-                            "percentage": 0.9177
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.9177,
-                            "absolute": 1700.3218,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Fang of Umbral Malignance",
-                        "id": 270161,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1413,
-                            "percentage": 0.7631
-                          }
-                        },
-                        "alternative": {
-                          "item": 270164,
-                          "percentage": 1.4043,
-                          "absolute": 2601.768,
-                          "item_level": 324
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.7631,
-                            "absolute": 1413.7516,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 334,
-                                "id": 270168
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 251792
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Vile Alchemist's Band",
-                        "id": 268249,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 294,
-                            "percentage": 0.159
-                          }
-                        },
-                        "alternative": {
-                          "item": 268252,
-                          "percentage": 0.8188,
-                          "absolute": 1517.0997,
-                          "item_level": 324
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.159,
-                            "absolute": 294.534,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Venomancer's Winged Channeler",
-                        "id": 268205,
-                        "slot": "main_hand",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1289,
-                            "percentage": 0.6962
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.6962,
-                            "absolute": 1289.8219,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "The Lost Explorers",
-                    "encounter_percentage": 1.9759,
-                    "encounter_absolute": 3660,
-                    "items": [
-                      {
-                        "name": "Venomwoven Remnant",
-                        "id": 270922,
-                        "slot": "shoulder",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1059,
-                            "percentage": 0.5716
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5716,
-                            "absolute": 1059.0069,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Gebbo's Bottomless Bag",
-                        "id": 270164,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 2601,
-                            "percentage": 1.4043
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.4043,
-                            "absolute": 2601.768,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 334,
-                                "id": 270168
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 251792
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Sszorak",
-                    "encounter_percentage": 1.9965,
-                    "encounter_absolute": 3698,
-                    "items": [
-                      {
-                        "name": "Apex Brute's Claw Ring",
-                        "id": 268252,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1517,
-                            "percentage": 0.8188
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.8188,
-                            "absolute": 1517.0997,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Caustic Chain-Wrapped Sash",
-                        "id": 268257,
-                        "slot": "waist",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 489,
-                            "percentage": 0.264
-                          }
-                        },
-                        "alternative": {
-                          "item": 268232,
-                          "percentage": 0.5319,
-                          "absolute": 985.4867,
-                          "item_level": 318
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.264,
-                            "absolute": 489.1961,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Venomwoven Relic",
-                        "id": 270918,
-                        "slot": "legs",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1692,
-                            "percentage": 0.9137
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.9137,
-                            "absolute": 1692.8849,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "The Twin Fangs",
-                    "encounter_percentage": 1.6859,
-                    "encounter_absolute": 3122,
-                    "items": [
-                      {
-                        "name": "Vexhul's Everflowing Gland",
-                        "id": 270170,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 2079,
-                            "percentage": 1.1224
-                          }
-                        },
-                        "alternative": {
-                          "item": 270164,
-                          "percentage": 1.4043,
-                          "absolute": 2601.768,
-                          "item_level": 324
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.1224,
-                            "absolute": 2079.4677,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 328,
-                                "id": 250215
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 251792
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Ornaments of the Eternal Coil",
-                        "id": 268241,
-                        "slot": "shoulder",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1043,
-                            "percentage": 0.5635
-                          }
-                        },
-                        "alternative": {
-                          "item": 270922,
-                          "percentage": 0.5716,
-                          "absolute": 1059.0069,
-                          "item_level": 324
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5635,
-                            "absolute": 1043.9629,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "The Coiled Altar",
-                    "encounter_percentage": 6.1837,
-                    "encounter_absolute": 11455,
-                    "items": [
-                      {
-                        "name": "Grasps of the Eternal Shadow",
-                        "id": 268243,
-                        "slot": "hands",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 2102,
-                            "percentage": 1.1348
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.1348,
-                            "absolute": 2102.4863,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 311,
-                                "id": 271565
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 271565
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Baleful Hexblade",
-                        "id": 268211,
-                        "slot": "main_hand",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 6366,
-                            "percentage": 3.4362
-                          }
-                        },
-                        "alternative": {
-                          "item": 271092,
-                          "percentage": 4.4307,
-                          "absolute": 8209.0108,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 3.4362,
-                            "absolute": 6366.5428,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Cackling Soultreads",
-                        "id": 268255,
-                        "slot": "feet",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1682,
-                            "percentage": 0.908
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.908,
-                            "absolute": 1682.3748,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 315,
-                                "id": 159243
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 159243
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Silken Voodoo Drape",
-                        "id": 268253,
-                        "slot": "back",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1305,
-                            "percentage": 0.7047
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.7047,
-                            "absolute": 1305.6598,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Ula'tek",
-                    "encounter_percentage": 6.7673,
-                    "encounter_absolute": 12536,
-                    "items": [
-                      {
-                        "name": "Slumbering Coil Curio",
-                        "id": 270909,
-                        "slot": null,
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1786,
-                            "percentage": 0.9643
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.9643,
-                            "absolute": 1786.6524,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Font of Venomous Rage",
-                        "id": 270168,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1300,
-                            "percentage": 0.7022
-                          }
-                        },
-                        "alternative": {
-                          "item": 270164,
-                          "percentage": 1.4043,
-                          "absolute": 2601.768,
-                          "item_level": 324
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.7022,
-                            "absolute": 1300.9602,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 334,
-                                "id": 270168
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 251792
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Venomkeeper's Horrific Cowl",
-                        "id": 271874,
-                        "slot": "head",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1241,
-                            "percentage": 0.6701
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.6701,
-                            "absolute": 1241.4928,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Jan'thrazet, the Soul Fang",
-                        "id": 271092,
-                        "slot": "main_hand",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 8209,
-                            "percentage": 4.4307
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 4.4307,
-                            "absolute": 8209.0108,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "total_percentage": 25.0764,
-                "total_absolute": 46448
-              }
-            },
-            {
-              "difficulty": "heroic",
-              "wishlist": {
-                "updated_at": {
-                  "Arcane": "2026-09-16T22:16:53.000+00:00",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "report_uploaded_at": {
-                  "Arcane": "2026-09-16T22:15:34.000Z",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "report_id": {
-                  "Arcane": "kBhx6kDi6Xfgo4QTkcNap5",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "encounters": [
-                  {
-                    "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0.0447,
-                    "encounter_absolute": 82,
-                    "items": [
-                      {
-                        "name": "Venomwoven Icon",
-                        "id": 270926,
-                        "slot": "chest",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 82,
-                            "percentage": 0.0447
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:16:53.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.0447,
-                            "absolute": 82.5234,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "The Lost Explorers",
-                    "encounter_percentage": 0.6148,
-                    "encounter_absolute": 1135,
-                    "items": [
-                      {
-                        "name": "Gebbo's Bottomless Bag",
-                        "id": 270164,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1135,
-                            "percentage": 0.6148
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:16:53.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.6148,
-                            "absolute": 1135.7944,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 334,
-                                "id": 270168
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 251792
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Sszorak",
-                    "encounter_percentage": 0.3525,
-                    "encounter_absolute": 650,
-                    "items": [
-                      {
-                        "name": "Venomwoven Relic",
-                        "id": 270918,
-                        "slot": "legs",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 68,
-                            "percentage": 0.0369
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:16:53.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.0369,
-                            "absolute": 68.1216,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Apex Brute's Claw Ring",
-                        "id": 268252,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 582,
-                            "percentage": 0.3156
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:16:53.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.3156,
-                            "absolute": 582.9372,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "The Twin Fangs",
-                    "encounter_percentage": 0.1234,
-                    "encounter_absolute": 228,
-                    "items": [
-                      {
-                        "name": "Vexhul's Everflowing Gland",
-                        "id": 270170,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 228,
-                            "percentage": 0.1234
-                          }
-                        },
-                        "alternative": {
-                          "item": 270164,
-                          "percentage": 0.6148,
-                          "absolute": 1135.7944,
-                          "item_level": 311
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:16:53.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.1234,
-                            "absolute": 228.0352,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 328,
-                                "id": 250215
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 251792
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Ula'tek",
-                    "encounter_percentage": 0.7164999999999999,
-                    "encounter_absolute": 1323,
-                    "items": [
-                      {
-                        "name": "Slumbering Coil Curio",
-                        "id": 270909,
-                        "slot": null,
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 114,
-                            "percentage": 0.0618
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:16:53.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.0618,
-                            "absolute": 114.1777,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Jan'thrazet, the Soul Fang",
-                        "id": 271092,
-                        "slot": "main_hand",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1209,
-                            "percentage": 0.6547
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:16:53.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.6547,
-                            "absolute": 1209.4533,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "total_percentage": 1.8519,
-                "total_absolute": 3418
-              }
-            },
-            {
-              "difficulty": "normal",
-              "wishlist": {
-                "updated_at": {
-                  "Arcane": "2026-09-16T22:16:19.000+00:00",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "report_uploaded_at": {
-                  "Arcane": "2026-09-16T22:15:36.000Z",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "report_id": {
-                  "Arcane": "c3cGv9epNpmh9s4psG8Zad",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "encounters": [
-                  {
-                    "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Sszorak",
-                    "encounter_percentage": 0.45309999999999995,
-                    "encounter_absolute": 818,
-                    "items": [
-                      {
-                        "name": "Venomwoven Relic",
-                        "id": 270918,
-                        "slot": "legs",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 308,
-                            "percentage": 0.1706
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:16:19.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.1706,
-                            "absolute": 308.4207,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Apex Brute's Claw Ring",
-                        "id": 268252,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 510,
-                            "percentage": 0.2825
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:16:19.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.2825,
-                            "absolute": 510.5966,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Ula'tek",
-                    "encounter_percentage": 0.0975,
-                    "encounter_absolute": 176,
-                    "items": [
-                      {
-                        "name": "Slumbering Coil Curio",
-                        "id": 270909,
-                        "slot": null,
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 176,
-                            "percentage": 0.0975
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:16:19.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.0975,
-                            "absolute": 176.2312,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "total_percentage": 0.5506,
-                "total_absolute": 994
-              }
-            }
-          ]
-        },
-        {
-          "id": 81,
-          "name": "The Tidebound Grotto",
-          "difficulties": [
-            {
-              "difficulty": "mythic",
-              "wishlist": {
-                "updated_at": {
-                  "Arcane": "2026-09-16T22:17:37.000+00:00",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "report_uploaded_at": {
-                  "Arcane": "2026-09-16T22:15:42.000Z",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "report_id": {
-                  "Arcane": "dMbX2z5G2Rgbxgp8VZVnwd",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "encounters": [
-                  {
-                    "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 3.0777,
-                    "encounter_absolute": 5700,
-                    "items": [
-                      {
-                        "name": "Tidebound Sorcereress's Robes",
-                        "id": 268221,
-                        "slot": "chest",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1546,
-                            "percentage": 0.8346
-                          }
-                        },
-                        "alternative": {
-                          "item": 270926,
-                          "percentage": 0.9177,
-                          "absolute": 1700.3218,
-                          "item_level": 321
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.8346,
-                            "absolute": 1546.3793,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Wavecaller's Seastone",
-                        "id": 270167,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 2066,
-                            "percentage": 1.1154
-                          }
-                        },
-                        "alternative": {
-                          "item": 270164,
-                          "percentage": 1.4043,
-                          "absolute": 2601.768,
-                          "item_level": 324
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.1154,
-                            "absolute": 2066.4975,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 334,
-                                "id": 270168
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 251792
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Cincture of the Abyssal Grotto",
-                        "id": 268232,
-                        "slot": "waist",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 985,
-                            "percentage": 0.5319
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5319,
-                            "absolute": 985.4867,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Alluring Bubbleband",
-                        "id": 268266,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1103,
-                            "percentage": 0.5958
-                          }
-                        },
-                        "alternative": {
-                          "item": 268252,
-                          "percentage": 0.8188,
-                          "absolute": 1517.0997,
-                          "item_level": 324
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:17:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5958,
-                            "absolute": 1103.8075,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "total_percentage": 3.0777,
-                "total_absolute": 5700
-              }
-            },
-            {
-              "difficulty": "heroic",
-              "wishlist": {
-                "updated_at": {
-                  "Arcane": "2026-09-16T22:16:53.000+00:00",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "report_uploaded_at": {
-                  "Arcane": "2026-09-16T22:15:34.000Z",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "report_id": {
-                  "Arcane": "kBhx6kDi6Xfgo4QTkcNap5",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "encounters": [
-                  {
-                    "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0.5099,
-                    "encounter_absolute": 940,
-                    "items": [
-                      {
-                        "name": "Wavecaller's Seastone",
-                        "id": 270167,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 646,
-                            "percentage": 0.3502
-                          }
-                        },
-                        "alternative": {
-                          "item": 270164,
-                          "percentage": 0.6148,
-                          "absolute": 1135.7944,
-                          "item_level": 311
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:16:53.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.3502,
-                            "absolute": 646.9065,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 334,
-                                "id": 270168
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 251792
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Alluring Bubbleband",
-                        "id": 268266,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 294,
-                            "percentage": 0.1597
-                          }
-                        },
-                        "alternative": {
-                          "item": 268252,
-                          "percentage": 0.3156,
-                          "absolute": 582.9372,
-                          "item_level": 311
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:16:53.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.1597,
-                            "absolute": 294.9689,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "total_percentage": 0.5099,
-                "total_absolute": 940
-              }
-            },
-            {
-              "difficulty": "normal",
-              "wishlist": {
-                "updated_at": {
-                  "Arcane": "2026-09-16T22:16:19.000+00:00",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "report_uploaded_at": {
-                  "Arcane": "2026-09-16T22:15:36.000Z",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "report_id": {
-                  "Arcane": "c3cGv9epNpmh9s4psG8Zad",
-                  "Fire": null,
-                  "Frost": null
-                },
-                "encounters": [
-                  {
-                    "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0.0633,
-                    "encounter_absolute": 114,
-                    "items": [
-                      {
-                        "name": "Alluring Bubbleband",
-                        "id": 268266,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 114,
-                            "percentage": 0.0633
-                          }
-                        },
-                        "alternative": {
-                          "item": 268252,
-                          "percentage": 0.2825,
-                          "absolute": 510.5966,
-                          "item_level": 298
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-09-16T22:16:19.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.0633,
-                            "absolute": 114.4385,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "total_percentage": 0.0633,
-                "total_absolute": 114
               }
             }
           ]
