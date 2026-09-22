@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T07:11:28.229Z",
+  "fetchedAt": "2026-09-22T13:00:47.813Z",
   "periodInfo": {
     "current_period": 1081,
     "current_season": {
@@ -952,6 +952,18 @@
           {
             "level": 10,
             "dungeon": 250
+          },
+          {
+            "level": 12,
+            "dungeon": 250
+          },
+          {
+            "level": 11,
+            "dungeon": 250
+          },
+          {
+            "level": 10,
+            "dungeon": 250
           }
         ],
         "world_quests_done": 1,
@@ -965,7 +977,7 @@
           "dungeons": {
             "option_1": 318,
             "option_2": 318,
-            "option_3": null
+            "option_3": 311
           },
           "world": {
             "option_1": null,
@@ -1547,9 +1559,14 @@
       "name": "Xret",
       "realm": "Area 52",
       "data": {
-        "dungeons_done": [],
-        "world_quests_done": 1,
-        "regular_mythic_dungeons_done": 0,
+        "dungeons_done": [
+          {
+            "level": 12,
+            "dungeon": 588
+          }
+        ],
+        "world_quests_done": 2,
+        "regular_mythic_dungeons_done": 2,
         "vault_options": {
           "raids": {
             "option_1": 334,
@@ -1557,13 +1574,13 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
           "world": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 305,
+            "option_2": 302,
             "option_3": null
           }
         }
