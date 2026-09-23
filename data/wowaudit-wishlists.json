@@ -10090,24 +10090,24 @@
               "wishlist": {
                 "updated_at": {
                   "Beast Mastery": "2026-09-10T23:25:44.000+00:00",
-                  "Marksmanship": "2026-09-16T23:38:21.000+00:00",
+                  "Marksmanship": "2026-09-23T21:41:19.000+00:00",
                   "Survival": null
                 },
                 "report_uploaded_at": {
                   "Beast Mastery": "2026-09-10T23:24:56.000Z",
-                  "Marksmanship": "2026-09-16T23:37:46.000Z",
+                  "Marksmanship": "2026-09-23T21:40:52.000Z",
                   "Survival": null
                 },
                 "report_id": {
                   "Beast Mastery": "oGr7rqHXnasVUDeuZx1yzY",
-                  "Marksmanship": "hGd2QydGqadnXoDcjkURbN",
+                  "Marksmanship": "wSVCNRiz4EhTHS3SxdvTg6",
                   "Survival": null
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 1.3192,
-                    "encounter_absolute": 2546,
+                    "encounter_percentage": 1.0681,
+                    "encounter_absolute": 2081,
                     "items": [
                       {
                         "name": "Amani Summoning Shawl",
@@ -10119,11 +10119,16 @@
                             "percentage": 0.5875
                           },
                           "Marksmanship": {
-                            "score": 1303,
-                            "percentage": 0.6741
+                            "score": 838,
+                            "percentage": 0.423
                           }
                         },
-                        "alternative": null,
+                        "alternative": {
+                          "item": 268253,
+                          "percentage": 0.6614,
+                          "absolute": 1274.3506,
+                          "item_level": 344
+                        },
                         "wishes": [
                           {
                             "specialization": "Beast Mastery",
@@ -10146,22 +10151,13 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6741,
-                            "absolute": 1303.6964,
+                            "percentage": 0.423,
+                            "absolute": 838.2234,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 311,
-                                "id": 251132
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 251132
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -10207,8 +10203,8 @@
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 5.0053,
-                    "encounter_absolute": 9654,
+                    "encounter_percentage": 3.5619,
+                    "encounter_absolute": 6867,
                     "items": [
                       {
                         "name": "Keeper's Seething Core",
@@ -10218,18 +10214,9 @@
                           "Beast Mastery": {
                             "score": 5092,
                             "percentage": 2.6431
-                          },
-                          "Marksmanship": {
-                            "score": 2992,
-                            "percentage": 1.5471
                           }
                         },
-                        "alternative": {
-                          "item": 270168,
-                          "percentage": 5.2447,
-                          "absolute": 10143.831,
-                          "item_level": 344
-                        },
+                        "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Beast Mastery",
@@ -10237,25 +10224,6 @@
                             "upgrade": null,
                             "percentage": 2.6431,
                             "absolute": 5092.6112,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 298,
-                                "id": 193701
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 270173
-                              }
-                            }
-                          },
-                          {
-                            "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.5471,
-                            "absolute": 2992.206,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": {
@@ -10279,6 +10247,10 @@
                           "Beast Mastery": {
                             "score": 1570,
                             "percentage": 0.8151
+                          },
+                          "Marksmanship": {
+                            "score": 205,
+                            "percentage": 0.1037
                           }
                         },
                         "alternative": {
@@ -10306,6 +10278,16 @@
                                 "id": 271493
                               }
                             }
+                          },
+                          {
+                            "specialization": "Marksmanship",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.1037,
+                            "absolute": 205.5479,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
                           }
                         ]
                       }
@@ -10313,8 +10295,8 @@
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 2.9755,
-                    "encounter_absolute": 5743,
+                    "encounter_percentage": 1.692,
+                    "encounter_absolute": 3271,
                     "items": [
                       {
                         "name": "Vashnik's Sanguine Rancor",
@@ -10324,17 +10306,13 @@
                           "Beast Mastery": {
                             "score": 2816,
                             "percentage": 1.4619
-                          },
-                          "Marksmanship": {
-                            "score": 2927,
-                            "percentage": 1.5136
                           }
                         },
                         "alternative": {
-                          "item": 270168,
-                          "percentage": 5.2447,
-                          "absolute": 10143.831,
-                          "item_level": 344
+                          "item": 270165,
+                          "percentage": 2.6431,
+                          "absolute": 5092.6112,
+                          "item_level": 321
                         },
                         "wishes": [
                           {
@@ -10355,25 +10333,35 @@
                                 "id": 270173
                               }
                             }
-                          },
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Vile Alchemist's Band",
+                        "id": 268249,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Marksmanship": {
+                            "score": 455,
+                            "percentage": 0.2301
+                          }
+                        },
+                        "alternative": {
+                          "item": 268252,
+                          "percentage": 1.1892,
+                          "absolute": 2291.3003,
+                          "item_level": 324
+                        },
+                        "wishes": [
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.5136,
-                            "absolute": 2927.5403,
+                            "percentage": 0.2301,
+                            "absolute": 455.937,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 298,
-                                "id": 193701
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 270173
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -10381,8 +10369,8 @@
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 7.2117,
-                    "encounter_absolute": 13915,
+                    "encounter_percentage": 4.931100000000001,
+                    "encounter_absolute": 9546,
                     "items": [
                       {
                         "name": "Gebbo's Bottomless Bag",
@@ -10392,17 +10380,13 @@
                           "Beast Mastery": {
                             "score": 4148,
                             "percentage": 2.1533
-                          },
-                          "Marksmanship": {
-                            "score": 3551,
-                            "percentage": 1.836
                           }
                         },
                         "alternative": {
-                          "item": 270168,
-                          "percentage": 5.2447,
-                          "absolute": 10143.831,
-                          "item_level": 344
+                          "item": 270165,
+                          "percentage": 2.6431,
+                          "absolute": 5092.6112,
+                          "item_level": 321
                         },
                         "wishes": [
                           {
@@ -10411,25 +10395,6 @@
                             "upgrade": null,
                             "percentage": 2.1533,
                             "absolute": 4148.783,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 298,
-                                "id": 193701
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 270173
-                              }
-                            }
-                          },
-                          {
-                            "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.836,
-                            "absolute": 3551.025,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": {
@@ -10455,8 +10420,8 @@
                             "percentage": 1.167
                           },
                           "Marksmanship": {
-                            "score": 1009,
-                            "percentage": 0.522
+                            "score": 504,
+                            "percentage": 0.2544
                           }
                         },
                         "alternative": null,
@@ -10473,10 +10438,10 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.522,
-                            "absolute": 1009.515,
+                            "percentage": 0.2544,
+                            "absolute": 504.059,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -10493,8 +10458,8 @@
                             "percentage": 0.7367
                           },
                           "Marksmanship": {
-                            "score": 1540,
-                            "percentage": 0.7967
+                            "score": 1227,
+                            "percentage": 0.6197
                           }
                         },
                         "alternative": null,
@@ -10511,10 +10476,10 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.7967,
-                            "absolute": 1540.8867,
+                            "percentage": 0.6197,
+                            "absolute": 1227.7875,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -10525,8 +10490,8 @@
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 4.6596,
-                    "encounter_absolute": 8992,
+                    "encounter_percentage": 4.6359,
+                    "encounter_absolute": 9045,
                     "items": [
                       {
                         "name": "Venomcast Relic",
@@ -10538,8 +10503,8 @@
                             "percentage": 0.8519
                           },
                           "Marksmanship": {
-                            "score": 1422,
-                            "percentage": 0.7354
+                            "score": 1631,
+                            "percentage": 0.8234
                           }
                         },
                         "alternative": {
@@ -10570,22 +10535,13 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.7354,
-                            "absolute": 1422.4349,
+                            "percentage": 0.8234,
+                            "absolute": 1631.4386,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 318,
-                                "id": 271491
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 271491
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -10599,8 +10555,8 @@
                             "percentage": 1.1892
                           },
                           "Marksmanship": {
-                            "score": 2712,
-                            "percentage": 1.4024
+                            "score": 1888,
+                            "percentage": 0.9531
                           }
                         },
                         "alternative": null,
@@ -10617,10 +10573,10 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.4024,
-                            "absolute": 2712.4409,
+                            "percentage": 0.9531,
+                            "absolute": 1888.4356,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -10635,12 +10591,16 @@
                           "Beast Mastery": {
                             "score": 926,
                             "percentage": 0.4807
+                          },
+                          "Marksmanship": {
+                            "score": 668,
+                            "percentage": 0.3376
                           }
                         },
                         "alternative": {
                           "item": 268258,
-                          "percentage": 0.7967,
-                          "absolute": 1540.8867,
+                          "percentage": 0.7367,
+                          "absolute": 1419.4632,
                           "item_level": 324
                         },
                         "wishes": [
@@ -10650,6 +10610,16 @@
                             "upgrade": null,
                             "percentage": 0.4807,
                             "absolute": 926.1799,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          },
+                          {
+                            "specialization": "Marksmanship",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.3376,
+                            "absolute": 668.9178,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -10700,8 +10670,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 6.429,
-                    "encounter_absolute": 12405,
+                    "encounter_percentage": 7.8451,
+                    "encounter_absolute": 15340,
                     "items": [
                       {
                         "name": "Silken Voodoo Drape",
@@ -10713,16 +10683,11 @@
                             "percentage": 0.6614
                           },
                           "Marksmanship": {
-                            "score": 471,
-                            "percentage": 0.2435
+                            "score": 1214,
+                            "percentage": 0.6127
                           }
                         },
-                        "alternative": {
-                          "item": 268248,
-                          "percentage": 0.6741,
-                          "absolute": 1303.6964,
-                          "item_level": 318
-                        },
+                        "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Beast Mastery",
@@ -10745,22 +10710,13 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.2435,
-                            "absolute": 471.0019,
+                            "percentage": 0.6127,
+                            "absolute": 1214.0346,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 311,
-                                "id": 251132
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 251132
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -10774,8 +10730,8 @@
                             "percentage": 1.9288
                           },
                           "Marksmanship": {
-                            "score": 2761,
-                            "percentage": 1.4279
+                            "score": 2814,
+                            "percentage": 1.4204
                           }
                         },
                         "alternative": null,
@@ -10801,22 +10757,13 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.4279,
-                            "absolute": 2761.7205,
+                            "percentage": 1.4204,
+                            "absolute": 2814.4948,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 318,
-                                "id": 271491
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 271491
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -10830,8 +10777,8 @@
                             "percentage": 1.1181
                           },
                           "Marksmanship": {
-                            "score": 2029,
-                            "percentage": 1.0493
+                            "score": 2061,
+                            "percentage": 1.0403
                           }
                         },
                         "alternative": {
@@ -10853,10 +10800,39 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.0493,
-                            "absolute": 2029.4842,
+                            "percentage": 1.0403,
+                            "absolute": 2061.323,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Zul'jin's Guillotine Technique",
+                        "id": 270173,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Marksmanship": {
+                            "score": 2107,
+                            "percentage": 1.0634
+                          }
+                        },
+                        "alternative": {
+                          "item": 270165,
+                          "percentage": 2.6431,
+                          "absolute": 5092.6112,
+                          "item_level": 321
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Marksmanship",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.0634,
+                            "absolute": 2107.0278,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -10867,8 +10843,8 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 19.5308,
-                    "encounter_absolute": 37711,
+                    "encounter_percentage": 16.4158,
+                    "encounter_absolute": 32083,
                     "items": [
                       {
                         "name": "Caustic Repose Greatbow",
@@ -10880,8 +10856,8 @@
                             "percentage": 4.0112
                           },
                           "Marksmanship": {
-                            "score": 9504,
-                            "percentage": 4.9144
+                            "score": 6857,
+                            "percentage": 3.461
                           }
                         },
                         "alternative": null,
@@ -10898,10 +10874,10 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 4.9144,
-                            "absolute": 9504.9545,
+                            "percentage": 3.461,
+                            "absolute": 6857.7708,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -10918,15 +10894,15 @@
                             "percentage": 2.186
                           },
                           "Marksmanship": {
-                            "score": 10143,
-                            "percentage": 5.2447
+                            "score": 4181,
+                            "percentage": 2.1104
                           }
                         },
                         "alternative": {
-                          "item": 270175,
-                          "percentage": 6.0667,
-                          "absolute": 11733.6304,
-                          "item_level": 344
+                          "item": 270165,
+                          "percentage": 2.6431,
+                          "absolute": 5092.6112,
+                          "item_level": 321
                         },
                         "wishes": [
                           {
@@ -10950,22 +10926,13 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 5.2447,
-                            "absolute": 10143.831,
+                            "percentage": 2.1104,
+                            "absolute": 4181.6415,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 298,
-                                "id": 193701
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 270173
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -10979,8 +10946,8 @@
                             "percentage": 1.1321
                           },
                           "Marksmanship": {
-                            "score": 1418,
-                            "percentage": 0.7332
+                            "score": 1659,
+                            "percentage": 0.8373
                           }
                         },
                         "alternative": null,
@@ -10997,10 +10964,10 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.7332,
-                            "absolute": 1418.16,
+                            "percentage": 0.8373,
+                            "absolute": 1659.1371,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -11017,8 +10984,8 @@
                             "percentage": 0.684
                           },
                           "Marksmanship": {
-                            "score": 1209,
-                            "percentage": 0.6252
+                            "score": 1328,
+                            "percentage": 0.6705
                           }
                         },
                         "alternative": null,
@@ -11035,10 +11002,63 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6252,
-                            "absolute": 1209.1718,
+                            "percentage": 0.6705,
+                            "absolute": 1328.5329,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Marksmanship": {
+                            "score": 808,
+                            "percentage": 0.4081
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Marksmanship",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.4081,
+                            "absolute": 808.6398,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Voracious Heart of Ula'tek",
+                        "id": 270175,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Marksmanship": {
+                            "score": 1813,
+                            "percentage": 0.9152
+                          }
+                        },
+                        "alternative": {
+                          "item": 270165,
+                          "percentage": 2.6431,
+                          "absolute": 5092.6112,
+                          "item_level": 321
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Marksmanship",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.9152,
+                            "absolute": 1813.4773,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -11048,8 +11068,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 47.3757,
-                "total_absolute": 91437
+                "total_percentage": 40.394499999999994,
+                "total_absolute": 78704
               }
             },
             {
@@ -11057,24 +11077,24 @@
               "wishlist": {
                 "updated_at": {
                   "Beast Mastery": "2026-09-10T23:25:30.000+00:00",
-                  "Marksmanship": "2026-09-16T23:38:09.000+00:00",
+                  "Marksmanship": "2026-09-23T21:59:19.000+00:00",
                   "Survival": null
                 },
                 "report_uploaded_at": {
                   "Beast Mastery": "2026-09-10T23:24:54.000Z",
-                  "Marksmanship": "2026-09-16T23:37:43.000Z",
+                  "Marksmanship": "2026-09-23T21:58:08.000Z",
                   "Survival": null
                 },
                 "report_id": {
                   "Beast Mastery": "jLFzatip9hAywAEDqjbbVG",
-                  "Marksmanship": "8hrndyPr2dCZLZmsqnhAVv",
+                  "Marksmanship": "wW7hhL9WDHbGDW5TTTL3mB",
                   "Survival": null
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0.3364,
-                    "encounter_absolute": 644,
+                    "encounter_percentage": 0.1116,
+                    "encounter_absolute": 213,
                     "items": [
                       {
                         "name": "Amani Summoning Shawl",
@@ -11084,10 +11104,6 @@
                           "Beast Mastery": {
                             "score": 213,
                             "percentage": 0.1116
-                          },
-                          "Marksmanship": {
-                            "score": 431,
-                            "percentage": 0.2248
                           }
                         },
                         "alternative": null,
@@ -11110,25 +11126,6 @@
                                 "id": 251132
                               }
                             }
-                          },
-                          {
-                            "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:09.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.2248,
-                            "absolute": 431.5174,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 311,
-                                "id": 251132
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 251132
-                              }
-                            }
                           }
                         ]
                       }
@@ -11136,8 +11133,8 @@
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 2.7938,
-                    "encounter_absolute": 5350,
+                    "encounter_percentage": 1.9499,
+                    "encounter_absolute": 3731,
                     "items": [
                       {
                         "name": "Keeper's Seething Core",
@@ -11147,16 +11144,12 @@
                           "Beast Mastery": {
                             "score": 3475,
                             "percentage": 1.8158
-                          },
-                          "Marksmanship": {
-                            "score": 1619,
-                            "percentage": 0.8439
                           }
                         },
                         "alternative": {
                           "item": 270175,
-                          "percentage": 3.9726,
-                          "absolute": 7624.8525,
+                          "percentage": 1.9963,
+                          "absolute": 3820.4967,
                           "item_level": 314
                         },
                         "wishes": [
@@ -11166,25 +11159,6 @@
                             "upgrade": null,
                             "percentage": 1.8158,
                             "absolute": 3475.0801,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 298,
-                                "id": 193701
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 270173
-                              }
-                            }
-                          },
-                          {
-                            "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:09.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.8439,
-                            "absolute": 1619.6594,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": {
@@ -11242,8 +11216,8 @@
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 1.0288,
-                    "encounter_absolute": 1971,
+                    "encounter_percentage": 0.4864,
+                    "encounter_absolute": 930,
                     "items": [
                       {
                         "name": "Vashnik's Sanguine Rancor",
@@ -11253,16 +11227,12 @@
                           "Beast Mastery": {
                             "score": 930,
                             "percentage": 0.4864
-                          },
-                          "Marksmanship": {
-                            "score": 1041,
-                            "percentage": 0.5424
                           }
                         },
                         "alternative": {
                           "item": 270175,
-                          "percentage": 3.9726,
-                          "absolute": 7624.8525,
+                          "percentage": 1.9963,
+                          "absolute": 3820.4967,
                           "item_level": 314
                         },
                         "wishes": [
@@ -11284,25 +11254,6 @@
                                 "id": 270173
                               }
                             }
-                          },
-                          {
-                            "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:09.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5424,
-                            "absolute": 1041.1251,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 298,
-                                "id": 193701
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 270173
-                              }
-                            }
                           }
                         ]
                       }
@@ -11310,8 +11261,8 @@
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 3.3225,
-                    "encounter_absolute": 6364,
+                    "encounter_percentage": 1.9915,
+                    "encounter_absolute": 3810,
                     "items": [
                       {
                         "name": "Gebbo's Bottomless Bag",
@@ -11321,16 +11272,12 @@
                           "Beast Mastery": {
                             "score": 2544,
                             "percentage": 1.3296
-                          },
-                          "Marksmanship": {
-                            "score": 2041,
-                            "percentage": 1.0634
                           }
                         },
                         "alternative": {
                           "item": 270175,
-                          "percentage": 3.9726,
-                          "absolute": 7624.8525,
+                          "percentage": 1.9963,
+                          "absolute": 3820.4967,
                           "item_level": 314
                         },
                         "wishes": [
@@ -11340,25 +11287,6 @@
                             "upgrade": null,
                             "percentage": 1.3296,
                             "absolute": 2544.6359,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 298,
-                                "id": 193701
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 270173
-                              }
-                            }
-                          },
-                          {
-                            "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:09.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.0634,
-                            "absolute": 2041.038,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": {
@@ -11382,10 +11310,6 @@
                           "Beast Mastery": {
                             "score": 209,
                             "percentage": 0.1095
-                          },
-                          "Marksmanship": {
-                            "score": 513,
-                            "percentage": 0.2676
                           }
                         },
                         "alternative": null,
@@ -11396,16 +11320,6 @@
                             "upgrade": null,
                             "percentage": 0.1095,
                             "absolute": 209.5551,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          },
-                          {
-                            "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:09.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.2676,
-                            "absolute": 513.5995,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -11440,8 +11354,8 @@
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 1.5975,
-                    "encounter_absolute": 3062,
+                    "encounter_percentage": 1.1391,
+                    "encounter_absolute": 2215,
                     "items": [
                       {
                         "name": "Apex Brute's Claw Ring",
@@ -11453,8 +11367,8 @@
                             "percentage": 0.6455
                           },
                           "Marksmanship": {
-                            "score": 1758,
-                            "percentage": 0.916
+                            "score": 710,
+                            "percentage": 0.3574
                           }
                         },
                         "alternative": null,
@@ -11471,10 +11385,10 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:09.000+00:00",
+                            "timestamp": "2026-09-23T21:59:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.916,
-                            "absolute": 1758.2012,
+                            "percentage": 0.3574,
+                            "absolute": 710.4057,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -11487,8 +11401,8 @@
                         "slot": "legs",
                         "score_by_spec": {
                           "Marksmanship": {
-                            "score": 69,
-                            "percentage": 0.036
+                            "score": 270,
+                            "percentage": 0.1362
                           }
                         },
                         "alternative": {
@@ -11500,22 +11414,13 @@
                         "wishes": [
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:09.000+00:00",
+                            "timestamp": "2026-09-23T21:59:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.036,
-                            "absolute": 69.0274,
+                            "percentage": 0.1362,
+                            "absolute": 270.6161,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 318,
-                                "id": 271491
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 271491
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -11569,8 +11474,8 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 10.0347,
-                    "encounter_absolute": 19240,
+                    "encounter_percentage": 3.463,
+                    "encounter_absolute": 6647,
                     "items": [
                       {
                         "name": "Font of Venomous Rage",
@@ -11582,14 +11487,14 @@
                             "percentage": 0.6497
                           },
                           "Marksmanship": {
-                            "score": 5468,
-                            "percentage": 2.849
+                            "score": 198,
+                            "percentage": 0.0998
                           }
                         },
                         "alternative": {
                           "item": 270175,
-                          "percentage": 3.9726,
-                          "absolute": 7624.8525,
+                          "percentage": 1.9963,
+                          "absolute": 3820.4967,
                           "item_level": 314
                         },
                         "wishes": [
@@ -11614,22 +11519,13 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:09.000+00:00",
+                            "timestamp": "2026-09-23T21:59:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 2.849,
-                            "absolute": 5468.2217,
+                            "percentage": 0.0998,
+                            "absolute": 198.3366,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 298,
-                                "id": 193701
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 270173
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -11643,8 +11539,8 @@
                             "percentage": 0.5258
                           },
                           "Marksmanship": {
-                            "score": 79,
-                            "percentage": 0.0413
+                            "score": 380,
+                            "percentage": 0.1914
                           }
                         },
                         "alternative": null,
@@ -11661,10 +11557,10 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:09.000+00:00",
+                            "timestamp": "2026-09-23T21:59:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.0413,
-                            "absolute": 79.2902,
+                            "percentage": 0.1914,
+                            "absolute": 380.3853,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -11679,10 +11575,6 @@
                           "Beast Mastery": {
                             "score": 3820,
                             "percentage": 1.9963
-                          },
-                          "Marksmanship": {
-                            "score": 7624,
-                            "percentage": 3.9726
                           }
                         },
                         "alternative": null,
@@ -11705,33 +11597,14 @@
                                 "id": 270173
                               }
                             }
-                          },
-                          {
-                            "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:09.000+00:00",
-                            "upgrade": null,
-                            "percentage": 3.9726,
-                            "absolute": 7624.8525,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 298,
-                                "id": 193701
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 270173
-                              }
-                            }
                           }
                         ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 19.5354,
-                "total_absolute": 37438
+                "total_percentage": 9.563200000000002,
+                "total_absolute": 18353
               }
             },
             {
@@ -11744,12 +11617,12 @@
                 },
                 "report_uploaded_at": {
                   "Beast Mastery": "2026-09-10T23:24:49.000Z",
-                  "Marksmanship": "2026-09-16T23:37:40.000Z",
+                  "Marksmanship": "2026-09-23T21:58:01.000Z",
                   "Survival": null
                 },
                 "report_id": {
                   "Beast Mastery": "7kBrHQN3fxyJ86TBq6dD8B",
-                  "Marksmanship": "drAS3VZxqXMfnHo3cCLK8q",
+                  "Marksmanship": "pLxiQYvxuuK6iDaWKaTCT8",
                   "Survival": null
                 },
                 "encounters": [
@@ -12133,24 +12006,24 @@
               "wishlist": {
                 "updated_at": {
                   "Beast Mastery": "2026-09-10T23:25:44.000+00:00",
-                  "Marksmanship": "2026-09-16T23:38:21.000+00:00",
+                  "Marksmanship": "2026-09-23T21:41:19.000+00:00",
                   "Survival": null
                 },
                 "report_uploaded_at": {
                   "Beast Mastery": "2026-09-10T23:24:56.000Z",
-                  "Marksmanship": "2026-09-16T23:37:46.000Z",
+                  "Marksmanship": "2026-09-23T21:40:52.000Z",
                   "Survival": null
                 },
                 "report_id": {
                   "Beast Mastery": "oGr7rqHXnasVUDeuZx1yzY",
-                  "Marksmanship": "hGd2QydGqadnXoDcjkURbN",
+                  "Marksmanship": "wSVCNRiz4EhTHS3SxdvTg6",
                   "Survival": null
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 2.9619,
-                    "encounter_absolute": 5710,
+                    "encounter_percentage": 3.2434,
+                    "encounter_absolute": 6305,
                     "items": [
                       {
                         "name": "Grips of Swirling Fury",
@@ -12162,8 +12035,8 @@
                             "percentage": 0.9264
                           },
                           "Marksmanship": {
-                            "score": 909,
-                            "percentage": 0.4701
+                            "score": 992,
+                            "percentage": 0.5011
                           }
                         },
                         "alternative": null,
@@ -12189,22 +12062,13 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.4701,
-                            "absolute": 909.2398,
+                            "percentage": 0.5011,
+                            "absolute": 992.9752,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 311,
-                                "id": 271493
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 271493
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -12218,8 +12082,8 @@
                             "percentage": 0.4615
                           },
                           "Marksmanship": {
-                            "score": 628,
-                            "percentage": 0.325
+                            "score": 1140,
+                            "percentage": 0.5755
                           }
                         },
                         "alternative": null,
@@ -12245,22 +12109,13 @@
                           },
                           {
                             "specialization": "Marksmanship",
-                            "timestamp": "2026-09-16T23:38:21.000+00:00",
+                            "timestamp": "2026-09-23T21:41:19.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.325,
-                            "absolute": 628.5311,
+                            "percentage": 0.5755,
+                            "absolute": 1140.2506,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 311,
-                                "id": 251200
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 251200
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -12276,8 +12131,8 @@
                         },
                         "alternative": {
                           "item": 268252,
-                          "percentage": 1.4024,
-                          "absolute": 2712.4409,
+                          "percentage": 1.1892,
+                          "absolute": 2291.3003,
                           "item_level": 324
                         },
                         "wishes": [
@@ -12296,8 +12151,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 2.9619,
-                "total_absolute": 5710
+                "total_percentage": 3.2434,
+                "total_absolute": 6305
               }
             },
             {
@@ -12305,17 +12160,17 @@
               "wishlist": {
                 "updated_at": {
                   "Beast Mastery": "2026-09-10T23:25:30.000+00:00",
-                  "Marksmanship": "2026-09-16T23:38:09.000+00:00",
+                  "Marksmanship": "2026-09-23T21:59:19.000+00:00",
                   "Survival": null
                 },
                 "report_uploaded_at": {
                   "Beast Mastery": "2026-09-10T23:24:54.000Z",
-                  "Marksmanship": "2026-09-16T23:37:43.000Z",
+                  "Marksmanship": "2026-09-23T21:58:08.000Z",
                   "Survival": null
                 },
                 "report_id": {
                   "Beast Mastery": "jLFzatip9hAywAEDqjbbVG",
-                  "Marksmanship": "8hrndyPr2dCZLZmsqnhAVv",
+                  "Marksmanship": "wW7hhL9WDHbGDW5TTTL3mB",
                   "Survival": null
                 },
                 "encounters": [
@@ -12336,8 +12191,8 @@
                         },
                         "alternative": {
                           "item": 268252,
-                          "percentage": 0.916,
-                          "absolute": 1758.2012,
+                          "percentage": 0.6455,
+                          "absolute": 1235.3783,
                           "item_level": 311
                         },
                         "wishes": [
@@ -12403,12 +12258,12 @@
                 },
                 "report_uploaded_at": {
                   "Beast Mastery": "2026-09-10T23:24:49.000Z",
-                  "Marksmanship": "2026-09-16T23:37:40.000Z",
+                  "Marksmanship": "2026-09-23T21:58:01.000Z",
                   "Survival": null
                 },
                 "report_id": {
                   "Beast Mastery": "7kBrHQN3fxyJ86TBq6dD8B",
-                  "Marksmanship": "drAS3VZxqXMfnHo3cCLK8q",
+                  "Marksmanship": "pLxiQYvxuuK6iDaWKaTCT8",
                   "Survival": null
                 },
                 "encounters": [
@@ -20009,23 +19864,23 @@
                 "updated_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-22T20:22:11.000+00:00"
+                  "Unholy": "2026-09-23T22:06:24.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-22T20:20:49.000Z"
+                  "Unholy": "2026-09-23T22:04:31.000Z"
                 },
                 "report_id": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "nwQ5jL7Qpk6Kke6q1Crgy2"
+                  "Unholy": "qDnroA4Rg9cECs43vj1kea"
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 1.1782,
-                    "encounter_absolute": 2488,
+                    "encounter_percentage": 1.5969,
+                    "encounter_absolute": 3734,
                     "items": [
                       {
                         "name": "Amani Summoning Shawl",
@@ -20033,23 +19888,23 @@
                         "slot": "back",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 739,
-                            "percentage": 0.3501
+                            "score": 166,
+                            "percentage": 0.0714
                           }
                         },
                         "alternative": {
                           "item": 268253,
-                          "percentage": 0.8249,
-                          "absolute": 1742.4414,
+                          "percentage": 0.7408,
+                          "absolute": 1732.6312,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:22:11.000+00:00",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.3501,
-                            "absolute": 739.5526,
+                            "percentage": 0.0714,
+                            "absolute": 166.9034,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20062,18 +19917,18 @@
                         "slot": "head",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1749,
-                            "percentage": 0.8281
+                            "score": 3568,
+                            "percentage": 1.5255
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:22:11.000+00:00",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8281,
-                            "absolute": 1749.1974,
+                            "percentage": 1.5255,
+                            "absolute": 3568.0855,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20084,8 +19939,8 @@
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 1.703,
-                    "encounter_absolute": 3597,
+                    "encounter_percentage": 2.4643,
+                    "encounter_absolute": 5763,
                     "items": [
                       {
                         "name": "Keeper's Seething Core",
@@ -20093,23 +19948,23 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 3597,
-                            "percentage": 1.703
+                            "score": 5763,
+                            "percentage": 2.4643
                           }
                         },
                         "alternative": {
                           "item": 270173,
-                          "percentage": 3.4409,
-                          "absolute": 7268.4298,
+                          "percentage": 3.0115,
+                          "absolute": 7043.7875,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:22:11.000+00:00",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.703,
-                            "absolute": 3597.4451,
+                            "percentage": 2.4643,
+                            "absolute": 5763.9984,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20120,8 +19975,8 @@
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0.8537,
-                    "encounter_absolute": 1803,
+                    "encounter_percentage": 0.9229,
+                    "encounter_absolute": 2158,
                     "items": [
                       {
                         "name": "Venomforged Icon",
@@ -20129,23 +19984,52 @@
                         "slot": "chest",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1803,
-                            "percentage": 0.8537
+                            "score": 1937,
+                            "percentage": 0.8283
                           }
                         },
                         "alternative": {
                           "item": 268222,
-                          "percentage": 1.6043,
-                          "absolute": 3388.9634,
+                          "percentage": 2.3402,
+                          "absolute": 5473.7399,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:22:11.000+00:00",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8537,
-                            "absolute": 1803.3714,
+                            "percentage": 0.8283,
+                            "absolute": 1937.2817,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Malignant Toothed Edge",
+                        "id": 268214,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Unholy": {
+                            "score": 221,
+                            "percentage": 0.0946
+                          }
+                        },
+                        "alternative": {
+                          "item": 268213,
+                          "percentage": 2.8412,
+                          "absolute": 6645.596,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Unholy",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.0946,
+                            "absolute": 221.2978,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20156,8 +20040,8 @@
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 1.2103,
-                    "encounter_absolute": 2555,
+                    "encounter_percentage": 1.3527,
+                    "encounter_absolute": 3163,
                     "items": [
                       {
                         "name": "Gebbo's Bottomless Bag",
@@ -20165,52 +20049,23 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 2331,
-                            "percentage": 1.1038
+                            "score": 3163,
+                            "percentage": 1.3527
                           }
                         },
                         "alternative": {
                           "item": 270173,
-                          "percentage": 3.4409,
-                          "absolute": 7268.4298,
+                          "percentage": 3.0115,
+                          "absolute": 7043.7875,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:22:11.000+00:00",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.1038,
-                            "absolute": 2331.7142,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Venomforged Remnant",
-                        "id": 270925,
-                        "slot": "shoulder",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 224,
-                            "percentage": 0.1065
-                          }
-                        },
-                        "alternative": {
-                          "item": 268226,
-                          "percentage": 0.6572,
-                          "absolute": 1388.3214,
-                          "item_level": 318
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:22:11.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.1065,
-                            "absolute": 224.9269,
+                            "percentage": 1.3527,
+                            "absolute": 3163.9603,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20221,8 +20076,8 @@
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0.6665,
-                    "encounter_absolute": 1408,
+                    "encounter_percentage": 0.5242,
+                    "encounter_absolute": 1226,
                     "items": [
                       {
                         "name": "Sszorak's Ferocity",
@@ -20230,23 +20085,23 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1408,
-                            "percentage": 0.6665
+                            "score": 1226,
+                            "percentage": 0.5242
                           }
                         },
                         "alternative": {
                           "item": 270173,
-                          "percentage": 3.4409,
-                          "absolute": 7268.4298,
+                          "percentage": 3.0115,
+                          "absolute": 7043.7875,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:22:11.000+00:00",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6665,
-                            "absolute": 1408.0047,
+                            "percentage": 0.5242,
+                            "absolute": 1226.0407,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20257,8 +20112,8 @@
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0.6651,
-                    "encounter_absolute": 1404,
+                    "encounter_percentage": 0.6151,
+                    "encounter_absolute": 1438,
                     "items": [
                       {
                         "name": "Venomforged Effigy",
@@ -20266,23 +20121,23 @@
                         "slot": "head",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1404,
-                            "percentage": 0.6651
+                            "score": 1438,
+                            "percentage": 0.6151
                           }
                         },
                         "alternative": {
                           "item": 268229,
-                          "percentage": 0.8281,
-                          "absolute": 1749.1974,
+                          "percentage": 1.5255,
+                          "absolute": 3568.0855,
                           "item_level": 318
                         },
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:22:11.000+00:00",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6651,
-                            "absolute": 1404.8576,
+                            "percentage": 0.6151,
+                            "absolute": 1438.7661,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20293,8 +20148,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 6.5382,
-                    "encounter_absolute": 13809,
+                    "encounter_percentage": 9.5841,
+                    "encounter_absolute": 22414,
                     "items": [
                       {
                         "name": "Silken Voodoo Drape",
@@ -20302,18 +20157,18 @@
                         "slot": "back",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1742,
-                            "percentage": 0.8249
+                            "score": 1732,
+                            "percentage": 0.7408
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:22:11.000+00:00",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8249,
-                            "absolute": 1742.4414,
+                            "percentage": 0.7408,
+                            "absolute": 1732.6312,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20326,18 +20181,18 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 7268,
-                            "percentage": 3.4409
+                            "score": 7043,
+                            "percentage": 3.0115
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:22:11.000+00:00",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
                             "upgrade": null,
-                            "percentage": 3.4409,
-                            "absolute": 7268.4298,
+                            "percentage": 3.0115,
+                            "absolute": 7043.7875,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20350,18 +20205,18 @@
                         "slot": "waist",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1411,
-                            "percentage": 0.6681
+                            "score": 1521,
+                            "percentage": 0.6504
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:22:11.000+00:00",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6681,
-                            "absolute": 1411.244,
+                            "percentage": 0.6504,
+                            "absolute": 1521.342,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20374,18 +20229,42 @@
                         "slot": "chest",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 3388,
-                            "percentage": 1.6043
+                            "score": 5473,
+                            "percentage": 2.3402
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:22:11.000+00:00",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.6043,
-                            "absolute": 3388.9634,
+                            "percentage": 2.3402,
+                            "absolute": 5473.7399,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Maze-roa, Warlord's Fury",
+                        "id": 268213,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Unholy": {
+                            "score": 6645,
+                            "percentage": 2.8412
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Unholy",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 2.8412,
+                            "absolute": 6645.596,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20396,8 +20275,8 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 1.5681,
-                    "encounter_absolute": 3311,
+                    "encounter_percentage": 3.071,
+                    "encounter_absolute": 7181,
                     "items": [
                       {
                         "name": "Chausses of Unbound Rancor",
@@ -20405,18 +20284,18 @@
                         "slot": "legs",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1560,
-                            "percentage": 0.7388
+                            "score": 1676,
+                            "percentage": 0.7166
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:22:11.000+00:00",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.7388,
-                            "absolute": 1560.6676,
+                            "percentage": 0.7166,
+                            "absolute": 1676.1188,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20429,18 +20308,71 @@
                         "slot": null,
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1751,
-                            "percentage": 0.8293
+                            "score": 2029,
+                            "percentage": 0.8678
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:22:11.000+00:00",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8293,
-                            "absolute": 1751.7264,
+                            "percentage": 0.8678,
+                            "absolute": 2029.6542,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Unholy": {
+                            "score": 1275,
+                            "percentage": 0.5453
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Unholy",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5453,
+                            "absolute": 1275.3854,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Voracious Heart of Ula'tek",
+                        "id": 270175,
+                        "slot": "trinket",
+                        "score_by_spec": {
+                          "Unholy": {
+                            "score": 2201,
+                            "percentage": 0.9413
+                          }
+                        },
+                        "alternative": {
+                          "item": 270173,
+                          "percentage": 3.0115,
+                          "absolute": 7043.7875,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Unholy",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.9413,
+                            "absolute": 2201.7664,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20450,8 +20382,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 14.3831,
-                "total_absolute": 30375
+                "total_percentage": 20.1312,
+                "total_absolute": 47077
               }
             },
             {
@@ -20460,29 +20392,54 @@
                 "updated_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-22T20:21:35.000+00:00"
+                  "Unholy": "2026-09-23T22:05:29.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-22T20:20:41.000Z"
+                  "Unholy": "2026-09-23T22:04:19.000Z"
                 },
                 "report_id": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "5bpg1ghhzLPVDRownN3HAr"
+                  "Unholy": "uur4hX5Z6mySsPBeemd61K"
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.6599,
+                    "encounter_absolute": 1533,
+                    "items": [
+                      {
+                        "name": "Skullguard of the Risen Sacrifice",
+                        "id": 268229,
+                        "slot": "head",
+                        "score_by_spec": {
+                          "Unholy": {
+                            "score": 1533,
+                            "percentage": 0.6599
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Unholy",
+                            "timestamp": "2026-09-23T22:05:29.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.6599,
+                            "absolute": 1533.244,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0.8664,
-                    "encounter_absolute": 1818,
+                    "encounter_percentage": 1.6677,
+                    "encounter_absolute": 3874,
                     "items": [
                       {
                         "name": "Keeper's Seething Core",
@@ -20490,23 +20447,18 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1818,
-                            "percentage": 0.8664
+                            "score": 3874,
+                            "percentage": 1.6677
                           }
                         },
-                        "alternative": {
-                          "item": 270173,
-                          "percentage": 1.2025,
-                          "absolute": 2523.9791,
-                          "item_level": 314
-                        },
+                        "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:21:35.000+00:00",
+                            "timestamp": "2026-09-23T22:05:29.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.8664,
-                            "absolute": 1818.4963,
+                            "percentage": 1.6677,
+                            "absolute": 3874.6955,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20517,14 +20469,44 @@
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.0297,
+                    "encounter_absolute": 68,
+                    "items": [
+                      {
+                        "name": "Venomforged Icon",
+                        "id": 270929,
+                        "slot": "chest",
+                        "score_by_spec": {
+                          "Unholy": {
+                            "score": 68,
+                            "percentage": 0.0297
+                          }
+                        },
+                        "alternative": {
+                          "item": 268222,
+                          "percentage": 0.8208,
+                          "absolute": 1906.9424,
+                          "item_level": 314
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Unholy",
+                            "timestamp": "2026-09-23T22:05:29.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.0297,
+                            "absolute": 68.9094,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0.325,
-                    "encounter_absolute": 682,
+                    "encounter_percentage": 0.6201,
+                    "encounter_absolute": 1440,
                     "items": [
                       {
                         "name": "Gebbo's Bottomless Bag",
@@ -20532,23 +20514,23 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 682,
-                            "percentage": 0.325
+                            "score": 1440,
+                            "percentage": 0.6201
                           }
                         },
                         "alternative": {
-                          "item": 270173,
-                          "percentage": 1.2025,
-                          "absolute": 2523.9791,
-                          "item_level": 314
+                          "item": 270165,
+                          "percentage": 1.6677,
+                          "absolute": 3874.6955,
+                          "item_level": 308
                         },
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:21:35.000+00:00",
+                            "timestamp": "2026-09-23T22:05:29.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.325,
-                            "absolute": 682.2385,
+                            "percentage": 0.6201,
+                            "absolute": 1440.8272,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20571,8 +20553,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 1.291,
-                    "encounter_absolute": 2708,
+                    "encounter_percentage": 1.7932,
+                    "encounter_absolute": 4165,
                     "items": [
                       {
                         "name": "Zul'jin's Guillotine Technique",
@@ -20580,18 +20562,23 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 2523,
-                            "percentage": 1.2025
+                            "score": 2259,
+                            "percentage": 0.9724
                           }
                         },
-                        "alternative": null,
+                        "alternative": {
+                          "item": 270165,
+                          "percentage": 1.6677,
+                          "absolute": 3874.6955,
+                          "item_level": 308
+                        },
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:21:35.000+00:00",
+                            "timestamp": "2026-09-23T22:05:29.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.2025,
-                            "absolute": 2523.9791,
+                            "percentage": 0.9724,
+                            "absolute": 2259.3149,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20604,18 +20591,18 @@
                         "slot": "chest",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 185,
-                            "percentage": 0.0885
+                            "score": 1906,
+                            "percentage": 0.8208
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:21:35.000+00:00",
+                            "timestamp": "2026-09-23T22:05:29.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.0885,
-                            "absolute": 185.6914,
+                            "percentage": 0.8208,
+                            "absolute": 1906.9424,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20626,13 +20613,38 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.0297,
+                    "encounter_absolute": 69,
+                    "items": [
+                      {
+                        "name": "Slumbering Coil Curio",
+                        "id": 270909,
+                        "slot": null,
+                        "score_by_spec": {
+                          "Unholy": {
+                            "score": 69,
+                            "percentage": 0.0297
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Unholy",
+                            "timestamp": "2026-09-23T22:05:29.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.0297,
+                            "absolute": 69.0213,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
-                "total_percentage": 2.4824,
-                "total_absolute": 5208
+                "total_percentage": 4.8003,
+                "total_absolute": 11149
               }
             },
             {
@@ -20641,17 +20653,17 @@
                 "updated_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-22T20:20:20.000+00:00"
+                  "Unholy": "2026-09-23T22:04:21.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-22T20:20:16.000Z"
+                  "Unholy": "2026-09-23T22:04:17.000Z"
                 },
                 "report_id": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "bK9Po1AHyYxmSV2i8cLjJo"
+                  "Unholy": "p3eyoNBua7XcoVzmiutiZW"
                 },
                 "encounters": [
                   {
@@ -20662,8 +20674,8 @@
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0.2626,
-                    "encounter_absolute": 550,
+                    "encounter_percentage": 1.025,
+                    "encounter_absolute": 2380,
                     "items": [
                       {
                         "name": "Keeper's Seething Core",
@@ -20671,18 +20683,18 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 550,
-                            "percentage": 0.2626
+                            "score": 2380,
+                            "percentage": 1.025
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:20:20.000+00:00",
+                            "timestamp": "2026-09-23T22:04:21.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.2626,
-                            "absolute": 550.8723,
+                            "percentage": 1.025,
+                            "absolute": 2380.6555,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20717,32 +20729,27 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0.22,
-                    "encounter_absolute": 461,
+                    "encounter_percentage": 0.0442,
+                    "encounter_absolute": 102,
                     "items": [
                       {
-                        "name": "Zul'jin's Guillotine Technique",
-                        "id": 270173,
-                        "slot": "trinket",
+                        "name": "Reckless Spirit Breastplate",
+                        "id": 268222,
+                        "slot": "chest",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 461,
-                            "percentage": 0.22
+                            "score": 102,
+                            "percentage": 0.0442
                           }
                         },
-                        "alternative": {
-                          "item": 270165,
-                          "percentage": 0.2626,
-                          "absolute": 550.8723,
-                          "item_level": 295
-                        },
+                        "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:20:20.000+00:00",
+                            "timestamp": "2026-09-23T22:04:21.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.22,
-                            "absolute": 461.4824,
+                            "percentage": 0.0442,
+                            "absolute": 102.6206,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20758,8 +20765,8 @@
                     "items": []
                   }
                 ],
-                "total_percentage": 0.4826,
-                "total_absolute": 1011
+                "total_percentage": 1.0692,
+                "total_absolute": 2482
               }
             }
           ]
@@ -20774,23 +20781,23 @@
                 "updated_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-22T20:22:11.000+00:00"
+                  "Unholy": "2026-09-23T22:06:24.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-22T20:20:49.000Z"
+                  "Unholy": "2026-09-23T22:04:31.000Z"
                 },
                 "report_id": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "nwQ5jL7Qpk6Kke6q1Crgy2"
+                  "Unholy": "qDnroA4Rg9cECs43vj1kea"
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0.6572,
-                    "encounter_absolute": 1388,
+                    "encounter_percentage": 1.1957,
+                    "encounter_absolute": 2796,
                     "items": [
                       {
                         "name": "Swelling Sea Spaulders",
@@ -20798,18 +20805,71 @@
                         "slot": "shoulder",
                         "score_by_spec": {
                           "Unholy": {
-                            "score": 1388,
-                            "percentage": 0.6572
+                            "score": 696,
+                            "percentage": 0.2977
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Unholy",
-                            "timestamp": "2026-09-22T20:22:11.000+00:00",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6572,
-                            "absolute": 1388.3214,
+                            "percentage": 0.2977,
+                            "absolute": 696.3605,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Alluring Bubbleband",
+                        "id": 268266,
+                        "slot": "finger",
+                        "score_by_spec": {
+                          "Unholy": {
+                            "score": 663,
+                            "percentage": 0.2835
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Unholy",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.2835,
+                            "absolute": 663.0835,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Forgotten Grotto Girdle",
+                        "id": 268244,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Unholy": {
+                            "score": 1437,
+                            "percentage": 0.6145
+                          }
+                        },
+                        "alternative": {
+                          "item": 268259,
+                          "percentage": 0.6504,
+                          "absolute": 1521.342,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Unholy",
+                            "timestamp": "2026-09-23T22:06:24.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.6145,
+                            "absolute": 1437.2414,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -20819,8 +20879,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 0.6572,
-                "total_absolute": 1388
+                "total_percentage": 1.1957,
+                "total_absolute": 2796
               }
             },
             {
@@ -20829,17 +20889,17 @@
                 "updated_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-22T20:21:35.000+00:00"
+                  "Unholy": "2026-09-23T22:05:29.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-22T20:20:41.000Z"
+                  "Unholy": "2026-09-23T22:04:19.000Z"
                 },
                 "report_id": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "5bpg1ghhzLPVDRownN3HAr"
+                  "Unholy": "uur4hX5Z6mySsPBeemd61K"
                 },
                 "encounters": [
                   {
@@ -20859,17 +20919,17 @@
                 "updated_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-22T20:20:20.000+00:00"
+                  "Unholy": "2026-09-23T22:04:21.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "2026-09-22T20:20:16.000Z"
+                  "Unholy": "2026-09-23T22:04:17.000Z"
                 },
                 "report_id": {
                   "Blood": null,
                   "Frost": null,
-                  "Unholy": "bK9Po1AHyYxmSV2i8cLjJo"
+                  "Unholy": "p3eyoNBua7XcoVzmiutiZW"
                 },
                 "encounters": [
                   {
