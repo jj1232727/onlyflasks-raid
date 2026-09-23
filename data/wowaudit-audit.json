@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T23:57:42.706Z",
+  "fetchedAt": "2026-09-23T03:36:45.225Z",
   "periodInfo": {
     "current_period": 1082,
     "current_season": {
@@ -801,9 +801,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
@@ -881,34 +881,7 @@
       "realm": "Sargeras",
       "data": {
         "dungeons_done": [],
-        "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
-        "vault_options": {
-          "raids": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          },
-          "dungeons": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          },
-          "world": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          }
-        }
-      }
-    },
-    {
-      "id": 4669066,
-      "name": "Nóva",
-      "realm": "Hyjal",
-      "data": {
-        "dungeons_done": [],
-        "world_quests_done": 0,
+        "world_quests_done": 1,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
@@ -923,8 +896,35 @@
           },
           "world": {
             "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_2": 272,
+            "option_3": null
+          }
+        }
+      }
+    },
+    {
+      "id": 4669066,
+      "name": "Nóva",
+      "realm": "Hyjal",
+      "data": {
+        "dungeons_done": [],
+        "world_quests_done": 0,
+        "regular_mythic_dungeons_done": 3,
+        "vault_options": {
+          "raids": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          },
+          "dungeons": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          },
+          "world": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
@@ -1084,7 +1084,7 @@
       "data": {
         "dungeons_done": [],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1178,9 +1178,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
@@ -1232,8 +1232,8 @@
             "option_3": null
           },
           "world": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 305,
+            "option_2": 305,
             "option_3": null
           }
         }
@@ -1271,9 +1271,14 @@
       "name": "Jugojuice",
       "realm": "Illidan",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 12,
+            "dungeon": 586
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 2,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1281,7 +1286,7 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1354,7 +1359,7 @@
       "data": {
         "dungeons_done": [],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 1,
+        "regular_mythic_dungeons_done": 3,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1408,7 +1413,66 @@
       "data": {
         "dungeons_done": [],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
+        "vault_options": {
+          "raids": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          },
+          "dungeons": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          },
+          "world": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          }
+        }
+      }
+    },
+    {
+      "id": 4471156,
+      "name": "Proudnewb",
+      "realm": "Tichondrius",
+      "data": {
+        "dungeons_done": [
+          {
+            "level": 18,
+            "dungeon": 250
+          }
+        ],
+        "world_quests_done": 0,
+        "regular_mythic_dungeons_done": 1,
+        "vault_options": {
+          "raids": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          },
+          "dungeons": {
+            "option_1": 318,
+            "option_2": null,
+            "option_3": null
+          },
+          "world": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          }
+        }
+      }
+    },
+    {
+      "id": 20338231,
+      "name": "Highnoonwar",
+      "realm": "Illidan",
+      "data": {
+        "dungeons_done": [],
+        "world_quests_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": null,
