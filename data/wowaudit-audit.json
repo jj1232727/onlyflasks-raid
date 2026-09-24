@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-24T19:43:55.207Z",
+  "fetchedAt": "2026-09-24T22:56:42.723Z",
   "periodInfo": {
     "current_period": 1082,
     "current_season": {
@@ -1040,7 +1040,7 @@
           "raids": {
             "option_1": 334,
             "option_2": 318,
-            "option_3": null
+            "option_3": 318
           },
           "dungeons": {
             "option_1": 318,
@@ -1095,33 +1095,6 @@
             "option_1": 334,
             "option_2": 334,
             "option_3": 318
-          },
-          "dungeons": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          },
-          "world": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          }
-        }
-      }
-    },
-    {
-      "id": 3735380,
-      "name": "Gensteeler",
-      "realm": "Area 52",
-      "data": {
-        "dungeons_done": [],
-        "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
-        "vault_options": {
-          "raids": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
           },
           "dungeons": {
             "option_1": null,
@@ -1224,10 +1197,18 @@
           {
             "level": 18,
             "dungeon": 399
+          },
+          {
+            "level": 18,
+            "dungeon": 249
+          },
+          {
+            "level": 18,
+            "dungeon": 588
           }
         ],
         "world_quests_done": 1,
-        "regular_mythic_dungeons_done": 5,
+        "regular_mythic_dungeons_done": 7,
         "vault_options": {
           "raids": {
             "option_1": 334,
@@ -1237,7 +1218,7 @@
           "dungeons": {
             "option_1": 318,
             "option_2": 318,
-            "option_3": null
+            "option_3": 318
           },
           "world": {
             "option_1": null,
@@ -1412,50 +1393,6 @@
           },
           "world": {
             "option_1": null,
-            "option_2": null,
-            "option_3": null
-          }
-        }
-      }
-    },
-    {
-      "id": 8698484,
-      "name": "Faredino",
-      "realm": "Area 52",
-      "data": {
-        "dungeons_done": [
-          {
-            "level": 12,
-            "dungeon": 250
-          },
-          {
-            "level": 12,
-            "dungeon": 587
-          },
-          {
-            "level": 12,
-            "dungeon": 588
-          },
-          {
-            "level": 12,
-            "dungeon": 250
-          }
-        ],
-        "world_quests_done": 7,
-        "regular_mythic_dungeons_done": 3,
-        "vault_options": {
-          "raids": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          },
-          "dungeons": {
-            "option_1": 318,
-            "option_2": 318,
-            "option_3": null
-          },
-          "world": {
-            "option_1": 305,
             "option_2": null,
             "option_3": null
           }
