@@ -160,7 +160,16 @@
                             "absolute": 1628.4712,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 270168
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270164
+                              }
+                            }
                           }
                         ]
                       },
@@ -388,7 +397,16 @@
                             "absolute": 482.4019,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 270168
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 270164
+                              }
+                            }
                           }
                         ]
                       },
@@ -493,34 +511,9 @@
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0.0262,
-                    "encounter_absolute": 52,
-                    "items": [
-                      {
-                        "name": "Gebbo's Bottomless Bag",
-                        "id": 270164,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Demonology": {
-                            "score": 52,
-                            "percentage": 0.0262
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Demonology",
-                            "timestamp": "2026-09-23T23:34:34.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.0262,
-                            "absolute": 52.4437,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "Sszorak",
@@ -572,8 +565,8 @@
                     "items": []
                   }
                 ],
-                "total_percentage": 0.0756,
-                "total_absolute": 150
+                "total_percentage": 0.0494,
+                "total_absolute": 98
               }
             },
             {
@@ -736,8 +729,8 @@
                                 "id": 250224
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 270168
+                                "item_level": 321,
+                                "id": 270164
                               }
                             }
                           }
@@ -15713,7 +15706,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 251229
+                                "id": 268229
                               }
                             }
                           }
@@ -15751,7 +15744,16 @@
                             "absolute": 5763.9984,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 265657
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       }
@@ -15852,7 +15854,16 @@
                             "absolute": 3163.9603,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 265657
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       }
@@ -15860,39 +15871,9 @@
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0.5242,
-                    "encounter_absolute": 1226,
-                    "items": [
-                      {
-                        "name": "Sszorak's Ferocity",
-                        "id": 270163,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 1226,
-                            "percentage": 0.5242
-                          }
-                        },
-                        "alternative": {
-                          "item": 270173,
-                          "percentage": 3.0115,
-                          "absolute": 7043.7875,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-09-24T01:56:42.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5242,
-                            "absolute": 1226.0407,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "The Twin Fangs",
@@ -15931,7 +15912,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 251229
+                                "id": 268229
                               }
                             }
                           }
@@ -15964,7 +15945,16 @@
                             "absolute": 7043.7875,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 265657
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       },
@@ -16074,8 +16064,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 15.0626,
-                "total_absolute": 35224
+                "total_percentage": 14.5384,
+                "total_absolute": 33998
               }
             },
             {
@@ -16099,43 +16089,9 @@
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0.6599,
-                    "encounter_absolute": 1533,
-                    "items": [
-                      {
-                        "name": "Skullguard of the Risen Sacrifice",
-                        "id": 268229,
-                        "slot": "head",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 1533,
-                            "percentage": 0.6599
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-09-24T01:56:40.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.6599,
-                            "absolute": 1533.244,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 251126
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 251229
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "Entombed Sentinels",
@@ -16162,7 +16118,16 @@
                             "absolute": 3874.6955,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 265657
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       }
@@ -16234,7 +16199,16 @@
                             "absolute": 1440.8272,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 265657
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       }
@@ -16282,7 +16256,16 @@
                             "absolute": 2259.3149,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 265657
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       },
@@ -16344,8 +16327,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 4.8003,
-                "total_absolute": 11149
+                "total_percentage": 4.1404,
+                "total_absolute": 9616
               }
             },
             {
@@ -16398,7 +16381,16 @@
                             "absolute": 2380.6555,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 265657
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       }
@@ -16678,39 +16670,9 @@
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0.221,
-                    "encounter_absolute": 408,
-                    "items": [
-                      {
-                        "name": "Skullguard of the Risen Sacrifice",
-                        "id": 268229,
-                        "slot": "head",
-                        "score_by_spec": {
-                          "Retribution": {
-                            "score": 408,
-                            "percentage": 0.221
-                          }
-                        },
-                        "alternative": {
-                          "item": 270917,
-                          "percentage": 0.2841,
-                          "absolute": 525.5612,
-                          "item_level": 324
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Retribution",
-                            "timestamp": "2026-09-23T23:53:55.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.221,
-                            "absolute": 408.8497,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "Entombed Sentinels",
@@ -17040,7 +17002,16 @@
                             "absolute": 525.5612,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271465
+                              },
+                              "new": {
+                                "item_level": 328,
+                                "id": 268229
+                              }
+                            }
                           }
                         ]
                       },
@@ -17239,8 +17210,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 16.1737,
-                "total_absolute": 29907
+                "total_percentage": 15.9527,
+                "total_absolute": 29499
               }
             },
             {
