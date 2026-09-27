@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-27T14:57:26.342Z",
+  "fetchedAt": "2026-09-27T19:27:44.698Z",
   "periodInfo": {
     "current_period": 1082,
     "current_season": {
@@ -915,10 +915,18 @@
           {
             "level": 12,
             "dungeon": 587
+          },
+          {
+            "level": 12,
+            "dungeon": 399
+          },
+          {
+            "level": 12,
+            "dungeon": 585
           }
         ],
         "world_quests_done": 1,
-        "regular_mythic_dungeons_done": 3,
+        "regular_mythic_dungeons_done": 4,
         "vault_options": {
           "raids": {
             "option_1": 334,
@@ -927,7 +935,7 @@
           },
           "dungeons": {
             "option_1": 318,
-            "option_2": null,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
@@ -1128,9 +1136,14 @@
       "name": "Mubyoshii",
       "realm": "Area 52",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 12,
+            "dungeon": 585
+          }
+        ],
         "world_quests_done": 1,
-        "regular_mythic_dungeons_done": 1,
+        "regular_mythic_dungeons_done": 2,
         "vault_options": {
           "raids": {
             "option_1": 334,
@@ -1138,7 +1151,7 @@
             "option_3": 334
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1286,6 +1299,10 @@
           {
             "level": 18,
             "dungeon": 249
+          },
+          {
+            "level": 19,
+            "dungeon": 586
           }
         ],
         "world_quests_done": 1,
