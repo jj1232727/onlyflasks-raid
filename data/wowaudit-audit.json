@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-28T10:24:46.860Z",
+  "fetchedAt": "2026-09-28T19:07:21.282Z",
   "periodInfo": {
     "current_period": 1082,
     "current_season": {
@@ -931,6 +931,10 @@
           {
             "level": 12,
             "dungeon": 585
+          },
+          {
+            "level": 12,
+            "dungeon": 586
           }
         ],
         "world_quests_done": 1,
@@ -1419,9 +1423,14 @@
       "name": "Melarorah",
       "realm": "Area 52",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 14,
+            "dungeon": 587
+          }
+        ],
         "world_quests_done": 1,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": 334,
@@ -1429,7 +1438,7 @@
             "option_3": 318
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
