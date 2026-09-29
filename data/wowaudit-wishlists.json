@@ -15787,7 +15787,16 @@
                             "absolute": 2543.4187,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 251126
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 268229
+                              }
+                            }
                           }
                         ]
                       }
@@ -15937,7 +15946,16 @@
                             "absolute": 1284.3968,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 251126
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 268229
+                              }
+                            }
                           }
                         ]
                       }
@@ -16103,34 +16121,9 @@
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0.201,
-                    "encounter_absolute": 467,
-                    "items": [
-                      {
-                        "name": "Skullguard of the Risen Sacrifice",
-                        "id": 268229,
-                        "slot": "head",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 467,
-                            "percentage": 0.201
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-09-28T07:07:26.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.201,
-                            "absolute": 467.3412,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "Entombed Sentinels",
@@ -16260,8 +16253,8 @@
                     "items": []
                   }
                 ],
-                "total_percentage": 3.6575,
-                "total_absolute": 8501
+                "total_percentage": 3.4565,
+                "total_absolute": 8034
               }
             },
             {
@@ -25699,7 +25692,16 @@
                             "absolute": 1370.4144,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 270165
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 270173
+                              }
+                            }
                           }
                         ]
                       },
@@ -26073,7 +26075,16 @@
                             "absolute": 1100.0591,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 270165
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 270173
+                              }
+                            }
                           }
                         ]
                       },
