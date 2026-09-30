@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-29T20:23:58.168Z",
+  "fetchedAt": "2026-09-30T00:57:29.878Z",
   "periodInfo": {
     "current_period": 1083,
     "current_season": {
@@ -15,7 +15,8 @@
       "first_period_id": 1077,
       "instance_ids": [
         80,
-        81
+        81,
+        84
       ],
       "tier_items_by_slot": {
         "1": {
@@ -457,7 +458,7 @@
             "thumbnailUrl": null,
             "tileUrl": "https://render.worldofwarcraft.com/eu/zones/the-venomous-abyss-small.jpg",
             "expansion": "Midnight",
-            "orderInSeason": 1,
+            "orderInSeason": 2,
             "encounters": [
               {
                 "id": 16824,
@@ -720,6 +721,42 @@
             "maxItemLevel": 318,
             "gameVersion": "live",
             "raidSize": 15
+          },
+          {
+            "id": 84,
+            "name": "The Unbinding of Kith'ix",
+            "altRaidSize": null,
+            "maxRaidSize": 25,
+            "thumbnailUrl": null,
+            "tileUrl": "https://data.wowaudit.com/img/kithix-small.webp",
+            "expansion": "Midnight",
+            "orderInSeason": 1,
+            "encounters": [
+              {
+                "id": 16847,
+                "instanceId": 84,
+                "swappablePhases": null,
+                "wclToTimelinePhases": null,
+                "name": "Kith'ix",
+                "defaultOrder": 0,
+                "wclId": 3513,
+                "maxItemLevel": 318,
+                "thumbnailUrl": "https://wowaudit-assets.nyc3.cdn.digitaloceanspaces.com/images/achievement-icons/kithix.jpg",
+                "zoomUrl": null,
+                "encounterAreaImages": [
+                  "Room"
+                ],
+                "tierSlotDrop": null
+              }
+            ],
+            "wclId": 53,
+            "wclPartition": null,
+            "releaseDate": "2026-10-13",
+            "legacyImagePath": "https://data.wowaudit.com/img/the-unbinding-of-kith-ix-small.jpeg",
+            "droptimizerId": null,
+            "maxItemLevel": 318,
+            "gameVersion": "live",
+            "raidSize": 15
           }
         ]
       }
@@ -759,9 +796,14 @@
       "name": "Brigdèss",
       "realm": "Proudmoore",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 10,
+            "dungeon": 399
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -769,7 +811,7 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -791,8 +833,8 @@
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": null
           },
           "dungeons": {
@@ -801,9 +843,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
@@ -896,7 +938,7 @@
       "data": {
         "dungeons_done": [],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -909,9 +951,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
@@ -936,9 +978,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
@@ -1085,7 +1127,7 @@
       "data": {
         "dungeons_done": [],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": 318,
@@ -1098,9 +1140,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
@@ -1165,7 +1207,7 @@
       "realm": "Area 52",
       "data": {
         "dungeons_done": [],
-        "world_quests_done": 0,
+        "world_quests_done": 6,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
@@ -1179,7 +1221,7 @@
             "option_3": null
           },
           "world": {
-            "option_1": null,
+            "option_1": 272,
             "option_2": null,
             "option_3": null
           }
@@ -1233,9 +1275,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 285
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
@@ -1274,7 +1316,7 @@
       "data": {
         "dungeons_done": [],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1287,9 +1329,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
@@ -1299,9 +1341,14 @@
       "name": "Rapunzele",
       "realm": "Tichondrius",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 14,
+            "dungeon": 584
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 4,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1309,14 +1356,14 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 289
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
