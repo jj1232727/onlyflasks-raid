@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-30T07:50:07.855Z",
+  "fetchedAt": "2026-09-30T14:31:15.140Z",
   "periodInfo": {
     "current_period": 1083,
     "current_season": {
@@ -1441,9 +1441,14 @@
       "name": "Highnoonwar",
       "realm": "Illidan",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 18,
+            "dungeon": 585
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1451,7 +1456,7 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
