@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-03T07:28:00.952Z",
+  "fetchedAt": "2026-10-03T12:57:51.462Z",
   "characters": [
     {
       "id": 4579002,
@@ -1529,7 +1529,7 @@
       "id": 5067865,
       "name": "Zynszn",
       "status": "ok",
-      "lastCrawledAt": "2026-10-03T04:35:11.000Z",
+      "lastCrawledAt": "2026-10-03T10:59:01.000Z",
       "profileUrl": "https://raider.io/characters/us/zuljin/Zynszn",
       "weeklyRuns": [
         {
@@ -2006,6 +2006,35 @@
             }
           ],
           "url": "https://raider.io/mythic-plus-runs/season-mn-2/16913060-12-altar-of-fangs",
+          "spec": {
+            "id": 252,
+            "name": "Unholy",
+            "slug": "unholy",
+            "class_id": 6,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "3.0.0",
+            "ordinal": 2
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "Altar of Fangs",
+          "short_name": "AOF",
+          "mythic_level": 3,
+          "completed_at": "2026-10-03T06:59:10.000Z",
+          "clear_time_ms": 1076509,
+          "keystone_run_id": 17859049,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 3,
+          "map_challenge_mode_id": 588,
+          "zone_id": 16865,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
+          "score": 185,
+          "affixes": [],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/17859049-3-altar-of-fangs",
           "spec": {
             "id": 252,
             "name": "Unholy",
