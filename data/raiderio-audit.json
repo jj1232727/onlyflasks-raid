@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-05T08:07:59.248Z",
+  "fetchedAt": "2026-10-05T19:01:18.277Z",
   "characters": [
     {
       "id": 4579002,
@@ -1800,7 +1800,7 @@
       "id": 5067865,
       "name": "Zynszn",
       "status": "ok",
-      "lastCrawledAt": "2026-10-04T18:18:38.000Z",
+      "lastCrawledAt": "2026-10-05T12:20:14.000Z",
       "profileUrl": "https://raider.io/characters/us/zuljin/Zynszn",
       "weeklyRuns": [
         {
@@ -2290,22 +2290,31 @@
           "role": "dps"
         },
         {
-          "dungeon": "Altar of Fangs",
-          "short_name": "AOF",
-          "mythic_level": 3,
-          "completed_at": "2026-10-03T06:59:10.000Z",
-          "clear_time_ms": 1076509,
-          "keystone_run_id": 17859049,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 3,
-          "map_challenge_mode_id": 588,
-          "zone_id": 16865,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
-          "score": 185,
-          "affixes": [],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/17859049-3-altar-of-fangs",
+          "dungeon": "Temple of Sethraliss",
+          "short_name": "TOS",
+          "mythic_level": 6,
+          "completed_at": "2026-10-05T05:22:07.000Z",
+          "clear_time_ms": 1572344,
+          "keystone_run_id": 18444766,
+          "par_time_ms": 1920999,
+          "num_keystone_upgrades": 1,
+          "map_challenge_mode_id": 250,
+          "zone_id": 9527,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
+          "score": 236.8,
+          "affixes": [
+            {
+              "id": 160,
+              "name": "Xal'atath's Bargain: Devour",
+              "description": "While in combat, Xal'atath tears open rifts that devour the essence of players.",
+              "icon": "inv_ability_voidweaverpriest_entropicrift",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
+              "wowhead_url": "https://wowhead.com/affix=160"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/18444766-6-temple-of-sethraliss",
           "spec": {
             "id": 252,
             "name": "Unholy",
@@ -3931,7 +3940,7 @@
       "id": 4471156,
       "name": "Proudnewb",
       "status": "ok",
-      "lastCrawledAt": "2026-10-05T06:58:41.000Z",
+      "lastCrawledAt": "2026-10-05T08:21:39.000Z",
       "profileUrl": "https://raider.io/characters/us/tichondrius/Proudnewb",
       "weeklyRuns": [
         {
@@ -3976,6 +3985,60 @@
             }
           ],
           "url": "https://raider.io/mythic-plus-runs/season-mn-2/18385110-19-voidscar-arena",
+          "spec": {
+            "id": 65,
+            "name": "Holy",
+            "slug": "holy",
+            "class_id": 2,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "healer"
+        },
+        {
+          "dungeon": "Altar of Fangs",
+          "short_name": "AOF",
+          "mythic_level": 19,
+          "completed_at": "2026-10-05T07:08:44.000Z",
+          "clear_time_ms": 1786777,
+          "keystone_run_id": 18407941,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 1,
+          "map_challenge_mode_id": 588,
+          "zone_id": 16865,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
+          "score": 470.3,
+          "affixes": [
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 147,
+              "name": "Xal'atath's Guile",
+              "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+              "icon": "ability_racial_chillofnight",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+              "wowhead_url": "https://wowhead.com/affix=147"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/18407941-19-altar-of-fangs",
           "spec": {
             "id": 65,
             "name": "Holy",
