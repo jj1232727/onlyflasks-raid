@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-07T03:50:58.661Z",
+  "fetchedAt": "2026-10-07T10:47:42.491Z",
   "characters": [
     {
       "id": 4579002,
@@ -310,7 +310,7 @@
       "id": 4826466,
       "name": "Xeonips",
       "status": "ok",
-      "lastCrawledAt": "2026-10-06T11:31:07.000Z",
+      "lastCrawledAt": "2026-10-07T10:15:54.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Xeonips",
       "weeklyRuns": [],
       "raidProgression": {
@@ -410,9 +410,118 @@
       "id": 4165902,
       "name": "Neomonk",
       "status": "ok",
-      "lastCrawledAt": "2026-10-06T11:31:07.000Z",
+      "lastCrawledAt": "2026-10-07T04:23:53.000Z",
       "profileUrl": "https://raider.io/characters/us/sargeras/Neomonk",
-      "weeklyRuns": [],
+      "weeklyRuns": [
+        {
+          "dungeon": "Voidscar Arena",
+          "short_name": "VSA",
+          "mythic_level": 10,
+          "completed_at": "2026-10-07T01:58:08.000Z",
+          "clear_time_ms": 1032823,
+          "keystone_run_id": 18871435,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 3,
+          "map_challenge_mode_id": 585,
+          "zone_id": 16425,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
+          "score": 335,
+          "affixes": [
+            {
+              "id": 148,
+              "name": "Xal'atath's Bargain: Ascendant",
+              "description": "While in combat, Xal'atath rains down orbs of cosmic energy that empower enemies or players.",
+              "icon": "inv_nullstone_cosmicvoid",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_nullstone_cosmicvoid.jpg",
+              "wowhead_url": "https://wowhead.com/affix=148"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/18871435-10-voidscar-arena",
+          "spec": {
+            "id": 270,
+            "name": "Mistweaver",
+            "slug": "mistweaver",
+            "class_id": 10,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "5.0.0",
+            "ordinal": 1
+          },
+          "role": "healer"
+        },
+        {
+          "dungeon": "Voidscar Arena",
+          "short_name": "VSA",
+          "mythic_level": 10,
+          "completed_at": "2026-10-07T01:29:15.000Z",
+          "clear_time_ms": 1263597,
+          "keystone_run_id": 18871203,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 585,
+          "zone_id": 16425,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
+          "score": 331.2,
+          "affixes": [
+            {
+              "id": 148,
+              "name": "Xal'atath's Bargain: Ascendant",
+              "description": "While in combat, Xal'atath rains down orbs of cosmic energy that empower enemies or players.",
+              "icon": "inv_nullstone_cosmicvoid",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_nullstone_cosmicvoid.jpg",
+              "wowhead_url": "https://wowhead.com/affix=148"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/18871203-10-voidscar-arena",
+          "spec": {
+            "id": 270,
+            "name": "Mistweaver",
+            "slug": "mistweaver",
+            "class_id": 10,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "5.0.0",
+            "ordinal": 1
+          },
+          "role": "healer"
+        }
+      ],
       "raidProgression": {
         "the-unbinding-of-kithix": {
           "summary": "",
@@ -1801,6 +1910,60 @@
       "lastCrawledAt": "2026-10-07T01:36:02.000Z",
       "profileUrl": "https://raider.io/characters/us/tichondrius/Proudnewb",
       "weeklyRuns": [
+        {
+          "dungeon": "Kings' Rest",
+          "short_name": "KR",
+          "mythic_level": 19,
+          "completed_at": "2026-10-07T03:33:24.000Z",
+          "clear_time_ms": 1958427,
+          "keystone_run_id": 18885774,
+          "par_time_ms": 1980999,
+          "num_keystone_upgrades": 1,
+          "map_challenge_mode_id": 249,
+          "zone_id": 9526,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
+          "score": 470.4,
+          "affixes": [
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 147,
+              "name": "Xal'atath's Guile",
+              "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+              "icon": "ability_racial_chillofnight",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+              "wowhead_url": "https://wowhead.com/affix=147"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/18885774-19-kings-rest",
+          "spec": {
+            "id": 65,
+            "name": "Holy",
+            "slug": "holy",
+            "class_id": 2,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "healer"
+        },
         {
           "dungeon": "Murder Row",
           "short_name": "MR",
