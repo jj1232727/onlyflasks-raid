@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-09T08:20:29.755Z",
+  "fetchedAt": "2026-10-09T16:45:56.341Z",
   "periodInfo": {
     "current_period": 1084,
     "current_season": {
@@ -779,10 +779,14 @@
           {
             "level": 10,
             "dungeon": 588
+          },
+          {
+            "level": 15,
+            "dungeon": 399
           }
         ],
         "world_quests_done": 1,
-        "regular_mythic_dungeons_done": 1,
+        "regular_mythic_dungeons_done": 2,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1022,10 +1026,18 @@
           {
             "level": 12,
             "dungeon": 587
+          },
+          {
+            "level": 18,
+            "dungeon": 585
+          },
+          {
+            "level": 19,
+            "dungeon": 586
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 4,
+        "regular_mythic_dungeons_done": 8,
         "vault_options": {
           "raids": {
             "option_1": 318,
@@ -1621,9 +1633,14 @@
       "name": "Rapunzele",
       "realm": "Tichondrius",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 15,
+            "dungeon": 584
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": 318,
@@ -1631,7 +1648,7 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
