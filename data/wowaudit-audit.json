@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-10T10:22:51.536Z",
+  "fetchedAt": "2026-10-10T16:47:59.735Z",
   "periodInfo": {
     "current_period": 1084,
     "current_season": {
@@ -951,9 +951,14 @@
       "name": "Fynnia",
       "realm": "Stormrage",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 17,
+            "dungeon": 588
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 1,
+        "regular_mythic_dungeons_done": 2,
         "vault_options": {
           "raids": {
             "option_1": 318,
@@ -961,7 +966,7 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1102,6 +1107,10 @@
           {
             "level": 10,
             "dungeon": 584
+          },
+          {
+            "level": 10,
+            "dungeon": 585
           }
         ],
         "world_quests_done": 0,
@@ -1114,7 +1123,7 @@
           },
           "dungeons": {
             "option_1": 318,
-            "option_2": null,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
