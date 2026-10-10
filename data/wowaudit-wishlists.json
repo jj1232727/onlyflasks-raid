@@ -13969,7 +13969,7 @@
                 "updated_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": "2026-10-09T00:01:19.000+00:00"
+                  "Devourer": "2026-10-10T00:17:02.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Havoc": null,
@@ -13998,15 +13998,15 @@
                           }
                         },
                         "alternative": {
-                          "item": 268201,
-                          "percentage": 0.2166,
-                          "absolute": 525.2139,
-                          "item_level": 324
+                          "item": 271092,
+                          "percentage": 1.6315,
+                          "absolute": 3955.2052,
+                          "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Devourer",
-                            "timestamp": "2026-10-09T00:01:19.000+00:00",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
                             "upgrade": null,
                             "percentage": 0.2069,
                             "absolute": 501.4626,
@@ -14030,7 +14030,7 @@
                         "wishes": [
                           {
                             "specialization": "Devourer",
-                            "timestamp": "2026-10-09T00:01:19.000+00:00",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
                             "upgrade": null,
                             "percentage": 0.1452,
                             "absolute": 352.1011,
@@ -14061,7 +14061,7 @@
                         "wishes": [
                           {
                             "specialization": "Devourer",
-                            "timestamp": "2026-10-09T00:01:19.000+00:00",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
                             "upgrade": null,
                             "percentage": 0.1509,
                             "absolute": 365.8506,
@@ -14092,7 +14092,7 @@
                         "wishes": [
                           {
                             "specialization": "Devourer",
-                            "timestamp": "2026-10-09T00:01:19.000+00:00",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
                             "upgrade": null,
                             "percentage": 0.5855,
                             "absolute": 1419.3629,
@@ -14128,7 +14128,7 @@
                         "wishes": [
                           {
                             "specialization": "Devourer",
-                            "timestamp": "2026-10-09T00:01:19.000+00:00",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
                             "upgrade": null,
                             "percentage": 1.3081,
                             "absolute": 3171.1062,
@@ -14164,7 +14164,7 @@
                         "wishes": [
                           {
                             "specialization": "Devourer",
-                            "timestamp": "2026-10-09T00:01:19.000+00:00",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
                             "upgrade": null,
                             "percentage": 0.6916,
                             "absolute": 1676.7215,
@@ -14193,7 +14193,7 @@
                         "wishes": [
                           {
                             "specialization": "Devourer",
-                            "timestamp": "2026-10-09T00:01:19.000+00:00",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
                             "upgrade": null,
                             "percentage": 0.2166,
                             "absolute": 525.2139,
@@ -14217,7 +14217,7 @@
                         "wishes": [
                           {
                             "specialization": "Devourer",
-                            "timestamp": "2026-10-09T00:01:19.000+00:00",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
                             "upgrade": null,
                             "percentage": 0.131,
                             "absolute": 317.5535,
@@ -14237,8 +14237,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 2.3805,
-                    "encounter_absolute": 5770,
+                    "encounter_percentage": 4.28,
+                    "encounter_absolute": 10374,
                     "items": [
                       {
                         "name": "Coiled Hex Legguards",
@@ -14254,7 +14254,7 @@
                         "wishes": [
                           {
                             "specialization": "Devourer",
-                            "timestamp": "2026-10-09T00:01:19.000+00:00",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
                             "upgrade": null,
                             "percentage": 1.0073,
                             "absolute": 2441.8363,
@@ -14278,10 +14278,63 @@
                         "wishes": [
                           {
                             "specialization": "Devourer",
-                            "timestamp": "2026-10-09T00:01:19.000+00:00",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
                             "upgrade": null,
                             "percentage": 1.3732,
                             "absolute": 3329.0183,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Baleful Hexblade",
+                        "id": 268211,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 3715,
+                            "percentage": 1.5326
+                          }
+                        },
+                        "alternative": {
+                          "item": 271092,
+                          "percentage": 1.6315,
+                          "absolute": 3955.2052,
+                          "item_level": 344
+                        },
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.5326,
+                            "absolute": 3715.4252,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Silken Voodoo Drape",
+                        "id": 268253,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 889,
+                            "percentage": 0.3669
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.3669,
+                            "absolute": 889.5558,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -14292,8 +14345,8 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 1.4576,
-                    "encounter_absolute": 3533,
+                    "encounter_percentage": 3.5741,
+                    "encounter_absolute": 8663,
                     "items": [
                       {
                         "name": "Slumbering Coil Curio",
@@ -14309,7 +14362,7 @@
                         "wishes": [
                           {
                             "specialization": "Devourer",
-                            "timestamp": "2026-10-09T00:01:19.000+00:00",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
                             "upgrade": null,
                             "percentage": 0.7648,
                             "absolute": 1854.0031,
@@ -14333,10 +14386,58 @@
                         "wishes": [
                           {
                             "specialization": "Devourer",
-                            "timestamp": "2026-10-09T00:01:19.000+00:00",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
                             "upgrade": null,
                             "percentage": 0.6928,
                             "absolute": 1679.6143,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Jan'thrazet, the Soul Fang",
+                        "id": 271092,
+                        "slot": "main_hand",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 3955,
+                            "percentage": 1.6315
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
+                            "upgrade": null,
+                            "percentage": 1.6315,
+                            "absolute": 3955.2052,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Devourer": {
+                            "score": 1175,
+                            "percentage": 0.485
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Devourer",
+                            "timestamp": "2026-10-10T00:17:02.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.485,
+                            "absolute": 1175.6659,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -14346,8 +14447,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 7.2739,
-                "total_absolute": 17629
+                "total_percentage": 11.2899,
+                "total_absolute": 27363
               }
             },
             {
@@ -14356,7 +14457,7 @@
                 "updated_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": "2026-10-09T00:00:09.000+00:00"
+                  "Devourer": "2026-10-10T00:16:59.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Havoc": null,
@@ -14406,7 +14507,7 @@
                         "wishes": [
                           {
                             "specialization": "Devourer",
-                            "timestamp": "2026-10-09T00:00:09.000+00:00",
+                            "timestamp": "2026-10-10T00:16:59.000+00:00",
                             "upgrade": null,
                             "percentage": 0.6517,
                             "absolute": 1579.2798,
@@ -14454,7 +14555,7 @@
                         "wishes": [
                           {
                             "specialization": "Devourer",
-                            "timestamp": "2026-10-09T00:00:09.000+00:00",
+                            "timestamp": "2026-10-10T00:16:59.000+00:00",
                             "upgrade": null,
                             "percentage": 0.2849,
                             "absolute": 690.2615,
@@ -14483,7 +14584,7 @@
                 "updated_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": "2026-10-08T23:59:23.000+00:00"
+                  "Devourer": "2026-10-10T00:16:56.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Havoc": null,
@@ -14533,7 +14634,7 @@
                         "wishes": [
                           {
                             "specialization": "Devourer",
-                            "timestamp": "2026-10-08T23:59:23.000+00:00",
+                            "timestamp": "2026-10-10T00:16:56.000+00:00",
                             "upgrade": null,
                             "percentage": 0.1142,
                             "absolute": 276.7535,
@@ -14586,7 +14687,7 @@
                 "updated_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": "2026-10-09T00:01:19.000+00:00"
+                  "Devourer": "2026-10-10T00:17:02.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Havoc": null,
@@ -14616,7 +14717,7 @@
                 "updated_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": "2026-10-09T00:00:09.000+00:00"
+                  "Devourer": "2026-10-10T00:16:59.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Havoc": null,
@@ -14646,7 +14747,7 @@
                 "updated_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": "2026-10-08T23:59:23.000+00:00"
+                  "Devourer": "2026-10-10T00:16:56.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Havoc": null,
@@ -14682,7 +14783,7 @@
                 "updated_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": "2026-10-09T00:01:19.000+00:00"
+                  "Devourer": "2026-10-10T00:17:02.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Havoc": null,
@@ -14712,7 +14813,7 @@
                 "updated_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": "2026-10-09T00:00:09.000+00:00"
+                  "Devourer": "2026-10-10T00:16:59.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Havoc": null,
@@ -14742,7 +14843,7 @@
                 "updated_at": {
                   "Havoc": null,
                   "Vengeance": null,
-                  "Devourer": "2026-10-08T23:59:23.000+00:00"
+                  "Devourer": "2026-10-10T00:16:56.000+00:00"
                 },
                 "report_uploaded_at": {
                   "Havoc": null,
