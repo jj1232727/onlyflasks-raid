@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-13T20:40:34.550Z",
+  "fetchedAt": "2026-10-13T22:13:23.143Z",
   "characters": [
     {
       "id": 4579002,
@@ -504,8 +504,52 @@
     {
       "id": 7422636,
       "name": "Aerenn",
-      "status": "error",
-      "httpStatus": 504
+      "status": "ok",
+      "lastCrawledAt": "2026-10-13T17:56:17.000Z",
+      "profileUrl": "https://raider.io/characters/us/zuljin/Aerenn",
+      "weeklyRuns": [],
+      "raidProgression": {
+        "the-unbinding-of-kithix": {
+          "summary": "",
+          "expansion_id": 11,
+          "total_bosses": 1,
+          "normal_bosses_killed": 0,
+          "heroic_bosses_killed": 0,
+          "mythic_bosses_killed": 0
+        },
+        "the-tidebound-grotto": {
+          "summary": "1/1 M",
+          "expansion_id": 11,
+          "total_bosses": 1,
+          "normal_bosses_killed": 0,
+          "heroic_bosses_killed": 0,
+          "mythic_bosses_killed": 1
+        },
+        "the-venomous-abyss": {
+          "summary": "6/8 M",
+          "expansion_id": 11,
+          "total_bosses": 8,
+          "normal_bosses_killed": 8,
+          "heroic_bosses_killed": 8,
+          "mythic_bosses_killed": 6
+        },
+        "sporefall": {
+          "summary": "1/1 M",
+          "expansion_id": 11,
+          "total_bosses": 1,
+          "normal_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
+          "mythic_bosses_killed": 1
+        },
+        "tier-mn-1": {
+          "summary": "2/9 M",
+          "expansion_id": 11,
+          "total_bosses": 9,
+          "normal_bosses_killed": 0,
+          "heroic_bosses_killed": 3,
+          "mythic_bosses_killed": 2
+        }
+      }
     },
     {
       "id": 13331173,
