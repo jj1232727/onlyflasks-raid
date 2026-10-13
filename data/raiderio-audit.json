@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-10-13T17:18:38.737Z",
+  "fetchedAt": "2026-10-13T20:40:34.550Z",
   "characters": [
     {
       "id": 4579002,
       "name": "Gosu",
       "status": "ok",
-      "lastCrawledAt": "2026-10-12T19:07:11.000Z",
+      "lastCrawledAt": "2026-10-13T17:54:26.000Z",
       "profileUrl": "https://raider.io/characters/us/kiljaeden/Gosu",
       "weeklyRuns": [],
       "raidProgression": {
@@ -55,7 +55,7 @@
       "id": 8958229,
       "name": "Brigdèss",
       "status": "ok",
-      "lastCrawledAt": "2026-10-11T14:46:17.000Z",
+      "lastCrawledAt": "2026-10-13T17:55:14.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Brigdèss",
       "weeklyRuns": [],
       "raidProgression": {
@@ -105,7 +105,7 @@
       "id": 5042615,
       "name": "Asethi",
       "status": "ok",
-      "lastCrawledAt": "2026-10-11T14:46:16.000Z",
+      "lastCrawledAt": "2026-10-13T17:57:15.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Asethi",
       "weeklyRuns": [],
       "raidProgression": {
@@ -155,7 +155,7 @@
       "id": 4826466,
       "name": "Xeonips",
       "status": "ok",
-      "lastCrawledAt": "2026-10-11T14:46:17.000Z",
+      "lastCrawledAt": "2026-10-13T17:54:27.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Xeonips",
       "weeklyRuns": [],
       "raidProgression": {
@@ -205,7 +205,7 @@
       "id": 5046905,
       "name": "Fynnia",
       "status": "ok",
-      "lastCrawledAt": "2026-10-12T19:39:12.000Z",
+      "lastCrawledAt": "2026-10-13T17:54:26.000Z",
       "profileUrl": "https://raider.io/characters/us/stormrage/Fynnia",
       "weeklyRuns": [],
       "raidProgression": {
@@ -255,7 +255,7 @@
       "id": 4618046,
       "name": "Vandredor",
       "status": "ok",
-      "lastCrawledAt": "2026-10-11T14:46:16.000Z",
+      "lastCrawledAt": "2026-10-13T17:54:26.000Z",
       "profileUrl": "https://raider.io/characters/us/garrosh/Vandredor",
       "weeklyRuns": [],
       "raidProgression": {
@@ -305,7 +305,7 @@
       "id": 20516172,
       "name": "Mushyx",
       "status": "ok",
-      "lastCrawledAt": "2026-10-11T14:46:17.000Z",
+      "lastCrawledAt": "2026-10-13T17:57:14.000Z",
       "profileUrl": "https://raider.io/characters/us/bleeding-hollow/Mushyx",
       "weeklyRuns": [],
       "raidProgression": {
@@ -355,7 +355,7 @@
       "id": 4725968,
       "name": "Teldral",
       "status": "ok",
-      "lastCrawledAt": "2026-10-13T01:45:22.000Z",
+      "lastCrawledAt": "2026-10-13T17:54:30.000Z",
       "profileUrl": "https://raider.io/characters/us/stormrage/Teldral",
       "weeklyRuns": [],
       "raidProgression": {
@@ -405,7 +405,7 @@
       "id": 4165902,
       "name": "Neomonk",
       "status": "ok",
-      "lastCrawledAt": "2026-10-11T14:44:19.000Z",
+      "lastCrawledAt": "2026-10-13T17:54:25.000Z",
       "profileUrl": "https://raider.io/characters/us/sargeras/Neomonk",
       "weeklyRuns": [],
       "raidProgression": {
@@ -504,58 +504,14 @@
     {
       "id": 7422636,
       "name": "Aerenn",
-      "status": "ok",
-      "lastCrawledAt": "2026-10-12T22:36:21.000Z",
-      "profileUrl": "https://raider.io/characters/us/zuljin/Aerenn",
-      "weeklyRuns": [],
-      "raidProgression": {
-        "the-unbinding-of-kithix": {
-          "summary": "",
-          "expansion_id": 11,
-          "total_bosses": 1,
-          "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
-          "mythic_bosses_killed": 0
-        },
-        "the-tidebound-grotto": {
-          "summary": "1/1 M",
-          "expansion_id": 11,
-          "total_bosses": 1,
-          "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
-          "mythic_bosses_killed": 1
-        },
-        "the-venomous-abyss": {
-          "summary": "6/8 M",
-          "expansion_id": 11,
-          "total_bosses": 8,
-          "normal_bosses_killed": 8,
-          "heroic_bosses_killed": 8,
-          "mythic_bosses_killed": 6
-        },
-        "sporefall": {
-          "summary": "1/1 M",
-          "expansion_id": 11,
-          "total_bosses": 1,
-          "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 1,
-          "mythic_bosses_killed": 1
-        },
-        "tier-mn-1": {
-          "summary": "2/9 M",
-          "expansion_id": 11,
-          "total_bosses": 9,
-          "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 3,
-          "mythic_bosses_killed": 2
-        }
-      }
+      "status": "error",
+      "httpStatus": 504
     },
     {
       "id": 13331173,
       "name": "Galsnipes",
       "status": "ok",
-      "lastCrawledAt": "2026-10-07T23:44:02.000Z",
+      "lastCrawledAt": "2026-10-13T17:54:26.000Z",
       "profileUrl": "https://raider.io/characters/us/tanaris/Galsnipes",
       "weeklyRuns": [],
       "raidProgression": {
@@ -755,7 +711,7 @@
       "id": 4579033,
       "name": "Arthaidin",
       "status": "ok",
-      "lastCrawledAt": "2026-10-12T06:18:09.000Z",
+      "lastCrawledAt": "2026-10-13T17:54:27.000Z",
       "profileUrl": "https://raider.io/characters/us/illidan/Arthaidin",
       "weeklyRuns": [],
       "raidProgression": {
@@ -955,7 +911,7 @@
       "id": 4257113,
       "name": "Jugojuice",
       "status": "ok",
-      "lastCrawledAt": "2026-10-11T14:46:16.000Z",
+      "lastCrawledAt": "2026-10-13T17:54:27.000Z",
       "profileUrl": "https://raider.io/characters/us/illidan/Jugojuice",
       "weeklyRuns": [],
       "raidProgression": {
@@ -1105,7 +1061,7 @@
       "id": 16876827,
       "name": "Mushyxd",
       "status": "ok",
-      "lastCrawledAt": "2026-10-11T14:46:18.000Z",
+      "lastCrawledAt": "2026-10-13T17:54:28.000Z",
       "profileUrl": "https://raider.io/characters/us/illidan/Mushyxd",
       "weeklyRuns": [],
       "raidProgression": {
@@ -1155,7 +1111,7 @@
       "id": 4471156,
       "name": "Proudnewb",
       "status": "ok",
-      "lastCrawledAt": "2026-10-13T03:56:17.000Z",
+      "lastCrawledAt": "2026-10-13T17:54:26.000Z",
       "profileUrl": "https://raider.io/characters/us/tichondrius/Proudnewb",
       "weeklyRuns": [],
       "raidProgression": {
@@ -1255,7 +1211,7 @@
       "id": 10581386,
       "name": "Orchuntarded",
       "status": "ok",
-      "lastCrawledAt": "2026-10-11T14:46:17.000Z",
+      "lastCrawledAt": "2026-10-13T17:54:25.000Z",
       "profileUrl": "https://raider.io/characters/us/tichondrius/Orchuntarded",
       "weeklyRuns": [],
       "raidProgression": {
