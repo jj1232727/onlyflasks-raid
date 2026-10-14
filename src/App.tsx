@@ -3189,6 +3189,28 @@ export default function App() {
             const baseline = data.bis.lists[selectedSpec]?.items || [];
             const current = customWishlists[c.id] || baseline;
             const customized = wishlistIsCustomized(current, baseline);
+            // A saved wishlist is a snapshot, and it outranks the BiS list for
+            // good - which is the point, right up until a raid opens that it
+            // cannot know about. Then it silently keeps answering "wants
+            // nothing here" for a boss it has never seen, and the raider has no
+            // way to tell: the page looks exactly the same as a list they
+            // deliberately left alone.
+            //
+            // Say so rather than quietly substituting the BiS list. The picks
+            // are theirs; what they are owed is knowing the picks are stale.
+            const staleRaids = customWishlists[c.id]
+              ? [...new Set(data.raid.bosses.map((boss) => boss.raid).filter(Boolean))].filter((raidName) => {
+                  const onThisRaid = new Set(
+                    data.raid.bosses
+                      .filter((boss) => boss.raid === raidName)
+                      .flatMap((boss) => boss.items.map((item) => +item.itemId)),
+                  );
+                  return (
+                    baseline.some((item) => onThisRaid.has(+item.itemId)) &&
+                    !current.some((item) => onThisRaid.has(+item.itemId))
+                  );
+                })
+              : [];
             const save = (items: Item[]) => {
               const next = { ...customWishlists, [c.id]: items };
               setCustomWishlists(next);
@@ -3517,6 +3539,22 @@ export default function App() {
                         : "ICY VEINS DEFAULT"}
                   </span>
                 </div>
+                {staleRaids.length > 0 && (
+                  <div className="wishlist-stale" role="status">
+                    <CircleAlert />
+                    <span>
+                      <b>
+                        This wishlist predates {staleRaids.join(" and ")}.
+                      </b>
+                      <small>
+                        It was saved before that raid was on the board, so it
+                        asks for nothing from it — and the board takes your saved
+                        list over the Icy Veins one. Review the items below and
+                        save again to pick those up.
+                      </small>
+                    </span>
+                  </div>
+                )}
                 <div className="wishlist-steps" aria-label="Wishlist steps">
                   <span className="active"><b>1</b><em>Choose your character and loot spec</em></span>
                   <span><b>2</b><em>Change only the items you want</em></span>
