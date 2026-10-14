@@ -9,7 +9,7 @@ const catalystSourceIds = new Set(Object.values(bis.lists || {}).flatMap((list) 
 const season = audit.periodInfo?.current_season;
 const wanted = [
   ...["Altar of Fangs", "Murder Row", "Den of Nalorakk", "The Blinding Vale", "Voidscar Arena", "Kings' Rest", "Temple of Sethraliss", "Ruby Life Pools"].map((name) => ({ name, sourceType: "Mythic+" })),
-  ...["The Venomous Abyss", "The Tidebound Grotto"].map((name) => ({ name, sourceType: "Raid" })),
+  ...["The Venomous Abyss", "The Tidebound Grotto", "The Unbinding of Kith’ix"].map((name) => ({ name, sourceType: "Raid" })),
 ];
 const norm = (value) => String(value || "").toLowerCase().replace(/[^a-z0-9]/g, "");
 const client = new BlizzardClient({ clientId: process.env.BLIZZARD_CLIENT_ID, clientSecret: process.env.BLIZZARD_CLIENT_SECRET });

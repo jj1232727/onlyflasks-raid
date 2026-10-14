@@ -1,7 +1,11 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { extraBosses } from "../src/extra-raids.js";
 
-const raid = JSON.parse(await readFile("data/raid-loot.json", "utf8"));
+import { loadRaids } from "../src/raid-files.js";
+// Every exported raid, not just the primary one. A second raid's drops were
+// swept by neither this nor extraBosses, so they rendered with no effect text —
+// the same hole this file's own comment describes for The Tidebound Grotto.
+const raids = await loadRaids();
 // The addon export is one instance, so a boss on its own lockout is invisible
 // here too. Sweeping only raid-loot.json left every Tidebound Grotto drop with
 // no effect text — including the trinket, which is the whole reason to look.
@@ -46,7 +50,7 @@ async function tooltip(itemId) {
 
 const items = [
   ...new Map(
-    [...raid.bosses, ...extraBosses(seasonLoot)]
+    [...raids.flatMap(({ raid }) => raid.bosses), ...extraBosses(seasonLoot)]
       .flatMap((boss) => boss.items)
       .filter((item) => item.slot)
       .map((item) => [Number(item.itemId), item]),

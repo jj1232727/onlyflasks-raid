@@ -1,6 +1,6 @@
 {
   "season": "Season 2",
-  "importedAt": "2026-08-16T16:15:26.208Z",
+  "importedAt": "2026-10-14T01:42:21.353Z",
   "instances": [
     {
       "name": "Altar of Fangs",
@@ -40,6 +40,10 @@
     },
     {
       "name": "The Tidebound Grotto",
+      "sourceType": "Raid"
+    },
+    {
+      "name": "The Unbinding of Kith’ix",
       "sourceType": "Raid"
     }
   ],
@@ -2313,7 +2317,16 @@
       "armorType": "Mail",
       "classIds": [],
       "icon": "https://render.worldofwarcraft.com/us/icons/56/2054953.jpg",
-      "secondaryStats": []
+      "secondaryStats": [
+        {
+          "type": "CRIT_RATING",
+          "value": 131
+        },
+        {
+          "type": "VERSATILITY_RATING",
+          "value": 70
+        }
+      ]
     },
     {
       "itemId": 239049,
@@ -3168,7 +3181,16 @@
       "armorType": "Leather",
       "classIds": [],
       "icon": "https://render.worldofwarcraft.com/us/icons/56/4095090.jpg",
-      "secondaryStats": []
+      "secondaryStats": [
+        {
+          "type": "CRIT_RATING",
+          "value": 75
+        },
+        {
+          "type": "VERSATILITY_RATING",
+          "value": 126
+        }
+      ]
     },
     {
       "itemId": 193748,
@@ -4089,7 +4111,16 @@
       "armorType": "Leather",
       "classIds": [],
       "icon": "https://render.worldofwarcraft.com/us/icons/56/7679654.jpg",
-      "secondaryStats": []
+      "secondaryStats": [
+        {
+          "type": "CRIT_RATING",
+          "value": 48
+        },
+        {
+          "type": "MASTERY_RATING",
+          "value": 102
+        }
+      ]
     },
     {
       "itemId": 268233,
@@ -4288,6 +4319,18 @@
           "value": 52
         }
       ]
+    },
+    {
+      "itemId": 273070,
+      "name": "Pattern: Adorned Fang",
+      "source": "The Venomous Abyss",
+      "sourceType": "Raid",
+      "encounter": "The Twin Fangs",
+      "slot": "Non-equippable",
+      "armorType": "Leatherworking",
+      "classIds": [],
+      "secondaryStats": [],
+      "icon": "https://render.worldofwarcraft.com/us/icons/56/4549193.jpg"
     },
     {
       "itemId": 268225,
@@ -4938,6 +4981,198 @@
       "classIds": [],
       "icon": "https://render.worldofwarcraft.com/us/icons/56/1391765.jpg",
       "secondaryStats": []
+    },
+    {
+      "itemId": 281235,
+      "name": "Voidweaver's Leggings",
+      "source": "The Unbinding of Kith’ix",
+      "sourceType": "Raid",
+      "encounter": "Kith'ix",
+      "slot": "Legs",
+      "armorType": "Cloth",
+      "classIds": [],
+      "secondaryStats": [
+        {
+          "type": "CRIT_RATING",
+          "value": 61
+        },
+        {
+          "type": "MASTERY_RATING",
+          "value": 140
+        }
+      ],
+      "icon": "https://render.worldofwarcraft.com/us/icons/56/7807657.jpg"
+    },
+    {
+      "itemId": 281236,
+      "name": "Chestwrap of Palpable Terror",
+      "source": "The Unbinding of Kith’ix",
+      "sourceType": "Raid",
+      "encounter": "Kith'ix",
+      "slot": "Chest",
+      "armorType": "Leather",
+      "classIds": [],
+      "secondaryStats": [
+        {
+          "type": "CRIT_RATING",
+          "value": 58
+        },
+        {
+          "type": "HASTE_RATING",
+          "value": 143
+        }
+      ],
+      "icon": "https://render.worldofwarcraft.com/us/icons/56/7678398.jpg"
+    },
+    {
+      "itemId": 281238,
+      "name": "Aberrant Commander's Gauntlets",
+      "source": "The Unbinding of Kith’ix",
+      "sourceType": "Raid",
+      "encounter": "Kith'ix",
+      "slot": "Hands",
+      "armorType": "Mail",
+      "classIds": [],
+      "secondaryStats": [
+        {
+          "type": "CRIT_RATING",
+          "value": 105
+        },
+        {
+          "type": "MASTERY_RATING",
+          "value": 45
+        }
+      ],
+      "icon": "https://render.worldofwarcraft.com/us/icons/56/7554478.jpg"
+    },
+    {
+      "itemId": 281239,
+      "name": "Corroded Hulk's Skullcap",
+      "source": "The Unbinding of Kith’ix",
+      "sourceType": "Raid",
+      "encounter": "Kith'ix",
+      "slot": "Head",
+      "armorType": "Plate",
+      "classIds": [],
+      "secondaryStats": [
+        {
+          "type": "HASTE_RATING",
+          "value": 60
+        },
+        {
+          "type": "MASTERY_RATING",
+          "value": 141
+        }
+      ],
+      "icon": "https://render.worldofwarcraft.com/us/icons/56/7515797.jpg"
+    },
+    {
+      "itemId": 281029,
+      "name": "Band of the Swarmcaller",
+      "source": "The Unbinding of Kith’ix",
+      "sourceType": "Raid",
+      "encounter": "Kith'ix",
+      "slot": "Finger",
+      "armorType": "Miscellaneous",
+      "classIds": [],
+      "secondaryStats": [],
+      "icon": "https://render.worldofwarcraft.com/us/icons/56/8268560.jpg"
+    },
+    {
+      "itemId": 281056,
+      "name": "Sanctified Knight's Phoenixblade",
+      "source": "The Unbinding of Kith’ix",
+      "sourceType": "Raid",
+      "encounter": "Kith'ix",
+      "slot": "One-Hand",
+      "armorType": "Sword",
+      "classIds": [],
+      "secondaryStats": [],
+      "icon": "https://render.worldofwarcraft.com/us/icons/56/7490210.jpg"
+    },
+    {
+      "itemId": 281215,
+      "name": "Twisted Horror's Tendril",
+      "source": "The Unbinding of Kith’ix",
+      "sourceType": "Raid",
+      "encounter": "Kith'ix",
+      "slot": "Trinket",
+      "armorType": "Miscellaneous",
+      "classIds": [],
+      "secondaryStats": [],
+      "icon": "https://render.worldofwarcraft.com/us/icons/56/8268563.jpg"
+    },
+    {
+      "itemId": 280617,
+      "name": "Lightbearer's Shield Fragment",
+      "source": "The Unbinding of Kith’ix",
+      "sourceType": "Raid",
+      "encounter": "Kith'ix",
+      "slot": "Trinket",
+      "armorType": "Miscellaneous",
+      "classIds": [],
+      "secondaryStats": [],
+      "icon": "https://render.worldofwarcraft.com/us/icons/56/8268569.jpg"
+    },
+    {
+      "itemId": 280799,
+      "name": "Lu'selama, Light's Justice",
+      "source": "The Unbinding of Kith’ix",
+      "sourceType": "Raid",
+      "encounter": "Kith'ix",
+      "slot": "Two-Hand",
+      "armorType": "Sword",
+      "classIds": [],
+      "secondaryStats": [],
+      "icon": "https://render.worldofwarcraft.com/us/icons/56/7350841.jpg"
+    },
+    {
+      "itemId": 280835,
+      "name": "Sigil of the Impending Eclipse",
+      "source": "The Unbinding of Kith’ix",
+      "sourceType": "Raid",
+      "encounter": "Kith'ix",
+      "slot": "Trinket",
+      "armorType": "Miscellaneous",
+      "classIds": [],
+      "secondaryStats": [],
+      "icon": "https://render.worldofwarcraft.com/us/icons/56/8268562.jpg"
+    },
+    {
+      "itemId": 281615,
+      "name": "Shadeweaver's Hearthstone",
+      "source": "The Unbinding of Kith’ix",
+      "sourceType": "Raid",
+      "encounter": "Kith'ix",
+      "slot": "Non-equippable",
+      "armorType": "Junk",
+      "classIds": [],
+      "secondaryStats": [],
+      "icon": "https://render.worldofwarcraft.com/us/icons/56/8268561.jpg"
+    },
+    {
+      "itemId": 281213,
+      "name": "Kith'ix's Seal",
+      "source": "The Unbinding of Kith’ix",
+      "sourceType": "Raid",
+      "encounter": "Kith'ix",
+      "slot": "Non-equippable",
+      "armorType": "Decor",
+      "classIds": [],
+      "secondaryStats": [],
+      "icon": "https://render.worldofwarcraft.com/us/icons/56/7955915.jpg"
+    },
+    {
+      "itemId": 284159,
+      "name": "Libram of the Matriarch",
+      "source": "The Unbinding of Kith’ix",
+      "sourceType": "Raid",
+      "encounter": "Kith'ix",
+      "slot": "Non-equippable",
+      "armorType": "Junk",
+      "classIds": [],
+      "secondaryStats": [],
+      "icon": "https://render.worldofwarcraft.com/us/icons/56/4191866.jpg"
     }
   ]
 }
