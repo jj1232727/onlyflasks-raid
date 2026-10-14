@@ -2751,8 +2751,8 @@
                                 "id": 271548
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 271548
+                                "item_level": 331,
+                                "id": 268255
                               }
                             }
                           },
@@ -2764,7 +2764,16 @@
                             "absolute": 1687.4951,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271548
+                              },
+                              "new": {
+                                "item_level": 331,
+                                "id": 268255
+                              }
+                            }
                           }
                         ]
                       },
@@ -3235,8 +3244,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 8.9613,
-                    "encounter_absolute": 18069,
+                    "encounter_percentage": 7.0034,
+                    "encounter_absolute": 14062,
                     "items": [
                       {
                         "name": "Baleful Hexblade",
@@ -3308,53 +3317,6 @@
                             "upgrade": null,
                             "percentage": 0.5981,
                             "absolute": 1269.4249,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Cackling Soultreads",
-                        "id": 268255,
-                        "slot": "feet",
-                        "score_by_spec": {
-                          "Affliction": {
-                            "score": 1605,
-                            "percentage": 0.826
-                          },
-                          "Demonology": {
-                            "score": 2402,
-                            "percentage": 1.1319
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Affliction",
-                            "timestamp": "2026-09-30T23:59:27.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.826,
-                            "absolute": 1605.9443,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 315,
-                                "id": 271548
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 271548
-                              }
-                            }
-                          },
-                          {
-                            "specialization": "Demonology",
-                            "timestamp": "2026-10-09T00:01:21.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.1319,
-                            "absolute": 2402.4401,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -3527,8 +3489,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 24.5693,
-                "total_absolute": 49080
+                "total_percentage": 22.6114,
+                "total_absolute": 45073
               }
             },
             {
@@ -3622,7 +3584,16 @@
                             "absolute": 382.625,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271548
+                              },
+                              "new": {
+                                "item_level": 331,
+                                "id": 268255
+                              }
+                            }
                           }
                         ]
                       }
@@ -8737,7 +8708,16 @@
                             "absolute": 1001.1239,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271565
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271565
+                              }
+                            }
                           }
                         ]
                       }
@@ -8955,7 +8935,16 @@
                             "absolute": 1883.0298,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271565
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271565
+                              }
+                            }
                           }
                         ]
                       },
@@ -10434,7 +10423,7 @@
                                 "id": 272230
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 268253
                               }
                             }
@@ -14250,8 +14239,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 5.973800000000001,
-                    "encounter_absolute": 13765,
+                    "encounter_percentage": 2.4864,
+                    "encounter_absolute": 5729,
                     "items": [
                       {
                         "name": "Zul'jin's Guillotine Technique",
@@ -14271,30 +14260,6 @@
                             "upgrade": null,
                             "percentage": 1.81,
                             "absolute": 4171.5425,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Girdle of Toxic Regret",
-                        "id": 268259,
-                        "slot": "waist",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 1513,
-                            "percentage": 0.6567
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-10-08T22:43:11.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.6567,
-                            "absolute": 1513.5477,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -14322,39 +14287,6 @@
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Maze-roa, Warlord's Fury",
-                        "id": 268213,
-                        "slot": "main_hand",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 6523,
-                            "percentage": 2.8307
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-10-08T22:43:11.000+00:00",
-                            "upgrade": null,
-                            "percentage": 2.8307,
-                            "absolute": 6523.785,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 334,
-                                "id": 268213
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 268209
-                              }
-                            }
                           }
                         ]
                       }
@@ -14416,8 +14348,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 9.008600000000001,
-                "total_absolute": 20757
+                "total_percentage": 5.5212,
+                "total_absolute": 12721
               }
             },
             {
@@ -18869,7 +18801,16 @@
                             "absolute": 695.5173,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271473
+                              },
+                              "new": {
+                                "item_level": 331,
+                                "id": 271473
+                              }
+                            }
                           }
                         ]
                       }
@@ -19019,7 +18960,16 @@
                             "absolute": 3333.1613,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271473
+                              },
+                              "new": {
+                                "item_level": 331,
+                                "id": 271473
+                              }
+                            }
                           }
                         ]
                       },
@@ -24488,8 +24438,8 @@
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 22.0183,
-                    "encounter_absolute": 31861,
+                    "encounter_percentage": 17.487,
+                    "encounter_absolute": 24660,
                     "items": [
                       {
                         "name": "Venomcast Remnant",
@@ -24673,62 +24623,6 @@
                             }
                           }
                         ]
-                      },
-                      {
-                        "name": "Boots of the Reckless Wayfarer",
-                        "id": 268258,
-                        "slot": "feet",
-                        "score_by_spec": {
-                          "Beast Mastery": {
-                            "score": 2395,
-                            "percentage": 1.8035
-                          },
-                          "Marksmanship": {
-                            "score": 4806,
-                            "percentage": 2.7278
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Beast Mastery",
-                            "timestamp": "2026-08-18T21:39:52.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.8035,
-                            "absolute": 2395.5618,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 298,
-                                "id": 249990
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 159371
-                              }
-                            }
-                          },
-                          {
-                            "specialization": "Marksmanship",
-                            "timestamp": "2026-08-27T00:10:07.000+00:00",
-                            "upgrade": null,
-                            "percentage": 2.7278,
-                            "absolute": 4806.1692,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 308,
-                                "id": 268233
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 159371
-                              }
-                            }
-                          }
-                        ]
                       }
                     ]
                   },
@@ -24752,10 +24646,10 @@
                           }
                         },
                         "alternative": {
-                          "item": 268258,
-                          "percentage": 2.7278,
-                          "absolute": 4806.1692,
-                          "item_level": 324
+                          "item": 271440,
+                          "percentage": 2.2023,
+                          "absolute": 3880.2837,
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -24772,8 +24666,8 @@
                                 "id": 249990
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 159371
+                                "item_level": 334,
+                                "id": 268258
                               }
                             }
                           },
@@ -24791,8 +24685,8 @@
                                 "id": 268233
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 159371
+                                "item_level": 334,
+                                "id": 268258
                               }
                             }
                           }
@@ -25474,8 +25368,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 112.4169,
-                "total_absolute": 167394
+                "total_percentage": 107.8856,
+                "total_absolute": 160193
               }
             },
             {
@@ -26184,8 +26078,8 @@
                                 "id": 249990
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 159371
+                                "item_level": 334,
+                                "id": 268258
                               }
                             }
                           },
@@ -26203,8 +26097,8 @@
                                 "id": 268233
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 159371
+                                "item_level": 334,
+                                "id": 268258
                               }
                             }
                           }
@@ -26308,8 +26202,8 @@
                                 "id": 249990
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 159371
+                                "item_level": 334,
+                                "id": 268258
                               }
                             }
                           },
@@ -26327,8 +26221,8 @@
                                 "id": 268233
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 159371
+                                "item_level": 334,
+                                "id": 268258
                               }
                             }
                           }
@@ -27400,8 +27294,8 @@
                                 "id": 249990
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 159371
+                                "item_level": 334,
+                                "id": 268258
                               }
                             }
                           },
@@ -27419,8 +27313,8 @@
                                 "id": 268233
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 159371
+                                "item_level": 334,
+                                "id": 268258
                               }
                             }
                           }
