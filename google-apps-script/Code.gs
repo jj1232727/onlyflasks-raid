@@ -291,7 +291,10 @@ function setRosterStatus_(body) {
   if (!officerAuthorized_(body.token)) throw new Error('Officer session expired. Sign in again.');
   const id = Number(body.characterId), status = String(body.status || '');
   if (!Number.isFinite(id)) throw new Error('A valid characterId is required.');
-  if (!['Main', 'Trial', 'Fill'].includes(status)) throw new Error('Invalid roster status.');
+  // Alt joined these as a roster slot, not a rank: an alt still takes loot, so
+  // the decision views keep them - they are only dropped from the planning
+  // numbers, which are questions about the raid team.
+  if (!['Main', 'Trial', 'Fill', 'Alt'].includes(status)) throw new Error('Invalid roster status.');
   const lock = LockService.getScriptLock();
   lock.waitLock(10000);
   try {
@@ -607,7 +610,10 @@ function getSimcSnapshots_() {
 
 function getRosterStatuses_() {
   return getRosterSheet_().getDataRange().getValues().slice(1).reduce((result, row) => {
-    if (row[0] !== '' && ['Main', 'Trial', 'Fill'].includes(String(row[2]))) result[String(Number(row[0]))] = String(row[2]);
+    // Must list every status setRosterStatus_ accepts. A value writable but not
+    // readable is stored and then silently ignored, which reads as the feature
+    // simply not working.
+    if (row[0] !== '' && ['Main', 'Trial', 'Fill', 'Alt'].includes(String(row[2]))) result[String(Number(row[0]))] = String(row[2]);
     return result;
   }, {});
 }

@@ -45,11 +45,27 @@ local function itemJson(itemID, name, slot, armorType, link, upgradeInfo)
     })
 end
 
-local function exportRaid()
-    local raidName = "The Venomous Abyss"
+local DEFAULT_RAID = "The Venomous Abyss"
+
+local function exportRaid(arg)
+    -- "/ofloot <raid name>" exports that raid; bare "/ofloot" keeps the old
+    -- behaviour so nobody's habit breaks.
+    local raidName = (arg or ""):gsub("^%s+", ""):gsub("%s+$", "")
+    if raidName == "" then raidName = DEFAULT_RAID end
     local instanceID = findRaidInstance(raidName)
     if not instanceID then
-        print("|cffff5555OnlyFlasks:|r Could not find " .. raidName .. " in the Encounter Journal.")
+        print("|cffff5555OnlyFlasks:|r Could not find \"" .. raidName .. "\" in the Encounter Journal.")
+        print("|cffff5555OnlyFlasks:|r Raids it can see:")
+        for tier = EJ_GetNumTiers(), 1, -1 do
+            EJ_SelectTier(tier)
+            local index = 1
+            while true do
+                local id, name = EJ_GetInstanceByIndex(index, true)
+                if not id then break end
+                print("   " .. name)
+                index = index + 1
+            end
+        end
         return
     end
 
@@ -145,7 +161,7 @@ local function teachSimcCatalystCurrencies()
 end
 
 SLASH_ONLYFLASKSLOOT1 = "/ofloot"
-SlashCmdList.ONLYFLASKSLOOT = exportRaid
+SlashCmdList.ONLYFLASKSLOOT = function(msg) exportRaid(msg) end
 
 frame:RegisterEvent("ADDON_LOADED")
 -- PLAYER_LOGIN, not ADDON_LOADED: SimulationCraft has to have finished loading

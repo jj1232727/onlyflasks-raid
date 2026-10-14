@@ -86,7 +86,11 @@ type Raider = {
   equipment: Item[];
   rosterStatus?: RosterStatus;
 };
-type RosterStatus = "Main" | "Trial" | "Fill";
+// Alt is a roster slot, not a ranking: an alt still takes loot, so it stays in
+// the decision views. What it must not do is inflate the planning numbers -
+// "who needs this boss" and tier progress are questions about the raid team,
+// and an alt brought for one fight is not part of that answer.
+type RosterStatus = "Main" | "Trial" | "Fill" | "Alt";
 // raid and levels are set only for bosses outside the main instance's ladder —
 // see bossLevel and the EXTRA_RAIDS merge in scripts/build-app-data.js.
 type Boss = {
@@ -184,14 +188,29 @@ const specIconUrl = (spec: string) =>
   `https://wow.zamimg.com/images/wow/icons/medium/${specIcons[spec] || "inv_misc_questionmark"}.jpg`;
 const simSpecName = (c: Raider, selectedSpec: string) =>
   selectedSpec.replace(new RegExp(`\\s+${c.class}$`, "i"), "");
+// "Did the paste land" across every raid, not one of them.
+//
+// This watched instance 80 - The Venomous Abyss - so a raider whose sim came
+// back for a different raid saw the board keep waiting on a sim that had already
+// arrived. simInstanceFor stopped pinning 80 for reading scores; this is the
+// same pin on the other side, where it reads as the paste having failed.
+//
+// Folding every instance into one string per difficulty keeps the comparison in
+// allSimDifficultiesChanged intact: it strips the separators to ask "is there
+// any value at all", so the join must carry values and nothing else - no
+// instance ids, or an empty roster of sims would look populated.
 const simFreshness = (sims: any, characterId: number, specName: string) => {
   const character = (sims?.characters || []).find((entry: any) => +entry.id === +characterId),
-    instance = character?.instances?.find((entry: any) => +entry.id === 80),
+    instances = character?.instances || [],
     result = {} as Record<Difficulty, string>;
   for (const difficulty of ["normal", "heroic", "mythic"] as Difficulty[]) {
-    const wishlist = instance?.difficulties?.find((entry: any) => entry.difficulty === difficulty)?.wishlist;
-    result[difficulty] = [wishlist?.report_id?.[specName], wishlist?.updated_at?.[specName], wishlist?.report_uploaded_at?.[specName]]
-      .map((value) => String(value || ""))
+    result[difficulty] = instances
+      .map((instance: any) => {
+        const wishlist = instance?.difficulties?.find((entry: any) => entry.difficulty === difficulty)?.wishlist;
+        return [wishlist?.report_id?.[specName], wishlist?.updated_at?.[specName], wishlist?.report_uploaded_at?.[specName]]
+          .map((value) => String(value || ""))
+          .join("|");
+      })
       .join("|");
   }
   return result;
@@ -261,6 +280,9 @@ const ROSTER_BUCKET_HINT: Record<RosterStatus, string> = {
   Main: "first call",
   Trial: "after mains",
   Fill: "last",
+  // An alt is still in the room and can still take the item - it is only kept
+  // out of the planning counts, so it belongs in this list rather than hidden.
+  Alt: "alt - excluded from planning",
 };
 // BiS coverage answers "are we done with this difficulty", not "can we clear
 // it". A slot already holding something at that track or better is covered, so
@@ -306,7 +328,11 @@ const inferredRole = (c: Raider) =>
 const roleGlyph = (c: Raider) =>
   inferredRole(c) === "Tank" ? "◆" : inferredRole(c) === "Healer" ? "✚" : "⚔";
 const roleOrder = { DPS: 0, Tank: 1, Healer: 2 },
-  statusOrder: Record<RosterStatus, number> = { Main: 0, Trial: 1, Fill: 2 };
+  statusOrder: Record<RosterStatus, number> = { Main: 0, Trial: 1, Fill: 2, Alt: 3 };
+const rosterStatusOf = (c: Raider, overrides: Record<number, RosterStatus>): RosterStatus =>
+  overrides[c.id] || c.rosterStatus || "Main";
+const isAltRaider = (c: Raider, overrides: Record<number, RosterStatus>) =>
+  rosterStatusOf(c, overrides) === "Alt";
 const priorityValue = (c: Raider, overrides: Record<number, RosterStatus>) =>
   statusOrder[overrides[c.id] || c.rosterStatus || "Main"] * 3 +
   roleOrder[inferredRole(c)];
@@ -1581,11 +1607,13 @@ export default function App() {
       const jobs = (pending.reportUrls || []).filter((job: any) => job?.simId);
       for (const job of jobs) {
         try {
-          const status = await readJson(await fetch(wishlistApiUrl, {
-            method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
-            body: JSON.stringify({ action: "checkDroptimizer", simId: job.simId, reportReady: false, upload: true,
-              characterId: character.id, characterName: character.name, configurationName: "Single Target", replaceManualEdits: false }),
-          }), "checkDroptimizer");
+          const status = await postAction(wishlistApiUrl,
+            { action: "checkDroptimizer", simId: job.simId, reportReady: false, upload: true,
+              characterId: character.id, characterName: character.name, configurationName: "Single Target", replaceManualEdits: false },
+            "checkDroptimizer");
+          // A reply that never reached the script says nothing about the sim, so
+          // leave the tile alone rather than marking a live run as failed.
+          if (servedByBoardRead(status)) continue;
           setSimReports((reports) => reports.map((report) => report.difficulty === job.difficulty
             ? { ...report, state: status.ok && status.state === "uploaded" ? "uploaded" : status.ok && status.state === "running" ? "running" : "error", error: status.error }
             : report));
@@ -1792,11 +1820,10 @@ export default function App() {
     localStorage.setItem("onlyflasks-board-specs-v2", JSON.stringify(next));
     if (!wishlistApiUrl) return;
     try {
-      const result = await readJson(await fetch(wishlistApiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify({ action: "setLootSpec", characterId: c.id, characterName: c.name, lootSpec }),
-      }), "setLootSpec");
+      const result = await postAction(wishlistApiUrl,
+        { action: "setLootSpec", characterId: c.id, characterName: c.name, lootSpec },
+        "setLootSpec");
+      if (servedByBoardRead(result)) throw new Error(REDIRECTED_POST);
       if (!result.ok) throw new Error(result.error || "Could not save the loot spec.");
       setSpecSaveError("");
     } catch (error) {
@@ -1816,7 +1843,7 @@ export default function App() {
       targetTrack = tracks[difficulty];
     return boss.items
       .map((item) => {
-        const people = data.characters.flatMap((c) => {
+        const people = data.characters.filter((c) => !isAltRaider(c, rosterStatuses)).flatMap((c) => {
           const chosen = specFor(c),
             list = wishlistFor(c),
             target = list.find(
@@ -1881,6 +1908,7 @@ export default function App() {
           targetTrack = tracks[difficulty];
         return boss.items.flatMap((item) => {
           const people = data.characters
+            .filter((c) => !isAltRaider(c, rosterStatuses))
             .flatMap((c) => {
               const chosen = specFor(c),
                 list = wishlistFor(c);
@@ -2012,6 +2040,7 @@ export default function App() {
       })),
     ],
     tierStatus = data.characters
+      .filter((c) => !isAltRaider(c, rosterStatuses))
       .map((c) => {
         const snapshot = simcSnapshots[c.id],
           snapshotBags: Item[] = snapshot?.bags || [],
@@ -2227,8 +2256,12 @@ export default function App() {
             priorityValue(b.c, rosterStatuses) ||
           a.c.name.localeCompare(b.c.name),
       ),
+    // "Is our BiS covered" is a question about the raid team. An alt brought
+    // for one fight answers it with targets nobody intends to fill, which drags
+    // the percentage down and hides where the raid actually stands.
+    countedOverview = weeklyOverview.filter((row) => !isAltRaider(row.c, rosterStatuses)),
     overviewInsights = (["normal", "heroic", "mythic"] as Difficulty[]).map((selectedDifficulty) => {
-      const evaluated = weeklyOverview.flatMap((row) => row.targets.map((entry) => ({
+      const evaluated = countedOverview.flatMap((row) => row.targets.map((entry) => ({
           reason: targetSatisfactionReason(data, row.c, entry, selectedDifficulty, specFor(row.c)),
         }))),
         total = evaluated.length,
@@ -2236,7 +2269,7 @@ export default function App() {
         higher = evaluated.filter((x) => x.reason === "higher").length,
         sim = evaluated.filter((x) => x.reason === "sim").length,
         satisfied = bis + higher + sim,
-        complete = weeklyOverview.filter((row) => row.targets.length > 0 && row.readiness[selectedDifficulty] === row.targets.length).length;
+        complete = countedOverview.filter((row) => row.targets.length > 0 && row.readiness[selectedDifficulty] === row.targets.length).length;
       return { difficulty: selectedDifficulty, total, satisfied, complete, bis, higher, sim };
     }),
     bossAnalyticsFor = (selectedDifficulty: Difficulty) => data.raid.bosses
@@ -2244,7 +2277,7 @@ export default function App() {
         const targetTrackOrder =
             selectedDifficulty === "mythic" ? 3 : selectedDifficulty === "heroic" ? 2 : 1,
           expected = bossLevel(raidBoss, selectedDifficulty, bossOrder);
-        const wishlistClaims: any[] = weeklyOverview.flatMap((row) =>
+        const wishlistClaims: any[] = countedOverview.flatMap((row) =>
             row.targets
               .filter(
                 (x) =>
@@ -2278,7 +2311,7 @@ export default function App() {
                 ];
               }),
           ),
-          simulatedNonBis: any[] = weeklyOverview.flatMap((row) => raidBoss.items.flatMap((item) => {
+          simulatedNonBis: any[] = countedOverview.flatMap((row) => raidBoss.items.flatMap((item) => {
             const selectedSpec = specFor(row.c);
             // A catalyst claim's target is the tier piece, but the item this boss
             // drops is the base — so matching on the target alone let the base
@@ -2870,7 +2903,7 @@ export default function App() {
                             saveRosterStatus(c, e.target.value as RosterStatus)
                           }
                         >
-                          {(["Main", "Trial", "Fill"] as RosterStatus[]).map(
+                          {(["Main", "Trial", "Fill", "Alt"] as RosterStatus[]).map(
                             (p) => (
                               <option key={p}>{p}</option>
                             ),
@@ -3074,7 +3107,7 @@ export default function App() {
                       </div>
                     </div>
                     <div className="contender-buckets">
-                      {(["Main", "Trial", "Fill"] as RosterStatus[]).map((groupStatus) => {
+                      {(["Main", "Trial", "Fill", "Alt"] as RosterStatus[]).map((groupStatus) => {
                         const group = people
                           .filter((p) => (rosterStatuses[p.c.id] || p.c.rosterStatus || "Main") === groupStatus)
                           .sort((a, b) => {
@@ -3353,14 +3386,12 @@ export default function App() {
                     } else throw new Error(`${label}: Raidbots status check failed (${reportResponse.status}).`);
                     setSimMessage(`${label} · report complete, uploading to WoWAudit…`);
                     for (let uploadAttempt = 0; uploadAttempt < 3; uploadAttempt++) {
-                      const statusResponse = await fetch(wishlistApiUrl, {
-                        method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
-                        body: JSON.stringify({ action: "checkDroptimizer", simId: job.simId, reportReady: true, upload: true,
-                          characterId: c.id, characterName: c.name, configurationName: "Single Target", replaceManualEdits: false }),
-                      });
                       let status;
                       try {
-                        status = await readJson(statusResponse, "checkDroptimizer");
+                        status = await postAction(wishlistApiUrl,
+                          { action: "checkDroptimizer", simId: job.simId, reportReady: true, upload: true,
+                            characterId: c.id, characterName: c.name, configurationName: "Single Target", replaceManualEdits: false },
+                          "checkDroptimizer");
                       } catch (error) {
                         // The sim is finished either way; a garbled reply here
                         // says nothing about that, so spend the remaining
@@ -3370,7 +3401,13 @@ export default function App() {
                         continue;
                       }
                       if (status.ok && status.state === "uploaded") { uploaded = true; break; }
-                      if (uploadAttempt === 2) throw new Error(`${label}: ${status.error || "WoWAudit upload failed"}`);
+                      // A redirected POST is not a rejected upload. Apps Script
+                      // uploads before it answers, so the reply is the only thing
+                      // that went missing - and the pending-sim trigger closes it
+                      // out regardless. Saying "upload failed" here sent a raider
+                      // to re-sim work that was already on WoWAudit.
+                      if (uploadAttempt === 2)
+                        throw new Error(`${label}: ${servedByBoardRead(status) ? REDIRECTED_POST : status.error || "WoWAudit upload failed"}`);
                       await new Promise((resolve) => window.setTimeout(resolve, (uploadAttempt + 1) * 3000));
                     }
                     if (uploaded) break;
@@ -3757,14 +3794,14 @@ export default function App() {
                                   if (!difficulties.length) throw new Error("That report has no raid scores in it.");
                                   if (report.character && norm(report.character) !== norm(c.name))
                                     throw new Error(`That report is for ${report.character}, not ${c.name}.`);
-                                  const saved = await readJson(await fetch(wishlistApiUrl, {
-                                    method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
-                                    body: JSON.stringify({ action: "saveQeReport", characterId: c.id, characterName: c.name, lootSpec: selectedSpec,
+                                  const saved = await postAction(wishlistApiUrl,
+                                    { action: "saveQeReport", characterId: c.id, characterName: c.name, lootSpec: selectedSpec,
                                       // One report is one difficulty, so name the id per difficulty the
                                       // same way the worker does - each score keeps a link to its run.
-                                      report: { ...report, reportIds: Object.fromEntries(difficulties.map((d) => [d, id])) } }),
-                                  }), "saveQeReport");
-                                  if (!saved.ok) throw new Error(saved.error || "The board could not save that report.");
+                                      report: { ...report, reportIds: Object.fromEntries(difficulties.map((d) => [d, id])) } },
+                                    "saveQeReport");
+                                  if (servedByBoardRead(saved)) throw new Error(REDIRECTED_POST);
+                                  if (!saved.ok || !saved.report) throw new Error(saved.error || "The board could not save that report.");
                                   setQeReports((current) => ({ ...current, [String(c.id)]: saved.report }));
                                   setQeLink("");
                                   setQeLinkState("saved");

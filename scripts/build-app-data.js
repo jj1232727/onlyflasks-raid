@@ -1,15 +1,20 @@
 import {readFile,mkdir,writeFile} from "node:fs/promises";
 import {extraBosses} from "../src/extra-raids.js";
+import {loadRaids,RAID_LEVELS} from "../src/raid-files.js";
 import {DEFAULT_SPECS,defaultSpecFor,invalidDefaults} from "../src/loot-specs.js";
 const read=async(p,f)=>{try{return JSON.parse(await readFile(p,"utf8"))}catch{return f}};
-const roster=await read("data/roster.json",{characters:[]}),gear=await read("data/gear.json",{characters:[]}),bis=await read("data/bis/icy-veins-midnight-s2.json",{lists:{}}),raid=await read("data/raid-loot.json",{bosses:[]}),raidEffects=await read("data/raid-effects.json",{items:{}}),seasonLoot=await read("data/season-loot.json",{items:[]}),sims=await read("data/wowaudit-wishlists.json",{characters:[]}),lootHistory=await read("data/wowaudit-loot-history.json",{history_items:[]}),auditActivity=await read("data/wowaudit-audit.json",{characters:[]}),raiderio=await read("data/raiderio-audit.json",{characters:[]}),itemIcons=await read("data/item-icons.json",{});
+const roster=await read("data/roster.json",{characters:[]}),gear=await read("data/gear.json",{characters:[]}),bis=await read("data/bis/icy-veins-midnight-s2.json",{lists:{}}),exportedRaids=await loadRaids(),raidEffects=await read("data/raid-effects.json",{items:{}}),seasonLoot=await read("data/season-loot.json",{items:[]}),sims=await read("data/wowaudit-wishlists.json",{characters:[]}),lootHistory=await read("data/wowaudit-loot-history.json",{history_items:[]}),auditActivity=await read("data/wowaudit-audit.json",{characters:[]}),raiderio=await read("data/raiderio-audit.json",{characters:[]}),itemIcons=await read("data/item-icons.json",{});
 const tierSlots={Idol:"Hands",Remnant:"Shoulders",Icon:"Chest",Relic:"Legs",Effigy:"Helm"},tierArmor={Venomwoven:"Cloth",Venomcured:"Leather",Venomcast:"Mail",Venomforged:"Plate"};
-for(const boss of raid.bosses){boss.raid=raid.raid;boss.items=boss.items.flatMap(item=>{const effect=raidEffects.items?.[item.itemId]||{};if(item.slot)return[{...item,...effect}];const family=Object.keys(tierArmor).find(x=>item.name.startsWith(x)),token=Object.keys(tierSlots).find(x=>item.name.endsWith(x));return family&&token?[{...item,...effect,slot:tierSlots[token],armorType:tierArmor[family],tierToken:true}]:[]});}
+// The first exported raid names the board; the rest append their bosses. A
+// raid off the positional ladder carries its own levels from RAID_LEVELS.
+const raid={raid:exportedRaids[0]?.raid?.raid||"",difficulty:exportedRaids[0]?.raid?.difficulty||"",bosses:exportedRaids.flatMap(({raid:r})=>r.bosses.map(b=>({...b,raid:r.raid,...(RAID_LEVELS[r.raid]?{levels:RAID_LEVELS[r.raid]}:{})})))};
+for(const boss of raid.bosses){boss.items=boss.items.flatMap(item=>{const effect=raidEffects.items?.[item.itemId]||{};if(item.slot)return[{...item,...effect}];const family=Object.keys(tierArmor).find(x=>item.name.startsWith(x)),token=Object.keys(tierSlots).find(x=>item.name.endsWith(x));return family&&token?[{...item,...effect,slot:tierSlots[token],armorType:tierArmor[family],tierToken:true}]:[]});}
 // Raids the addon export cannot reach — see src/extra-raids.js.
 const extra=extraBosses(seasonLoot,raidEffects);
 // A boss from outside the positional table MUST carry its own levels, or the
 // board silently prices its loot at whatever the table holds at that index.
-for(const boss of extra)if(!boss.levels?.normal||!boss.levels?.heroic||!boss.levels?.mythic)throw new Error(`Refusing to write public/loot-data.json: ${boss.name} has no item levels.`);
+const offLadder=[...raid.bosses.filter(b=>b.raid&&b.raid!==raid.raid),...extra];
+for(const boss of offLadder)if(!boss.levels?.normal||!boss.levels?.heroic||!boss.levels?.mythic)throw new Error(`Refusing to write public/loot-data.json: ${boss.name} (${boss.raid}) has no item levels. Add them to RAID_LEVELS in src/raid-files.js.`);
 // The whole point is that this boss is not on the main lockout, so its absence
 // is a silent hole in every "what is worth running" view. Say so loudly.
 if(!extra.length)throw new Error("Refusing to write public/loot-data.json: no bosses came back for the extra raids. Run \"npm run season:loot\" — data/season-loot.json is the source for them.");

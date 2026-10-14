@@ -17,6 +17,13 @@ const specs = [
 ];
 
 const decode = (value) => value.replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&mdash;/g, "—").replace(/<[^>]+>/g, "").trim();
+// Icy Veins serves live items under "wow/item/" and a raid still on their PTR
+// database under "wowxptr/item/" - which is where the newest tier sits the week
+// it opens. Matching only "wow/" parses cleanly and silently omits the new raid.
+const ITEM_TOOLTIP = new RegExp('data-iv-tooltip="wow[a-z]*/item/([0-9]+)([^"]*)"[^>]*>[^]*?<span>([^<]+)</span>');
+// Catalyst source: original-item=NNN became &original=NNN inside that query.
+const ORIGINAL_ITEM = new RegExp('original=([0-9]+)');
+
 const lists = {};
 for (const [spec, slug] of specs) {
   const url = `https://www.icy-veins.com/wow/${slug}-gear-best-in-slot`;
@@ -30,13 +37,15 @@ for (const [spec, slug] of specs) {
   const items = [];
   for (const card of section.split(/<div class="bis_item(?:\s[^"]*)?"[^>]*>/).slice(1)) {
     const slot = card.match(/class="bis_item_slot">([^<]+)</);
-    const item = slot ? card.slice(0, slot.index).match(/data-wowhead="(item=(\d+)[^"]*)"[^>]*>[\s\S]*?<span[^>]*class="q\d"[^>]*>([^<]+)<\/span>/) : null;
+    const item = slot ? card.slice(0, slot.index).match(ITEM_TOOLTIP) : null;
     const drop = card.match(/class="bis_item_drop">([\s\S]*?)<\/span>/);
     if (item && slot) {
-      const original = item[1].match(/original-item=(\d+)/);
+      // Catalyst source moved into the tooltip query as well: original-item=NNN
+      // is now &original=NNN, HTML-escaped, so it has to be decoded first.
+      const original = decode(item[2]).match(ORIGINAL_ITEM);
       const dropName = drop ? decode(drop[1]) : "";
       const sourceItemId = original ? Number(original[1]) : null;
-      items.push({ itemId: Number(item[2]), name: decode(item[3]), slot: decode(slot[1]), drop: dropName, crafted: /craft/i.test(dropName), ...(sourceItemId && sourceItemId !== Number(item[2]) ? { sourceItemId, catalyst: true } : {}) });
+      items.push({ itemId: Number(item[1]), name: decode(item[3]), slot: decode(slot[1]), drop: dropName, crafted: /craft/i.test(dropName), ...(sourceItemId && sourceItemId !== Number(item[1]) ? { sourceItemId, catalyst: true } : {}) });
     }
   }
   const modified = html.match(/"dateModified":"([^"]+)"/);

@@ -1,4 +1,5 @@
 import { readFile, mkdir, writeFile } from "node:fs/promises";
+import { PRIMARY_RAID_FILE, raidFileFor } from "../src/raid-files.js";
 import { dirname } from "node:path";
 import { parseArgs } from "node:util";
 
@@ -16,8 +17,13 @@ const jsonText = match[1]
   .replace(/\\"/gu, '"')
   .replace(/\\\\/gu, "\\");
 const raid = JSON.parse(jsonText);
-await mkdir(dirname("data/raid-loot.json"), { recursive: true });
-await writeFile("data/raid-loot.json", `${JSON.stringify(raid, null, 2)}\n`, "utf8");
+// The raid the board was built around keeps the original path; anything else
+// gets its own file. Writing every export to one path meant importing a second
+// raid deleted the first.
+const primary = JSON.parse(await readFile(PRIMARY_RAID_FILE, "utf8").catch(() => "null"));
+const out = !primary || primary.raid === raid.raid ? PRIMARY_RAID_FILE : raidFileFor(raid.raid);
+await mkdir(dirname(out), { recursive: true });
+await writeFile(out, `${JSON.stringify(raid, null, 2)}\n`, "utf8");
 const count = raid.bosses.reduce((sum, boss) => sum + boss.items.length, 0);
-console.log(`Imported ${count} loot entries across ${raid.bosses.length} bosses.`);
+console.log(`Imported ${count} loot entries across ${raid.bosses.length} bosses of ${raid.raid} -> ${out}.`);
 
