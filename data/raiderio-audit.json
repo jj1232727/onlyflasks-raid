@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-14T22:57:25.733Z",
+  "fetchedAt": "2026-10-15T02:49:10.139Z",
   "characters": [
     {
       "id": 4579002,
@@ -169,11 +169,11 @@
       ],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -219,11 +219,11 @@
       "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -264,16 +264,179 @@
       "id": 4826466,
       "name": "Xeonips",
       "status": "ok",
-      "lastCrawledAt": "2026-10-14T11:44:26.000Z",
+      "lastCrawledAt": "2026-10-15T01:25:28.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Xeonips",
-      "weeklyRuns": [],
+      "weeklyRuns": [
+        {
+          "dungeon": "Voidscar Arena",
+          "short_name": "VSA",
+          "mythic_level": 13,
+          "completed_at": "2026-10-14T22:56:00.000Z",
+          "clear_time_ms": 1113335,
+          "keystone_run_id": 20690052,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 585,
+          "zone_id": 16425,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
+          "score": 394.3,
+          "affixes": [
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 147,
+              "name": "Xal'atath's Guile",
+              "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+              "icon": "ability_racial_chillofnight",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+              "wowhead_url": "https://wowhead.com/affix=147"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/20690052-13-voidscar-arena",
+          "spec": {
+            "id": 102,
+            "name": "Balance",
+            "slug": "balance",
+            "class_id": 11,
+            "role": "dps",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "Altar of Fangs",
+          "short_name": "AOF",
+          "mythic_level": 13,
+          "completed_at": "2026-10-14T21:25:29.000Z",
+          "clear_time_ms": 1741076,
+          "keystone_run_id": 20681336,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 1,
+          "map_challenge_mode_id": 588,
+          "zone_id": 16865,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
+          "score": 381.2,
+          "affixes": [
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 147,
+              "name": "Xal'atath's Guile",
+              "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+              "icon": "ability_racial_chillofnight",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+              "wowhead_url": "https://wowhead.com/affix=147"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/20681336-13-altar-of-fangs",
+          "spec": {
+            "id": 102,
+            "name": "Balance",
+            "slug": "balance",
+            "class_id": 11,
+            "role": "dps",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "Kings' Rest",
+          "short_name": "KR",
+          "mythic_level": 12,
+          "completed_at": "2026-10-14T23:24:22.000Z",
+          "clear_time_ms": 1167937,
+          "keystone_run_id": 20679494,
+          "par_time_ms": 1980999,
+          "num_keystone_upgrades": 3,
+          "map_challenge_mode_id": 249,
+          "zone_id": 9526,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
+          "score": 380,
+          "affixes": [
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 147,
+              "name": "Xal'atath's Guile",
+              "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+              "icon": "ability_racial_chillofnight",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+              "wowhead_url": "https://wowhead.com/affix=147"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/20679494-12-kings-rest",
+          "spec": {
+            "id": 105,
+            "name": "Restoration",
+            "slug": "restoration",
+            "class_id": 11,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 3
+          },
+          "role": "healer"
+        }
+      ],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -319,11 +482,11 @@
       "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -369,11 +532,11 @@
       "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -474,11 +637,11 @@
       ],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -524,11 +687,11 @@
       "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -619,9 +782,63 @@
       "id": 4669066,
       "name": "Nóva",
       "status": "ok",
-      "lastCrawledAt": "2026-10-14T06:31:23.000Z",
+      "lastCrawledAt": "2026-10-15T01:25:29.000Z",
       "profileUrl": "https://raider.io/characters/us/hyjal/Nóva",
       "weeklyRuns": [
+        {
+          "dungeon": "Voidscar Arena",
+          "short_name": "VSA",
+          "mythic_level": 13,
+          "completed_at": "2026-10-14T22:56:00.000Z",
+          "clear_time_ms": 1113335,
+          "keystone_run_id": 20690052,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 585,
+          "zone_id": 16425,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
+          "score": 394.3,
+          "affixes": [
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 147,
+              "name": "Xal'atath's Guile",
+              "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+              "icon": "ability_racial_chillofnight",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+              "wowhead_url": "https://wowhead.com/affix=147"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/20690052-13-voidscar-arena",
+          "spec": {
+            "id": 62,
+            "name": "Arcane",
+            "slug": "arcane",
+            "class_id": 8,
+            "role": "dps",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "dps"
+        },
         {
           "dungeon": "Altar of Fangs",
           "short_name": "AOF",
@@ -729,15 +946,69 @@
             "ordinal": 0
           },
           "role": "dps"
+        },
+        {
+          "dungeon": "Kings' Rest",
+          "short_name": "KR",
+          "mythic_level": 12,
+          "completed_at": "2026-10-14T23:24:22.000Z",
+          "clear_time_ms": 1167937,
+          "keystone_run_id": 20679494,
+          "par_time_ms": 1980999,
+          "num_keystone_upgrades": 3,
+          "map_challenge_mode_id": 249,
+          "zone_id": 9526,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
+          "score": 380,
+          "affixes": [
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 147,
+              "name": "Xal'atath's Guile",
+              "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+              "icon": "ability_racial_chillofnight",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+              "wowhead_url": "https://wowhead.com/affix=147"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/20679494-12-kings-rest",
+          "spec": {
+            "id": 62,
+            "name": "Arcane",
+            "slug": "arcane",
+            "class_id": 8,
+            "role": "dps",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "dps"
         }
       ],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -783,11 +1054,11 @@
       "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -992,11 +1263,11 @@
       "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -1042,11 +1313,11 @@
       "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -1092,11 +1363,11 @@
       "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -1142,11 +1413,11 @@
       "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -1242,11 +1513,11 @@
       "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -1292,11 +1563,11 @@
       "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -1342,11 +1613,11 @@
       "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -1771,11 +2042,11 @@
       ],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -1821,11 +2092,11 @@
       "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -1926,11 +2197,11 @@
       ],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -2085,11 +2356,11 @@
       ],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -2190,11 +2461,11 @@
       ],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
@@ -2349,11 +2620,11 @@
       ],
       "raidProgression": {
         "the-unbinding-of-kithix": {
-          "summary": "",
+          "summary": "1/1 H",
           "expansion_id": 11,
           "total_bosses": 1,
           "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
