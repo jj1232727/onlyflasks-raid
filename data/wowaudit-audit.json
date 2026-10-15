@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-15T08:45:47.689Z",
+  "fetchedAt": "2026-10-15T14:37:05.750Z",
   "periodInfo": {
     "current_period": 1085,
     "current_season": {
@@ -126,7 +126,20 @@
         "spark_label": "Tidal Crafted",
         "catalyst_charge_achievement_id": 62872,
         "spark_ilvl_bump_bonus_id": [],
-        "voidforged": false,
+        "voidforged": {
+          "enabled": true,
+          "label": "Venomforged",
+          "icon": "inv_1205_voidforge_sovereignvoidcorefragments_green",
+          "bonus_ids": {
+            "mythic": 12856,
+            "heroic": 12848
+          },
+          "item_levels": {
+            "mythic": 340,
+            "heroic": 328
+          },
+          "crafted_bonus_id": 13852
+        },
         "keystone_dungeons": [
           {
             "id": 588,
@@ -256,7 +269,17 @@
                 "amount": 30,
                 "name": "Azta'rec (Tier ??)",
                 "icon": "spell_nature_poisoncleansingtotem"
+              },
+              "/achievement=63716": {
+                "amount": 20,
+                "name": "Kindo'Jan (Labyrinth Delve)",
+                "icon": "achievement_dungeon_theotherside_muehzala"
               }
+            },
+            "untracked_uncapped_crest": {
+              "amount": 20,
+              "name": "Flooded Chamber (Labyrinth Delve)",
+              "icon": "achievement_dungeon_theotherside_muehzala"
             }
           },
           {
@@ -281,7 +304,17 @@
                 "amount": 30,
                 "name": "Azta'rec (Tier ?)",
                 "icon": "inv_cape_special_ulatek_d_01_red"
+              },
+              "/achievement=63716": {
+                "amount": 20,
+                "name": "Kindo'Jan (Labyrinth Delve)",
+                "icon": "achievement_dungeon_theotherside_muehzala"
               }
+            },
+            "untracked_uncapped_crest": {
+              "amount": 20,
+              "name": "Flooded Chamber (Labyrinth Delve)",
+              "icon": "achievement_dungeon_theotherside_muehzala"
             }
           },
           {
@@ -744,7 +777,7 @@
                 "wclId": 3513,
                 "maxItemLevel": 318,
                 "thumbnailUrl": "https://wowaudit-assets.nyc3.cdn.digitaloceanspaces.com/images/achievement-icons/kithix.jpg",
-                "zoomUrl": null,
+                "zoomUrl": "https://render.worldofwarcraft.com/eu/npcs/zoom/creature-display-145178.jpg",
                 "encounterAreaImages": [
                   "Room"
                 ],
@@ -803,7 +836,7 @@
         "regular_mythic_dungeons_done": 2,
         "vault_options": {
           "raids": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -895,7 +928,7 @@
           "raids": {
             "option_1": 318,
             "option_2": 318,
-            "option_3": null
+            "option_3": 318
           },
           "dungeons": {
             "option_1": null,
@@ -962,7 +995,7 @@
           "raids": {
             "option_1": 318,
             "option_2": 318,
-            "option_3": null
+            "option_3": 318
           },
           "dungeons": {
             "option_1": 318,
@@ -989,7 +1022,7 @@
           "raids": {
             "option_1": 318,
             "option_2": 318,
-            "option_3": null
+            "option_3": 318
           },
           "dungeons": {
             "option_1": null,
@@ -1052,7 +1085,7 @@
           "raids": {
             "option_1": 318,
             "option_2": 318,
-            "option_3": null
+            "option_3": 318
           },
           "dungeons": {
             "option_1": 318,
@@ -1079,7 +1112,7 @@
           "raids": {
             "option_1": 318,
             "option_2": 318,
-            "option_3": null
+            "option_3": 318
           },
           "dungeons": {
             "option_1": null,
@@ -1167,7 +1200,7 @@
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1196,7 +1229,7 @@
           "raids": {
             "option_1": 318,
             "option_2": 318,
-            "option_3": null
+            "option_3": 318
           },
           "dungeons": {
             "option_1": null,
@@ -1221,7 +1254,7 @@
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1275,7 +1308,7 @@
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1309,7 +1342,7 @@
           "raids": {
             "option_1": 318,
             "option_2": 318,
-            "option_3": null
+            "option_3": 318
           },
           "dungeons": {
             "option_1": 318,
@@ -1334,7 +1367,7 @@
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1392,7 +1425,7 @@
           "raids": {
             "option_1": 318,
             "option_2": 318,
-            "option_3": null
+            "option_3": 318
           },
           "dungeons": {
             "option_1": 318,
@@ -1419,7 +1452,7 @@
           "raids": {
             "option_1": 318,
             "option_2": 318,
-            "option_3": null
+            "option_3": 318
           },
           "dungeons": {
             "option_1": null,
@@ -1563,7 +1596,7 @@
           "raids": {
             "option_1": 318,
             "option_2": 318,
-            "option_3": null
+            "option_3": 318
           },
           "dungeons": {
             "option_1": 318,
@@ -1571,9 +1604,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
+            "option_1": 305,
+            "option_2": 305,
+            "option_3": 305
           }
         }
       }
