@@ -2217,7 +2217,16 @@
                             "absolute": 1151.1716,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 270168
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       }
@@ -2412,10 +2421,10 @@
                           }
                         },
                         "alternative": {
-                          "item": 270173,
-                          "percentage": 2.4951,
-                          "absolute": 5152.7704,
-                          "item_level": 344
+                          "item": 270165,
+                          "percentage": 0.5574,
+                          "absolute": 1151.1716,
+                          "item_level": 321
                         },
                         "wishes": [
                           {
@@ -2426,7 +2435,16 @@
                             "absolute": 693.3445,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 270168
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       }
@@ -2632,65 +2650,9 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 10.158,
-                    "encounter_absolute": 21930,
+                    "encounter_percentage": 4.6468,
+                    "encounter_absolute": 10070,
                     "items": [
-                      {
-                        "name": "Sash of the Forlorn Vessel",
-                        "id": 268256,
-                        "slot": "waist",
-                        "score_by_spec": {
-                          "Subtlety": {
-                            "score": 3183,
-                            "percentage": 1.4081
-                          },
-                          "Assassination": {
-                            "score": 1161,
-                            "percentage": 0.5622
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Subtlety",
-                            "timestamp": "2026-09-23T23:52:56.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.4081,
-                            "absolute": 3183.8165,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 251189
-                              },
-                              "new": {
-                                "item_level": 328,
-                                "id": 268227
-                              }
-                            }
-                          },
-                          {
-                            "specialization": "Assassination",
-                            "timestamp": "2026-10-14T23:49:26.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5622,
-                            "absolute": 1161.0954,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 268227
-                              },
-                              "new": {
-                                "item_level": 328,
-                                "id": 268227
-                              }
-                            }
-                          }
-                        ]
-                      },
                       {
                         "name": "Coiled Hex Legguards",
                         "id": 268225,
@@ -2744,53 +2706,6 @@
                                 "id": 271509
                               }
                             }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Zul'jin's Guillotine Technique",
-                        "id": 270173,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Subtlety": {
-                            "score": 2364,
-                            "percentage": 1.0458
-                          },
-                          "Assassination": {
-                            "score": 5152,
-                            "percentage": 2.4951
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Subtlety",
-                            "timestamp": "2026-09-23T23:52:56.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.0458,
-                            "absolute": 2364.588,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 334,
-                                "id": 270165
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 270175
-                              }
-                            }
-                          },
-                          {
-                            "specialization": "Assassination",
-                            "timestamp": "2026-10-14T23:49:26.000+00:00",
-                            "upgrade": null,
-                            "percentage": 2.4951,
-                            "absolute": 5152.7704,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
                           }
                         ]
                       },
@@ -2927,8 +2842,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 25.2044,
-                "total_absolute": 55030
+                "total_percentage": 19.6932,
+                "total_absolute": 43170
               }
             },
             {
@@ -3110,8 +3025,8 @@
                                 "id": 251189
                               },
                               "new": {
-                                "item_level": 328,
-                                "id": 268227
+                                "item_level": 334,
+                                "id": 268256
                               }
                             }
                           }
@@ -3137,7 +3052,16 @@
                             "absolute": 115.1326,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 270168
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       }
@@ -3614,10 +3538,10 @@
                           }
                         },
                         "alternative": {
-                          "item": 270173,
-                          "percentage": 2.4951,
-                          "absolute": 5152.7704,
-                          "item_level": 344
+                          "item": 270165,
+                          "percentage": 0.5574,
+                          "absolute": 1151.1716,
+                          "item_level": 321
                         },
                         "wishes": [
                           {
@@ -3628,7 +3552,16 @@
                             "absolute": 326.2841,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 270168
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       },
@@ -3886,7 +3819,7 @@
                                 "id": 273778
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 340,
                                 "id": 271092
                               }
                             }
@@ -4156,7 +4089,7 @@
                                 "id": 158366
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 273792
                               }
                             }
@@ -4175,7 +4108,7 @@
                                 "id": 158366
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 273792
                               }
                             }
@@ -4291,7 +4224,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 273649
+                                "id": 281215
                               }
                             }
                           },
@@ -4310,7 +4243,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 273649
+                                "id": 281215
                               }
                             }
                           }
@@ -4420,7 +4353,7 @@
                                 "id": 273778
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 340,
                                 "id": 271092
                               }
                             }
@@ -4433,7 +4366,16 @@
                             "absolute": 1177.2805,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 271092
+                              },
+                              "new": {
+                                "item_level": 340,
+                                "id": 271092
+                              }
+                            }
                           }
                         ]
                       },
@@ -4469,7 +4411,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 273649
+                                "id": 281215
                               }
                             }
                           }
@@ -4797,7 +4739,7 @@
                                 "id": 158366
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 273792
                               }
                             }
@@ -4816,7 +4758,7 @@
                                 "id": 158366
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 273792
                               }
                             }
@@ -4901,7 +4843,7 @@
                                 "id": 273778
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 340,
                                 "id": 271092
                               }
                             }
@@ -5056,7 +4998,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 273649
+                                "id": 281215
                               }
                             }
                           }
@@ -5132,7 +5074,7 @@
                                 "id": 158366
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 273792
                               }
                             }
@@ -5151,7 +5093,7 @@
                                 "id": 158366
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 273792
                               }
                             }
@@ -5287,7 +5229,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 273649
+                                "id": 281215
                               }
                             }
                           },
@@ -5306,7 +5248,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 273649
+                                "id": 281215
                               }
                             }
                           }
@@ -5381,7 +5323,7 @@
                                 "id": 158366
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 273792
                               }
                             }
@@ -5488,7 +5430,7 @@
                                 "id": 158366
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 273792
                               }
                             }
@@ -5618,7 +5560,7 @@
                                 "id": 158366
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 273792
                               }
                             }
@@ -5689,7 +5631,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 273649
+                                "id": 281215
                               }
                             }
                           }
@@ -8425,7 +8367,16 @@
                             "absolute": 1214.738,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271526
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271526
+                              }
+                            }
                           }
                         ]
                       },
@@ -8552,7 +8503,16 @@
                             "absolute": 1230.7297,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271526
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271526
+                              }
+                            }
                           }
                         ]
                       }
@@ -10570,7 +10530,16 @@
                             "absolute": 1585.6418,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271567
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271567
+                              }
+                            }
                           }
                         ]
                       },
@@ -10829,7 +10798,16 @@
                             "absolute": 1169.9445,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 271092
+                              },
+                              "new": {
+                                "item_level": 340,
+                                "id": 271092
+                              }
+                            }
                           }
                         ]
                       },
@@ -11285,7 +11263,16 @@
                             "absolute": 1565.7065,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271567
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271567
+                              }
+                            }
                           }
                         ]
                       },
@@ -11680,7 +11667,16 @@
                             "absolute": 1293.9105,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 270175
+                              },
+                              "new": {
+                                "item_level": 340,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       },
@@ -11709,7 +11705,16 @@
                             "absolute": 861.7164,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 251214
+                              },
+                              "new": {
+                                "item_level": 331,
+                                "id": 237836
+                              }
+                            }
                           }
                         ]
                       },
@@ -11738,7 +11743,16 @@
                             "absolute": 571.9345,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271455
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271455
+                              }
+                            }
                           }
                         ]
                       }
@@ -11834,7 +11848,16 @@
                             "absolute": 360.6741,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 270175
+                              },
+                              "new": {
+                                "item_level": 340,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       }
@@ -11901,7 +11924,16 @@
                             "absolute": 872.3402,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 251214
+                              },
+                              "new": {
+                                "item_level": 331,
+                                "id": 237836
+                              }
+                            }
                           }
                         ]
                       }
@@ -11968,7 +12000,16 @@
                             "absolute": 591.8636,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 270175
+                              },
+                              "new": {
+                                "item_level": 340,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       },
@@ -12016,7 +12057,16 @@
                             "absolute": 3266.2706,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271455
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271455
+                              }
+                            }
                           }
                         ]
                       }
@@ -12077,7 +12127,16 @@
                             "absolute": 79.8981,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 270175
+                              },
+                              "new": {
+                                "item_level": 340,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       }
@@ -12485,7 +12544,16 @@
                             "absolute": 575.8527,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 268213
+                              },
+                              "new": {
+                                "item_level": 340,
+                                "id": 268213
+                              }
+                            }
                           }
                         ]
                       },
@@ -12514,7 +12582,16 @@
                             "absolute": 492.9666,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 270175
+                              },
+                              "new": {
+                                "item_level": 340,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       }
@@ -13556,7 +13633,16 @@
                             "absolute": 2675.4156,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 252258
+                              },
+                              "new": {
+                                "item_level": 331,
+                                "id": 240949
+                              }
+                            }
                           }
                         ]
                       },
@@ -13697,7 +13783,16 @@
                             "absolute": 1015.2163,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 252258
+                              },
+                              "new": {
+                                "item_level": 331,
+                                "id": 240949
+                              }
+                            }
                           }
                         ]
                       }
@@ -14971,7 +15066,16 @@
                             "absolute": 1055.168,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 251126
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 268229
+                              }
+                            }
                           }
                         ]
                       }
@@ -15025,7 +15129,7 @@
                                 "id": 270165
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 340,
                                 "id": 270175
                               }
                             }
@@ -15070,7 +15174,16 @@
                             "absolute": 1957.3037,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 251126
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 268229
+                              }
+                            }
                           }
                         ]
                       }
@@ -15107,7 +15220,7 @@
                                 "id": 270165
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 340,
                                 "id": 270175
                               }
                             }
@@ -15279,7 +15392,16 @@
                             "absolute": 180.7754,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 251126
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 268229
+                              }
+                            }
                           }
                         ]
                       }
@@ -15383,7 +15505,7 @@
                                 "id": 270163
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 340,
                                 "id": 270175
                               }
                             }
@@ -15434,7 +15556,7 @@
                                 "id": 270163
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 340,
                                 "id": 270175
                               }
                             }
@@ -15491,7 +15613,7 @@
                                 "id": 270163
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 340,
                                 "id": 270175
                               }
                             }
@@ -15566,7 +15688,16 @@
                             "absolute": 55.4091,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 252258
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 268249
+                              }
+                            }
                           }
                         ]
                       }
@@ -15664,33 +15795,9 @@
                 "encounters": [
                   {
                     "name": "Kith'ix",
-                    "encounter_percentage": 1.5624,
-                    "encounter_absolute": 3607,
+                    "encounter_percentage": 1.0838,
+                    "encounter_absolute": 2502,
                     "items": [
-                      {
-                        "name": "Band of the Swarmcaller",
-                        "id": 281029,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 1105,
-                            "percentage": 0.4786
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-10-14T23:53:03.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.4786,
-                            "absolute": 1105.2576,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
                       {
                         "name": "Corroded Hulk's Skullcap",
                         "id": 281239,
@@ -15711,15 +15818,24 @@
                             "absolute": 2502.7455,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 251126
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 268229
+                              }
+                            }
                           }
                         ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 1.5624,
-                "total_absolute": 3607
+                "total_percentage": 1.0838,
+                "total_absolute": 2502
               }
             },
             {
@@ -15766,7 +15882,16 @@
                             "absolute": 430.1032,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 251126
+                              },
+                              "new": {
+                                "item_level": 321,
+                                "id": 268229
+                              }
+                            }
                           }
                         ]
                       }
@@ -16517,7 +16642,16 @@
                             "absolute": 1244.0044,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 268213
+                              },
+                              "new": {
+                                "item_level": 340,
+                                "id": 268213
+                              }
+                            }
                           }
                         ]
                       },
@@ -17974,7 +18108,7 @@
                                 "id": 271547
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 271547
                               }
                             }
@@ -17987,7 +18121,16 @@
                             "absolute": 1140.6967,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271547
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271547
+                              }
+                            }
                           }
                         ]
                       },
@@ -18089,7 +18232,16 @@
                             "absolute": 2853.1849,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 268252
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 281029
+                              }
+                            }
                           }
                         ]
                       },
@@ -18169,52 +18321,9 @@
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 2.2886,
-                    "encounter_absolute": 4394,
+                    "encounter_percentage": 1.2794,
+                    "encounter_absolute": 2389,
                     "items": [
-                      {
-                        "name": "Apex Brute's Claw Ring",
-                        "id": 268252,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Destruction": {
-                            "score": 884,
-                            "percentage": 0.4734
-                          },
-                          "Demonology": {
-                            "score": 1121,
-                            "percentage": 0.5358
-                          }
-                        },
-                        "alternative": {
-                          "item": 268249,
-                          "percentage": 1.5275,
-                          "absolute": 2853.1849,
-                          "item_level": 321
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Destruction",
-                            "timestamp": "2026-09-23T23:34:59.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.4734,
-                            "absolute": 884.2256,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          },
-                          {
-                            "specialization": "Demonology",
-                            "timestamp": "2026-10-14T23:35:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5358,
-                            "absolute": 1121.6786,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
                       {
                         "name": "Venomwoven Relic",
                         "id": 270918,
@@ -18386,7 +18495,7 @@
                                 "id": 271547
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 271547
                               }
                             }
@@ -18399,7 +18508,16 @@
                             "absolute": 2157.0723,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271547
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271547
+                              }
+                            }
                           }
                         ]
                       },
@@ -18635,8 +18753,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 23.1437,
-                "total_absolute": 44611
+                "total_percentage": 22.1345,
+                "total_absolute": 42606
               }
             },
             {
@@ -18768,7 +18886,16 @@
                             "absolute": 1990.5114,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 268252
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 281029
+                              }
+                            }
                           }
                         ]
                       },
@@ -19092,7 +19219,16 @@
                             "absolute": 915.6616,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 268252
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 281029
+                              }
+                            }
                           }
                         ]
                       }
@@ -19192,7 +19328,16 @@
                             "absolute": 1292.8211,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 268252
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 281029
+                              }
+                            }
                           },
                           {
                             "specialization": "Demonology",
@@ -19202,7 +19347,16 @@
                             "absolute": 154.812,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 273792
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 281029
+                              }
+                            }
                           }
                         ]
                       },
@@ -19361,7 +19515,16 @@
                             "absolute": 323.1399,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 268252
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 281029
+                              }
+                            }
                           }
                         ]
                       }
@@ -19429,8 +19592,8 @@
                 "encounters": [
                   {
                     "name": "Kith'ix",
-                    "encounter_percentage": 2.3036,
-                    "encounter_absolute": 4821,
+                    "encounter_percentage": 1.9474,
+                    "encounter_absolute": 4076,
                     "items": [
                       {
                         "name": "Twisted Horror's Tendril",
@@ -19467,35 +19630,6 @@
                                 "id": 270164
                               }
                             }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Band of the Swarmcaller",
-                        "id": 281029,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Demonology": {
-                            "score": 745,
-                            "percentage": 0.3562
-                          }
-                        },
-                        "alternative": {
-                          "item": 268249,
-                          "percentage": 1.5275,
-                          "absolute": 2853.1849,
-                          "item_level": 321
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Demonology",
-                            "timestamp": "2026-10-14T23:35:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.3562,
-                            "absolute": 745.699,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
                           }
                         ]
                       },
@@ -19540,8 +19674,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 2.3036,
-                "total_absolute": 4821
+                "total_percentage": 1.9474,
+                "total_absolute": 4076
               }
             },
             {
@@ -19711,7 +19845,7 @@
                                 "id": 271474
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 281239
                               }
                             }
@@ -19751,7 +19885,7 @@
                                 "id": 268220
                               },
                               "new": {
-                                "item_level": 324,
+                                "item_level": 328,
                                 "id": 271475
                               }
                             }
@@ -19844,7 +19978,7 @@
                                 "id": 271474
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 281239
                               }
                             }
@@ -19882,7 +20016,7 @@
                                 "id": 268220
                               },
                               "new": {
-                                "item_level": 324,
+                                "item_level": 328,
                                 "id": 271475
                               }
                             }
@@ -20094,7 +20228,7 @@
                                 "id": 271474
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 281239
                               }
                             }
@@ -20134,7 +20268,7 @@
                                 "id": 268220
                               },
                               "new": {
-                                "item_level": 324,
+                                "item_level": 328,
                                 "id": 271475
                               }
                             }
@@ -20655,7 +20789,7 @@
                                 "id": 271474
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 281239
                               }
                             }
@@ -20743,7 +20877,7 @@
                                 "id": 271474
                               },
                               "new": {
-                                "item_level": 321,
+                                "item_level": 334,
                                 "id": 281239
                               }
                             }
@@ -21240,7 +21374,16 @@
                             "absolute": 630.2803,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271474
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271474
+                              }
+                            }
                           }
                         ]
                       }
@@ -21283,7 +21426,16 @@
                             "absolute": 453.0399,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271472
+                              },
+                              "new": {
+                                "item_level": 331,
+                                "id": 237835
+                              }
+                            }
                           }
                         ]
                       }
@@ -21325,7 +21477,16 @@
                             "absolute": 355.2476,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271474
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271474
+                              }
+                            }
                           }
                         ]
                       }
@@ -21679,7 +21840,16 @@
                             "absolute": 156.2981,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271472
+                              },
+                              "new": {
+                                "item_level": 331,
+                                "id": 237835
+                              }
+                            }
                           }
                         ]
                       },
@@ -21829,7 +21999,16 @@
                             "absolute": 500.5708,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 159459
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 268266
+                              }
+                            }
                           }
                         ]
                       },
@@ -21853,7 +22032,16 @@
                             "absolute": 1222.4723,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271474
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271474
+                              }
+                            }
                           }
                         ]
                       },
@@ -21882,7 +22070,16 @@
                             "absolute": 76.2443,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 268213
+                              },
+                              "new": {
+                                "item_level": 340,
+                                "id": 268213
+                              }
+                            }
                           }
                         ]
                       }
@@ -21937,7 +22134,16 @@
                             "absolute": 333.1489,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271474
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271474
+                              }
+                            }
                           }
                         ]
                       }
@@ -25463,7 +25669,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 281238
+                                "id": 271493
                               }
                             }
                           },
@@ -25482,7 +25688,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 281238
+                                "id": 271493
                               }
                             }
                           }
@@ -25880,7 +26086,7 @@
                                 "id": 251174
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 340,
                                 "id": 268207
                               }
                             }
@@ -25899,7 +26105,7 @@
                                 "id": 268477
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 340,
                                 "id": 268207
                               }
                             }
@@ -26941,7 +27147,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 281238
+                                "id": 271493
                               }
                             }
                           },
@@ -26960,7 +27166,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 281238
+                                "id": 271493
                               }
                             }
                           }
@@ -27224,7 +27430,7 @@
                                 "id": 251174
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 340,
                                 "id": 268207
                               }
                             }
@@ -27963,7 +28169,7 @@
                                 "id": 251174
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 340,
                                 "id": 268207
                               }
                             }
@@ -28261,7 +28467,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 281238
+                                "id": 271493
                               }
                             }
                           },
@@ -28280,7 +28486,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 281238
+                                "id": 271493
                               }
                             }
                           }
@@ -28506,7 +28712,7 @@
                                 "id": 251174
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 340,
                                 "id": 268207
                               }
                             }
@@ -29065,7 +29271,7 @@
                                 "id": 251174
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 340,
                                 "id": 268207
                               }
                             }
@@ -29234,7 +29440,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 281238
+                                "id": 271493
                               }
                             }
                           },
@@ -29253,7 +29459,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 281238
+                                "id": 271493
                               }
                             }
                           }
@@ -29415,7 +29621,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 281238
+                                "id": 271493
                               }
                             }
                           },
@@ -29434,7 +29640,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 281238
+                                "id": 271493
                               }
                             }
                           }
@@ -29540,7 +29746,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 281238
+                                "id": 271493
                               }
                             }
                           },
@@ -29559,7 +29765,7 @@
                               },
                               "new": {
                                 "item_level": 321,
-                                "id": 281238
+                                "id": 271493
                               }
                             }
                           }

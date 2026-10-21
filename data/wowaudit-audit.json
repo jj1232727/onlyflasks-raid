@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-21T02:56:30.212Z",
+  "fetchedAt": "2026-10-21T09:03:25.125Z",
   "periodInfo": {
     "current_period": 1086,
     "current_season": {
@@ -804,23 +804,28 @@
       "name": "Borik",
       "realm": "Thrall",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 13,
+            "dungeon": 399
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
+            "option_1": 318,
+            "option_2": 318,
+            "option_3": null
+          },
+          "dungeons": {
             "option_1": 318,
             "option_2": null,
             "option_3": null
           },
-          "dungeons": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
-          },
           "world": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 305,
+            "option_2": 305,
             "option_3": null
           }
         }
@@ -837,23 +842,23 @@
             "dungeon": 585
           }
         ],
-        "world_quests_done": 2,
+        "world_quests_done": 5,
         "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
           "world": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
+            "option_1": 305,
+            "option_2": 305,
+            "option_3": 305
           }
         }
       }
@@ -924,22 +929,22 @@
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
+            "option_1": 318,
+            "option_2": 318,
+            "option_3": 318
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
           "world": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
+            "option_1": 305,
+            "option_2": 305,
+            "option_3": 272
           }
         }
       }
@@ -950,7 +955,7 @@
       "realm": "Proudmoore",
       "data": {
         "dungeons_done": [],
-        "world_quests_done": 0,
+        "world_quests_done": 3,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
@@ -1018,8 +1023,8 @@
             "option_3": null
           },
           "world": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 305,
+            "option_2": 305,
             "option_3": null
           }
         }
@@ -1089,8 +1094,8 @@
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": null
           },
           "dungeons": {
@@ -1138,8 +1143,8 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
@@ -1166,7 +1171,7 @@
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 2,
         "vault_options": {
           "raids": {
             "option_1": 318,
@@ -1174,14 +1179,14 @@
             "option_3": 318
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
           "world": {
             "option_1": 305,
             "option_2": 305,
-            "option_3": null
+            "option_3": 305
           }
         }
       }
@@ -1220,12 +1225,12 @@
       "data": {
         "dungeons_done": [],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 2,
         "vault_options": {
           "raids": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
+            "option_1": 318,
+            "option_2": 318,
+            "option_3": 318
           },
           "dungeons": {
             "option_1": null,
@@ -1235,7 +1240,7 @@
           "world": {
             "option_1": 305,
             "option_2": 305,
-            "option_3": null
+            "option_3": 272
           }
         }
       }
@@ -1279,13 +1284,13 @@
         "regular_mythic_dungeons_done": 5,
         "vault_options": {
           "raids": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
+            "option_1": 318,
+            "option_2": 318,
+            "option_3": 318
           },
           "dungeons": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
@@ -1302,13 +1307,13 @@
       "realm": "Illidan",
       "data": {
         "dungeons_done": [],
-        "world_quests_done": 0,
+        "world_quests_done": 2,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
+            "option_1": 318,
+            "option_2": 318,
+            "option_3": 318
           },
           "dungeons": {
             "option_1": null,
@@ -1316,9 +1321,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
+            "option_1": 305,
+            "option_2": 305,
+            "option_3": 272
           }
         }
       }
@@ -1360,9 +1365,9 @@
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
+            "option_1": 318,
+            "option_2": 318,
+            "option_3": 318
           },
           "dungeons": {
             "option_1": null,
@@ -1370,9 +1375,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
+            "option_1": 305,
+            "option_2": 305,
+            "option_3": 272
           }
         }
       }
@@ -1415,7 +1420,7 @@
       "realm": "Illidan",
       "data": {
         "dungeons_done": [],
-        "world_quests_done": 0,
+        "world_quests_done": 3,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
@@ -1429,7 +1434,7 @@
             "option_3": null
           },
           "world": {
-            "option_1": null,
+            "option_1": 272,
             "option_2": null,
             "option_3": null
           }
@@ -1468,7 +1473,7 @@
           }
         ],
         "world_quests_done": 1,
-        "regular_mythic_dungeons_done": 3,
+        "regular_mythic_dungeons_done": 5,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1476,14 +1481,14 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
-            "option_2": null,
+            "option_1": 318,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
             "option_1": 305,
             "option_2": 305,
-            "option_3": null
+            "option_3": 305
           }
         }
       }
@@ -1549,10 +1554,10 @@
       "data": {
         "dungeons_done": [],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1562,7 +1567,7 @@
             "option_3": null
           },
           "world": {
-            "option_1": null,
+            "option_1": 305,
             "option_2": null,
             "option_3": null
           }
@@ -1629,10 +1634,18 @@
           {
             "level": 12,
             "dungeon": 587
+          },
+          {
+            "level": 12,
+            "dungeon": 584
+          },
+          {
+            "level": 12,
+            "dungeon": 399
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 7,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1640,9 +1653,9 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
+            "option_1": 318,
+            "option_2": 318,
+            "option_3": 318
           },
           "world": {
             "option_1": null,
