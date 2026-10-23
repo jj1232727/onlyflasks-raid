@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-23T14:35:56.008Z",
+  "fetchedAt": "2026-10-23T19:44:03.741Z",
   "characters": [
     {
       "id": 4381618,
@@ -272,7 +272,7 @@
       "id": 5454065,
       "name": "Xeonio",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T10:57:42.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:37.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Xeonio",
       "weeklyRuns": [
         {
@@ -863,7 +863,7 @@
       "id": 4579002,
       "name": "Gosu",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T00:49:37.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:38.000Z",
       "profileUrl": "https://raider.io/characters/us/kiljaeden/Gosu",
       "weeklyRuns": [],
       "raidProgression": {
@@ -913,9 +913,63 @@
       "id": 8958229,
       "name": "Brigdèss",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T03:35:37.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:39.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Brigdèss",
       "weeklyRuns": [
+        {
+          "dungeon": "Murder Row",
+          "short_name": "MR",
+          "mythic_level": 13,
+          "completed_at": "2026-10-23T17:28:21.000Z",
+          "clear_time_ms": 1323374,
+          "keystone_run_id": 22460890,
+          "par_time_ms": 2040999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 587,
+          "zone_id": 16091,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_murderrow.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/murder-row.jpg",
+          "score": 393.2,
+          "affixes": [
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 147,
+              "name": "Xal'atath's Guile",
+              "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+              "icon": "ability_racial_chillofnight",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+              "wowhead_url": "https://wowhead.com/affix=147"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/22460890-13-murder-row",
+          "spec": {
+            "id": 261,
+            "name": "Subtlety",
+            "slug": "subtlety",
+            "class_id": 4,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "1.0.0",
+            "ordinal": 2
+          },
+          "role": "dps"
+        },
         {
           "dungeon": "Ruby Life Pools",
           "short_name": "RLP",
@@ -958,6 +1012,114 @@
             }
           ],
           "url": "https://raider.io/mythic-plus-runs/season-mn-2/22089795-12-ruby-life-pools",
+          "spec": {
+            "id": 261,
+            "name": "Subtlety",
+            "slug": "subtlety",
+            "class_id": 4,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "1.0.0",
+            "ordinal": 2
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "Voidscar Arena",
+          "short_name": "VSA",
+          "mythic_level": 12,
+          "completed_at": "2026-10-23T15:45:38.000Z",
+          "clear_time_ms": 1279283,
+          "keystone_run_id": 22460935,
+          "par_time_ms": 1800999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 585,
+          "zone_id": 16425,
+          "zone_expansion_id": 11,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
+          "score": 375.8,
+          "affixes": [
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 147,
+              "name": "Xal'atath's Guile",
+              "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+              "icon": "ability_racial_chillofnight",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+              "wowhead_url": "https://wowhead.com/affix=147"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/22460935-12-voidscar-arena",
+          "spec": {
+            "id": 261,
+            "name": "Subtlety",
+            "slug": "subtlety",
+            "class_id": 4,
+            "role": "dps",
+            "is_melee": true,
+            "patch": "1.0.0",
+            "ordinal": 2
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "Kings' Rest",
+          "short_name": "KR",
+          "mythic_level": 12,
+          "completed_at": "2026-10-23T15:16:32.000Z",
+          "clear_time_ms": 1460090,
+          "keystone_run_id": 22460966,
+          "par_time_ms": 1980999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 249,
+          "zone_id": 9526,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
+          "score": 374.8,
+          "affixes": [
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 147,
+              "name": "Xal'atath's Guile",
+              "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+              "icon": "ability_racial_chillofnight",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+              "wowhead_url": "https://wowhead.com/affix=147"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/22460966-12-kings-rest",
           "spec": {
             "id": 261,
             "name": "Subtlety",
@@ -1293,168 +1455,6 @@
             "ordinal": 2
           },
           "role": "dps"
-        },
-        {
-          "dungeon": "The Blinding Vale",
-          "short_name": "BV",
-          "mythic_level": 10,
-          "completed_at": "2026-10-21T22:23:37.000Z",
-          "clear_time_ms": 796607,
-          "keystone_run_id": 22087607,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 3,
-          "map_challenge_mode_id": 584,
-          "zone_id": 16359,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_lightbloom.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/the-blinding-vale.jpg",
-          "score": 335,
-          "affixes": [
-            {
-              "id": 158,
-              "name": "Xal'atath's Bargain: Voidbound",
-              "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
-              "icon": "inv_cosmicvoid_buff",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
-              "wowhead_url": "https://wowhead.com/affix=158"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/22087607-10-the-blinding-vale",
-          "spec": {
-            "id": 261,
-            "name": "Subtlety",
-            "slug": "subtlety",
-            "class_id": 4,
-            "role": "dps",
-            "is_melee": true,
-            "patch": "1.0.0",
-            "ordinal": 2
-          },
-          "role": "dps"
-        },
-        {
-          "dungeon": "Voidscar Arena",
-          "short_name": "VSA",
-          "mythic_level": 10,
-          "completed_at": "2026-10-22T20:14:07.000Z",
-          "clear_time_ms": 820929,
-          "keystone_run_id": 22271041,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 3,
-          "map_challenge_mode_id": 585,
-          "zone_id": 16425,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
-          "score": 335,
-          "affixes": [
-            {
-              "id": 158,
-              "name": "Xal'atath's Bargain: Voidbound",
-              "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
-              "icon": "inv_cosmicvoid_buff",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
-              "wowhead_url": "https://wowhead.com/affix=158"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/22271041-10-voidscar-arena",
-          "spec": {
-            "id": 261,
-            "name": "Subtlety",
-            "slug": "subtlety",
-            "class_id": 4,
-            "role": "dps",
-            "is_melee": true,
-            "patch": "1.0.0",
-            "ordinal": 2
-          },
-          "role": "dps"
-        },
-        {
-          "dungeon": "Den of Nalorakk",
-          "short_name": "DON",
-          "mythic_level": 10,
-          "completed_at": "2026-10-21T21:22:44.000Z",
-          "clear_time_ms": 902928,
-          "keystone_run_id": 22078470,
-          "par_time_ms": 1920999,
-          "num_keystone_upgrades": 3,
-          "map_challenge_mode_id": 586,
-          "zone_id": 16368,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_proveyourworth.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/den-of-nalorakk.jpg",
-          "score": 335,
-          "affixes": [
-            {
-              "id": 158,
-              "name": "Xal'atath's Bargain: Voidbound",
-              "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
-              "icon": "inv_cosmicvoid_buff",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
-              "wowhead_url": "https://wowhead.com/affix=158"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/22078470-10-den-of-nalorakk",
-          "spec": {
-            "id": 261,
-            "name": "Subtlety",
-            "slug": "subtlety",
-            "class_id": 4,
-            "role": "dps",
-            "is_melee": true,
-            "patch": "1.0.0",
-            "ordinal": 2
-          },
-          "role": "dps"
         }
       ],
       "raidProgression": {
@@ -1504,7 +1504,7 @@
       "id": 5042615,
       "name": "Asethi",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T10:57:45.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:36.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Asethi",
       "weeklyRuns": [
         {
@@ -1609,7 +1609,7 @@
       "id": 4826466,
       "name": "Xeonips",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T10:57:39.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:37.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Xeonips",
       "weeklyRuns": [],
       "raidProgression": {
@@ -1872,7 +1872,7 @@
       "id": 4618046,
       "name": "Vandredor",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T00:49:36.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:35.000Z",
       "profileUrl": "https://raider.io/characters/us/garrosh/Vandredor",
       "weeklyRuns": [],
       "raidProgression": {
@@ -1972,7 +1972,7 @@
       "id": 4725968,
       "name": "Teldral",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T10:57:36.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:38.000Z",
       "profileUrl": "https://raider.io/characters/us/stormrage/Teldral",
       "weeklyRuns": [
         {
@@ -2398,7 +2398,7 @@
       "id": 4669066,
       "name": "Nóva",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T10:57:53.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:34.000Z",
       "profileUrl": "https://raider.io/characters/us/hyjal/Nóva",
       "weeklyRuns": [
         {
@@ -2932,7 +2932,7 @@
       "id": 4826470,
       "name": "Mubyoshii",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T10:57:39.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:37.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Mubyoshii",
       "weeklyRuns": [],
       "raidProgression": {
@@ -2982,7 +2982,7 @@
       "id": 19545619,
       "name": "Sneakyninya",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T10:57:37.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:35.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Sneakyninya",
       "weeklyRuns": [
         {
@@ -3141,7 +3141,7 @@
       "id": 5067865,
       "name": "Zynszn",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T10:57:44.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:35.000Z",
       "profileUrl": "https://raider.io/characters/us/zuljin/Zynszn",
       "weeklyRuns": [
         {
@@ -3624,7 +3624,7 @@
       "id": 4579033,
       "name": "Arthaidin",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T00:49:37.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:36.000Z",
       "profileUrl": "https://raider.io/characters/us/illidan/Arthaidin",
       "weeklyRuns": [
         {
@@ -4215,7 +4215,7 @@
       "id": 20303172,
       "name": "Mazzshiesty",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T10:57:46.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:34.000Z",
       "profileUrl": "https://raider.io/characters/us/zuljin/Mazzshiesty",
       "weeklyRuns": [],
       "raidProgression": {
@@ -4265,7 +4265,7 @@
       "id": 4965817,
       "name": "Melarorah",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T03:35:39.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:35.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Melarorah",
       "weeklyRuns": [],
       "raidProgression": {
@@ -4315,7 +4315,7 @@
       "id": 5014656,
       "name": "Xret",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T10:57:37.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:35.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Xret",
       "weeklyRuns": [
         {
@@ -4420,7 +4420,7 @@
       "id": 4257113,
       "name": "Jugojuice",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T10:57:40.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:39.000Z",
       "profileUrl": "https://raider.io/characters/us/illidan/Jugojuice",
       "weeklyRuns": [],
       "raidProgression": {
@@ -4470,7 +4470,7 @@
       "id": 5121174,
       "name": "Darkdrpepper",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T03:35:37.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:36.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Darkdrpepper",
       "weeklyRuns": [
         {
@@ -5061,7 +5061,7 @@
       "id": 5325650,
       "name": "Rapunzele",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T10:57:43.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:37.000Z",
       "profileUrl": "https://raider.io/characters/us/tichondrius/Rapunzele",
       "weeklyRuns": [],
       "raidProgression": {
@@ -5111,7 +5111,7 @@
       "id": 16876827,
       "name": "Mushyxd",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T10:57:39.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:38.000Z",
       "profileUrl": "https://raider.io/characters/us/illidan/Mushyxd",
       "weeklyRuns": [],
       "raidProgression": {
@@ -5161,7 +5161,7 @@
       "id": 4471156,
       "name": "Proudnewb",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T10:57:41.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:37.000Z",
       "profileUrl": "https://raider.io/characters/us/tichondrius/Proudnewb",
       "weeklyRuns": [
         {
@@ -5802,7 +5802,7 @@
       "id": 10581386,
       "name": "Orchuntarded",
       "status": "ok",
-      "lastCrawledAt": "2026-10-23T00:49:35.000Z",
+      "lastCrawledAt": "2026-10-23T19:15:36.000Z",
       "profileUrl": "https://raider.io/characters/us/tichondrius/Orchuntarded",
       "weeklyRuns": [
         {
