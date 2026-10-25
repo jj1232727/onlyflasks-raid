@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-24T23:56:44.108Z",
+  "fetchedAt": "2026-10-25T03:09:38.344Z",
   "periodInfo": {
     "current_period": 1086,
     "current_season": {
@@ -1096,7 +1096,7 @@
       "realm": "Proudmoore",
       "data": {
         "dungeons_done": [],
-        "world_quests_done": 3,
+        "world_quests_done": 5,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
@@ -1152,7 +1152,7 @@
           "world": {
             "option_1": 305,
             "option_2": 305,
-            "option_3": 272
+            "option_3": 305
           }
         }
       }
@@ -1173,7 +1173,7 @@
           }
         ],
         "world_quests_done": 2,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 3,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1181,7 +1181,7 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1309,10 +1309,6 @@
           },
           {
             "level": 12,
-            "dungeon": 588
-          },
-          {
-            "level": 12,
             "dungeon": 587
           },
           {
@@ -1325,11 +1321,15 @@
           },
           {
             "level": 12,
+            "dungeon": 399
+          },
+          {
+            "level": 12,
             "dungeon": 588
           }
         ],
         "world_quests_done": 1,
-        "regular_mythic_dungeons_done": 1,
+        "regular_mythic_dungeons_done": 5,
         "vault_options": {
           "raids": {
             "option_1": 334,
@@ -1442,7 +1442,16 @@
       "name": "Mubyoshii",
       "realm": "Area 52",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 10,
+            "dungeon": 250
+          },
+          {
+            "level": 12,
+            "dungeon": 585
+          }
+        ],
         "world_quests_done": 0,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
@@ -1613,6 +1622,10 @@
           {
             "level": 10,
             "dungeon": 249
+          },
+          {
+            "level": 19,
+            "dungeon": 250
           }
         ],
         "world_quests_done": 2,
