@@ -6978,19 +6978,19 @@
               "difficulty": "mythic",
               "wishlist": {
                 "updated_at": {
-                  "Balance": "2026-10-21T23:39:22.000+00:00",
+                  "Balance": "2026-10-28T21:55:53.000+00:00",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Balance": "2026-10-21T23:37:24.000Z",
+                  "Balance": "2026-10-28T21:55:08.000Z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Balance": "wQGomEirQCnhqTQHFnDmEQ",
+                  "Balance": "vfeD2ZVTNCr8LDpKexaW8z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
@@ -6998,104 +6998,56 @@
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0.5394,
-                    "encounter_absolute": 1089,
-                    "items": [
-                      {
-                        "name": "Vestment of the Awakening",
-                        "id": 268235,
-                        "slot": "chest",
-                        "score_by_spec": {
-                          "Balance": {
-                            "score": 1089,
-                            "percentage": 0.5394
-                          }
-                        },
-                        "alternative": {
-                          "item": 281236,
-                          "percentage": 0.9465,
-                          "absolute": 1912.5046,
-                          "item_level": 318
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:22.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5394,
-                            "absolute": 1089.7857,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 271531
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 271531
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Entombed Sentinels",
                     "encounter_percentage": 0,
                     "encounter_absolute": 0,
                     "items": []
                   },
                   {
-                    "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0.3894,
-                    "encounter_absolute": 786,
+                    "name": "Entombed Sentinels",
+                    "encounter_percentage": 0.1319,
+                    "encounter_absolute": 276,
                     "items": [
                       {
-                        "name": "Venomcured Icon",
-                        "id": 270927,
-                        "slot": "chest",
+                        "name": "Venomcured Idol",
+                        "id": 270911,
+                        "slot": "hands",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 786,
-                            "percentage": 0.3894
+                            "score": 276,
+                            "percentage": 0.1319
                           }
                         },
                         "alternative": {
-                          "item": 281236,
-                          "percentage": 0.9465,
-                          "absolute": 1912.5046,
-                          "item_level": 318
+                          "item": 268234,
+                          "percentage": 0.3326,
+                          "absolute": 696.7644,
+                          "item_level": 324
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:22.000+00:00",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.3894,
-                            "absolute": 786.817,
+                            "percentage": 0.1319,
+                            "absolute": 276.3567,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 271531
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 271531
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
                     ]
                   },
                   {
+                    "name": "Vashnik the Malignant",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0.5287,
-                    "encounter_absolute": 1068,
+                    "encounter_percentage": 0.4131,
+                    "encounter_absolute": 864,
                     "items": [
                       {
                         "name": "Gebbo's Bottomless Bag",
@@ -7103,23 +7055,47 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1068,
-                            "percentage": 0.5287
+                            "score": 806,
+                            "percentage": 0.3853
                           }
                         },
                         "alternative": {
                           "item": 270169,
-                          "percentage": 0.6411,
-                          "absolute": 1295.3186,
+                          "percentage": 0.6048,
+                          "absolute": 1266.8306,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:22.000+00:00",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.5287,
-                            "absolute": 1068.2518,
+                            "percentage": 0.3853,
+                            "absolute": 806.993,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Venomcured Remnant",
+                        "id": 270923,
+                        "slot": "shoulder",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 58,
+                            "percentage": 0.0278
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.0278,
+                            "absolute": 58.3242,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -7130,8 +7106,8 @@
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 0.8462,
-                    "encounter_absolute": 1708,
+                    "encounter_percentage": 0.8636,
+                    "encounter_absolute": 1807,
                     "items": [
                       {
                         "name": "Apex Brute's Claw Ring",
@@ -7139,23 +7115,23 @@
                         "slot": "finger",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 279,
-                            "percentage": 0.1385
+                            "score": 210,
+                            "percentage": 0.1004
                           }
                         },
                         "alternative": {
                           "item": 281029,
-                          "percentage": 0.9561,
-                          "absolute": 1931.862,
+                          "percentage": 0.8185,
+                          "absolute": 1714.509,
                           "item_level": 318
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:22.000+00:00",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.1385,
-                            "absolute": 279.8466,
+                            "percentage": 0.1004,
+                            "absolute": 210.1983,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -7168,18 +7144,18 @@
                         "slot": "hands",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 380,
-                            "percentage": 0.1883
+                            "score": 696,
+                            "percentage": 0.3326
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:22.000+00:00",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.1883,
-                            "absolute": 380.4985,
+                            "percentage": 0.3326,
+                            "absolute": 696.7644,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -7192,23 +7168,23 @@
                         "slot": "legs",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1049,
-                            "percentage": 0.5194
+                            "score": 901,
+                            "percentage": 0.4306
                           }
                         },
                         "alternative": {
                           "item": 268225,
-                          "percentage": 1.4959,
-                          "absolute": 3022.5208,
+                          "percentage": 1.4681,
+                          "absolute": 3075.2328,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:22.000+00:00",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.5194,
-                            "absolute": 1049.4722,
+                            "percentage": 0.4306,
+                            "absolute": 901.8672,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -7219,14 +7195,39 @@
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
+                    "encounter_percentage": 0.0946,
+                    "encounter_absolute": 198,
+                    "items": [
+                      {
+                        "name": "Bespittled Slitherslippers",
+                        "id": 268261,
+                        "slot": "feet",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 198,
+                            "percentage": 0.0946
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.0946,
+                            "absolute": 198.2348,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 2.137,
-                    "encounter_absolute": 4317,
+                    "encounter_percentage": 2.9928,
+                    "encounter_absolute": 6267,
                     "items": [
                       {
                         "name": "Coiled Hex Legguards",
@@ -7234,18 +7235,18 @@
                         "slot": "legs",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 3022,
-                            "percentage": 1.4959
+                            "score": 3075,
+                            "percentage": 1.4681
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:22.000+00:00",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.4959,
-                            "absolute": 3022.5208,
+                            "percentage": 1.4681,
+                            "absolute": 3075.2328,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -7258,18 +7259,66 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1295,
-                            "percentage": 0.6411
+                            "score": 1266,
+                            "percentage": 0.6048
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:22.000+00:00",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6411,
-                            "absolute": 1295.3186,
+                            "percentage": 0.6048,
+                            "absolute": 1266.8306,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Silken Voodoo Drape",
+                        "id": 268253,
+                        "slot": "back",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 833,
+                            "percentage": 0.398
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.398,
+                            "absolute": 833.6077,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Sash of the Forlorn Vessel",
+                        "id": 268256,
+                        "slot": "waist",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 1093,
+                            "percentage": 0.5219
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.5219,
+                            "absolute": 1093.0993,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -7280,8 +7329,8 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 2.8962,
-                    "encounter_absolute": 5849,
+                    "encounter_percentage": 2.4633,
+                    "encounter_absolute": 5157,
                     "items": [
                       {
                         "name": "Slumbering Coil Curio",
@@ -7289,18 +7338,18 @@
                         "slot": null,
                         "score_by_spec": {
                           "Balance": {
-                            "score": 971,
-                            "percentage": 0.481
+                            "score": 955,
+                            "percentage": 0.4564
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:22.000+00:00",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.481,
-                            "absolute": 971.8093,
+                            "percentage": 0.4564,
+                            "absolute": 955.9897,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -7313,18 +7362,18 @@
                         "slot": "head",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1336,
-                            "percentage": 0.6617
+                            "score": 1499,
+                            "percentage": 0.7161
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:22.000+00:00",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.6617,
-                            "absolute": 1336.9795,
+                            "percentage": 0.7161,
+                            "absolute": 1499.9156,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -7337,30 +7386,21 @@
                         "slot": "main_hand",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 3208,
-                            "percentage": 1.5879
+                            "score": 1167,
+                            "percentage": 0.5573
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:22.000+00:00",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
                             "upgrade": null,
-                            "percentage": 1.5879,
-                            "absolute": 3208.4785,
+                            "percentage": 0.5573,
+                            "absolute": 1167.3145,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 334,
-                                "id": 271092
-                              },
-                              "new": {
-                                "item_level": 341,
-                                "id": 271092
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -7370,23 +7410,47 @@
                         "slot": "trinket",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 334,
-                            "percentage": 0.1656
+                            "score": 509,
+                            "percentage": 0.2431
                           }
                         },
                         "alternative": {
                           "item": 270169,
-                          "percentage": 0.6411,
-                          "absolute": 1295.3186,
+                          "percentage": 0.6048,
+                          "absolute": 1266.8306,
                           "item_level": 344
                         },
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:22.000+00:00",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.1656,
-                            "absolute": 334.6736,
+                            "percentage": 0.2431,
+                            "absolute": 509.2554,
+                            "manually_edited": false,
+                            "comment": null,
+                            "outdated": null
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Aqirbane Reliquary",
+                        "id": 268265,
+                        "slot": "neck",
+                        "score_by_spec": {
+                          "Balance": {
+                            "score": 1027,
+                            "percentage": 0.4904
+                          }
+                        },
+                        "alternative": null,
+                        "wishes": [
+                          {
+                            "specialization": "Balance",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
+                            "upgrade": null,
+                            "percentage": 0.4904,
+                            "absolute": 1027.2152,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -7396,27 +7460,27 @@
                     ]
                   }
                 ],
-                "total_percentage": 7.3369,
-                "total_absolute": 14817
+                "total_percentage": 6.959299999999999,
+                "total_absolute": 14569
               }
             },
             {
               "difficulty": "heroic",
               "wishlist": {
                 "updated_at": {
-                  "Balance": "2026-10-21T23:39:20.000+00:00",
+                  "Balance": "2026-10-28T21:55:08.000+00:00",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Balance": "2026-10-21T23:37:18.000Z",
+                  "Balance": "2026-10-28T21:54:54.000Z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Balance": "x5W19BrcBNHGJWEDk62J2J",
+                  "Balance": "9MCX5BGtaZwf5gmHbpyQY6",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
@@ -7485,13 +7549,13 @@
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Balance": "2026-10-21T23:37:04.000Z",
+                  "Balance": "2026-10-28T21:54:45.000Z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Balance": "7urjKY36aMSKrqcGn6Dngd",
+                  "Balance": "1QpCEQPpdj34fE7KPLLcWs",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
@@ -7628,19 +7692,19 @@
               "difficulty": "mythic",
               "wishlist": {
                 "updated_at": {
-                  "Balance": "2026-10-21T23:39:22.000+00:00",
+                  "Balance": "2026-10-28T21:55:53.000+00:00",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Balance": "2026-10-21T23:37:24.000Z",
+                  "Balance": "2026-10-28T21:55:08.000Z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Balance": "wQGomEirQCnhqTQHFnDmEQ",
+                  "Balance": "vfeD2ZVTNCr8LDpKexaW8z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
@@ -7648,62 +7712,32 @@
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0.2204,
-                    "encounter_absolute": 445,
-                    "items": [
-                      {
-                        "name": "Wavecaller's Seastone",
-                        "id": 270167,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Balance": {
-                            "score": 445,
-                            "percentage": 0.2204
-                          }
-                        },
-                        "alternative": {
-                          "item": 270169,
-                          "percentage": 0.6411,
-                          "absolute": 1295.3186,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:22.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.2204,
-                            "absolute": 445.2982,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   }
                 ],
-                "total_percentage": 0.2204,
-                "total_absolute": 445
+                "total_percentage": 0,
+                "total_absolute": 0
               }
             },
             {
               "difficulty": "heroic",
               "wishlist": {
                 "updated_at": {
-                  "Balance": "2026-10-21T23:39:20.000+00:00",
+                  "Balance": "2026-10-28T21:55:08.000+00:00",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Balance": "2026-10-21T23:37:18.000Z",
+                  "Balance": "2026-10-28T21:54:54.000Z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Balance": "x5W19BrcBNHGJWEDk62J2J",
+                  "Balance": "9MCX5BGtaZwf5gmHbpyQY6",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
@@ -7730,13 +7764,13 @@
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Balance": "2026-10-21T23:37:04.000Z",
+                  "Balance": "2026-10-28T21:54:45.000Z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Balance": "7urjKY36aMSKrqcGn6Dngd",
+                  "Balance": "1QpCEQPpdj34fE7KPLLcWs",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
@@ -7763,19 +7797,19 @@
               "difficulty": "mythic",
               "wishlist": {
                 "updated_at": {
-                  "Balance": "2026-10-21T23:39:22.000+00:00",
+                  "Balance": "2026-10-28T21:55:53.000+00:00",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Balance": "2026-10-21T23:37:24.000Z",
+                  "Balance": "2026-10-28T21:55:08.000Z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Balance": "wQGomEirQCnhqTQHFnDmEQ",
+                  "Balance": "vfeD2ZVTNCr8LDpKexaW8z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
@@ -7783,60 +7817,27 @@
                 "encounters": [
                   {
                     "name": "Kith'ix",
-                    "encounter_percentage": 1.9026,
-                    "encounter_absolute": 3843,
+                    "encounter_percentage": 0.8185,
+                    "encounter_absolute": 1714,
                     "items": [
-                      {
-                        "name": "Chestwrap of Palpable Terror",
-                        "id": 281236,
-                        "slot": "chest",
-                        "score_by_spec": {
-                          "Balance": {
-                            "score": 1912,
-                            "percentage": 0.9465
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:22.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.9465,
-                            "absolute": 1912.5046,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 271531
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 271531
-                              }
-                            }
-                          }
-                        ]
-                      },
                       {
                         "name": "Band of the Swarmcaller",
                         "id": 281029,
                         "slot": "finger",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 1931,
-                            "percentage": 0.9561
+                            "score": 1714,
+                            "percentage": 0.8185
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:22.000+00:00",
+                            "timestamp": "2026-10-28T21:55:53.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.9561,
-                            "absolute": 1931.862,
+                            "percentage": 0.8185,
+                            "absolute": 1714.509,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -7846,27 +7847,27 @@
                     ]
                   }
                 ],
-                "total_percentage": 1.9026,
-                "total_absolute": 3843
+                "total_percentage": 0.8185,
+                "total_absolute": 1714
               }
             },
             {
               "difficulty": "heroic",
               "wishlist": {
                 "updated_at": {
-                  "Balance": "2026-10-21T23:39:20.000+00:00",
+                  "Balance": "2026-10-28T21:55:08.000+00:00",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Balance": "2026-10-21T23:37:18.000Z",
+                  "Balance": "2026-10-28T21:54:54.000Z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Balance": "x5W19BrcBNHGJWEDk62J2J",
+                  "Balance": "9MCX5BGtaZwf5gmHbpyQY6",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
@@ -7874,8 +7875,8 @@
                 "encounters": [
                   {
                     "name": "Kith'ix",
-                    "encounter_percentage": 0.4104,
-                    "encounter_absolute": 828,
+                    "encounter_percentage": 0.2661,
+                    "encounter_absolute": 557,
                     "items": [
                       {
                         "name": "Band of the Swarmcaller",
@@ -7883,18 +7884,18 @@
                         "slot": "finger",
                         "score_by_spec": {
                           "Balance": {
-                            "score": 828,
-                            "percentage": 0.4104
+                            "score": 557,
+                            "percentage": 0.2661
                           }
                         },
                         "alternative": null,
                         "wishes": [
                           {
                             "specialization": "Balance",
-                            "timestamp": "2026-10-21T23:39:20.000+00:00",
+                            "timestamp": "2026-10-28T21:55:08.000+00:00",
                             "upgrade": null,
-                            "percentage": 0.4104,
-                            "absolute": 828.8452,
+                            "percentage": 0.2661,
+                            "absolute": 557.6416,
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
@@ -7904,8 +7905,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 0.4104,
-                "total_absolute": 828
+                "total_percentage": 0.2661,
+                "total_absolute": 557
               }
             },
             {
@@ -7918,13 +7919,13 @@
                   "Restoration": null
                 },
                 "report_uploaded_at": {
-                  "Balance": "2026-10-21T23:37:04.000Z",
+                  "Balance": "2026-10-28T21:54:45.000Z",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
                 },
                 "report_id": {
-                  "Balance": "7urjKY36aMSKrqcGn6Dngd",
+                  "Balance": "1QpCEQPpdj34fE7KPLLcWs",
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
@@ -11113,6 +11114,427 @@
                 ],
                 "total_percentage": 0.2038,
                 "total_absolute": 472
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3289290,
+      "name": "Faredon",
+      "realm": "Area 52",
+      "instances": [
+        {
+          "id": 80,
+          "name": "The Venomous Abyss",
+          "difficulties": [
+            {
+              "difficulty": "mythic",
+              "wishlist": {
+                "updated_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_uploaded_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_id": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "encounters": [
+                  {
+                    "name": "Nek'zali the Soulcoiler",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Entombed Sentinels",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Vashnik the Malignant",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Lost Explorers",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Sszorak",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Twin Fangs",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Coiled Altar",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Ula'tek",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            },
+            {
+              "difficulty": "heroic",
+              "wishlist": {
+                "updated_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_uploaded_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_id": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "encounters": [
+                  {
+                    "name": "Nek'zali the Soulcoiler",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Entombed Sentinels",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Vashnik the Malignant",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Lost Explorers",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Sszorak",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Twin Fangs",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Coiled Altar",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Ula'tek",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            },
+            {
+              "difficulty": "normal",
+              "wishlist": {
+                "updated_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_uploaded_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_id": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "encounters": [
+                  {
+                    "name": "Nek'zali the Soulcoiler",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Entombed Sentinels",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Vashnik the Malignant",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Lost Explorers",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Sszorak",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Twin Fangs",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Coiled Altar",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Ula'tek",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            }
+          ]
+        },
+        {
+          "id": 81,
+          "name": "The Tidebound Grotto",
+          "difficulties": [
+            {
+              "difficulty": "mythic",
+              "wishlist": {
+                "updated_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_uploaded_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_id": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "encounters": [
+                  {
+                    "name": "Nymrissa Wavecaller",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            },
+            {
+              "difficulty": "heroic",
+              "wishlist": {
+                "updated_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_uploaded_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_id": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "encounters": [
+                  {
+                    "name": "Nymrissa Wavecaller",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            },
+            {
+              "difficulty": "normal",
+              "wishlist": {
+                "updated_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_uploaded_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_id": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "encounters": [
+                  {
+                    "name": "Nymrissa Wavecaller",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            }
+          ]
+        },
+        {
+          "id": 84,
+          "name": "The Unbinding of Kith'ix",
+          "difficulties": [
+            {
+              "difficulty": "mythic",
+              "wishlist": {
+                "updated_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_uploaded_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_id": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "encounters": [
+                  {
+                    "name": "Kith'ix",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            },
+            {
+              "difficulty": "heroic",
+              "wishlist": {
+                "updated_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_uploaded_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_id": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "encounters": [
+                  {
+                    "name": "Kith'ix",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            },
+            {
+              "difficulty": "normal",
+              "wishlist": {
+                "updated_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_uploaded_at": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "report_id": {
+                  "Elemental": null,
+                  "Enhancement": null,
+                  "Restoration": null
+                },
+                "encounters": [
+                  {
+                    "name": "Kith'ix",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
               }
             }
           ]
