@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-29T14:53:33.336Z",
+  "fetchedAt": "2026-10-29T20:47:45.828Z",
   "periodInfo": {
     "current_period": 1087,
     "current_season": {
@@ -971,7 +971,16 @@
       "name": "Mushyx",
       "realm": "Bleeding Hollow",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 20,
+            "dungeon": 587
+          },
+          {
+            "level": 19,
+            "dungeon": 399
+          }
+        ],
         "world_quests_done": 1,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
@@ -981,7 +990,7 @@
             "option_3": 318
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
