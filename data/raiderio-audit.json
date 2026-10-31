@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-31T01:21:44.574Z",
+  "fetchedAt": "2026-10-31T07:53:51.793Z",
   "characters": [
     {
       "id": 5454065,
@@ -360,7 +360,7 @@
       "id": 20516172,
       "name": "Mushyx",
       "status": "ok",
-      "lastCrawledAt": "2026-10-30T01:55:17.000Z",
+      "lastCrawledAt": "2026-10-31T02:44:04.000Z",
       "profileUrl": "https://raider.io/characters/us/bleeding-hollow/Mushyx",
       "weeklyRuns": [
         {
@@ -459,6 +459,60 @@
             }
           ],
           "url": "https://raider.io/mythic-plus-runs/season-mn-2/23714208-19-ruby-life-pools",
+          "spec": {
+            "id": 62,
+            "name": "Arcane",
+            "slug": "arcane",
+            "class_id": 8,
+            "role": "dps",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "dps"
+        },
+        {
+          "dungeon": "Temple of Sethraliss",
+          "short_name": "TOS",
+          "mythic_level": 10,
+          "completed_at": "2026-10-31T03:03:49.000Z",
+          "clear_time_ms": 1219003,
+          "keystone_run_id": 23921309,
+          "par_time_ms": 1920999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 250,
+          "zone_id": 9527,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
+          "score": 333.7,
+          "affixes": [
+            {
+              "id": 160,
+              "name": "Xal'atath's Bargain: Devour",
+              "description": "While in combat, Xal'atath tears open rifts that devour the essence of players.",
+              "icon": "inv_ability_voidweaverpriest_entropicrift",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_ability_voidweaverpriest_entropicrift.jpg",
+              "wowhead_url": "https://wowhead.com/affix=160"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/23921309-10-temple-of-sethraliss",
           "spec": {
             "id": 62,
             "name": "Arcane",
