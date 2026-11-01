@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-31T22:58:48.076Z",
+  "fetchedAt": "2026-11-01T03:51:33.661Z",
   "periodInfo": {
     "current_period": 1087,
     "current_season": {
@@ -983,6 +983,10 @@
           {
             "level": 10,
             "dungeon": 250
+          },
+          {
+            "level": 19,
+            "dungeon": 587
           }
         ],
         "world_quests_done": 1,
@@ -1101,7 +1105,12 @@
       "name": "Mubyoshii",
       "realm": "Area 52",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 10,
+            "dungeon": 250
+          }
+        ],
         "world_quests_done": 0,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
