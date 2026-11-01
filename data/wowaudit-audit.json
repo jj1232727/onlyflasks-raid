@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-01T17:30:47.280Z",
+  "fetchedAt": "2026-11-01T21:36:15.876Z",
   "periodInfo": {
     "current_period": 1087,
     "current_season": {
@@ -889,6 +889,10 @@
           {
             "level": 11,
             "dungeon": 249
+          },
+          {
+            "level": 16,
+            "dungeon": 249
           }
         ],
         "world_quests_done": 0,
@@ -1055,6 +1059,14 @@
           {
             "level": 12,
             "dungeon": 584
+          },
+          {
+            "level": 12,
+            "dungeon": 586
+          },
+          {
+            "level": 12,
+            "dungeon": 588
           }
         ],
         "world_quests_done": 0,
@@ -1066,7 +1078,7 @@
             "option_3": 318
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1122,6 +1134,10 @@
           {
             "level": 12,
             "dungeon": 249
+          },
+          {
+            "level": 10,
+            "dungeon": 250
           }
         ],
         "world_quests_done": 0,
@@ -1134,11 +1150,11 @@
           },
           "dungeons": {
             "option_1": 318,
-            "option_2": null,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
-            "option_1": null,
+            "option_1": 305,
             "option_2": null,
             "option_3": null
           }
@@ -1270,9 +1286,14 @@
       "name": "Bracè",
       "realm": "Illidan",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 21,
+            "dungeon": 586
+          }
+        ],
         "world_quests_done": 1,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": 318,
@@ -1280,7 +1301,7 @@
             "option_3": 318
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1297,7 +1318,16 @@
       "name": "Sneakyninya",
       "realm": "Area 52",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 10,
+            "dungeon": 399
+          },
+          {
+            "level": 12,
+            "dungeon": 584
+          }
+        ],
         "world_quests_done": 0,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
@@ -1437,7 +1467,7 @@
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
