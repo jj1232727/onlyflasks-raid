@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-01T03:51:33.661Z",
+  "fetchedAt": "2026-11-01T10:58:44.697Z",
   "periodInfo": {
     "current_period": 1087,
     "current_season": {
@@ -999,7 +999,7 @@
           },
           "dungeons": {
             "option_1": 318,
-            "option_2": null,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
@@ -1109,10 +1109,14 @@
           {
             "level": 10,
             "dungeon": 250
+          },
+          {
+            "level": 10,
+            "dungeon": 249
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 3,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1120,7 +1124,7 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
