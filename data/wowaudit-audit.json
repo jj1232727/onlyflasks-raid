@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-02T01:10:56.400Z",
+  "fetchedAt": "2026-11-02T08:44:43.600Z",
   "periodInfo": {
     "current_period": 1087,
     "current_season": {
@@ -897,10 +897,18 @@
           {
             "level": 17,
             "dungeon": 399
+          },
+          {
+            "level": 17,
+            "dungeon": 249
+          },
+          {
+            "level": 18,
+            "dungeon": 588
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 1,
+        "regular_mythic_dungeons_done": 3,
         "vault_options": {
           "raids": {
             "option_1": 318,
@@ -909,7 +917,7 @@
           },
           "dungeons": {
             "option_1": 318,
-            "option_2": null,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
@@ -930,9 +938,9 @@
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
-            "option_1": 318,
+            "option_1": 334,
             "option_2": 318,
-            "option_3": null
+            "option_3": 318
           },
           "dungeons": {
             "option_1": null,
@@ -995,6 +1003,10 @@
           {
             "level": 19,
             "dungeon": 587
+          },
+          {
+            "level": 20,
+            "dungeon": 587
           }
         ],
         "world_quests_done": 1,
@@ -1031,10 +1043,14 @@
           {
             "level": 10,
             "dungeon": 250
+          },
+          {
+            "level": 10,
+            "dungeon": 250
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 2,
+        "regular_mythic_dungeons_done": 3,
         "vault_options": {
           "raids": {
             "option_1": 318,
@@ -1071,10 +1087,14 @@
           {
             "level": 12,
             "dungeon": 588
+          },
+          {
+            "level": 12,
+            "dungeon": 585
           }
         ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 3,
+        "regular_mythic_dungeons_done": 4,
         "vault_options": {
           "raids": {
             "option_1": 318,
@@ -1083,7 +1103,7 @@
           },
           "dungeons": {
             "option_1": 318,
-            "option_2": null,
+            "option_2": 318,
             "option_3": null
           },
           "world": {
@@ -1294,10 +1314,14 @@
           {
             "level": 21,
             "dungeon": 586
+          },
+          {
+            "level": 21,
+            "dungeon": 249
           }
         ],
         "world_quests_done": 1,
-        "regular_mythic_dungeons_done": 1,
+        "regular_mythic_dungeons_done": 2,
         "vault_options": {
           "raids": {
             "option_1": 318,
@@ -1389,9 +1413,14 @@
       "name": "Arthaidin",
       "realm": "Illidan",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 20,
+            "dungeon": 586
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": 318,
@@ -1399,12 +1428,12 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
           "world": {
-            "option_1": null,
+            "option_1": 272,
             "option_2": null,
             "option_3": null
           }
