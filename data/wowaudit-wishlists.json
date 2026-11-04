@@ -1184,7 +1184,7 @@
                               },
                               "new": {
                                 "item_level": 334,
-                                "id": 271874
+                                "id": 271546
                               }
                             }
                           }
@@ -1235,7 +1235,7 @@
                               },
                               "new": {
                                 "item_level": 334,
-                                "id": 271874
+                                "id": 271546
                               }
                             }
                           }
@@ -1305,7 +1305,7 @@
                               },
                               "new": {
                                 "item_level": 334,
-                                "id": 271874
+                                "id": 271546
                               }
                             }
                           }
@@ -5850,7 +5850,16 @@
                             "absolute": 1242.6951,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271565
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271565
+                              }
+                            }
                           }
                         ]
                       }
@@ -6201,7 +6210,16 @@
                             "absolute": 2189.9322,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271565
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 271565
+                              }
+                            }
                           }
                         ]
                       },
@@ -7962,10 +7980,10 @@
                           }
                         },
                         "alternative": {
-                          "item": 281029,
-                          "percentage": 0.7808,
-                          "absolute": 1528.2426,
-                          "item_level": 318
+                          "item": 268252,
+                          "percentage": 0.4115,
+                          "absolute": 805.4995,
+                          "item_level": 324
                         },
                         "wishes": [
                           {
@@ -8027,8 +8045,8 @@
                                 "id": 271562
                               },
                               "new": {
-                                "item_level": 331,
-                                "id": 239650
+                                "item_level": 334,
+                                "id": 268241
                               }
                             }
                           }
@@ -8121,8 +8139,8 @@
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0.8111,
-                    "encounter_absolute": 1587,
+                    "encounter_percentage": 0.2519,
+                    "encounter_absolute": 493,
                     "items": [
                       {
                         "name": "Vexhul's Everflowing Gland",
@@ -8155,41 +8173,8 @@
                                 "id": 250215
                               },
                               "new": {
-                                "item_level": 341,
-                                "id": 270164
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Ornaments of the Eternal Coil",
-                        "id": 268241,
-                        "slot": "shoulder",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1094,
-                            "percentage": 0.5592
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:40:39.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5592,
-                            "absolute": 1094.4161,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 271562
-                              },
-                              "new": {
-                                "item_level": 331,
-                                "id": 239650
+                                "item_level": 328,
+                                "id": 270169
                               }
                             }
                           }
@@ -8295,8 +8280,8 @@
                                 "id": 250215
                               },
                               "new": {
-                                "item_level": 341,
-                                "id": 270164
+                                "item_level": 328,
+                                "id": 270169
                               }
                             }
                           }
@@ -8360,8 +8345,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 7.2635000000000005,
-                "total_absolute": 14209
+                "total_percentage": 6.7043,
+                "total_absolute": 13115
               }
             },
             {
@@ -8749,10 +8734,10 @@
                           }
                         },
                         "alternative": {
-                          "item": 281029,
-                          "percentage": 0.7808,
-                          "absolute": 1528.2426,
-                          "item_level": 318
+                          "item": 268252,
+                          "percentage": 0.4115,
+                          "absolute": 805.4995,
+                          "item_level": 324
                         },
                         "wishes": [
                           {
@@ -8870,47 +8855,13 @@
                 "encounters": [
                   {
                     "name": "Kith'ix",
-                    "encounter_percentage": 0.7808,
-                    "encounter_absolute": 1528,
-                    "items": [
-                      {
-                        "name": "Band of the Swarmcaller",
-                        "id": 281029,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1528,
-                            "percentage": 0.7808
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:40:39.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.7808,
-                            "absolute": 1528.2426,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 273792
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 272148
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   }
                 ],
-                "total_percentage": 0.7808,
-                "total_absolute": 1528
+                "total_percentage": 0,
+                "total_absolute": 0
               }
             },
             {
@@ -8963,8 +8914,8 @@
                                 "id": 250215
                               },
                               "new": {
-                                "item_level": 341,
-                                "id": 270164
+                                "item_level": 328,
+                                "id": 270169
                               }
                             }
                           }
@@ -12407,7 +12358,16 @@
                             "absolute": 1017.555,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271511
+                              },
+                              "new": {
+                                "item_level": 331,
+                                "id": 244575
+                              }
+                            }
                           }
                         ]
                       },
@@ -12700,7 +12660,16 @@
                             "absolute": 654.9281,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271511
+                              },
+                              "new": {
+                                "item_level": 331,
+                                "id": 244575
+                              }
+                            }
                           }
                         ]
                       },
@@ -14519,9 +14488,9 @@
                           }
                         },
                         "alternative": {
-                          "item": 281029,
-                          "percentage": 1.2915,
-                          "absolute": 2524.5639,
+                          "item": 268266,
+                          "percentage": 0.8722,
+                          "absolute": 1704.8791,
                           "item_level": 318
                         },
                         "wishes": [
@@ -14533,7 +14502,16 @@
                             "absolute": 954.3879,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 268249
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 281029
+                              }
+                            }
                           }
                         ]
                       }
@@ -14920,7 +14898,16 @@
                             "absolute": 1704.8791,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 268249
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 281029
+                              }
+                            }
                           }
                         ]
                       }
@@ -14980,7 +14967,16 @@
                             "absolute": 655.5992,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 268249
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 281029
+                              }
+                            }
                           }
                         ]
                       }
@@ -15048,8 +15044,8 @@
                 "encounters": [
                   {
                     "name": "Kith'ix",
-                    "encounter_percentage": 2.0956,
-                    "encounter_absolute": 4095,
+                    "encounter_percentage": 0.8040999999999999,
+                    "encounter_absolute": 1571,
                     "items": [
                       {
                         "name": "Lu'selama, Light's Justice",
@@ -15112,36 +15108,12 @@
                             "outdated": null
                           }
                         ]
-                      },
-                      {
-                        "name": "Band of the Swarmcaller",
-                        "id": 281029,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Retribution": {
-                            "score": 2524,
-                            "percentage": 1.2915
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Retribution",
-                            "timestamp": "2026-10-14T23:39:34.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.2915,
-                            "absolute": 2524.5639,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 2.0956,
-                "total_absolute": 4095
+                "total_percentage": 0.8040999999999999,
+                "total_absolute": 1571
               }
             },
             {
@@ -15188,7 +15160,16 @@
                             "absolute": 1315.1702,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 268249
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 281029
+                              }
+                            }
                           }
                         ]
                       }
@@ -15243,7 +15224,16 @@
                             "absolute": 151.2164,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 268249
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 281029
+                              }
+                            }
                           }
                         ]
                       }
@@ -18054,7 +18044,7 @@
                                 "id": 268213
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 341,
                                 "id": 268209
                               }
                             }
@@ -21975,8 +21965,8 @@
                                 "id": 268290
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 251136
+                                "item_level": 334,
+                                "id": 281029
                               }
                             }
                           }
@@ -22453,8 +22443,8 @@
                                 "id": 268290
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 251136
+                                "item_level": 334,
+                                "id": 281029
                               }
                             }
                           },
@@ -22472,8 +22462,8 @@
                                 "id": 158366
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 251136
+                                "item_level": 334,
+                                "id": 281029
                               }
                             }
                           }
@@ -23453,8 +23443,8 @@
                                 "id": 268290
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 251136
+                                "item_level": 334,
+                                "id": 281029
                               }
                             }
                           }
@@ -23773,8 +23763,8 @@
                                 "id": 268290
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 251136
+                                "item_level": 334,
+                                "id": 281029
                               }
                             }
                           },
@@ -23792,8 +23782,8 @@
                                 "id": 251136
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 251136
+                                "item_level": 334,
+                                "id": 281029
                               }
                             }
                           }
@@ -24683,8 +24673,8 @@
                                 "id": 193708
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 251136
+                                "item_level": 334,
+                                "id": 281029
                               }
                             }
                           }
@@ -24998,8 +24988,8 @@
                                 "id": 193708
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 251136
+                                "item_level": 334,
+                                "id": 281029
                               }
                             }
                           },
@@ -25017,8 +25007,8 @@
                                 "id": 158366
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 251136
+                                "item_level": 334,
+                                "id": 281029
                               }
                             }
                           }
@@ -25499,8 +25489,8 @@
                                 "id": 193708
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 251136
+                                "item_level": 334,
+                                "id": 281029
                               }
                             }
                           }
@@ -25680,8 +25670,8 @@
                                 "id": 193708
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 251136
+                                "item_level": 334,
+                                "id": 281029
                               }
                             }
                           }
@@ -25861,8 +25851,8 @@
                                 "id": 193708
                               },
                               "new": {
-                                "item_level": 321,
-                                "id": 251136
+                                "item_level": 334,
+                                "id": 281029
                               }
                             }
                           }
