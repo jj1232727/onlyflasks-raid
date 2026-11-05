@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-04T20:38:54.613Z",
+  "fetchedAt": "2026-11-05T01:57:05.209Z",
   "periodInfo": {
     "current_period": 1088,
     "current_season": {
@@ -827,6 +827,33 @@
       }
     },
     {
+      "id": 4983738,
+      "name": "Squidward",
+      "realm": "Burning Blade",
+      "data": {
+        "dungeons_done": [],
+        "world_quests_done": 0,
+        "regular_mythic_dungeons_done": 0,
+        "vault_options": {
+          "raids": {
+            "option_1": 318,
+            "option_2": 318,
+            "option_3": 318
+          },
+          "dungeons": {
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
+          },
+          "world": {
+            "option_1": 305,
+            "option_2": 305,
+            "option_3": 305
+          }
+        }
+      }
+    },
+    {
       "id": 4579002,
       "name": "Gosu",
       "realm": "Kil'jaeden",
@@ -1293,7 +1320,7 @@
           },
           "world": {
             "option_1": 305,
-            "option_2": null,
+            "option_2": 305,
             "option_3": null
           }
         }
@@ -1373,9 +1400,9 @@
             "option_3": null
           },
           "world": {
-            "option_1": 305,
-            "option_2": 305,
-            "option_3": 305
+            "option_1": null,
+            "option_2": null,
+            "option_3": null
           }
         }
       }
