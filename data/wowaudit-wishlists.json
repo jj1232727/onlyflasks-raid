@@ -2211,16 +2211,7 @@
                             "absolute": 1151.1716,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 334,
-                                "id": 270168
-                              },
-                              "new": {
-                                "item_level": 341,
-                                "id": 270175
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -2465,16 +2456,7 @@
                             "absolute": 693.3445,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 334,
-                                "id": 270168
-                              },
-                              "new": {
-                                "item_level": 341,
-                                "id": 270175
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -3053,16 +3035,7 @@
                             "absolute": 115.1326,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 334,
-                                "id": 270168
-                              },
-                              "new": {
-                                "item_level": 341,
-                                "id": 270175
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -3553,16 +3526,7 @@
                             "absolute": 326.2841,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 334,
-                                "id": 270168
-                              },
-                              "new": {
-                                "item_level": 341,
-                                "id": 270175
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -4105,8 +4069,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 3.9642,
-                    "encounter_absolute": 8557,
+                    "encounter_percentage": 3.2846,
+                    "encounter_absolute": 7094,
                     "items": [
                       {
                         "name": "Baleful Hexblade",
@@ -4141,67 +4105,6 @@
                               "new": {
                                 "item_level": 341,
                                 "id": 271092
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Hex Lord's Dooming Idol",
-                        "id": 270169,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Demonology": {
-                            "score": 1142,
-                            "percentage": 0.5316
-                          },
-                          "Affliction": {
-                            "score": 321,
-                            "percentage": 0.148
-                          }
-                        },
-                        "alternative": {
-                          "item": 281215,
-                          "percentage": 1.3009,
-                          "absolute": 2796.1389,
-                          "item_level": 318
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Demonology",
-                            "timestamp": "2026-10-15T00:00:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5316,
-                            "absolute": 1142.7099,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 273796
-                              },
-                              "new": {
-                                "item_level": 341,
-                                "id": 281215
-                              }
-                            }
-                          },
-                          {
-                            "specialization": "Affliction",
-                            "timestamp": "2026-10-21T23:49:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.148,
-                            "absolute": 321.9532,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 273649
-                              },
-                              "new": {
-                                "item_level": 341,
-                                "id": 281215
                               }
                             }
                           }
@@ -4382,8 +4285,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 10.4998,
-                "total_absolute": 22682
+                "total_percentage": 9.8202,
+                "total_absolute": 21219
               }
             },
             {
@@ -7602,7 +7505,16 @@
                             "absolute": 901.8672,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271527
+                              },
+                              "new": {
+                                "item_level": 344,
+                                "id": 271527
+                              }
+                            }
                           }
                         ]
                       }
@@ -7664,7 +7576,16 @@
                             "absolute": 3075.2328,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 321,
+                                "id": 271527
+                              },
+                              "new": {
+                                "item_level": 344,
+                                "id": 271527
+                              }
+                            }
                           }
                         ]
                       },
@@ -8467,7 +8388,7 @@
                               },
                               "new": {
                                 "item_level": 334,
-                                "id": 268241
+                                "id": 271562
                               }
                             }
                           }
@@ -8594,7 +8515,7 @@
                                 "id": 250215
                               },
                               "new": {
-                                "item_level": 328,
+                                "item_level": 344,
                                 "id": 270169
                               }
                             }
@@ -8605,8 +8526,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 1.2757,
-                    "encounter_absolute": 2495,
+                    "encounter_percentage": 1.0531,
+                    "encounter_absolute": 2060,
                     "items": [
                       {
                         "name": "Grasps of the Eternal Shadow",
@@ -8628,7 +8549,16 @@
                             "absolute": 891.137,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 271565
+                              },
+                              "new": {
+                                "item_level": 344,
+                                "id": 271565
+                              }
+                            }
                           }
                         ]
                       },
@@ -8665,44 +8595,6 @@
                               "new": {
                                 "item_level": 341,
                                 "id": 271092
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Hex Lord's Dooming Idol",
-                        "id": 270169,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 435,
-                            "percentage": 0.2226
-                          }
-                        },
-                        "alternative": {
-                          "item": 270170,
-                          "percentage": 0.2519,
-                          "absolute": 493.1101,
-                          "item_level": 324
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:40:39.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.2226,
-                            "absolute": 435.7175,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 250215
-                              },
-                              "new": {
-                                "item_level": 328,
-                                "id": 270169
                               }
                             }
                           }
@@ -8766,8 +8658,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 6.7043,
-                "total_absolute": 13115
+                "total_percentage": 6.4817,
+                "total_absolute": 12680
               }
             },
             {
@@ -9335,7 +9227,7 @@
                                 "id": 250215
                               },
                               "new": {
-                                "item_level": 328,
+                                "item_level": 344,
                                 "id": 270169
                               }
                             }
@@ -9680,7 +9572,16 @@
                             "absolute": 1602.7034,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 271459
+                              },
+                              "new": {
+                                "item_level": 344,
+                                "id": 271459
+                              }
+                            }
                           }
                         ]
                       },
@@ -10563,10 +10464,10 @@
                           }
                         },
                         "alternative": {
-                          "item": 268256,
-                          "percentage": 1.7413,
-                          "absolute": 4137.0212,
-                          "item_level": 344
+                          "item": 271436,
+                          "percentage": 1.0914,
+                          "absolute": 2593.043,
+                          "item_level": 318
                         },
                         "wishes": [
                           {
@@ -10583,8 +10484,8 @@
                                 "id": 251189
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 159317
+                                "item_level": 344,
+                                "id": 268256
                               }
                             }
                           }
@@ -10665,8 +10566,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 3.3495,
-                    "encounter_absolute": 7957,
+                    "encounter_percentage": 1.6082,
+                    "encounter_absolute": 3820,
                     "items": [
                       {
                         "name": "Coiled Hex Legguards",
@@ -10689,39 +10590,6 @@
                             "manually_edited": false,
                             "comment": null,
                             "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Sash of the Forlorn Vessel",
-                        "id": 268256,
-                        "slot": "waist",
-                        "score_by_spec": {
-                          "Devourer": {
-                            "score": 4137,
-                            "percentage": 1.7413
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Devourer",
-                            "timestamp": "2026-10-24T02:52:12.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.7413,
-                            "absolute": 4137.0212,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 251189
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 159317
-                              }
-                            }
                           }
                         ]
                       }
@@ -10783,8 +10651,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 9.0068,
-                "total_absolute": 21394
+                "total_percentage": 7.2655,
+                "total_absolute": 17257
               }
             },
             {
@@ -10899,8 +10767,8 @@
                                 "id": 251189
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 159317
+                                "item_level": 344,
+                                "id": 268256
                               }
                             }
                           }
@@ -10986,8 +10854,8 @@
                                 "id": 251189
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 159317
+                                "item_level": 344,
+                                "id": 268256
                               }
                             }
                           }
@@ -13158,8 +13026,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 4.4696,
-                    "encounter_absolute": 9080,
+                    "encounter_percentage": 4.2821,
+                    "encounter_absolute": 8700,
                     "items": [
                       {
                         "name": "Sash of the Forlorn Vessel",
@@ -13250,30 +13118,6 @@
                             }
                           }
                         ]
-                      },
-                      {
-                        "name": "Silken Voodoo Drape",
-                        "id": 268253,
-                        "slot": "back",
-                        "score_by_spec": {
-                          "Assassination": {
-                            "score": 380,
-                            "percentage": 0.1875
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Assassination",
-                            "timestamp": "2026-10-14T23:41:36.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.1875,
-                            "absolute": 380.9662,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
                       }
                     ]
                   },
@@ -13333,8 +13177,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 10.8328,
-                "total_absolute": 22001
+                "total_percentage": 10.6453,
+                "total_absolute": 21621
               }
             },
             {
@@ -15287,7 +15131,7 @@
                                 "id": 268259
                               },
                               "new": {
-                                "item_level": 334,
+                                "item_level": 344,
                                 "id": 268259
                               }
                             }
@@ -15904,8 +15748,8 @@
                                 "id": 271547
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 271547
+                                "item_level": 344,
+                                "id": 268243
                               }
                             }
                           },
@@ -15923,8 +15767,8 @@
                                 "id": 271547
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 271547
+                                "item_level": 344,
+                                "id": 268243
                               }
                             }
                           }
@@ -16001,8 +15845,8 @@
                                 "id": 250215
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 270169
+                                "item_level": 341,
+                                "id": 281215
                               }
                             }
                           }
@@ -16228,8 +16072,8 @@
                                 "id": 250215
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 270169
+                                "item_level": 341,
+                                "id": 281215
                               }
                             }
                           },
@@ -16241,16 +16085,7 @@
                             "absolute": 645.8828,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 273796
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 270169
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -16258,65 +16093,9 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 6.3098,
-                    "encounter_absolute": 12348,
+                    "encounter_percentage": 4.3861,
+                    "encounter_absolute": 8523,
                     "items": [
-                      {
-                        "name": "Grasps of the Eternal Shadow",
-                        "id": 268243,
-                        "slot": "hands",
-                        "score_by_spec": {
-                          "Destruction": {
-                            "score": 1668,
-                            "percentage": 0.8934
-                          },
-                          "Demonology": {
-                            "score": 2157,
-                            "percentage": 1.0303
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Destruction",
-                            "timestamp": "2026-09-23T23:34:59.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.8934,
-                            "absolute": 1668.8039,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 318,
-                                "id": 271547
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 271547
-                              }
-                            }
-                          },
-                          {
-                            "specialization": "Demonology",
-                            "timestamp": "2026-10-14T23:35:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.0303,
-                            "absolute": 2157.0723,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 271547
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 271547
-                              }
-                            }
-                          }
-                        ]
-                      },
                       {
                         "name": "Baleful Hexblade",
                         "id": 268211,
@@ -16471,8 +16250,8 @@
                                 "id": 250215
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 270169
+                                "item_level": 341,
+                                "id": 281215
                               }
                             }
                           },
@@ -16484,16 +16263,7 @@
                             "absolute": 509.3607,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 273796
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 270169
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       },
@@ -16576,8 +16346,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 22.1345,
-                "total_absolute": 42606
+                "total_percentage": 20.2108,
+                "total_absolute": 38781
               }
             },
             {
@@ -16839,8 +16609,8 @@
                                 "id": 250215
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 270169
+                                "item_level": 341,
+                                "id": 281215
                               }
                             }
                           }
@@ -16981,8 +16751,8 @@
                                 "id": 250215
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 270169
+                                "item_level": 341,
+                                "id": 281215
                               }
                             }
                           }
@@ -17227,8 +16997,8 @@
                                 "id": 250215
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 270169
+                                "item_level": 341,
+                                "id": 281215
                               }
                             }
                           },
@@ -17240,16 +17010,7 @@
                             "absolute": 879.677,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 273796
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 270169
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -17315,8 +17076,8 @@
                                 "id": 250215
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 270169
+                                "item_level": 341,
+                                "id": 281215
                               }
                             }
                           }
@@ -17521,16 +17282,7 @@
                             "absolute": 1069.6604,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 273796
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 270169
-                              }
-                            }
+                            "outdated": null
                           }
                         ]
                       }
@@ -17821,8 +17573,8 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 0.5545,
-                    "encounter_absolute": 1271,
+                    "encounter_percentage": 0.4114,
+                    "encounter_absolute": 943,
                     "items": [
                       {
                         "name": "Silken Voodoo Drape",
@@ -17854,30 +17606,6 @@
                                 "id": 271469
                               }
                             }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Girdle of Toxic Regret",
-                        "id": 268259,
-                        "slot": "waist",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 328,
-                            "percentage": 0.1431
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-10-14T23:57:23.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.1431,
-                            "absolute": 328.1413,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
                           }
                         ]
                       }
@@ -17948,8 +17676,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 4.1974,
-                "total_absolute": 9619
+                "total_percentage": 4.0543,
+                "total_absolute": 9291
               }
             },
             {
@@ -18466,7 +18194,7 @@
                               },
                               "new": {
                                 "item_level": 341,
-                                "id": 268213
+                                "id": 268209
                               }
                             }
                           }
