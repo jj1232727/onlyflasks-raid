@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-05T23:09:12.232Z",
+  "fetchedAt": "2026-11-06T04:44:01.088Z",
   "periodInfo": {
     "current_period": 1088,
     "current_season": {
@@ -1029,9 +1029,14 @@
       "name": "Teldral",
       "realm": "Stormrage",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 10,
+            "dungeon": 588
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": 318,
@@ -1039,7 +1044,7 @@
             "option_3": 318
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
