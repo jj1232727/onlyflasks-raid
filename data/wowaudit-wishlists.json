@@ -4400,9 +4400,9 @@
       ]
     },
     {
-      "id": 20516172,
-      "name": "Mushyx",
-      "realm": "Bleeding Hollow",
+      "id": 20739650,
+      "name": "Deforce",
+      "realm": "Illidan",
       "instances": [
         {
           "id": 80,
@@ -4412,742 +4412,98 @@
               "difficulty": "mythic",
               "wishlist": {
                 "updated_at": {
-                  "Arcane": "2026-10-14T23:38:20.000+00:00",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_uploaded_at": {
-                  "Arcane": "2026-10-14T23:36:26.000Z",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_id": {
-                  "Arcane": "w3kEQjeSz5wu6QUTFN7hzd",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 1.7186,
-                    "encounter_absolute": 3335,
-                    "items": [
-                      {
-                        "name": "Nek'zali's Spiritwalkers",
-                        "id": 268218,
-                        "slot": "feet",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 964,
-                            "percentage": 0.4967
-                          }
-                        },
-                        "alternative": {
-                          "item": 268255,
-                          "percentage": 1.0672,
-                          "absolute": 2071.9388,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.4967,
-                            "absolute": 964.3841,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Initiate's Sacrificial Tights",
-                        "id": 268236,
-                        "slot": "legs",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1497,
-                            "percentage": 0.7715
-                          }
-                        },
-                        "alternative": {
-                          "item": 281235,
-                          "percentage": 1.3015,
-                          "absolute": 2527.0256,
-                          "item_level": 318
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.7715,
-                            "absolute": 1497.9249,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 271563
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 271563
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Amani Summoning Shawl",
-                        "id": 268248,
-                        "slot": "back",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 874,
-                            "percentage": 0.4504
-                          }
-                        },
-                        "alternative": {
-                          "item": 268253,
-                          "percentage": 0.7761,
-                          "absolute": 1506.7578,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.4504,
-                            "absolute": 874.514,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 272226
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 251132
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "Entombed Sentinels",
-                    "encounter_percentage": 0.6401,
-                    "encounter_absolute": 1242,
-                    "items": [
-                      {
-                        "name": "Venomwoven Idol",
-                        "id": 270910,
-                        "slot": "hands",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1242,
-                            "percentage": 0.6401
-                          }
-                        },
-                        "alternative": {
-                          "item": 268243,
-                          "percentage": 1.1279,
-                          "absolute": 2189.9322,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.6401,
-                            "absolute": 1242.6951,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 271565
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 271565
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 1.0574,
-                    "encounter_absolute": 2052,
-                    "items": [
-                      {
-                        "name": "Venomwoven Icon",
-                        "id": 270926,
-                        "slot": "chest",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1578,
-                            "percentage": 0.8129
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.8129,
-                            "absolute": 1578.252,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Vile Alchemist's Band",
-                        "id": 268249,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 474,
-                            "percentage": 0.2445
-                          }
-                        },
-                        "alternative": {
-                          "item": 268252,
-                          "percentage": 0.3193,
-                          "absolute": 619.9671,
-                          "item_level": 324
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.2445,
-                            "absolute": 474.7214,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 251148
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 268266
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "The Lost Explorers",
-                    "encounter_percentage": 0.6648999999999999,
-                    "encounter_absolute": 1290,
-                    "items": [
-                      {
-                        "name": "Gebbo's Bottomless Bag",
-                        "id": 270164,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1114,
-                            "percentage": 0.5739
-                          }
-                        },
-                        "alternative": {
-                          "item": 270170,
-                          "percentage": 0.6067,
-                          "absolute": 1177.9065,
-                          "item_level": 324
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5739,
-                            "absolute": 1114.2819,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Venomwoven Remnant",
-                        "id": 270922,
-                        "slot": "shoulder",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 176,
-                            "percentage": 0.091
-                          }
-                        },
-                        "alternative": {
-                          "item": 271434,
-                          "percentage": 0.1225,
-                          "absolute": 237.7711,
-                          "item_level": 318
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.091,
-                            "absolute": 176.7099,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 1.0802,
-                    "encounter_absolute": 2096,
-                    "items": [
-                      {
-                        "name": "Apex Brute's Claw Ring",
-                        "id": 268252,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 619,
-                            "percentage": 0.3193
-                          }
-                        },
-                        "alternative": {
-                          "item": 281029,
-                          "percentage": 0.6965,
-                          "absolute": 1352.2027,
-                          "item_level": 318
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.3193,
-                            "absolute": 619.9671,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 251148
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 268266
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Venomwoven Relic",
-                        "id": 270918,
-                        "slot": "legs",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1477,
-                            "percentage": 0.7609
-                          }
-                        },
-                        "alternative": {
-                          "item": 281235,
-                          "percentage": 1.3015,
-                          "absolute": 2527.0256,
-                          "item_level": 318
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.7609,
-                            "absolute": 1477.421,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 271563
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 271563
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "The Twin Fangs",
-                    "encounter_percentage": 0.6831,
-                    "encounter_absolute": 1325,
-                    "items": [
-                      {
-                        "name": "Ornaments of the Eternal Coil",
-                        "id": 268241,
-                        "slot": "shoulder",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 148,
-                            "percentage": 0.0764
-                          }
-                        },
-                        "alternative": {
-                          "item": 271434,
-                          "percentage": 0.1225,
-                          "absolute": 237.7711,
-                          "item_level": 318
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.0764,
-                            "absolute": 148.2623,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Vexhul's Everflowing Gland",
-                        "id": 270170,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1177,
-                            "percentage": 0.6067
-                          }
-                        },
-                        "alternative": {
-                          "item": 281215,
-                          "percentage": 0.7614,
-                          "absolute": 1478.2112,
-                          "item_level": 318
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.6067,
-                            "absolute": 1177.9065,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 3.4838,
-                    "encounter_absolute": 6761,
-                    "items": [
-                      {
-                        "name": "Baleful Hexblade",
-                        "id": 268211,
-                        "slot": "main_hand",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 995,
-                            "percentage": 0.5126
-                          }
-                        },
-                        "alternative": {
-                          "item": 271092,
-                          "percentage": 1.6768,
-                          "absolute": 3255.5105,
-                          "item_level": 344
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.5126,
-                            "absolute": 995.1507,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 334,
-                                "id": 271092
-                              },
-                              "new": {
-                                "item_level": 341,
-                                "id": 271092
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Grasps of the Eternal Shadow",
-                        "id": 268243,
-                        "slot": "hands",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 2189,
-                            "percentage": 1.1279
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.1279,
-                            "absolute": 2189.9322,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 271565
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 271565
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Silken Voodoo Drape",
-                        "id": 268253,
-                        "slot": "back",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1506,
-                            "percentage": 0.7761
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.7761,
-                            "absolute": 1506.7578,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 272226
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 251132
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Cackling Soultreads",
-                        "id": 268255,
-                        "slot": "feet",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 2071,
-                            "percentage": 1.0672
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.0672,
-                            "absolute": 2071.9388,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 1.8032,
-                    "encounter_absolute": 3499,
-                    "items": [
-                      {
-                        "name": "Slumbering Coil Curio",
-                        "id": 270909,
-                        "slot": null,
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1497,
-                            "percentage": 0.7714
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.7714,
-                            "absolute": 1497.7281,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Venomkeeper's Horrific Cowl",
-                        "id": 271874,
-                        "slot": "head",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1379,
-                            "percentage": 0.7106
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.7106,
-                            "absolute": 1379.5887,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Font of Venomous Rage",
-                        "id": 270168,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 623,
-                            "percentage": 0.3212
-                          }
-                        },
-                        "alternative": {
-                          "item": 270170,
-                          "percentage": 0.6067,
-                          "absolute": 1177.9065,
-                          "item_level": 324
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.3212,
-                            "absolute": 623.7052,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   }
                 ],
-                "total_percentage": 11.1313,
-                "total_absolute": 21600
+                "total_percentage": 0,
+                "total_absolute": 0
               }
             },
             {
               "difficulty": "heroic",
               "wishlist": {
                 "updated_at": {
-                  "Arcane": "2026-10-14T23:37:34.000+00:00",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_uploaded_at": {
-                  "Arcane": "2026-10-14T23:36:20.000Z",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_id": {
-                  "Arcane": "dXd1SQrpXk4U2qdmJUqJZ3",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "encounters": [
                   {
                     "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0.041,
-                    "encounter_absolute": 79,
-                    "items": [
-                      {
-                        "name": "Amani Summoning Shawl",
-                        "id": 268248,
-                        "slot": "back",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 79,
-                            "percentage": 0.041
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:37:34.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.041,
-                            "absolute": 79.4139,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 272226
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 251132
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "Entombed Sentinels",
@@ -5157,34 +4513,9 @@
                   },
                   {
                     "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0.0341,
-                    "encounter_absolute": 66,
-                    "items": [
-                      {
-                        "name": "Venomwoven Icon",
-                        "id": 270926,
-                        "slot": "chest",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 66,
-                            "percentage": 0.0341
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:37:34.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.0341,
-                            "absolute": 66.0664,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "The Lost Explorers",
@@ -5212,57 +4543,32 @@
                   },
                   {
                     "name": "Ula'tek",
-                    "encounter_percentage": 0.0669,
-                    "encounter_absolute": 129,
-                    "items": [
-                      {
-                        "name": "Slumbering Coil Curio",
-                        "id": 270909,
-                        "slot": null,
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 129,
-                            "percentage": 0.0669
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:37:34.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.0669,
-                            "absolute": 129.8064,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   }
                 ],
-                "total_percentage": 0.142,
-                "total_absolute": 274
+                "total_percentage": 0,
+                "total_absolute": 0
               }
             },
             {
               "difficulty": "normal",
               "wishlist": {
                 "updated_at": {
-                  "Arcane": null,
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_uploaded_at": {
-                  "Arcane": "2026-10-14T23:36:14.000Z",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_id": {
-                  "Arcane": "c5AuwQHu2WX65K8Ed7ACce",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "encounters": [
                   {
@@ -5328,79 +4634,49 @@
               "difficulty": "mythic",
               "wishlist": {
                 "updated_at": {
-                  "Arcane": "2026-10-14T23:38:20.000+00:00",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_uploaded_at": {
-                  "Arcane": "2026-10-14T23:36:26.000Z",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_id": {
-                  "Arcane": "w3kEQjeSz5wu6QUTFN7hzd",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "encounters": [
                   {
                     "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0.7228,
-                    "encounter_absolute": 1403,
-                    "items": [
-                      {
-                        "name": "Tidebound Sorcereress's Robes",
-                        "id": 268221,
-                        "slot": "chest",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 1403,
-                            "percentage": 0.7228
-                          }
-                        },
-                        "alternative": {
-                          "item": 270926,
-                          "percentage": 0.8129,
-                          "absolute": 1578.252,
-                          "item_level": 321
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.7228,
-                            "absolute": 1403.2909,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   }
                 ],
-                "total_percentage": 0.7228,
-                "total_absolute": 1403
+                "total_percentage": 0,
+                "total_absolute": 0
               }
             },
             {
               "difficulty": "heroic",
               "wishlist": {
                 "updated_at": {
-                  "Arcane": "2026-10-14T23:37:34.000+00:00",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_uploaded_at": {
-                  "Arcane": "2026-10-14T23:36:20.000Z",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_id": {
-                  "Arcane": "dXd1SQrpXk4U2qdmJUqJZ3",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "encounters": [
                   {
@@ -5418,19 +4694,19 @@
               "difficulty": "normal",
               "wishlist": {
                 "updated_at": {
-                  "Arcane": null,
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_uploaded_at": {
-                  "Arcane": "2026-10-14T23:36:14.000Z",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_id": {
-                  "Arcane": "c5AuwQHu2WX65K8Ed7ACce",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "encounters": [
                   {
@@ -5454,204 +4730,79 @@
               "difficulty": "mythic",
               "wishlist": {
                 "updated_at": {
-                  "Arcane": "2026-10-14T23:38:20.000+00:00",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_uploaded_at": {
-                  "Arcane": "2026-10-14T23:36:26.000Z",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_id": {
-                  "Arcane": "w3kEQjeSz5wu6QUTFN7hzd",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "encounters": [
                   {
                     "name": "Kith'ix",
-                    "encounter_percentage": 1.3015,
-                    "encounter_absolute": 2527,
-                    "items": [
-                      {
-                        "name": "Voidweaver's Leggings",
-                        "id": 281235,
-                        "slot": "legs",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 2527,
-                            "percentage": 1.3015
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:38:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.3015,
-                            "absolute": 2527.0256,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 271563
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 271563
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   }
                 ],
-                "total_percentage": 1.3015,
-                "total_absolute": 2527
+                "total_percentage": 0,
+                "total_absolute": 0
               }
             },
             {
               "difficulty": "heroic",
               "wishlist": {
                 "updated_at": {
-                  "Arcane": "2026-10-14T23:37:34.000+00:00",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_uploaded_at": {
-                  "Arcane": "2026-10-14T23:36:20.000Z",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_id": {
-                  "Arcane": "dXd1SQrpXk4U2qdmJUqJZ3",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "encounters": [
                   {
                     "name": "Kith'ix",
-                    "encounter_percentage": 0.6799999999999999,
-                    "encounter_absolute": 1317,
-                    "items": [
-                      {
-                        "name": "Twisted Horror's Tendril",
-                        "id": 281215,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 118,
-                            "percentage": 0.0613
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:37:34.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.0613,
-                            "absolute": 118.8843,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Voidweaver's Leggings",
-                        "id": 281235,
-                        "slot": "legs",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 735,
-                            "percentage": 0.3792
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:37:34.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.3792,
-                            "absolute": 735.2659,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 271563
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 271563
-                              }
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Band of the Swarmcaller",
-                        "id": 281029,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Arcane": {
-                            "score": 464,
-                            "percentage": 0.2395
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Arcane",
-                            "timestamp": "2026-10-14T23:37:34.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.2395,
-                            "absolute": 464.3254,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 251148
-                              },
-                              "new": {
-                                "item_level": 321,
-                                "id": 268266
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   }
                 ],
-                "total_percentage": 0.6799999999999999,
-                "total_absolute": 1317
+                "total_percentage": 0,
+                "total_absolute": 0
               }
             },
             {
               "difficulty": "normal",
               "wishlist": {
                 "updated_at": {
-                  "Arcane": null,
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_uploaded_at": {
-                  "Arcane": "2026-10-14T23:36:14.000Z",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "report_id": {
-                  "Arcane": "c5AuwQHu2WX65K8Ed7ACce",
-                  "Fire": null,
-                  "Frost": null
+                  "Holy": null,
+                  "Protection": null,
+                  "Retribution": null
                 },
                 "encounters": [
                   {
@@ -6572,6 +5723,427 @@
                   "Feral": null,
                   "Guardian": null,
                   "Restoration": null
+                },
+                "encounters": [
+                  {
+                    "name": "Kith'ix",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4884800,
+      "name": "Turfisms",
+      "realm": "Stormrage",
+      "instances": [
+        {
+          "id": 80,
+          "name": "The Venomous Abyss",
+          "difficulties": [
+            {
+              "difficulty": "mythic",
+              "wishlist": {
+                "updated_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_uploaded_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_id": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "encounters": [
+                  {
+                    "name": "Nek'zali the Soulcoiler",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Entombed Sentinels",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Vashnik the Malignant",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Lost Explorers",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Sszorak",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Twin Fangs",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Coiled Altar",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Ula'tek",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            },
+            {
+              "difficulty": "heroic",
+              "wishlist": {
+                "updated_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_uploaded_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_id": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "encounters": [
+                  {
+                    "name": "Nek'zali the Soulcoiler",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Entombed Sentinels",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Vashnik the Malignant",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Lost Explorers",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Sszorak",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Twin Fangs",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Coiled Altar",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Ula'tek",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            },
+            {
+              "difficulty": "normal",
+              "wishlist": {
+                "updated_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_uploaded_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_id": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "encounters": [
+                  {
+                    "name": "Nek'zali the Soulcoiler",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Entombed Sentinels",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Vashnik the Malignant",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Lost Explorers",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Sszorak",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Twin Fangs",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "The Coiled Altar",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  },
+                  {
+                    "name": "Ula'tek",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            }
+          ]
+        },
+        {
+          "id": 81,
+          "name": "The Tidebound Grotto",
+          "difficulties": [
+            {
+              "difficulty": "mythic",
+              "wishlist": {
+                "updated_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_uploaded_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_id": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "encounters": [
+                  {
+                    "name": "Nymrissa Wavecaller",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            },
+            {
+              "difficulty": "heroic",
+              "wishlist": {
+                "updated_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_uploaded_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_id": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "encounters": [
+                  {
+                    "name": "Nymrissa Wavecaller",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            },
+            {
+              "difficulty": "normal",
+              "wishlist": {
+                "updated_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_uploaded_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_id": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "encounters": [
+                  {
+                    "name": "Nymrissa Wavecaller",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            }
+          ]
+        },
+        {
+          "id": 84,
+          "name": "The Unbinding of Kith'ix",
+          "difficulties": [
+            {
+              "difficulty": "mythic",
+              "wishlist": {
+                "updated_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_uploaded_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_id": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "encounters": [
+                  {
+                    "name": "Kith'ix",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            },
+            {
+              "difficulty": "heroic",
+              "wishlist": {
+                "updated_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_uploaded_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_id": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "encounters": [
+                  {
+                    "name": "Kith'ix",
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
+                  }
+                ],
+                "total_percentage": 0,
+                "total_absolute": 0
+              }
+            },
+            {
+              "difficulty": "normal",
+              "wishlist": {
+                "updated_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_uploaded_at": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
+                },
+                "report_id": {
+                  "Devastation": null,
+                  "Preservation": null,
+                  "Augmentation": null
                 },
                 "encounters": [
                   {
@@ -16734,427 +16306,6 @@
                   "Blood": "f1wdef2V9AjTkUYN4EAoX9",
                   "Frost": null,
                   "Unholy": null
-                },
-                "encounters": [
-                  {
-                    "name": "Kith'ix",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  }
-                ],
-                "total_percentage": 0,
-                "total_absolute": 0
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 16876827,
-      "name": "Mushyxd",
-      "realm": "Illidan",
-      "instances": [
-        {
-          "id": 80,
-          "name": "The Venomous Abyss",
-          "difficulties": [
-            {
-              "difficulty": "mythic",
-              "wishlist": {
-                "updated_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_uploaded_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_id": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "encounters": [
-                  {
-                    "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  }
-                ],
-                "total_percentage": 0,
-                "total_absolute": 0
-              }
-            },
-            {
-              "difficulty": "heroic",
-              "wishlist": {
-                "updated_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_uploaded_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_id": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "encounters": [
-                  {
-                    "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  }
-                ],
-                "total_percentage": 0,
-                "total_absolute": 0
-              }
-            },
-            {
-              "difficulty": "normal",
-              "wishlist": {
-                "updated_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_uploaded_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_id": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "encounters": [
-                  {
-                    "name": "Nek'zali the Soulcoiler",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Entombed Sentinels",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Vashnik the Malignant",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "The Lost Explorers",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Sszorak",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "The Twin Fangs",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "The Coiled Altar",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  },
-                  {
-                    "name": "Ula'tek",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  }
-                ],
-                "total_percentage": 0,
-                "total_absolute": 0
-              }
-            }
-          ]
-        },
-        {
-          "id": 81,
-          "name": "The Tidebound Grotto",
-          "difficulties": [
-            {
-              "difficulty": "mythic",
-              "wishlist": {
-                "updated_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_uploaded_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_id": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "encounters": [
-                  {
-                    "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  }
-                ],
-                "total_percentage": 0,
-                "total_absolute": 0
-              }
-            },
-            {
-              "difficulty": "heroic",
-              "wishlist": {
-                "updated_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_uploaded_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_id": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "encounters": [
-                  {
-                    "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  }
-                ],
-                "total_percentage": 0,
-                "total_absolute": 0
-              }
-            },
-            {
-              "difficulty": "normal",
-              "wishlist": {
-                "updated_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_uploaded_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_id": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "encounters": [
-                  {
-                    "name": "Nymrissa Wavecaller",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  }
-                ],
-                "total_percentage": 0,
-                "total_absolute": 0
-              }
-            }
-          ]
-        },
-        {
-          "id": 84,
-          "name": "The Unbinding of Kith'ix",
-          "difficulties": [
-            {
-              "difficulty": "mythic",
-              "wishlist": {
-                "updated_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_uploaded_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_id": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "encounters": [
-                  {
-                    "name": "Kith'ix",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  }
-                ],
-                "total_percentage": 0,
-                "total_absolute": 0
-              }
-            },
-            {
-              "difficulty": "heroic",
-              "wishlist": {
-                "updated_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_uploaded_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_id": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "encounters": [
-                  {
-                    "name": "Kith'ix",
-                    "encounter_percentage": 0,
-                    "encounter_absolute": 0,
-                    "items": []
-                  }
-                ],
-                "total_percentage": 0,
-                "total_absolute": 0
-              }
-            },
-            {
-              "difficulty": "normal",
-              "wishlist": {
-                "updated_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_uploaded_at": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
-                },
-                "report_id": {
-                  "Discipline": null,
-                  "Holy": null,
-                  "Shadow": null
                 },
                 "encounters": [
                   {

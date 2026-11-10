@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-09T20:21:36.071Z",
+  "fetchedAt": "2026-11-10T03:56:28.130Z",
   "characters": [
     {
       "id": 5454065,
@@ -361,12 +361,67 @@
       }
     },
     {
-      "id": 20516172,
-      "name": "Mushyx",
+      "id": 20739650,
+      "name": "Deforce",
       "status": "ok",
-      "lastCrawledAt": "2026-11-06T04:16:35.000Z",
-      "profileUrl": "https://raider.io/characters/us/bleeding-hollow/Mushyx",
-      "weeklyRuns": [],
+      "lastCrawledAt": "2026-11-05T00:21:15.000Z",
+      "profileUrl": "https://raider.io/characters/us/illidan/Deforce",
+      "weeklyRuns": [
+        {
+          "dungeon": "Kings' Rest",
+          "short_name": "KR",
+          "mythic_level": 10,
+          "completed_at": "2026-11-04T18:24:52.000Z",
+          "clear_time_ms": 1219908,
+          "keystone_run_id": 24757468,
+          "par_time_ms": 1980999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 249,
+          "zone_id": 9526,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
+          "score": 334.4,
+          "affixes": [
+            {
+              "id": 162,
+              "name": "Xal'atath's Bargain: Pulsar",
+              "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+              "icon": "inv_cosmicvoid_nova",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+              "wowhead_url": "https://wowhead.com/affix=162"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/24757468-10-kings-rest",
+          "spec": {
+            "id": 65,
+            "name": "Holy",
+            "slug": "holy",
+            "class_id": 2,
+            "role": "healer",
+            "is_melee": false,
+            "patch": "1.0.0",
+            "ordinal": 0
+          },
+          "role": "healer"
+        }
+      ],
       "raidProgression": {
         "the-unbinding-of-kithix": {
           "summary": "1/1 H",
@@ -377,20 +432,20 @@
           "mythic_bosses_killed": 0
         },
         "the-tidebound-grotto": {
-          "summary": "1/1 H",
+          "summary": "1/1 M",
           "expansion_id": 11,
           "total_bosses": 1,
-          "normal_bosses_killed": 1,
-          "heroic_bosses_killed": 1,
-          "mythic_bosses_killed": 0
+          "normal_bosses_killed": 0,
+          "heroic_bosses_killed": 0,
+          "mythic_bosses_killed": 1
         },
         "the-venomous-abyss": {
-          "summary": "1/8 M",
+          "summary": "5/8 M",
           "expansion_id": 11,
           "total_bosses": 8,
-          "normal_bosses_killed": 7,
+          "normal_bosses_killed": 3,
           "heroic_bosses_killed": 8,
-          "mythic_bosses_killed": 1
+          "mythic_bosses_killed": 5
         },
         "sporefall": {
           "summary": "",
@@ -496,6 +551,56 @@
           "normal_bosses_killed": 8,
           "heroic_bosses_killed": 8,
           "mythic_bosses_killed": 7
+        },
+        "sporefall": {
+          "summary": "1/1 M",
+          "expansion_id": 11,
+          "total_bosses": 1,
+          "normal_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
+          "mythic_bosses_killed": 1
+        },
+        "tier-mn-1": {
+          "summary": "9/9 M",
+          "expansion_id": 11,
+          "total_bosses": 9,
+          "normal_bosses_killed": 9,
+          "heroic_bosses_killed": 9,
+          "mythic_bosses_killed": 9
+        }
+      }
+    },
+    {
+      "id": 4884800,
+      "name": "Turfisms",
+      "status": "ok",
+      "lastCrawledAt": "2026-11-09T07:00:32.000Z",
+      "profileUrl": "https://raider.io/characters/us/stormrage/Turfisms",
+      "weeklyRuns": [],
+      "raidProgression": {
+        "the-unbinding-of-kithix": {
+          "summary": "1/1 H",
+          "expansion_id": 11,
+          "total_bosses": 1,
+          "normal_bosses_killed": 0,
+          "heroic_bosses_killed": 1,
+          "mythic_bosses_killed": 0
+        },
+        "the-tidebound-grotto": {
+          "summary": "1/1 M",
+          "expansion_id": 11,
+          "total_bosses": 1,
+          "normal_bosses_killed": 1,
+          "heroic_bosses_killed": 1,
+          "mythic_bosses_killed": 1
+        },
+        "the-venomous-abyss": {
+          "summary": "6/8 M",
+          "expansion_id": 11,
+          "total_bosses": 8,
+          "normal_bosses_killed": 8,
+          "heroic_bosses_killed": 8,
+          "mythic_bosses_killed": 6
         },
         "sporefall": {
           "summary": "1/1 M",
@@ -1176,56 +1281,6 @@
       }
     },
     {
-      "id": 16876827,
-      "name": "Mushyxd",
-      "status": "ok",
-      "lastCrawledAt": "2026-11-06T04:16:32.000Z",
-      "profileUrl": "https://raider.io/characters/us/illidan/Mushyxd",
-      "weeklyRuns": [],
-      "raidProgression": {
-        "the-unbinding-of-kithix": {
-          "summary": "1/1 H",
-          "expansion_id": 11,
-          "total_bosses": 1,
-          "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 1,
-          "mythic_bosses_killed": 0
-        },
-        "the-tidebound-grotto": {
-          "summary": "1/1 M",
-          "expansion_id": 11,
-          "total_bosses": 1,
-          "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 1,
-          "mythic_bosses_killed": 1
-        },
-        "the-venomous-abyss": {
-          "summary": "5/8 M",
-          "expansion_id": 11,
-          "total_bosses": 8,
-          "normal_bosses_killed": 8,
-          "heroic_bosses_killed": 8,
-          "mythic_bosses_killed": 5
-        },
-        "sporefall": {
-          "summary": "1/1 M",
-          "expansion_id": 11,
-          "total_bosses": 1,
-          "normal_bosses_killed": 0,
-          "heroic_bosses_killed": 1,
-          "mythic_bosses_killed": 1
-        },
-        "tier-mn-1": {
-          "summary": "3/9 M",
-          "expansion_id": 11,
-          "total_bosses": 9,
-          "normal_bosses_killed": 1,
-          "heroic_bosses_killed": 7,
-          "mythic_bosses_killed": 3
-        }
-      }
-    },
-    {
       "id": 4471156,
       "name": "Proudnewb",
       "status": "ok",
@@ -1279,7 +1334,7 @@
       "id": 10581386,
       "name": "Orchuntarded",
       "status": "ok",
-      "lastCrawledAt": "2026-11-08T23:24:33.000Z",
+      "lastCrawledAt": "2026-11-09T21:33:49.000Z",
       "profileUrl": "https://raider.io/characters/us/tichondrius/Orchuntarded",
       "weeklyRuns": [],
       "raidProgression": {
