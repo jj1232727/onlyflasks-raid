@@ -1054,7 +1054,16 @@
                             "absolute": 1151.1716,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 270168
+                              },
+                              "new": {
+                                "item_level": 341,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       }
@@ -1299,7 +1308,16 @@
                             "absolute": 693.3445,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 270168
+                              },
+                              "new": {
+                                "item_level": 341,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       }
@@ -1345,8 +1363,8 @@
                                 "id": 268225
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 271509
+                                "item_level": 344,
+                                "id": 268225
                               }
                             }
                           },
@@ -1364,8 +1382,8 @@
                                 "id": 268225
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 271509
+                                "item_level": 344,
+                                "id": 268225
                               }
                             }
                           }
@@ -1505,66 +1523,9 @@
                   },
                   {
                     "name": "The Coiled Altar",
-                    "encounter_percentage": 2.9787,
-                    "encounter_absolute": 6454,
-                    "items": [
-                      {
-                        "name": "Coiled Hex Legguards",
-                        "id": 268225,
-                        "slot": "legs",
-                        "score_by_spec": {
-                          "Subtlety": {
-                            "score": 3495,
-                            "percentage": 1.5457
-                          },
-                          "Assassination": {
-                            "score": 2959,
-                            "percentage": 1.433
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Subtlety",
-                            "timestamp": "2026-09-23T23:52:56.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.5457,
-                            "absolute": 3495.0657,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 268225
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 271509
-                              }
-                            }
-                          },
-                          {
-                            "specialization": "Assassination",
-                            "timestamp": "2026-10-14T23:49:26.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.433,
-                            "absolute": 2959.3008,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 268225
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 271509
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "Ula'tek",
@@ -1659,8 +1620,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 18.0251,
-                "total_absolute": 39554
+                "total_percentage": 15.0464,
+                "total_absolute": 33100
               }
             },
             {
@@ -1878,7 +1839,16 @@
                             "absolute": 115.1326,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 334,
+                                "id": 270168
+                              },
+                              "new": {
+                                "item_level": 341,
+                                "id": 270175
+                              }
+                            }
                           }
                         ]
                       }
@@ -2341,38 +2311,9 @@
                 "encounters": [
                   {
                     "name": "Kith'ix",
-                    "encounter_percentage": 0.6622,
-                    "encounter_absolute": 1367,
+                    "encounter_percentage": 0.5042,
+                    "encounter_absolute": 1041,
                     "items": [
-                      {
-                        "name": "Twisted Horror's Tendril",
-                        "id": 281215,
-                        "slot": "trinket",
-                        "score_by_spec": {
-                          "Assassination": {
-                            "score": 326,
-                            "percentage": 0.158
-                          }
-                        },
-                        "alternative": {
-                          "item": 270165,
-                          "percentage": 0.5574,
-                          "absolute": 1151.1716,
-                          "item_level": 321
-                        },
-                        "wishes": [
-                          {
-                            "specialization": "Assassination",
-                            "timestamp": "2026-10-14T23:49:26.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.158,
-                            "absolute": 326.2841,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      },
                       {
                         "name": "Chestwrap of Palpable Terror",
                         "id": 281236,
@@ -2405,8 +2346,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 0.6622,
-                "total_absolute": 1367
+                "total_percentage": 0.5042,
+                "total_absolute": 1041
               }
             },
             {
@@ -15102,10 +15043,10 @@
                           }
                         },
                         "alternative": {
-                          "item": 281029,
-                          "percentage": 1.8023,
-                          "absolute": 4132.5139,
-                          "item_level": 318
+                          "item": 268249,
+                          "percentage": 1.0554,
+                          "absolute": 2419.9771,
+                          "item_level": 321
                         },
                         "wishes": [
                           {
@@ -15116,7 +15057,16 @@
                             "absolute": 1599.1316,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 331,
+                                "id": 240949
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 281029
+                              }
+                            }
                           }
                         ]
                       },
@@ -15200,7 +15150,16 @@
                             "absolute": 366.8364,
                             "manually_edited": false,
                             "comment": null,
-                            "outdated": null
+                            "outdated": {
+                              "old": {
+                                "item_level": 331,
+                                "id": 240949
+                              },
+                              "new": {
+                                "item_level": 334,
+                                "id": 281029
+                              }
+                            }
                           }
                         ]
                       }
@@ -15268,8 +15227,8 @@
                 "encounters": [
                   {
                     "name": "Kith'ix",
-                    "encounter_percentage": 2.3624,
-                    "encounter_absolute": 5416,
+                    "encounter_percentage": 0.5601,
+                    "encounter_absolute": 1284,
                     "items": [
                       {
                         "name": "Lu'selama, Light's Justice",
@@ -15308,36 +15267,12 @@
                             }
                           }
                         ]
-                      },
-                      {
-                        "name": "Band of the Swarmcaller",
-                        "id": 281029,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Unholy": {
-                            "score": 4132,
-                            "percentage": 1.8023
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Unholy",
-                            "timestamp": "2026-10-14T23:57:23.000+00:00",
-                            "upgrade": null,
-                            "percentage": 1.8023,
-                            "absolute": 4132.5139,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
                       }
                     ]
                   }
                 ],
-                "total_percentage": 2.3624,
-                "total_absolute": 5416
+                "total_percentage": 0.5601,
+                "total_absolute": 1284
               }
             },
             {
