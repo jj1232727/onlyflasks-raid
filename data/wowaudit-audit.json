@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-13T11:47:58.176Z",
+  "fetchedAt": "2026-11-13T19:04:33.186Z",
   "periodInfo": {
     "current_period": 1089,
     "current_season": {
@@ -912,7 +912,12 @@
       "name": "Vandredor",
       "realm": "Garrosh",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 12,
+            "dungeon": 250
+          }
+        ],
         "world_quests_done": 0,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
@@ -922,7 +927,7 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },

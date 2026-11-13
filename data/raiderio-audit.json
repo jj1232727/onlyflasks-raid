@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-11-13T11:48:08.975Z",
+  "fetchedAt": "2026-11-13T19:04:40.743Z",
   "characters": [
     {
       "id": 5454065,
       "name": "Xeonio",
       "status": "ok",
-      "lastCrawledAt": "2026-11-06T04:16:32.000Z",
+      "lastCrawledAt": "2026-11-13T13:20:01.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Xeonio",
       "weeklyRuns": [],
       "raidProgression": {
@@ -207,7 +207,62 @@
       "status": "ok",
       "lastCrawledAt": "2026-11-11T23:15:46.000Z",
       "profileUrl": "https://raider.io/characters/us/garrosh/Vandredor",
-      "weeklyRuns": [],
+      "weeklyRuns": [
+        {
+          "dungeon": "Temple of Sethraliss",
+          "short_name": "TOS",
+          "mythic_level": 12,
+          "completed_at": "2026-11-13T18:19:07.000Z",
+          "clear_time_ms": 1219132,
+          "keystone_run_id": 25614290,
+          "par_time_ms": 1920999,
+          "num_keystone_upgrades": 2,
+          "map_challenge_mode_id": 250,
+          "zone_id": 9527,
+          "zone_expansion_id": 7,
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
+          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
+          "score": 378.7,
+          "affixes": [
+            {
+              "id": 10,
+              "name": "Fortified",
+              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+              "icon": "ability_toughness",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+              "wowhead_url": "https://wowhead.com/affix=10"
+            },
+            {
+              "id": 9,
+              "name": "Tyrannical",
+              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+              "icon": "achievement_boss_archaedas",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+              "wowhead_url": "https://wowhead.com/affix=9"
+            },
+            {
+              "id": 147,
+              "name": "Xal'atath's Guile",
+              "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+              "icon": "ability_racial_chillofnight",
+              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+              "wowhead_url": "https://wowhead.com/affix=147"
+            }
+          ],
+          "url": "https://raider.io/mythic-plus-runs/season-mn-2/25614290-12-temple-of-sethraliss",
+          "spec": {
+            "id": 581,
+            "name": "Vengeance",
+            "slug": "vengeance",
+            "class_id": 12,
+            "role": "tank",
+            "is_melee": true,
+            "patch": "7.0.0",
+            "ordinal": 1
+          },
+          "role": "tank"
+        }
+      ],
       "raidProgression": {
         "the-unbinding-of-kithix": {
           "summary": "1/1 H",
@@ -514,7 +569,7 @@
       "id": 4669066,
       "name": "Nóva",
       "status": "ok",
-      "lastCrawledAt": "2026-11-06T04:16:40.000Z",
+      "lastCrawledAt": "2026-11-13T12:44:05.000Z",
       "profileUrl": "https://raider.io/characters/us/hyjal/Nóva",
       "weeklyRuns": [],
       "raidProgression": {
@@ -614,7 +669,7 @@
       "id": 4826470,
       "name": "Mubyoshii",
       "status": "ok",
-      "lastCrawledAt": "2026-11-06T04:16:32.000Z",
+      "lastCrawledAt": "2026-11-13T13:20:00.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Mubyoshii",
       "weeklyRuns": [],
       "raidProgression": {
@@ -664,7 +719,7 @@
       "id": 3289290,
       "name": "Faredon",
       "status": "ok",
-      "lastCrawledAt": "2026-11-11T23:15:52.000Z",
+      "lastCrawledAt": "2026-11-13T13:20:02.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Faredon",
       "weeklyRuns": [],
       "raidProgression": {
@@ -819,7 +874,7 @@
       "id": 4757261,
       "name": "Bracè",
       "status": "ok",
-      "lastCrawledAt": "2026-11-11T23:15:48.000Z",
+      "lastCrawledAt": "2026-11-13T14:58:01.000Z",
       "profileUrl": "https://raider.io/characters/us/illidan/Bracè",
       "weeklyRuns": [],
       "raidProgression": {
@@ -1019,7 +1074,7 @@
       "id": 5014656,
       "name": "Xret",
       "status": "ok",
-      "lastCrawledAt": "2026-11-06T04:16:37.000Z",
+      "lastCrawledAt": "2026-11-13T12:18:04.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Xret",
       "weeklyRuns": [],
       "raidProgression": {
