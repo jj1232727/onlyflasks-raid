@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-15T22:23:52.867Z",
+  "fetchedAt": "2026-11-16T04:22:07.698Z",
   "periodInfo": {
     "current_period": 1089,
     "current_season": {
@@ -1210,17 +1210,22 @@
       "name": "Sneakyninya",
       "realm": "Area 52",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 11,
+            "dungeon": 588
+          }
+        ],
         "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
-            "option_1": null,
-            "option_2": null,
-            "option_3": null
+            "option_1": 318,
+            "option_2": 318,
+            "option_3": 318
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
