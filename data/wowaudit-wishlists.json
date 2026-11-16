@@ -2702,57 +2702,9 @@
                   },
                   {
                     "name": "Sszorak",
-                    "encounter_percentage": 1.4124,
-                    "encounter_absolute": 3052,
-                    "items": [
-                      {
-                        "name": "Apex Brute's Claw Ring",
-                        "id": 268252,
-                        "slot": "finger",
-                        "score_by_spec": {
-                          "Demonology": {
-                            "score": 1698,
-                            "percentage": 0.79
-                          },
-                          "Affliction": {
-                            "score": 1354,
-                            "percentage": 0.6224
-                          }
-                        },
-                        "alternative": null,
-                        "wishes": [
-                          {
-                            "specialization": "Demonology",
-                            "timestamp": "2026-10-15T00:00:37.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.79,
-                            "absolute": 1698.1142,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": {
-                              "old": {
-                                "item_level": 321,
-                                "id": 158366
-                              },
-                              "new": {
-                                "item_level": 334,
-                                "id": 273792
-                              }
-                            }
-                          },
-                          {
-                            "specialization": "Affliction",
-                            "timestamp": "2026-10-21T23:49:20.000+00:00",
-                            "upgrade": null,
-                            "percentage": 0.6224,
-                            "absolute": 1354.3401,
-                            "manually_edited": false,
-                            "comment": null,
-                            "outdated": null
-                          }
-                        ]
-                      }
-                    ]
+                    "encounter_percentage": 0,
+                    "encounter_absolute": 0,
+                    "items": []
                   },
                   {
                     "name": "The Twin Fangs",
@@ -3078,8 +3030,8 @@
                     ]
                   }
                 ],
-                "total_percentage": 9.8202,
-                "total_absolute": 21219
+                "total_percentage": 8.407799999999998,
+                "total_absolute": 18167
               }
             },
             {
@@ -3213,8 +3165,8 @@
                                 "id": 158366
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 273792
+                                "item_level": 331,
+                                "id": 268252
                               }
                             }
                           }
@@ -3447,8 +3399,8 @@
                                 "id": 158366
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 273792
+                                "item_level": 331,
+                                "id": 268252
                               }
                             }
                           },
@@ -3466,8 +3418,8 @@
                                 "id": 158366
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 273792
+                                "item_level": 331,
+                                "id": 268252
                               }
                             }
                           }
@@ -3719,8 +3671,8 @@
                                 "id": 158366
                               },
                               "new": {
-                                "item_level": 334,
-                                "id": 273792
+                                "item_level": 331,
+                                "id": 268252
                               }
                             }
                           }
