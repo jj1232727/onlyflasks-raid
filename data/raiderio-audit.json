@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2026-11-17T06:45:53.225Z",
+  "fetchedAt": "2026-11-17T17:18:02.431Z",
   "characters": [
     {
       "id": 5454065,
       "name": "Xeonio",
       "status": "ok",
-      "lastCrawledAt": "2026-11-13T13:20:01.000Z",
+      "lastCrawledAt": "2026-11-17T16:49:45.000Z",
       "profileUrl": "https://raider.io/characters/us/proudmoore/Xeonio",
       "weeklyRuns": [],
       "raidProgression": {
@@ -207,62 +207,7 @@
       "status": "ok",
       "lastCrawledAt": "2026-11-11T23:15:46.000Z",
       "profileUrl": "https://raider.io/characters/us/garrosh/Vandredor",
-      "weeklyRuns": [
-        {
-          "dungeon": "Temple of Sethraliss",
-          "short_name": "TOS",
-          "mythic_level": 12,
-          "completed_at": "2026-11-13T18:19:07.000Z",
-          "clear_time_ms": 1219132,
-          "keystone_run_id": 25614290,
-          "par_time_ms": 1920999,
-          "num_keystone_upgrades": 2,
-          "map_challenge_mode_id": 250,
-          "zone_id": 9527,
-          "zone_expansion_id": 7,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
-          "score": 378.7,
-          "affixes": [
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            },
-            {
-              "id": 147,
-              "name": "Xal'atath's Guile",
-              "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
-              "icon": "ability_racial_chillofnight",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
-              "wowhead_url": "https://wowhead.com/affix=147"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/25614290-12-temple-of-sethraliss",
-          "spec": {
-            "id": 581,
-            "name": "Vengeance",
-            "slug": "vengeance",
-            "class_id": 12,
-            "role": "tank",
-            "is_melee": true,
-            "patch": "7.0.0",
-            "ordinal": 1
-          },
-          "role": "tank"
-        }
-      ],
+      "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
           "summary": "1/1 H",
@@ -362,116 +307,7 @@
       "status": "ok",
       "lastCrawledAt": "2026-11-17T04:57:30.000Z",
       "profileUrl": "https://raider.io/characters/us/stormrage/Teldral",
-      "weeklyRuns": [
-        {
-          "dungeon": "Altar of Fangs",
-          "short_name": "AOF",
-          "mythic_level": 10,
-          "completed_at": "2026-11-12T00:50:06.000Z",
-          "clear_time_ms": 1248633,
-          "keystone_run_id": 25481183,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 2,
-          "map_challenge_mode_id": 588,
-          "zone_id": 16865,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
-          "score": 331.5,
-          "affixes": [
-            {
-              "id": 148,
-              "name": "Xal'atath's Bargain: Ascendant",
-              "description": "While in combat, Xal'atath rains down orbs of cosmic energy that empower enemies or players.",
-              "icon": "inv_nullstone_cosmicvoid",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_nullstone_cosmicvoid.jpg",
-              "wowhead_url": "https://wowhead.com/affix=148"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/25481183-10-altar-of-fangs",
-          "spec": {
-            "id": 102,
-            "name": "Balance",
-            "slug": "balance",
-            "class_id": 11,
-            "role": "dps",
-            "is_melee": false,
-            "patch": "1.0.0",
-            "ordinal": 0
-          },
-          "role": "dps"
-        },
-        {
-          "dungeon": "Altar of Fangs",
-          "short_name": "AOF",
-          "mythic_level": 10,
-          "completed_at": "2026-11-12T04:38:20.000Z",
-          "clear_time_ms": 1479073,
-          "keystone_run_id": 25486817,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 1,
-          "map_challenge_mode_id": 588,
-          "zone_id": 16865,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
-          "score": 326.7,
-          "affixes": [
-            {
-              "id": 148,
-              "name": "Xal'atath's Bargain: Ascendant",
-              "description": "While in combat, Xal'atath rains down orbs of cosmic energy that empower enemies or players.",
-              "icon": "inv_nullstone_cosmicvoid",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_nullstone_cosmicvoid.jpg",
-              "wowhead_url": "https://wowhead.com/affix=148"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/25486817-10-altar-of-fangs",
-          "spec": {
-            "id": 102,
-            "name": "Balance",
-            "slug": "balance",
-            "class_id": 11,
-            "role": "dps",
-            "is_melee": false,
-            "patch": "1.0.0",
-            "ordinal": 0
-          },
-          "role": "dps"
-        }
-      ],
+      "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
           "summary": "1/1 H",
@@ -671,116 +507,7 @@
       "status": "ok",
       "lastCrawledAt": "2026-11-17T05:25:32.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Mubyoshii",
-      "weeklyRuns": [
-        {
-          "dungeon": "Voidscar Arena",
-          "short_name": "VSA",
-          "mythic_level": 10,
-          "completed_at": "2026-11-15T05:03:08.000Z",
-          "clear_time_ms": 896377,
-          "keystone_run_id": 25740458,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 3,
-          "map_challenge_mode_id": 585,
-          "zone_id": 16425,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
-          "score": 335,
-          "affixes": [
-            {
-              "id": 148,
-              "name": "Xal'atath's Bargain: Ascendant",
-              "description": "While in combat, Xal'atath rains down orbs of cosmic energy that empower enemies or players.",
-              "icon": "inv_nullstone_cosmicvoid",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_nullstone_cosmicvoid.jpg",
-              "wowhead_url": "https://wowhead.com/affix=148"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/25740458-10-voidscar-arena",
-          "spec": {
-            "id": 1480,
-            "name": "Devourer",
-            "slug": "devourer",
-            "class_id": 12,
-            "role": "dps",
-            "is_melee": false,
-            "patch": "12.0.0",
-            "ordinal": 2
-          },
-          "role": "dps"
-        },
-        {
-          "dungeon": "Murder Row",
-          "short_name": "MR",
-          "mythic_level": 10,
-          "completed_at": "2026-11-15T04:21:44.000Z",
-          "clear_time_ms": 1140193,
-          "keystone_run_id": 25740621,
-          "par_time_ms": 2040999,
-          "num_keystone_upgrades": 3,
-          "map_challenge_mode_id": 587,
-          "zone_id": 16091,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_murderrow.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/murder-row.jpg",
-          "score": 335,
-          "affixes": [
-            {
-              "id": 148,
-              "name": "Xal'atath's Bargain: Ascendant",
-              "description": "While in combat, Xal'atath rains down orbs of cosmic energy that empower enemies or players.",
-              "icon": "inv_nullstone_cosmicvoid",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_nullstone_cosmicvoid.jpg",
-              "wowhead_url": "https://wowhead.com/affix=148"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/25740621-10-murder-row",
-          "spec": {
-            "id": 1480,
-            "name": "Devourer",
-            "slug": "devourer",
-            "class_id": 12,
-            "role": "dps",
-            "is_melee": false,
-            "patch": "12.0.0",
-            "ordinal": 2
-          },
-          "role": "dps"
-        }
-      ],
+      "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
           "summary": "1/1 H",
@@ -880,62 +607,7 @@
       "status": "ok",
       "lastCrawledAt": "2026-11-17T05:25:27.000Z",
       "profileUrl": "https://raider.io/characters/us/wyrmrest-accord/Tazendruid",
-      "weeklyRuns": [
-        {
-          "dungeon": "Altar of Fangs",
-          "short_name": "AOF",
-          "mythic_level": 10,
-          "completed_at": "2026-11-12T04:38:20.000Z",
-          "clear_time_ms": 1479073,
-          "keystone_run_id": 25486817,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 1,
-          "map_challenge_mode_id": 588,
-          "zone_id": 16865,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
-          "score": 326.7,
-          "affixes": [
-            {
-              "id": 148,
-              "name": "Xal'atath's Bargain: Ascendant",
-              "description": "While in combat, Xal'atath rains down orbs of cosmic energy that empower enemies or players.",
-              "icon": "inv_nullstone_cosmicvoid",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_nullstone_cosmicvoid.jpg",
-              "wowhead_url": "https://wowhead.com/affix=148"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/25486817-10-altar-of-fangs",
-          "spec": {
-            "id": 104,
-            "name": "Guardian",
-            "slug": "guardian",
-            "class_id": 11,
-            "role": "tank",
-            "is_melee": true,
-            "patch": "1.0.0",
-            "ordinal": 2
-          },
-          "role": "tank"
-        }
-      ],
+      "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
           "summary": "1/1 H",
@@ -1035,62 +707,7 @@
       "status": "ok",
       "lastCrawledAt": "2026-11-14T06:55:58.000Z",
       "profileUrl": "https://raider.io/characters/us/area-52/Sneakyninya",
-      "weeklyRuns": [
-        {
-          "dungeon": "Altar of Fangs",
-          "short_name": "AOF",
-          "mythic_level": 11,
-          "completed_at": "2026-11-16T00:50:42.000Z",
-          "clear_time_ms": 1106203,
-          "keystone_run_id": 25890495,
-          "par_time_ms": 1800999,
-          "num_keystone_upgrades": 2,
-          "map_challenge_mode_id": 588,
-          "zone_id": 16865,
-          "zone_expansion_id": 11,
-          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
-          "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
-          "score": 349.5,
-          "affixes": [
-            {
-              "id": 148,
-              "name": "Xal'atath's Bargain: Ascendant",
-              "description": "While in combat, Xal'atath rains down orbs of cosmic energy that empower enemies or players.",
-              "icon": "inv_nullstone_cosmicvoid",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_nullstone_cosmicvoid.jpg",
-              "wowhead_url": "https://wowhead.com/affix=148"
-            },
-            {
-              "id": 10,
-              "name": "Fortified",
-              "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
-              "icon": "ability_toughness",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
-              "wowhead_url": "https://wowhead.com/affix=10"
-            },
-            {
-              "id": 9,
-              "name": "Tyrannical",
-              "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
-              "icon": "achievement_boss_archaedas",
-              "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
-              "wowhead_url": "https://wowhead.com/affix=9"
-            }
-          ],
-          "url": "https://raider.io/mythic-plus-runs/season-mn-2/25890495-11-altar-of-fangs",
-          "spec": {
-            "id": 259,
-            "name": "Assassination",
-            "slug": "assassination",
-            "class_id": 4,
-            "role": "dps",
-            "is_melee": true,
-            "patch": "1.0.0",
-            "ordinal": 0
-          },
-          "role": "dps"
-        }
-      ],
+      "weeklyRuns": [],
       "raidProgression": {
         "the-unbinding-of-kithix": {
           "summary": "1/1 H",
