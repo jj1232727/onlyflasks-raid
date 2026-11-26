@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-25T16:39:54.911Z",
+  "fetchedAt": "2026-11-26T01:27:04.777Z",
   "periodInfo": {
     "current_period": 1091,
     "current_season": {
@@ -805,7 +805,7 @@
       "realm": "Proudmoore",
       "data": {
         "dungeons_done": [],
-        "world_quests_done": 5,
+        "world_quests_done": 6,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
           "raids": {
@@ -1128,9 +1128,14 @@
       "name": "Tazendruid",
       "realm": "Wyrmrest Accord",
       "data": {
-        "dungeons_done": [],
-        "world_quests_done": 0,
-        "regular_mythic_dungeons_done": 0,
+        "dungeons_done": [
+          {
+            "level": 18,
+            "dungeon": 585
+          }
+        ],
+        "world_quests_done": 11,
+        "regular_mythic_dungeons_done": 1,
         "vault_options": {
           "raids": {
             "option_1": null,
@@ -1138,12 +1143,12 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
           "world": {
-            "option_1": null,
+            "option_1": 272,
             "option_2": null,
             "option_3": null
           }
@@ -1182,7 +1187,12 @@
       "name": "Sneakyninya",
       "realm": "Area 52",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 17,
+            "dungeon": 588
+          }
+        ],
         "world_quests_done": 0,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
@@ -1192,7 +1202,7 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
