@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-27T22:27:29.184Z",
+  "fetchedAt": "2026-11-28T05:55:26.047Z",
   "periodInfo": {
     "current_period": 1091,
     "current_season": {
@@ -885,7 +885,12 @@
       "name": "Asethi",
       "realm": "Proudmoore",
       "data": {
-        "dungeons_done": [],
+        "dungeons_done": [
+          {
+            "level": 10,
+            "dungeon": 249
+          }
+        ],
         "world_quests_done": 0,
         "regular_mythic_dungeons_done": 0,
         "vault_options": {
@@ -895,7 +900,7 @@
             "option_3": null
           },
           "dungeons": {
-            "option_1": null,
+            "option_1": 318,
             "option_2": null,
             "option_3": null
           },
@@ -1141,6 +1146,10 @@
           {
             "level": 19,
             "dungeon": 249
+          },
+          {
+            "level": 15,
+            "dungeon": 250
           }
         ],
         "world_quests_done": 11,
